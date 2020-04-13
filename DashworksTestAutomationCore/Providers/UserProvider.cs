@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Providers
 
         //private static int _iter;
 
-        public static string Password = ConfigReader.ByKey("user.password");
+        public static string Password = ConfigReader.ByKey("userPassword");
 
         private static readonly List<UserDto> _accounts = new List<UserDto> { };
 
