@@ -25,8 +25,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
-using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.Components;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -144,10 +142,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
-        [Then(@"formatting options are displayed on the text component page")]
+        [Then(@"formatting options are displayed on the text component")]
         public void ThenFormattingOptionsAreDisplayedOnTheTextComponentPage()
         {
-            var page = _driver.NowAt<TextComponentPage>();
+            var page = _driver.NowAt<TextComponentElements>();
 
             Verify.That(page.BoldStyleButton.Displayed(), "Bold style button is not displayed");
             Verify.That(page.ItalicStyleButton.Displayed(), "Italic style button is not displayed");
@@ -155,10 +153,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.That(page.HeadersPickerButton.Displayed(), "Headers picker button is not displayed");
         }
 
-        [Then(@"header format options are displayed on the text component page")]
+        [Then(@"header format options are displayed on the text component")]
         public void ThenHeaderFormatOptionsAreDisplayedOnTheTextComponentPage(Table table)
         {
-            var page = _driver.NowAt<TextComponentPage>();
+            var page = _driver.NowAt<TextComponentElements>();
 
             page.HeadersPickerButton.Click();
             _driver.WaitForElementsToBeDisplayed(page.HeaderOptions);

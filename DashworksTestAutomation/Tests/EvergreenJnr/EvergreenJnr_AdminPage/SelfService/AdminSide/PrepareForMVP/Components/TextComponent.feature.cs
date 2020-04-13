@@ -609,7 +609,7 @@ this.FeatureBackground();
  testRunner.When("User selects \'Edit\' cogmenu option for \'Text\' item type with \'Text_Component_Name" +
                     "\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 138
- testRunner.Then("formatting options are displayed on the text component page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("formatting options are displayed on the text component", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -626,7 +626,7 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "Normal"});
 #line 139
- testRunner.Then("header format options are displayed on the text component page", ((string)(null)), table18, "Then ");
+ testRunner.Then("header format options are displayed on the text component", ((string)(null)), table18, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

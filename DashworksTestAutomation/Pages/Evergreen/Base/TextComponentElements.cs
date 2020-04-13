@@ -4,10 +4,9 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.Components
+namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
-    public class TextComponentPage : SeleniumBasePage
-
+    public class TextComponentElements : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='ql-toolbar ql-snow']")]
         public IWebElement ToolbarWithFormattingOptions { get; set; }

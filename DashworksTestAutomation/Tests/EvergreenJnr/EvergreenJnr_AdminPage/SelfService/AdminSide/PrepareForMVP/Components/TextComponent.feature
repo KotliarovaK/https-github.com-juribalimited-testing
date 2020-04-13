@@ -135,8 +135,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTextEditorOptionsIsAvailableForTextCom
 	| Text_Component_Name | <p>Some_Content</p> | true              |
 	When User navigates to the 'Builder' left submenu item
 	When User selects 'Edit' cogmenu option for 'Text' item type with 'Text_Component_Name' name on Self Service Builder Panel
-	Then formatting options are displayed on the text component page
-	Then header format options are displayed on the text component page
+	Then formatting options are displayed on the text component
+	Then header format options are displayed on the text component
 	| Options   |
 	| Heading 1 |
 	| Heading 2 |

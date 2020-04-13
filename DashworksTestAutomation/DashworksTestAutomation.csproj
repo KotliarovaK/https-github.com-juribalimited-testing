@@ -262,7 +262,7 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\Components\TextComponentPage.cs" />
+    <Compile Include="Pages\Evergreen\Base\TextComponentElements.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\Components\AppOwnershipComponentPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientErrorPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientBasePage.cs" />
