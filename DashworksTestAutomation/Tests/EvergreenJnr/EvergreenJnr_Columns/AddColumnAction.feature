@@ -343,7 +343,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSortingByEvergreenRingColumnWork
 	| Users        |
 	| Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @FilterFunctionality @DAS16912
+@Evergreen @AllLists @EvergreenJnr_Columns @FilterFunctionality @DAS16912 @DAS20685
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName   |

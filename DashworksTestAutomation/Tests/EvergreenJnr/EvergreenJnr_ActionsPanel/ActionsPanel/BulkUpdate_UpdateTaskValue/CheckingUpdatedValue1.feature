@@ -33,9 +33,6 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
-	Then inline warning banner is displayed
-	Then 'UPDATE' button is displayed on inline tip banner
-	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -47,6 +44,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	When User selects 'Relative BU \ DT BU Dev' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '1' text to 'Value' textbox
+	When User selects 'days after current value' in the 'Units' dropdown
 	And User clicks 'UPDATE' button
 	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
