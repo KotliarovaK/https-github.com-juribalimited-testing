@@ -192,11 +192,11 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	Then "3" rows found label displays on Details Page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'User Projects' left submenu item
-	Then 'User Projects' left submenu item with '7' count is displayed
-	And "7" rows found label displays on Details Page
+	Then 'User Projects' left submenu item with '8' count is displayed
+	And "8" rows found label displays on Details Page
 	When User navigates to the 'Device Project Summary' left submenu item
-	Then 'Device Project Summary' left submenu item with '14' count is displayed
-	And "14" rows found label displays on Details Page
+	Then 'Device Project Summary' left submenu item with '15' count is displayed
+	And "15" rows found label displays on Details Page
 	When User navigates to the 'Devices' left menu item
 	Then 'Devices' left submenu item with '2' count is displayed
 	And "2" rows found label displays on Details Page

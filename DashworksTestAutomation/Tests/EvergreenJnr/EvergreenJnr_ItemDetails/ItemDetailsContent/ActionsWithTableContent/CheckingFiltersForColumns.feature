@@ -62,35 +62,61 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	Then Rows counter contains "0" found row of all rows
 	When User clicks button with 'ResetFilters' aria label
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Zion_NewGrid
-Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
-	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
-	Then Details page for '<SearchTerm>' item is displayed to the user
-	When User navigates to the '<MainTabName>' left menu item
-	And User navigates to the '<SubTabName>' left submenu item
-	Then "<CountRows>" rows found label displays on Details Page
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @DAS16565 @Zion_NewGrid
+Scenario: EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnProjectsSummaryTabAreDisplayedCorrectly
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Projects Summary' left submenu item
 	When User clicks String Filter button for "Project" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Workflow" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Status" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Workflow" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks following checkboxes from Column Settings panel for the 'Project' column:
+	| checkboxes   |
+	| Project      |
+	| Project Type |
+	| Slot         |
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User opens 'Project' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Project Type" checkbox on the Column Settings panel
-	And User select "Slot" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	And User clicks String Filter button for "Readiness" column
+	When User clicks String Filter button for "Status" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	Then string filter is displayed for 'Readiness' column
+	When User clicks String Filter button for "Readiness" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-Examples:
-	| PageName | SearchTerm                                      | MainTabName | SubTabName              | CountRows |
-	| Device   | 001BAQXT6JWFPI                                  | Projects    | Projects Summary        | 10        |
-	| Device   | 001BAQXT6JWFPI                                  | Projects    | Owner Projects Summary  | 7         |
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @DAS16565 @Zion_NewGrid
+Scenario: EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnOwnerProjectsSummaryTabAreDisplayedCorrectly
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Owner Projects Summary' left submenu item
+	When User clicks String Filter button for "Username" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Display Name" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Project" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Project Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Workflow" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks following checkboxes from Column Settings panel for the 'Project' column:
+	| checkboxes   |
+	| Username     |
+	| Display Name |
+	| Project      |
+	| Project Type |
+	| Slot         |
+	When User clicks String Filter button for "Category" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Status" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	Then string filter is displayed for 'Readiness' column
+	When User clicks String Filter button for "Readiness" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
@@ -207,8 +233,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenu
 	| Criteria  | Date     |
 	| Not Equal | 23032018 |
 	Then User checks that date input has same position
-	Then Rows counter shows "1" of "15" rows
-	And There are no errors in the browser console
+	Then Rows counter contains "1" found row of all rows
+	Then There are no errors in the browser console
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726 @DAS20761 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevicesPage

@@ -1605,6 +1605,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS16912")]
+        [NUnit.Framework.CategoryAttribute("DAS20685")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Application Compliance", "Ignore", "Anwendungskonformität", "IGNORIEREN", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Device Application Compliance", "Red", "Geräteanwendungskonformität", "ROT", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Compliance", "Green", "Konformität", "GRÜN", null)]
@@ -1642,7 +1643,8 @@ this.FeatureBackground();
                     "AllLists",
                     "EvergreenJnr_Columns",
                     "FilterFunctionality",
-                    "DAS16912"};
+                    "DAS16912",
+                    "DAS20685"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
