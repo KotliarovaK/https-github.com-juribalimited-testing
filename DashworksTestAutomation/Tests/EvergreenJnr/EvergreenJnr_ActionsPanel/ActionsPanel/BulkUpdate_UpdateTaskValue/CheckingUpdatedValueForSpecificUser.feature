@@ -199,7 +199,6 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'Complete' in the 'Update Value' dropdown
-	#And User selects 'Complete' in the 'Value' dropdown
 	And User selects 'Remove' in the 'Update Date' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User navigate to the bottom of the Action panel

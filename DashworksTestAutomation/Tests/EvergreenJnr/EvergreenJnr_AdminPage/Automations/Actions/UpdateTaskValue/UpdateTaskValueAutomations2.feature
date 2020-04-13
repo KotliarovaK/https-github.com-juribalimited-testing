@@ -91,7 +91,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks 'Run now' option in Cog-menu for 'Test18292Automation' item from 'Automation' column
 	When 'Test18292Automation' automation '18292_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	Then current date and time are displayed for 'Test18292Automation' automation
 	When User enters "Test18292Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -187,12 +186,11 @@ Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnT
 	When User selects 'Hours' in the 'Units' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18619 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18619 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDropdownAfterChangingItem
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18619_Automation | 18619       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18619_Automation | 18619       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -206,8 +204,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDropdownAfterChangingItem
 	When User clicks 'CREATE' button
 	#Check Value dropdown
 	When User clicks content from "Action" column
-	When User selects 'Update' in the 'Update Value' dropdown
-	Then 'Value' content is displayed in 'Value' dropdown
+	Then 'Remove' content is displayed in 'Update Date' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18644 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerOptionWhenTaskDoesNotHaveDate

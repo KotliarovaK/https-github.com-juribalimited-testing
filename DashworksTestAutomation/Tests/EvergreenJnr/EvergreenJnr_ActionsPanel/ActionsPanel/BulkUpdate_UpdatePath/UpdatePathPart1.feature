@@ -5,8 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @Cleanup
-Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @DAS20438 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatNewlyCreatedNonTeamUserCanNotUpdatePath
 	When User create new User via API
 	| Username   | Email | FullName             | Password  | Roles                |
 	| 000WithPBU | Value | Project Bulk Updater | m!gration | Project Bulk Updater |
@@ -28,16 +28,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 0DTXL41673EW7O   |
-	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update path' in the 'Bulk Update Type' dropdown
-	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	Then '[This is the Default Request Type for Computer)]' content is displayed in the 'Windows7Mi: Path' column
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	When User selects 'Computer: Laptop Replacement' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then 'Computer: Laptop Replacement' content is displayed in the 'Windows7Mi: Path' column
+	Then '[This is the Default Request Type for Computer)]' content is displayed in the 'Windows7Mi: Path' column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

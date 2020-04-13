@@ -114,11 +114,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @DAS2036 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @DAS2036 @Cleanup @X_Ray
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 19854_Automation | 19854       | true   | false              | New York - Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 19854_Automation | 19854       | true     | false              | New York - Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -127,13 +127,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ Original Auto Task' option from 'Task' autocomplete
+	When User selects 'Complete' in the 'Update Value' dropdown
 	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Complete' in the 'Value' dropdown
 	When User selects 'Stage 2 \ Relative Task' option from 'Relative Task' autocomplete
 	When User enters '0' text to 'Value' textbox
-	When User selects 'Week days' in the 'Units' dropdown
-	When User selects 'After task value' in the 'Before or After' dropdown
+	When User selects 'weekdays after task value' in the 'DateUnit' dropdown
 	When User clicks 'CREATE' button
 	Then 'Complete, zUser Sch for Automations Feature, Stage 2 \ Relative Task, 0 weekday after task value' content is displayed in the 'Value' column
 	#Run Automation
@@ -160,8 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User clicks content from "Action" column
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ Original Auto Task' option from 'Task' autocomplete
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Complete' in the 'Value' dropdown
+	When User selects 'Complete' in the 'Update Value' dropdown
 	When User selects 'Remove' in the 'Update Date' dropdown
 	When User clicks 'UPDATE' button
 	#Run Automation
@@ -199,7 +196,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOwnerDropdownDisplayingAfterSelectingEmpty
 	When User selects 'Unassigned' option from 'Owner' autocomplete
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20363 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20363 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingAction
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
