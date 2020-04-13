@@ -685,9 +685,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
             var expectedLabels = table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault());
-            var actualLables = page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList();
+            var actualLabels = page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList();
 
-            Verify.AreEqual(expectedLabels, actualLables, $"The label(s) was not found in '{widgetName}'");
+            Verify.AreEqual(expectedLabels, actualLabels, $"The label(s) was not found in '{widgetName}'");
+        }
+
+        [Then(@"'(.*)' Widget has no duplicates in Data Legends")]
+        public void ThenDataLegendsValuesHasNoDuplicates(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            var actualLabels = page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList();
+
+            //Get all elements that has more than one occurence in the list
+            var duplicates = page.GetWidgetLabels(widgetName).GroupBy(x => x)
+                .Select(g => new { Value = g.Key, Count = g.Count() })
+                .Where(x => x.Count > 1).ToList();
+
+            Verify.That(duplicates.Any(), Is.False, $"Legends has duplicates");
         }
 
         [Then(@"Label icon displayed gray for '(.*)' widget")]

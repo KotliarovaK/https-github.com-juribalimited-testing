@@ -544,3 +544,22 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsCanBeAddedIfSomePivotWasOpen
 	| ColumnName        |
 	| BIOS Manufacturer |
 	| Owner Building    |
+
+@Evergreen @Applications @EvergreenJnr_Columns @DAS20813
+Scenario: EvergreenJnr_ApplicationsList_CheckThatGridDisplaysDataAfterAddingEvergreenTargetAppColumn
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName               |
+	| Evergreen Target App Key |
+	Then ColumnName is added to the list
+	| ColumnName               |
+	| Evergreen Target App Key |
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| In Catalog |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| In Catalog |
+	Then table content is present
