@@ -104,7 +104,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
         {
             Driver.WaitForDataLoading();
             Verify.AreEqual(expectedDisplayState, IsContextPanelDisplayed(contextPanelType, contextPanelName),
-                $"Builder Context Panel Item Display State is not equal to: {expectedDisplayState}", WebDriverExtensions.WaitTime.Medium);
+                $"Builder Context Panel Item Display State is not equal to: {expectedDisplayState}");
         }
 
         public bool IsContextPanelDisplayed(string contextPanelType, string contextPanelName)
