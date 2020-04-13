@@ -1,4 +1,4 @@
-﻿Feature: CreateAutomayions
+﻿Feature: CreateAutomations
 	Create Automations
 
 Background: Pre-Conditions
