@@ -10,6 +10,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using AutomationUtils.Utils;
@@ -139,6 +140,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (string content in columnContent)
             {
                 Verify.AreEqual(currentDate, content, $"'{currentDate}' is not displayed in the '{columnName}'");
+            }
+        }
+
+        [Then(@"date in '(.*)' column displayed in datetime format")]
+        public void ThenCurrentDateIsDisplayedInDateTimeFormatForColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var columnContent = page.GetColumnContentByColumnName(columnName);
+
+            foreach (string content in columnContent)
+            {
+                bool isValidFormat = DateTime.TryParseExact(content, "d MMM yyyy hh:mm", CultureInfo.InvariantCulture,
+                    DateTimeStyles.None, out DateTime dt);
+                Verify.That(isValidFormat, Is.True, $"date in '{columnName}' columns formatted incorrectly");
             }
         }
 

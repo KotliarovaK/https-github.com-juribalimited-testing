@@ -2660,6 +2660,93 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatGridDisplaysDataAfterAddingEvergreenTarget" +
+            "AppColumn")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("DAS20813")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatGridDisplaysDataAfterAddingEvergreenTargetAppColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatGridDisplaysDataAfterAddingEvergreenTargetAppColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatGridDisplaysDataAfterAddingEvergreenTargetAppColumnInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatGridDisplaysDataAfterAddingEvergreenTarget" +
+                    "AppColumn", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_Columns",
+                        "DAS20813"});
+#line 559
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 560
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 561
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table59.AddRow(new string[] {
+                        "Evergreen Target App Key"});
+#line 562
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table59, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table60.AddRow(new string[] {
+                        "Evergreen Target App Key"});
+#line 565
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table60, "Then ");
+#line 568
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table61.AddRow(new string[] {
+                        "In Catalog"});
+#line 569
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table61, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table62.AddRow(new string[] {
+                        "In Catalog"});
+#line 572
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table62, "Then ");
+#line 575
+ testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
