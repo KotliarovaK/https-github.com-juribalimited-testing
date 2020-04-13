@@ -129,11 +129,11 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         {
             var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
 
-            foreach (var raw in table.Rows)
+            foreach (var row in table.Rows)
             {
-                var componentName = raw["ComponentName"];
-                var componentType = raw["ComponentType"];
-                var componentPosition = raw["ComponentPosition"];
+                var componentName = row["ComponentName"];
+                var componentType = row["ComponentType"];
+                var componentPosition = row["ComponentPosition"];
 
                 Verify.IsTrue(rightSidePanel.IsTheComponentOrderInSSBuilderAsExpected(componentName, componentType, componentPosition, pageName), $"Component '{componentName}' wasn't placed on '{componentPosition}' position");
             }
