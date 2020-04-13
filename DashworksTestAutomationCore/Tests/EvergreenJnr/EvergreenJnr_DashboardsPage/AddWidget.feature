@@ -336,10 +336,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendsNotDuplicatedAfterCh
 	| WidgetType | Title             |
 	| Pie        | WidgetForDAS20170 |
 	Then 'WidgetForDAS20170' Widget is displayed to the user
-	Then Data Legends values are displayed in 'WidgetForDAS20170' widget on the Dashboard page
-	| LegendsValue |
-	| Migrated     |
-	| Offboarded   |
+	Then 'WidgetForDAS20170' Widget has no duplicates in Data Legends
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20412 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterEditingDashboardSection

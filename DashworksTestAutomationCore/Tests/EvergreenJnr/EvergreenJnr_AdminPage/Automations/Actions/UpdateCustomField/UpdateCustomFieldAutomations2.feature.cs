@@ -140,14 +140,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table398 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table406 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table398.AddRow(new string[] {
+                table406.AddRow(new string[] {
                             "18187_Automation",
                             "18187",
                             "true",
@@ -155,7 +155,7 @@ this.FeatureBackground();
                             "New York - Devices",
                             "Manual"});
 #line 10
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table398, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table406, "When ");
 #line hidden
 #line 13
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -370,14 +370,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table399 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table407 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table399.AddRow(new string[] {
+                table407.AddRow(new string[] {
                             "18187_Automation_1",
                             "18187",
                             "true",
@@ -385,7 +385,7 @@ this.FeatureBackground();
                             "Users Readiness Columns & Filters",
                             "Manual"});
 #line 70
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table399, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table407, "When ");
 #line hidden
 #line 73
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -457,12 +457,12 @@ this.FeatureBackground();
 #line 96
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table400 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table408 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table400.AddRow(new string[] {
+                table408.AddRow(new string[] {
                             "Phoenix Field"});
 #line 97
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table400, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table408, "When ");
 #line hidden
 #line 100
  testRunner.Then("\'new value\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -535,12 +535,12 @@ this.FeatureBackground();
 #line 122
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table401 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table409 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table401.AddRow(new string[] {
+                table409.AddRow(new string[] {
                             "Phoenix Field"});
 #line 123
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table401, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table409, "When ");
 #line hidden
 #line 126
  testRunner.Then("\'012345\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -601,14 +601,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table402 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table410 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table402.AddRow(new string[] {
+                table410.AddRow(new string[] {
                             "18187_Automation_2",
                             "18187",
                             "true",
@@ -616,7 +616,7 @@ this.FeatureBackground();
                             "2004 Rollout",
                             "Manual"});
 #line 130
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table402, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table410, "When ");
 #line hidden
 #line 133
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -682,12 +682,12 @@ this.FeatureBackground();
 #line 154
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table403 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table411 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table403.AddRow(new string[] {
+                table411.AddRow(new string[] {
                             "Phoenix Field"});
 #line 155
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table403, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table411, "When ");
 #line hidden
 #line 158
  testRunner.Then("\'\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -760,12 +760,12 @@ this.FeatureBackground();
 #line 180
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table404 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table412 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table404.AddRow(new string[] {
+                table412.AddRow(new string[] {
                             "Phoenix Field"});
 #line 181
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table404, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table412, "When ");
 #line hidden
 #line 184
  testRunner.Then("\'1 value\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -826,14 +826,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table405 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table413 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table405.AddRow(new string[] {
+                table413.AddRow(new string[] {
                             "18187_Automation_3",
                             "18187",
                             "true",
@@ -841,7 +841,7 @@ this.FeatureBackground();
                             "Mailbox Readiness Columns & Filters",
                             "Manual"});
 #line 188
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table405, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table413, "When ");
 #line hidden
 #line 191
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -913,12 +913,12 @@ this.FeatureBackground();
 #line 214
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table406 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table414 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table406.AddRow(new string[] {
+                table414.AddRow(new string[] {
                             "Phoenix Field"});
 #line 215
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table406, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table414, "When ");
 #line hidden
 #line 218
  testRunner.Then("\'one, two\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -991,12 +991,12 @@ this.FeatureBackground();
 #line 240
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table407 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table415 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table407.AddRow(new string[] {
+                table415.AddRow(new string[] {
                             "Phoenix Field"});
 #line 241
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table407, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table415, "When ");
 #line hidden
 #line 244
  testRunner.Then("\'one\' content is displayed in the \'Phoenix Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

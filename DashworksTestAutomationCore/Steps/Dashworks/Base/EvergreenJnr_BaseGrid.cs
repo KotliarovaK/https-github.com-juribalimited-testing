@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -15,6 +16,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -42,7 +44,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
      
         #endregion
-
 
         #region Headers
 
@@ -147,7 +148,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenExportButtonIsDisplayed()
         {
             var pivot = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(pivot.ExportListButton.Displayed(), "Export button is not displayed");
+            Verify.IsTrue(pivot.ExportListButton.Displayed(), "Export button is not displayed");
         }
 
         [Then(@"Export button is displayed disabled")]
@@ -155,7 +156,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var pivot = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(pivot.ExportListButton);
-            Utils.Verify.That(pivot.ExportListButton.Disabled(), Is.True, "Export button is displayed enabled");
+            Verify.That(pivot.ExportListButton.Disabled(), Is.True, "Export button is displayed enabled");
         }
 
         #endregion
@@ -396,7 +397,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Values in table for '{columnName}' column in not sorted in ascending order");
+            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Values in table for '{columnName}' column in not sorted in ascending order");
         }
 
         [Then(@"data in table is sorted by '(.*)' column in ascending order by default")]
@@ -418,7 +419,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
-            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, $"Date in table for '{columnName}' column in not sorted in descending order");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, $"Date in table for '{columnName}' column in not sorted in descending order");
         }
 
         [Then(@"date in table is sorted by '(.*)' column in ascending order")]
@@ -480,7 +481,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             {
                 SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList));
             }
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"color data is sorted by '(.*)' column in descending order")]
@@ -542,19 +543,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             switch (listName)
             {
                 case "Devices":
-                    Utils.Verify.AreEqual("001BAQXT6JWFPI", content.GetColumnContentByColumnName("Hostname").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    Verify.AreEqual("001BAQXT6JWFPI", content.GetColumnContentByColumnName("Hostname").First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 case "Users":
-                    Utils.Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Username").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Username").First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 case "Applications":
-                    Utils.Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Application").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Application").First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 case "Mailboxes":
-                    Utils.Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Email Address").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Email Address").First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 default:
@@ -593,7 +594,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenWidthOfTheColumnIsPixels(string columnName, string columnWidth)
         {
             var dashboardPage = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.AreEqual(columnWidth, dashboardPage.GetColumnWidthByName(columnName), $"width '{columnName}' column is not '{columnWidth}'");
+            Verify.AreEqual(columnWidth, dashboardPage.GetColumnWidthByName(columnName), $"width '{columnName}' column is not '{columnWidth}'");
         }
 
         [Then(@"Links from ""(.*)"" column is displayed to the user")]
@@ -601,7 +602,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var content = _driver.NowAt<BaseGridPage>();
             content.GetHrefByColumnName(columnName);
-            Utils.Verify.IsTrue(content.GetHrefByColumnName(columnName) != null, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(content.GetHrefByColumnName(columnName) != null, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Content is empty in the column")]
@@ -744,6 +745,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             Verify.IsFalse(page.IsGridGrouped(), "Grid is grouped");
+        }
+
+        [Then(@"'(.*)' grouped name is not displayed as a link")]
+        public void ThenGroupedNameIsNotDisplayedAsALink(string groupName)
+        {
+            var group = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(group.CheckHrefByGroupedValue(groupName), $"'{groupName}' grouped name is displayed as a link");
         }
 
         [Then(@"'(.*)' row in the groped grid does not contains '(.*)' text")]

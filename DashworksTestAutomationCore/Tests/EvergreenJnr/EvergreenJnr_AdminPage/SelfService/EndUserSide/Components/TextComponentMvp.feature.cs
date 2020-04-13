@@ -137,56 +137,56 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1434 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1442 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1434.AddRow(new string[] {
+                table1442.AddRow(new string[] {
                             "VSCmdShell"});
 #line 10
  testRunner.When("User create static list with \"DAS_20050\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1434, "When ");
+                        "ng items", ((string)(null)), table1442, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1435 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1443 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1435.AddRow(new string[] {
+                table1443.AddRow(new string[] {
                             "DAS_20050_SS_1",
                             "20050_1_SI",
                             "true",
                             "true",
                             "DAS_20050"});
 #line 17
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1435, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1443, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1436 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1444 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ExtraPropertiesText",
                             "ShowInSelfService"});
-                table1436.AddRow(new string[] {
+                table1444.AddRow(new string[] {
                             "Text_Component_Name_1",
                             "<h1><strong>bold </strong><em>italic </em><u>underline</u><p>normal</p><em>italic" +
                                 " </em>heading1</h1>",
                             "true"});
-                table1436.AddRow(new string[] {
+                table1444.AddRow(new string[] {
                             "Text_Component_Name_2",
                             "<p>normal</p>",
                             "true"});
 #line 20
- testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table1436, "When ");
+ testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table1444, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1437 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1445 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ProjectName",
                             "OwnerPermission"});
-                table1437.AddRow(new string[] {
+                table1445.AddRow(new string[] {
                             "AOC Name",
                             "2004 Rollout",
                             "Do not allow owner to be changed"});
 #line 24
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                        "via API", ((string)(null)), table1437, "When ");
+                        "via API", ((string)(null)), table1445, "When ");
 #line hidden
 #line 27
  testRunner.When("User navigates to End User landing page with \'20050_1_SI\' Self Service Identifier" +
@@ -272,55 +272,55 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1438 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1446 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1438.AddRow(new string[] {
+                table1446.AddRow(new string[] {
                             "VSCmdShell"});
 #line 38
  testRunner.When("User create static list with \"DAS_20050_2\" name on \"Applications\" page with follo" +
-                        "wing items", ((string)(null)), table1438, "When ");
+                        "wing items", ((string)(null)), table1446, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1439 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1447 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1439.AddRow(new string[] {
+                table1447.AddRow(new string[] {
                             "DAS_20050_SS_2",
                             "20050_2_SI",
                             "true",
                             "true",
                             "DAS_20050_2"});
 #line 41
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1439, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1447, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1440 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1448 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ExtraPropertiesText",
                             "ShowInSelfService"});
-                table1440.AddRow(new string[] {
+                table1448.AddRow(new string[] {
                             "Text_Component_Name_1",
                             "<p>Text component 1</p>",
                             "true"});
-                table1440.AddRow(new string[] {
+                table1448.AddRow(new string[] {
                             "Text_Component_Name_2",
                             "<p>Text component 2</p>",
                             "true"});
 #line 48
- testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table1440, "When ");
+ testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table1448, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1441 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1449 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ProjectName",
                             "OwnerPermission"});
-                table1441.AddRow(new string[] {
+                table1449.AddRow(new string[] {
                             "AOC Name",
                             "2004 Rollout",
                             "Do not allow owner to be changed"});
 #line 52
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                        "via API", ((string)(null)), table1441, "When ");
+                        "via API", ((string)(null)), table1449, "When ");
 #line hidden
 #line 55
  testRunner.When("User navigates to End User landing page with \'20050_2_SI\' Self Service Identifier" +

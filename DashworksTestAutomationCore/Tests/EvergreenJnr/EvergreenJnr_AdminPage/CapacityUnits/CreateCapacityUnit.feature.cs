@@ -197,12 +197,12 @@ this.FeatureBackground();
 #line 28
  testRunner.And("\'\' content is displayed in the \'Applications\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table680 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table688 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table680.AddRow(new string[] {
+                table688.AddRow(new string[] {
                             "NotDefaultCapacityUnit13720"});
 #line 29
- testRunner.When("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table680, "When ");
+ testRunner.When("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table688, "When ");
 #line hidden
 #line 32
  testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -286,16 +286,16 @@ this.FeatureBackground();
 #line 42
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table681 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table689 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault"});
-                table681.AddRow(new string[] {
+                table689.AddRow(new string[] {
                             "DefaultCapacityUnit13720",
                             "13720",
                             "true"});
 #line 43
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table681, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table689, "When ");
 #line hidden
 #line 46
  testRunner.And("User navigates to the \'Evergreen\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -335,12 +335,12 @@ this.FeatureBackground();
  testRunner.When("User enters \"DefaultCapacityUnit13720\" text in the Search field for \"Capacity Uni" +
                         "t\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table682 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table690 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table682.AddRow(new string[] {
+                table690.AddRow(new string[] {
                             "DefaultCapacityUnit13720"});
 #line 58
- testRunner.And("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table682, "And ");
+ testRunner.And("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table690, "And ");
 #line hidden
 #line 61
  testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -428,16 +428,16 @@ this.FeatureBackground();
 #line 71
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table683 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table691 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault"});
-                table683.AddRow(new string[] {
+                table691.AddRow(new string[] {
                             "SameNameCaseSensative",
                             "SameNameCaseSensative",
                             "false"});
 #line 72
- testRunner.And("User creates new Capacity Unit via api", ((string)(null)), table683, "And ");
+ testRunner.And("User creates new Capacity Unit via api", ((string)(null)), table691, "And ");
 #line hidden
 #line 75
  testRunner.And("User navigates to the \'Evergreen\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

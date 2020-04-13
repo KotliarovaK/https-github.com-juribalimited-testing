@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using AutomationUtils.Extensions;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
@@ -141,7 +143,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<Capacity_SummaryPage>();
             _driver.WaitForElementToBeDisplayed(page.Table);
-            Utils.Verify.IsTrue(page.Table.Displayed, "Table is not displayed for selected request type");
+            Verify.IsTrue(page.Table.Displayed, "Table is not displayed for selected request type");
         }
 
         [When(@"User updates the Override Dates on Capacity tab")]

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -46,13 +47,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                         //Get automation for this action
                         var automationId = DatabaseHelper.GetAutomationIdByActionId(actionId);
 
-                        var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automation/{automationId}/actionDeleteCommand";
+                        var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automations/{automationId}/actions";
                         var request = requestUri.GenerateRequest();
-                        request.AddParameter("selectedObjectsList", actionId);
+                        request.AddParameter("actionIds", actionId);
 
-                        var resp = _client.Evergreen.Put(request);
+                        var resp = _client.Evergreen.Delete(request);
 
-                        if (resp.StatusCode != HttpStatusCode.OK)
+                        if (resp.StatusCode != HttpStatusCode.NoContent)
                         {
                             Logger.Write($"Unable to delete Action for Automation via API: {resp.StatusCode}");
                         }

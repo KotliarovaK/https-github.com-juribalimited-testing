@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -9,6 +10,7 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -37,9 +39,38 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForDataLoadingInActionsPanel();
-            _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
             menu.ListDetailsButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks the Dashboard Details button")]
+        public void WhenUserClicksTheDashboardDetailsButton()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForElementToBeDisplayed(menu.DashboardsDetailsButton);
+            menu.DashboardsDetailsButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks the Permissions button")]
+        public void WhenUserClicksThePermissionsButton()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForElementToBeDisplayed(menu.PermissionsButton);
+            menu.PermissionsButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks the Dashboard Permissions button")]
+        public void WhenUserClicksTheDashboardPermissionsButton()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForElementToBeDisplayed(menu.DashboardPermissionsButton);
+            menu.DashboardPermissionsButton.Click();
             _driver.WaitForDataLoading();
         }
 
@@ -47,7 +78,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheColumnsButton()
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
-            _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(menu.ColumnButton);
             menu.ColumnButton.Click();
@@ -58,7 +88,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheFiltersButton()
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
-            _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(menu.FilterButton);
             menu.FilterButton.Click();
@@ -69,7 +98,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheAssociationButton()
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
-            _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(menu.AssociationButton);
             menu.AssociationButton.Click();
@@ -89,14 +117,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(button.CreateActionButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.CreateActionButton.GetAttribute("aria-disabled")), "Filter Button is active!");
+            Verify.IsTrue(Convert.ToBoolean(button.CreateActionButton.GetAttribute("aria-disabled")), "Filter Button is active!");
         }
 
         [Then(@"Create button is not displayed")]
         public void ThenCreateButtonIsNotDisplayed()
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(button.CreateActionButton.Displayed(),
+            Verify.IsFalse(button.CreateActionButton.Displayed(),
                 "Create button is displayed on the Base Dashboard Page");
         }
 
@@ -138,7 +166,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(menu.FilterButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")),
+            Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")),
                 "Filter button on AGgrid is active");
         }
 
@@ -146,7 +174,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyLinkIsDisplayedForFirstRowInTheColumn(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.AreEqual("Empty", page.GetColumnContentByColumnName(columnName).First(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual("Empty", page.GetColumnContentByColumnName(columnName).First(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Account Profile menu is displayed correctly")]
@@ -191,7 +219,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Waiting for changed List details button state
             Thread.Sleep(500);
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")),
+            Verify.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")),
                 "List Details Button is active");
         }
 

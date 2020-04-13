@@ -151,11 +151,11 @@ this.FeatureBackground();
 #line 16
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1490 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1498 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
 #line 17
  testRunner.When("User add \"App Phoenix Field\" filter where type is \"Not empty\" with added column a" +
-                        "nd following value:", ((string)(null)), table1490, "When ");
+                        "nd following value:", ((string)(null)), table1498, "When ");
 #line hidden
 #line 19
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

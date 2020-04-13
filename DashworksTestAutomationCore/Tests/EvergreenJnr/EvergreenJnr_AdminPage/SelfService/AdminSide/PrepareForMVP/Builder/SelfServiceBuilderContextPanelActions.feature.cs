@@ -134,7 +134,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1214 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1222 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -148,7 +148,7 @@ this.FeatureBackground();
                             "ScopeId",
                             "scopeName",
                             "Scope"});
-                table1214.AddRow(new string[] {
+                table1222.AddRow(new string[] {
                             "1",
                             "TestProj_1",
                             "Test_ID_1",
@@ -163,7 +163,7 @@ this.FeatureBackground();
                             "bob",
                             "1803 Apps"});
 #line 10
-    testRunner.When("User creates Self Service via API", ((string)(null)), table1214, "When ");
+    testRunner.When("User creates Self Service via API", ((string)(null)), table1222, "When ");
 #line hidden
 #line 13
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -178,32 +178,32 @@ this.FeatureBackground();
 #line 16
  testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1215 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1223 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "ObjectTypeId",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1215.AddRow(new string[] {
+                table1223.AddRow(new string[] {
                             "Test_ID_1",
                             "TestPageName_1",
                             "3",
                             "TestPageDisplayName_1",
                             "true"});
-                table1215.AddRow(new string[] {
+                table1223.AddRow(new string[] {
                             "Test_ID_2",
                             "TestPageName_2",
                             "3",
                             "TestPageDisplayName_2",
                             "true"});
-                table1215.AddRow(new string[] {
+                table1223.AddRow(new string[] {
                             "Test_ID_3",
                             "TestPageName_3",
                             "3",
                             "TestPageDisplayName_3",
                             "true"});
 #line 17
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1215, "When ");
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1223, "When ");
 #line hidden
 #line 22
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -269,7 +269,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1216 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1224 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -283,7 +283,7 @@ this.FeatureBackground();
                             "ScopeId",
                             "scopeName",
                             "Scope"});
-                table1216.AddRow(new string[] {
+                table1224.AddRow(new string[] {
                             "1",
                             "TestProj_2",
                             "Test_ID_2",
@@ -298,7 +298,7 @@ this.FeatureBackground();
                             "bob",
                             "1803 Apps"});
 #line 28
-    testRunner.When("User creates Self Service via API", ((string)(null)), table1216, "When ");
+    testRunner.When("User creates Self Service via API", ((string)(null)), table1224, "When ");
 #line hidden
 #line 31
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -313,67 +313,67 @@ this.FeatureBackground();
 #line 34
  testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1217 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1225 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "ObjectTypeId",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1217.AddRow(new string[] {
+                table1225.AddRow(new string[] {
                             "Test_ID_1",
                             "TestPageName_1",
                             "3",
                             "TestPageDisplayName_1",
                             "true"});
-                table1217.AddRow(new string[] {
+                table1225.AddRow(new string[] {
                             "Test_ID_2",
                             "TestPageName_2",
                             "3",
                             "TestPageDisplayName_2",
                             "true"});
-                table1217.AddRow(new string[] {
+                table1225.AddRow(new string[] {
                             "Test_ID_3",
                             "TestPageName_3",
                             "3",
                             "TestPageDisplayName_3",
                             "true"});
 #line 35
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1217, "When ");
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1225, "When ");
 #line hidden
 #line 40
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1218 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1226 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table1218.AddRow(new string[] {
+                table1226.AddRow(new string[] {
                             "Edit"});
-                table1218.AddRow(new string[] {
+                table1226.AddRow(new string[] {
                             "Move to bottom"});
 #line 41
     testRunner.Then("User clicks on cogmenu button for item with \'Page\' type and \'TestPageName_1\' name" +
-                        " on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1218, "Then ");
+                        " on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1226, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1219 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1227 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table1219.AddRow(new string[] {
+                table1227.AddRow(new string[] {
                             "Edit"});
-                table1219.AddRow(new string[] {
+                table1227.AddRow(new string[] {
                             "Move to top"});
-                table1219.AddRow(new string[] {
+                table1227.AddRow(new string[] {
                             "Move to bottom"});
 #line 45
  testRunner.Then("User clicks on cogmenu button for item with \'Page\' type and \'TestPageName_2\' name" +
-                        " on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1219, "Then ");
+                        " on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1227, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1220 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1228 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table1220.AddRow(new string[] {
+                table1228.AddRow(new string[] {
                             "Edit"});
-                table1220.AddRow(new string[] {
+                table1228.AddRow(new string[] {
                             "Move to top"});
 #line 50
  testRunner.Then("User clicks on cogmenu button for item with \'Page\' type and \'TestPageName_3\' name" +
-                        " on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1220, "Then ");
+                        " on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1228, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

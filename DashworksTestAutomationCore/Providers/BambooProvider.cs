@@ -4,17 +4,17 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Utils;
-using DashworksTestAutomationCore.Utils;
 
 namespace DashworksTestAutomation.Providers
 {
     public static class BambooProvider
     {
         public static string BaseUrl => "https://panda.corp.juriba.com";
-        public static readonly string Username = ConfigReader.ByKey("bambooUsername");
-        public static readonly string Password = ConfigReader.ByKey("bambooPassword");
-        public static readonly string BuildResultKey = ConfigReader.ByKey("bambooBuildResultKey");
+        public static readonly string Username = ConfigurationManager.AppSettings["bamboo.username"];
+        public static readonly string Password = ConfigurationManager.AppSettings["bamboo.password"];
+        public static readonly string BuildResultKey = ConfigurationManager.AppSettings["bamboo.buildResultKey"];
         public static int BuildNumber
         {
             get

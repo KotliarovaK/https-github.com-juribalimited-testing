@@ -10,17 +10,18 @@ using DashworksTestAutomation.Utils;
 using RestSharp;
 using TechTalk.SpecFlow;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios
 {
     [Binding]
     class RemoveSelfServiceAfterScenario : SpecFlowContext
     {
-        private readonly RemoveSelfServiceMethods _removeSelfServiceMethods;
+        private readonly SelfServiceApiMethods _removeSelfServiceMethods;
 
         public RemoveSelfServiceAfterScenario(SelfServices selfServices, RestWebClient client)
         {
-            _removeSelfServiceMethods = new RemoveSelfServiceMethods(selfServices, client);
+            _removeSelfServiceMethods = new SelfServiceApiMethods(selfServices, client);
         }
 
         [AfterScenario("Cleanup", Order = 10)]

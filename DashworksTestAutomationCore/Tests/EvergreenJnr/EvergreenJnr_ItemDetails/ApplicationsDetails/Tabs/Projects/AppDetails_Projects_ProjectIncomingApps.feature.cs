@@ -159,21 +159,21 @@ this.FeatureBackground();
 #line 17
  testRunner.Then("\'Empty\' content is displayed in the \'Application\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2560 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2571 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2560.AddRow(new string[] {
+                table2571.AddRow(new string[] {
                             "Application"});
 #line 18
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Application\'" +
-                        " column:", ((string)(null)), table2560, "When ");
+                        " column:", ((string)(null)), table2571, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2561 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2572 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2561.AddRow(new string[] {
+                table2572.AddRow(new string[] {
                             "[Default (Application)]"});
 #line 21
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Path\' col" +
-                        "umn:", ((string)(null)), table2561, "Then ");
+                        "umn:", ((string)(null)), table2572, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

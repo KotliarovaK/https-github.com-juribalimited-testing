@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
-using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 {
@@ -71,6 +67,43 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             }
         }
 
+        [When(@"User clicks '(.*)' option in cogmenu for '(.*)' list")]
+        public void WhenUserClicksOptionInCog_MenuForList(string option, string listName)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            //Close cog-menu if it is still opened from previous step
+            if (cogMenu.CogMenuItems.Any(x => x.Displayed()))
+            {
+                cogMenu.BodyContainer.Click();
+            }
+
+            var leftPanel = _driver.NowAt<CustomListElement>();
+            var itemCogMenu = leftPanel.GetSettingsIconForList(listName);
+
+            _driver.MouseHover(itemCogMenu);
+            itemCogMenu.Click();
+            cogMenu.GetCogMenuOptionByName(option).Click();
+        }
+
+        [When(@"User clicks cogmenu for '(.*)' list and sees following cog-menu options")]
+        public void WhenUserClicksCogMenuForListAndSeesFollowingCogMenuOptions(string listName, Table options)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            cogMenu.BodyContainer.Click();
+
+            var leftPanel = _driver.NowAt<CustomListElement>();
+            var itemCogMenu = leftPanel.GetSettingsIconForList(listName);
+
+            _driver.MouseHover(itemCogMenu);
+            itemCogMenu.Click();
+
+            List<String> expectedCogMenuOptions = options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()).ToList();
+            List<String> cogMenuOptions = cogMenu.CogMenuItems.Select(x => x.GetText()).ToList();
+
+            Verify.AreEqual(cogMenuOptions, expectedCogMenuOptions,
+                "Items are not the same");
+        }
+
         [When(@"User moves '(.*)' item from '(.*)' column to the '(.*)' position")]
         public void WhenUserMovesItemFromColumnToThePosition(string columnContent, string column, string position)
         {
@@ -90,16 +123,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenCogMenuIsNotDisplayedOnTheAdminPage()
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
-            Utils.Verify.IsFalse(cogMenu.CogMenu.Displayed(), "Cog menu is displayed");
+            Verify.IsFalse(cogMenu.CogMenu.Displayed(), "Cog menu is displayed");
         }
 
         [When(@"User clicks '(.*)' option in opened Cog-menu")]
         public void WhenUserClicksOptionInOpenedCogMenu(string option)
         {
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
-            cogMenu.GetCogMenuOptionByName(option).Click();
-            _driver.WaitForDataLoading();
+            ClickOnCogMenuOption(option);
         }
 
         [Then(@"Cog-menu DDL is displayed in High Contrast mode")]
@@ -109,8 +139,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 
             _driver.WaitForDataLoading();
             cogMenu.CogMenu.Click();
-            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", cogMenu.GetCogMenuDropdownColor(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.AreEqual("rgba(0, 0, 0, 0)", cogMenu.GetCogMenuDropdownLabelColor(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual("rgba(21, 40, 69, 1)", cogMenu.GetCogMenuDropdownColor(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual("rgba(0, 0, 0, 0)", cogMenu.GetCogMenuDropdownLabelColor(), "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        public void ClickOnCogMenuOption(string option)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
+            cogMenu.GetCogMenuOptionByName(option).Click();
+            _driver.WaitForDataLoading();
         }
     }
 }

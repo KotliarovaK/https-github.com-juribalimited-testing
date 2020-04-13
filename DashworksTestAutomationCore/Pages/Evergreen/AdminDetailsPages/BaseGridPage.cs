@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Utils;
-using NUnit.Framework.Constraints;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using AutomationUtils.Extensions;
+using AutomationUtils.Utils;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
@@ -23,12 +23,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public const string GroupedValue =
             ".//div[@role='row'][@row-index]//span[@class='ag-group-value']";
 
-        public const string ProjectInFilterDropdown =
-            "//mat-option[@class='mat-option mat-option-multiple ng-star-inserted']";
-
-        public const string TeamInFilterDropdown =
-            "//mat-option[@class='mat-option mat-option-multiple ng-star-inserted mat-selected']";
-
         public const string ObjectsToAdd = "//div[@class='mat-list-text']/span";
 
         public const string Row = "//div[@col-id='name']//a";
@@ -36,6 +30,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public string AllCellsInTheGrid = ".//div[@ref='eBodyViewport']//div[@role='gridcell']";
 
         private string GridCellByColumnName = ".//div[@col-id='{0}' and @role='gridcell']";
+
+        private static string NamedLinkSelector = ".//a[@href]//span[text()='{0}']";
 
         //TODO I think there should be some duplicated webElement simillar to this one
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-menu')]")]
@@ -103,7 +99,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='action-container']//button[@automation = 'grid bar export']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class = 'top-tools-inner']//button[@automation = 'grid bar export']")]
         public IWebElement ExportButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'action')][not(contains(@class,'edit'))]//button[@aria-label='reload']")]
@@ -149,14 +145,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
         public IWebElement TableBody { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
-        public IList<IWebElement> ProjectListInFilterDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
-        public IList<IWebElement> ProjectsTypeListInFilterDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = TeamInFilterDropdown)]
-        public IList<IWebElement> TeamListInFilterDropdown { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//mat-option[contains(@class, 'mat-option-multiple')]")]
+        public IList<IWebElement> OptionsListInFilterDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = Row)]
         public IList<IWebElement> RowsList { get; set; }
@@ -431,7 +421,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetGroupedRowByContent(string groupedValue)
         {
-            var selector = By.XPath($"{GroupedValue}//div[text()='{groupedValue}']/ancestor::span[contains(@class,'ag-cell-wrapper')]");
+            var selector = By.XPath($"{GroupedValue}//*[text()='{groupedValue}']/ancestor::span[contains(@class,'ag-cell-wrapper')]");
             if (Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
                 return Driver.FindElement(selector);
             else
@@ -472,6 +462,28 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             {
                 throw new Exception($"Unable to collapse '{groupedValue}' row: {e}");
             }
+        }
+
+        public bool CheckHrefByGroupedValue(string groupedValue)
+        {
+            var row = GetGroupedRowByContent(groupedValue);
+            var allLinks = row.FindElements(By.XPath(".//a[@href]"));
+            var containsLink = allLinks.Any();
+            return containsLink;
+        }
+
+        #endregion
+
+        #region Links
+
+        public IWebElement GetLinkByName(string linkName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Medium)
+        {
+            var by = By.XPath(string.Format(NamedLinkSelector, linkName));
+            if (!Driver.IsElementDisplayed(by, wait))
+            {
+                throw new Exception($"Link with '{linkName}' text is not displayed");
+            }
+            return Driver.FindElement(by);
         }
 
         #endregion

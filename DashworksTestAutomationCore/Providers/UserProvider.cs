@@ -4,15 +4,14 @@ using System.Configuration;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO;
-using DashworksTestAutomationCore.Utils;
 using RestSharp;
 
 namespace DashworksTestAutomation.Providers
 {
     internal class UserProvider
     {
-        public static string DefaultUserLanguage = ConfigReader.ByKey("userLanguage");
-        private static readonly bool UseSupperAdmin = bool.Parse(ConfigReader.ByKey("useSupperAdmin"));
+        public static string DefaultUserLanguage = ConfigurationManager.AppSettings["user.language"];
+        private static readonly bool UseSupperAdmin = bool.Parse(ConfigurationManager.AppSettings["useSupperAdmin"]);
 
         static readonly RestClient client = new RestClient(JuribaAutomationApiProvider.Uri);
 
@@ -20,13 +19,13 @@ namespace DashworksTestAutomation.Providers
 
         //private static int _iter;
 
-        public static string Password = ConfigReader.ByKey("userPassword");
+        public static string Password = ConfigurationManager.AppSettings["user.password"];
 
         private static readonly List<UserDto> _accounts = new List<UserDto> { };
 
         static UserProvider()
         {
-            for (var i = 2; i < int.Parse(ConfigReader.ByKey("availableUsersRange")); i++)
+            for (var i = 2; i < int.Parse(ConfigurationManager.AppSettings["availableUsersRange"]); i++)
                 _accounts.Add(new UserDto
                 {
                     Username = $"automation_admin{i}",
@@ -39,7 +38,7 @@ namespace DashworksTestAutomation.Providers
         {
             return new UserDto()
             {
-                Username = ConfigReader.ByKey("userLogin"),
+                Username = $"admin",
                 Password = Password,
                 Language = DefaultUserLanguage
             };

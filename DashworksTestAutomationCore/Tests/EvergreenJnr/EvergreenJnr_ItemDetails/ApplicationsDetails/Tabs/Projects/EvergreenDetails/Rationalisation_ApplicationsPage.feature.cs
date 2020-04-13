@@ -161,14 +161,14 @@ this.FeatureBackground();
 #line 17
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2568 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2579 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2568.AddRow(new string[] {
+                table2579.AddRow(new string[] {
                             "Target App",
                             "Corel WordPerfect Key Demo"});
 #line 18
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2568, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2579, "Then ");
 #line hidden
 #line 21
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -181,14 +181,14 @@ this.FeatureBackground();
 #line 23
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2569 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2580 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2569.AddRow(new string[] {
+                table2580.AddRow(new string[] {
                             "Target App",
                             "Rosoft Engineering Rosoft MP3 Encoder, Limited Edition"});
 #line 24
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2569, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2580, "Then ");
 #line hidden
 #line 27
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -271,18 +271,18 @@ this.FeatureBackground();
 #line 39
  testRunner.Then("\'CANCEL\' button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2570 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2581 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2570.AddRow(new string[] {
+                table2581.AddRow(new string[] {
                             "FORWARD PATH"});
-                table2570.AddRow(new string[] {
+                table2581.AddRow(new string[] {
                             "KEEP"});
-                table2570.AddRow(new string[] {
+                table2581.AddRow(new string[] {
                             "RETIRE"});
-                table2570.AddRow(new string[] {
+                table2581.AddRow(new string[] {
                             "UNCATEGORISED"});
 #line 40
- testRunner.Then("following Values are displayed in the \'Rationalisation\' dropdown:", ((string)(null)), table2570, "Then ");
+ testRunner.Then("following Values are displayed in the \'Rationalisation\' dropdown:", ((string)(null)), table2581, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -361,14 +361,14 @@ this.FeatureBackground();
 #line 56
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2571 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2582 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2571.AddRow(new string[] {
+                table2582.AddRow(new string[] {
                             "Rationalisation",
                             "RETIRE"});
 #line 57
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2571, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2582, "Then ");
 #line hidden
 #line 60
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -405,14 +405,14 @@ this.FeatureBackground();
 #line 70
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2572 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2583 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2572.AddRow(new string[] {
+                table2583.AddRow(new string[] {
                             "Rationalisation",
                             "FORWARD PATH"});
 #line 71
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2572, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2583, "Then ");
 #line hidden
 #line 74
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -449,14 +449,14 @@ this.FeatureBackground();
 #line 84
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2573 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2584 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2573.AddRow(new string[] {
+                table2584.AddRow(new string[] {
                             "Rationalisation",
                             "FORWARD PATH"});
 #line 85
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2573, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2584, "Then ");
 #line hidden
 #line 88
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -467,14 +467,14 @@ this.FeatureBackground();
 #line 90
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2574 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2585 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2574.AddRow(new string[] {
+                table2585.AddRow(new string[] {
                             "Rationalisation",
                             "KEEP"});
 #line 91
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2574, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2585, "Then ");
 #line hidden
 #line 94
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -564,17 +564,17 @@ this.FeatureBackground();
 #line 108
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2575 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2586 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2575.AddRow(new string[] {
+                table2586.AddRow(new string[] {
                             "Rationalisation",
                             "FORWARD PATH"});
-                table2575.AddRow(new string[] {
+                table2586.AddRow(new string[] {
                             "Target App",
                             "National Instruments NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) 7.1.0"});
 #line 109
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2575, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2586, "Then ");
 #line hidden
 #line 114
  testRunner.When("User navigates to the \'Application\' details page for the item with \'151\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -589,14 +589,14 @@ this.FeatureBackground();
 #line 117
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2576 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2587 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2576.AddRow(new string[] {
+                table2587.AddRow(new string[] {
                             "Rationalisation",
                             "KEEP"});
 #line 118
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2576, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2587, "Then ");
 #line hidden
 #line 122
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -614,17 +614,17 @@ this.FeatureBackground();
 #line 126
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2577 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2588 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2577.AddRow(new string[] {
+                table2588.AddRow(new string[] {
                             "Rationalisation",
                             "FORWARD PATH"});
-                table2577.AddRow(new string[] {
+                table2588.AddRow(new string[] {
                             "Target App",
                             "Altiris Carbon Copy Agent Package 6.2.1144"});
 #line 127
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2577, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2588, "Then ");
 #line hidden
 #line 132
  testRunner.When("User navigates to the \'Application\' details page for the item with \'251\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -638,17 +638,17 @@ this.FeatureBackground();
 #line 135
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2578 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2589 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2578.AddRow(new string[] {
+                table2589.AddRow(new string[] {
                             "Rationalisation",
                             "FORWARD PATH"});
-                table2578.AddRow(new string[] {
+                table2589.AddRow(new string[] {
                             "Target App",
                             "Altiris Carbon Copy Agent Package 6.2.1144"});
 #line 136
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2578, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2589, "Then ");
 #line hidden
 #line 140
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

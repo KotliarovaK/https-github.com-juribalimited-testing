@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -9,6 +10,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Helpers
 {
@@ -95,9 +97,12 @@ namespace DashworksTestAutomation.Helpers
         {
             SelectOperator();
             _driver.WaitForDataLoading();
-            _driver.FindElement(
-                    By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
-                .SendKeys(_value);
+            if (_driver.FindElements(By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']")).Count > 0)
+            {
+                _driver.FindElement(
+                        By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .SendKeys(_value);
+            }
             _driver.FindElement(
                     By.XPath($".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{_value}')]"))
                 .Click();
@@ -144,6 +149,9 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
+                if (string.IsNullOrEmpty(row["Value"]))
+                    return;
+
                 _driver.FindElement(
                         By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                     .SendKeys(row["Value"]);
@@ -299,11 +307,11 @@ namespace DashworksTestAutomation.Helpers
                 switch (_operatorValue)
                 {
                     case "Does not equal":
-                        Utils.Verify.IsTrue(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => !value.Equals(x)), "PLEASE ADD EXCEPTION MESSAGE");
+                        Verify.IsTrue(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => !value.Equals(x)), "PLEASE ADD EXCEPTION MESSAGE");
                         break;
 
                     case "Equals":
-                        Utils.Verify.IsTrue(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => value.Equals(x)), "PLEASE ADD EXCEPTION MESSAGE");
+                        Verify.IsTrue(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => value.Equals(x)), "PLEASE ADD EXCEPTION MESSAGE");
                         break;
 
                     default:
@@ -392,7 +400,7 @@ namespace DashworksTestAutomation.Helpers
                     var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
                         .Select(value => value.Text).ToList();
                     _driver.WaitForDataLoading();
-                    Utils.Verify.Contains(row["Values"], addedOptions, "PLEASE ADD EXCEPTION MESSAGE");
+                    Verify.Contains(row["Values"], addedOptions, "PLEASE ADD EXCEPTION MESSAGE");
                 }
             }
             SaveFilter();

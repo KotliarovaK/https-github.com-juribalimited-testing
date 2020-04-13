@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
@@ -14,11 +15,13 @@ namespace DashworksTestAutomation.Steps.Base
     [Binding]
     internal class BaseActions : SpecFlowContext
     {
-        private readonly RemoteWebDriver _driver;
+        private RemoteWebDriver _driver;
+        private readonly BrowsersList _browsersList;
 
-        public BaseActions(RemoteWebDriver driver)
+        public BaseActions(RemoteWebDriver driver, BrowsersList browsersList)
         {
-            _driver = driver;
+            _driver = browsersList.GetBrowser();
+            _browsersList = browsersList;
         }
 
         [Then(@"User click back button in the browser")]
@@ -46,6 +49,13 @@ namespace DashworksTestAutomation.Steps.Base
             _driver.CheckConsoleErrors("the server responded with a status of 404(Not Found)");
         }
 
+        [Then(@"Number of requests to '(.*)' is not greater than '(.*)'")]
+        public void ThenNumberOfRequestsToHostIsEqualToExpectedNumber(string partOfLink, string requestNumber)
+        {
+            _driver.WaitForDataLoading();
+            Verify.That(_driver.GetAllRequests().FindAll(x => x.Contains(partOfLink)).Count, Is.LessThan(Int32.Parse(requestNumber)), $"Requests count is greater than {requestNumber}.");
+        }
+
         [When(@"User clicks Body container")]
         public void WhenUserClicksBodyContainer()
         {
@@ -63,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Base
         [Then(@"'(.*)' text is highlighted")]
         public void ThenSelectedTextIsHighlighted(string textSelected)
         {
-            Utils.Verify.That(_driver.GetSelectedText(), Is.EqualTo(textSelected));
+            Verify.That(_driver.GetSelectedText(), Is.EqualTo(textSelected));
         }
 
         [When(@"User waits for '(.*)' seconds")]
@@ -81,6 +91,13 @@ namespace DashworksTestAutomation.Steps.Base
         public void WhenUserSwitchesToPreviousTab()
         {
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
+        }
+
+        [Given(@"User creates new browser")]
+        public void GivenUserCreatesNewBrowser()
+        {
+            _browsersList.AddDriver(BrowserFactory.CreateDriver());
+            _driver = _browsersList.GetBrowser(1);
         }
 
         #region Check/Navigate to URL

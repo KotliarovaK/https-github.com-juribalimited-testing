@@ -134,14 +134,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table614 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table622 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table614.AddRow(new string[] {
+                table622.AddRow(new string[] {
                             "17974_Automation",
                             "17974",
                             "true",
@@ -149,7 +149,7 @@ this.FeatureBackground();
                             "Users Readiness Columns & Filters",
                             "Manual"});
 #line 10
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table614, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table622, "When ");
 #line hidden
 #line 13
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -223,16 +223,16 @@ this.FeatureBackground();
 #line 37
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table615 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table623 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table615.AddRow(new string[] {
+                table623.AddRow(new string[] {
                             "zUserAutom: Stage 3 \\ DDL Slot Task"});
-                table615.AddRow(new string[] {
+                table623.AddRow(new string[] {
                             "zUserAutom: Stage 3 \\ DDL Slot Task (Date)"});
-                table615.AddRow(new string[] {
+                table623.AddRow(new string[] {
                             "zUserAutom: Stage 3 \\ DDL Slot Task (Slot)"});
 #line 38
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table615, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table623, "When ");
 #line hidden
 #line 43
  testRunner.Then("\'STARTED\' content is displayed in the \'zUserAutom: Stage 3 \\ DDL Slot Task\' colum" +
@@ -299,14 +299,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table616 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table624 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table616.AddRow(new string[] {
+                table624.AddRow(new string[] {
                             "17829_Automation",
                             "17829",
                             "true",
@@ -314,7 +314,7 @@ this.FeatureBackground();
                             "Mailbox Readiness Columns & Filters",
                             "Manual"});
 #line 49
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table616, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table624, "When ");
 #line hidden
 #line 52
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -388,18 +388,18 @@ this.FeatureBackground();
 #line 76
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table617 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table625 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table617.AddRow(new string[] {
+                table625.AddRow(new string[] {
                             "zMailboxAu: Stage 3 \\ Radio Date Owner"});
-                table617.AddRow(new string[] {
+                table625.AddRow(new string[] {
                             "zMailboxAu: Stage 3 \\ Radio Date Owner (Date)"});
-                table617.AddRow(new string[] {
+                table625.AddRow(new string[] {
                             "zMailboxAu: Stage 3 \\ Radio Date Owner (Owner)"});
-                table617.AddRow(new string[] {
+                table625.AddRow(new string[] {
                             "zMailboxAu: Stage 3 \\ Radio Date Owner (Team)"});
 #line 77
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table617, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table625, "When ");
 #line hidden
 #line 83
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -604,14 +604,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table618 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table626 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table618.AddRow(new string[] {
+                table626.AddRow(new string[] {
                             "18265_Automation",
                             "18265",
                             "true",
@@ -619,7 +619,7 @@ this.FeatureBackground();
                             "2004 Rollout",
                             "Manual"});
 #line 119
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table618, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table626, "When ");
 #line hidden
 #line 122
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -685,12 +685,12 @@ this.FeatureBackground();
 #line 144
  testRunner.When("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table619 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table627 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table619.AddRow(new string[] {
+                table627.AddRow(new string[] {
                             "Operation ID"});
 #line 145
- testRunner.Then("content is present in the following newly added columns:", ((string)(null)), table619, "Then ");
+ testRunner.Then("content is present in the following newly added columns:", ((string)(null)), table627, "Then ");
 #line hidden
 #line 148
  testRunner.When("User enters \"18265_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -758,13 +758,13 @@ this.FeatureBackground();
 #line 155
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table620 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table628 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table620.AddRow(new string[] {
+                table628.AddRow(new string[] {
                             "00I0COBFWHOF27"});
 #line 156
  testRunner.When("User add \"Hostname\" filter where type is \"Equals\" with added column and following" +
-                        " value:", ((string)(null)), table620, "When ");
+                        " value:", ((string)(null)), table628, "When ");
 #line hidden
 #line 159
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -772,14 +772,14 @@ this.FeatureBackground();
 #line 160
  testRunner.When("User create dynamic list with \"20065_List\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table621 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table629 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table621.AddRow(new string[] {
+                table629.AddRow(new string[] {
                             "20065_Automation",
                             "20065",
                             "true",
@@ -787,7 +787,7 @@ this.FeatureBackground();
                             "20065_List",
                             "Manual"});
 #line 161
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table621, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table629, "When ");
 #line hidden
 #line 164
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

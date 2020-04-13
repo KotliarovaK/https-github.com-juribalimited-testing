@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Readiness;
 using DashworksTestAutomation.DTO.RuntimeVariables.Readiness;
@@ -14,6 +15,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
 {
@@ -95,7 +97,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         {
             var createReadiness = _driver.NowAt<CreateReadinessPage>();
 
-            Utils.Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
+            Verify.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
                 createReadiness.ColourPicker.Select(x => x.Text).ToList(), "Incorrect options in lists dropdown");
         }
 
@@ -104,9 +106,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         {
             var createReadiness = _driver.NowAt<CreateReadinessPage>();
 
-            Utils.Verify.That(createReadiness.GetColourStatusNumber(), Is.GreaterThan(0));
-            Utils.Verify.That(createReadiness.GetColourStatusTextNumber(), Is.GreaterThan(0));
-            Utils.Verify.That(createReadiness.GetColourStatusTextNumber(), Is.EqualTo(createReadiness.GetColourStatusTextNumber()));
+            Verify.That(createReadiness.GetColourStatusNumber(), Is.GreaterThan(0));
+            Verify.That(createReadiness.GetColourStatusTextNumber(), Is.GreaterThan(0));
+            Verify.That(createReadiness.GetColourStatusTextNumber(), Is.EqualTo(createReadiness.GetColourStatusTextNumber()));
         }
 
         [Then(@"List of available colours is not displayed to user on Edit Readiness")]
@@ -114,7 +116,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         {
             var createReadiness = _driver.NowAt<CreateReadinessPage>();
 
-            Utils.Verify.That(createReadiness.GetColourStatusTextNumber(), Is.EqualTo(0));
+            Verify.That(createReadiness.GetColourStatusTextNumber(), Is.EqualTo(0));
         }
 
         [When(@"User remembers opened Readiness data on Edit Readiness")]
@@ -139,7 +141,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         {
             var page = _driver.NowAt<BaseDashboardPage>();
 
-            Utils.Verify.That(readinessDto.ReadinessName, Is.EqualTo(page.GetTextbox("Readiness").GetAttribute("value")), "Name is different from stored one");
+            Verify.That(readinessDto.ReadinessName, Is.EqualTo(page.GetTextbox("Readiness").GetAttribute("value")), "Name is different from stored one");
         }
 
         [Then(@"Filtered readiness item equals to stored one")]
@@ -151,8 +153,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             var tooltip = page.GetColumnContentByColumnName("Tooltip").First();
             var defaultFor = page.GetColumnContentByColumnName("Default for Applications").First();
 
-            Utils.Verify.That(readinessDto.Tooltip, Is.EqualTo(tooltip), "Tooltip is different from stored one");
-            Utils.Verify.That(readinessDto.DefaultForApplications.ToString(), Is.EqualTo(defaultFor).IgnoreCase, "Default For state different from stored one");
+            Verify.That(readinessDto.Tooltip, Is.EqualTo(tooltip), "Tooltip is different from stored one");
+            Verify.That(readinessDto.DefaultForApplications.ToString(), Is.EqualTo(defaultFor).IgnoreCase, "Default For state different from stored one");
         }
 
         [Then(@"Readiness ""(.*)"" displayed before Ignore")]
@@ -161,7 +163,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             var readiness = _driver.NowAt<ReadinessPage>();
             List<string> labels = readiness.GetListOfReadinessLabel();
 
-            Utils.Verify.That(labels.FindIndex(x => x.Equals(title)) + 1, Is.EqualTo(labels.FindIndex(x => x.Equals("IGNORE"))));
+            Verify.That(labels.FindIndex(x => x.Equals(title)) + 1, Is.EqualTo(labels.FindIndex(x => x.Equals("IGNORE"))));
         }
     }
 }

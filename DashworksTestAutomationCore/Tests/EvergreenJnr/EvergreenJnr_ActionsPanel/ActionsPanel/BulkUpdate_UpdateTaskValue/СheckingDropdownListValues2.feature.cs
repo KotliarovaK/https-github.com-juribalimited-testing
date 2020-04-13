@@ -144,12 +144,12 @@ this.FeatureBackground();
 #line 14
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table194 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table202 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table194.AddRow(new string[] {
+                table202.AddRow(new string[] {
                             "Empty"});
 #line 15
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table194, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table202, "When ");
 #line hidden
 #line 18
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -231,7 +231,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table195 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table203 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
@@ -239,7 +239,7 @@ this.FeatureBackground();
                             "ObjectType",
                             "Tuesday",
                             "Tasks"});
-                table195.AddRow(new string[] {
+                table203.AddRow(new string[] {
                             "2004 Rollout",
                             "Slot 17639",
                             "17639",
@@ -248,7 +248,7 @@ this.FeatureBackground();
                             "10",
                             "Migration \\ Migrated Date"});
 #line 30
- testRunner.When("User creates new Slot via Api", ((string)(null)), table195, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table203, "When ");
 #line hidden
 #line 33
  testRunner.And("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -256,12 +256,12 @@ this.FeatureBackground();
 #line 34
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table196 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table204 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table196.AddRow(new string[] {
+                table204.AddRow(new string[] {
                             "00I0COBFWHOF27"});
 #line 35
- testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table196, "And ");
+ testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table204, "And ");
 #line hidden
 #line 38
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -281,14 +281,14 @@ this.FeatureBackground();
 #line 43
  testRunner.When("User enters next \'Tuesday\' day to \'Date\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table197 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table205 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table197.AddRow(new string[] {
+                table205.AddRow(new string[] {
                             "None"});
-                table197.AddRow(new string[] {
+                table205.AddRow(new string[] {
                             "Slot 17639"});
 #line 44
- testRunner.Then("User sees that \'Capacity Slot\' dropdown contains following options:", ((string)(null)), table197, "Then ");
+ testRunner.Then("User sees that \'Capacity Slot\' dropdown contains following options:", ((string)(null)), table205, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -347,12 +347,12 @@ this.FeatureBackground();
 #line 53
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table198 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table206 = new TechTalk.SpecFlow.Table(new string[] {
                             "StartDateInclusive",
                             "EndDateInclusive"});
 #line 54
  testRunner.When("User add \"2004: Migration \\ Migrated Date\" filter where type is \"Not empty\" with " +
-                        "added column and Date options", ((string)(null)), table198, "When ");
+                        "added column and Date options", ((string)(null)), table206, "When ");
 #line hidden
 #line 56
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -360,12 +360,12 @@ this.FeatureBackground();
 #line 57
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table199 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table207 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table199.AddRow(new string[] {
+                table207.AddRow(new string[] {
                             "CDQ172G3MZS444"});
 #line 58
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table199, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table207, "When ");
 #line hidden
 #line 61
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -465,12 +465,12 @@ this.FeatureBackground();
 #line 77
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table200 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table208 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table200.AddRow(new string[] {
+                table208.AddRow(new string[] {
                             "001BAQXT6JWFPI"});
 #line 78
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table200, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table208, "When ");
 #line hidden
 #line 81
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -484,20 +484,20 @@ this.FeatureBackground();
 #line 84
  testRunner.When("User selects \'One \\ Date Computer\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table201 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table209 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table201.AddRow(new string[] {
+                table209.AddRow(new string[] {
                             "Update"});
-                table201.AddRow(new string[] {
+                table209.AddRow(new string[] {
                             "Update relative to current value"});
-                table201.AddRow(new string[] {
+                table209.AddRow(new string[] {
                             "Update relative to now"});
-                table201.AddRow(new string[] {
+                table209.AddRow(new string[] {
                             "Update relative to a different task value"});
-                table201.AddRow(new string[] {
+                table209.AddRow(new string[] {
                             "Remove"});
 #line 85
- testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table201, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table209, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -562,12 +562,12 @@ this.FeatureBackground();
 #line 98
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table202 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table210 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table202.AddRow(new string[] {
+                table210.AddRow(new string[] {
                             "001BAQXT6JWFPI"});
 #line 99
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table202, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table210, "When ");
 #line hidden
 #line 102
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -581,22 +581,22 @@ this.FeatureBackground();
 #line 105
  testRunner.When("User selects \'One \\ Radio Rag Date Owner\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table203 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table211 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table203.AddRow(new string[] {
+                table211.AddRow(new string[] {
                             "No change"});
-                table203.AddRow(new string[] {
+                table211.AddRow(new string[] {
                             "Update"});
-                table203.AddRow(new string[] {
+                table211.AddRow(new string[] {
                             "Update relative to current value"});
-                table203.AddRow(new string[] {
+                table211.AddRow(new string[] {
                             "Update relative to now"});
-                table203.AddRow(new string[] {
+                table211.AddRow(new string[] {
                             "Update relative to a different task value"});
-                table203.AddRow(new string[] {
+                table211.AddRow(new string[] {
                             "Remove"});
 #line 106
- testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table203, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table211, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -661,12 +661,12 @@ this.FeatureBackground();
 #line 120
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table204 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table212 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table204.AddRow(new string[] {
+                table212.AddRow(new string[] {
                             "001BAQXT6JWFPI"});
 #line 121
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table204, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table212, "When ");
 #line hidden
 #line 124
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -680,20 +680,20 @@ this.FeatureBackground();
 #line 127
  testRunner.When("User selects \'One \\ Date Computer\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table205 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table213 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table205.AddRow(new string[] {
+                table213.AddRow(new string[] {
                             "Update"});
-                table205.AddRow(new string[] {
+                table213.AddRow(new string[] {
                             "Update relative to current value"});
-                table205.AddRow(new string[] {
+                table213.AddRow(new string[] {
                             "Update relative to now"});
-                table205.AddRow(new string[] {
+                table213.AddRow(new string[] {
                             "Update relative to a different task value"});
-                table205.AddRow(new string[] {
+                table213.AddRow(new string[] {
                             "Remove"});
 #line 128
- testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table205, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table213, "Then ");
 #line hidden
 #line 135
  testRunner.When("User selects \'Update relative to current value\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -713,18 +713,18 @@ this.FeatureBackground();
 #line 140
  testRunner.Then("\'-5\' content is displayed in \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table206 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table214 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table206.AddRow(new string[] {
+                table214.AddRow(new string[] {
                             "days before current value"});
-                table206.AddRow(new string[] {
+                table214.AddRow(new string[] {
                             "days after current value"});
-                table206.AddRow(new string[] {
+                table214.AddRow(new string[] {
                             "weekdays before current value"});
-                table206.AddRow(new string[] {
+                table214.AddRow(new string[] {
                             "weekdays after current value"});
 #line 141
- testRunner.Then("following Values are displayed in the \'Units\' dropdown:", ((string)(null)), table206, "Then ");
+ testRunner.Then("following Values are displayed in the \'Units\' dropdown:", ((string)(null)), table214, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -792,12 +792,12 @@ this.FeatureBackground();
 #line 153
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table207 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table215 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table207.AddRow(new string[] {
+                table215.AddRow(new string[] {
                             "002B5DC7D4D34D5C895"});
 #line 154
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table207, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table215, "When ");
 #line hidden
 #line 157
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -829,22 +829,22 @@ this.FeatureBackground();
 #line 166
  testRunner.When("User selects \'days before now\' in the \'Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table208 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table216 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table208.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             "days before now"});
-                table208.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             "days after now"});
-                table208.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             "weekdays before now"});
-                table208.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             "weekdays after now"});
-                table208.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             "hours before now"});
-                table208.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             "hours after now"});
 #line 167
- testRunner.Then("following Values are displayed in the \'Units\' dropdown:", ((string)(null)), table208, "Then ");
+ testRunner.Then("following Values are displayed in the \'Units\' dropdown:", ((string)(null)), table216, "Then ");
 #line hidden
 #line 175
  testRunner.When("User selects \'weekdays before now\' in the \'Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -909,12 +909,12 @@ this.FeatureBackground();
 #line 182
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table209 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table217 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table209.AddRow(new string[] {
+                table217.AddRow(new string[] {
                             "001BAQXT6JWFPI"});
 #line 183
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table209, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table217, "When ");
 #line hidden
 #line 186
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

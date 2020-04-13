@@ -147,14 +147,14 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2562 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2573 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2562.AddRow(new string[] {
+                table2573.AddRow(new string[] {
                             "Hide From End Users",
                             "FALSE"});
 #line 13
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2562, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2573, "Then ");
 #line hidden
 #line 16
  testRunner.When("User selects \'TRUE\' in the dropdown for the \'Hide From End Users\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -166,14 +166,14 @@ this.FeatureBackground();
 #line 18
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2563 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2574 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2563.AddRow(new string[] {
+                table2574.AddRow(new string[] {
                             "Hide From End Users",
                             "TRUE"});
 #line 19
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2563, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2574, "Then ");
 #line hidden
 #line 22
  testRunner.When("User selects \'FALSE\' in the dropdown for the \'Hide From End Users\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -182,14 +182,14 @@ this.FeatureBackground();
  testRunner.Then("\'Hide from end users successfully changed\' text is displayed on inline success ba" +
                         "nner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2564 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2575 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2564.AddRow(new string[] {
+                table2575.AddRow(new string[] {
                             "Hide From End Users",
                             "FALSE"});
 #line 24
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2564, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2575, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

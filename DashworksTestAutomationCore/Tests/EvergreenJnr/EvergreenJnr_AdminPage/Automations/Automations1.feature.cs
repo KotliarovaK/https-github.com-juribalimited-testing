@@ -159,14 +159,14 @@ this.FeatureBackground();
 #line 11
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table622 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table630 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table622.AddRow(new string[] {
+                table630.AddRow(new string[] {
                             "Test258_Automation",
                             "Test258",
                             "true",
@@ -174,7 +174,7 @@ this.FeatureBackground();
                             "All Devices",
                             "Manual"});
 #line 12
- testRunner.When("User creates new Automation via API", ((string)(null)), table622, "When ");
+ testRunner.When("User creates new Automation via API", ((string)(null)), table630, "When ");
 #line hidden
 #line 15
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -199,28 +199,28 @@ this.FeatureBackground();
 #line 21
  testRunner.Then("\'Automations\' left menu item is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table623 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table631 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table623.AddRow(new string[] {
+                table631.AddRow(new string[] {
                             "Date"});
-                table623.AddRow(new string[] {
+                table631.AddRow(new string[] {
                             "Type"});
-                table623.AddRow(new string[] {
+                table631.AddRow(new string[] {
                             "Automation"});
-                table623.AddRow(new string[] {
+                table631.AddRow(new string[] {
                             "Action"});
-                table623.AddRow(new string[] {
+                table631.AddRow(new string[] {
                             "Run"});
-                table623.AddRow(new string[] {
+                table631.AddRow(new string[] {
                             "Objects"});
-                table623.AddRow(new string[] {
+                table631.AddRow(new string[] {
                             "Duration (hh:mm)"});
-                table623.AddRow(new string[] {
+                table631.AddRow(new string[] {
                             "User"});
-                table623.AddRow(new string[] {
+                table631.AddRow(new string[] {
                             "Outcome"});
 #line 22
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table623, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table631, "Then ");
 #line hidden
 #line 33
  testRunner.Then("Export button is displayed in panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -261,22 +261,22 @@ this.FeatureBackground();
 #line 45
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table624 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table632 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table624.AddRow(new string[] {
+                table632.AddRow(new string[] {
                             "Scope Object Type"});
-                table624.AddRow(new string[] {
+                table632.AddRow(new string[] {
                             "Scope"});
-                table624.AddRow(new string[] {
+                table632.AddRow(new string[] {
                             "Action Type"});
-                table624.AddRow(new string[] {
+                table632.AddRow(new string[] {
                             "Action Project"});
-                table624.AddRow(new string[] {
+                table632.AddRow(new string[] {
                             "Action Task or Field"});
-                table624.AddRow(new string[] {
+                table632.AddRow(new string[] {
                             "Action Value ID"});
 #line 46
- testRunner.Then("following columns added to the table:", ((string)(null)), table624, "Then ");
+ testRunner.Then("following columns added to the table:", ((string)(null)), table632, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -350,28 +350,28 @@ this.FeatureBackground();
 #line 60
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table625 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table633 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table625.AddRow(new string[] {
+                table633.AddRow(new string[] {
                             "Automation"});
-                table625.AddRow(new string[] {
+                table633.AddRow(new string[] {
                             ""});
-                table625.AddRow(new string[] {
+                table633.AddRow(new string[] {
                             "Processing Order"});
-                table625.AddRow(new string[] {
+                table633.AddRow(new string[] {
                             "Active"});
-                table625.AddRow(new string[] {
+                table633.AddRow(new string[] {
                             "Running"});
-                table625.AddRow(new string[] {
+                table633.AddRow(new string[] {
                             "Scope"});
-                table625.AddRow(new string[] {
+                table633.AddRow(new string[] {
                             "Run"});
-                table625.AddRow(new string[] {
+                table633.AddRow(new string[] {
                             "Actions"});
-                table625.AddRow(new string[] {
+                table633.AddRow(new string[] {
                             "Description"});
 #line 61
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table625, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table633, "Then ");
 #line hidden
 #line 72
  testRunner.Then("\'FALSE\' content is displayed in the \'Running\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -385,18 +385,18 @@ this.FeatureBackground();
 #line 75
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table626 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table634 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table626.AddRow(new string[] {
+                table634.AddRow(new string[] {
                             "Run now"});
-                table626.AddRow(new string[] {
+                table634.AddRow(new string[] {
                             "Make active"});
-                table626.AddRow(new string[] {
+                table634.AddRow(new string[] {
                             "Make inactive"});
-                table626.AddRow(new string[] {
+                table634.AddRow(new string[] {
                             "Delete"});
 #line 76
- testRunner.Then("following Values are displayed in the \'Actions\' dropdown:", ((string)(null)), table626, "Then ");
+ testRunner.Then("following Values are displayed in the \'Actions\' dropdown:", ((string)(null)), table634, "Then ");
 #line hidden
 #line 82
  testRunner.When("User selects \'Run now\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -420,23 +420,23 @@ this.FeatureBackground();
 #line 88
  testRunner.Then("\'TRUE\' content is displayed in the \'Running\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table627 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table635 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table627.AddRow(new string[] {
+                table635.AddRow(new string[] {
                             "Edit"});
-                table627.AddRow(new string[] {
+                table635.AddRow(new string[] {
                             "Duplicate"});
-                table627.AddRow(new string[] {
+                table635.AddRow(new string[] {
                             "Move to top"});
-                table627.AddRow(new string[] {
+                table635.AddRow(new string[] {
                             "Move to bottom"});
-                table627.AddRow(new string[] {
+                table635.AddRow(new string[] {
                             "Move to position"});
-                table627.AddRow(new string[] {
+                table635.AddRow(new string[] {
                             "Make inactive"});
 #line 89
  testRunner.When("User clicks Cog-menu for \'DELAY_2\' item in the \'Automation\' column and sees follo" +
-                        "wing cog-menu options", ((string)(null)), table627, "When ");
+                        "wing cog-menu options", ((string)(null)), table635, "When ");
 #line hidden
 #line 97
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -532,28 +532,28 @@ this.FeatureBackground();
 #line 108
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table628 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table636 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table628.AddRow(new string[] {
+                table636.AddRow(new string[] {
                             "15431_First_Inactive",
                             "DAS15431",
                             "false",
                             "false",
                             "All Users",
                             "Manual"});
-                table628.AddRow(new string[] {
+                table636.AddRow(new string[] {
                             "15431_Second_Inactive",
                             "DAS15431",
                             "false",
                             "false",
                             "All Users",
                             "Manual"});
-                table628.AddRow(new string[] {
+                table636.AddRow(new string[] {
                             "15431_Third_Active",
                             "DAS15431",
                             "true",
@@ -561,7 +561,7 @@ this.FeatureBackground();
                             "All Users",
                             "Manual"});
 #line 109
- testRunner.When("User creates new Automation via API", ((string)(null)), table628, "When ");
+ testRunner.When("User creates new Automation via API", ((string)(null)), table636, "When ");
 #line hidden
 #line 114
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -569,67 +569,67 @@ this.FeatureBackground();
 #line 115
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table629 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table637 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table629.AddRow(new string[] {
+                table637.AddRow(new string[] {
                             "Edit"});
-                table629.AddRow(new string[] {
+                table637.AddRow(new string[] {
                             "Duplicate"});
-                table629.AddRow(new string[] {
+                table637.AddRow(new string[] {
                             "Move to top"});
-                table629.AddRow(new string[] {
+                table637.AddRow(new string[] {
                             "Move to bottom"});
-                table629.AddRow(new string[] {
+                table637.AddRow(new string[] {
                             "Move to position"});
-                table629.AddRow(new string[] {
+                table637.AddRow(new string[] {
                             "Make active"});
-                table629.AddRow(new string[] {
+                table637.AddRow(new string[] {
                             "Delete"});
 #line 117
  testRunner.When("User clicks Cog-menu for \'15431_First_Inactive\' item in the \'Automation\' column a" +
-                        "nd sees following cog-menu options", ((string)(null)), table629, "When ");
+                        "nd sees following cog-menu options", ((string)(null)), table637, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table630 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table638 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table630.AddRow(new string[] {
+                table638.AddRow(new string[] {
                             "Edit"});
-                table630.AddRow(new string[] {
+                table638.AddRow(new string[] {
                             "Duplicate"});
-                table630.AddRow(new string[] {
+                table638.AddRow(new string[] {
                             "Move to top"});
-                table630.AddRow(new string[] {
+                table638.AddRow(new string[] {
                             "Move to bottom"});
-                table630.AddRow(new string[] {
+                table638.AddRow(new string[] {
                             "Move to position"});
-                table630.AddRow(new string[] {
+                table638.AddRow(new string[] {
                             "Make active"});
-                table630.AddRow(new string[] {
+                table638.AddRow(new string[] {
                             "Delete"});
 #line 127
  testRunner.When("User clicks Cog-menu for \'15431_Second_Inactive\' item in the \'Automation\' column " +
-                        "and sees following cog-menu options", ((string)(null)), table630, "When ");
+                        "and sees following cog-menu options", ((string)(null)), table638, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table631 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table639 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table631.AddRow(new string[] {
+                table639.AddRow(new string[] {
                             "Edit"});
-                table631.AddRow(new string[] {
+                table639.AddRow(new string[] {
                             "Run now"});
-                table631.AddRow(new string[] {
+                table639.AddRow(new string[] {
                             "Duplicate"});
-                table631.AddRow(new string[] {
+                table639.AddRow(new string[] {
                             "Move to top"});
-                table631.AddRow(new string[] {
+                table639.AddRow(new string[] {
                             "Move to bottom"});
-                table631.AddRow(new string[] {
+                table639.AddRow(new string[] {
                             "Move to position"});
-                table631.AddRow(new string[] {
+                table639.AddRow(new string[] {
                             "Make inactive"});
-                table631.AddRow(new string[] {
+                table639.AddRow(new string[] {
                             "Delete"});
 #line 137
  testRunner.When("User clicks Cog-menu for \'15431_Third_Active\' item in the \'Automation\' column and" +
-                        " sees following cog-menu options", ((string)(null)), table631, "When ");
+                        " sees following cog-menu options", ((string)(null)), table639, "When ");
 #line hidden
 #line 147
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'15431_Third_Active\' item from \'Automat" +
@@ -707,28 +707,28 @@ this.FeatureBackground();
 #line 156
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table632 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table640 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table632.AddRow(new string[] {
+                table640.AddRow(new string[] {
                             "Automation"});
-                table632.AddRow(new string[] {
+                table640.AddRow(new string[] {
                             ""});
-                table632.AddRow(new string[] {
+                table640.AddRow(new string[] {
                             "Processing Order"});
-                table632.AddRow(new string[] {
+                table640.AddRow(new string[] {
                             "Active"});
-                table632.AddRow(new string[] {
+                table640.AddRow(new string[] {
                             "Running"});
-                table632.AddRow(new string[] {
+                table640.AddRow(new string[] {
                             "Scope"});
-                table632.AddRow(new string[] {
+                table640.AddRow(new string[] {
                             "Run"});
-                table632.AddRow(new string[] {
+                table640.AddRow(new string[] {
                             "Actions"});
-                table632.AddRow(new string[] {
+                table640.AddRow(new string[] {
                             "Description"});
 #line 157
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table632, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table640, "Then ");
 #line hidden
 #line 168
  testRunner.Then("numeric data in table is sorted by \'Processing Order\' column in ascending order b" +
@@ -841,47 +841,47 @@ this.FeatureBackground();
  testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
                         "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table633 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table641 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table633.AddRow(new string[] {
+                table641.AddRow(new string[] {
                             "Edit"});
-                table633.AddRow(new string[] {
+                table641.AddRow(new string[] {
                             "Run now"});
-                table633.AddRow(new string[] {
+                table641.AddRow(new string[] {
                             "Duplicate"});
-                table633.AddRow(new string[] {
+                table641.AddRow(new string[] {
                             "Move to top"});
-                table633.AddRow(new string[] {
+                table641.AddRow(new string[] {
                             "Move to position"});
-                table633.AddRow(new string[] {
+                table641.AddRow(new string[] {
                             "Make inactive"});
-                table633.AddRow(new string[] {
+                table641.AddRow(new string[] {
                             "Delete"});
 #line 190
  testRunner.When("User clicks Cog-menu for \'AM Test 1\' item in the \'Automation\' column and sees fol" +
-                        "lowing cog-menu options", ((string)(null)), table633, "When ");
+                        "lowing cog-menu options", ((string)(null)), table641, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table634 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table642 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table634.AddRow(new string[] {
+                table642.AddRow(new string[] {
                             "Edit"});
-                table634.AddRow(new string[] {
+                table642.AddRow(new string[] {
                             "Run now"});
-                table634.AddRow(new string[] {
+                table642.AddRow(new string[] {
                             "Duplicate"});
-                table634.AddRow(new string[] {
+                table642.AddRow(new string[] {
                             "Move to top"});
-                table634.AddRow(new string[] {
+                table642.AddRow(new string[] {
                             "Move to bottom"});
-                table634.AddRow(new string[] {
+                table642.AddRow(new string[] {
                             "Move to position"});
-                table634.AddRow(new string[] {
+                table642.AddRow(new string[] {
                             "Make inactive"});
-                table634.AddRow(new string[] {
+                table642.AddRow(new string[] {
                             "Delete"});
 #line 199
  testRunner.When("User clicks Cog-menu for \'AM 150419 II\' item in the \'Automation\' column and sees " +
-                        "following cog-menu options", ((string)(null)), table634, "When ");
+                        "following cog-menu options", ((string)(null)), table642, "When ");
 #line hidden
 #line 209
  testRunner.When("User clicks \'Move to bottom\' option in Cog-menu for \'AM 150419 II\' item from \'Aut" +
@@ -903,18 +903,18 @@ this.FeatureBackground();
  testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
                         "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table635 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table643 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table635.AddRow(new string[] {
+                table643.AddRow(new string[] {
                             "AM 150419 I"});
-                table635.AddRow(new string[] {
+                table643.AddRow(new string[] {
                             "AM 150419 III"});
-                table635.AddRow(new string[] {
+                table643.AddRow(new string[] {
                             "AM Test 1"});
-                table635.AddRow(new string[] {
+                table643.AddRow(new string[] {
                             "AM 150419 II"});
 #line 215
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table635, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table643, "Then ");
 #line hidden
 #line 221
  testRunner.When("User clicks \'Administration\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -941,18 +941,18 @@ this.FeatureBackground();
  testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
                         "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table636 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table644 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table636.AddRow(new string[] {
+                table644.AddRow(new string[] {
                             "AM 150419 I"});
-                table636.AddRow(new string[] {
+                table644.AddRow(new string[] {
                             "AM 150419 III"});
-                table636.AddRow(new string[] {
+                table644.AddRow(new string[] {
                             "AM Test 1"});
-                table636.AddRow(new string[] {
+                table644.AddRow(new string[] {
                             "AM 150419 II"});
 #line 229
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table636, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table644, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1060,18 +1060,18 @@ this.FeatureBackground();
  testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
                         "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table637 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table645 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table637.AddRow(new string[] {
+                table645.AddRow(new string[] {
                             "AM 150419 I"});
-                table637.AddRow(new string[] {
+                table645.AddRow(new string[] {
                             "AM 150419 II"});
-                table637.AddRow(new string[] {
+                table645.AddRow(new string[] {
                             "AM 150419 III"});
-                table637.AddRow(new string[] {
+                table645.AddRow(new string[] {
                             "AM Test 1"});
 #line 254
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table637, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table645, "Then ");
 #line hidden
 #line 260
  testRunner.When("User moves \'AM 150419 I\' item from \'Automation\' column to the \'100\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1092,18 +1092,18 @@ this.FeatureBackground();
  testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
                         "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table638 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table646 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table638.AddRow(new string[] {
+                table646.AddRow(new string[] {
                             "AM 150419 II"});
-                table638.AddRow(new string[] {
+                table646.AddRow(new string[] {
                             "AM 150419 III"});
-                table638.AddRow(new string[] {
+                table646.AddRow(new string[] {
                             "AM Test 1"});
-                table638.AddRow(new string[] {
+                table646.AddRow(new string[] {
                             "AM 150419 I"});
 #line 266
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table638, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table646, "Then ");
 #line hidden
 #line 272
  testRunner.When("User moves \' AM 150419 II\' item from \'Automation\' column to the \'1\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1124,18 +1124,18 @@ this.FeatureBackground();
  testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
                         "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table639 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table647 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table639.AddRow(new string[] {
+                table647.AddRow(new string[] {
                             "AM 150419 II"});
-                table639.AddRow(new string[] {
+                table647.AddRow(new string[] {
                             "AM 150419 III"});
-                table639.AddRow(new string[] {
+                table647.AddRow(new string[] {
                             "AM Test 1"});
-                table639.AddRow(new string[] {
+                table647.AddRow(new string[] {
                             "AM 150419 I"});
 #line 278
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table639, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table647, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1273,23 +1273,23 @@ this.FeatureBackground();
 #line 312
  testRunner.Then("\'Cannot delete a running automation\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table640 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table648 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table640.AddRow(new string[] {
+                table648.AddRow(new string[] {
                             "Edit"});
-                table640.AddRow(new string[] {
+                table648.AddRow(new string[] {
                             "Duplicate"});
-                table640.AddRow(new string[] {
+                table648.AddRow(new string[] {
                             "Move to top"});
-                table640.AddRow(new string[] {
+                table648.AddRow(new string[] {
                             "Move to bottom"});
-                table640.AddRow(new string[] {
+                table648.AddRow(new string[] {
                             "Move to position"});
-                table640.AddRow(new string[] {
+                table648.AddRow(new string[] {
                             "Make inactive"});
 #line 313
  testRunner.When("User clicks Cog-menu for \'DELAY - do not delete3\' item in the \'Automation\' column" +
-                        " and sees following cog-menu options", ((string)(null)), table640, "When ");
+                        " and sees following cog-menu options", ((string)(null)), table648, "When ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1382,24 +1382,24 @@ this.FeatureBackground();
 #line 333
  testRunner.Then("Counter shows \"3\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table641 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table649 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table641.AddRow(new string[] {
+                table649.AddRow(new string[] {
                             ""});
-                table641.AddRow(new string[] {
+                table649.AddRow(new string[] {
                             "Action"});
-                table641.AddRow(new string[] {
+                table649.AddRow(new string[] {
                             ""});
-                table641.AddRow(new string[] {
+                table649.AddRow(new string[] {
                             "Type"});
-                table641.AddRow(new string[] {
+                table649.AddRow(new string[] {
                             "Project"});
-                table641.AddRow(new string[] {
+                table649.AddRow(new string[] {
                             "Task or Field"});
-                table641.AddRow(new string[] {
+                table649.AddRow(new string[] {
                             "Value"});
 #line 334
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table641, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table649, "Then ");
 #line hidden
 #line 343
  testRunner.When("User opens \'Action\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1422,32 +1422,32 @@ this.FeatureBackground();
 #line 349
  testRunner.When("User select \"Project ID\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table642 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table650 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             ""});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             "Action ID"});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             "Action"});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             ""});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             "Processing order"});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             "Action Type ID"});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             "Type"});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             "Project ID"});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             "Project"});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             "Task or Field"});
-                table642.AddRow(new string[] {
+                table650.AddRow(new string[] {
                             "Value"});
 #line 350
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table642, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table650, "Then ");
 #line hidden
 #line 364
  testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1759,16 +1759,16 @@ this.FeatureBackground();
 #line 426
  testRunner.Then("\'Edit Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table643 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table651 = new TechTalk.SpecFlow.Table(new string[] {
                             "Lists"});
-                table643.AddRow(new string[] {
+                table651.AddRow(new string[] {
                             "Devices (0)"});
-                table643.AddRow(new string[] {
+                table651.AddRow(new string[] {
                             "Users (0)"});
-                table643.AddRow(new string[] {
+                table651.AddRow(new string[] {
                             "Applications (0)"});
 #line 427
- testRunner.Then("following lists are displayed in the Scope dropdown:", ((string)(null)), table643, "Then ");
+ testRunner.Then("following lists are displayed in the Scope dropdown:", ((string)(null)), table651, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2035,21 +2035,21 @@ this.FeatureBackground();
 #line 480
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table644 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table652 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table644.AddRow(new string[] {
+                table652.AddRow(new string[] {
                             "Test_Automation_First",
                             "test",
                             "true",
                             "false",
                             "All Devices",
                             "Manual"});
-                table644.AddRow(new string[] {
+                table652.AddRow(new string[] {
                             "Test_Automation_Second",
                             "test",
                             "true",
@@ -2057,7 +2057,7 @@ this.FeatureBackground();
                             "All Users",
                             "Manual"});
 #line 481
- testRunner.When("User creates new Automation via API", ((string)(null)), table644, "When ");
+ testRunner.When("User creates new Automation via API", ((string)(null)), table652, "When ");
 #line hidden
 #line 485
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2402,20 +2402,20 @@ this.FeatureBackground();
 #line 553
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table645 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table653 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "FullName",
                             "Password",
                             "ConfirmPassword",
                             "Roles"});
-                table645.AddRow(new string[] {
+                table653.AddRow(new string[] {
                             "17003User",
                             "17003",
                             "1234qwer",
                             "1234qwer",
                             "Project Administrator"});
 #line 554
- testRunner.And("User create new User", ((string)(null)), table645, "And ");
+ testRunner.And("User create new User", ((string)(null)), table653, "And ");
 #line hidden
 #line 557
  testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2432,14 +2432,14 @@ this.FeatureBackground();
 #line 561
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table646 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table654 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table646.AddRow(new string[] {
+                table654.AddRow(new string[] {
                             "17003User",
                             "1234qwer"});
 #line 562
- testRunner.When("User login with following credentials:", ((string)(null)), table646, "When ");
+ testRunner.When("User login with following credentials:", ((string)(null)), table654, "When ");
 #line hidden
 #line 565
  testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2555,20 +2555,20 @@ this.FeatureBackground();
 #line 586
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table647 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table655 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "FullName",
                             "Password",
                             "ConfirmPassword",
                             "Roles"});
-                table647.AddRow(new string[] {
+                table655.AddRow(new string[] {
                             "DAS_17003",
                             "17003",
                             "1234qwer",
                             "1234qwer",
                             "Project Administrator"});
 #line 587
- testRunner.And("User create new User", ((string)(null)), table647, "And ");
+ testRunner.And("User create new User", ((string)(null)), table655, "And ");
 #line hidden
 #line 590
  testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2585,14 +2585,14 @@ this.FeatureBackground();
 #line 594
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table648 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table656 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table648.AddRow(new string[] {
+                table656.AddRow(new string[] {
                             "DAS_17003",
                             "1234qwer"});
 #line 595
- testRunner.When("User login with following credentials:", ((string)(null)), table648, "When ");
+ testRunner.When("User login with following credentials:", ((string)(null)), table656, "When ");
 #line hidden
 #line 598
  testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2740,14 +2740,14 @@ this.FeatureBackground();
 #line 631
  testRunner.When("User create dynamic list with \"Das15949_list\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table649 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table657 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table649.AddRow(new string[] {
+                table657.AddRow(new string[] {
                             "15949_Automation",
                             "testDAS15949",
                             "true",
@@ -2755,7 +2755,7 @@ this.FeatureBackground();
                             "DAS15949_List",
                             "Manual"});
 #line 633
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table649, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table657, "When ");
 #line hidden
 #line 636
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2826,14 +2826,14 @@ this.FeatureBackground();
 #line 661
  testRunner.And("User enters \"15949_Automation\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table650 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table658 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table650.AddRow(new string[] {
+                table658.AddRow(new string[] {
                             "15949_Automation \\ 15949_Action_1"});
-                table650.AddRow(new string[] {
+                table658.AddRow(new string[] {
                             "15949_Automation \\ 15949_Action_2"});
 #line 662
- testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table650, "Then ");
+ testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table658, "Then ");
 #line hidden
 #line 666
  testRunner.When("User clears search textbox in Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2955,21 +2955,21 @@ this.FeatureBackground();
 #line 691
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table651 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table659 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table651.AddRow(new string[] {
+                table659.AddRow(new string[] {
                             "Active_Automation1287",
                             "test",
                             "true",
                             "false",
                             "All Devices",
                             "Manual"});
-                table651.AddRow(new string[] {
+                table659.AddRow(new string[] {
                             "Inactive_Automation6578",
                             "test",
                             "false",
@@ -2977,7 +2977,7 @@ this.FeatureBackground();
                             "All Devices",
                             "Manual"});
 #line 692
- testRunner.When("User creates new Automation via API", ((string)(null)), table651, "When ");
+ testRunner.When("User creates new Automation via API", ((string)(null)), table659, "When ");
 #line hidden
 #line 696
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -164,29 +164,29 @@ this.FeatureBackground();
 #line 19
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2894 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2905 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2894.AddRow(new string[] {
+                table2905.AddRow(new string[] {
                             "US-W"});
 #line 20
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
-                        "olumn:", ((string)(null)), table2894, "Then ");
+                        "olumn:", ((string)(null)), table2905, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2895 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2906 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2895.AddRow(new string[] {
+                table2906.AddRow(new string[] {
                             "Global Security Group"});
 #line 23
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Type\' col" +
-                        "umn:", ((string)(null)), table2895, "Then ");
+                        "umn:", ((string)(null)), table2906, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2896 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2907 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2896.AddRow(new string[] {
+                table2907.AddRow(new string[] {
                             "Active Directory"});
 #line 26
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Directory" +
-                        " Type\' column:", ((string)(null)), table2896, "Then ");
+                        " Type\' column:", ((string)(null)), table2907, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -268,53 +268,53 @@ this.FeatureBackground();
 #line 40
  testRunner.And("\'FALSE\' content is displayed in the \'Entitled To Device\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2897 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2908 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2897.AddRow(new string[] {
+                table2908.AddRow(new string[] {
                             "UNKNOWN"});
 #line 41
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Complianc" +
-                        "e\' column:", ((string)(null)), table2897, "Then ");
+                        "e\' column:", ((string)(null)), table2908, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2898 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2909 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2898.AddRow(new string[] {
+                table2909.AddRow(new string[] {
                             "JuribaDEV50"});
 #line 44
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Site\' col" +
-                        "umn:", ((string)(null)), table2898, "Then ");
+                        "umn:", ((string)(null)), table2909, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2899 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2910 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2899.AddRow(new string[] {
+                table2910.AddRow(new string[] {
                             "Unknown"});
 #line 47
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Installed" +
-                        "\' column:", ((string)(null)), table2899, "Then ");
+                        "\' column:", ((string)(null)), table2910, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2900 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2911 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2900.AddRow(new string[] {
+                table2911.AddRow(new string[] {
                             "Unknown"});
 #line 50
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Used\' col" +
-                        "umn:", ((string)(null)), table2900, "Then ");
+                        "umn:", ((string)(null)), table2911, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2901 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2912 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2901.AddRow(new string[] {
+                table2912.AddRow(new string[] {
                             "True"});
 #line 53
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Entitled\'" +
-                        " column:", ((string)(null)), table2901, "Then ");
+                        " column:", ((string)(null)), table2912, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2902 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2913 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2902.AddRow(new string[] {
+                table2913.AddRow(new string[] {
                             "False"});
 #line 56
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Entitled " +
-                        "To Device\' column:", ((string)(null)), table2902, "Then ");
+                        "To Device\' column:", ((string)(null)), table2913, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -390,29 +390,29 @@ this.FeatureBackground();
 #line 68
  testRunner.Then("\'Entitled\' content is displayed in the \'Association Type\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2903 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2914 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2903.AddRow(new string[] {
+                table2914.AddRow(new string[] {
                             "UNKNOWN"});
 #line 69
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Complianc" +
-                        "e\' column:", ((string)(null)), table2903, "Then ");
+                        "e\' column:", ((string)(null)), table2914, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2904 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2915 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2904.AddRow(new string[] {
+                table2915.AddRow(new string[] {
                             "JuribaDEV50"});
 #line 72
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Site\' col" +
-                        "umn:", ((string)(null)), table2904, "Then ");
+                        "umn:", ((string)(null)), table2915, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2905 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2916 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2905.AddRow(new string[] {
+                table2916.AddRow(new string[] {
                             "Entitled"});
 #line 75
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Associati" +
-                        "on Type\' column:", ((string)(null)), table2905, "Then ");
+                        "on Type\' column:", ((string)(null)), table2916, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -482,13 +482,13 @@ this.FeatureBackground();
 #line 85
  testRunner.Then("\'JuribaDEV50\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2906 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2917 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2906.AddRow(new string[] {
+                table2917.AddRow(new string[] {
                             "JuribaDEV50"});
 #line 86
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Site\' col" +
-                        "umn:", ((string)(null)), table2906, "Then ");
+                        "umn:", ((string)(null)), table2917, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -564,29 +564,29 @@ this.FeatureBackground();
 #line 98
  testRunner.And("\'JuribaDEV50\' content is displayed in the \'Site\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2907 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2918 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2907.AddRow(new string[] {
+                table2918.AddRow(new string[] {
                             "SMS/SCCM 2007"});
 #line 99
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Source Ty" +
-                        "pe\' column:", ((string)(null)), table2907, "Then ");
+                        "pe\' column:", ((string)(null)), table2918, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2908 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2919 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2908.AddRow(new string[] {
+                table2919.AddRow(new string[] {
                             "DC1 SMS (DEV50)"});
 #line 102
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Source\' c" +
-                        "olumn:", ((string)(null)), table2908, "Then ");
+                        "olumn:", ((string)(null)), table2919, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2909 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2920 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2909.AddRow(new string[] {
+                table2920.AddRow(new string[] {
                             "JuribaDEV50"});
 #line 105
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Site\' col" +
-                        "umn:", ((string)(null)), table2909, "Then ");
+                        "umn:", ((string)(null)), table2920, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -661,13 +661,13 @@ this.FeatureBackground();
 #line 116
  testRunner.Then("\'TRUE\' content is displayed in the \'Owner\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2910 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2921 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2910.AddRow(new string[] {
+                table2921.AddRow(new string[] {
                             "True"});
 #line 117
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Owner\' co" +
-                        "lumn:", ((string)(null)), table2910, "Then ");
+                        "lumn:", ((string)(null)), table2921, "Then ");
 #line hidden
 #line 120
  testRunner.When("User navigates to the \'Mailbox Permissions\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -675,15 +675,15 @@ this.FeatureBackground();
 #line 121
  testRunner.Then("\'FullAccess\' content is displayed in the \'Permission\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2911 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2922 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2911.AddRow(new string[] {
+                table2922.AddRow(new string[] {
                             "FullAccess"});
-                table2911.AddRow(new string[] {
+                table2922.AddRow(new string[] {
                             "ReadPermission"});
 #line 122
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Permissio" +
-                        "n\' column:", ((string)(null)), table2911, "Then ");
+                        "n\' column:", ((string)(null)), table2922, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -753,13 +753,13 @@ this.FeatureBackground();
 #line 133
  testRunner.Then("\'AMBER\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2912 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2923 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2912.AddRow(new string[] {
+                table2923.AddRow(new string[] {
                             "AMBER"});
 #line 134
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Complianc" +
-                        "e\' column:", ((string)(null)), table2912, "Then ");
+                        "e\' column:", ((string)(null)), table2923, "Then ");
 #line hidden
 #line 137
  testRunner.When("User navigates to the \'Application Issues\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -785,31 +785,31 @@ this.FeatureBackground();
 #line 144
  testRunner.Then("\'RED\' content is displayed in the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2913 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2924 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2913.AddRow(new string[] {
+                table2924.AddRow(new string[] {
                             "TierA Site01"});
 #line 145
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Site\' col" +
-                        "umn:", ((string)(null)), table2913, "Then ");
+                        "umn:", ((string)(null)), table2924, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2914 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2925 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2914.AddRow(new string[] {
+                table2925.AddRow(new string[] {
                             "True"});
 #line 148
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Installed" +
-                        "\' column:", ((string)(null)), table2914, "Then ");
+                        "\' column:", ((string)(null)), table2925, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2915 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2926 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2915.AddRow(new string[] {
+                table2926.AddRow(new string[] {
                             "RED"});
-                table2915.AddRow(new string[] {
+                table2926.AddRow(new string[] {
                             "AMBER"});
 #line 151
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Complianc" +
-                        "e\' column:", ((string)(null)), table2915, "Then ");
+                        "e\' column:", ((string)(null)), table2926, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

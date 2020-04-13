@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -14,6 +15,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -89,6 +91,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 menu.GetColumnCheckbox(row["checkboxes"]).Click();
             }
+            page.BodyContainer.Click();
         }
 
         [Then(@"'(.*)' checkbox is checked in the filter dropdown for the '(.*)' column")]
@@ -123,7 +126,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var field = row["Field"];
                 var value = row["Data"];
-                Utils.Verify.AreEqual(detailsPage.GetFieldContentByTitleName(field), value,
+                Verify.AreEqual(detailsPage.GetFieldContentByTitleName(field), value,
                     $"Incorrect data in the '{field}' field");
             }
         }
@@ -196,9 +199,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks ""(.*)"" link on the Details Page")]
         public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
         {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            if (!_driver.IsElementDisplayed(detailsPage.GetLinkByNameSelector(linkName), WebDriverExtensions.WaitTime.Short))
-                _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.GetLinkByNameSelector(linkName), true, 50);
+            var detailsPage = _driver.NowAt<BaseGridPage>();
             detailsPage.GetLinkByName(linkName).Click();
             _driver.WaitForDataLoading();
         }
@@ -208,7 +209,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             _driver.WaitForElementToBeDisplayed(detailsPage.GraphicInOpenedSection);
-            Utils.Verify.IsTrue(detailsPage.GraphicInOpenedSection.Displayed(), "Graphic content is not displayed");
+            Verify.IsTrue(detailsPage.GraphicInOpenedSection.Displayed(), "Graphic content is not displayed");
         }
 
         [Then(@"Image item from ""(.*)"" column is displayed to the user")]
@@ -219,7 +220,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var element in content)
             {
                 var image = element.FindElement(By.XPath(DetailsPage.ItemImageSelector));
-                Utils.Verify.IsTrue(_driver.IsElementExists(image), "Image item is not found");
+                Verify.IsTrue(_driver.IsElementExists(image), "Image item is not found");
             }
         }
 
@@ -227,14 +228,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLinksFromColumnIsDisplayedToTheUserOnTheDetailsPage(string columnName)
         {
             var content = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(content.GetHrefByColumnName(columnName) != null, $"Links from '{columnName}' column is not displayed to the user");
+            Verify.IsTrue(content.GetHrefByColumnName(columnName) != null, $"Links from '{columnName}' column is not displayed to the user");
         }
 
         [Then(@"Links from ""(.*)"" column is NOT displayed to the user on the Details Page")]
         public void ThenLinksFromColumnIsNOTDisplayedToTheUserOnTheDetailsPage(string columnName)
         {
             var content = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsFalse(content.GetHrefByColumnName(columnName) != null, $"Links from '{columnName}' column is displayed, but should not be displayed!");
+            Verify.IsFalse(content.GetHrefByColumnName(columnName) != null, $"Links from '{columnName}' column is displayed, but should not be displayed!");
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column")]
@@ -258,12 +259,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             if (filterElement.GetCheckboxes().Count() > 5)
             {
-                Utils.Verify.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
-                Utils.Verify.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
+                Verify.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
+                Verify.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
             }
             else
             {
-                Utils.Verify.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
+                Verify.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
             }
 
             filterElement.BodyContainer.Click();
@@ -295,7 +296,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColumnSettingsWasOpened()
         {
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Utils.Verify.IsTrue(menu.ColumnSettingsPanel.Displayed(), "Column Settings is not opened");
+            Verify.IsTrue(menu.ColumnSettingsPanel.Displayed(), "Column Settings is not opened");
         }
 
         [When(@"User clicks Filter button on the Column Settings panel")]
@@ -320,7 +321,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
             var actualList = filterElement.FilterTypeValues.Select(value => value.Text);
-            Utils.Verify.AreEqual(expectedList, actualList, "Filter type values are different");
+            Verify.AreEqual(expectedList, actualList, "Filter type values are different");
         }
 
         [When(@"User select In Range value with following date:")]
@@ -370,8 +371,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
 
-            Utils.Verify.That(page.DateRegularValueFirst.Location.X, Is.InRange(_elementCoordinates.Height - 10, _elementCoordinates.Height + 10)); // calibration
-            Utils.Verify.That(page.DateRegularValueFirst.Location.Y, Is.InRange(_elementCoordinates.Width - 10, _elementCoordinates.Width + 10)); // calibration
+            Verify.That(page.DateRegularValueFirst.Location.X, Is.InRange(_elementCoordinates.Height - 10, _elementCoordinates.Height + 10)); // calibration
+            Verify.That(page.DateRegularValueFirst.Location.Y, Is.InRange(_elementCoordinates.Width - 10, _elementCoordinates.Width + 10)); // calibration
         }
 
         [When(@"User selects following date filter on the Details Page")]
@@ -389,8 +390,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsPresentInTheTableOnTheDetailsPage()
         {
             var tableElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            //Utils.Verify.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
-            Utils.Verify.IsTrue(tableElement.TableRows.Count > 0, "Table is empty");
+            //Verify.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
+            Verify.IsTrue(tableElement.TableRows.Count > 0, "Table is empty");
         }
 
         [Then(@"Site column has standard size")]
@@ -400,14 +401,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!_driver.IsElementDisplayed(By.XPath(ApplicationsDetailsTabsMenu.SiteColumnSelector)))
             { }
             else
-                Utils.Verify.AreEqual("98px", filterPanel.PackageSiteColumnWidth(), "Column is not a standard size!");
+                Verify.AreEqual("97px", filterPanel.PackageSiteColumnWidth(), "Column is not a standard size!");
         }
 
         [Then(@"Bucket pop-up has standard size on the Details Page")]
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First(), "Bucket pop-up is not a standard size!");
+            Verify.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First(), "Bucket pop-up is not a standard size!");
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -464,7 +465,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if (row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key")
                 {
                     var content = page.GetColumnContentByColumnName(row["ColumnName"]);
-                    Utils.Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
+                    Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
                 }
         }
 
@@ -478,7 +479,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var columnNames = page.GetAllColumnHeadersOnTheDetailsPage()
                     .Select(column => column.Text).ToList();
                 var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-                Utils.Verify.AreEqual(expectedList, columnNames, "Columns order is incorrect");
+                Verify.AreEqual(expectedList, columnNames, "Columns order is incorrect");
             }
         }
 
@@ -491,7 +492,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var content = page.GetColumnContentByColumnName(row["ColumnName"]);
                 //Check that at least 1 cell has some content
-                Utils.Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Column is empty");
+                Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Column is empty");
             }
         }
 
@@ -514,7 +515,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if (pair.Key.Equals("Address 2") || pair.Key.Equals("Address 3") || pair.Key.Equals("Address 4"))
                     continue;
 
-                Utils.Verify.IsTrue(!string.IsNullOrEmpty(pair.Value),
+                Verify.IsTrue(!string.IsNullOrEmpty(pair.Value),
                     $"'Unknown' text is not displayed for {pair.Key} field ");
             }
         }
@@ -523,7 +524,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenGroupIconForPageIsDisplayed()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Group Icon for Group Details page is not displayed");
+            Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Group Icon for Group Details page is not displayed");
         }
 
         [Then(@"""(.*)"" text is displayed for opened tab")]
@@ -531,7 +532,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             _driver.WaitForElementToBeDisplayed(detailsPage.NoFoundContent);
-            Utils.Verify.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
+            Verify.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
                 $"{textMessage} is not displayed");
         }
 
@@ -540,30 +541,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
 
-            Utils.Verify.That(detailsPage.ProjectSummaryBucketValue.Text, Is.EqualTo(bucketName));
-        }
-
-        [When(@"User clicks New Ring ddl in popup of Project Summary section on the Details Page")]
-        public void WhenUserClicksNewRingDdlOfInProjectSummarySectionOnTheDetailsPage()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForElementToBeDisplayed(detailsPage.ProjectSummaryRingPopupDDL);
-            detailsPage.ProjectSummaryRingPopupDDL.Click();
-        }
-
-        [Then(@"Rings ddl contains data on Project Summary section of the Details Page")]
-        public void ThenRingDdlContainsOptionsInProjectSummarySectionOnTheDetailsPage()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.That(detailsPage.OperatorOptions.Select(value => value.Text).ToList().All(x => x.Contains("Ring") || x.Contains("Unassigned")),
-                "Some options are not available for selected filter");
+            Verify.That(detailsPage.ProjectSummaryBucketValue.Text, Is.EqualTo(bucketName));
         }
 
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
         public void ThenFieldDisplayStateIsOnDetailsTab(string fieldName, bool state)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.AreEqual(state, detailsPage.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
+            Verify.AreEqual(state, detailsPage.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
         }
 
         [Then(@"Empty rows are displayed if the data is unknown")]
@@ -574,7 +559,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 throw new Exception($"Details table is not visible");
 
             foreach (var element in detailsPage.TableRowDetails)
-                Utils.Verify.DoesNotContain("Unknown", element.Text,
+                Verify.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
         }
 
@@ -583,7 +568,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             foreach (var element in page.GridRows)
-                Utils.Verify.DoesNotContain("Unknown", element.Text,
+                Verify.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
         }
 
@@ -592,7 +577,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAgGridHasRows(int rowsCount)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.That(page.GridRows.Count, Is.EqualTo(rowsCount),
+            Verify.That(page.GridRows.Count, Is.EqualTo(rowsCount),
                 $"Incorrect number of rows in agGrid.");
         }
 
@@ -613,7 +598,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<DetailsPage>();
             var columnHeaders = columnElement.GetDetailsColorHeadersContentToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Utils.Verify.AreEqual(expectedList, columnHeaders, "Column headers names are incorrect");
+            Verify.AreEqual(expectedList, columnHeaders, "Column headers names are incorrect");
         }
 
         //TODO should be removed. All methods that check assertion methods should check errors below textbox elements or datepickers etch
@@ -625,7 +610,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<BaseDashboardPage>();
             //Wait for rows label is displayed
             Thread.Sleep(2000);
-            Utils.Verify.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+            Verify.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                 detailsPage.FoundRowsLabel.Text,
                 "Incorrect rows count");
         }
@@ -650,8 +635,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenButtonForEditingTheFieldIsNotDisplayed(string fieldName)
         {
             var page = _driver.NowAt<DetailsPage>();
-            var t = page.EditFieldButtonDisplaying(fieldName);
-            Verify.IsFalse(t, $"Edit button for '{fieldName}' field is displayed");
+            Verify.IsFalse(page.EditFieldButtonDisplaying(fieldName), $"Edit button for '{fieldName}' field is displayed");
+        }
+
+        [Then(@"arrow for editing the '(.*)' field is not displayed")]
+        public void ThenArrowForEditingTheFieldIsNotDisplayed(string fieldName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            Verify.IsFalse(page.EditArrowDisplaying(fieldName), $"Edit arrow for '{fieldName}' field is displayed");
         }
 
         #endregion
@@ -669,7 +660,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 _driver.WaitForDataLoading();
-                Utils.Verify.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
+                Verify.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
             }
         }

@@ -138,14 +138,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2963 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2974 = new TechTalk.SpecFlow.Table(new string[] {
                             "UserName",
                             "ApplicationId"});
-                table2963.AddRow(new string[] {
+                table2974.AddRow(new string[] {
                             "ZZP911429",
                             "57"});
 #line 10
- testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table2963, "Given ");
+ testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table2974, "Given ");
 #line hidden
 #line 13
  testRunner.When("User navigates to the \'User\' details page for the item with \'1100\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -174,28 +174,28 @@ this.FeatureBackground();
 #line 21
  testRunner.And("User navigates to the \'Evergreen Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2964 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2975 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2964.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "Application"});
-                table2964.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "Vendor"});
-                table2964.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "Version"});
-                table2964.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "Compliance"});
-                table2964.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "Rationalisation"});
-                table2964.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "Target App"});
-                table2964.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "In Catalog"});
-                table2964.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "Criticality"});
-                table2964.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "Hide From End User"});
 #line 22
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2964, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2975, "Then ");
 #line hidden
 #line 33
  testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -251,14 +251,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2965 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2976 = new TechTalk.SpecFlow.Table(new string[] {
                             "UserName",
                             "ApplicationId"});
-                table2965.AddRow(new string[] {
+                table2976.AddRow(new string[] {
                             "ZZP911429",
                             "57"});
 #line 37
- testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table2965, "Given ");
+ testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table2976, "Given ");
 #line hidden
 #line 40
  testRunner.When("User navigates to the \'User\' details page for \'ZZP911429\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -339,14 +339,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2966 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2977 = new TechTalk.SpecFlow.Table(new string[] {
                             "UserName",
                             "ApplicationId"});
-                table2966.AddRow(new string[] {
+                table2977.AddRow(new string[] {
                             "ZZP911429",
                             "57"});
 #line 51
- testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table2966, "Given ");
+ testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table2977, "Given ");
 #line hidden
 #line 54
  testRunner.When("User navigates to the \'User\' details page for \'ZZP911429\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -360,14 +360,14 @@ this.FeatureBackground();
 #line 57
  testRunner.When("User navigates to the \'Evergreen Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2967 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2978 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table2967.AddRow(new string[] {
+                table2978.AddRow(new string[] {
                             "Application",
                             "true"});
 #line 58
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2967, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2978, "When ");
 #line hidden
 #line 61
  testRunner.Then("\'DirectX 8.1 SDK for Visual Basic\' grouped name is not displayed as a link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -425,14 +425,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2968 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2979 = new TechTalk.SpecFlow.Table(new string[] {
                             "UserName",
                             "ApplicationId"});
-                table2968.AddRow(new string[] {
+                table2979.AddRow(new string[] {
                             "CVS3269200",
                             "4252"});
 #line 65
- testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table2968, "Given ");
+ testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table2979, "Given ");
 #line hidden
 #line 68
  testRunner.When("User navigates to the \'User\' details page for \'CVS3269200\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

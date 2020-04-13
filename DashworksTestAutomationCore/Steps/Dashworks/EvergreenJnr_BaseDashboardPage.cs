@@ -10,8 +10,10 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using TechTalk.SpecFlow;
 
@@ -23,12 +25,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly RemoteWebDriver _driver;
         private readonly ColumnValue _columnValue;
         private readonly GridRowsCount _rowCountValue;
+        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ColumnValue columnValue, GridRowsCount rowCountValue)
+        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ColumnValue columnValue, GridRowsCount rowCountValue, RunNowAutomationStartTime automationStartTime)
         {
             _driver = driver;
             _columnValue = columnValue;
             _rowCountValue = rowCountValue;
+            _automationStartTime = automationStartTime;
         }
 
         [When(@"User navigate to the bottom of the Action panel")]
@@ -106,7 +110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   ").Trim(),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
-       
+
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
         public void ThenContentIsDisplayedForColumn(string textContent, string columnName)
         {
@@ -125,12 +129,51 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreEqual(textContent, firstColumnCell, "Content is not displayed correctly");
         }
 
+        [Then(@"current date is displayed for '(.*)' column")]
+        public void ThenCurrentDateIsDisplayedForColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var currentDate = DateTime.Now.ToString("d MMM yyyy");
+            var allCells = page.GetColumnElementsByColumnName(columnName);
+            _driver.WaitForElementToContainsText(allCells, currentDate);
+            var columnContent = page.GetColumnContentByColumnName(columnName);
+            foreach (string content in columnContent)
+            {
+                Verify.AreEqual(currentDate, content, $"'{currentDate}' is not displayed in the '{columnName}'");
+            }
+        }
+
+        [Then(@"date in '(.*)' column displayed in datetime format")]
+        public void ThenCurrentDateIsDisplayedInDateTimeFormatForColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var columnContent = page.GetColumnContentByColumnName(columnName);
+
+            foreach (string content in columnContent)
+            {
+                bool isValidFormat = DateTime.TryParseExact(content, "d MMM yyyy hh:mm", CultureInfo.InvariantCulture,
+                    DateTimeStyles.None, out DateTime dt);
+                Verify.That(isValidFormat, Is.True, $"date in '{columnName}' columns formatted incorrectly");
+            }
+        }
+
+        [Then(@"current date and time are displayed for '(.*)' automation")]
+        public void ThenCurrentDateAndTimeAreDisplayedForAutomation(string automationName)
+        {
+            var searchElement = _driver.NowAt<BaseGridPage>();
+            searchElement.PopulateSearchFieldByColumnName("Automation", automationName);
+            var page = _driver.NowAt<BaseGridPage>();
+            var currentDate = _automationStartTime.Value.ToUniversalTime().ToString("d MMM yyyy HH:mm");
+            var dateValue = page.GetColumnContentByColumnName("Date").First();
+            Verify.IsTrue(dateValue.Contains(currentDate), $"'{currentDate}' is not displayed for the Automation Log");
+        }
+
         [Then(@"""(.*)"" italic content is displayed")]
         public void ThenItalicContentIsDisplayed(string textContent)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetItalicContentByColumnName(textContent).Displayed, "Content is not styled in italic or not displayed");
+            Verify.IsTrue(page.GetItalicContentByColumnName(textContent).Displayed, "Content is not styled in italic or not displayed");
         }
 
         [Then(@"full list content is displayed to the user")]
@@ -138,7 +181,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(page.TableContent);
-            Utils.Verify.IsTrue(page.TableRows.Count > 5, "Table is empty");
+            Verify.IsTrue(page.TableRows.Count > 5, "Table is empty");
         }
 
         [Then(@"User sees ""(.*)"" rows in grid")]
@@ -170,7 +213,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var rows = page.TableRows;
             foreach (var row in rows)
             {
-                Utils.Verify.That(row.FindElement(By.XPath(BaseDashboardPage.GridCell)).Displayed, Is.True);
+                Verify.That(row.FindElement(By.XPath(BaseDashboardPage.GridCell)).Displayed, Is.True);
             }
         }
 
@@ -196,7 +239,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
         }
-        
+
         [Then(@"String filter values are not duplicated")]
         public void ThenStringFilterValuesAreNotDuplicated()
         {
@@ -243,7 +286,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(foundRowsCounter.ListRowsCounter);
 
-            string rememberedNumber = !string.IsNullOrEmpty(_columnValue.Value)? _columnValue.Value: _rowCountValue.Value;
+            string rememberedNumber = !string.IsNullOrEmpty(_columnValue.Value) ? _columnValue.Value : _rowCountValue.Value;
 
             Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");

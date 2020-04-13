@@ -155,31 +155,31 @@ this.FeatureBackground();
 #line 11
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table852 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table860 = new TechTalk.SpecFlow.Table(new string[] {
                             "OldName",
                             "Name",
                             "Description",
                             "IsDefault"});
-                table852.AddRow(new string[] {
+                table860.AddRow(new string[] {
                             "Unassigned",
                             "New Name",
                             "",
                             ""});
 #line 12
- testRunner.When("User updates Capacity Units via api", ((string)(null)), table852, "When ");
+ testRunner.When("User updates Capacity Units via api", ((string)(null)), table860, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table853 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table861 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table853.AddRow(new string[] {
+                table861.AddRow(new string[] {
                             "ProjectForDAS13956",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 15
- testRunner.When("Project created via API and opened", ((string)(null)), table853, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table861, "When ");
 #line hidden
 #line 18
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -389,31 +389,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table854 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table862 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table854.AddRow(new string[] {
+                table862.AddRow(new string[] {
                             "Project13156",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 53
- testRunner.When("Project created via API and opened", ((string)(null)), table854, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table862, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table855 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table863 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table855.AddRow(new string[] {
+                table863.AddRow(new string[] {
                             "1Test",
                             "DAS13156",
                             "true",
                             "Project13156"});
 #line 56
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table855, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table863, "When ");
 #line hidden
 #line 59
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -424,15 +424,15 @@ this.FeatureBackground();
 #line 61
  testRunner.When("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table856 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table864 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table856.AddRow(new string[] {
+                table864.AddRow(new string[] {
                             "ACDSee 4.0.2 PowerPack Trial Version (4.00.0002)"});
-                table856.AddRow(new string[] {
+                table864.AddRow(new string[] {
                             "0036 - Microsoft Access 97 SR-2 English (8.0)"});
 #line 62
  testRunner.When("User expands \'Applications to add\' multiselect to the \'Applications\' tab on Proje" +
-                        "ct Scope Changes page and selects following Objects", ((string)(null)), table856, "When ");
+                        "ct Scope Changes page and selects following Objects", ((string)(null)), table864, "When ");
 #line hidden
 #line 66
  testRunner.When("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -574,19 +574,19 @@ this.FeatureBackground();
 #line 95
  testRunner.And("\"Windows7Mi: Capacity Unit\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table857 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table865 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table857.AddRow(new string[] {
+                table865.AddRow(new string[] {
                             "Unassigned"});
 #line 96
- testRunner.And("Values is displayed in added filter info", ((string)(null)), table857, "And ");
+ testRunner.And("Values is displayed in added filter info", ((string)(null)), table865, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table858 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table866 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table858.AddRow(new string[] {
+                table866.AddRow(new string[] {
                             "is"});
 #line 99
- testRunner.And("Options is displayed in added filter info", ((string)(null)), table858, "And ");
+ testRunner.And("Options is displayed in added filter info", ((string)(null)), table866, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -144,26 +144,26 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3183 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3194 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3183.AddRow(new string[] {
+                table3194.AddRow(new string[] {
                             string.Format("{0}", rowGroups)});
 #line 13
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3183, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3194, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3184 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3195 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3184.AddRow(new string[] {
+                table3195.AddRow(new string[] {
                             string.Format("{0}", columns)});
 #line 16
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3184, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3195, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3185 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3196 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3185.AddRow(new string[] {
+                table3196.AddRow(new string[] {
                             string.Format("{0}", values)});
 #line 19
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3185, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3196, "And ");
 #line hidden
 #line 22
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -275,16 +275,16 @@ this.FeatureBackground();
 #line 48
  testRunner.When("User expands \'Evergreen\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3186 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3197 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table3186.AddRow(new string[] {
+                table3197.AddRow(new string[] {
                             "Evergreen Bucket"});
-                table3186.AddRow(new string[] {
+                table3197.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table3186.AddRow(new string[] {
+                table3197.AddRow(new string[] {
                             "Evergreen Ring"});
 #line 49
- testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3186, "Then ");
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3197, "Then ");
 #line hidden
 #line 54
  testRunner.When("User clicks Close Add Item icon in Pivot panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -304,16 +304,16 @@ this.FeatureBackground();
 #line 59
  testRunner.When("User expands \'Evergreen\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3187 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3198 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table3187.AddRow(new string[] {
+                table3198.AddRow(new string[] {
                             "Evergreen Bucket"});
-                table3187.AddRow(new string[] {
+                table3198.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table3187.AddRow(new string[] {
+                table3198.AddRow(new string[] {
                             "Evergreen Ring"});
 #line 60
- testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3187, "Then ");
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3198, "Then ");
 #line hidden
 #line 65
  testRunner.When("User clicks Close Add Item icon in Pivot panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -333,16 +333,16 @@ this.FeatureBackground();
 #line 70
  testRunner.When("User expands \'Evergreen\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3188 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3199 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table3188.AddRow(new string[] {
+                table3199.AddRow(new string[] {
                             "Evergreen Bucket"});
-                table3188.AddRow(new string[] {
+                table3199.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table3188.AddRow(new string[] {
+                table3199.AddRow(new string[] {
                             "Evergreen Ring"});
 #line 71
- testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3188, "Then ");
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3199, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -418,30 +418,30 @@ this.FeatureBackground();
 #line 92
  testRunner.When("User expands \'Evergreen\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3189 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3200 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table3189.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Criticality"});
-                table3189.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table3189.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Evergreen Rationalisation"});
-                table3189.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Evergreen Target App Compliance"});
-                table3189.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Evergreen Target App Key"});
-                table3189.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Evergreen Target App Name"});
-                table3189.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Evergreen Target App Vendor"});
-                table3189.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Evergreen Target App Version"});
-                table3189.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Hide From End Users"});
-                table3189.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "In Catalog"});
 #line 93
- testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3189, "Then ");
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3200, "Then ");
 #line hidden
 #line 105
  testRunner.When("User clicks Close Add Item icon in Pivot panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -461,30 +461,30 @@ this.FeatureBackground();
 #line 110
  testRunner.When("User expands \'Evergreen\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3190 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3201 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table3190.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "Criticality"});
-                table3190.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table3190.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "Evergreen Rationalisation"});
-                table3190.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "Evergreen Target App Compliance"});
-                table3190.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "Evergreen Target App Key"});
-                table3190.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "Evergreen Target App Name"});
-                table3190.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "Evergreen Target App Vendor"});
-                table3190.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "Evergreen Target App Version"});
-                table3190.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "Hide From End Users"});
-                table3190.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "In Catalog"});
 #line 111
- testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3190, "Then ");
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3201, "Then ");
 #line hidden
 #line 123
  testRunner.When("User clicks Close Add Item icon in Pivot panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -504,30 +504,30 @@ this.FeatureBackground();
 #line 128
  testRunner.When("User expands \'Evergreen\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3191 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3202 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table3191.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Criticality"});
-                table3191.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table3191.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Evergreen Rationalisation"});
-                table3191.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Evergreen Target App Compliance"});
-                table3191.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Evergreen Target App Key"});
-                table3191.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Evergreen Target App Name"});
-                table3191.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Evergreen Target App Vendor"});
-                table3191.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Evergreen Target App Version"});
-                table3191.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Hide From End Users"});
-                table3191.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "In Catalog"});
 #line 129
- testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3191, "Then ");
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table3202, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -594,26 +594,26 @@ this.FeatureBackground();
 #line 146
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3192 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3203 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3192.AddRow(new string[] {
+                table3203.AddRow(new string[] {
                             string.Format("{0}", rowGroup)});
 #line 147
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3192, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3203, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3193 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3204 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3193.AddRow(new string[] {
+                table3204.AddRow(new string[] {
                             string.Format("{0}", column)});
 #line 150
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3193, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3204, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3194 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3205 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3194.AddRow(new string[] {
+                table3205.AddRow(new string[] {
                             string.Format("{0}", value)});
 #line 153
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3194, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3205, "And ");
 #line hidden
 #line 156
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -630,19 +630,19 @@ this.FeatureBackground();
 #line 160
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3195 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3206 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3195.AddRow(new string[] {
+                table3206.AddRow(new string[] {
                             string.Format("{0}", columnToBeAdded)});
 #line 161
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3195, "And ");
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3206, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3196 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3207 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3196.AddRow(new string[] {
+                table3207.AddRow(new string[] {
                             string.Format("{0}", columnToBeAdded)});
 #line 164
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table3196, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table3207, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -707,26 +707,26 @@ this.FeatureBackground();
 #line 179
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3197 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3208 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3197.AddRow(new string[] {
+                table3208.AddRow(new string[] {
                             string.Format("{0}", rowGroup)});
 #line 180
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3197, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3208, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3198 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3209 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3198.AddRow(new string[] {
+                table3209.AddRow(new string[] {
                             string.Format("{0}", column)});
 #line 183
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3198, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3209, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3199 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3210 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3199.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             string.Format("{0}", value)});
 #line 186
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3199, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3210, "And ");
 #line hidden
 #line 189
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -808,26 +808,26 @@ this.FeatureBackground();
 #line 206
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3200 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3211 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3200.AddRow(new string[] {
+                table3211.AddRow(new string[] {
                             string.Format("{0}", rowGroup)});
 #line 207
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3200, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3211, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3201 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3212 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3201.AddRow(new string[] {
+                table3212.AddRow(new string[] {
                             string.Format("{0}", column)});
 #line 210
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3201, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3212, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3202 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3213 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3202.AddRow(new string[] {
+                table3213.AddRow(new string[] {
                             string.Format("{0}", value)});
 #line 213
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3202, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3213, "And ");
 #line hidden
 #line 216
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

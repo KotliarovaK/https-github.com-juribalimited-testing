@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Internal;
 using SeleniumExtras.PageObjects;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -23,7 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public By ListStarIcons = By.XPath(".//preceding-sibling::span//i[contains(@class,'star')]");
 
-        public By SettingsIcon = By.XPath(".//ancestor::div[@class='submenu-item']//i[contains(@class,'settings')]");
+        public By SettingsIcon = By.XPath(".//ancestor::li//i[contains(@class,'settings')]");
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'list-edit-wrapper')]//button")]
         public IWebElement CreateNewListButton { get; set; }
@@ -87,12 +86,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 case "All Users":
                 case "All Applications":
                 case "All Device Applications":
+                case "All User Applications":
                 case "All Mailboxes":
                     return Driver.FindElementByXPath(string.Format(TopSubMenuItemByName, listName));
 
                 default:
                     var listElement = ListElementsInListsPanel.Select(x => x.FindElement(AllListNamesInListsPanel))
-                        .FirstOrDefault(c => c.GetAttribute("text").Equals(listName));
+                        .FirstOrDefault(c => c.GetAttribute("innerText").Equals(listName));
                     if (listElement.Displayed())
                     {
                         return listElement;
@@ -112,7 +112,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetActiveList()
         {
-            Driver.WhatForElementToBeExists(SubMenuTopItems.First());
+            Driver.WaitForElementsToBeExists(SubMenuTopItems);
 
             if (SubMenuTopItems.Any(x => x.GetAttribute("class").Contains("selected")))
             {
@@ -128,7 +128,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     Driver.WaitForElementToBeDisplayed(element);
                     return element;
                 }
-
             }
 
             Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)),

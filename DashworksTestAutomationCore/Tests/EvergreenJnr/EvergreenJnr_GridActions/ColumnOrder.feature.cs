@@ -153,15 +153,15 @@ this.FeatureBackground();
 #line 15
  testRunner.Then("\'Owner Display Name\' column is \'Left\' Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2516 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2527 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2516.AddRow(new string[] {
+                table2527.AddRow(new string[] {
                             "Smith",
                             "11"});
 #line 16
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2516, "Then ");
+                        "s are returned", ((string)(null)), table2527, "Then ");
 #line hidden
 #line 19
  testRunner.Then("\'Owner Display Name\' column is \'Left\' Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -235,12 +235,12 @@ this.FeatureBackground();
 #line 26
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2517 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2528 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2517.AddRow(new string[] {
+                table2528.AddRow(new string[] {
                             "Compliance"});
 #line 27
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2517, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2528, "When ");
 #line hidden
 #line 30
  testRunner.When("User opens \'Compliance\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -251,15 +251,15 @@ this.FeatureBackground();
 #line 32
  testRunner.Then("\'Compliance\' column is \'Right\' Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2518 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2529 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2518.AddRow(new string[] {
+                table2529.AddRow(new string[] {
                             "Smith",
                             "59"});
 #line 33
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2518, "Then ");
+                        "s are returned", ((string)(null)), table2529, "Then ");
 #line hidden
 #line 36
  testRunner.Then("\'Compliance\' column is \'Right\' Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -333,34 +333,34 @@ this.FeatureBackground();
 #line 43
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2519 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2530 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2519.AddRow(new string[] {
+                table2530.AddRow(new string[] {
                             "Compliance"});
-                table2519.AddRow(new string[] {
+                table2530.AddRow(new string[] {
                             "Boot Up Date"});
 #line 44
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2519, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2530, "When ");
 #line hidden
 #line 48
  testRunner.When("User move \'Boot Up Date\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2520 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2531 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2520.AddRow(new string[] {
+                table2531.AddRow(new string[] {
                             "Hostname"});
-                table2520.AddRow(new string[] {
+                table2531.AddRow(new string[] {
                             "Boot Up Date"});
-                table2520.AddRow(new string[] {
+                table2531.AddRow(new string[] {
                             "Device Type"});
-                table2520.AddRow(new string[] {
+                table2531.AddRow(new string[] {
                             "Operating System"});
-                table2520.AddRow(new string[] {
+                table2531.AddRow(new string[] {
                             "Owner Display Name"});
-                table2520.AddRow(new string[] {
+                table2531.AddRow(new string[] {
                             "Compliance"});
 #line 49
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2520, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2531, "Then ");
 #line hidden
 #line 57
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -368,32 +368,32 @@ this.FeatureBackground();
 #line 58
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2521 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2532 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table2521.AddRow(new string[] {
+                table2532.AddRow(new string[] {
                             "Empty"});
 #line 59
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" with added column a" +
-                        "nd following checkboxes:", ((string)(null)), table2521, "When ");
+                        "nd following checkboxes:", ((string)(null)), table2532, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2522 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2533 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2522.AddRow(new string[] {
+                table2533.AddRow(new string[] {
                             "Hostname"});
-                table2522.AddRow(new string[] {
+                table2533.AddRow(new string[] {
                             "Boot Up Date"});
-                table2522.AddRow(new string[] {
+                table2533.AddRow(new string[] {
                             "Device Type"});
-                table2522.AddRow(new string[] {
+                table2533.AddRow(new string[] {
                             "Operating System"});
-                table2522.AddRow(new string[] {
+                table2533.AddRow(new string[] {
                             "Owner Display Name"});
-                table2522.AddRow(new string[] {
+                table2533.AddRow(new string[] {
                             "Compliance"});
-                table2522.AddRow(new string[] {
+                table2533.AddRow(new string[] {
                             "Windows7Mi: Category"});
 #line 62
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2522, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2533, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -446,14 +446,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2523 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2534 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2523.AddRow(new string[] {
+                table2534.AddRow(new string[] {
                             "Compliance"});
-                table2523.AddRow(new string[] {
+                table2534.AddRow(new string[] {
                             "Email Address"});
 #line 74
- testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table2523, "When ");
+ testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table2534, "When ");
 #line hidden
 #line 78
  testRunner.And("User move \'Email Address\' column to \'Username\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -467,44 +467,44 @@ this.FeatureBackground();
 #line 81
  testRunner.When("User removes \"Distinguished Name\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2524 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2535 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2524.AddRow(new string[] {
+                table2535.AddRow(new string[] {
                             "Username"});
-                table2524.AddRow(new string[] {
+                table2535.AddRow(new string[] {
                             "Email Address"});
-                table2524.AddRow(new string[] {
+                table2535.AddRow(new string[] {
                             "Domain"});
-                table2524.AddRow(new string[] {
+                table2535.AddRow(new string[] {
                             "Display Name"});
-                table2524.AddRow(new string[] {
+                table2535.AddRow(new string[] {
                             "Compliance"});
 #line 82
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2524, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2535, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2525 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2536 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2525.AddRow(new string[] {
+                table2536.AddRow(new string[] {
                             "User Key"});
 #line 89
- testRunner.When("User add following columns using current URL on \"Users\" page:", ((string)(null)), table2525, "When ");
+ testRunner.When("User add following columns using current URL on \"Users\" page:", ((string)(null)), table2536, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2526 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2537 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2526.AddRow(new string[] {
+                table2537.AddRow(new string[] {
                             "Username"});
-                table2526.AddRow(new string[] {
+                table2537.AddRow(new string[] {
                             "Email Address"});
-                table2526.AddRow(new string[] {
+                table2537.AddRow(new string[] {
                             "Domain"});
-                table2526.AddRow(new string[] {
+                table2537.AddRow(new string[] {
                             "Display Name"});
-                table2526.AddRow(new string[] {
+                table2537.AddRow(new string[] {
                             "Compliance"});
-                table2526.AddRow(new string[] {
+                table2537.AddRow(new string[] {
                             "User Key"});
 #line 92
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2526, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2537, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -557,58 +557,58 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2527 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2538 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2527.AddRow(new string[] {
+                table2538.AddRow(new string[] {
                             "Email Count"});
-                table2527.AddRow(new string[] {
+                table2538.AddRow(new string[] {
                             "Import Type"});
 #line 103
- testRunner.When("User add following columns using URL to the \"Mailboxes\" page:", ((string)(null)), table2527, "When ");
+ testRunner.When("User add following columns using URL to the \"Mailboxes\" page:", ((string)(null)), table2538, "When ");
 #line hidden
 #line 107
  testRunner.When("User move \'Email Count\' column to \'Email Address\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2528 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2539 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2528.AddRow(new string[] {
+                table2539.AddRow(new string[] {
                             "Email Address"});
-                table2528.AddRow(new string[] {
+                table2539.AddRow(new string[] {
                             "Email Count"});
-                table2528.AddRow(new string[] {
+                table2539.AddRow(new string[] {
                             "Mailbox Platform"});
-                table2528.AddRow(new string[] {
+                table2539.AddRow(new string[] {
                             "Mail Server"});
-                table2528.AddRow(new string[] {
+                table2539.AddRow(new string[] {
                             "Mailbox Type"});
-                table2528.AddRow(new string[] {
+                table2539.AddRow(new string[] {
                             "Owner Display Name"});
-                table2528.AddRow(new string[] {
+                table2539.AddRow(new string[] {
                             "Import Type"});
 #line 108
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2528, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2539, "Then ");
 #line hidden
 #line 117
  testRunner.When("User perform search by \"Smith\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2529 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2540 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2529.AddRow(new string[] {
+                table2540.AddRow(new string[] {
                             "Email Address"});
-                table2529.AddRow(new string[] {
+                table2540.AddRow(new string[] {
                             "Email Count"});
-                table2529.AddRow(new string[] {
+                table2540.AddRow(new string[] {
                             "Mailbox Platform"});
-                table2529.AddRow(new string[] {
+                table2540.AddRow(new string[] {
                             "Mail Server"});
-                table2529.AddRow(new string[] {
+                table2540.AddRow(new string[] {
                             "Mailbox Type"});
-                table2529.AddRow(new string[] {
+                table2540.AddRow(new string[] {
                             "Owner Display Name"});
-                table2529.AddRow(new string[] {
+                table2540.AddRow(new string[] {
                             "Import Type"});
 #line 118
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2529, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2540, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -678,21 +678,21 @@ this.FeatureBackground();
 #line 135
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2530 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2541 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2530.AddRow(new string[] {
+                table2541.AddRow(new string[] {
                             "Application"});
 #line 136
- testRunner.And("ColumnName is removed from the list", ((string)(null)), table2530, "And ");
+ testRunner.And("ColumnName is removed from the list", ((string)(null)), table2541, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2531 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2542 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2531.AddRow(new string[] {
+                table2542.AddRow(new string[] {
                             "Vendor"});
-                table2531.AddRow(new string[] {
+                table2542.AddRow(new string[] {
                             "Version"});
 #line 139
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2531, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2542, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -848,26 +848,26 @@ this.FeatureBackground();
 #line 169
  testRunner.When(string.Format("User removes \"{0}\" column by Column panel", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2532 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2543 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2532.AddRow(new string[] {
+                table2543.AddRow(new string[] {
                             string.Format("{0}", columnName)});
 #line 170
- testRunner.Then("ColumnName is removed from the list", ((string)(null)), table2532, "Then ");
+ testRunner.Then("ColumnName is removed from the list", ((string)(null)), table2543, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2533 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2544 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2533.AddRow(new string[] {
+                table2544.AddRow(new string[] {
                             string.Format("{0}", columnName)});
 #line 173
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2533, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2544, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2534 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2545 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2534.AddRow(new string[] {
+                table2545.AddRow(new string[] {
                             string.Format("{0}", columnName)});
 #line 176
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table2534, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table2545, "Then ");
 #line hidden
 #line 179
  testRunner.And("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

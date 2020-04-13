@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using HtmlAgilityPack;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -175,7 +174,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = FilterValue)]
         public IList<IWebElement> FilterValueList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='dateDirection']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='relativeSelect']")]
         public IWebElement AheadOrAgoInput { get; set; }
         
         public override List<By> GetPageIdentitySelectors()
@@ -191,11 +190,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElement(By.XPath(
                 $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()=\"" + filterCategoryName + "\"]/ancestor::div[@class='filter-category ng-star-inserted']"));
-        }
-
-        public IWebElement FilterFieldInstruction(string filterField)
-        {
-            return Driver.FindElement(By.XPath($".//input[@placeholder='{filterField}']/ancestor::div[@class='mat-form-field-wrapper']//mat-hint"));
         }
 
         public List<string> GetFilterValuesByFilterName(string filterName)
@@ -395,7 +389,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetEditFilterButton(string filterName)
         {
             var editFilterSelector =
-                $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[@class='filter-group no-border-bottom ng-star-inserted']//button";
+                $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[contains(@class,'filter-group') and not(contains(@class, 'relationContainer'))]//button";
             return Driver.FindElements(By.XPath(editFilterSelector)).Last();
         }
 
@@ -599,13 +593,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void SelectAssociation(string placeholder, string option)
         {
-            Driver.FindElement(By.XPath(SearchTextBoxSelector)).Click();
-            Driver.FindElement(By.XPath(SearchTextBoxSelector)).Clear();
-            Driver.FindElement(By.XPath(SearchTextBoxSelector)).SendKeys(option);
+            var optionSelector =
+                $".//input[@placeholder='{placeholder}']/ancestor::div[contains(@class, 'searchPanel input-wrapper')]/following-sibling::div//div[contains(text(), '{option}')]";
+
             Driver.WaitForDataLoading();
 
-            var optionSelector =
-                $".//input[@placeholder='{placeholder}']/ancestor::div[@class='searchPanel input-wrapper']/following-sibling::div//div[contains(text(), '{option}')]";
             Driver.FindElementByXPath(optionSelector).Click();
         }
 

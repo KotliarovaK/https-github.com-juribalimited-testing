@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectDto xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ProjectId>287</ProjectId>
+  <ProjectName>11test</ProjectName>
+  <ProjectDescription>11test</ProjectDescription>
+  <ProjectTypeId>1</ProjectTypeId>
+  <CreatedDate>2019-10-04T08:16:18.5</CreatedDate>
+  <CreatedByUserId>985a54af-cb69-4656-ac8b-abab5eb87d62</CreatedByUserId>
+  <DefaultPkgOnboardRagStatusId>2669</DefaultPkgOnboardRagStatusId>
+  <EnableEmail>true</EnableEmail>
+  <HtmlEmailTemplate>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/&gt;
+    &lt;title&gt;Dashworks Mail&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+&lt;!--
+	/* Client-specific Styles */
+        body { width: 100% !important; }
+
+        /* Force Hotmail to display emails at full width */
+
+        body { -webkit-text-size-adjust: none; }
+
+        /* Prevent Webkit platforms from changing default text sizes. */
+
+        /* Reset Styles */
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: #202020;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        img {
+            border: none;
+            font-size: 14px;
+            font-weight: bold;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+
+        #backgroundTable {
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+        }
+
+        /* Template Styles */
+
+        body, #backgroundTable { background-color: #737375; }
+
+        #templateContainer { border: 1px solid #37393a; }
+
+        h1, .h1 {
+            display: block;
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 100%;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+            margin-left: 0;
+        }
+
+        h2, .h2 {
+            display: block;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 100%;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+            margin-left: 0;
+        }
+
+        h3, .h3 {
+            display: block;
+            font-size: 26px;
+            font-weight: bold;
+            line-height: 100%;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+            margin-left: 0;
+        }
+
+        h4, .h4 {
+            display: block;
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 100%;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+            margin-left: 0;
+        }
+
+        #templateContainer, .bodyContent { background-color: #FFFFFF; }
+
+        .bodyContent div {
+            color: #505050;
+            line-height: 150%;
+        }
+
+        .bodyContent div a:link, .bodyContent div a:visited {
+            color: #336699;
+            font-weight: normal;
+            text-decoration: underline;
+        }
+
+        .bodyContent img {
+            display: inline;
+            height: auto;
+        }
+
+        .disclaimerContent div {
+            color: #FFFFFF;
+            background-color: #737375;
+            font-size: 10px;
+            padding: 8px;
+        }
+
+        .disclaimerContent div a:link, .disclaimerContent div a:visited {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+		
+    --&gt;
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0"&gt;
+&lt;center&gt;
+    &lt;table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable"&gt;
+        &lt;tr&gt;
+            &lt;td align="center" valign="top"&gt;
+                &lt;br/&gt;
+                &lt;table border="0" cellpadding="0" cellspacing="0" width="702" id="templateContainer"&gt;
+
+                    &lt;tr&gt;
+                        &lt;td align="center" valign="top"&gt;
+
+                            &lt;!-- // Begin Template Header \\ --&gt;
+                            &lt;table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader"&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;
+                                        &lt;img src="https://s3-eu-west-1.amazonaws.com/juriba-mailtemplate-attachments/emailheader1.jpg" alt="header"/&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                            &lt;!-- // End Template Header \\ --&gt;
+
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+
+                    &lt;tr&gt;
+                        &lt;td align="center" valign="top"&gt;
+
+                            &lt;!-- // Begin Template Body \\ --&gt;
+                            &lt;table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody"&gt;
+                                &lt;tr&gt;
+                                    &lt;td valign="top"&gt;
+
+                                        &lt;!-- // Begin Module: Standard Content \\ --&gt;
+                                        &lt;table border="0" cellpadding="20" cellspacing="0" width="100%"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td valign="top" class="bodyContent"&gt;
+                                                    &lt;div&gt;
+                                                        {$MailTemplate}
+                                                    &lt;/div&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                        &lt;!-- // End Module: Standard Content \\ --&gt;
+
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                            &lt;!-- // End Template Body \\ --&gt;
+
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+
+                    &lt;tr&gt;
+                        &lt;td align="center" valign="top"&gt;
+
+                            &lt;!-- // Begin Template Footer \\ --&gt;
+                            &lt;table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter"&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;
+                                        &lt;img src="https://s3-eu-west-1.amazonaws.com/juriba-mailtemplate-attachments/emailfooter1.jpg" alt="header"/&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                            &lt;!-- // End Template Footer \\ --&gt;
+
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+
+                &lt;/table&gt;
+
+                &lt;table border="0" cellpadding="0" cellspacing="0" width="702" id="templateDisclaimer"&gt;
+                    &lt;tr&gt;
+                        &lt;td class="disclaimerContent"&gt;
+                            &lt;div&gt;
+                                This email has been automatically sent to you from your Dashworks server. If you have any questions on the content of this email please contact your Dashworks administrator. For more information on Dashworks and Juriba, please visit the web site at &lt;a href="http://www.juriba.com"&gt;http://www.juriba.com&lt;/a&gt;.
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+
+                &lt;br/&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;</HtmlEmailTemplate>
+  <IsDeleted>0</IsDeleted>
+  <DeletedDate xsi:nil="true" />
+  <DeletedByUserId />
+  <DefaultAppsShowLinkedObjects>0</DefaultAppsShowLinkedObjects>
+  <DefaultAppsForwardPathTypeId>4</DefaultAppsForwardPathTypeId>
+  <SelfServiceDefault>false</SelfServiceDefault>
+  <OnboardNaApps>false</OnboardNaApps>
+  <CapacityVisible>false</CapacityVisible>
+  <CapacityThreshold>90</CapacityThreshold>
+  <EnforceCapacityOnSelfService>false</EnforceCapacityOnSelfService>
+  <EnforceCapacityOnProjectObject>false</EnforceCapacityOnProjectObject>
+  <ShowOriginalApplicationColumnOnAppDashboards>false</ShowOriginalApplicationColumnOnAppDashboards>
+  <IncludeSiteNameInApplicationName>false</IncludeSiteNameInApplicationName>
+  <IncludeVersionInApplicationName>false</IncludeVersionInApplicationName>
+  <DefaultLanguageId>0</DefaultLanguageId>
+  <OnboardAssociatedInstalledApps>true</OnboardAssociatedInstalledApps>
+  <OnboardAssociatedProvisionedApps>true</OnboardAssociatedProvisionedApps>
+  <OnboardAssociatedUsedApps>2</OnboardAssociatedUsedApps>
+  <BucketModeId>1</BucketModeId>
+  <CapacityUnitModeId>1</CapacityUnitModeId>
+  <RingModeId>1</RingModeId>
+  <EvergreenProject>
+    <PrimaryObjectTypeId>2</PrimaryObjectTypeId>
+    <IncludeDevices>true</IncludeDevices>
+    <DeviceScopeListId xsi:nil="true" />
+    <IncludeUsers>true</IncludeUsers>
+    <UserScopeListId xsi:nil="true" />
+    <IncludeApplications>true</IncludeApplications>
+    <ApplicationScopeListId xsi:nil="true" />
+    <ApplicationAssociationDeviceOwnerScopeListId xsi:nil="true" />
+    <ApplicationAssociationOwnedDeviceScopeListId xsi:nil="true" />
+    <IncludeMailboxes>false</IncludeMailboxes>
+    <MailboxScopeListId xsi:nil="true" />
+    <MailboxAssociationDeviceOwnerScopeListId xsi:nil="true" />
+    <IncludeAppsInstalledOnDevice>true</IncludeAppsInstalledOnDevice>
+    <IncludeAppsEntitledToDevice>true</IncludeAppsEntitledToDevice>
+    <IncludeAppsEntitledToUser>true</IncludeAppsEntitledToUser>
+    <IncludeAppsUsedOnDeviceByAnyUser>true</IncludeAppsUsedOnDeviceByAnyUser>
+    <IncludeAppsUsedOnDeviceByDeviceOwner>true</IncludeAppsUsedOnDeviceByDeviceOwner>
+    <IncludeAppsUsedByUserOnAnyDevice>true</IncludeAppsUsedByUserOnAnyDevice>
+    <IncludeMailboxesOwnedByUser>false</IncludeMailboxesOwnedByUser>
+    <IncludeMailboxesDelegatedToUser>false</IncludeMailboxesDelegatedToUser>
+    <IncludeMailboxOwner>false</IncludeMailboxOwner>
+    <IncludeMailboxDelegates>false</IncludeMailboxDelegates>
+    <EvergreenProjectMailboxPermissions />
+  </EvergreenProject>
+  <ProjectStages />
+  <ProjectTasks />
+  <RequestTypes>
+    <RequestTypeDTO>
+      <RequestTypeId>1235</RequestTypeId>
+      <RequestType>[Default (User)]</RequestType>
+      <RequestTypeDesc>[Default (User)]</RequestTypeDesc>
+      <ProjectId>287</ProjectId>
+      <ObjectTypeId>1</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>true</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>1236</RequestTypeId>
+      <RequestType>[Default (Computer)]</RequestType>
+      <RequestTypeDesc>[Default (Computer)]</RequestTypeDesc>
+      <ProjectId>287</ProjectId>
+      <ObjectTypeId>2</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>true</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>1237</RequestTypeId>
+      <RequestType>[Default (Application)]</RequestType>
+      <RequestTypeDesc>[Default (Application)]</RequestTypeDesc>
+      <ProjectId>287</ProjectId>
+      <ObjectTypeId>3</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>true</IsDefault>
+    </RequestTypeDTO>
+  </RequestTypes>
+  <ProjectRings>
+    <RingDto>
+      <RingId>318</RingId>
+      <ProjectId>287</ProjectId>
+      <RingName>Unassigned</RingName>
+      <RingDescription>Unassigned</RingDescription>
+      <DisplayOrder>1</DisplayOrder>
+      <IsDefault>true</IsDefault>
+      <SourceRingId xsi:nil="true" />
+    </RingDto>
+  </ProjectRings>
+  <ProjectReadiness>
+    <ReadinessDto>
+      <RAGStatusId>2665</RAGStatusId>
+      <RAGStatus>RED</RAGStatus>
+      <Priority>1</Priority>
+      <Ready>false</Ready>
+      <IsSystemNone>false</IsSystemNone>
+      <TemplateId>4</TemplateId>
+      <ToolTip>Red</ToolTip>
+      <ForeColorHtml>#FFFFFF</ForeColorHtml>
+      <BackColorHtml>#f56056</BackColorHtml>
+    </ReadinessDto>
+    <ReadinessDto>
+      <RAGStatusId>2666</RAGStatusId>
+      <RAGStatus>AMBER</RAGStatus>
+      <Priority>2</Priority>
+      <Ready>false</Ready>
+      <IsSystemNone>false</IsSystemNone>
+      <TemplateId>7</TemplateId>
+      <ToolTip>Amber</ToolTip>
+      <ForeColorHtml>#000000</ForeColorHtml>
+      <BackColorHtml>#ebaf25</BackColorHtml>
+    </ReadinessDto>
+    <ReadinessDto>
+      <RAGStatusId>2667</RAGStatusId>
+      <RAGStatus>GREEN</RAGStatus>
+      <Priority>3</Priority>
+      <Ready>true</Ready>
+      <IsSystemNone>false</IsSystemNone>
+      <TemplateId>10</TemplateId>
+      <ToolTip>Green</ToolTip>
+      <ForeColorHtml>#FFFFFF</ForeColorHtml>
+      <BackColorHtml>#7ebd38</BackColorHtml>
+    </ReadinessDto>
+    <ReadinessDto>
+      <RAGStatusId>2668</RAGStatusId>
+      <RAGStatus>UNKNOWN</RAGStatus>
+      <Priority>4</Priority>
+      <Ready>false</Ready>
+      <IsSystemNone>false</IsSystemNone>
+      <TemplateId>11</TemplateId>
+      <ToolTip>Unknown</ToolTip>
+      <ForeColorHtml>#000000</ForeColorHtml>
+      <BackColorHtml>#808b99</BackColorHtml>
+    </ReadinessDto>
+    <ReadinessDto>
+      <RAGStatusId>2670</RAGStatusId>
+      <RAGStatus>test</RAGStatus>
+      <Priority>5</Priority>
+      <Ready>false</Ready>
+      <IsSystemNone>false</IsSystemNone>
+      <TemplateId>3</TemplateId>
+      <ToolTip>test</ToolTip>
+      <ForeColorHtml>#000000</ForeColorHtml>
+      <BackColorHtml>#47d1d1</BackColorHtml>
+    </ReadinessDto>
+    <ReadinessDto>
+      <RAGStatusId>2669</RAGStatusId>
+      <RAGStatus>NONE</RAGStatus>
+      <Priority>6</Priority>
+      <Ready>false</Ready>
+      <IsSystemNone>true</IsSystemNone>
+      <TemplateId>12</TemplateId>
+      <ToolTip>None</ToolTip>
+      <ForeColorHtml>#000000</ForeColorHtml>
+      <BackColorHtml>#c6cbd2</BackColorHtml>
+    </ReadinessDto>
+  </ProjectReadiness>
+</ProjectDto>

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
@@ -18,7 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public const string DatepickerCellSelector = "//td[contains(@class,'cell')]";
 
-        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']|//span[text()='{0}']/ancestor::span[contains(@class,'label')]//preceding-sibling::mat-select";
+        private string NamedDropdownSelector = ".//mat-select[@aria-label='{0}' or @automation='{0}']|//*[text()='{0}']/ancestor::span[contains(@class,'label')]//preceding-sibling::mat-select";
 
         private string NamedDropdownForFieldSelector = ".//span[text()='{0}']/../ancestor::tr//mat-select";
 
@@ -38,6 +37,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//h3")]
+        public IWebElement SecondLevelSubHeader { get; set; }
+
+        private const string TextEditorSelector = ".//quill-editor/..";
+
+        [FindsBy(How = How.XPath, Using = TextEditorSelector)]
+        public IWebElement TextEditor { get; set; }
+
+        [FindsBy(How = How.XPath, Using = TextEditorSelector + "//div[contains(@class,'ql-editor')]")]
+        public IWebElement TextEditorInput { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
@@ -123,10 +133,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-list')]/..//following-sibling::span[text()='All lists']")]
         public IWebElement AllListsIcon { get; set; }
 
-        //TODO should be replaced by AutocompleteSelect
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Owner']")]
-        public IWebElement OwnerDropDown { get; set; }
-
         #endregion
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
@@ -211,7 +217,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion TableColumns
 
-        private static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'])";
+        private static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'] | .//input[@automation='{0}'])";
 
         //For cases when more than 4 items are selected they are collapsed to '1 more'
         public string ExpandNamedTextboxSelector = "//preceding-sibling::button[contains(@class,'chips-expand')]";
@@ -248,6 +254,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetCustomListPrefix() =>
+            ActiveCustomListEdited.FindElement(By.XPath("./preceding-sibling::span"));
 
         #region Link
 
@@ -471,7 +480,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
             if (!Driver.IsElementDisplayed(by, wait))
+            {
                 throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
+            }
             return Driver.FindElement(by);
         }
 
@@ -491,10 +502,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public void PopulateTextbox(string placeholder, string value, bool clear = true)
         {
             if (clear)
+            {
                 GetTextbox(placeholder).Clear();
+            }
 
             if (!string.IsNullOrEmpty(value))
+            {
                 GetTextbox(placeholder).SendKeys(value);
+            }
         }
 
         public void PopulateTextboxWithAddButton(string placeholder, string option)
@@ -504,6 +519,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             button.ClearWithBackspaces();
             button.SendKeys(option);
             GetTextboxAddButton(placeholder).Click();
+        }
+
+        public IWebElement GetFieldHint(string placeholder)
+        {
+            var hitSelector = By.XPath("./ancestor::div[@class='mat-form-field-wrapper']//mat-hint/span");
+            Driver.WaitForElementInElementToBeDisplayed(GetTextbox(placeholder), hitSelector);
+            return GetTextbox(placeholder).FindElement(hitSelector);
         }
 
         public IWebElement GetTextboxAddButton(string placeholder)
@@ -538,10 +560,35 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
+        private By textboxSuccessSelector = By.XPath("./span[@class='success-text']");
+        public IWebElement GetTextboxSuccessMessageElement(string placeholder)
+        {
+            return GetTextboxErrorMessageElement(placeholder).FindElement(textboxSuccessSelector);
+        }
         public string GetTextboxErrorMessage(string placeholder)
         {
             var error = GetTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[not (@class)]"));
             return error.Text;
+        }
+
+        private By textboxInfoSelector = By.XPath("./span[contains(@class,'info-text')]");
+
+        public string GetTextboxInfoMessage(string placeholder)
+        {
+            var error = GetTextboxErrorMessageElement(placeholder).FindElement(textboxInfoSelector);
+            return error.Text;
+        }
+
+        public void WaitForTextboxInfoMessageDisappears(string placeholder)
+        {
+            try
+            {
+                Driver.WaitForElementToBeNotDisplayed(GetTextboxErrorMessageElement(placeholder), textboxInfoSelector);
+            }
+            catch
+            {
+                //No error/info message located. Nothing to wait
+            }
         }
 
         public IWebElement GetTextboxErrorMessageExclamationIcon(string placeholder)
@@ -699,11 +746,23 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Dropdown
 
-        public IWebElement GetDropdown(string dropdownName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        public IWebElement GetDropdown(string dropdownName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long, bool focusOnDropDown = false)
         {
             var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
-            if (!Driver.IsElementDisplayed(selector, wait))
+            if (!Driver.IsElementExists(selector, wait))
+            {
+                throw new Exception($"'{dropdownName}' dropdown is not exists");
+            }
+            if (focusOnDropDown)
+            {
+                Driver.MouseHover(selector);
+            }
+
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Short))
+            {
                 throw new Exception($"'{dropdownName}' dropdown is not displayed");
+            }
+
             Driver.WaitForElementToBeEnabled(selector);
             return Driver.FindElement(selector);
         }
@@ -721,7 +780,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public void SelectDropdown(string value, string dropdownName)
         {
             GetDropdown(dropdownName).Click();
-            GetDropdownValueByName(value).Click();
+            var ddValue = GetDropdownValueByName(value);
+            Driver.MouseHover(ddValue);
+            ddValue.Click();
         }
 
         public bool IsDropdownDisplayed(string dropdownName)
@@ -811,6 +872,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             Driver.WaitForElementsToBeDisplayed(By.XPath(DropdownOptionsSelector(withoutSelected)));
             return Driver.FindElements(By.XPath($"{DropdownOptionsSelector(withoutSelected)}/preceding-sibling::i[contains(@class, 'material-icons')]"));
+        }
+
+        public bool IsIconDisplayedFromDropdownOptions(string iconName, bool withoutSelected = false)
+        {
+            var selector = By.XPath($"{DropdownOptionsSelector(withoutSelected)}/parent::div//i[contains(@class, '{iconName}')]");
+            return Driver.IsElementDisplayed(selector);
         }
 
         public bool IsDropdownOpened(bool withoutSelected = false)
@@ -1121,6 +1188,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
+        public void SetRadioButtonState(string ariaLabel, bool state)
+        {
+            if (!IsRadioButtonChecked(ariaLabel).Equals(state))
+            {
+                GetRadioButton(ariaLabel).Click();
+            }
+        }
+
+        public bool IsRadioButtonChecked(string ariaLabel)
+        {
+            var classValue = GetRadioButton(ariaLabel).GetAttribute("class");
+            return classValue.Contains("mat-radio-checked");
+        }
+
         public bool IsRadioButtonEnabled(string ariaLabel)
         {
             var classValue = GetRadioButton(ariaLabel).GetAttribute("class");
@@ -1226,6 +1307,40 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public void SetCheckboxStateFromMenuPanel(string ariaLabel, bool expectedCondition)
         {
             SetCheckboxState(ariaLabel, expectedCondition, MenuPanelSelector);
+        }
+
+        #endregion
+
+        #region Slide toggle
+
+        public IWebElement GetSlideToggle(string slideToggle)
+        {
+            return Driver.FindElement(By.XPath($".//mat-slide-toggle//span[text()='{slideToggle}']"));
+        }
+
+        public bool GetDisplayStateForSlideToggle(string slideToggle)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//mat-slide-toggle//span[text()='{slideToggle}']"));
+        }
+
+        public bool GetSlideToggleCondition(string slideToggle)
+        {
+            return GetSlideToggle(slideToggle).GetAttribute("class").Contains("checked");
+        }
+
+        public void SetSlideToggleCondition(string slideToggle, bool expectedCondition)
+        {
+            if (!GetSlideToggleCondition(slideToggle).Equals(expectedCondition))
+                GetSlideToggle(slideToggle).Click();
+        }
+
+        #endregion
+
+        #region Icons
+
+        public IWebElement GetIcon(string iconTextInDom)
+        {
+            return Driver.FindElement(By.XPath($".//i[@class='material-icons'][text()='{iconTextInDom}']"));
         }
 
         #endregion

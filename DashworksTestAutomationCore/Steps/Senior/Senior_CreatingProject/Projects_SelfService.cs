@@ -1,4 +1,6 @@
 ﻿using System;
+using AutomationUtils.Extensions;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
@@ -107,7 +109,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             page.Languages.SelectboxSelect(_welcomeDto.Language.GetValue());
             page.AddLanguageButton.Click();
             var language = page.GetLanguagesByName(_welcomeDto.Language.GetValue());
-            Utils.Verify.IsTrue(language.Displayed(), "Selected Language is not displayed");
+            Verify.IsTrue(language.Displayed(), "Selected Language is not displayed");
             page.GetDeleteButtonByLanguages(_welcomeDto.Language.GetValue()).Click();
             _driver.AcceptAlert();
 

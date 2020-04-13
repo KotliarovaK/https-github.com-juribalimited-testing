@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Extensions;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
@@ -45,7 +47,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAccountProfileDropdownIsDisplayedToUser()
         {
             var header = _driver.NowAt<HeaderElement>();
-            Utils.Verify.AreEqual(2, header.MenuItems.Count, "Account Profile dropdown is not displayed");
+            Verify.AreEqual(2, header.MenuItems.Count, "Account Profile dropdown is not displayed");
         }
 
         [When(@"User clicks Profile in Account Dropdown")]
@@ -69,7 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenChangePasswordPageIsDisplayedToUser()
         {
             var page = _driver.NowAt<ChangePasswordPage>();
-            Utils.Verify.IsTrue(page.CurrentPasswordField.Displayed(), "Change Password page is not displayed");
+            Verify.IsTrue(page.CurrentPasswordField.Displayed(), "Change Password page is not displayed");
         }
 
         [Then(@"page elements are translated into French")]
@@ -77,9 +79,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PreferencesPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.LeftHandMenuOnFrench.Displayed(), "Left Hand Menu is not translated into French");
-            Utils.Verify.IsTrue(page.UpdateButtonOnFrench.Displayed(), "Update Button is not translated into French");
-            Utils.Verify.IsTrue(page.CaptionOnFrench.Displayed(), "Caption is not translated into French");
+            Verify.IsTrue(page.LeftHandMenuOnFrench.Displayed(), "Left Hand Menu is not translated into French");
+            Verify.IsTrue(page.UpdateButtonOnFrench.Displayed(), "Update Button is not translated into French");
+            Verify.IsTrue(page.CaptionOnFrench.Displayed(), "Caption is not translated into French");
         }
 
         [Then(@"Display Mode is changed to High Contrast")]
@@ -87,8 +89,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PreferencesPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor(), "'Update Button' is not changed to High Contrast");
-            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor(), "Link Menu is not changed to High Contrast");
+            Verify.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor(), "'Update Button' is not changed to High Contrast");
+            Verify.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor(), "Link Menu is not changed to High Contrast");
         }
 
         [When(@"User clears Full name field")]
@@ -132,7 +134,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserPictureIsChangedToUploadedPhoto()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Utils.Verify.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
+            Verify.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
                 "Picture is not changed");
         }
 
@@ -140,7 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserPictureChangedToDefault()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Utils.Verify.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
+            Verify.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
                 "Picture is not default");
         }
 
@@ -148,9 +150,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNotificationMessageIsDisplayedForAFewSecondsOnPreferencesPage()
         {
             var page = _driver.NowAt<PreferencesPage>();
-            Utils.Verify.IsTrue(page.SuccessMessage.Displayed(), "Success message is not displayed");
+            Verify.IsTrue(page.SuccessMessage.Displayed(), "Success message is not displayed");
             Thread.Sleep(10000);
-            Utils.Verify.IsFalse(page.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
+            Verify.IsFalse(page.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
         [Then(@"following Roles are available for User:")]
@@ -159,7 +161,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
             var actualList = page.AvailableRoles.Select(value => value.Text);
-            Utils.Verify.AreEqual(expectedList, actualList, "Available Roles are different");
+            Verify.AreEqual(expectedList, actualList, "Available Roles are different");
         }
     }
 }

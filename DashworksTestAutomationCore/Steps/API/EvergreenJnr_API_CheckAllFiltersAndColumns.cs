@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using DashworksTestAutomation.DTO.Evergreen;
+using ApprovalTests;
+using ApprovalTests.Reporters;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using RestSharp;
 using TechTalk.SpecFlow;
-using System.IO;
 using DashworksTestAutomation.DTO.Evergreen.API;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using NUnit.Framework;
 
 namespace DashworksTestAutomation.Steps.API
 {
@@ -27,74 +28,68 @@ namespace DashworksTestAutomation.Steps.API
             _client = client;
         }
 
-        private IRestResponse CheckFiltersCount(string list)
+        private IRestResponse GetFiltersByListName(string list)
         {
-            var url = $"{UrlProvider.RestClientBaseUrl}{list}/fields?$lang=en-US";
+            var url = $"{UrlProvider.RestClientBaseUrl}{list}/filters?$lang={UserProvider.DefaultUserLanguage}";
             var response = _client.Evergreen.Get(url.GenerateRequest());
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 throw new Exception($"Unable to get filters for '{list}' list: {response.ErrorMessage}");
 
-            var currentFilters = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FilterDto>>(response.Content);
-
-            var expectedList = FileSystemHelper.ReadJsonListFromSystem<FilterDto>($"Filters\\{list}.json");
-
-            Utils.Verify.AreEqual(expectedList.Count, currentFilters.Count, "Filters count are different");
-
             return response;
         }
 
-        private IRestResponse CheckColumnsCount(string list)
+        private IRestResponse GetColumnsByListName(string list)
         {
-            var url = $"{UrlProvider.RestClientBaseUrl}{list.ToLower()}/filters?$lang=en-US";
+            var url = $"{UrlProvider.RestClientBaseUrl}{list.ToLower()}/fields?$lang={UserProvider.DefaultUserLanguage}";
             var response = _client.Evergreen.Get(url.GenerateRequest());
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 throw new Exception($"Unable to get filters for '{list}' list: {response.ErrorMessage}");
 
-            var currentColumns = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content);
-
-            var expectedList = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json");
-
-            Utils.Verify.AreEqual(expectedList.Count, currentColumns.Count, "Columns count are different");
-
             return response;
         }
 
+        [UseReporter(typeof(DiffReporter))]
         [Then(@"All columns with correct data are returned from the API for '(.*)' list")]
         public void ThenAllColumnsWithCorrectDataAreReturnedFromTheAPIForList(string list)
         {
-            var response = CheckColumnsCount(list);
+            var response = GetColumnsByListName(list);
 
-            var currentColumns = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content);
+            //var currentColumns = JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content).OrderBy(x => x.TranslatedColumnName).ToList();
+            //var expectedColumns = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json").OrderBy(x => x.TranslatedColumnName).ToList();
 
-            var expectedList = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json");
+            Approvals.VerifyJson(response.Content);
 
-            foreach (ColumnDto columnDto in expectedList)
-            {
-                Verify.IsTrue(currentColumns.Contains(columnDto), $"Incorrect data for column with '{columnDto.Label}' name");
-            }
+            //Verify.AreEqual(currentColumns.Count, expectedColumns.Count, "Columns count are different");
+
+            //for (int i = 0; i < expectedColumns.Count; i++)
+            //{
+            //    Verify.That(JsonConvert.SerializeObject(expectedColumns[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
+            //        Is.EqualTo(JsonConvert.SerializeObject(currentColumns[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })), 
+            //        $"Incorrect data for column");
+            //}
         }
 
+        [UseReporter(typeof(DiffReporter))]
         [Then(@"All filters with correct data are returned from the API for '(.*)' list")]
         public void ThenAllFiltersWithCorrectDataAreReturnedFromTheAPIForList(string list)
         {
-            var response = CheckFiltersCount(list);
+            var response = GetFiltersByListName(list);
 
-            var currentFilters = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FilterDto>>(response.Content);
+            //var currentFilters = JsonConvert.DeserializeObject<List<FilterDto>>(response.Content).OrderBy(x => x.TranslatedTextLabel).ToList();
+            //var expectedFilters = FileSystemHelper.ReadJsonListFromSystem<FilterDto>($"Filters\\{list}.json").OrderBy(x => x.TranslatedTextLabel).ToList();
 
-            var expectedList = FileSystemHelper.ReadJsonListFromSystem<FilterDto>($"Filters\\{list}.json");
+            Approvals.VerifyJson(response.Content);
 
-            foreach (FilterDto filterDto in expectedList)
-            {
-                Verify.IsTrue(currentFilters.Contains(filterDto), $"Incorrect data for filter with '{filterDto.ColumnName}' name");
-            }
-        }
+            //Verify.AreEqual(expectedFilters.Count, currentFilters.Count, "Filters count are different");
 
-        [Then(@"Positive number of results returned for '(.*)' requests")]
-        public void ThenPositiveNumberOfResultsReturnedForRequests(string fileName)
-        {
-           
+            //for (int i = 0; i < expectedFilters.Count; i++)
+            //{
+            //    Verify.That(JsonConvert.SerializeObject(expectedFilters[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
+            //        Is.EqualTo(JsonConvert.SerializeObject(currentFilters[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })),
+            //        $"Incorrect data for filter");
+            //}
         }
 
         [Then(@"Positive number of results returned for requests:")]
@@ -103,19 +98,6 @@ namespace DashworksTestAutomation.Steps.API
             foreach (TableRow row in table.Rows)
             {
                 var list = row.Values.Last().Split('?').First();
-
-                #region Ckeck that Filters and Columns count is correct to proceed with queries
-
-                //Commented this to save time. Anyway we doing exactly the same in general test
-                //CheckFiltersCount(list);
-                //CheckColumnsCount(list);
-
-                #endregion
-
-                //var fullPath = FileSystemHelper.GeneratePathToEmbeddedResource($"QueryUrls\\{fileName}.txt");
-                //var reader = new StreamReader(fullPath);
-                //string content = reader.ReadToEnd();
-
                 var url = $"{UrlProvider.RestClientBaseUrl}/{row.Values.Last().Replace($"{list}?", $"{list}?$top=100&$skip=0&")}";
                 var response = _client.Evergreen.Get(url.GenerateRequest());
 

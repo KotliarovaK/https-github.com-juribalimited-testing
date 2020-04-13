@@ -141,22 +141,22 @@ this.FeatureBackground();
 #line 12
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3075 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3086 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3075.AddRow(new string[] {
+                table3086.AddRow(new string[] {
                             "Empty"});
 #line 13
- testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table3075, "And ");
+ testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table3086, "And ");
 #line hidden
 #line 16
  testRunner.And("User perform search by \"00I0COBFWHOF27\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3076 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3087 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3076.AddRow(new string[] {
+                table3087.AddRow(new string[] {
                             "00I0COBFWHOF27"});
 #line 17
- testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table3076, "And ");
+ testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table3087, "And ");
 #line hidden
 #line 20
  testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -248,12 +248,12 @@ this.FeatureBackground();
 #line 35
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3077 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3088 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3077.AddRow(new string[] {
+                table3088.AddRow(new string[] {
                             string.Format("{0}", customValue)});
 #line 36
- testRunner.And(string.Format("User add \"{0}\" filter where type is \"{1}\" with added column and following value:", customColumn, @operator), ((string)(null)), table3077, "And ");
+ testRunner.And(string.Format("User add \"{0}\" filter where type is \"{1}\" with added column and following value:", customColumn, @operator), ((string)(null)), table3088, "And ");
 #line hidden
 #line 39
  testRunner.Then(string.Format("\'{0}\' content is displayed in the \'{1}\' column", columnData, customColumn), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -539,13 +539,13 @@ this.FeatureBackground();
 #line 88
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3078 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3089 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3078.AddRow(new string[] {
+                table3089.AddRow(new string[] {
                             string.Format("{0}", searchTerm)});
 #line 89
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following valu" +
-                            "e:", filter), ((string)(null)), table3078, "When ");
+                            "e:", filter), ((string)(null)), table3089, "When ");
 #line hidden
 #line 92
  testRunner.When(string.Format("User create dynamic list with \"{0}\" name on \"{1}\" page", listName, lists), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -143,31 +143,31 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User navigates to the \'Active Directory\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2731 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2742 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2731.AddRow(new string[] {
+                table2742.AddRow(new string[] {
                             "Directory Type"});
-                table2731.AddRow(new string[] {
+                table2742.AddRow(new string[] {
                             "Domain"});
-                table2731.AddRow(new string[] {
+                table2742.AddRow(new string[] {
                             "Fully Distinguished Object Name"});
-                table2731.AddRow(new string[] {
+                table2742.AddRow(new string[] {
                             "Common Name"});
-                table2731.AddRow(new string[] {
+                table2742.AddRow(new string[] {
                             "Display Name"});
-                table2731.AddRow(new string[] {
+                table2742.AddRow(new string[] {
                             "Description"});
 #line 13
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2731, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2742, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2732 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2743 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2732.AddRow(new string[] {
+                table2743.AddRow(new string[] {
                             "Common Name",
                             "00OMQQXWA1DRI6"});
 #line 21
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2732, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2743, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -263,34 +263,34 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2733 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2744 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Object ID"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Name"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Device Owner"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Readiness"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Path"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Team"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Bucket"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Capacity Unit"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Ring"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Category"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Self Service URL"});
-                table2733.AddRow(new string[] {
+                table2744.AddRow(new string[] {
                             "Tags"});
 #line 33
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2733, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2744, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -385,36 +385,36 @@ this.FeatureBackground();
 #line 54
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2734 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2745 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Object ID"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Name"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Primary Device"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Readiness"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Path"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Team"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Bucket"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Capacity Unit"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Ring"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Category"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Self Service URL"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Language"});
-                table2734.AddRow(new string[] {
+                table2745.AddRow(new string[] {
                             "Tags"});
 #line 55
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2734, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2745, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -511,38 +511,38 @@ this.FeatureBackground();
 #line 77
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2735 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2746 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Object ID"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Name"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "App Owner"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Readiness"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "App Readiness"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "App Rationalisation"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Target App"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Criticality"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Hide From End Users"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Path"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Team"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Capacity Unit"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Category"});
-                table2735.AddRow(new string[] {
+                table2746.AddRow(new string[] {
                             "Tags"});
 #line 78
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2735, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2746, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -636,36 +636,36 @@ this.FeatureBackground();
 #line 101
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2736 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2747 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Object ID"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Name"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Mailbox Owner"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Readiness"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Path"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Team"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Bucket"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Capacity Unit"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Ring"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Category"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Self Service URL"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Language"});
-                table2736.AddRow(new string[] {
+                table2747.AddRow(new string[] {
                             "Tags"});
 #line 102
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2736, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2747, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -858,22 +858,22 @@ this.FeatureBackground();
 #line 138
  testRunner.And("User navigates to the \'Device\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2737 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2748 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2737.AddRow(new string[] {
+                table2748.AddRow(new string[] {
                             "Key"});
-                table2737.AddRow(new string[] {
+                table2748.AddRow(new string[] {
                             "Hostname"});
-                table2737.AddRow(new string[] {
+                table2748.AddRow(new string[] {
                             "Source"});
-                table2737.AddRow(new string[] {
+                table2748.AddRow(new string[] {
                             "Source Type"});
-                table2737.AddRow(new string[] {
+                table2748.AddRow(new string[] {
                             "Inventory Site"});
-                table2737.AddRow(new string[] {
+                table2748.AddRow(new string[] {
                             "Dashworks First Seen Date"});
 #line 139
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2737, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2748, "Then ");
 #line hidden
 #line 147
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -940,48 +940,48 @@ this.FeatureBackground();
 #line 153
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2738 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2749 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Key"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Directory Type"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Domain"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Username"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Common Name"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Distinguished Name"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Display Name"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "SID"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "GUID"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Last Logon Date"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Compliance"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Enabled"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Parent Distinguished Name"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Given Name"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Surname"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Description"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Home Drive"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Home Directory"});
-                table2738.AddRow(new string[] {
+                table2749.AddRow(new string[] {
                             "Email Address"});
 #line 154
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2738, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2749, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1129,18 +1129,18 @@ this.FeatureBackground();
 #line 205
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2739 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2750 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2739.AddRow(new string[] {
+                table2750.AddRow(new string[] {
                             "Project Count"});
-                table2739.AddRow(new string[] {
+                table2750.AddRow(new string[] {
                             "Evergreen Bucket"});
-                table2739.AddRow(new string[] {
+                table2750.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table2739.AddRow(new string[] {
+                table2750.AddRow(new string[] {
                             "Evergreen Ring"});
 #line 206
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2739, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2750, "Then ");
 #line hidden
 #line 212
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1220,20 +1220,20 @@ this.FeatureBackground();
 #line 224
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2740 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2751 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2740.AddRow(new string[] {
+                table2751.AddRow(new string[] {
                             "Project Count"});
-                table2740.AddRow(new string[] {
+                table2751.AddRow(new string[] {
                             "Evergreen Team"});
-                table2740.AddRow(new string[] {
+                table2751.AddRow(new string[] {
                             "Evergreen Bucket"});
-                table2740.AddRow(new string[] {
+                table2751.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table2740.AddRow(new string[] {
+                table2751.AddRow(new string[] {
                             "Evergreen Ring"});
 #line 225
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2740, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2751, "Then ");
 #line hidden
 #line 232
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1297,64 +1297,64 @@ this.FeatureBackground();
 #line 238
  testRunner.When("User navigates to the \'Specification\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2741 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2752 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Manufacturer"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Model"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Device Type"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Device Format"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "OS Full Name"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Operating System"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "OS Version Number"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "OS Architecture"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Service Pack or Build"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "OS Branch"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "OS Servicing State"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Serial Number"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "First Seen Date"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Last Seen Date"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Build Date"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Boot Up Date"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Warranty Date"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Memory (GB)"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "HDD Count"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "HDD Total Size (GB)"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Target Drive Free Space (GB)"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "BIOS Manufacturer"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "BIOS Name"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "BIOS Version"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "Secure Boot Enabled"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "TPM Enabled"});
-                table2741.AddRow(new string[] {
+                table2752.AddRow(new string[] {
                             "TPM Version"});
 #line 239
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2741, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2752, "Then ");
 #line hidden
 #line 268
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1423,22 +1423,22 @@ this.FeatureBackground();
 #line 274
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2742 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2753 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2742.AddRow(new string[] {
+                table2753.AddRow(new string[] {
                             "Project Count"});
-                table2742.AddRow(new string[] {
+                table2753.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table2742.AddRow(new string[] {
+                table2753.AddRow(new string[] {
                             "In Catalog"});
-                table2742.AddRow(new string[] {
+                table2753.AddRow(new string[] {
                             "Criticality"});
-                table2742.AddRow(new string[] {
+                table2753.AddRow(new string[] {
                             "Rationalisation"});
-                table2742.AddRow(new string[] {
+                table2753.AddRow(new string[] {
                             "Hide From End Users"});
 #line 275
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2742, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2753, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1500,82 +1500,82 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'ConfRoom-CanisMinor@dwlabs.local\' item is displayed to the user" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2743 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2754 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Key"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Mailbox Platform"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Mail Server"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Principal Email Address"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Mailbox Database"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Alias"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Display Name"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "User Principal Name"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "User GUID"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Mailbox GUID"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Language"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Time Zone"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Mailbox Enabled"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Email Count"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Mailbox Size (MB)"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Associated Item Count"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Deleted Item Count"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Deleted Item Size (MB)"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Max Send Size (MB)"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Max Receive Size (MB)"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Forwarding Address (External)"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Forwarding Address (Internal)"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Created Date"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Retention Hold Enabled"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Retain Deleted Items (Days)"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Last Logon By"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Last Logon Date"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Last Logoff Date"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Mailbox Type"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Recipient Type"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Hidden From Address Lists Enabled"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Prohibit Send Quota (MB)"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Prohibit Send Receive Quota (MB)"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Issue Warning Quota (MB)"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Use Database Quota Defaults"});
-                table2743.AddRow(new string[] {
+                table2754.AddRow(new string[] {
                             "Mailbox Plan"});
 #line 288
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2743, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2754, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

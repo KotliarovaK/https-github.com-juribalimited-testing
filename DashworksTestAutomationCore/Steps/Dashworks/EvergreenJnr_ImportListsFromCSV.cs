@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -29,7 +26,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenImportPageIsDisplayedToTheUser(string pageHeader)
         {
             var importPage = _driver.NowAt<ImportListsFromCSVPage>();
-            Utils.Verify.IsTrue(importPage.GetImportPageHeader(pageHeader).Displayed(), $"{pageHeader} Import page is not displayed");
+            Verify.IsTrue(importPage.GetImportPageHeader(pageHeader).Displayed(), $"{pageHeader} Import page is not displayed");
         }
 
         [When(@"User selects ""(.*)"" file to upload on Import Lists from CSV page")]

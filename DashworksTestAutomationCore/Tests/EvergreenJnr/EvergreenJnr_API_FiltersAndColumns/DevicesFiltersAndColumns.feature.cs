@@ -223,16 +223,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1462 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1470 = new TechTalk.SpecFlow.Table(new string[] {
                             "FilterCategory",
                             "FilterName",
                             "QueryString"});
-                table1462.AddRow(new string[] {
+                table1470.AddRow(new string[] {
                             string.Format("{0}", filterCategory),
                             string.Format("{0}", filterName),
                             string.Format("{0}", queryString)});
 #line 17
- testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1462, "Then ");
+ testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1470, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

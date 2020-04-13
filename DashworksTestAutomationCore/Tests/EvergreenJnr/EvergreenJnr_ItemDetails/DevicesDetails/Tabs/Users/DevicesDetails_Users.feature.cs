@@ -218,14 +218,14 @@ this.FeatureBackground();
 #line 25
  testRunner.Then("Details page for \'QLL295118 (Nicole P. Braun)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2717 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2728 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table2717.AddRow(new string[] {
+                table2728.AddRow(new string[] {
                             "Key",
                             "23726"});
 #line 26
- testRunner.And("User verifies data in the fields on details page", ((string)(null)), table2717, "And ");
+ testRunner.And("User verifies data in the fields on details page", ((string)(null)), table2728, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -303,23 +303,23 @@ this.FeatureBackground();
 #line 40
  testRunner.Then("Details page for \'QLL295118 (Nicole P. Braun)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2718 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2729 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table2718.AddRow(new string[] {
+                table2729.AddRow(new string[] {
                             "Username",
                             "QLL295118"});
-                table2718.AddRow(new string[] {
+                table2729.AddRow(new string[] {
                             "Domain",
                             "US-E"});
-                table2718.AddRow(new string[] {
+                table2729.AddRow(new string[] {
                             "Display Name",
                             "Nicole P. Braun"});
-                table2718.AddRow(new string[] {
+                table2729.AddRow(new string[] {
                             "Distinguished Name",
                             "QLL295118.Users.Jersey City.US-E.local"});
 #line 41
- testRunner.And("User verifies data in the fields on details page", ((string)(null)), table2718, "And ");
+ testRunner.And("User verifies data in the fields on details page", ((string)(null)), table2729, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

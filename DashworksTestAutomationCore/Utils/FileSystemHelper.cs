@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Reflection;
-using DashworksTestAutomationCore.Utils;
 
 namespace DashworksTestAutomation.Utils
 {
@@ -27,7 +26,7 @@ namespace DashworksTestAutomation.Utils
 
         private static string GetScreenshotFolder()
         {
-            return ConfigReader.ByKey("screenshotsFolder");
+            return ConfigurationManager.AppSettings["screenshotsFolder"];
         }
 
         public static string GeneratePathToEmbeddedResource(string pathPart)
@@ -99,7 +98,7 @@ namespace DashworksTestAutomation.Utils
 
         public static string GetPathForDownloadsFolder()
         {
-            var downloadFolder = ConfigReader.ByKey("downloadsFolder");
+            var downloadFolder = ConfigurationManager.AppSettings["downloadsFolder"];
             return downloadFolder.Equals("DEFAULT_DOWNLOADS_FOLDER") ? Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\Downloads") : downloadFolder;
         }
     }

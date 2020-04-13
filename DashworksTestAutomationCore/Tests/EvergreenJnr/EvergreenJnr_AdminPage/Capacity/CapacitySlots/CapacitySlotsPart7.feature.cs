@@ -140,18 +140,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table760 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table768 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table760.AddRow(new string[] {
+                table768.AddRow(new string[] {
                             "ProjectDAS13593",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table760, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table768, "When ");
 #line hidden
 #line 13
  testRunner.And("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -165,12 +165,12 @@ this.FeatureBackground();
 #line 16
  testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table761 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table769 = new TechTalk.SpecFlow.Table(new string[] {
                             "StageName"});
-                table761.AddRow(new string[] {
+                table769.AddRow(new string[] {
                             "Stage13593"});
 #line 17
- testRunner.And("User create Stage", ((string)(null)), table761, "And ");
+ testRunner.And("User create Stage", ((string)(null)), table769, "And ");
 #line hidden
 #line 20
  testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -181,7 +181,7 @@ this.FeatureBackground();
 #line 22
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table762 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table770 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -189,7 +189,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table762.AddRow(new string[] {
+                table770.AddRow(new string[] {
                             "1Task13593",
                             "13593",
                             "Stage13593",
@@ -198,7 +198,7 @@ this.FeatureBackground();
                             "Computer",
                             ""});
 #line 24
- testRunner.And("User creates Task", ((string)(null)), table762, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table770, "And ");
 #line hidden
 #line 27
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -215,7 +215,7 @@ this.FeatureBackground();
 #line 31
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table763 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table771 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -223,7 +223,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table763.AddRow(new string[] {
+                table771.AddRow(new string[] {
                             "2Task13593",
                             "13593",
                             "Stage13593",
@@ -232,7 +232,7 @@ this.FeatureBackground();
                             "Application",
                             ""});
 #line 32
- testRunner.And("User creates Task", ((string)(null)), table763, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table771, "And ");
 #line hidden
 #line 35
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -249,7 +249,7 @@ this.FeatureBackground();
 #line 39
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table764 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table772 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -257,7 +257,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table764.AddRow(new string[] {
+                table772.AddRow(new string[] {
                             "3Task13593",
                             "13593",
                             "Stage13593",
@@ -266,7 +266,7 @@ this.FeatureBackground();
                             "User",
                             ""});
 #line 40
- testRunner.And("User creates Task", ((string)(null)), table764, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table772, "And ");
 #line hidden
 #line 43
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -283,7 +283,7 @@ this.FeatureBackground();
 #line 47
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table765 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table773 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -291,7 +291,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table765.AddRow(new string[] {
+                table773.AddRow(new string[] {
                             "4Task13593",
                             "13593",
                             "Stage13593",
@@ -300,7 +300,7 @@ this.FeatureBackground();
                             "Computer",
                             "Readiness (NNSFC) with due date"});
 #line 48
- testRunner.And("User creates Task", ((string)(null)), table765, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table773, "And ");
 #line hidden
 #line 51
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -317,7 +317,7 @@ this.FeatureBackground();
 #line 55
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table766 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table774 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -325,7 +325,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table766.AddRow(new string[] {
+                table774.AddRow(new string[] {
                             "5Task13593",
                             "13593",
                             "Stage13593",
@@ -334,7 +334,7 @@ this.FeatureBackground();
                             "User",
                             "Readiness (NNSFC) with due date"});
 #line 56
- testRunner.And("User creates Task", ((string)(null)), table766, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table774, "And ");
 #line hidden
 #line 59
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -351,7 +351,7 @@ this.FeatureBackground();
 #line 63
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table767 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table775 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -359,7 +359,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table767.AddRow(new string[] {
+                table775.AddRow(new string[] {
                             "6Task13593",
                             "13593",
                             "Stage13593",
@@ -368,7 +368,7 @@ this.FeatureBackground();
                             "Application",
                             "Readiness (NNSFC) with due date"});
 #line 64
- testRunner.And("User creates Task", ((string)(null)), table767, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table775, "And ");
 #line hidden
 #line 67
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -385,7 +385,7 @@ this.FeatureBackground();
 #line 71
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table768 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table776 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -393,7 +393,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table768.AddRow(new string[] {
+                table776.AddRow(new string[] {
                             "7Task13593",
                             "13593",
                             "Stage13593",
@@ -402,7 +402,7 @@ this.FeatureBackground();
                             "Computer",
                             ""});
 #line 72
- testRunner.And("User creates Task", ((string)(null)), table768, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table776, "And ");
 #line hidden
 #line 75
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -419,7 +419,7 @@ this.FeatureBackground();
 #line 79
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table769 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table777 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -427,7 +427,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table769.AddRow(new string[] {
+                table777.AddRow(new string[] {
                             "8Task13593",
                             "13593",
                             "Stage13593",
@@ -436,7 +436,7 @@ this.FeatureBackground();
                             "Application",
                             ""});
 #line 80
- testRunner.And("User creates Task", ((string)(null)), table769, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table777, "And ");
 #line hidden
 #line 83
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -453,7 +453,7 @@ this.FeatureBackground();
 #line 87
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table770 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table778 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -461,7 +461,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table770.AddRow(new string[] {
+                table778.AddRow(new string[] {
                             "9Task13593",
                             "13593",
                             "Stage13593",
@@ -470,7 +470,7 @@ this.FeatureBackground();
                             "User",
                             ""});
 #line 88
- testRunner.And("User creates Task", ((string)(null)), table770, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table778, "And ");
 #line hidden
 #line 91
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -502,38 +502,38 @@ this.FeatureBackground();
 #line 100
  testRunner.And("User selects \'Device\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table771 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table779 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table771.AddRow(new string[] {
+                table779.AddRow(new string[] {
                             "Stage13593 \\ 1Task13593"});
-                table771.AddRow(new string[] {
+                table779.AddRow(new string[] {
                             "Stage13593 \\ 4Task13593"});
 #line 101
- testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table771, "Then ");
+ testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table779, "Then ");
 #line hidden
 #line 105
  testRunner.When("User selects \'User\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table772 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table780 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table772.AddRow(new string[] {
+                table780.AddRow(new string[] {
                             "Stage13593 \\ 3Task13593"});
-                table772.AddRow(new string[] {
+                table780.AddRow(new string[] {
                             "Stage13593 \\ 5Task13593"});
 #line 106
- testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table772, "Then ");
+ testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table780, "Then ");
 #line hidden
 #line 110
  testRunner.When("User selects \'Application\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table773 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table781 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table773.AddRow(new string[] {
+                table781.AddRow(new string[] {
                             "Stage13593 \\ 2Task13593"});
-                table773.AddRow(new string[] {
+                table781.AddRow(new string[] {
                             "Stage13593 \\ 6Task13593"});
 #line 111
- testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table773, "Then ");
+ testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table781, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -603,19 +603,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table774 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table782 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
                             "Tasks"});
-                table774.AddRow(new string[] {
+                table782.AddRow(new string[] {
                             "Windows 7 Migration (Computer Scheduled Project)",
                             "Slot 1 DAS13636",
                             "Slot 1 DAS13636",
                             "Pre-Migration \\ Scheduled Date‡Pre-Migration \\ Forecast Date‡Computer Information" +
                                 " ---- Text fill; Text fill; \\ Group Computer Rag Radio Date Owner"});
 #line 118
- testRunner.When("User creates new Slot via Api", ((string)(null)), table774, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table782, "When ");
 #line hidden
 #line 121
  testRunner.And("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -667,17 +667,17 @@ this.FeatureBackground();
 #line 136
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table775 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table783 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table775.AddRow(new string[] {
+                table783.AddRow(new string[] {
                             "Pre-Migration \\ Forecast Date"});
-                table775.AddRow(new string[] {
+                table783.AddRow(new string[] {
                             "Computer Information ---- Text fill; Text fill; \\ Group Computer Rag Radio Date O" +
                                 "wner"});
-                table775.AddRow(new string[] {
+                table783.AddRow(new string[] {
                             "Pre-Migration \\ Scheduled Date"});
 #line 137
- testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table775, "Then ");
+ testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table783, "Then ");
 #line hidden
 #line 142
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -691,32 +691,32 @@ this.FeatureBackground();
 #line 145
  testRunner.And("User enters \'Slot 2 DAS13636\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table776 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table784 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table776.AddRow(new string[] {
+                table784.AddRow(new string[] {
                             "Pre-Migration \\ Forecast Date"});
-                table776.AddRow(new string[] {
+                table784.AddRow(new string[] {
                             "Computer Information ---- Text fill; Text fill; \\ Group Computer Rag Radio Date O" +
                                 "wner"});
 #line 146
- testRunner.Then("\'Tasks\' autocomplete does not have following checkbox options", ((string)(null)), table776, "Then ");
+ testRunner.Then("\'Tasks\' autocomplete does not have following checkbox options", ((string)(null)), table784, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table777 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table785 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table777.AddRow(new string[] {
+                table785.AddRow(new string[] {
                             "Pre-Migration \\ Scheduled Date"});
 #line 150
- testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table777, "Then ");
+ testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table785, "Then ");
 #line hidden
 #line 153
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table778 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table786 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table778.AddRow(new string[] {
+                table786.AddRow(new string[] {
                             "Slot 1 DAS13636"});
 #line 154
- testRunner.And("User select \"Capacity Slot\" rows in the grid", ((string)(null)), table778, "And ");
+ testRunner.And("User select \"Capacity Slot\" rows in the grid", ((string)(null)), table786, "And ");
 #line hidden
 #line 157
  testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -832,7 +832,7 @@ this.FeatureBackground();
 #line 175
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table779 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table787 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -840,7 +840,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table779.AddRow(new string[] {
+                table787.AddRow(new string[] {
                             "Task13502",
                             "13502",
                             "Computer Information ---- Text fill; Text fill;",
@@ -849,7 +849,7 @@ this.FeatureBackground();
                             "Computer",
                             ""});
 #line 176
- testRunner.And("User creates Task", ((string)(null)), table779, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table787, "And ");
 #line hidden
 #line 179
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -860,20 +860,20 @@ this.FeatureBackground();
 #line 181
  testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table780 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table788 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
                             "CapacityType",
                             "Tasks"});
-                table780.AddRow(new string[] {
+                table788.AddRow(new string[] {
                             "Windows 7 Migration (Computer Scheduled Project)",
                             "SlotTask13502",
                             "Slot Task13502",
                             "Capacity Units",
                             "Computer Information ---- Text fill; Text fill; \\ Task13502"});
 #line 182
- testRunner.When("User creates new Slot via Api", ((string)(null)), table780, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table788, "When ");
 #line hidden
 #line 185
  testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -885,12 +885,12 @@ this.FeatureBackground();
  testRunner.When("User removes \"Computer Information ---- Text fill; Text fill; \\ Task13502\" on the" +
                         " Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table781 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table789 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table781.AddRow(new string[] {
+                table789.AddRow(new string[] {
                             "Computer Information ---- Text fill; Text fill; \\ Task13502"});
 #line 188
- testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table781, "Then ");
+ testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table789, "Then ");
 #line hidden
 #line 191
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -982,7 +982,7 @@ this.FeatureBackground();
 #line 201
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table782 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table790 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -990,7 +990,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table782.AddRow(new string[] {
+                table790.AddRow(new string[] {
                             "1Task13500",
                             "13500",
                             "Computer Information ---- Text fill; Text fill;",
@@ -999,7 +999,7 @@ this.FeatureBackground();
                             "Computer",
                             ""});
 #line 202
- testRunner.And("User creates Task", ((string)(null)), table782, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table790, "And ");
 #line hidden
 #line 205
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1016,7 +1016,7 @@ this.FeatureBackground();
 #line 209
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table783 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table791 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -1024,7 +1024,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table783.AddRow(new string[] {
+                table791.AddRow(new string[] {
                             "2Task13500",
                             "13500",
                             "Computer Information ---- Text fill; Text fill;",
@@ -1033,7 +1033,7 @@ this.FeatureBackground();
                             "Computer",
                             ""});
 #line 210
- testRunner.And("User creates Task", ((string)(null)), table783, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table791, "And ");
 #line hidden
 #line 213
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1044,13 +1044,13 @@ this.FeatureBackground();
 #line 215
  testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table784 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table792 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
                             "CapacityType",
                             "Tasks"});
-                table784.AddRow(new string[] {
+                table792.AddRow(new string[] {
                             "Windows 7 Migration (Computer Scheduled Project)",
                             "Slot 1 DAS13500",
                             "Slot 1 DAS13500",
@@ -1058,7 +1058,7 @@ this.FeatureBackground();
                             "Computer Information ---- Text fill; Text fill; \\ 1Task13500‡Computer Information" +
                                 " ---- Text fill; Text fill; \\ 2Task13500‡Pre-Migration \\ Scheduled Date"});
 #line 216
- testRunner.When("User creates new Slot via Api", ((string)(null)), table784, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table792, "When ");
 #line hidden
 #line 219
  testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1111,12 +1111,12 @@ this.FeatureBackground();
 #line 234
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table785 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table793 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table785.AddRow(new string[] {
+                table793.AddRow(new string[] {
                             "Pre-Migration \\ Scheduled Date"});
 #line 235
- testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table785, "Then ");
+ testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table793, "Then ");
 #line hidden
 #line 238
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1133,21 +1133,21 @@ this.FeatureBackground();
 #line 242
  testRunner.And("User selects \'Capacity Units\' in the \'Capacity Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table786 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table794 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table786.AddRow(new string[] {
+                table794.AddRow(new string[] {
                             "Computer Information ---- Text fill; Text fill; \\ 1Task13500"});
-                table786.AddRow(new string[] {
+                table794.AddRow(new string[] {
                             "Computer Information ---- Text fill; Text fill; \\ 2Task13500"});
 #line 243
- testRunner.Then("\'Tasks\' autocomplete does not have following checkbox options", ((string)(null)), table786, "Then ");
+ testRunner.Then("\'Tasks\' autocomplete does not have following checkbox options", ((string)(null)), table794, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table787 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table795 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table787.AddRow(new string[] {
+                table795.AddRow(new string[] {
                             "Pre-Migration \\ Scheduled Date"});
 #line 247
- testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table787, "Then ");
+ testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table795, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

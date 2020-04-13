@@ -11,6 +11,8 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutomationUtils.Extensions;
+using AutomationUtils.Utils;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 

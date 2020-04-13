@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
@@ -14,6 +17,7 @@ using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Helpers
 {
@@ -110,7 +114,77 @@ namespace DashworksTestAutomation.Helpers
                 }
         }
 
+        #region User
+
+        /// <summary>
+        ///     Get user login name by his full name
+        /// </summary>
+        /// <param name="fullName">[FullName] from [DesktopBI].[dbo].[UserProfiles] database</param>
+        /// <returns></returns>
+        public static string GetUserNameByFullName(string fullName)
+        {
+            var userName = DatabaseHelper.ExecuteReader(
+                $"select u.LoweredUserName from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[UserProfiles] up on up.UserId = u.UserId where up.FullName = '{fullName}'",
+                0)[0];
+            return userName;
+        }
+
+        /// <summary>
+        ///     Get user full name by his login
+        /// </summary>
+        /// <param name="name">User login on website</param>
+        /// <returns></returns>
+        public static string GetUserFullNameByName(string name)
+        {
+            var fullName = DatabaseHelper.ExecuteReader(
+                $"select up.FullName from[aspnetdb].[dbo].[aspnet_Users] u join [DesktopBI].[dbo].[UserProfiles] up on up.UserId = u.UserId where u.LoweredUserName = '{name}'",
+                0)[0];
+            return fullName;
+        }
+
+        /// <summary>
+        ///     Get user ID by his login
+        /// </summary>
+        /// <param name="name">User login on website</param>
+        /// <returns></returns>
+        public static string GetUserIdByLogin(string name)
+        {
+            var userId =
+                DatabaseHelper.ExecuteReader(
+                    $"select [UserId] from[aspnetdb].[dbo].[aspnet_Users] where [LoweredUserName] = '{name}'",
+                    0)[0];
+            return userId;
+        }
+
+        #endregion
+
         #region Item Details - All lists: Devices, Users, Applications, Mailboxes
+
+        public static string GetItemId(string list, string itemName)
+        {
+            list = list.ToLower();
+            var id = string.Empty;
+
+            switch (list)
+            {
+                case "device":
+                    id = DatabaseHelper.GetDeviceDetailsIdByName(itemName);
+                    break;
+                case "user":
+                    id = DatabaseHelper.GetUserDetailsIdByName(itemName);
+                    break;
+                case "application":
+                    id = DatabaseHelper.GetApplicationDetailsIdByName(itemName);
+                    break;
+                case "mailbox":
+                    id = DatabaseHelper.GetMailboxDetailsIdByName(itemName);
+                    break;
+                default:
+                    throw new Exception($"Unknown list type: {list}");
+            }
+
+            return id;
+        }
 
         public static string GetDeviceDetailsIdByName(string name)
         {
@@ -526,14 +600,14 @@ namespace DashworksTestAutomation.Helpers
 
         #region Automation
 
-        public static string GetAutomationId(string automationName)
+        public static string GetAutomationId(string name)
         {
-            return DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[Automations] where [AutomationName] = '{automationName}'", 0)[0];
+            return DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[Automations] where [AutomationName] = '{name}'", 0)[0];
         }
 
-        public static string GetAutomationActionId(string actionName, string automationId)
+        public static string GetAutomationActionId(string actionName, string id)
         {
-            return DatabaseHelper.ExecuteReader($"select [ActionId] from [PM].[dbo].[AutomationActions] where [AutomationId] = {automationId} and [ActionName] = '{actionName}'", 0)[0];
+            return DatabaseHelper.ExecuteReader($"select [ActionId] from [PM].[dbo].[AutomationActions] where [AutomationId] = {id} and [ActionName] = '{actionName}'", 0)[0];
         }
 
         public static List<string> GetAutomationActions(string actionName)
@@ -555,7 +629,7 @@ namespace DashworksTestAutomation.Helpers
         {
             try
             {
-                var time = dateTime.UkTime().ToString("yyyy-MM-dd HH:mm:ss.fff");
+                var time = dateTime.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss.fff");
                 var result = Convert.ToInt32(ExecuteReader($"SELECT [LogId] FROM [PM].[dbo].[AutomationLog] WHERE [AutomationName] = '{automation}' AND [LogDate] >= Convert(datetime, '{time}')  AND [LogTypeId] = 2", 0)[0]) > 0;
                 return result;
             }
@@ -569,7 +643,7 @@ namespace DashworksTestAutomation.Helpers
         {
             try
             {
-                var time = dateTime.UkTime().ToString("yyyy-MM-dd HH:mm:ss.fff");
+                var time = dateTime.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss.fff");
                 var result = Convert.ToInt32(ExecuteReader($"SELECT [LogId] FROM [PM].[dbo].[AutomationLog] WHERE [AutomationName] = '{automation}' AND [ActionName] = '{action}' AND [LogDate] >= Convert(datetime, '{time}')  AND [LogTypeId] = 4", 0)[0]) > 0;
                 return result;
             }
@@ -663,11 +737,21 @@ namespace DashworksTestAutomation.Helpers
             return selfServiceId;
         }
 
+        //ListID - Id of the list used in Scope for created Self Service
+        public static string GetSelfServiceObjectGuid(string selfServiceIdentifier, int componentId)
+        {
+            //replace '@ComponentId int = 3' to '@ComponentId int = {componentId}' when compoment ID will be working with GetSelfServiceObjectGuid query 
+            string query = $"declare @SelfServiceIdentifier nvarchar(100) = '{selfServiceIdentifier}' declare @ComponentId int = 3 declare @ProjectId int declare @ListId int select @ProjectId = ProjectId from[PM].[SS].[OwnershipComponent] where ComponentId = @ComponentId select @ListId = ListId from[PM].[SS].[SelfService] where SelfServiceIdentifier = @SelfServiceIdentifier select EO.ObjectGuid from DesktopBI.dbo.EvergreenObjects EO join[PM].[API].[ApplicationListItems_Get](@ListId, DEFAULT) LI on LI.ApplicationKey = EO.ObjectKey and EO.ObjectTypeID = 3 join[PM].[dbo].[ProjectObjects] PO on PO.ObjectKey = EO.ObjectKey and PO.ObjectTypeID = EO.ObjectTypeID and PO.ProjectId = @ProjectId where EO.ObjectTypeId = 3";
+            
+            var guid = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return guid;
+        }
+
         #region Builder
 
         public static int GetSelfServicePageId(SelfServicePageDto page)
         {
-            string query = $"SELECT [PageId]  FROM [PM].[SS].[SelfServicePage] WHERE [Name] = '{page.Name}' AND [SelfServiceId] = '{page.ServiceId}' ";
+            string query = $"SELECT [PageId]  FROM [PM].[SS].[SelfServicePage] WHERE [Name] = '{page.Name}' AND [SelfServiceId] = '{page.ServiceId}'";
             var selfServiceId = DatabaseHelper.ExecuteReader(query, 0)[0];
             return int.Parse(selfServiceId);
         }

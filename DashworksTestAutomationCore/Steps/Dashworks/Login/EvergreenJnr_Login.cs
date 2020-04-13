@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Configuration;
 using System.Linq;
+using AutomationUtils.Extensions;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -22,12 +24,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
     [Binding]
     internal class EvergreenJnr_Login : BaseLoginActions
     {
-        private readonly RemoteWebDriver _driver;
+        private RemoteWebDriver _driver;
 
-        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client, AuthObject authObject) :
+        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client, AuthObject authObject, BrowsersList browsersList) :
             base(user, usedUsers, client, authObject)
         {
-            _driver = driver;
+            _driver = browsersList.GetBrowser();
         }
 
         [Given(@"User is logged in to the Evergreen")]
@@ -47,7 +49,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
 
             if (user == null)
                 throw new Exception("User table is not set");
-            
+
             //Login to website via api
             LoginViaApiAsUser(_driver, user);
             //Navigate to Evergreen page
@@ -126,12 +128,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
                     loginPage.UserNameTextBox.SendKeys(row["Username"]);
                     loginPage.PasswordTextBox.SendKeys(row["Password"]);
                     loginPage.LoginButton.Click();
+                    UserDto user = new UserDto();
+                    user.Username = row["Username"];
+                    user.Password = row["Password"];
+                    UsedUsers.Value.Add(user);
                 }
                 else
                 {
                     loginPage.SplashUserNameTextBox.SendKeys(row["Username"]);
                     loginPage.SplashPasswordTextBox.SendKeys(row["Password"]);
                     loginPage.SplashLoginButton.Click();
+                    UserDto user = new UserDto();
+                    user.Username = row["Username"];
+                    user.Password = row["Password"];
+                    UsedUsers.Value.Add(user);
                 }
         }
 
@@ -140,8 +150,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
         {
             var headerMenu = _driver.NowAt<DashworksHeaderMenuElement>();
 
-            Utils.Verify.AreEqual("Home - Dashworks", _driver.Title, "Incorrect page is displayed");
-            Utils.Verify.AreEqual("Home", headerMenu.PageHeader.Text, "Incorrect page is displayed");
+            Verify.AreEqual("Home - Dashworks", _driver.Title, "Incorrect page is displayed");
+            Verify.AreEqual("Home", headerMenu.PageHeader.Text, "Incorrect page is displayed");
             Logger.Write("Dashworks homepage is displayed and is in a logged in state");
         }
 

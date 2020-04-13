@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AutomationUtils.Extensions;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
@@ -75,9 +76,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Category']")]
         public IWebElement CategoryDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='readinessForOnboardedApplications']")]
-        public IWebElement DefaultReadinessDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'mat-tab-label-active')]")]
         public IWebElement ActiveTabOnScopeChangesSection { get; set; }
 
@@ -87,7 +85,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//h1[text()='Warning']")]
         public IWebElement WarningPopUp { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-optgroup//span")]
+        [FindsBy(How = How.XPath, Using = ".//mat-optgroup//span//span")]
         public IList<IWebElement> ScopeDropdownSectionList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='btn-group-sm pull-right ng-star-inserted']")]
@@ -239,12 +237,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var pathSelector = $".//mat-select//div//span[contains(text(), '{pathTypeName}')]";
             return Driver.FindElement(By.XPath(pathSelector));
-        }
-
-        public IWebElement GetReadinessOptionByName(string colorName)
-        {
-            var option = $".//mat-option[@role='option']//span[text()='{colorName}']";
-            return Driver.FindElement(By.XPath(option));
         }
 
         public IWebElement SelectCategoryByName(string categoryName)

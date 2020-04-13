@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -32,25 +33,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
         [When(@"User creates new Self Service Page via API")]
         public void WhenUserCreatesNewSelfServicePageCiaAPI(Table table)
         {
-            var ssPage = table.CreateInstance<SelfServicePageDto>();
+            var ssPages = table.CreateSet<SelfServicePageDto>();
 
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservicepages";
-            var request = requestUri.GenerateRequest();
-
-            request.AddObject(ssPage);
-
-            var response = _client.Evergreen.Post(request);
-
-            if (!response.StatusCode.Equals(HttpStatusCode.OK))
+            foreach (SelfServicePageDto ssPage in ssPages)
             {
-                throw new Exception($"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}");
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservicepages";
+                var request = requestUri.GenerateRequest();
+
+                request.AddObject(ssPage);
+
+                var response = _client.Evergreen.Post(request);
+
+                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    throw new Exception($"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}");
+                }
+
+                var content = response.Content;
+                var createdSsPage = JsonConvert.DeserializeObject<SelfServicePageDto>(content);
+                createdSsPage.ServiceIdentifier = ssPage.ServiceIdentifier;
+
+                _selfServicePages.Value.Add(createdSsPage);
             }
-
-            var content = response.Content;
-            var createdSsPage = JsonConvert.DeserializeObject<SelfServicePageDto>(content);
-            createdSsPage.ServiceIdentifier = ssPage.ServiceIdentifier;
-
-            _selfServicePages.Value.Add(createdSsPage);
         }
 
         [When(@"User updates '(.*)' Self Service Page via API")]

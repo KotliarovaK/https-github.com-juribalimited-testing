@@ -150,12 +150,12 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table177 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table185 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table177.AddRow(new string[] {
+                table185.AddRow(new string[] {
                             string.Format("{0}", rowName)});
 #line 14
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table177, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table185, "When ");
 #line hidden
 #line 17
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -169,14 +169,14 @@ this.FeatureBackground();
 #line 20
  testRunner.And(string.Format("User selects \'One \\ {0}\' option from \'Task\' autocomplete", taskName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table178 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table186 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table178.AddRow(new string[] {
+                table186.AddRow(new string[] {
                             "Update"});
-                table178.AddRow(new string[] {
+                table186.AddRow(new string[] {
                             "Remove"});
 #line 21
- testRunner.Then("following Values are displayed in the \'Update Value\' dropdown:", ((string)(null)), table178, "Then ");
+ testRunner.Then("following Values are displayed in the \'Update Value\' dropdown:", ((string)(null)), table186, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -240,14 +240,14 @@ this.FeatureBackground();
 #line 37
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table179 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table187 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table179.AddRow(new string[] {
+                table187.AddRow(new string[] {
                             "001BAQXT6JWFPI"});
-                table179.AddRow(new string[] {
+                table187.AddRow(new string[] {
                             "001PSUMZYOW581"});
 #line 38
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table179, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table187, "When ");
 #line hidden
 #line 42
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -262,36 +262,36 @@ this.FeatureBackground();
 #line 45
  testRunner.When("User enters \'Pre-Migration\' text in \'Task\' Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table180 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table188 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Forecast Date"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Forecast Code"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Target Date"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Scheduled Date"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Laptop Only Task"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Physical Only Task"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ VDI Only Task"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Laptop & Physical Task"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Target Code"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Scheduled Code"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Further Information"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Targeting Information"});
-                table180.AddRow(new string[] {
+                table188.AddRow(new string[] {
                             "Pre-Migration \\ Laptop & Workstation 2"});
 #line 46
- testRunner.Then("only below options are displayed in the \'Task\' autocomplete", ((string)(null)), table180, "Then ");
+ testRunner.Then("only below options are displayed in the \'Task\' autocomplete", ((string)(null)), table188, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -356,14 +356,14 @@ this.FeatureBackground();
 #line 67
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table181 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table189 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table181.AddRow(new string[] {
+                table189.AddRow(new string[] {
                             "003F5D8E1A844B1FAA5"});
-                table181.AddRow(new string[] {
+                table189.AddRow(new string[] {
                             "00A5B910A1004CF5AC4"});
 #line 68
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table181, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table189, "When ");
 #line hidden
 #line 72
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -377,108 +377,108 @@ this.FeatureBackground();
 #line 75
  testRunner.When("User enters \'One\' text in \'Task\' Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table182 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table190 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Radio Rag only User"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Radio Rag Date User"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Radio Rag Date Owner User"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Text User"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Radio Rag Only User Req A"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Radio Rag Date User Req A"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Radio Rag Date Owner User Req A"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Radio Rag only User Req B"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Radio Rag Date User Req B"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Radio Rag Date Owner User Req B"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ Radio Rag Date Owner Req B"});
-                table182.AddRow(new string[] {
+                table190.AddRow(new string[] {
                             "One \\ SS Department and Location Enabled"});
 #line 76
- testRunner.Then("\'Task\' autocomplete contains following options:", ((string)(null)), table182, "Then ");
+ testRunner.Then("\'Task\' autocomplete contains following options:", ((string)(null)), table190, "Then ");
 #line hidden
 #line 90
  testRunner.When("User enters \'Two\' text in \'Task\' Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table183 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table191 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table183.AddRow(new string[] {
+                table191.AddRow(new string[] {
                             "Two \\ Radio Non Rag only User"});
-                table183.AddRow(new string[] {
+                table191.AddRow(new string[] {
                             "Two \\ Radio Non Rag Date User"});
-                table183.AddRow(new string[] {
+                table191.AddRow(new string[] {
                             "Two \\ Radio Non Rag Date Owner User"});
-                table183.AddRow(new string[] {
+                table191.AddRow(new string[] {
                             "Two \\ Radio Non Rag only User Req A"});
-                table183.AddRow(new string[] {
+                table191.AddRow(new string[] {
                             "Two \\ Radio Non Rag Date User Req A"});
-                table183.AddRow(new string[] {
+                table191.AddRow(new string[] {
                             "Two \\ Radio Non Rag Date Owner User Req A"});
-                table183.AddRow(new string[] {
+                table191.AddRow(new string[] {
                             "Two \\ Radio Non Rag only User Req B"});
-                table183.AddRow(new string[] {
+                table191.AddRow(new string[] {
                             "Two \\ Radio Non Rag Date User Req B"});
-                table183.AddRow(new string[] {
+                table191.AddRow(new string[] {
                             "Two \\ Radio Non Rag Date Owner Req B"});
 #line 91
- testRunner.Then("\'Task\' autocomplete contains following options:", ((string)(null)), table183, "Then ");
+ testRunner.Then("\'Task\' autocomplete contains following options:", ((string)(null)), table191, "Then ");
 #line hidden
 #line 102
  testRunner.When("User enters \'Three\' text in \'Task\' Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table184 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table192 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ Date User"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ Date User Req A"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ Text User Req A"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ Date User Req B"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ Text User Req B"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ SS Enabled"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ SS Computer Ownership Enabled"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ SS Applications List Enabled"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ SS Project Date Enabled"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ SS Other Options Enabled"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ SS Computer Ownership Complete"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ SS Application List Completed"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ SS Department and Location Completed"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ SS Other Options Completed"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ SS Project Date Completed"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ Forecast Date"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ Target Date"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ Scheduled Date"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ Migrated Date"});
-                table184.AddRow(new string[] {
+                table192.AddRow(new string[] {
                             "Three \\ Completed Date"});
 #line 103
- testRunner.Then("\'Task\' autocomplete contains following options:", ((string)(null)), table184, "Then ");
+ testRunner.Then("\'Task\' autocomplete contains following options:", ((string)(null)), table192, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -549,12 +549,12 @@ this.FeatureBackground();
 #line 131
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table185 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table193 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table185.AddRow(new string[] {
+                table193.AddRow(new string[] {
                             "001BAQXT6JWFPI"});
 #line 132
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table185, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table193, "When ");
 #line hidden
 #line 135
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -574,36 +574,36 @@ this.FeatureBackground();
 #line 140
  testRunner.And("User enters \'23 Nov 2018\' text to \'Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table186 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table194 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "None"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "Birmingham Morning"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "Birmingham Afternoon"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "Manchester Morning"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "Manchester Afternoon"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "London - City Morning"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "London - City Afternoon"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "London - Southbank Morning"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "London - Southbank Afternoon"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "London Depot 09:00 - 11:00"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "London Depot 11:00 - 13:00"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "London Depot 13:00 - 15:00"});
-                table186.AddRow(new string[] {
+                table194.AddRow(new string[] {
                             "London Depot 15:00 - 17:00"});
 #line 141
- testRunner.Then("following Values are displayed in the \'Capacity Slot\' dropdown:", ((string)(null)), table186, "Then ");
+ testRunner.Then("following Values are displayed in the \'Capacity Slot\' dropdown:", ((string)(null)), table194, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -656,12 +656,12 @@ this.FeatureBackground();
 #line 160
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table187 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table195 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table187.AddRow(new string[] {
+                table195.AddRow(new string[] {
                             "00I0COBFWHOF27"});
 #line 161
- testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table187, "And ");
+ testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table195, "And ");
 #line hidden
 #line 164
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -702,33 +702,33 @@ this.FeatureBackground();
 #line 177
  testRunner.When("User selects \'5\' day in the Datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table188 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table196 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table188.AddRow(new string[] {
+                table196.AddRow(new string[] {
                             "Birmingham Morning"});
-                table188.AddRow(new string[] {
+                table196.AddRow(new string[] {
                             "Manchester Morning"});
-                table188.AddRow(new string[] {
+                table196.AddRow(new string[] {
                             "London - City Morning"});
-                table188.AddRow(new string[] {
+                table196.AddRow(new string[] {
                             "London - Southbank Morning"});
-                table188.AddRow(new string[] {
+                table196.AddRow(new string[] {
                             "London Depot 09:00 - 11:00"});
-                table188.AddRow(new string[] {
+                table196.AddRow(new string[] {
                             "London Depot 11:00 - 13:00"});
-                table188.AddRow(new string[] {
+                table196.AddRow(new string[] {
                             "London Depot 13:00 - 15:00"});
-                table188.AddRow(new string[] {
+                table196.AddRow(new string[] {
                             "London Depot 15:00 - 17:00"});
 #line 178
- testRunner.Then("User sees that \'Capacity Slot\' dropdown contains following options:", ((string)(null)), table188, "Then ");
+ testRunner.Then("User sees that \'Capacity Slot\' dropdown contains following options:", ((string)(null)), table196, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table189 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table197 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table189.AddRow(new string[] {
+                table197.AddRow(new string[] {
                             "Manchester Afternoon"});
 #line 188
- testRunner.Then("following Values are not displayed in the \'Capacity Slot\' dropdown:", ((string)(null)), table189, "Then ");
+ testRunner.Then("following Values are not displayed in the \'Capacity Slot\' dropdown:", ((string)(null)), table197, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -778,7 +778,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table190 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table198 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
@@ -786,7 +786,7 @@ this.FeatureBackground();
                             "ObjectType",
                             "Sunday",
                             "Tasks"});
-                table190.AddRow(new string[] {
+                table198.AddRow(new string[] {
                             "User Evergreen Capacity Project",
                             "slot1",
                             "slot 1",
@@ -794,7 +794,7 @@ this.FeatureBackground();
                             "User",
                             "0",
                             "Stage 2 \\ Scheduled Date"});
-                table190.AddRow(new string[] {
+                table198.AddRow(new string[] {
                             "User Evergreen Capacity Project",
                             "slot2",
                             "slot 2",
@@ -802,7 +802,7 @@ this.FeatureBackground();
                             "User",
                             "5",
                             "Stage 2 \\ Scheduled Date"});
-                table190.AddRow(new string[] {
+                table198.AddRow(new string[] {
                             "User Evergreen Capacity Project",
                             "slot3",
                             "slot 3",
@@ -811,7 +811,7 @@ this.FeatureBackground();
                             "",
                             "Stage 2 \\ Scheduled Date"});
 #line 194
- testRunner.When("User creates new Slot via Api", ((string)(null)), table190, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table198, "When ");
 #line hidden
 #line 199
  testRunner.And("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -819,12 +819,12 @@ this.FeatureBackground();
 #line 200
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table191 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table199 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table191.AddRow(new string[] {
+                table199.AddRow(new string[] {
                             "Exchange Online-ApplicationAccount"});
 #line 201
- testRunner.And("User select \"Display Name\" rows in the grid", ((string)(null)), table191, "And ");
+ testRunner.And("User select \"Display Name\" rows in the grid", ((string)(null)), table199, "And ");
 #line hidden
 #line 204
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -907,7 +907,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table192 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table200 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
@@ -915,7 +915,7 @@ this.FeatureBackground();
                             "ObjectType",
                             "Tuesday",
                             "Tasks"});
-                table192.AddRow(new string[] {
+                table200.AddRow(new string[] {
                             "2004 Rollout",
                             "Slot17833_1",
                             "17833_1",
@@ -923,7 +923,7 @@ this.FeatureBackground();
                             "Device",
                             "1",
                             "Migration \\ Migrated Date"});
-                table192.AddRow(new string[] {
+                table200.AddRow(new string[] {
                             "2004 Rollout",
                             "Slot17833_2",
                             "17833_2",
@@ -932,7 +932,7 @@ this.FeatureBackground();
                             "2",
                             "Migration \\ Migrated Date"});
 #line 214
- testRunner.When("User creates new Slot via Api", ((string)(null)), table192, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table200, "When ");
 #line hidden
 #line 218
  testRunner.And("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1004,16 +1004,16 @@ this.FeatureBackground();
 #line 240
  testRunner.When("User enters next \'Tuesday\' day to \'Date\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table193 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table201 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table193.AddRow(new string[] {
+                table201.AddRow(new string[] {
                             "None"});
-                table193.AddRow(new string[] {
+                table201.AddRow(new string[] {
                             "Slot17833_1"});
-                table193.AddRow(new string[] {
+                table201.AddRow(new string[] {
                             "Slot17833_2"});
 #line 241
- testRunner.Then("User sees that \'Capacity Slot\' dropdown contains following options:", ((string)(null)), table193, "Then ");
+ testRunner.Then("User sees that \'Capacity Slot\' dropdown contains following options:", ((string)(null)), table201, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

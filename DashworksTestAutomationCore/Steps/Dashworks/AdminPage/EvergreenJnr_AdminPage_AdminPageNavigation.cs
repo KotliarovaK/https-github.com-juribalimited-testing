@@ -1,14 +1,9 @@
-﻿using System;
+﻿using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms;
-using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 {
@@ -26,14 +21,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenTabIsSelectedOnTheAdminPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectTabs.GetsSelectedTabByName(tabName).Displayed(), "Selected tab is not active");
+            Verify.IsTrue(projectTabs.GetsSelectedTabByName(tabName).Displayed(), "Selected tab is not active");
         }
 
         [Then(@"""(.*)"" tab in Project selected on the Admin page")]
         public void ThenTabInProjectSelectedOnTheAdminPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectTabs.GetsSelectedTabInProjectByName(tabName).Displayed(), $"'{tabName}' tab is not active");
+            Verify.IsTrue(projectTabs.GetsSelectedTabInProjectByName(tabName).Displayed(), $"'{tabName}' tab is not active");
         }
 
         //User navigates to the 'Applications' tab on Project Scope Changes page
@@ -48,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenTabIsNotDisplayedToTheUserOnAdminPageNavigation(string tabName)
         {
             var page = _driver.NowAt<AdminLeftHandMenu>();
-            Utils.Verify.IsFalse(page.Automations.Displayed(), $"{tabName} tab still displayed");
+            Verify.IsFalse(page.Automations.Displayed(), $"{tabName} tab still displayed");
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Utils;
@@ -20,7 +21,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList.AfterScenario
             _customListMethods = new RemoveCustomListMethods(usedUsers, usersWithSharedLists);
         }
 
-        [AfterScenario("Cleanup")]
+        [AfterScenario("Cleanup", Order = 10)]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
             try

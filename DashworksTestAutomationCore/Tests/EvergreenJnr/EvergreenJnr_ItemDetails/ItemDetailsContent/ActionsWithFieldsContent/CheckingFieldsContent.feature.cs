@@ -141,32 +141,32 @@ this.FeatureBackground();
 #line 13
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2744 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2755 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table2744.AddRow(new string[] {
+                table2755.AddRow(new string[] {
                             "Key",
                             "9141"});
 #line 14
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2744, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2755, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2745 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2756 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2745.AddRow(new string[] {
+                table2756.AddRow(new string[] {
                             "Hostname",
                             "001BAQXT6JWFPI"});
-                table2745.AddRow(new string[] {
+                table2756.AddRow(new string[] {
                             "Source",
                             "A01 SMS (Spoof)"});
-                table2745.AddRow(new string[] {
+                table2756.AddRow(new string[] {
                             "Source Type",
                             "SMS/SCCM 2007"});
-                table2745.AddRow(new string[] {
+                table2756.AddRow(new string[] {
                             "Inventory Site",
                             "A01"});
 #line 17
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2745, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2756, "Then ");
 #line hidden
 #line 23
  testRunner.Then("empty value is displayed for \"Dashworks First Seen Date\" field on the Details Pag" +
@@ -269,14 +269,14 @@ this.FeatureBackground();
 #line 38
  testRunner.Then("\'Self Service URL\' field is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2746 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2757 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2746.AddRow(new string[] {
+                table2757.AddRow(new string[] {
                             "Language",
                             "English"});
 #line 39
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2746, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2757, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -343,16 +343,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2747 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2758 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault"});
-                table2747.AddRow(new string[] {
+                table2758.AddRow(new string[] {
                             "CapacityUnit12883",
                             "Devices",
                             "false"});
 #line 46
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2747, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2758, "When ");
 #line hidden
 #line 51
  testRunner.When("User navigates to the \'Device\' details page for \'ZZNKKYW97AL4VS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -585,14 +585,14 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'Axosoft OnTime 2005 Enterprise Server\' item is displayed to the" +
                         " user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2748 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2759 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table2748.AddRow(new string[] {
+                table2759.AddRow(new string[] {
                             "Sticky Compliance",
                             ""});
 #line 120
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2748, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2759, "Then ");
 #line hidden
 #line 123
  testRunner.When("User navigates to the \'Application\' details page for \'Standard SDK for Windows CE" +
@@ -602,14 +602,14 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'Standard SDK for Windows CE .NET 4.2\' item is displayed to the " +
                         "user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2749 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2760 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table2749.AddRow(new string[] {
+                table2760.AddRow(new string[] {
                             "Sticky Compliance",
                             ""});
 #line 125
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2749, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2760, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -673,14 +673,14 @@ this.FeatureBackground();
 #line 133
  testRunner.Then("Details page for \'NPS8676905\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2750 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2761 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table2750.AddRow(new string[] {
+                table2761.AddRow(new string[] {
                             "Enabled",
                             "FALSE"});
 #line 134
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2750, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2761, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

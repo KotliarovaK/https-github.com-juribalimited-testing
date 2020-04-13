@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using DashworksTestAutomationCore.Utils;
 
 namespace DashworksTestAutomation.Providers
 {
@@ -10,14 +9,14 @@ namespace DashworksTestAutomation.Providers
         {
             get
             {
-                switch (ConfigReader.ByKey("environmentFlag"))
+                switch (ConfigurationManager.AppSettings["environmentFlag"])
                 {
                     case "arelease":
-                        return ConfigReader.ByKey("connectionsString");
+                        return ConfigurationManager.AppSettings["connectionsString"];
                     case "amaster":
-                        return ConfigReader.ByKey("connectionsStringAmaster");
+                        return ConfigurationManager.AppSettings["connectionsStringAmaster"];
                     case "master":
-                        return ConfigReader.ByKey("connectionsStringFuture");
+                        return ConfigurationManager.AppSettings["connectionsStringFuture"];
                     default: throw new Exception("Unable to generate connection string");
                 }
             }

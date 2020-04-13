@@ -9,6 +9,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Linq;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.Pages.Evergreen.Base;
@@ -40,7 +41,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualRowList = page.RowsList.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedRowList, actualRowList, "Buckets lists are different");
+            Verify.AreEqual(expectedRowList, actualRowList, "Buckets lists are different");
         }
 
         [Then(@"User sees Buckets in next default sort order:")]
@@ -50,7 +51,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
 
             for (var i = 0; i < buckets.RowCount; i++)
-                Utils.Verify.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()),
+                Verify.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()),
                     "Buckets are not the same");
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using AutomationUtils.Extensions;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Steps.Projects;
 using DashworksTestAutomation.Utils;
@@ -13,7 +14,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public DefaultValueForShowLinkedObjectsEnum DefaultValueForShowLinkedObjects;
         public DefaultViewForProjectObjectApplicationsTab1Enum DefaultViewForProjectObjectApplicationsTab1;
         public DefaultViewForProjectObjectApplicationsTab2Enum DefaultViewForProjectObjectApplicationsTab2;
-        public DefaultValueForApplicationRationalizationEnum DefaultValueForApplicationRationalization;
         public bool ShowOriginalColumn { get; set; }
         public bool IncludeSiteName{ get; set; }
         public bool IncludeVersionInApplicationName { get; set; }
@@ -33,10 +33,7 @@ namespace DashworksTestAutomation.DTO.Projects
             DefaultViewForProjectObjectApplicationsTab1 =
                 EnumExtensions.GetRandomValue<DefaultViewForProjectObjectApplicationsTab1Enum>();
             DefaultViewForProjectObjectApplicationsTab2 =
-                EnumExtensions.GetRandomValue<DefaultViewForProjectObjectApplicationsTab2Enum>();
-            DefaultValueForApplicationRationalization =
-                EnumExtensions.GetRandomValue<DefaultValueForApplicationRationalizationEnum>();
-        }
+                EnumExtensions.GetRandomValue<DefaultViewForProjectObjectApplicationsTab2Enum>(); }
     }
 
     public enum DefaultValueForShowLinkedObjectsEnum

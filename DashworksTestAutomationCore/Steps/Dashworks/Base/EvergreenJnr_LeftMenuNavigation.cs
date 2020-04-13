@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using AutomationUtils.Utils;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
-using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
+
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -114,7 +116,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenLeftSubmenuItemWithSomeCountIsDisplayed(string submenu)
         {
             var element = _driver.NowAt<BaseNavigationElements>();
-            Verify.IsTrue(element.IsSubmenuCountIsDisplayed(submenu),$"'{submenu}' submenu doesn't contains items count");
+            Verify.IsTrue(element.IsSubmenuCountIsDisplayed(submenu), $"'{submenu}' submenu doesn't contains items count");
         }
 
         [Then(@"'(.*)' left submenu item is displayed without count")]

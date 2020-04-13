@@ -12,23 +12,27 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
     {
         string _scope;
 
-        private string _id;
+        private int _id = -1;
         [JsonProperty("serviceId")]
         public int ServiceId
         {
             get
             {
-                if (string.IsNullOrEmpty(_id))
+                if (_id < 0)
                 {
-                    _id = string.IsNullOrEmpty(_id) ?
-                        DatabaseHelper.GetSelfServiceIdByIdentifier(this.ServiceIdentifier) : _id;
+                    try
+                    {
+                        _id =
+                            int.Parse(DatabaseHelper.GetSelfServiceIdByIdentifier(this.ServiceIdentifier));
+                    }
+                    catch
+                    {
+                        //It is possible to get Self Service ID even when SS is not yet created
+                    }
                 }
-                return int.Parse(_id);
+                return _id;
             }
-            set
-            {
-                _id = value.ToString();
-            }
+            set => _id = value;
         }
 
         [JsonProperty("name")]
@@ -43,8 +47,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
         [JsonProperty("objectType")]
         public string ObjectType { get; set; }
 
-        [JsonProperty("objectTypeId")]
-        public int ObjectTypeId { get; set; }
+        [JsonProperty("objectTypeId")] public int ObjectTypeId = 3;
 
         [JsonProperty("startDate")]
         public string StartDate { get; set; }
@@ -60,7 +63,6 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 
         [JsonProperty("scopeId")]
         public int ScopeId { get; set; }
-
 
         public string Scope
         {

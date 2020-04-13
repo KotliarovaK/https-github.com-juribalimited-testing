@@ -218,24 +218,24 @@ this.FeatureBackground();
 #line 23
  testRunner.And("User navigates to the \'Mailbox Permissions\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2988 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2999 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2988.AddRow(new string[] {
+                table2999.AddRow(new string[] {
                             "Mailbox Platform"});
-                table2988.AddRow(new string[] {
+                table2999.AddRow(new string[] {
                             "Server"});
-                table2988.AddRow(new string[] {
+                table2999.AddRow(new string[] {
                             "Email Address"});
-                table2988.AddRow(new string[] {
+                table2999.AddRow(new string[] {
                             "Display Name"});
-                table2988.AddRow(new string[] {
+                table2999.AddRow(new string[] {
                             "Via"});
-                table2988.AddRow(new string[] {
+                table2999.AddRow(new string[] {
                             "Permission"});
-                table2988.AddRow(new string[] {
+                table2999.AddRow(new string[] {
                             "Folder"});
 #line 24
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2988, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2999, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

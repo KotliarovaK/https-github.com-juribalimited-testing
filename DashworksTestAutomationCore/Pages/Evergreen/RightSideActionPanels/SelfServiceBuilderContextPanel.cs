@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
@@ -21,28 +22,47 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             };
         }
 
-        public String ContextPanelPage(string contextPanelType, string contextPanelName)
+        public string ContextPanelPagePath(string contextPanelType, string contextPanelName)
         {
             return $".//div[text()='{contextPanelName}']/preceding-sibling::div[text()='{contextPanelType}']/ancestor::div[contains(@class,'level-info')]";
         }
 
+        public string PageComponentByOrderPath(string componentName, string componentType, string expectedComponentOrder, string contextPanelName, string contextPanelType = "Page")
+        {
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}//ancestor::div[contains(@class, 'pages-list-inner')]//div[contains(@class, 'page-sublevels')]/div[contains(@class, 'page-sublevels')][{expectedComponentOrder}]//div[text()='{componentName}']/preceding-sibling::div[text()='{componentType}']";
+            return selector;
+        }
+
         public IWebElement ContextPanelArrow(string contextPanelType, string contextPanelName)
         {
-            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//i[contains(@class,'arrow')";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//i[contains(@class,'arrow')]";
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
         public IWebElement ContextPanelPageAddItemButton(string contextPanelType, string contextPanelName)
         {
-            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//i[contains(@class, 'mat-item_add')]";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//i[contains(@class, 'mat-item_add')]";
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
         public IWebElement ContextPanelPageCogMenuButton(string contextPanelType, string contextPanelName)
         {
-            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//div[contains(@class, 'menu-wrapper')]";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-sublevels-wrap')]//div[contains(@class, 'menu-wrapper')]";
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+
+            if (!Driver.IsElementDisplayed(By.XPath(selector), WebDriverExtensions.WaitTime.Short))
+            {
+                throw new Exception($"Page cog menu button is not displayed");
+            }
+
+            return Driver.FindElement(By.XPath(selector));
+        }
+
+        public IWebElement ContextPanelItem(string contextPanelType, string contextPanelName)
+        {
+            var selector = ContextPanelPagePath(contextPanelType, contextPanelName);
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
@@ -82,17 +102,45 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
 
         public void CheckBuilderContextPanelItemDisplayState(string contextPanelType, string contextPanelName, bool expectedDisplayState)
         {
-            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}";
-            Verify.AreEqual(expectedDisplayState, Driver.IsElementDisplayed(Driver.FindElement(By.XPath(selector)),
-                WebDriverExtensions.WaitTime.Short), $"Builder Context Panel Item Display State isn't: {expectedDisplayState}");
+            Driver.WaitForDataLoading();
+            Verify.AreEqual(expectedDisplayState, IsContextPanelDisplayed(contextPanelType, contextPanelName),
+                $"Builder Context Panel Item Display State is not equal to: {expectedDisplayState}");
+        }
+
+        public bool IsContextPanelDisplayed(string contextPanelType, string contextPanelName)
+        {
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}";
+            try
+            {
+                return Driver.IsElementDisplayed(By.XPath(selector));
+            } 
+            catch
+            {
+                return false;
+            }
         }
 
         public bool IsContentPanelHighlighted(string contextPanelType, string contextPanelName)
         {
-            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/..";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/..";
             var bgColor = Driver.FindElement(By.XPath(selector)).GetCssValue("border-color");
-            var result = bgColor.Equals("#f25831");
+            var result = bgColor.Equals("rgb(242, 88, 49)");
             return result;
+        }
+
+        public bool IsContentPanelNameTextHighlighted(string contextPanelType, string contextPanelName)
+        {
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}//div[@class='page-level-name']";
+            var bgColor = Driver.FindElement(By.XPath(selector)).GetCssValue("color");
+            var result = bgColor.Equals("rgba(0,0,0,.87)");
+            return result;
+        }
+
+        public bool IsTheComponentOrderInSSBuilderAsExpected(string componentName, string componentType, string expectedComponentOrder, string contextPanelName)
+        {
+            var selector = PageComponentByOrderPath(componentName, componentType, expectedComponentOrder, contextPanelName);          
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+            return Driver.IsElementExists(By.XPath(selector));
         }
     }
 }

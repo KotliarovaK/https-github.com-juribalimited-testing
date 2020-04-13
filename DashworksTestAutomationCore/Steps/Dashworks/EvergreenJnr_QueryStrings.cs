@@ -1,4 +1,5 @@
 ﻿using System;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
@@ -10,18 +11,20 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
+
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
     internal class EvergreenJnr_QueryStrings : SpecFlowContext
     {
-        private readonly RemoteWebDriver _driver;
+        private RemoteWebDriver _driver;
         private readonly WebsiteUrl _url;
 
-        public EvergreenJnr_QueryStrings(RemoteWebDriver driver, WebsiteUrl url)
+        public EvergreenJnr_QueryStrings(RemoteWebDriver driver, WebsiteUrl url, BrowsersList browsersList)
         {
-            _driver = driver;
+            _driver = browsersList.GetBrowser();
             _url = url;
         }
 
@@ -54,7 +57,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             //Only check the login link is visible if the forced login splash page is not displayed
             if (!loginPage.LoginSplashPanel.Displayed()) return;
-            Utils.Verify.IsTrue(loginPage.LoginLink.Displayed, "Login link is NOT visible");
+            Verify.IsTrue(loginPage.LoginLink.Displayed, "Login link is NOT visible");
             Logger.Write("Login link is visible");
         }
 
@@ -64,7 +67,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var loginPage = _driver.NowAt<LoginPanelPage>();
             _driver.WaitForDataLoading();
             //Only click the login link if the forced login splash page is NOT displayed
-             if (!loginPage.LoginSplashPanel.Displayed())
+            if (!loginPage.LoginSplashPanel.Displayed())
             {
                 loginPage.LoginLink.Click();
                 Logger.Write("Login link was clicked");
@@ -82,7 +85,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
             {
-                Utils.Verify.IsTrue(loginPage.SplashLoginGroupBox.Displayed(), "Login Splash page is NOT visible");
+                Verify.IsTrue(loginPage.SplashLoginGroupBox.Displayed(), "Login Splash page is NOT visible");
                 Logger.Write("Login Splash page is visible");
             }
         }

@@ -21,28 +21,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [When(@"User navigates to the '(.*)' details page for '(.*)' item")]
         public void WhenUserNavigatesToTheDetailsPageForItem(string listName, string itemName)
         {
-            listName = listName.ToLower();
-            var id = string.Empty;
+            var id = DatabaseHelper.GetItemId(listName, itemName);
 
-            switch (listName)
-            {
-                case "device":
-                    id = DatabaseHelper.GetDeviceDetailsIdByName(itemName);
-                    break;
-                case "user":
-                    id = DatabaseHelper.GetUserDetailsIdByName(itemName);
-                    break;
-                case "application":
-                    id = DatabaseHelper.GetApplicationDetailsIdByName(itemName);
-                    break;
-                case "mailbox":
-                    id = DatabaseHelper.GetMailboxDetailsIdByName(itemName);
-                    break;
-                default:
-                    throw new Exception($"Unknown list type: {listName}");
-            }
-
-            OpenItemDetailsById(listName, id);
+            OpenItemDetailsById(listName.ToLower(), id);
         }
 
         [When(@"User navigates to the '(.*)' details page for the item with '(.*)' ID")]
@@ -55,7 +36,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
         private void OpenItemDetailsById(string listName, string id)
         {
+            //Navigate back to evergreeen from self service end user page
+            if (_driver.Url.Contains("selfservice") && _driver.Url.Contains("ObjectId"))
+            {
+                _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
+            }
+
             _driver.NowAt<BaseHeaderElement>();
+
             var url = $"{UrlProvider.EvergreenUrl}#/{listName}/{id}/details/{listName}";
 
             _driver.NavigateToUrl(url);

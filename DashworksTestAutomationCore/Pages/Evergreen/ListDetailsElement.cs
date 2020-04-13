@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using HtmlAgilityPack;
@@ -21,17 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-panel']//button")]
         public IWebElement CloseListDetailsPanelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[contains(@class,'material-icons pull-left list-star-icon')]")]
-        public IWebElement FavoriteButton { get; set; }
-        
-        [FindsBy(How = How.XPath,
-            Using = ".//i[contains(@class,'material-icons pull-left list-star-icon star-filled')]")]
-        public IWebElement UnFavoriteButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='favourite']")]
-        public IWebElement ActiveFavoriteButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'remove mat-icon-button')]")]
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'delete')]/ancestor::button")]
         public IWebElement RemoveListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'list-notification ng-star-inserted')]//button[contains(@class,'btn mat-button')]")]
@@ -43,20 +34,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions action-panel-ddl']//button[@title='Close']")]
         public IWebElement ClosePermissionBlockButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Owner']")]
-        public IWebElement OwnerDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Owner'][contains(@class, 'ng-pristine ng-valid')]")]
         public IWebElement AvailableOwnerField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//i[@class='material-icons mat-item_add ng-star-inserted']")]
         public IWebElement DependantsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']")]
-        public IWebElement SharingDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='ACCEPT']/ancestor::button")]
-        public IWebElement AcceptButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-item_add ng-star-inserted']")]
         public IWebElement OpenDependantsButton { get; set; }
@@ -70,38 +52,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='form-group ng-star-inserted']//table")]
         public IWebElement ExpandedDependantsSection { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='User']")]
-        public IWebElement SelectUserDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Permission']/ancestor::div[@class='mat-select-trigger']")]
-        public IWebElement SelectAccessDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//label[text()='Permission']/ancestor::div[@class='mat-form-field-infix']")]
-        public IWebElement SelectPermissionDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD USER']/ancestor::button")]
-        public IWebElement AddUserButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement WarningMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Team']")]
-        public IWebElement SharingTeamField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//div[@role='listbox']")]
-        public IWebElement SharingUserList { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'action-panel-inner-wrapper')]")]
-        public IWebElement SharingFormContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//td[@class='userName']")]
         public IList<IWebElement> PermissionAddedUser { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//td[@class='permission']")]
         public IList<IWebElement> PermissionTypeOfAccess { get; set; }
-    
-        [FindsBy(How = How.XPath, Using = Owner)]
-        public IList<IWebElement> OwnersList { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -127,31 +85,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             doc.LoadHtml(pageSource);
             var node = doc.DocumentNode.SelectNodes($".//div[@id='{openPermissionsSection}']")[0];
             var openPermissionsSectionTooltip = node.InnerHtml;
-            Utils.Verify.AreEqual(tooltipText, openPermissionsSectionTooltip, "Tooltip is incorrect for button");
-        }
-
-        public string GetSelectedValue(IWebElement dropdown)
-        {
-            return dropdown.FindElement(By.XPath(".//span[contains(@class, 'mat-select-value-text')]/span")).Text;
+            Verify.AreEqual(tooltipText, openPermissionsSectionTooltip, "Tooltip is incorrect for button");
         }
 
         public IWebElement GetDependentListByName(string listName)
         {
             var selector = By.XPath($"//a[text()='{listName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetSharingUserInDllByName(string userName)
-        {
-            var selector = By.XPath($".//mat-option[@role='option']//span[text()='{userName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetSharingUserOnDetailsPanelByName(string userName)
-        {
-            var selector = By.XPath($".//tr[contains(@class, 'menu-show-on-hover')]//td[text()='{userName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -168,16 +107,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 return null;
             }
-        }
-
-        //TODO will be replaced COG MENU element
-        public IWebElement GetMenuOfSharedUser(string username)
-        {
-            var sharedUserCogMenu =
-                By.XPath($".//td[contains(text(),'{username}')]/following-sibling::td/div[starts-with(@class, 'cog-menu')]//i");
-            Driver.MouseHover(sharedUserCogMenu);
-            Driver.WaitForElementToBeDisplayed(sharedUserCogMenu);
-            return Driver.FindElement(sharedUserCogMenu);
         }
     }
 }

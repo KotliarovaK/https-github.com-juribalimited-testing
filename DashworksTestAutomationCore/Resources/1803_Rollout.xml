@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectDto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectId>63</ProjectId>
+  <ProjectName>2004 Rollout</ProjectName>
+  <ProjectDescription>2004 Rollout</ProjectDescription>
+  <ProjectTypeId>1</ProjectTypeId>
+  <CreatedDate>2018-12-18T18:00:41.93</CreatedDate>
+  <CreatedByUserId>be0d4640-9134-4f8a-9e60-31ebdeb58f10</CreatedByUserId>
+  <DefaultPkgOnboardRagStatusId>1527</DefaultPkgOnboardRagStatusId>
+  <HtmlEmailTemplate>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;title&gt;Dashworks Mail&lt;/title&gt;
+&lt;style type="text/css"&gt;
+&lt;!--
+	/* Client-specific Styles */
+	body{width:100% !important;} /* Force Hotmail to display emails at full width */
+	body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
+
+	/* Reset Styles */
+	body{margin:0; padding:0;color:#202020;font-family:Arial,Helvetica,sans-serif;font-size:14px;}
+	img{border:none; font-size:14px; font-weight:bold; height:auto; line-height:100%; outline:none; text-decoration:none; text-transform:capitalize;}
+	#backgroundTable{height:100% !important; margin:0; padding:0; width:100% !important;}
+
+	/* Template Styles */
+
+	body, #backgroundTable{
+		background-color:#737375;
+	}
+
+	#templateContainer{
+		border: 1px solid #37393a;
+	}
+
+	h1, .h1{
+		display:block;
+		font-size:34px;
+		font-weight:bold;
+		line-height:100%;
+		margin-top:0;
+		margin-right:0;
+		margin-bottom:10px;
+		margin-left:0;
+	}
+
+	h2, .h2{
+		display:block;
+		font-size:30px;
+		font-weight:bold;
+		line-height:100%;
+		margin-top:0;
+		margin-right:0;
+		margin-bottom:10px;
+		margin-left:0;
+	}
+
+	h3, .h3{
+		display:block;
+		font-size:26px;
+		font-weight:bold;
+		line-height:100%;
+		margin-top:0;
+		margin-right:0;
+		margin-bottom:10px;
+		margin-left:0;
+	}
+
+	h4, .h4{
+		display:block;
+		font-size:22px;
+		font-weight:bold;
+		line-height:100%;
+		margin-top:0;
+		margin-right:0;
+		margin-bottom:10px;
+		margin-left:0;
+	}
+
+	#templateContainer, .bodyContent{
+		background-color:#FFFFFF;
+	}
+
+	.bodyContent div{
+		color:#505050;
+		line-height:150%;
+	}
+
+	.bodyContent div a:link, .bodyContent div a:visited{
+		color:#336699;
+		font-weight:normal;
+		text-decoration:underline;
+	}
+
+	.bodyContent img{
+		display:inline;
+		height:auto;
+	}
+	
+	.disclaimerContent div {
+		color:#FFFFFF;
+		background-color:#737375;
+		font-size:10px;
+		padding: 8px;
+	}	
+
+	.disclaimerContent div a:link, .disclaimerContent div a:visited{
+		color:#FFFFFF;
+		text-decoration:underline;
+	}
+		
+--&gt;
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0"&gt;
+&lt;center&gt;
+&lt;table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable"&gt;
+&lt;tr&gt;
+&lt;td align="center" valign="top"&gt;
+&lt;br /&gt;
+&lt;table border="0" cellpadding="0" cellspacing="0" width="702" id="templateContainer"&gt;
+
+&lt;tr&gt;
+&lt;td align="center" valign="top"&gt;
+
+&lt;!-- // Begin Template Header \\ --&gt;
+&lt;table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader"&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src="https://s3-eu-west-1.amazonaws.com/juriba-mailtemplate-attachments/emailheader1.jpg" alt="header" /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!-- // End Template Header \\ --&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align="center" valign="top"&gt;
+
+&lt;!-- // Begin Template Body \\ --&gt;
+&lt;table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody"&gt;
+&lt;tr&gt;
+&lt;td valign="top"&gt;
+
+&lt;!-- // Begin Module: Standard Content \\ --&gt;
+&lt;table border="0" cellpadding="20" cellspacing="0" width="100%"&gt;
+&lt;tr&gt;
+&lt;td valign="top" class="bodyContent"&gt;
+    &lt;div&gt;
+    {$MailTemplate}
+    &lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!-- // End Module: Standard Content \\ --&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!-- // End Template Body \\ --&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align="center" valign="top"&gt;
+
+&lt;!-- // Begin Template Footer \\ --&gt;
+&lt;table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter"&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src="https://s3-eu-west-1.amazonaws.com/juriba-mailtemplate-attachments/emailfooter1.jpg" alt="header" /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!-- // End Template Footer \\ --&gt;
+
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;table border="0" cellpadding="0" cellspacing="0" width="702" id="templateDisclaimer"&gt;
+&lt;tr&gt;
+&lt;td class="disclaimerContent"&gt;
+    &lt;div&gt;
+    This email has been automatically sent to you from your Dashworks server.  If you have any questions on the content of this email please contact your Dashworks administrator.  For more information on Dashworks and Juriba, please visit the web site at &lt;a href="http://www.juriba.com"&gt;http://www.juriba.com&lt;/a&gt;.
+    &lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;br /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;</HtmlEmailTemplate>
+  <IsDeleted>0</IsDeleted>
+  <DeletedDate xsi:nil="true" />
+  <DeletedByUserId />
+  <DefaultAppsShowLinkedObjects>0</DefaultAppsShowLinkedObjects>
+  <DefaultAppsForwardPathTypeId>4</DefaultAppsForwardPathTypeId>
+  <SelfServiceDefault>false</SelfServiceDefault>
+  <OnboardNaApps>true</OnboardNaApps>
+  <CapacityVisible>true</CapacityVisible>
+  <CapacityThreshold>80</CapacityThreshold>
+  <EnforceCapacityOnSelfService>true</EnforceCapacityOnSelfService>
+  <EnforceCapacityOnProjectObject>true</EnforceCapacityOnProjectObject>
+  <ShowOriginalApplicationColumnOnAppDashboards>false</ShowOriginalApplicationColumnOnAppDashboards>
+  <IncludeSiteNameInApplicationName>false</IncludeSiteNameInApplicationName>
+  <IncludeVersionInApplicationName>false</IncludeVersionInApplicationName>
+  <DefaultLanguageId>0</DefaultLanguageId>
+  <OnboardAssociatedInstalledApps>true</OnboardAssociatedInstalledApps>
+  <OnboardAssociatedProvisionedApps>true</OnboardAssociatedProvisionedApps>
+  <OnboardAssociatedUsedApps>2</OnboardAssociatedUsedApps>
+  <BucketModeId>3</BucketModeId>
+  <CapacityUnitModeId>3</CapacityUnitModeId>
+  <RingModeId>1</RingModeId>
+  <EvergreenProject>
+    <PrimaryObjectTypeId>2</PrimaryObjectTypeId>
+    <IncludeDevices>true</IncludeDevices>
+    <DeviceScopeListId>18</DeviceScopeListId>
+    <IncludeUsers>true</IncludeUsers>
+    <UserScopeListId xsi:nil="true" />
+    <IncludeApplications>true</IncludeApplications>
+    <ApplicationScopeListId xsi:nil="true" />
+    <ApplicationAssociationDeviceOwnerScopeListId xsi:nil="true" />
+    <ApplicationAssociationOwnedDeviceScopeListId xsi:nil="true" />
+    <IncludeMailboxes>false</IncludeMailboxes>
+    <MailboxScopeListId xsi:nil="true" />
+    <MailboxAssociationDeviceOwnerScopeListId xsi:nil="true" />
+    <IncludeAppsInstalledOnDevice>true</IncludeAppsInstalledOnDevice>
+    <IncludeAppsEntitledToDevice>true</IncludeAppsEntitledToDevice>
+    <IncludeAppsEntitledToUser>true</IncludeAppsEntitledToUser>
+    <IncludeAppsUsedOnDeviceByAnyUser>true</IncludeAppsUsedOnDeviceByAnyUser>
+    <IncludeAppsUsedOnDeviceByDeviceOwner>true</IncludeAppsUsedOnDeviceByDeviceOwner>
+    <IncludeAppsUsedByUserOnAnyDevice>true</IncludeAppsUsedByUserOnAnyDevice>
+    <IncludeMailboxesOwnedByUser>false</IncludeMailboxesOwnedByUser>
+    <IncludeMailboxesDelegatedToUser>false</IncludeMailboxesDelegatedToUser>
+    <IncludeMailboxOwner>false</IncludeMailboxOwner>
+    <IncludeMailboxDelegates>false</IncludeMailboxDelegates>
+    <EvergreenProjectMailboxPermissions />
+  </EvergreenProject>
+  <ProjectStages>
+    <ProjectStageDTO>
+      <StageID>383</StageID>
+      <ProjectID>63</ProjectID>
+      <StageName>Pre-Migration</StageName>
+      <DateCreated>2018-12-18T18:14:22.37</DateCreated>
+      <CreatedByUserID>be0d4640-9134-4f8a-9e60-31ebdeb58f10</CreatedByUserID>
+      <DisplayStatusID>1</DisplayStatusID>
+      <DisplayOrder>1</DisplayOrder>
+      <StageTypeID>1</StageTypeID>
+      <StageActive>1</StageActive>
+    </ProjectStageDTO>
+    <ProjectStageDTO>
+      <StageID>384</StageID>
+      <ProjectID>63</ProjectID>
+      <StageName>Post-Migration</StageName>
+      <DateCreated>2018-12-18T18:14:30.237</DateCreated>
+      <CreatedByUserID>be0d4640-9134-4f8a-9e60-31ebdeb58f10</CreatedByUserID>
+      <DisplayStatusID>1</DisplayStatusID>
+      <DisplayOrder>3</DisplayOrder>
+      <StageTypeID>1</StageTypeID>
+      <StageActive>1</StageActive>
+    </ProjectStageDTO>
+    <ProjectStageDTO>
+      <StageID>385</StageID>
+      <ProjectID>63</ProjectID>
+      <StageName>Migration</StageName>
+      <DateCreated>2018-12-18T18:14:38.2</DateCreated>
+      <CreatedByUserID>be0d4640-9134-4f8a-9e60-31ebdeb58f10</CreatedByUserID>
+      <DisplayStatusID>1</DisplayStatusID>
+      <DisplayOrder>2</DisplayOrder>
+      <StageTypeID>1</StageTypeID>
+      <StageActive>1</StageActive>
+    </ProjectStageDTO>
+  </ProjectStages>
+  <ProjectTasks>
+    <ProjectTaskDTO>
+      <TaskID>13265</TaskID>
+      <TaskName>Scheduled Date</TaskName>
+      <Help>Scheduled Date</Help>
+      <ProjectID>63</ProjectID>
+      <StageID>383</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2018-12-18T18:15:53.903</DateCreated>
+      <CreatedByUserID>be0d4640-9134-4f8a-9e60-31ebdeb58f10</CreatedByUserID>
+      <DisplayOrder>1</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13265</FieldID>
+      <ObjectTypeID>2</ObjectTypeID>
+      <Sequenced>1</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>1</TaskActive>
+      <HookTypeID>3</HookTypeID>
+      <ShowLastChangeInfo>true</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>true</CapacityEnabled>
+      <LastUpdateDate>2018-12-18T18:15:53.903</LastUpdateDate>
+      <LastUpdateUserId>be0d4640-9134-4f8a-9e60-31ebdeb58f10</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <HideCapacitySlotsOnSelfServiceWhenOnlyOneSlot>true</HideCapacitySlotsOnSelfServiceWhenOnlyOneSlot>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13265</TaskID>
+          <Value>1</Value>
+          <Text>Placeholder date task</Text>
+          <Help>Place holder task</Help>
+          <RAGStatusID>1527</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13266</TaskID>
+      <TaskName>Ready to Migrate</TaskName>
+      <Help>Ready to Migrate</Help>
+      <ProjectID>63</ProjectID>
+      <StageID>383</StageID>
+      <TaskControlTypeID>1</TaskControlTypeID>
+      <ControlTypeID>1</ControlTypeID>
+      <DateCreated>2018-12-18T18:20:02.463</DateCreated>
+      <CreatedByUserID>be0d4640-9134-4f8a-9e60-31ebdeb58f10</CreatedByUserID>
+      <DisplayOrder>2</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>false</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>true</AffectsStatus>
+      <FieldID>13266</FieldID>
+      <ObjectTypeID>2</ObjectTypeID>
+      <Sequenced>1</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>1</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>true</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue>2</DefaultTaskValue>
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-12-18T18:20:02.463</LastUpdateDate>
+      <LastUpdateUserId>be0d4640-9134-4f8a-9e60-31ebdeb58f10</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <HideCapacitySlotsOnSelfServiceWhenOnlyOneSlot>false</HideCapacitySlotsOnSelfServiceWhenOnlyOneSlot>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13266</TaskID>
+          <Value>1</Value>
+          <Text>Unknown</Text>
+          <Help>Unknown</Help>
+          <RAGStatusID>1526</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13266</TaskID>
+          <Value>2</Value>
+          <Text>Not Ready</Text>
+          <Help>Not Ready</Help>
+          <RAGStatusID>1520</RAGStatusID>
+          <DisplayOrder>2</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13266</TaskID>
+          <Value>3</Value>
+          <Text>On Target</Text>
+          <Help>On Target</Help>
+          <RAGStatusID>1522</RAGStatusID>
+          <DisplayOrder>3</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13266</TaskID>
+          <Value>4</Value>
+          <Text>Ready</Text>
+          <Help>Ready</Help>
+          <RAGStatusID>1525</RAGStatusID>
+          <DisplayOrder>4</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13267</TaskID>
+      <TaskName>Migrated Date</TaskName>
+      <Help>Migrated Date</Help>
+      <ProjectID>63</ProjectID>
+      <StageID>385</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2019-03-06T17:05:24.08</DateCreated>
+      <CreatedByUserID>be0d4640-9134-4f8a-9e60-31ebdeb58f10</CreatedByUserID>
+      <DisplayOrder>1</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13267</FieldID>
+      <ObjectTypeID>2</ObjectTypeID>
+      <Sequenced>1</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>1</TaskActive>
+      <HookTypeID>4</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2019-03-06T17:05:24.08</LastUpdateDate>
+      <LastUpdateUserId>be0d4640-9134-4f8a-9e60-31ebdeb58f10</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <HideCapacitySlotsOnSelfServiceWhenOnlyOneSlot>false</HideCapacitySlotsOnSelfServiceWhenOnlyOneSlot>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13267</TaskID>
+          <Value>1</Value>
+          <Text>Placeholder date task</Text>
+          <Help>Place holder task</Help>
+          <RAGStatusID>1527</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13278</TaskID>
+      <TaskName>Device Priority</TaskName>
+      <Help>Device Priority</Help>
+      <ProjectID>63</ProjectID>
+      <StageID>383</StageID>
+      <TaskControlTypeID>1</TaskControlTypeID>
+      <ControlTypeID>1</ControlTypeID>
+      <DateCreated>2019-03-25T09:39:10.043</DateCreated>
+      <CreatedByUserID>be0d4640-9134-4f8a-9e60-31ebdeb58f10</CreatedByUserID>
+      <DisplayOrder>3</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>false</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13278</FieldID>
+      <ObjectTypeID>2</ObjectTypeID>
+      <Sequenced>1</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>1</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue>3</DefaultTaskValue>
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2019-03-25T09:39:10.043</LastUpdateDate>
+      <LastUpdateUserId>be0d4640-9134-4f8a-9e60-31ebdeb58f10</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <HideCapacitySlotsOnSelfServiceWhenOnlyOneSlot>false</HideCapacitySlotsOnSelfServiceWhenOnlyOneSlot>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13278</TaskID>
+          <Value>1</Value>
+          <Text>High</Text>
+          <Help>High</Help>
+          <RAGStatusID>1527</RAGStatusID>
+          <DisplayOrder>3</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13278</TaskID>
+          <Value>2</Value>
+          <Text>Medium</Text>
+          <Help>Medium</Help>
+          <RAGStatusID>1527</RAGStatusID>
+          <DisplayOrder>2</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13278</TaskID>
+          <Value>3</Value>
+          <Text>Low</Text>
+          <Help>Low</Help>
+          <RAGStatusID>1527</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+  </ProjectTasks>
+  <RequestTypes>
+    <RequestTypeDTO>
+      <RequestTypeId>528</RequestTypeId>
+      <RequestType>Undetermined</RequestType>
+      <RequestTypeDesc>Undetermined</RequestTypeDesc>
+      <ProjectId>63</ProjectId>
+      <ObjectTypeId>2</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>true</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>530</RequestTypeId>
+      <RequestType>Desktop Replacement</RequestType>
+      <RequestTypeDesc>Desktop Replacement</RequestTypeDesc>
+      <ProjectId>63</ProjectId>
+      <ObjectTypeId>2</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>false</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>531</RequestTypeId>
+      <RequestType>Desktop Upgrade</RequestType>
+      <RequestTypeDesc>Desktop Upgrade</RequestTypeDesc>
+      <ProjectId>63</ProjectId>
+      <ObjectTypeId>2</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>false</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>532</RequestTypeId>
+      <RequestType>Laptop Replacement</RequestType>
+      <RequestTypeDesc>Laptop Replacement</RequestTypeDesc>
+      <ProjectId>63</ProjectId>
+      <ObjectTypeId>2</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>false</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>533</RequestTypeId>
+      <RequestType>Laptop Upgrade</RequestType>
+      <RequestTypeDesc>Laptop Upgrade</RequestTypeDesc>
+      <ProjectId>63</ProjectId>
+      <ObjectTypeId>2</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>false</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>534</RequestTypeId>
+      <RequestType>Zero Touch</RequestType>
+      <RequestTypeDesc>Zero Touch</RequestTypeDesc>
+      <ProjectId>63</ProjectId>
+      <ObjectTypeId>2</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>false</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>527</RequestTypeId>
+      <RequestType>[Default (User)]</RequestType>
+      <RequestTypeDesc>[Default (User)]</RequestTypeDesc>
+      <ProjectId>63</ProjectId>
+      <ObjectTypeId>1</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>true</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>529</RequestTypeId>
+      <RequestType>[Default (Application)]</RequestType>
+      <RequestTypeDesc>[Default (Application)]</RequestTypeDesc>
+      <ProjectId>63</ProjectId>
+      <ObjectTypeId>3</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>true</IsDefault>
+    </RequestTypeDTO>
+  </RequestTypes>
+  <RequestTypeTasks>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>528</RequestTypeId>
+      <RequestTypeTaskId>13265</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>530</RequestTypeId>
+      <RequestTypeTaskId>13265</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>531</RequestTypeId>
+      <RequestTypeTaskId>13265</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>532</RequestTypeId>
+      <RequestTypeTaskId>13265</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>533</RequestTypeId>
+      <RequestTypeTaskId>13265</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>534</RequestTypeId>
+      <RequestTypeTaskId>13265</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>528</RequestTypeId>
+      <RequestTypeTaskId>13266</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>530</RequestTypeId>
+      <RequestTypeTaskId>13266</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>531</RequestTypeId>
+      <RequestTypeTaskId>13266</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>532</RequestTypeId>
+      <RequestTypeTaskId>13266</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>533</RequestTypeId>
+      <RequestTypeTaskId>13266</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>534</RequestTypeId>
+      <RequestTypeTaskId>13266</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>528</RequestTypeId>
+      <RequestTypeTaskId>13267</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>530</RequestTypeId>
+      <RequestTypeTaskId>13267</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>531</RequestTypeId>
+      <RequestTypeTaskId>13267</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>532</RequestTypeId>
+      <RequestTypeTaskId>13267</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>533</RequestTypeId>
+      <RequestTypeTaskId>13267</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>534</RequestTypeId>
+      <RequestTypeTaskId>13267</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>528</RequestTypeId>
+      <RequestTypeTaskId>13278</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>530</RequestTypeId>
+      <RequestTypeTaskId>13278</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>531</RequestTypeId>
+      <RequestTypeTaskId>13278</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>532</RequestTypeId>
+      <RequestTypeTaskId>13278</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>533</RequestTypeId>
+      <RequestTypeTaskId>13278</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>534</RequestTypeId>
+      <RequestTypeTaskId>13278</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+  </RequestTypeTasks>
+  <ProjectRings>
+    <RingDto>
+      <RingId>48</RingId>
+      <ProjectId>63</ProjectId>
+      <RingName>Unassigned</RingName>
+      <RingDescription>Unassigned</RingDescription>
+      <DisplayOrder>1</DisplayOrder>
+      <IsDefault>true</IsDefault>
+      <SourceRingId xsi:nil="true" />
+    </RingDto>
+  </ProjectRings>
+  <ProjectReadiness>
+    <ReadinessDto>
+      <RAGStatusId>1526</RAGStatusId>
+      <RAGStatus>Grey</RAGStatus>
+      <Priority>1</Priority>
+      <Ready>false</Ready>
+      <IsSystemNone>false</IsSystemNone>
+      <TemplateId>11</TemplateId>
+      <ToolTip>Grey</ToolTip>
+    </ReadinessDto>
+    <ReadinessDto>
+      <RAGStatusId>1520</RAGStatusId>
+      <RAGStatus>Red</RAGStatus>
+      <Priority>2</Priority>
+      <Ready>false</Ready>
+      <IsSystemNone>false</IsSystemNone>
+      <TemplateId>4</TemplateId>
+      <ToolTip>Red</ToolTip>
+    </ReadinessDto>
+    <ReadinessDto>
+      <RAGStatusId>1522</RAGStatusId>
+      <RAGStatus>Amber</RAGStatus>
+      <Priority>3</Priority>
+      <Ready>false</Ready>
+      <IsSystemNone>false</IsSystemNone>
+      <TemplateId>7</TemplateId>
+      <ToolTip>Amber</ToolTip>
+    </ReadinessDto>
+    <ReadinessDto>
+      <RAGStatusId>1525</RAGStatusId>
+      <RAGStatus>Green</RAGStatus>
+      <Priority>4</Priority>
+      <Ready>true</Ready>
+      <IsSystemNone>false</IsSystemNone>
+      <TemplateId>10</TemplateId>
+      <ToolTip>Green</ToolTip>
+    </ReadinessDto>
+    <ReadinessDto>
+      <RAGStatusId>1527</RAGStatusId>
+      <RAGStatus>None</RAGStatus>
+      <Priority>5</Priority>
+      <Ready>false</Ready>
+      <IsSystemNone>true</IsSystemNone>
+      <TemplateId>12</TemplateId>
+      <ToolTip>None</ToolTip>
+    </ReadinessDto>
+  </ProjectReadiness>
+</ProjectDto>

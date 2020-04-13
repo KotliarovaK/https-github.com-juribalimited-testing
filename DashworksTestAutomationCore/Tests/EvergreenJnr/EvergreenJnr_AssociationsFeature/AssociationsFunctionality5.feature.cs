@@ -234,13 +234,13 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1478 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1486 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table1478.AddRow(new string[] {
+                table1486.AddRow(new string[] {
                             "Empty"});
 #line 33
  testRunner.When("User add \"Device OS Branch\" filter where type is \"Equals\" without added column an" +
-                        "d following checkboxes:", ((string)(null)), table1478, "When ");
+                        "d following checkboxes:", ((string)(null)), table1486, "When ");
 #line hidden
 #line 36
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -333,14 +333,14 @@ this.FeatureBackground();
 #line 54
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1479 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1487 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1479.AddRow(new string[] {
+                table1487.AddRow(new string[] {
                             "Manufacturer"});
-                table1479.AddRow(new string[] {
+                table1487.AddRow(new string[] {
                             "CPU Architecture"});
 #line 55
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1479, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1487, "When ");
 #line hidden
 #line 59
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -398,14 +398,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1480 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1488 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Computer",
                             "Application"});
-                table1480.AddRow(new string[] {
+                table1488.AddRow(new string[] {
                             "CustomDAS19185",
                             "LabelDAS19185",
                             "true",
@@ -413,7 +413,7 @@ this.FeatureBackground();
                             "true",
                             "true"});
 #line 65
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table1480, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table1488, "When ");
 #line hidden
 #line 68
  testRunner.When("User navigates to the \'Device\' details page for \'QFI94WAUX17N4I\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -476,17 +476,17 @@ this.FeatureBackground();
 #line 87
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1481 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1489 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
 #line 88
  testRunner.When("User add \"Device LabelDAS19185\" filter where type is \"Not empty\" with added colum" +
-                        "n and following value:", ((string)(null)), table1481, "When ");
+                        "n and following value:", ((string)(null)), table1489, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1482 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1490 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
 #line 90
  testRunner.When("User add \"App LabelDAS19185\" filter where type is \"Not empty\" with added column a" +
-                        "nd following value:", ((string)(null)), table1482, "When ");
+                        "nd following value:", ((string)(null)), table1490, "When ");
 #line hidden
 #line 92
  testRunner.When("User clicks the Associations button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

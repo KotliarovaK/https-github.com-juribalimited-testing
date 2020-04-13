@@ -152,24 +152,24 @@ this.FeatureBackground();
 #line 16
  testRunner.Then("Counter shows \"4\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2559 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2570 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2559.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "Application"});
-                table2559.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "Vendor"});
-                table2559.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "Version"});
-                table2559.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "Compliance"});
-                table2559.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "In Catalog"});
-                table2559.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "Criticality"});
-                table2559.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "Hide From End Users"});
 #line 17
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2559, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2570, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

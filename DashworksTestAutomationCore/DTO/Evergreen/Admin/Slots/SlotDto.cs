@@ -99,6 +99,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Slots
         }
 
         public DateTime SlotAvailableFrom { get; set; }
+
         public DateTime SlotAvailableTo { get; set; }
 
         public string SlotStartTime { get; set; }

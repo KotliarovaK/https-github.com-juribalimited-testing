@@ -1,10 +1,10 @@
 ﻿using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using TechTalk.SpecFlow;
 
@@ -18,17 +18,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public EvergreenJnr_RingsPage(RemoteWebDriver driver)
         {
             _driver = driver;
-        }
-
-        [When(@"User clicks Create button on the Create Ring page")]
-        public void WhenUserClicksCreateButtonOnTheCreateRingPage()
-        {
-            var page = _driver.NowAt<CreateRingPage>();
-            _driver.WaitForElementToBeDisplayed(page.CreateRingButton);
-            page.CreateRingButton.Click();
-            Thread.Sleep(2000);
-            _driver.WaitForDataLoading();
-            Logger.Write("Create Ring button was clicked");
         }
 
         [When(@"User sets ""(.*)"" value in Maps to evergreen ring field")]
@@ -45,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRingSettingsMapsToEvergreenIsDisplayedCorrectly(string ringName)
         {
             var page = _driver.NowAt<CreateRingPage>();
-            Utils.Verify.AreEqual(ringName, page.MapsToEvergreenField.GetAttribute("value"), $"'{ringName}' text is not displayed in Maps to Evergreen Ring field");
+            Verify.AreEqual(ringName, page.MapsToEvergreenField.GetAttribute("value"), $"'{ringName}' text is not displayed in Maps to Evergreen Ring field");
         }
 
         [When(@"User doubleclicks Create button on Create Ring page")]

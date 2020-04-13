@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
@@ -22,6 +23,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public const string ColumnHeader = "//div[@class='ag-header-cell-label']";
 
         public const string EditButton = ".//*[text()='{0}']//ancestor::tr//span[@class='editIcon']";
+        
+        public const string EditArrow = ".//*[text()='{0}']//ancestor::tr//div[contains(@class, 'select-arrow')]";
 
         private string FieldContent = ".//td//span[text()='{0}']//ancestor::tr//td//*[contains(text(),'{0}')]";
 
@@ -56,12 +59,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using =
                 ".//table[@class='table projectDetails']/*//span[text()='Evergreen Bucket']/ancestor::tr/td[@class='fld-value']")]
         public IWebElement ProjectSummaryBucketValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='New Ring']")]
-        public IWebElement ProjectSummaryRingPopupDDL { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
-        public IList<IWebElement> OperatorOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']/ancestor::mat-checkbox")]
         public IWebElement SelectAllCheckBox { get; set; }
@@ -145,7 +142,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var allFieldsContent = Driver.FindElements(By.XPath(".//tbody/tr/td[2]"));
 
-            foreach (var element in allFieldsContent) Utils.Verify.IsFalse(string.IsNullOrEmpty(element.Text), "PLEASE ADD EXCEPTION MESSAGE");
+            foreach (var element in allFieldsContent) Verify.IsFalse(string.IsNullOrEmpty(element.Text), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         public int GetColumnNumberByName(string columnName)
@@ -161,19 +158,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
 
             return columnNumber;
-        }
-
-        public By GetLinkByNameSelector(string linkName)
-        {
-            var selector = $".//a[@href][text()='{linkName}']";
-            return By.XPath(selector);
-        }
-
-        public IWebElement GetLinkByName(string linkName)
-        {
-            var by = GetLinkByNameSelector(linkName);
-            Driver.WaitForElementToBeDisplayed(by);
-            return Driver.FindElement(by);
         }
 
         public IWebElement GetIconByName(string detailsIconName)
@@ -237,6 +221,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool EditFieldButtonDisplaying(string fieldName)
         {
             return Driver.IsElementDisplayed(By.XPath(string.Format(EditButton, fieldName)));
+        }
+
+        public bool EditArrowDisplaying(string fieldName)
+        {
+            return Driver.IsElementDisplayed(By.XPath(string.Format(EditArrow, fieldName)));
         }
 
         #endregion

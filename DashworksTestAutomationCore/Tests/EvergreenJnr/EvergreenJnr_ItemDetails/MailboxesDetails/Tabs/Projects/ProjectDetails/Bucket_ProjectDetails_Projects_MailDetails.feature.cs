@@ -155,36 +155,36 @@ this.FeatureBackground();
 #line 15
  testRunner.When("User clicks on edit button for \'Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2933 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2944 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2933.AddRow(new string[] {
+                table2944.AddRow(new string[] {
                             "Username"});
-                table2933.AddRow(new string[] {
+                table2944.AddRow(new string[] {
                             "Display Name"});
-                table2933.AddRow(new string[] {
+                table2944.AddRow(new string[] {
                             "Domain"});
-                table2933.AddRow(new string[] {
+                table2944.AddRow(new string[] {
                             "Owner"});
-                table2933.AddRow(new string[] {
+                table2944.AddRow(new string[] {
                             "Bucket"});
 #line 16
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2933, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2944, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2934 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2945 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2934.AddRow(new string[] {
+                table2945.AddRow(new string[] {
                             "BCLABS"});
 #line 23
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
-                        "olumn:", ((string)(null)), table2934, "Then ");
+                        "olumn:", ((string)(null)), table2945, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2935 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2946 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2935.AddRow(new string[] {
+                table2946.AddRow(new string[] {
                             "True"});
 #line 26
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Owner\' co" +
-                        "lumn:", ((string)(null)), table2935, "Then ");
+                        "lumn:", ((string)(null)), table2946, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

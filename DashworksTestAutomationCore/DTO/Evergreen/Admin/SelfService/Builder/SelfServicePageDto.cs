@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components;
 using DashworksTestAutomation.Helpers;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder
 {
@@ -56,8 +59,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder
             }
         }
 
-        [JsonProperty("objectTypeId")]
-        public int ObjectTypeId { get; set; }
+        [JsonProperty("objectTypeId")] public int ObjectTypeId => 3;
 
         [JsonProperty("order")]
         public int Order { get; set; }
@@ -75,6 +77,6 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder
         public string UserListId { get; set; }
 
         [JsonProperty("components")]
-        public List<string> Components { get; set; }
+        public List<BaseSelfServiceComponent> Components { get; set; }
     }
 }

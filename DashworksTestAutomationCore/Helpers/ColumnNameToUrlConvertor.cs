@@ -123,13 +123,13 @@ namespace DashworksTestAutomation.Helpers
                 case "User Application Compliance":
                     return "userApplicationCompliance";
 
-                case "Windows7Mi: Application Rationalisation":
+                case "Windows7Mi: Rationalisation":
                     return "project_1_applicationRationalisation";
 
                 case "Windows7Mi: Core Application":
                     return "project_1_coreApplication";
 
-                case "Windows7Mi: Hide from End Users":
+                case "Windows7Mi: Hide From End Users":
                     return "project_1_hideFromEndUsers";
 
                 case "Manufacturer":
@@ -141,26 +141,29 @@ namespace DashworksTestAutomation.Helpers
                 case "Build Date":
                     return "buildDate";
 
-                case "Windows7Mi: Target App":
+                case "Windows7Mi: Target App Name":
                     return "project_1_targetApplication";
 
-                case "Babel(Engl: Target App":
+                case "Babel(Engl: Target App Name":
                     return "project_46_targetApplication";
 
-                case "Barry'sUse: Target App":
+                case "Barry'sUse: Target App Name":
                     return "project_38_targetApplication";
 
-                case "ComputerSc: Target App":
+                case "ComputerSc: Target App Name":
                     return "project_40_targetApplication";
 
-                case "Havoc(BigD: Target App":
+                case "Havoc(BigD: Target App Name":
                     return "project_43_targetApplication";
 
-                case "MigrationP: Target App":
+                case "MigrationP: Target App Name":
                     return "project_34_targetApplication";
 
-                case "UserSchedu: Target App":
+                case "UserSchedu: Target App Name":
                     return "project_41_targetApplication";
+
+                case "MailboxEve: Target App Name":
+                    return "project_54_targetApplication";
 
                 case "User Key":
                     return "objectKey";
@@ -176,6 +179,9 @@ namespace DashworksTestAutomation.Helpers
 
                 case "Barry'sUse: Audit & Configuration \\ Package Delivery Date":
                     return "project_task_38_10484_2_Task";
+
+                case "Barry'sUse: Project Dates \\ Migrated Date":
+                    return "project_task_38_12637_2_Task";
 
                 case "Email Count":
                     return "emailCount";
@@ -268,19 +274,19 @@ namespace DashworksTestAutomation.Helpers
                 case "Sticky Compliance":
                     return "stickyCompliance";
 
-                case "1803: Target App":
+                case "2004: Target App Name":
                     return "project_63_targetApplication";
 
-                case "1803: Target App Vendor":
+                case "2004: Target App Vendor":
                     return "project_63_targetApplicationVendor";
 
-                case "1803: Target App Version":
+                case "2004: Target App Version":
                     return "project_63_targetApplicationVersion";
 
-                case "1803: Target App Readiness":
+                case "2004: Target App Readiness":
                     return "project_63_targetApplicationReadiness";
 
-                case "1803: Target App Key":
+                case "2004: Target App Key":
                     return "project_63_targetApplicationKey";
 
                 case "Evergreen Rationalisation":
@@ -295,7 +301,7 @@ namespace DashworksTestAutomation.Helpers
                 case "Evergreen Target App":
                     return "evergreenTargetApplication";
 
-                case "1803: In Scope":
+                case "2004: In Scope":
                     return "project_63_inScope";
 
                 case "HDD Total Size (GB)":
@@ -349,7 +355,7 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
-                case "1803: Status":
+                case "2004: Status":
                     switch (pageName)
                     {
                         case "Devices":
@@ -367,8 +373,26 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
-                case "1803: Pre-Migration \\ Ready to Migrate":
+                case "2004: Readiness":
+                    switch (pageName)
+                    {
+                        case "Devices":
+                            return "project_63_ragStatus";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
+                case "2004: Pre-Migration \\ Ready to Migrate":
                     return "project_task_63_13266_1_Task";
+
+                case "Havoc(BigD: Application Readiness":
+                    return "project_43_applicationReadiness";
+
+                case "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Radiobutton Task for Workstation":
+                    return "project_task_1_8397_1_Task";
+
+                case "Devices_Scope \\ First_Action":
+                    return "automationField_11_10_date";
 
                 default:
                     throw new Exception($"{columnName} column not found in convertor");

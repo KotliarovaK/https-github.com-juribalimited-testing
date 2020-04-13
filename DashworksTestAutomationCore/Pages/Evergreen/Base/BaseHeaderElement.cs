@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
@@ -25,6 +26,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'listDtlBtn')]")]
         public IWebElement ListDetailsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@id='showDashboardDetails']")]
+        public IWebElement DashboardsDetailsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'permissionsModeBtn')]")]
+        public IWebElement PermissionsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'showDashboardPermissions')]")]
+        public IWebElement DashboardPermissionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
         public IWebElement ColumnButton { get; set; }

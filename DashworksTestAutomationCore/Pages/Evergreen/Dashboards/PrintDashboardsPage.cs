@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//body[contains(@class,'dashboardPrintPreview')]//img[@alt='DashWorks']")]
         public IWebElement DashWorksPrintLogo { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'cdk-drop-list')]//div[@class='widget']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'mat-expansion-panel-body')]//div[@class='widget']")]
         public IWebElement PrintPreviewWidgets { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='print-preview-buttons']/button/span[text()='CANCEL']")]

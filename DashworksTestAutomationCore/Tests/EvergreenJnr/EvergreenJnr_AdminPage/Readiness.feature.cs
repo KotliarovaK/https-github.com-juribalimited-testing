@@ -135,61 +135,61 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1125 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1133 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1125.AddRow(new string[] {
+                table1133.AddRow(new string[] {
                             "Project for DAS15665",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table1125, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1133, "When ");
 #line hidden
 #line 13
  testRunner.And("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1126 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1134 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table1126.AddRow(new string[] {
+                table1134.AddRow(new string[] {
                             "Edit"});
-                table1126.AddRow(new string[] {
+                table1134.AddRow(new string[] {
                             "Move to top"});
-                table1126.AddRow(new string[] {
+                table1134.AddRow(new string[] {
                             "Move to bottom"});
-                table1126.AddRow(new string[] {
+                table1134.AddRow(new string[] {
                             "Move to position"});
-                table1126.AddRow(new string[] {
+                table1134.AddRow(new string[] {
                             "Change to ready"});
-                table1126.AddRow(new string[] {
+                table1134.AddRow(new string[] {
                             "Make default for applications"});
-                table1126.AddRow(new string[] {
+                table1134.AddRow(new string[] {
                             "Delete"});
 #line 14
  testRunner.When("User clicks Cog-menu for \'RED\' item in the \'Readiness\' column and sees following " +
-                        "cog-menu options", ((string)(null)), table1126, "When ");
+                        "cog-menu options", ((string)(null)), table1134, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1127 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1135 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table1127.AddRow(new string[] {
+                table1135.AddRow(new string[] {
                             "Edit"});
-                table1127.AddRow(new string[] {
+                table1135.AddRow(new string[] {
                             "Move to top"});
-                table1127.AddRow(new string[] {
+                table1135.AddRow(new string[] {
                             "Move to bottom"});
-                table1127.AddRow(new string[] {
+                table1135.AddRow(new string[] {
                             "Move to position"});
-                table1127.AddRow(new string[] {
+                table1135.AddRow(new string[] {
                             "Change to not ready"});
-                table1127.AddRow(new string[] {
+                table1135.AddRow(new string[] {
                             "Make default for applications"});
-                table1127.AddRow(new string[] {
+                table1135.AddRow(new string[] {
                             "Delete"});
 #line 23
  testRunner.When("User clicks Cog-menu for \'GREEN\' item in the \'Readiness\' column and sees followin" +
-                        "g cog-menu options", ((string)(null)), table1127, "When ");
+                        "g cog-menu options", ((string)(null)), table1135, "When ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -248,53 +248,53 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1128 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1136 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1128.AddRow(new string[] {
+                table1136.AddRow(new string[] {
                             "DAS15884_Project",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 35
- testRunner.When("Project created via API and opened", ((string)(null)), table1128, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1136, "When ");
 #line hidden
 #line 38
  testRunner.And("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1129 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1137 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1129.AddRow(new string[] {
+                table1137.AddRow(new string[] {
                             "Readiness"});
-                table1129.AddRow(new string[] {
+                table1137.AddRow(new string[] {
                             ""});
-                table1129.AddRow(new string[] {
+                table1137.AddRow(new string[] {
                             "Tooltip"});
-                table1129.AddRow(new string[] {
+                table1137.AddRow(new string[] {
                             "Ready"});
-                table1129.AddRow(new string[] {
+                table1137.AddRow(new string[] {
                             "Default for Applications"});
-                table1129.AddRow(new string[] {
+                table1137.AddRow(new string[] {
                             "Task Values Count"});
-                table1129.AddRow(new string[] {
+                table1137.AddRow(new string[] {
                             "Applications Count"});
-                table1129.AddRow(new string[] {
+                table1137.AddRow(new string[] {
                             "Object App Override Count"});
-                table1129.AddRow(new string[] {
+                table1137.AddRow(new string[] {
                             "Stage Overrides Count"});
-                table1129.AddRow(new string[] {
+                table1137.AddRow(new string[] {
                             "Task Values Templates Count"});
 #line 39
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1129, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1137, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1130 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1138 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table1130.AddRow(new string[] {
+                table1138.AddRow(new string[] {
                             "RED"});
 #line 51
- testRunner.When("User select \"Readiness\" rows in the grid", ((string)(null)), table1130, "When ");
+ testRunner.When("User select \"Readiness\" rows in the grid", ((string)(null)), table1138, "When ");
 #line hidden
 #line 54
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -315,12 +315,12 @@ this.FeatureBackground();
 #line 59
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1131 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1139 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table1131.AddRow(new string[] {
+                table1139.AddRow(new string[] {
                             "AMBER"});
 #line 60
- testRunner.When("User select \"Readiness\" rows in the grid", ((string)(null)), table1131, "When ");
+ testRunner.When("User select \"Readiness\" rows in the grid", ((string)(null)), table1139, "When ");
 #line hidden
 #line 63
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -397,53 +397,53 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1132 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1140 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1132.AddRow(new string[] {
+                table1140.AddRow(new string[] {
                             "DAS16131_Project",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 71
- testRunner.When("Project created via API and opened", ((string)(null)), table1132, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1140, "When ");
 #line hidden
 #line 74
  testRunner.And("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1133 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1141 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1133.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "Readiness"});
-                table1133.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             ""});
-                table1133.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "Tooltip"});
-                table1133.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "Ready"});
-                table1133.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "Default for Applications"});
-                table1133.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "Task Values Count"});
-                table1133.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "Applications Count"});
-                table1133.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "Object App Override Count"});
-                table1133.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "Stage Overrides Count"});
-                table1133.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "Task Values Templates Count"});
 #line 75
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1133, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1141, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1134 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1142 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table1134.AddRow(new string[] {
+                table1142.AddRow(new string[] {
                             "RED"});
 #line 87
- testRunner.When("User select \"Readiness\" rows in the grid", ((string)(null)), table1134, "When ");
+ testRunner.When("User select \"Readiness\" rows in the grid", ((string)(null)), table1142, "When ");
 #line hidden
 #line 90
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -469,12 +469,12 @@ this.FeatureBackground();
 #line 97
  testRunner.Then("\'DELETE\' popup button color is \'rgba(242, 88, 49, 1)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1135 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1143 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table1135.AddRow(new string[] {
+                table1143.AddRow(new string[] {
                             "Ignore"});
 #line 98
- testRunner.Then("User sees that \'Replacement Readiness\' dropdown contains following options:", ((string)(null)), table1135, "Then ");
+ testRunner.Then("User sees that \'Replacement Readiness\' dropdown contains following options:", ((string)(null)), table1143, "Then ");
 #line hidden
 #line 101
  testRunner.When("User clicks \'DELETE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -574,14 +574,14 @@ this.FeatureBackground();
 #line 115
  testRunner.And("User clicks \'CREATE READINESS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1136 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1144 = new TechTalk.SpecFlow.Table(new string[] {
                             "Readiness",
                             "Tooltip",
                             "Ready",
                             "DefaultForApplications",
                             "ColourTemplate",
                             "ProjectName"});
-                table1136.AddRow(new string[] {
+                table1144.AddRow(new string[] {
                             "DAS14937",
                             "tooltipForDas14937",
                             "TRUE",
@@ -589,7 +589,7 @@ this.FeatureBackground();
                             "RED",
                             "Windows 7 Migration (Computer Scheduled Project)"});
 #line 116
- testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table1136, "And ");
+ testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table1144, "And ");
 #line hidden
 #line 119
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -692,14 +692,14 @@ this.FeatureBackground();
 #line 136
  testRunner.And("User clicks \'CREATE READINESS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1137 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1145 = new TechTalk.SpecFlow.Table(new string[] {
                             "Readiness",
                             "Tooltip",
                             "Ready",
                             "DefaultForApplications",
                             "ColourTemplate",
                             "ProjectName"});
-                table1137.AddRow(new string[] {
+                table1145.AddRow(new string[] {
                             "DAS14937_1",
                             "tooltipForDas14937_1",
                             "TRUE",
@@ -707,7 +707,7 @@ this.FeatureBackground();
                             "RED",
                             "Windows 7 Migration (Computer Scheduled Project)"});
 #line 137
- testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table1137, "And ");
+ testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table1145, "And ");
 #line hidden
 #line 140
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -862,18 +862,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1138 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1146 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1138.AddRow(new string[] {
+                table1146.AddRow(new string[] {
                             "ReadinessDAS14938_4A2",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 162
- testRunner.When("Project created via API and opened", ((string)(null)), table1138, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1146, "When ");
 #line hidden
 #line 165
  testRunner.When("User remembers default Readiness for \'ReadinessDAS14938_4A2\' project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -881,13 +881,13 @@ this.FeatureBackground();
 #line 166
  testRunner.And("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1139 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1147 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1139.AddRow(new string[] {
+                table1147.AddRow(new string[] {
                             "False"});
 #line 167
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default f" +
-                        "or Applications\' column:", ((string)(null)), table1139, "When ");
+                        "or Applications\' column:", ((string)(null)), table1147, "When ");
 #line hidden
 #line 170
  testRunner.Then("\'TRUE\' content is displayed in the \'Default for Applications\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -916,14 +916,14 @@ this.FeatureBackground();
 #line 178
  testRunner.And("User clicks \'CREATE READINESS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1140 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1148 = new TechTalk.SpecFlow.Table(new string[] {
                             "Readiness",
                             "Tooltip",
                             "Ready",
                             "DefaultForApplications",
                             "ColourTemplate",
                             "ProjectName"});
-                table1140.AddRow(new string[] {
+                table1148.AddRow(new string[] {
                             "DAS14938_1",
                             "tooltipForDas14938_1",
                             "TRUE",
@@ -931,7 +931,7 @@ this.FeatureBackground();
                             "RED",
                             "ReadinessDAS14938_4A2"});
 #line 179
- testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table1140, "And ");
+ testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table1148, "And ");
 #line hidden
 #line 182
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -954,13 +954,13 @@ this.FeatureBackground();
 #line 188
  testRunner.When("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1141 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1149 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1141.AddRow(new string[] {
+                table1149.AddRow(new string[] {
                             "False"});
 #line 189
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default f" +
-                        "or Applications\' column:", ((string)(null)), table1141, "When ");
+                        "or Applications\' column:", ((string)(null)), table1149, "When ");
 #line hidden
 #line 192
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1022,18 +1022,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1142 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1150 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1142.AddRow(new string[] {
+                table1150.AddRow(new string[] {
                             "ReadinessDAS14938",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 198
- testRunner.When("Project created via API and opened", ((string)(null)), table1142, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1150, "When ");
 #line hidden
 #line 201
  testRunner.And("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1224,29 +1224,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1143 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1151 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1143.AddRow(new string[] {
+                table1151.AddRow(new string[] {
                             "DAS14938_Project",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 236
- testRunner.When("Project created via API and opened", ((string)(null)), table1143, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1151, "When ");
 #line hidden
 #line 239
  testRunner.And("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1144 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1152 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1144.AddRow(new string[] {
+                table1152.AddRow(new string[] {
                             "False"});
 #line 240
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default f" +
-                        "or Applications\' column:", ((string)(null)), table1144, "When ");
+                        "or Applications\' column:", ((string)(null)), table1152, "When ");
 #line hidden
 #line 243
  testRunner.When("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1257,13 +1257,13 @@ this.FeatureBackground();
 #line 245
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1145 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1153 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1145.AddRow(new string[] {
+                table1153.AddRow(new string[] {
                             "False"});
 #line 246
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default f" +
-                        "or Applications\' column:", ((string)(null)), table1145, "When ");
+                        "or Applications\' column:", ((string)(null)), table1153, "When ");
 #line hidden
 #line 249
  testRunner.Then("\"IGNORE\" content is displayed for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1445,28 +1445,28 @@ this.FeatureBackground();
 #line 290
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1146 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1154 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1146.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Readiness"});
-                table1146.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             ""});
-                table1146.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Tooltip"});
-                table1146.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Default for Applications"});
-                table1146.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Task Values Count"});
-                table1146.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Applications Count"});
-                table1146.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Object App Override Count"});
-                table1146.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Stage Overrides Count"});
-                table1146.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Task Values Templates Count"});
 #line 291
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1146, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1154, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1720,12 +1720,12 @@ this.FeatureBackground();
 #line 342
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1147 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1155 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1147.AddRow(new string[] {
+                table1155.AddRow(new string[] {
                             "Priority"});
 #line 343
- testRunner.Then("following columns added to the table:", ((string)(null)), table1147, "Then ");
+ testRunner.Then("following columns added to the table:", ((string)(null)), table1155, "Then ");
 #line hidden
 #line 346
  testRunner.When("User clicks on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1874,35 +1874,35 @@ this.FeatureBackground();
 #line 367
  testRunner.And("User clicks Colour Template field on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1148 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1156 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColorTemplate"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "SCHWARZ"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "BLAU"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "TÜRKIS"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "ROT"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "BRAUN"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "PINK"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "BERNSTEIN"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "ORANGE"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "LILA"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "GRÜN"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "GRAU"});
-                table1148.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "SILBER"});
 #line 368
  testRunner.Then("User sees following options for Colour Template selector on Create Readiness page" +
-                        ":", ((string)(null)), table1148, "Then ");
+                        ":", ((string)(null)), table1156, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1969,35 +1969,35 @@ this.FeatureBackground();
 #line 389
  testRunner.And("User clicks Colour Template field on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1149 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1157 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColorTemplate"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "SCHWARZ"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "BLAU"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "TÜRKIS"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "ROT"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "BRAUN"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "PINK"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "BERNSTEIN"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "ORANGE"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "LILA"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "GRÜN"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "GRAU"});
-                table1149.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "SILBER"});
 #line 390
  testRunner.Then("User sees following options for Colour Template selector on Create Readiness page" +
-                        ":", ((string)(null)), table1149, "Then ");
+                        ":", ((string)(null)), table1157, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

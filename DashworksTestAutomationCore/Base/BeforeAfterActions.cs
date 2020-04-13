@@ -1,17 +1,24 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Net;
+using System.Reflection;
+using AutomationUtils.Utils;
 using BoDi;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
-using DashworksTestAutomationCore.Utils;
+using HtmlAgilityPack;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
+using RestSharp.Authenticators;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Base
@@ -73,7 +80,8 @@ namespace DashworksTestAutomation.Base
                 if (!_testInfo.Tags.Contains("API"))
                     try
                     {
-                        driver = _objectContainer.Resolve<RemoteWebDriver>();
+                        //driver = _objectContainer.Resolve<RemoteWebDriver>();
+                        driver = _browsersList.GetBrowser();
                     }
                     catch (Exception e)
                     {
@@ -166,37 +174,39 @@ namespace DashworksTestAutomation.Base
                 }
                 catch { }
             }
-
+            //FOR DEBUG ONLY
+            /*
             try
             {
-                var requestUri = "http://autorelease.corp.juriba.com:81/devices?$top=1000&$skip=0&$filter=(project_task_1_472_1_Task_Value%20EQUALS%20(%271%27%2C%273%27))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_task_1_472_1_Task";
+                var requestUri = "http://autorelease.corp.juriba.com:81/applications?$top=1000&$skip=0&$filter=(project_43_applicationReadinessId%20EQUALS%20(%27NULL%27))&$select=packageName,packageManufacturer,packageVersion,project_43_hideFromEndUsers,project_43_applicationReadiness";
                 var request = requestUri.GenerateRequest();
 
                 var resp = _client.Evergreen.Get(request);
 
-                if (!resp.Content.Contains("count: 5108"))
+                if (!resp.Content.Contains("{\"count\":1155"))
                 {
-                    Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
+                    Logger.Write("AFTER ============> !!! FILTER WAS CHANGED !!! <============");
+                    Logger.Write(resp.Content.Substring(0, 50));
                 }
             }
             catch (Exception e)
             {
                 Logger.Write(e);
-                Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
-            }
+                Logger.Write("AFTER ============> !!! FILTER WAS CHANGED !!! <============");
+            }*/
         }
 
         [BeforeTestRun]
         public static void OnTestsStart()
         {
-            if (bool.Parse(ConfigReader.ByKey("browsersCleanup")))
+            if (bool.Parse(ConfigurationManager.AppSettings["browsersCleanup"]))
                 KillDriverProcesses.Do();
         }
 
         [AfterTestRun]
         public static void OnTestsComplete()
         {
-            if (bool.Parse(ConfigReader.ByKey("browsersCleanup")))
+            if (bool.Parse(ConfigurationManager.AppSettings["browsersCleanup"]))
                 KillDriverProcesses.Do();
 
             Logger.Write("ALL TESTS ARE FINISHED");

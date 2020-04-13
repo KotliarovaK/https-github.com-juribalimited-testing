@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectDto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectId>187</ProjectId>
+  <ProjectName>1 KK Device scoped project from evergreen</ProjectName>
+  <ProjectDescription>1 KK Device scoped project from evergreen</ProjectDescription>
+  <ProjectTypeId>1</ProjectTypeId>
+  <CreatedDate>2018-10-03T11:07:18.96</CreatedDate>
+  <CreatedByUserId>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserId>
+  <DefaultPkgOnboardRagStatusId>255</DefaultPkgOnboardRagStatusId>
+  <HtmlEmailTemplate />
+  <IsDeleted>0</IsDeleted>
+  <DeletedDate xsi:nil="true" />
+  <DeletedByUserId />
+  <DefaultAppsShowLinkedObjects>0</DefaultAppsShowLinkedObjects>
+  <DefaultAppsForwardPathTypeId>4</DefaultAppsForwardPathTypeId>
+  <SelfServiceDefault>false</SelfServiceDefault>
+  <OnboardNaApps>true</OnboardNaApps>
+  <CapacityVisible>true</CapacityVisible>
+  <CapacityThreshold>90</CapacityThreshold>
+  <EnforceCapacityOnSelfService>true</EnforceCapacityOnSelfService>
+  <EnforceCapacityOnProjectObject>true</EnforceCapacityOnProjectObject>
+  <ShowOriginalApplicationColumnOnAppDashboards>false</ShowOriginalApplicationColumnOnAppDashboards>
+  <IncludeSiteNameInApplicationName>false</IncludeSiteNameInApplicationName>
+  <IncludeVersionInApplicationName>false</IncludeVersionInApplicationName>
+  <DefaultLanguageId>4</DefaultLanguageId>
+  <OnboardAssociatedInstalledApps>true</OnboardAssociatedInstalledApps>
+  <OnboardAssociatedProvisionedApps>true</OnboardAssociatedProvisionedApps>
+  <OnboardAssociatedUsedApps>2</OnboardAssociatedUsedApps>
+  <BucketModeId>1</BucketModeId>
+  <CapacityModeId>0</CapacityModeId>
+  <EvergreenProject>
+    <PrimaryObjectTypeId>2</PrimaryObjectTypeId>
+    <IncludeDevices>true</IncludeDevices>
+    <DeviceScopeListId xsi:nil="true" />
+    <IncludeUsers>true</IncludeUsers>
+    <UserScopeListId xsi:nil="true" />
+    <IncludeApplications>true</IncludeApplications>
+    <ApplicationScopeListId xsi:nil="true" />
+    <ApplicationAssociationDeviceOwnerScopeListId xsi:nil="true" />
+    <ApplicationAssociationOwnedDeviceScopeListId xsi:nil="true" />
+    <IncludeMailboxes>false</IncludeMailboxes>
+    <MailboxScopeListId xsi:nil="true" />
+    <MailboxAssociationDeviceOwnerScopeListId xsi:nil="true" />
+    <IncludeAppsInstalledOnDevice>true</IncludeAppsInstalledOnDevice>
+    <IncludeAppsEntitledToDevice>true</IncludeAppsEntitledToDevice>
+    <IncludeAppsEntitledToUser>true</IncludeAppsEntitledToUser>
+    <IncludeAppsUsedOnDeviceByAnyUser>true</IncludeAppsUsedOnDeviceByAnyUser>
+    <IncludeAppsUsedOnDeviceByDeviceOwner>true</IncludeAppsUsedOnDeviceByDeviceOwner>
+    <IncludeAppsUsedByUserOnAnyDevice>true</IncludeAppsUsedByUserOnAnyDevice>
+    <IncludeMailboxesOwnedByUser>false</IncludeMailboxesOwnedByUser>
+    <IncludeMailboxesDelegatedToUser>false</IncludeMailboxesDelegatedToUser>
+    <IncludeMailboxOwner>false</IncludeMailboxOwner>
+    <IncludeMailboxDelegates>false</IncludeMailboxDelegates>
+    <EvergreenProjectMailboxPermissions />
+  </EvergreenProject>
+  <ProjectStages>
+    <ProjectStageDTO>
+      <StageID>377</StageID>
+      <ProjectID>187</ProjectID>
+      <StageName>Date tasks PUBLIshed</StageName>
+      <DateCreated>2018-10-03T11:19:44.517</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayStatusID>1</DisplayStatusID>
+      <DisplayOrder>1</DisplayOrder>
+      <StageTypeID>1</StageTypeID>
+      <StageActive>1</StageActive>
+    </ProjectStageDTO>
+    <ProjectStageDTO>
+      <StageID>378</StageID>
+      <ProjectID>187</ProjectID>
+      <StageName>Date tasks NON PUBLIshed</StageName>
+      <DateCreated>2018-10-03T11:20:05.77</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayStatusID>1</DisplayStatusID>
+      <DisplayOrder>2</DisplayOrder>
+      <StageTypeID>1</StageTypeID>
+      <StageActive>1</StageActive>
+    </ProjectStageDTO>
+    <ProjectStageDTO>
+      <StageID>379</StageID>
+      <ProjectID>187</ProjectID>
+      <StageName>NON date tasks</StageName>
+      <DateCreated>2018-10-03T11:20:17.483</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayStatusID>1</DisplayStatusID>
+      <DisplayOrder>3</DisplayOrder>
+      <StageTypeID>1</StageTypeID>
+      <StageActive>1</StageActive>
+    </ProjectStageDTO>
+  </ProjectStages>
+  <ProjectTasks>
+    <ProjectTaskDTO>
+      <TaskID>13246</TaskID>
+      <TaskName />
+      <Help />
+      <ProjectID>187</ProjectID>
+      <StageID>377</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2018-10-03T11:22:10.62</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayOrder>1</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13246</FieldID>
+      <ObjectTypeID>1</ObjectTypeID>
+      <Sequenced>0</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>0</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-10-03T11:22:10.62</LastUpdateDate>
+      <LastUpdateUserId>4b062dc1-6475-40f9-8363-af58c6632331</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13246</TaskID>
+          <Value>1</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>255</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13247</TaskID>
+      <TaskName />
+      <Help />
+      <ProjectID>187</ProjectID>
+      <StageID>377</StageID>
+      <TaskControlTypeID>1</TaskControlTypeID>
+      <ControlTypeID>1</ControlTypeID>
+      <DateCreated>2018-10-03T11:22:45.13</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayOrder>1</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>true</AffectsStatus>
+      <FieldID>13247</FieldID>
+      <ObjectTypeID>2</ObjectTypeID>
+      <Sequenced>0</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>0</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue>1</DefaultTaskValue>
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-10-03T11:22:45.13</LastUpdateDate>
+      <LastUpdateUserId>4b062dc1-6475-40f9-8363-af58c6632331</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13247</TaskID>
+          <Value>1</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>100</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13247</TaskID>
+          <Value>2</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>100</RAGStatusID>
+          <DisplayOrder>2</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13247</TaskID>
+          <Value>3</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>50</RAGStatusID>
+          <DisplayOrder>3</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13247</TaskID>
+          <Value>4</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>25</RAGStatusID>
+          <DisplayOrder>4</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13247</TaskID>
+          <Value>5</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>75</RAGStatusID>
+          <DisplayOrder>5</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13248</TaskID>
+      <TaskName />
+      <Help />
+      <ProjectID>187</ProjectID>
+      <StageID>377</StageID>
+      <TaskControlTypeID>1</TaskControlTypeID>
+      <ControlTypeID>1</ControlTypeID>
+      <DateCreated>2018-10-03T11:24:22.9</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayOrder>1</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>true</AffectsStatus>
+      <FieldID>13248</FieldID>
+      <ObjectTypeID>3</ObjectTypeID>
+      <Sequenced>1</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>1</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>2</DateMode>
+      <DefaultTaskValue>1</DefaultTaskValue>
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-10-03T11:24:22.9</LastUpdateDate>
+      <LastUpdateUserId>4b062dc1-6475-40f9-8363-af58c6632331</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13248</TaskID>
+          <Value>1</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>100</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13248</TaskID>
+          <Value>2</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>100</RAGStatusID>
+          <DisplayOrder>2</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13248</TaskID>
+          <Value>3</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>50</RAGStatusID>
+          <DisplayOrder>3</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13248</TaskID>
+          <Value>4</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>25</RAGStatusID>
+          <DisplayOrder>4</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13248</TaskID>
+          <Value>5</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>75</RAGStatusID>
+          <DisplayOrder>5</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13249</TaskID>
+      <TaskName />
+      <Help />
+      <ProjectID>187</ProjectID>
+      <StageID>378</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2018-10-03T11:25:14.877</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayOrder>1</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13249</FieldID>
+      <ObjectTypeID>3</ObjectTypeID>
+      <Sequenced>0</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>0</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-10-03T11:25:14.877</LastUpdateDate>
+      <LastUpdateUserId>4b062dc1-6475-40f9-8363-af58c6632331</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13249</TaskID>
+          <Value>1</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>255</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13250</TaskID>
+      <TaskName />
+      <Help />
+      <ProjectID>187</ProjectID>
+      <StageID>377</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2018-10-03T11:30:23.89</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayOrder>2</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13250</FieldID>
+      <ObjectTypeID>2</ObjectTypeID>
+      <Sequenced>0</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>0</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-10-03T11:30:23.89</LastUpdateDate>
+      <LastUpdateUserId>4b062dc1-6475-40f9-8363-af58c6632331</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13250</TaskID>
+          <Value>1</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>255</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13251</TaskID>
+      <TaskName />
+      <Help />
+      <ProjectID>187</ProjectID>
+      <StageID>377</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2018-10-03T11:30:58.76</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayOrder>2</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13251</FieldID>
+      <ObjectTypeID>3</ObjectTypeID>
+      <Sequenced>1</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>1</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-10-03T11:30:58.76</LastUpdateDate>
+      <LastUpdateUserId>4b062dc1-6475-40f9-8363-af58c6632331</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13251</TaskID>
+          <Value>1</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>255</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13252</TaskID>
+      <TaskName />
+      <Help />
+      <ProjectID>187</ProjectID>
+      <StageID>378</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2018-10-03T11:33:46.6</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayOrder>1</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13252</FieldID>
+      <ObjectTypeID>2</ObjectTypeID>
+      <Sequenced>0</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>0</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-10-03T11:33:46.6</LastUpdateDate>
+      <LastUpdateUserId>4b062dc1-6475-40f9-8363-af58c6632331</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13252</TaskID>
+          <Value>1</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>255</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13253</TaskID>
+      <TaskName />
+      <Help />
+      <ProjectID>187</ProjectID>
+      <StageID>378</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2018-10-03T11:34:07.92</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayOrder>1</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13253</FieldID>
+      <ObjectTypeID>1</ObjectTypeID>
+      <Sequenced>0</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>0</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-10-03T11:34:07.92</LastUpdateDate>
+      <LastUpdateUserId>4b062dc1-6475-40f9-8363-af58c6632331</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13253</TaskID>
+          <Value>1</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>255</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13254</TaskID>
+      <TaskName />
+      <Help />
+      <ProjectID>187</ProjectID>
+      <StageID>377</StageID>
+      <TaskControlTypeID>1</TaskControlTypeID>
+      <ControlTypeID>1</ControlTypeID>
+      <DateCreated>2018-10-03T11:35:20.793</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayOrder>2</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>true</AffectsStatus>
+      <FieldID>13254</FieldID>
+      <ObjectTypeID>1</ObjectTypeID>
+      <Sequenced>0</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>0</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue>1</DefaultTaskValue>
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-10-03T11:35:20.793</LastUpdateDate>
+      <LastUpdateUserId>4b062dc1-6475-40f9-8363-af58c6632331</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13254</TaskID>
+          <Value>1</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>100</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13254</TaskID>
+          <Value>2</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>100</RAGStatusID>
+          <DisplayOrder>2</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13254</TaskID>
+          <Value>3</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>50</RAGStatusID>
+          <DisplayOrder>3</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13254</TaskID>
+          <Value>4</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>25</RAGStatusID>
+          <DisplayOrder>4</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13254</TaskID>
+          <Value>5</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>75</RAGStatusID>
+          <DisplayOrder>5</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13255</TaskID>
+      <TaskName />
+      <Help />
+      <ProjectID>187</ProjectID>
+      <StageID>379</StageID>
+      <TaskControlTypeID>4</TaskControlTypeID>
+      <ControlTypeID>4</ControlTypeID>
+      <DateCreated>2018-10-03T11:43:48.743</DateCreated>
+      <CreatedByUserID>4b062dc1-6475-40f9-8363-af58c6632331</CreatedByUserID>
+      <DisplayOrder>1</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>true</AffectsStatus>
+      <FieldID>13255</FieldID>
+      <ObjectTypeID>1</ObjectTypeID>
+      <Sequenced>0</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>0</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue>1</DefaultTaskValue>
+      <CapacityEnabled>false</CapacityEnabled>
+      <LastUpdateDate>2018-10-03T11:43:48.743</LastUpdateDate>
+      <LastUpdateUserId>4b062dc1-6475-40f9-8363-af58c6632331</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13255</TaskID>
+          <Value>1</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>100</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13255</TaskID>
+          <Value>2</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>100</RAGStatusID>
+          <DisplayOrder>2</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13255</TaskID>
+          <Value>3</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>50</RAGStatusID>
+          <DisplayOrder>3</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13255</TaskID>
+          <Value>4</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>25</RAGStatusID>
+          <DisplayOrder>4</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+        <TaskValueDTO>
+          <TaskID>13255</TaskID>
+          <Value>5</Value>
+          <Text />
+          <Help />
+          <RAGStatusID>75</RAGStatusID>
+          <DisplayOrder>5</DisplayOrder>
+          <IsTaskConsideredOpen>false</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13264</TaskID>
+      <TaskName>date task user</TaskName>
+      <Help>date task user</Help>
+      <ProjectID>187</ProjectID>
+      <StageID>377</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2018-10-04T14:11:47.89</DateCreated>
+      <CreatedByUserID>f98fa56f-e271-47ff-a90e-31e2f02748b3</CreatedByUserID>
+      <DisplayOrder>3</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13264</FieldID>
+      <ObjectTypeID>1</ObjectTypeID>
+      <Sequenced>1</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>1</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>true</CapacityEnabled>
+      <LastUpdateDate>2018-10-04T14:11:47.89</LastUpdateDate>
+      <LastUpdateUserId>f98fa56f-e271-47ff-a90e-31e2f02748b3</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13264</TaskID>
+          <Value>1</Value>
+          <Text>Placeholder date task</Text>
+          <Help>Place holder task</Help>
+          <RAGStatusID>255</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13265</TaskID>
+      <TaskName>date task comp Scheduled</TaskName>
+      <Help>date task comp</Help>
+      <ProjectID>187</ProjectID>
+      <StageID>377</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2018-10-04T14:12:14.38</DateCreated>
+      <CreatedByUserID>f98fa56f-e271-47ff-a90e-31e2f02748b3</CreatedByUserID>
+      <DisplayOrder>3</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13265</FieldID>
+      <ObjectTypeID>2</ObjectTypeID>
+      <Sequenced>1</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>1</TaskActive>
+      <HookTypeID>3</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>true</CapacityEnabled>
+      <LastUpdateDate>2018-10-04T14:12:14.38</LastUpdateDate>
+      <LastUpdateUserId>f98fa56f-e271-47ff-a90e-31e2f02748b3</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13265</TaskID>
+          <Value>1</Value>
+          <Text>Placeholder date task</Text>
+          <Help>Place holder task</Help>
+          <RAGStatusID>255</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+    <ProjectTaskDTO>
+      <TaskID>13266</TaskID>
+      <TaskName>date task app</TaskName>
+      <Help>date task app</Help>
+      <ProjectID>187</ProjectID>
+      <StageID>377</StageID>
+      <TaskControlTypeID>2</TaskControlTypeID>
+      <ControlTypeID>3</ControlTypeID>
+      <DateCreated>2018-10-04T14:12:37.837</DateCreated>
+      <CreatedByUserID>f98fa56f-e271-47ff-a90e-31e2f02748b3</CreatedByUserID>
+      <DisplayOrder>3</DisplayOrder>
+      <DisplayStatusID>1</DisplayStatusID>
+      <HasDueDate>true</HasDueDate>
+      <HasOwner>false</HasOwner>
+      <AffectsStatus>false</AffectsStatus>
+      <FieldID>13266</FieldID>
+      <ObjectTypeID>3</ObjectTypeID>
+      <Sequenced>1</Sequenced>
+      <TaskTypeID>1</TaskTypeID>
+      <TaskActive>1</TaskActive>
+      <HookTypeID>0</HookTypeID>
+      <ShowLastChangeInfo>false</ShowLastChangeInfo>
+      <ControlAttributes1>0</ControlAttributes1>
+      <DateMode>1</DateMode>
+      <DefaultTaskValue xsi:nil="true" />
+      <CapacityEnabled>true</CapacityEnabled>
+      <LastUpdateDate>2018-10-04T14:12:37.837</LastUpdateDate>
+      <LastUpdateUserId>f98fa56f-e271-47ff-a90e-31e2f02748b3</LastUpdateUserId>
+      <ReadOnlyProjectObject>false</ReadOnlyProjectObject>
+      <ReadOnlyBulkUpdate>false</ReadOnlyBulkUpdate>
+      <ReadOnlySelfService>false</ReadOnlySelfService>
+      <TaskValues>
+        <TaskValueDTO>
+          <TaskID>13266</TaskID>
+          <Value>1</Value>
+          <Text>Placeholder date task</Text>
+          <Help>Place holder task</Help>
+          <RAGStatusID>255</RAGStatusID>
+          <DisplayOrder>1</DisplayOrder>
+          <IsTaskConsideredOpen>true</IsTaskConsideredOpen>
+        </TaskValueDTO>
+      </TaskValues>
+    </ProjectTaskDTO>
+  </ProjectTasks>
+  <RequestTypes>
+    <RequestTypeDTO>
+      <RequestTypeId>870</RequestTypeId>
+      <RequestType />
+      <RequestTypeDesc />
+      <ProjectId>187</ProjectId>
+      <ObjectTypeId>1</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>true</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>871</RequestTypeId>
+      <RequestType />
+      <RequestTypeDesc />
+      <ProjectId>187</ProjectId>
+      <ObjectTypeId>2</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>true</IsDefault>
+    </RequestTypeDTO>
+    <RequestTypeDTO>
+      <RequestTypeId>872</RequestTypeId>
+      <RequestType />
+      <RequestTypeDesc />
+      <ProjectId>187</ProjectId>
+      <ObjectTypeId>3</ObjectTypeId>
+      <DisplayStatusID>1</DisplayStatusID>
+      <IsDefault>true</IsDefault>
+    </RequestTypeDTO>
+  </RequestTypes>
+  <RequestTypeTasks>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>870</RequestTypeId>
+      <RequestTypeTaskId>13246</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>871</RequestTypeId>
+      <RequestTypeTaskId>13247</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>872</RequestTypeId>
+      <RequestTypeTaskId>13248</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>872</RequestTypeId>
+      <RequestTypeTaskId>13249</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>871</RequestTypeId>
+      <RequestTypeTaskId>13250</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>872</RequestTypeId>
+      <RequestTypeTaskId>13251</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>871</RequestTypeId>
+      <RequestTypeTaskId>13252</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>870</RequestTypeId>
+      <RequestTypeTaskId>13253</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>870</RequestTypeId>
+      <RequestTypeTaskId>13254</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>870</RequestTypeId>
+      <RequestTypeTaskId>13255</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>870</RequestTypeId>
+      <RequestTypeTaskId>13264</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>871</RequestTypeId>
+      <RequestTypeTaskId>13265</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+    <RequestTypeTasksDTO>
+      <RequestTypeId>872</RequestTypeId>
+      <RequestTypeTaskId>13266</RequestTypeTaskId>
+    </RequestTypeTasksDTO>
+  </RequestTypeTasks>
+</ProjectDto>

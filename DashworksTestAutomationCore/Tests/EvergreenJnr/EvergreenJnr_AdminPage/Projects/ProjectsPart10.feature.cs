@@ -147,13 +147,13 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table881 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table889 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table881.AddRow(new string[] {
+                table889.AddRow(new string[] {
                             "Adobe"});
 #line 14
  testRunner.When("User add \"Vendor\" filter where type is \"Equals\" with added column and following v" +
-                        "alue:", ((string)(null)), table881, "When ");
+                        "alue:", ((string)(null)), table889, "When ");
 #line hidden
 #line 17
  testRunner.Then("\"39\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -164,15 +164,15 @@ this.FeatureBackground();
 #line 19
  testRunner.Then("\"DynamicList57\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table882 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table890 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table882.AddRow(new string[] {
+                table890.AddRow(new string[] {
                             "ACD Display 3.4"});
-                table882.AddRow(new string[] {
+                table890.AddRow(new string[] {
                             "Acrobat Reader 4"});
 #line 20
  testRunner.When("User create static list with \"StaticList6379\" name on \"Applications\" page with fo" +
-                        "llowing items", ((string)(null)), table882, "When ");
+                        "llowing items", ((string)(null)), table890, "When ");
 #line hidden
 #line 24
  testRunner.Then("\"StaticList6379\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -180,18 +180,18 @@ this.FeatureBackground();
 #line 25
  testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table883 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table891 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table883.AddRow(new string[] {
+                table891.AddRow(new string[] {
                             "DevicesProject4",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 26
- testRunner.When("Project created via API and opened", ((string)(null)), table883, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table891, "When ");
 #line hidden
 #line 29
  testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -310,13 +310,13 @@ this.FeatureBackground();
 #line 57
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table884 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table892 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedValues"});
-                table884.AddRow(new string[] {
+                table892.AddRow(new string[] {
                             "DEV50"});
 #line 58
  testRunner.When("User add \"Domain\" filter where type is \"Equals\" with added column and Lookup opti" +
-                        "on", ((string)(null)), table884, "When ");
+                        "on", ((string)(null)), table892, "When ");
 #line hidden
 #line 61
  testRunner.Then("\"92\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -327,15 +327,15 @@ this.FeatureBackground();
 #line 63
  testRunner.Then("\"DynamicList37\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table885 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table893 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table885.AddRow(new string[] {
+                table893.AddRow(new string[] {
                             "barbosaj"});
-                table885.AddRow(new string[] {
+                table893.AddRow(new string[] {
                             "clarkc"});
 #line 64
  testRunner.When("User create static list with \"StaticList6329\" name on \"Users\" page with following" +
-                        " items", ((string)(null)), table885, "When ");
+                        " items", ((string)(null)), table893, "When ");
 #line hidden
 #line 68
  testRunner.Then("\"StaticList6329\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -343,18 +343,18 @@ this.FeatureBackground();
 #line 69
  testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table886 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table894 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table886.AddRow(new string[] {
+                table894.AddRow(new string[] {
                             "DevicesProject5",
                             "All Users",
                             "None",
                             string.Format("{0}", mode)});
 #line 70
- testRunner.When("Project created via API and opened", ((string)(null)), table886, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table894, "When ");
 #line hidden
 #line 73
  testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -461,12 +461,12 @@ this.FeatureBackground();
 #line 96
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table887 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table895 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedValues"});
-                table887.AddRow(new string[] {
+                table895.AddRow(new string[] {
                             string.Format("{0}", filterValue)});
 #line 97
- testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and Lookup option", filterName), ((string)(null)), table887, "When ");
+ testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and Lookup option", filterName), ((string)(null)), table895, "When ");
 #line hidden
 #line 100
  testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -477,18 +477,18 @@ this.FeatureBackground();
 #line 102
  testRunner.Then("\"DynamicList58\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table888 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table896 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table888.AddRow(new string[] {
+                table896.AddRow(new string[] {
                             "DevicesProject8",
                             string.Format("{0}", projectList),
                             "None",
                             "Standalone Project"});
 #line 103
- testRunner.When("Project created via API and opened", ((string)(null)), table888, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table896, "When ");
 #line hidden
 #line 106
  testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -609,13 +609,13 @@ this.FeatureBackground();
 #line 134
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table889 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table897 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table889.AddRow(new string[] {
+                table897.AddRow(new string[] {
                             "97.1.0.0918(1031)"});
 #line 135
  testRunner.When("User add \"Version\" filter where type is \"Does not contain\" with added column and " +
-                        "following value:", ((string)(null)), table889, "When ");
+                        "following value:", ((string)(null)), table897, "When ");
 #line hidden
 #line 138
  testRunner.Then("\"1,741\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -626,15 +626,15 @@ this.FeatureBackground();
 #line 140
  testRunner.Then("\"DynamicList17\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table890 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table898 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table890.AddRow(new string[] {
+                table898.AddRow(new string[] {
                             "WMI Tools"});
-                table890.AddRow(new string[] {
+                table898.AddRow(new string[] {
                             "Windows Live Toolbar"});
 #line 141
  testRunner.When("User create static list with \"StaticList6429\" name on \"Applications\" page with fo" +
-                        "llowing items", ((string)(null)), table890, "When ");
+                        "llowing items", ((string)(null)), table898, "When ");
 #line hidden
 #line 145
  testRunner.Then("\"StaticList6429\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -642,18 +642,18 @@ this.FeatureBackground();
 #line 146
  testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table891 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table899 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table891.AddRow(new string[] {
+                table899.AddRow(new string[] {
                             "DevicesProject9",
                             "All Users",
                             "None",
                             "Standalone Project"});
 #line 147
- testRunner.When("Project created via API and opened", ((string)(null)), table891, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table899, "When ");
 #line hidden
 #line 150
  testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

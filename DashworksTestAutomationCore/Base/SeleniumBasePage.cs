@@ -4,6 +4,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading;
+using AutomationUtils.Extensions;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -40,7 +42,7 @@ namespace DashworksTestAutomation.Base
                 .Where(a =>
                     (object)a != null
                     && a != null)
-                .Select(DashworksTestAutomation.Utils.ByFactory.From)
+                .Select(ByFactory.From)
                 .ToList();
         }
 
@@ -48,7 +50,7 @@ namespace DashworksTestAutomation.Base
         {
             var attribute = ReflectionExtensions.ResolveMember(page, expression)
                 .GetFirstDecoration<FindsByAttribute>();
-            return DashworksTestAutomation.Utils.ByFactory.From(attribute);
+            return ByFactory.From(attribute);
         }
 
         public void CheckElementDisabledState(IWebElement element, bool expectedCondition, string exceptionMessage)

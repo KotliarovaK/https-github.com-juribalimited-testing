@@ -151,21 +151,21 @@ this.FeatureBackground();
 #line 14
  testRunner.Then("\'TRUE\' content is displayed in the \'Reply To\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2887 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2898 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2887.AddRow(new string[] {
+                table2898.AddRow(new string[] {
                             "SMTP"});
 #line 15
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Type\' col" +
-                        "umn:", ((string)(null)), table2887, "Then ");
+                        "umn:", ((string)(null)), table2898, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2888 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2899 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2888.AddRow(new string[] {
+                table2899.AddRow(new string[] {
                             "True"});
 #line 18
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Reply To\'" +
-                        " column:", ((string)(null)), table2888, "Then ");
+                        " column:", ((string)(null)), table2899, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -244,21 +244,21 @@ this.FeatureBackground();
 #line 30
  testRunner.Then("\'\' content is displayed in the \'Domain\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2889 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2900 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2889.AddRow(new string[] {
+                table2900.AddRow(new string[] {
                             "True"});
 #line 31
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Owner\' co" +
-                        "lumn:", ((string)(null)), table2889, "Then ");
+                        "lumn:", ((string)(null)), table2900, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2890 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2901 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2890.AddRow(new string[] {
+                table2901.AddRow(new string[] {
                             "Empty"});
 #line 34
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
-                        "olumn:", ((string)(null)), table2890, "Then ");
+                        "olumn:", ((string)(null)), table2901, "Then ");
 #line hidden
 #line 37
  testRunner.When("User navigates to the \'Groups\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -266,13 +266,13 @@ this.FeatureBackground();
 #line 38
  testRunner.Then("\'BCLABS\' content is displayed in the \'Domain\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2891 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2902 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2891.AddRow(new string[] {
+                table2902.AddRow(new string[] {
                             "BCLABS"});
 #line 39
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
-                        "olumn:", ((string)(null)), table2891, "Then ");
+                        "olumn:", ((string)(null)), table2902, "Then ");
 #line hidden
 #line 42
  testRunner.When("User navigates to the \'Mailbox Permissions\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -283,29 +283,29 @@ this.FeatureBackground();
 #line 44
  testRunner.Then("\'FullAccess\' content is displayed in the \'Permission\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2892 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2903 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2892.AddRow(new string[] {
+                table2903.AddRow(new string[] {
                             "BCLABS"});
 #line 45
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
-                        "olumn:", ((string)(null)), table2892, "Then ");
+                        "olumn:", ((string)(null)), table2903, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2893 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2904 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2893.AddRow(new string[] {
+                table2904.AddRow(new string[] {
                             "ReadPermission"});
-                table2893.AddRow(new string[] {
+                table2904.AddRow(new string[] {
                             "FullAccess"});
-                table2893.AddRow(new string[] {
+                table2904.AddRow(new string[] {
                             "DeleteItem"});
-                table2893.AddRow(new string[] {
+                table2904.AddRow(new string[] {
                             "ChangePermission"});
-                table2893.AddRow(new string[] {
+                table2904.AddRow(new string[] {
                             "ChangeOwner"});
 #line 49
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Permissio" +
-                        "n\' column:", ((string)(null)), table2893, "Then ");
+                        "n\' column:", ((string)(null)), table2904, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

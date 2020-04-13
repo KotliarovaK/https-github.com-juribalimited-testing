@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
-using DashworksTestAutomation.Utils;
-using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 {
@@ -51,6 +48,14 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var panel = _driver.NowAt<BaseRightSideActionsPanel>();
             Verify.IsFalse(panel.IsPanelOpened("ACTIONS"),
                 "Action panel is opened");
+        }
+
+        [Then(@"'(.*)' message is displayed on Actions panel to the user")]
+        public void ThenMessageIsDisplayedOnActionPanelToTheUser(string textMessage)
+        {
+            var panel = _driver.NowAt<ActionsPanelElement>();
+            Verify.IsTrue(panel.ActionsPanelMessage.GetText().Equals(textMessage),
+                $"'{textMessage}' message was not displayed");
         }
 
         [When(@"User closes Actions panel")]
@@ -116,7 +121,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         public void ThenDateColumnShowsDateAndTimeValues()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(dashboardPage.DateTimeColumnValue.Displayed(), "Date column does not shows Date and Time values");
+            Verify.IsTrue(dashboardPage.DateTimeColumnValue.Displayed(), "Date column does not shows Date and Time values");
         }
 
         [Then(@"User add selected rows in ""(.*)"" list")]
@@ -145,13 +150,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             if (actionsPanel.ActionsSpinner.Displayed())
             {
                 Thread.Sleep(3000);
-                Utils.Verify.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
+                Verify.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
                     $"Number of rows is not {selectedRowsCount}");
             }
             else
             {
                 Thread.Sleep(5000);//wait after deselecting All check-box. Currently uncheck runs immediately and no loading indicators appear
-                Utils.Verify.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
+                Verify.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
                     $"Number of rows is not {selectedRowsCount}");
             }
         }
@@ -172,7 +177,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             //Wait for Selected Rows are displayed in the Action panel
             Thread.Sleep(1300);
             var numberOfRowsInActions = actionsPanel.GetSelectedRowsCount();
-            Utils.Verify.AreEqual(numberOfRowsInTable, numberOfRowsInActions,
+            Verify.AreEqual(numberOfRowsInTable, numberOfRowsInActions,
                 "Number of rows are not equal in table and in Actions");
         }
 

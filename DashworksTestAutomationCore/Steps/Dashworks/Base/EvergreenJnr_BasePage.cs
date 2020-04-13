@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using AutomationUtils.Extensions;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
@@ -18,7 +20,6 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -41,6 +42,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly Teams _teams;
         private readonly Buckets _buckets;
         private readonly SelfServices _selfServices;
+
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
             Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,
@@ -74,6 +76,101 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(_driver.IsElementDisplayed(page.SubHeader, WebDriverExtensions.WaitTime.Short), $"Page with '{subHeader}' is not displayed");
             Verify.AreEqual(subHeader, page.SubHeader.Text, "Incorrect page subheader");
+        }
+
+        [Then(@"Page with '(.*)' second level subheader is displayed to user")]
+        public void ThenPageWithSecondLevelSubheaderIsDisplayedToUser(string secondLevelSubHeader)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(_driver.IsElementDisplayed(page.SecondLevelSubHeader, WebDriverExtensions.WaitTime.Short), $"Page with '{secondLevelSubHeader}' is not displayed");
+            Verify.AreEqual(secondLevelSubHeader, page.SecondLevelSubHeader.Text, "Incorrect page second level subheader");
+        }
+
+        #endregion
+
+        #region Text Editor
+
+        [When(@"User enters '(.*)' text to the text editor")]
+        public void WhenUserEntersTextToTheTextEditor(string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.TextEditorInput.SendKeys(text);
+        }
+
+        [When(@"User clears text editor")]
+        public void WhenUserClearsTextEditor()
+        {
+            try
+            {
+                var page = _driver.NowAt<BaseDashboardPage>();
+                page.TextEditorInput.Clear();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        [Then(@"text editor is displayed")]
+        public void ThenTextEditorIsDisplayed()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(_driver.IsElementExists(page.TextEditor), "Text editor is not displayed on page");
+        }
+
+        [Then(@"text editor contains text")]
+        public void ThenTextEditorContainsText(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textEditorContent = page.TextEditorInput.Text;
+            foreach (TableRow row in table.Rows)
+            {
+                var expectedText = row.Values.First();
+                Verify.IsTrue(textEditorContent.Contains(expectedText), $"Text editor doesn't contains '{expectedText}' text");
+            }
+        }
+
+        [Then(@"text editor does not contains text")]
+        public void ThenTextEditorDoesNotContainsText(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textEditorContent = page.TextEditorInput.Text;
+            foreach (TableRow row in table.Rows)
+            {
+                var expectedText = row.Values.First();
+                Verify.IsFalse(textEditorContent.Contains(expectedText), $"Text editor contains '{expectedText}' text");
+            }
+        }
+
+        [Then(@"formatting options are displayed on the text component")]
+        public void ThenFormattingOptionsAreDisplayedOnTheTextComponentPage()
+        {
+            var page = _driver.NowAt<TextComponentElements>();
+
+            Verify.That(page.BoldStyleButton.Displayed(), "Bold style button is not displayed");
+            Verify.That(page.ItalicStyleButton.Displayed(), "Italic style button is not displayed");
+            Verify.That(page.UnderlineStyleButton.Displayed(), "Underline style button is not displayed");
+            Verify.That(page.HeadersPickerButton.Displayed(), "Headers picker button is not displayed");
+        }
+
+        [Then(@"header format options are displayed on the text component")]
+        public void ThenHeaderFormatOptionsAreDisplayedOnTheTextComponentPage(Table table)
+        {
+            var page = _driver.NowAt<TextComponentElements>();
+
+            page.HeadersPickerButton.Click();
+            _driver.WaitForElementsToBeDisplayed(page.HeaderOptions);
+
+            List<string> expectedOptionNames = table.Rows.SelectMany(row => row.Values).ToList();
+            List<string> actualheaderOptionNames = new List<string>();
+
+            for (int i = 0; i < page.HeaderOptions.Count; i++)
+            {
+                string value = _driver.GetPseudoElementValue(page.HeaderOptions[i], ":before", "content");
+                actualheaderOptionNames.Add(value);
+            }
+
+            Verify.AreEqual(expectedOptionNames, actualheaderOptionNames, "Header format options does not equals to expecting options");
         }
 
         #endregion
@@ -145,6 +242,32 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.ClearTextbox(placeholder, true);
         }
 
+        [Then(@"'(.*)' autocomplete is displayed")]
+        public void ThenAutocompleteIsDisplayed(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsTextboxDisplayed(placeholder),
+                $"'{placeholder}' autocomplete is not displayed");
+        }
+
+        [Then(@"'(.*)' autocomplete is not displayed")]
+        public void ThenAutocompleteIsNotDisplayed(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.IsTextboxDisplayed(placeholder),
+                $"'{placeholder}' autocomplete is displayed");
+        }
+
+        [Then(@"'(.*)' autocomplete first option is '(.*)'")]
+        public void ThenAutocompleteFirstOptionIs(string placeholder, string option)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var options = page.GetAllAutocompleteOptions(placeholder);
+            Verify.AreEqual(option, options.First(),
+                $"'{option}' option should be first in the '{placeholder}' autocomplete");
+            page.BodyContainer.Click();
+        }
+
         [Then(@"'(.*)' autocomplete last option is '(.*)'")]
         public void ThenAutocompleteLastOptionIs(string placeholder, string option)
         {
@@ -176,8 +299,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 var textbox = page.GetTextbox(placeholder);
                 textbox.Clear();
                 textbox.SendKeys(value);
-                Verify.IsTrue(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some autocomplete checkboxes found for '{value}' text");
-                Verify.IsFalse(page.IsAutocompleteCheckboxDisplayed(value), $"Some autocomplete checkboxes found for '{value}' text");
+                Verify.IsTrue(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some checkboxes found for '{placeholder}' autocomplete");
+                Verify.IsFalse(page.IsAutocompleteCheckboxDisplayed(value), $"'{value}' checkbox is displayed, but should not");
                 page.BodyContainer.Click();
             }
         }
@@ -192,7 +315,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 var textbox = page.GetTextbox(placeholder);
                 textbox.Clear();
                 textbox.SendKeys(value);
-                Verify.IsFalse(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some autocomplete checkboxes found for '{value}' text");
+                Verify.IsFalse(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some checkboxes not found for '{placeholder}' autocomplete");
                 Verify.IsTrue(page.IsAutocompleteCheckboxDisplayed(value), $"'{value}' checkbox is missed");
                 page.BodyContainer.Click();
             }
@@ -239,6 +362,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.That(actualOptions,
                 Is.SupersetOf(table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
                 "Some options are missing!");
+            page.BodyContainer.Click();
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' autocomplete")]
@@ -340,6 +464,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
         }
 
+        [Then(@"'(.*)' icon displayed for '(.*)' option from '(.*)' autocomplete")]
+        public void ThenIconDisplayedForOptionFromAutocomplete(string icon, string optionName, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textbox = page.GetTextbox(placeholder);
+            textbox.Click();
+            textbox.Clear();
+            textbox.SendKeys(optionName);
+            Verify.IsTrue(page.IsIconDisplayedFromDropdownOptions(icon), $"'{icon}' is not displayed for '{optionName}'");
+        }
 
         #endregion
 
@@ -369,7 +503,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     _slots.Value.Add(new SlotDto() { SlotName = text });
                     break;
                 case "Automation Name":
-                    _automations.Value.Add(new AutomationsDto() { automationName = text });
+                    _automations.Value.Add(new AutomationsDto() { name = text });
                     break;
                 case "Ring name":
                     //Get project ID if Ring is inside project
@@ -460,6 +594,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetTextbox(placeholder).Click();
         }
 
+        [When(@"User waits for info message disappears under '(.*)' field")]
+        public void WhenUserWaitForInfoMessageDisappearsUnderField(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.WaitForTextboxInfoMessageDisappears(placeholder);
+        }
+
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
         public void ThenContentIsDisplayedInTextbox(string expectedText, string placeholder)
         {
@@ -481,36 +622,74 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.That(page.IsTextboxDisplayedWithError(placeholder), Is.False, $"Error message was displayed for '{placeholder}' textbox");
         }
 
-        [Then(@"'(.*)' error message is displayed for '(.*)' field")]
-        public void ThenErrorMessageIsDisplayedForField(string errorMessage, string placeholder)
+        [Then(@"'(.*)' message is displayed for '(.*)' field")]
+        public void ThenMessageIsDisplayedForField(string message, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.BodyContainer.Click();
 
-            Verify.AreEqual(errorMessage, page.GetTextboxErrorMessage(placeholder),
-                $"Incorrect error message is displayed in the '{placeholder}' field");
+            Verify.AreEqual(message, page.GetTextboxErrorMessage(placeholder),
+                $"Incorrect message is displayed in the '{placeholder}' field");
+        }
+
+        [Then(@"'(.*)' error message is displayed for '(.*)' field")]
+        public void ThenErrorMessageIsDisplayedForField(string errorMessage, string placeholder)
+        {
+            ThenMessageIsDisplayedForField(errorMessage, placeholder);
+
+            var page = _driver.NowAt<BaseDashboardPage>();
 
             Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+            //Need to delete check for Exclamation Icon,  it has to be removed for all objects
+            //Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+            //    $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
         [Then(@"'(.*)' information message is displayed for '(.*)' field")]
         public void ThenInformationMessageIsDisplayedForField(string errorMessage, string placeholder)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.BodyContainer.Click();
+            ThenMessageIsDisplayedForField(errorMessage, placeholder);
 
-            Verify.AreEqual(errorMessage, page.GetTextboxErrorMessage(placeholder),
-                $"Incorrect error message is displayed in the '{placeholder}' field");
+            var page = _driver.NowAt<BaseDashboardPage>();
 
             Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");
 
-            Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+            //Need to delete check for Exclamation Icon,  it has to be removed for all objects
+            //Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+            //    $"Incorrect error message color for '{placeholder}' field exclamation icon");
+        }
+
+        [Then(@"'(.*)' success message for '(.*)' field")]
+        public void ThenSuccessMessageForField(string successMessage, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            Verify.AreEqual(successMessage, page.GetTextboxSuccessMessageElement(placeholder).Text,
+                $"Incorrect message is displayed in the '{placeholder}' field");
+            var t = page.GetTextboxSuccessMessageElement(placeholder).GetCssValue("color");
+            Verify.AreEqual("rgba(126, 189, 56, 1)", page.GetTextboxSuccessMessageElement(placeholder).GetCssValue("color"),
+                $"Incorrect success message color for '{placeholder}' field");
+        }
+
+        [Then(@"User sees '(.*)' hint below '(.*)' field")]
+        public void ThenUserSeesHintBelowField(string instruction, string fieldName)
+        {
+            var filterElement = _driver.NowAt<BaseDashboardPage>();
+            Verify.That(filterElement.GetFieldHint(fieldName).Text, Is.EqualTo(instruction),
+                $"{fieldName} has no or wrong instruction");
+        }
+
+        [Then(@"User sees '(.*)' red hint below '(.*)' field")]
+        public void ThenUserSeesRedHintBelowField(string instruction, string fieldName)
+        {
+            var filterElement = _driver.NowAt<BaseDashboardPage>();
+            Verify.That(filterElement.GetFieldHint(fieldName).GetCssValue("color"), Is.EqualTo("rgba(242, 88, 49, 1)"),
+                $"{fieldName} has incorrect color for hint");
+            Verify.That(filterElement.GetFieldHint(fieldName).Text, Is.EqualTo(instruction),
+                $"{fieldName} has no or wrong instruction");
         }
 
         [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
@@ -613,6 +792,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             //TODO: 21.11.2019 Oleksandr - increased sleep from 3 to 7 seconds to make sure that change list operation is applied
             //Vitalii: decreased to 5 seconds. Contact me if you need to increase this number or tests start failing again
             Thread.Sleep(5000);
+        }
+
+        [When(@"User focus on '(.*)' dropdown")]
+        public void WhenUserFocusOnDropdown(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            dropdown.GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Long, true);
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]
@@ -760,6 +946,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Options are displayed in not in alphabetical order in the '{dropDownName}' dropdown");
         }
 
+        //This is not dropdown but autocomplete
         [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
         public void ThenErrorMessageIsDisplayedForDropdown(string errorMassage, string dropdown)
         {
@@ -782,7 +969,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 _driver.MouseHover(icon);
                 var toolTipText = _driver.GetTooltipText();
 
-                Utils.Verify.That(tooltips, Does.Contain(toolTipText), "Unexpected/missing tooltip");
+                Verify.That(tooltips, Does.Contain(toolTipText), "Unexpected/missing tooltip");
 
                 attempts++;
             }
@@ -799,6 +986,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.SelectDropdownForField(value, fieldName);
         }
 
+        //| Value |
         [Then(@"following Values are displayed in the dropdown for the '(.*)' field:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdownForTheField(string fieldName, Table table)
         {
@@ -1024,6 +1212,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{buttonName}' button tooltip is incorrect");
         }
 
+        [Then(@"'(.*)' button is displayed in high contrast")]
+        public void ThenButtonIsDisplayedInHighContrast(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetButton(buttonName);
+
+            Verify.That(button.GetCssValue("background-color").Equals("rgba(21, 40, 69, 1)"), Is.True, "Button has wrong background");
+            Verify.That(button.GetCssValue("color").Equals("rgba(255, 255, 255, 1)"), Is.True, "Button has wrong color");
+        }
+
         #endregion
 
         #region Button with aria label
@@ -1200,11 +1398,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Radio button
 
-        [When(@"User clicks '(.*)' radio button")]
-        public void WhenUserClicksRadioButton(string radioButtonName)
+        [When(@"User checks '(.*)' radio button")]
+        public void WhenUserChecksRadiobutton(string radioButtonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetRadioButton(radioButtonName).Click();
+            page.SetRadioButtonState(radioButtonName, true);
         }
 
         [Then(@"'(.*)' radio button is disabled")]
@@ -1212,6 +1410,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsFalse(page.IsRadioButtonEnabled(radioButtonName), $"'{radioButtonName}' radio button is not disabled");
+        }
+
+        [Then(@"'(.*)' radio button is enabled")]
+        public void ThenRadioButtonIsEnabled(string radioButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsRadioButtonEnabled(radioButtonName), $"'{radioButtonName}' radio button is not enabled");
+        }
+
+        [Then(@"'(.*)' radio button is checked")]
+        public void ThenRadioButtonIsChecked(string radioButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsRadioButtonChecked(radioButtonName),
+                $"'{radioButtonName}' radio button is not checked");
         }
 
         #endregion
@@ -1346,6 +1559,42 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedCount, selectedCount,
                 $"Incorrect number of checked values in the '{buttonAriaLabel}' menu");
             page.BodyContainer.Click();
+        }
+
+        #endregion
+
+        #region Slide toggle
+
+        [When(@"User checks '(.*)' slide toggle")]
+        public void WhenUserChecksSlideToggle(string slideToggleName)
+        {
+            var slide = _driver.NowAt<BaseDashboardPage>();
+            slide.SetSlideToggleCondition(slideToggleName, true);
+        }
+
+        [When(@"User unchecks '(.*)' slide toggle")]
+        public void WhenUserUnchecksSlideToggle(string slideToggleName)
+        {
+            var slide = _driver.NowAt<BaseDashboardPage>();
+            slide.SetSlideToggleCondition(slideToggleName, false);
+        }
+
+        [Then(@"'(.*)' slide toggle is not displayed")]
+        public void ThenSlideToggleIsNotDisplayed(string slideToggleName)
+        {
+            var slide = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(slide.GetDisplayStateForSlideToggle(slideToggleName), $"'{slideToggleName}' slide toggle should not be displayed");
+        }
+
+        #endregion
+
+        #region Icons
+
+        [When(@"User clicks '(.*)' icon")]
+        public void WhenUserClicksIcon(string iconTextInDom)
+        {
+            var icon = _driver.NowAt<BaseDashboardPage>();
+            icon.GetIcon(iconTextInDom).Click();
         }
 
         #endregion

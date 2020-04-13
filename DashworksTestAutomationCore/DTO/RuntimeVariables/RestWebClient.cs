@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
@@ -26,7 +28,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
 
         public void ChangeUserProfileLanguage(string userName, string language)
         {
-            var userId = DatabaseWorker.GetUserIdByLogin(userName);
+            var userId = DatabaseHelper.GetUserIdByLogin(userName);
             var requestUri = $"{UrlProvider.RestClientBaseUrl}userProfile/updatePreferences";
 
             #region Send Options to allow Put requests

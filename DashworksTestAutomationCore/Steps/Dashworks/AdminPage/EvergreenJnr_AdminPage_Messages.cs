@@ -1,10 +1,11 @@
 ﻿using System;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 {
@@ -29,7 +30,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenWarningPop_UpIsNotDisplayed()
         {
             var page = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsFalse(page.WarningPopUp.Displayed(), "Warning Pop-up is displayed");
+            Verify.IsFalse(page.WarningPopUp.Displayed(), "Warning Pop-up is displayed");
         }
 
         [Then(@"Blue banner with ""(.*)"" text is displayed")]
@@ -37,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             //_driver.WaitForElementToBeDisplayed(page.BlueBanner);
-            Utils.Verify.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
+            Verify.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
         }
 
         [When(@"User close message on the Admin page")]
@@ -91,7 +92,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.Banner);
-            Utils.Verify.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
+            Verify.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
         }
 
         //TODO remove this and replace by something from BaseInlineBannerElement

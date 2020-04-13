@@ -290,13 +290,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3043 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3054 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3043.AddRow(new string[] {
+                table3054.AddRow(new string[] {
                             ""});
 #line 45
  testRunner.When(string.Format("User create static list with \"Static List TestName\" name on \"{0}\" page with follo" +
-                            "wing items", pageName), ((string)(null)), table3043, "When ");
+                            "wing items", pageName), ((string)(null)), table3054, "When ");
 #line hidden
 #line 48
  testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

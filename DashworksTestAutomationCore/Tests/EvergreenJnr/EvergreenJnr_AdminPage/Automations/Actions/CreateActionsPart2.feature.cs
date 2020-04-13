@@ -144,14 +144,14 @@ this.FeatureBackground();
 #line 11
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table304 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table312 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table304.AddRow(new string[] {
+                table312.AddRow(new string[] {
                             "17617_Automation",
                             "17617",
                             "true",
@@ -159,7 +159,7 @@ this.FeatureBackground();
                             "All Devices",
                             "Manual"});
 #line 12
- testRunner.When("User creates new Automation via API", ((string)(null)), table304, "When ");
+ testRunner.When("User creates new Automation via API", ((string)(null)), table312, "When ");
 #line hidden
 #line 15
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -309,18 +309,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table305 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table313 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table305.AddRow(new string[] {
+                table313.AddRow(new string[] {
                             "18432Project",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 52
- testRunner.When("Project created via API and opened", ((string)(null)), table305, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table313, "When ");
 #line hidden
 #line 55
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -343,12 +343,12 @@ this.FeatureBackground();
 #line 61
  testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table306 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table314 = new TechTalk.SpecFlow.Table(new string[] {
                             "StageName"});
-                table306.AddRow(new string[] {
+                table314.AddRow(new string[] {
                             "18432_Stage"});
 #line 62
- testRunner.And("User create Stage", ((string)(null)), table306, "And ");
+ testRunner.And("User create Stage", ((string)(null)), table314, "And ");
 #line hidden
 #line 65
  testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -362,7 +362,7 @@ this.FeatureBackground();
 #line 68
  testRunner.When("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table307 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table315 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -371,7 +371,7 @@ this.FeatureBackground();
                             "ObjectTypeString",
                             "TaskValuesTemplateString",
                             "ApplyToAllCheckbox"});
-                table307.AddRow(new string[] {
+                table315.AddRow(new string[] {
                             "18432_Task",
                             "18432",
                             "18432_Stage",
@@ -381,7 +381,7 @@ this.FeatureBackground();
                             "",
                             "false"});
 #line 69
- testRunner.And("User creates Task", ((string)(null)), table307, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table315, "And ");
 #line hidden
 #line 72
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -398,14 +398,14 @@ this.FeatureBackground();
 #line 76
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table308 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table316 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table308.AddRow(new string[] {
+                table316.AddRow(new string[] {
                             "18432_Automation",
                             "18432",
                             "true",
@@ -413,7 +413,7 @@ this.FeatureBackground();
                             "All Devices",
                             "Manual"});
 #line 77
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table308, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table316, "When ");
 #line hidden
 #line 80
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

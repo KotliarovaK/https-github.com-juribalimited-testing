@@ -171,19 +171,19 @@ this.FeatureBackground();
 #line 22
  testRunner.Then("\"2004: Ring\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1164 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1172 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1164.AddRow(new string[] {
+                table1172.AddRow(new string[] {
                             "Unassigned"});
 #line 23
- testRunner.And("Values is displayed in added filter info", ((string)(null)), table1164, "And ");
+ testRunner.And("Values is displayed in added filter info", ((string)(null)), table1172, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1165 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1173 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1165.AddRow(new string[] {
+                table1173.AddRow(new string[] {
                             "is"});
 #line 26
- testRunner.And("Options is displayed in added filter info", ((string)(null)), table1165, "And ");
+ testRunner.And("Options is displayed in added filter info", ((string)(null)), table1173, "And ");
 #line hidden
 #line 29
  testRunner.And("\"(2004: Ring = Unassigned)\" text is displayed in filter container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

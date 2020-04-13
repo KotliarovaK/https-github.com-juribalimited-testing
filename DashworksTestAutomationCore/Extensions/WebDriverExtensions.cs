@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using AutomationUtils.Utils;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -205,7 +207,7 @@ namespace DashworksTestAutomation.Extensions
                 }
                 catch (Exception e)
                 {
-                    throw new Exception($"Error waiting element by '{by}' : {e.Message}");
+                  throw new Exception($"Error waiting element by '{by}' : {e.Message}");
                 }
         }
 
@@ -300,7 +302,7 @@ namespace DashworksTestAutomation.Extensions
             //foreach (var entry in driver.Manage().Logs.GetLog(LogType.Browser).ToList())
             //    if (entry.Level == LogLevel.Severe)
             //        errorsList.Add(entry);
-            //Utils.Verify.IsEmpty(errorsList, "Error message is displayed in the console");
+            //Verify.IsEmpty(errorsList, "Error message is displayed in the console");
         }
 
         public static void CheckConsoleErrors(this RemoteWebDriver driver, string expectedConsoleError)
@@ -543,6 +545,12 @@ namespace DashworksTestAutomation.Extensions
             return ((IJavaScriptExecutor)driver).ExecuteScript("return window.getSelection().toString()").ToString();
         }
 
+        public static string GetPseudoElementValue(this RemoteWebDriver driver, IWebElement element, string pseudo, string value)
+        {
+            string script = $"return window.getComputedStyle(arguments[0], '{pseudo}').getPropertyValue('{value}');";
+            return driver.ExecuteScript(script, element).ToString().Trim('"');
+        }
+
         #endregion Actions with Javascript
 
         #region JavaSctipt Alert
@@ -660,6 +668,10 @@ namespace DashworksTestAutomation.Extensions
                 {
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -677,6 +689,10 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (StaleElementReferenceException)
+                {
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     return false.Equals(condition);
                 }
@@ -733,6 +749,118 @@ namespace DashworksTestAutomation.Extensions
                 {
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
+                }
+                catch (TargetInvocationException)
+                {
+                    // Return false as element was staled
+                    return false.Equals(displayedCondition);
+                }
+            };
+        }
+
+        #endregion
+
+        #region Wait for ElementS to be (not) Exists
+
+        public static void WaitForElementsToBeExists(this RemoteWebDriver driver, By by, int waitSeconds = WaitTimeoutSeconds, bool allElements = true)
+        {
+            WaitForElementsExistsCondition(driver, by, true, waitSeconds);
+        }
+
+        public static void WaitForElementsToBeExists(this RemoteWebDriver driver, IList<IWebElement> elements, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementsExistsCondition(driver, elements, true, waitSeconds);
+        }
+
+        public static void WaitForElementsToBeNotExists(this RemoteWebDriver driver, By by, int waitSeconds = WaitTimeoutSeconds, bool allElements = true)
+        {
+            WaitForElementsExistsCondition(driver, by, false, waitSeconds);
+        }
+
+        public static void WaitForElementsToBeNotExists(this RemoteWebDriver driver, IList<IWebElement> elements, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementsExistsCondition(driver, elements, false, waitSeconds);
+        }
+
+        private static void WaitForElementsExistsCondition(this RemoteWebDriver driver, By by, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(ExistsConditionOfElementsLocatedBy(by, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Elements with '{by}' selector were not changed Exists condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static void WaitForElementsExistsCondition(this RemoteWebDriver driver, IList<IWebElement> elements, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(ExistsConditionOfElementsLocatedBy(elements, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Not all from {elements.Count} elements were not changed Exists condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static Func<IWebDriver, bool> ExistsConditionOfElementsLocatedBy(By locator, bool expectedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    var elements = driver.FindElements(locator);
+                    return elements.All(element => IsElementExists(driver, element).Equals(expectedCondition));
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+            };
+        }
+
+        private static Func<IWebDriver, bool> ExistsConditionOfElementsLocatedBy(IList<IWebElement> elements, bool expectedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    return elements.All(element => IsElementExists(driver, element).Equals(expectedCondition));
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
                 }
             };
         }
@@ -842,6 +970,12 @@ namespace DashworksTestAutomation.Extensions
                     // is no longer visible.
                     return false;
                 }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
             };
         }
 
@@ -859,6 +993,12 @@ namespace DashworksTestAutomation.Extensions
                     return false;
                 }
                 catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+                catch (TargetInvocationException)
                 {
                     // Returns false because stale element reference implies that element
                     // is no longer visible.
@@ -887,6 +1027,12 @@ namespace DashworksTestAutomation.Extensions
                     // is no longer visible.
                     return false;
                 }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
             };
         }
 
@@ -904,6 +1050,12 @@ namespace DashworksTestAutomation.Extensions
                     return false;
                 }
                 catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+                catch (TargetInvocationException)
                 {
                     // Returns false because stale element reference implies that element
                     // is no longer visible.
@@ -991,6 +1143,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
             };
         }
 
@@ -1014,6 +1171,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(displayedCondition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
@@ -1179,6 +1341,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
             };
         }
 
@@ -1211,6 +1378,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
             };
         }
 
@@ -1239,6 +1411,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(displayedCondition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
@@ -1325,6 +1502,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1348,6 +1530,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -1454,6 +1641,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1478,6 +1670,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -1606,6 +1803,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1636,6 +1838,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -1758,6 +1965,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1781,6 +1993,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -1813,6 +2030,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1836,6 +2058,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -1924,6 +2151,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1955,6 +2187,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -2054,6 +2291,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -2082,6 +2324,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -2105,6 +2352,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -2157,6 +2409,11 @@ namespace DashworksTestAutomation.Extensions
                     return false;
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false;
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false;
@@ -2242,6 +2499,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false;
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false;
+                }
             };
         }
 
@@ -2266,6 +2528,11 @@ namespace DashworksTestAutomation.Extensions
                     return false;
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false;
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false;
@@ -2427,6 +2694,20 @@ namespace DashworksTestAutomation.Extensions
             return true;
         }
 
+        public static bool IsElementExists(this RemoteWebDriver driver, By @by, WaitTime waitTime)
+        {
+            try
+            {
+                var time = int.Parse(waitTime.GetValue());
+                WhatForElementToBeInExistsCondition(driver, @by, true, time);
+                return driver.IsElementExists(@by);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public static bool IsElementInElementExists(this RemoteWebDriver driver, IWebElement element, By selector, WaitTime waitTime)
         {
             try
@@ -2483,32 +2764,11 @@ namespace DashworksTestAutomation.Extensions
         {
             if (!checkbox.Selected.Equals(desiredState))
             {
-                driver.ClickByJavascript(checkbox);
+                driver.ClickByActions(checkbox);
             }
         }
 
         #endregion
-
-        public static bool IsAttributePresent(this IWebElement element, string attribute)
-        {
-            try
-            {
-                var value = element.GetAttribute(attribute);
-                return value != null;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            catch (StaleElementReferenceException)
-            {
-                return false;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
 
         public static void WaitFor(this RemoteWebDriver driver, Func<bool> flag)
         {

@@ -146,32 +146,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table157 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table165 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table157.AddRow(new string[] {
+                table165.AddRow(new string[] {
                             string.Format("{0}", name),
                             "Value",
                             "Test",
                             "m!gration",
                             "Project Administrator"});
 #line 10
- testRunner.When("User create new User via API", ((string)(null)), table157, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table165, "When ");
 #line hidden
 #line 13
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table158 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table166 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table158.AddRow(new string[] {
+                table166.AddRow(new string[] {
                             string.Format("{0}", name),
                             "m!gration"});
 #line 14
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table158, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table166, "When ");
 #line hidden
 #line 17
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -188,12 +188,12 @@ this.FeatureBackground();
 #line 21
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table159 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table167 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table159.AddRow(new string[] {
+                table167.AddRow(new string[] {
                             "Windows7Mi: User Acceptance Test \\ Perform User Acceptance Test"});
 #line 22
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table159, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table167, "When ");
 #line hidden
 #line 25
  testRunner.And(string.Format("User perform search by \"{0}\"", rowName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -204,12 +204,12 @@ this.FeatureBackground();
 #line 27
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table160 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table168 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table160.AddRow(new string[] {
+                table168.AddRow(new string[] {
                             string.Format("{0}", rowName)});
 #line 28
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table160, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table168, "When ");
 #line hidden
 #line 31
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -287,12 +287,12 @@ this.FeatureBackground();
 #line 55
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table161 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table169 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table161.AddRow(new string[] {
+                table169.AddRow(new string[] {
                             string.Format("{0}", rowName)});
 #line 56
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table161, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table169, "When ");
 #line hidden
 #line 59
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -415,32 +415,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table162 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table170 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table162.AddRow(new string[] {
+                table170.AddRow(new string[] {
                             string.Format("{0}", name),
                             "Value",
                             "Test",
                             "m!gration",
                             "Project Administrator"});
 #line 89
- testRunner.When("User create new User via API", ((string)(null)), table162, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table170, "When ");
 #line hidden
 #line 92
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table163 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table171 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table163.AddRow(new string[] {
+                table171.AddRow(new string[] {
                             string.Format("{0}", name),
                             "m!gration"});
 #line 93
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table163, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table171, "When ");
 #line hidden
 #line 96
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -457,12 +457,12 @@ this.FeatureBackground();
 #line 100
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table164 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table172 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table164.AddRow(new string[] {
+                table172.AddRow(new string[] {
                             "Windows7Mi: User Acceptance Test \\ Perform User Acceptance Test"});
 #line 101
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table164, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table172, "When ");
 #line hidden
 #line 104
  testRunner.And(string.Format("User perform search by \"{0}\"", rowName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -473,12 +473,12 @@ this.FeatureBackground();
 #line 106
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table165 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table173 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table165.AddRow(new string[] {
+                table173.AddRow(new string[] {
                             string.Format("{0}", rowName)});
 #line 107
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table165, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table173, "When ");
 #line hidden
 #line 110
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -565,12 +565,12 @@ this.FeatureBackground();
 #line 138
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table166 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table174 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table166.AddRow(new string[] {
+                table174.AddRow(new string[] {
                             string.Format("{0}", rowName)});
 #line 139
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table166, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table174, "When ");
 #line hidden
 #line 142
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -702,32 +702,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table167 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table175 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table167.AddRow(new string[] {
+                table175.AddRow(new string[] {
                             "DAS13290",
                             "Value",
                             "Test",
                             "m!gration",
                             "Project Administrator"});
 #line 176
- testRunner.When("User create new User via API", ((string)(null)), table167, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table175, "When ");
 #line hidden
 #line 179
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table168 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table176 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table168.AddRow(new string[] {
+                table176.AddRow(new string[] {
                             "DAS13290",
                             "m!gration"});
 #line 180
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table168, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table176, "When ");
 #line hidden
 #line 183
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -744,12 +744,12 @@ this.FeatureBackground();
 #line 187
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table169 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table177 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table169.AddRow(new string[] {
+                table177.AddRow(new string[] {
                             "Windows7Mi: User Acceptance Test \\ Perform User Acceptance Test"});
 #line 188
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table169, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table177, "When ");
 #line hidden
 #line 191
  testRunner.And("User perform search by \"LZI970280\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -760,12 +760,12 @@ this.FeatureBackground();
 #line 193
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table170 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table178 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table170.AddRow(new string[] {
+                table178.AddRow(new string[] {
                             "LZI970280"});
 #line 194
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table170, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table178, "When ");
 #line hidden
 #line 197
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -831,12 +831,12 @@ this.FeatureBackground();
 #line 217
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table171 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table179 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table171.AddRow(new string[] {
+                table179.AddRow(new string[] {
                             "LZI970280"});
 #line 218
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table171, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table179, "When ");
 #line hidden
 #line 221
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -953,32 +953,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table172 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table180 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table172.AddRow(new string[] {
+                table180.AddRow(new string[] {
                             "DAS13291",
                             "Value",
                             "Test",
                             "m!gration",
                             "Project Administrator"});
 #line 242
- testRunner.When("User create new User via API", ((string)(null)), table172, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table180, "When ");
 #line hidden
 #line 245
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table173 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table181 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table173.AddRow(new string[] {
+                table181.AddRow(new string[] {
                             "DAS13291",
                             "m!gration"});
 #line 246
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table173, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table181, "When ");
 #line hidden
 #line 249
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -995,12 +995,12 @@ this.FeatureBackground();
 #line 253
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table174 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table182 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table174.AddRow(new string[] {
+                table182.AddRow(new string[] {
                             "Windows7Mi: User Acceptance Test \\ Perform User Acceptance Test"});
 #line 254
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table174, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table182, "When ");
 #line hidden
 #line 257
  testRunner.And("User perform search by \"LZI970280\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1011,12 +1011,12 @@ this.FeatureBackground();
 #line 259
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table175 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table183 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table175.AddRow(new string[] {
+                table183.AddRow(new string[] {
                             "LZI970280"});
 #line 260
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table175, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table183, "When ");
 #line hidden
 #line 263
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1103,12 +1103,12 @@ this.FeatureBackground();
 #line 291
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table176 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table184 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table176.AddRow(new string[] {
+                table184.AddRow(new string[] {
                             "LZI970280"});
 #line 292
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table176, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table184, "When ");
 #line hidden
 #line 295
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

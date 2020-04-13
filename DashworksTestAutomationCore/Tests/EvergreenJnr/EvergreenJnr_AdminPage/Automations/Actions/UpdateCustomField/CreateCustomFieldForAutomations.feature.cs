@@ -135,20 +135,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table384 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table392 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Computer"});
-                table384.AddRow(new string[] {
+                table392.AddRow(new string[] {
                             "DAS17847",
                             "17847",
                             "true",
                             "true",
                             "true"});
 #line 11
- testRunner.When("User creates new Custom Field", ((string)(null)), table384, "When ");
+ testRunner.When("User creates new Custom Field", ((string)(null)), table392, "When ");
 #line hidden
 #line 14
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -159,14 +159,14 @@ this.FeatureBackground();
 #line 16
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table385 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table393 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table385.AddRow(new string[] {
+                table393.AddRow(new string[] {
                             "17847_Automation",
                             "17847",
                             "true",
@@ -174,7 +174,7 @@ this.FeatureBackground();
                             "All Devices",
                             "Manual"});
 #line 17
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table385, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table393, "When ");
 #line hidden
 #line 20
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -300,20 +300,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table386 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table394 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Computer"});
-                table386.AddRow(new string[] {
+                table394.AddRow(new string[] {
                             "DAS18166",
                             "CustomField_18166",
                             "true",
                             "false",
                             "true"});
 #line 49
- testRunner.When("User creates new Custom Field", ((string)(null)), table386, "When ");
+ testRunner.When("User creates new Custom Field", ((string)(null)), table394, "When ");
 #line hidden
 #line 52
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -324,14 +324,14 @@ this.FeatureBackground();
 #line 54
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table387 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table395 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table387.AddRow(new string[] {
+                table395.AddRow(new string[] {
                             "18166_Automation",
                             "18166",
                             "true",
@@ -339,7 +339,7 @@ this.FeatureBackground();
                             "All Devices",
                             "Manual"});
 #line 55
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table387, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table395, "When ");
 #line hidden
 #line 58
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -410,20 +410,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table388 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table396 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Computer"});
-                table388.AddRow(new string[] {
+                table396.AddRow(new string[] {
                             "DAS18166",
                             "CustomField_18166",
                             "true",
                             "false",
                             "true"});
 #line 68
- testRunner.When("User creates new Custom Field", ((string)(null)), table388, "When ");
+ testRunner.When("User creates new Custom Field", ((string)(null)), table396, "When ");
 #line hidden
 #line 71
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -434,14 +434,14 @@ this.FeatureBackground();
 #line 73
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table389 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table397 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table389.AddRow(new string[] {
+                table397.AddRow(new string[] {
                             "18166_Automation",
                             "18166",
                             "true",
@@ -449,7 +449,7 @@ this.FeatureBackground();
                             "All Devices",
                             "Manual"});
 #line 74
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table389, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table397, "When ");
 #line hidden
 #line 77
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -542,20 +542,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table390 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table398 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Computer"});
-                table390.AddRow(new string[] {
+                table398.AddRow(new string[] {
                             "DAS18464",
                             "CustomField_18464",
                             "true",
                             "true",
                             "true"});
 #line 95
- testRunner.When("User creates new Custom Field", ((string)(null)), table390, "When ");
+ testRunner.When("User creates new Custom Field", ((string)(null)), table398, "When ");
 #line hidden
 #line 98
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -566,14 +566,14 @@ this.FeatureBackground();
 #line 100
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table391 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table399 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table391.AddRow(new string[] {
+                table399.AddRow(new string[] {
                             "18464_Automation",
                             "18464",
                             "true",
@@ -581,7 +581,7 @@ this.FeatureBackground();
                             "All Devices",
                             "Manual"});
 #line 101
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table391, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table399, "When ");
 #line hidden
 #line 104
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

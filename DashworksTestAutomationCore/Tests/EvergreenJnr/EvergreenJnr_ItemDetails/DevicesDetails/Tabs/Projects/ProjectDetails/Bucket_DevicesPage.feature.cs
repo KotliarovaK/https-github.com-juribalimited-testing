@@ -162,20 +162,20 @@ this.FeatureBackground();
  testRunner.Then("\'Select the bucket to move this device to. Select users associated to this device" +
                         " to move at the same time.\' text is displayed on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2674 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2685 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2674.AddRow(new string[] {
+                table2685.AddRow(new string[] {
                             "Username"});
-                table2674.AddRow(new string[] {
+                table2685.AddRow(new string[] {
                             "Display Name"});
-                table2674.AddRow(new string[] {
+                table2685.AddRow(new string[] {
                             "Domain"});
-                table2674.AddRow(new string[] {
+                table2685.AddRow(new string[] {
                             "Owner"});
-                table2674.AddRow(new string[] {
+                table2685.AddRow(new string[] {
                             "Bucket"});
 #line 18
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2674, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2685, "Then ");
 #line hidden
 #line 25
  testRunner.When("User selects \'Group10\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -275,24 +275,24 @@ this.FeatureBackground();
  testRunner.Then("\'The selected objects successfully moved to Evergreen Bucket 2\' text is displayed" +
                         " on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2675 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2686 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2675.AddRow(new string[] {
+                table2686.AddRow(new string[] {
                             "Bucket",
                             "Evergreen Bucket 2"});
 #line 41
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2675, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2686, "Then ");
 #line hidden
 #line 44
  testRunner.When("User clicks on edit button for \'Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2676 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2687 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table2676.AddRow(new string[] {
+                table2687.AddRow(new string[] {
                             "Evergreen Bucket 2"});
 #line 45
- testRunner.Then("\'Bucket\' column contains following content", ((string)(null)), table2676, "Then ");
+ testRunner.Then("\'Bucket\' column contains following content", ((string)(null)), table2687, "Then ");
 #line hidden
 #line 48
  testRunner.When("User selects \'Unassigned\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -356,13 +356,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2677 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2688 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2677.AddRow(new string[] {
+                table2688.AddRow(new string[] {
                             "UserDAS18227454",
                             "Value",
                             "DAS18227",
@@ -370,19 +370,19 @@ this.FeatureBackground();
                             "Project Application Object Editor, Project Computer Object Editor, Project Mailbo" +
                                 "x Object Editor, Project User Object Editor"});
 #line 54
- testRunner.When("User create new User via API", ((string)(null)), table2677, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2688, "When ");
 #line hidden
 #line 57
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2678 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2689 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2678.AddRow(new string[] {
+                table2689.AddRow(new string[] {
                             "UserDAS18227454",
                             "m!gration"});
 #line 58
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2678, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2689, "When ");
 #line hidden
 #line 61
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

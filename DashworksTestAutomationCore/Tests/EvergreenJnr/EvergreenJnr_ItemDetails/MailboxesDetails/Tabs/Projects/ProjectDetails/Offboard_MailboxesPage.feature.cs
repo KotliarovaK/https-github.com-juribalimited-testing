@@ -170,28 +170,28 @@ this.FeatureBackground();
 #line 19
  testRunner.Then("select all rows checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2941 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2952 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2941.AddRow(new string[] {
+                table2952.AddRow(new string[] {
                             "Username"});
-                table2941.AddRow(new string[] {
+                table2952.AddRow(new string[] {
                             "Display Name"});
-                table2941.AddRow(new string[] {
+                table2952.AddRow(new string[] {
                             "Domain"});
-                table2941.AddRow(new string[] {
+                table2952.AddRow(new string[] {
                             "Owner"});
 #line 20
- testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table2941, "And ");
+ testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table2952, "And ");
 #line hidden
 #line 26
  testRunner.When("User deselect all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2942 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2953 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table2942.AddRow(new string[] {
+                table2953.AddRow(new string[] {
                             "01DEAC5F18B34084B04"});
 #line 27
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table2942, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table2953, "When ");
 #line hidden
 #line 30
  testRunner.When("User clicks \'OFFBOARD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -325,18 +325,18 @@ this.FeatureBackground();
 #line 56
  testRunner.Then("select all rows checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2943 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2954 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2943.AddRow(new string[] {
+                table2954.AddRow(new string[] {
                             "Username"});
-                table2943.AddRow(new string[] {
+                table2954.AddRow(new string[] {
                             "Display Name"});
-                table2943.AddRow(new string[] {
+                table2954.AddRow(new string[] {
                             "Domain"});
-                table2943.AddRow(new string[] {
+                table2954.AddRow(new string[] {
                             "Owner"});
 #line 57
- testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table2943, "And ");
+ testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table2954, "And ");
 #line hidden
 #line 63
  testRunner.When("User clicks \'OFFBOARD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -618,121 +618,121 @@ this.FeatureBackground();
 #line 109
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2944 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2955 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2944.AddRow(new string[] {
+                table2955.AddRow(new string[] {
                             "Username"});
-                table2944.AddRow(new string[] {
+                table2955.AddRow(new string[] {
                             "Display Name"});
-                table2944.AddRow(new string[] {
+                table2955.AddRow(new string[] {
                             "Domain"});
-                table2944.AddRow(new string[] {
+                table2955.AddRow(new string[] {
                             "Owner"});
-                table2944.AddRow(new string[] {
+                table2955.AddRow(new string[] {
                             "Bucket"});
 #line 110
- testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table2944, "And ");
+ testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table2955, "And ");
 #line hidden
 #line 117
  testRunner.When("User deselect all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2945 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2956 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2945.AddRow(new string[] {
+                table2956.AddRow(new string[] {
                             "Username"});
-                table2945.AddRow(new string[] {
+                table2956.AddRow(new string[] {
                             "Display Name"});
-                table2945.AddRow(new string[] {
+                table2956.AddRow(new string[] {
                             "Domain"});
-                table2945.AddRow(new string[] {
+                table2956.AddRow(new string[] {
                             "Owner"});
-                table2945.AddRow(new string[] {
+                table2956.AddRow(new string[] {
                             "Bucket"});
 #line 118
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2945, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2956, "Then ");
 #line hidden
 #line 125
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2946 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2957 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2946.AddRow(new string[] {
+                table2957.AddRow(new string[] {
                             "Username"});
-                table2946.AddRow(new string[] {
+                table2957.AddRow(new string[] {
                             "Display Name"});
-                table2946.AddRow(new string[] {
+                table2957.AddRow(new string[] {
                             "Domain"});
-                table2946.AddRow(new string[] {
+                table2957.AddRow(new string[] {
                             "Owner"});
-                table2946.AddRow(new string[] {
+                table2957.AddRow(new string[] {
                             "Bucket"});
 #line 126
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2946, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2957, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2947 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2958 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2947.AddRow(new string[] {
+                table2958.AddRow(new string[] {
                             "Username"});
-                table2947.AddRow(new string[] {
+                table2958.AddRow(new string[] {
                             "Display Name"});
 #line 133
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owner\' colum" +
-                        "n:", ((string)(null)), table2947, "When ");
+                        "n:", ((string)(null)), table2958, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2948 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2959 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2948.AddRow(new string[] {
+                table2959.AddRow(new string[] {
                             "Domain"});
-                table2948.AddRow(new string[] {
+                table2959.AddRow(new string[] {
                             "Owner"});
-                table2948.AddRow(new string[] {
+                table2959.AddRow(new string[] {
                             "Bucket"});
 #line 137
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2948, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2959, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2949 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2960 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2949.AddRow(new string[] {
+                table2960.AddRow(new string[] {
                             "Display Name"});
 #line 142
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owner\' colum" +
-                        "n:", ((string)(null)), table2949, "When ");
+                        "n:", ((string)(null)), table2960, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2950 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2961 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2950.AddRow(new string[] {
+                table2961.AddRow(new string[] {
                             "Display Name"});
-                table2950.AddRow(new string[] {
+                table2961.AddRow(new string[] {
                             "Domain"});
-                table2950.AddRow(new string[] {
+                table2961.AddRow(new string[] {
                             "Owner"});
-                table2950.AddRow(new string[] {
+                table2961.AddRow(new string[] {
                             "Bucket"});
 #line 145
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2950, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2961, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2951 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2962 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2951.AddRow(new string[] {
+                table2962.AddRow(new string[] {
                             "Username"});
 #line 151
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owner\' colum" +
-                        "n:", ((string)(null)), table2951, "When ");
+                        "n:", ((string)(null)), table2962, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2952 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2963 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2952.AddRow(new string[] {
+                table2963.AddRow(new string[] {
                             "Username"});
-                table2952.AddRow(new string[] {
+                table2963.AddRow(new string[] {
                             "Display Name"});
-                table2952.AddRow(new string[] {
+                table2963.AddRow(new string[] {
                             "Domain"});
-                table2952.AddRow(new string[] {
+                table2963.AddRow(new string[] {
                             "Owner"});
-                table2952.AddRow(new string[] {
+                table2963.AddRow(new string[] {
                             "Bucket"});
 #line 154
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2952, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2963, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

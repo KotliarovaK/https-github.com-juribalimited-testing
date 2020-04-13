@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -45,8 +47,8 @@ namespace DashworksTestAutomation.Steps.API
                 x["translatedCategory"].ToString().Equals(categoryName) &&
                 x["label"].ToString().Equals(filterName));
             var allOperators = filter["operators"];
-            var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
-            Utils.Verify.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues,
+            var operatorsValues = allOperators.Select(x => x["translatedDropdownValue"].ToString()).ToList();
+            Verify.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues,
                 $"Incorrect operators are displayed for {filterName} filter");
         }
 
@@ -72,7 +74,7 @@ namespace DashworksTestAutomation.Steps.API
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             foreach (var value in expectedList)
             {
-                Utils.Verify.IsTrue(filterValueList.Contains(value), "Selected values are not displayed in that filter");
+                Verify.IsTrue(filterValueList.Contains(value), "Selected values are not displayed in that filter");
             }
         }
 
@@ -97,7 +99,7 @@ namespace DashworksTestAutomation.Steps.API
             var filterValueList = responseContent.Select(x => x["text"].ToString()).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             foreach (var value in expectedList)
-                Utils.Verify.AreEqual(expectedList, filterValueList, "Values are not displayed in the correct order");
+                Verify.AreEqual(expectedList, filterValueList, "Values are not displayed in the correct order");
         }
 
         [Then(@"""(.*)"" is displayed after ""(.*)"" in Application list filter")]
@@ -120,7 +122,7 @@ namespace DashworksTestAutomation.Steps.API
             var responseContent = JsonConvert.DeserializeObject<JArray>(content).ToList();
             var filterValueList = responseContent.Select(x => x["text"].ToString()).ToList();
             var itemByIndex2 = filterValueList.FindIndex(s => s.Equals(item2));
-            Utils.Verify.AreEqual(item1, filterValueList[itemByIndex2 + 1], "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(item1, filterValueList[itemByIndex2 + 1], "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"the following subcategories are NOT displayed for ""(.*)"" Columns category:")]
@@ -146,8 +148,39 @@ namespace DashworksTestAutomation.Steps.API
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             foreach (var value in expectedList)
             {
-                Utils.Verify.IsFalse(subcategoryList.Contains(value), "Selected values are not displayed in that filter");
+                Verify.IsFalse(subcategoryList.Contains(value), "Selected values are not displayed in that filter");
             }
+        }
+
+        [Then(@"the following filter subcategories are displayed for '(.*)' category on '(.*)' page:")]
+        public void ThenTheFollowingFilterSubcategoriesAreDisplayedForCategory(string categoryName, string filter, Table table)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}{filter.ToLower()}/filters?$lang=en-US";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = _client.Evergreen.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.Content;
+
+            var responseContent = JsonConvert.DeserializeObject<List<JObject>>(content).ToList();
+            var subcategory = responseContent.FindAll(x => x["translatedCategory"].ToString().Equals(categoryName)).ToList();
+            var subcategoryList = subcategory.Select(x => x["label"].ToString()).OrderBy(l=>l).ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+
+            //sz: for debugging
+            //for (int i = 0; i < expectedList.Count; i++)
+            //{
+            //    Verify.That(expectedList[i], Is.EqualTo(subcategoryList[i]), "check!!!");
+            //}
+
+            Verify.That(subcategoryList, Is.EqualTo(expectedList), "Selected values are not displayed in that filter");
         }
     }
 }

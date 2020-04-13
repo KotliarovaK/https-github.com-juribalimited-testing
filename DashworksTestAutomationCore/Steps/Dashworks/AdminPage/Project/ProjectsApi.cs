@@ -34,7 +34,27 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
         // table example
         // | ProjectName | Scope | ProjectTemplate | Mode |
         [When(@"Project created via API and opened")]
+        public void WhenUserCreateNewProjectViaApiAndOpened(Table table)
+        {
+            var projectId = CreateProjectViaApi(table);
+            var projectName = _projects.Value.Last();
+
+            _driver.NowAt<BaseHeaderElement>();
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{projectId}/details");
+
+            var header = _driver.NowAt<BaseHeaderElement>();
+            header.CheckPageHeader(projectName);
+        }
+
+        // table example
+        // | ProjectName | Scope | ProjectTemplate | Mode |
+        [When(@"Project created via API")]
         public void WhenUserCreateNewProjectViaApi(Table table)
+        {
+            CreateProjectViaApi(table);
+        }
+
+        private string CreateProjectViaApi(Table table)
         {
             string pName = string.Empty;
             string pScope = string.Empty;
@@ -77,11 +97,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
 
             _projects.Value.Add(pName);
 
-            _driver.NowAt<BaseHeaderElement>();
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{projectId}/details");
-
-            var header = _driver.NowAt<BaseHeaderElement>();
-            header.CheckPageHeader(pName);
+            return projectId;
         }
 
         [When(@"Projects created by User are removed via API")]

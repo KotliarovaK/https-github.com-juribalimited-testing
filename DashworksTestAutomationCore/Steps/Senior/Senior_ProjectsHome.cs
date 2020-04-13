@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.DTO.Projects;
+﻿using AutomationUtils.Utils;
+using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
@@ -6,6 +7,7 @@ using DashworksTestAutomation.Pages.Senior;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Projects
 {
@@ -78,7 +80,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var message = _driver.NowAt<ProjectsHomePage>();
 
-            Utils.Verify.IsTrue(message.DefaultProjectNewsTitle.Displayed(), "Default message is not displayed");
+            Verify.IsTrue(message.DefaultProjectNewsTitle.Displayed(), "Default message is not displayed");
         }
 
         [Then(@"Project Name is displayed correctly")]
@@ -87,14 +89,14 @@ namespace DashworksTestAutomation.Steps.Projects
             var menu = _driver.NowAt<MainElementsOfProjectCreation>();
 
             var projectName = menu.GetOpenedProjectName(_projectDto.ProjectName);
-            Utils.Verify.IsTrue(projectName.Displayed, "Project Name is not displayed correctly");
+            Verify.IsTrue(projectName.Displayed, "Project Name is not displayed correctly");
         }
 
         [Then(@"Project with ""(.*)"" name is displayed correctly")]
         public void ThenProjectWithNameIsDisplayedCorrectly(string projectName)
         {
             var menu = _driver.NowAt<MainElementsOfProjectCreation>();
-            Utils.Verify.IsTrue(menu.GetOpenedProjectName(projectName).Displayed, "Project Name is not displayed correctly");
+            Verify.IsTrue(menu.GetOpenedProjectName(projectName).Displayed, "Project Name is not displayed correctly");
         }
     }
 }
