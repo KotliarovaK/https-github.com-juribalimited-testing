@@ -9,6 +9,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using DashworksTestAutomationCore.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using RestSharp;

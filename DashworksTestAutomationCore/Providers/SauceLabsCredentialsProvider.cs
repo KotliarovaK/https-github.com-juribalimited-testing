@@ -1,11 +1,12 @@
 ﻿using System.Configuration;
+using DashworksTestAutomationCore.Utils;
 
 namespace DashworksTestAutomation.Providers
 {
     public static class SauceLabsCredentialsProvider
     {
-        public static string Username => ConfigurationManager.AppSettings["sauceLabs.username"];
-        public static string Password => ConfigurationManager.AppSettings["sauceLabs.password"];
-        public static string AccessKey => ConfigurationManager.AppSettings["sauceLabs.accessKey"];
+        public static string Username => ConfigReader.ByKey("sauceLabsUsername");
+        public static string Password => ConfigReader.ByKey("sauceLabsPassword");
+        public static string AccessKey => ConfigReader.ByKey("sauceLabsAccessKey");
     }
 }

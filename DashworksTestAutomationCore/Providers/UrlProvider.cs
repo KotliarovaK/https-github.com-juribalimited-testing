@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Configuration;
 using System.Linq;
-using AutomationUtils.Extensions;
+using DashworksTestAutomation.Extensions;
+using DashworksTestAutomationCore.Utils;
 
 namespace DashworksTestAutomation.Providers
 {
@@ -11,14 +12,14 @@ namespace DashworksTestAutomation.Providers
         {
             get
             {
-                switch (ConfigurationManager.AppSettings["environmentFlag"])
+                switch (ConfigReader.ByKey("environmentFlag"))
                 {
                     case "arelease":
-                        return ConfigurationManager.AppSettings["appURL"];
+                        return ConfigReader.ByKey("appURL");
                     case "amaster":
-                        return ConfigurationManager.AppSettings["appURLAmaster"];
+                        return ConfigReader.ByKey("appURLAmaster");
                     case "master":
-                        return ConfigurationManager.AppSettings["appURLFuture"];
+                        return ConfigReader.ByKey("appURLFuture");
                     default: throw new Exception("Unable to generate Base URL");
                 }
             }
@@ -26,20 +27,20 @@ namespace DashworksTestAutomation.Providers
 
         public static string Host = BaseUrl.Split("//").Last();
         public static string Url => $"{BaseUrl}/";
-        public static string BackupUrl => ConfigurationManager.AppSettings["backupAppURL"];
+        public static string BackupUrl => ConfigReader.ByKey("backupAppURL");
 
         private static string _port
         {
             get
             {
-                switch (ConfigurationManager.AppSettings["environmentFlag"])
+                switch (ConfigReader.ByKey("environmentFlag"))
                 {
                     case "arelease":
-                        return ConfigurationManager.AppSettings["restClientBaseUrlPort"];
+                        return ConfigReader.ByKey("restClientBaseUrlPort");
                     case "amaster":
-                        return ConfigurationManager.AppSettings["restClientBaseUrlPort"];
+                        return ConfigReader.ByKey("restClientBaseUrlPort");
                     case "master":
-                        return ConfigurationManager.AppSettings["restClientBaseUrlPortFuture"];
+                        return ConfigReader.ByKey("restClientBaseUrlPortFuture");
                     default: throw new Exception("Unable to generate connection string");
                 }
             }
@@ -48,7 +49,7 @@ namespace DashworksTestAutomation.Providers
         public static string RestClientBaseUrl =>
             $"{BaseUrl}:{_port}/";
 
-        public static string EvergreenUrl => $"{BaseUrl}/{ConfigurationManager.AppSettings["appURLEvergreen"]}/";
-        public static string ProjectsUrl => $"{BaseUrl}/{ConfigurationManager.AppSettings["projectsUrl"]}";
+        public static string EvergreenUrl => $"{BaseUrl}/{ConfigReader.ByKey("appURLEvergreen")}/";
+        public static string ProjectsUrl => $"{BaseUrl}/{ConfigReader.ByKey("projectsUrl")}";
     }
 }
