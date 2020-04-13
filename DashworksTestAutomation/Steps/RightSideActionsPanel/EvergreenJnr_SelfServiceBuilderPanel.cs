@@ -135,7 +135,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 var componentType = raw["ComponentType"];
                 var componentPosition = raw["ComponentPosition"];
 
-                Verify.IsTrue(rightSidePanel.isTheComponentOrderInSSBuilderAsExpected(componentName, componentType, componentPosition, pageName), $"Component '{componentName}' wasn't placed on '{componentPosition}' position");
+                Verify.IsTrue(rightSidePanel.IsTheComponentOrderInSSBuilderAsExpected(componentName, componentType, componentPosition, pageName), $"Component '{componentName}' wasn't placed on '{componentPosition}' position");
             }
         }
 

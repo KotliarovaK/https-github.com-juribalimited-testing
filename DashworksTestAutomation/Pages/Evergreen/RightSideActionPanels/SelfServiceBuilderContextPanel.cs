@@ -103,17 +103,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
         public void CheckBuilderContextPanelItemDisplayState(string contextPanelType, string contextPanelName, bool expectedDisplayState)
         {
             Driver.WaitForDataLoading();
-            Verify.AreEqual(expectedDisplayState, TryToGetContextPanel(contextPanelType, contextPanelName),
+            Verify.AreEqual(expectedDisplayState, IsContextPanelDisplayed(contextPanelType, contextPanelName),
                 $"Builder Context Panel Item Display State is not equal to: {expectedDisplayState}", WebDriverExtensions.WaitTime.Medium);
         }
 
-        public bool TryToGetContextPanel(string contextPanelType, string contextPanelName)
+        public bool IsContextPanelDisplayed(string contextPanelType, string contextPanelName)
         {
             var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}";
             try
             {
-                Driver.FindElement(By.XPath(selector));
-                return true;
+                return Driver.IsElementDisplayed(By.XPath(selector));
             } 
             catch
             {
@@ -137,20 +136,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             return result;
         }
 
-        public bool isTheComponentOrderInSSBuilderAsExpected(string componentName, string componentType, string expectedComponentOrder, string contextPanelName)
+        public bool IsTheComponentOrderInSSBuilderAsExpected(string componentName, string componentType, string expectedComponentOrder, string contextPanelName)
         {
-            var selector = PageComponentByOrderPath(componentName, componentType, expectedComponentOrder, contextPanelName);
-
-            try
-            {
-                Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-                Driver.FindElement(By.XPath(selector));
-                return true;
-            } 
-            catch
-            {
-                return false;
-            }
+            var selector = PageComponentByOrderPath(componentName, componentType, expectedComponentOrder, contextPanelName);          
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+            return Driver.IsElementExists(By.XPath(selector));
         }
     }
 }
