@@ -137,9 +137,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -890,9 +890,9 @@ this.FeatureBackground();
  testRunner.When("User waits until Queue disappears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -1074,9 +1074,9 @@ this.FeatureBackground();
  testRunner.Then("\'The ring has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -1130,79 +1130,77 @@ this.FeatureBackground();
 #line 315
  testRunner.Then("\'1\' content is displayed in the \'Objects\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 317
- testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 318
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 319
+#line 318
  testRunner.And("User enters \"19083_Project\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 320
+#line 319
  testRunner.When("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 321
+#line 320
  testRunner.When("User navigates to the \'Rings\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table18.AddRow(new string[] {
                         "TestRing19083"});
-#line 322
+#line 321
  testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table18, "When ");
-#line 325
+#line 324
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 326
+#line 325
  testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 327
+#line 326
  testRunner.And("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 328
+#line 327
  testRunner.Then("\'The selected ring has been deleted\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 330
+#line 329
  testRunner.When("User clicks \'Projects\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 331
+#line 330
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 332
+#line 331
  testRunner.When("User enters \"19083_2_Automation\" text in the Search field for \"Automation\" column" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 333
+#line 332
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'19083_2_Automation\' item from \'Auto" +
                     "mation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 334
+#line 333
  testRunner.When("\'19083_2_Automation\' automation \'19083_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 335
+#line 334
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 336
+#line 335
  testRunner.When("User enters \"19083_2_Automation\" text in the Search field for \"Automation\" column" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 337
+#line 336
  testRunner.Then("\"ONE OR MORE ACTIONS FAILED\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 338
+#line 337
  testRunner.When("User clicks String Filter button for \"Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 339
+#line 338
  testRunner.When("User selects \"Automation Finish\" checkbox from String Filter with item list on th" +
                     "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 340
+#line 339
  testRunner.Then("\'1\' content is displayed in the \'Objects\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 341
+#line 340
  testRunner.Then("\"RING DOES NOT EXIST\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 342
+#line 341
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 343
+#line 342
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 344
+#line 343
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 345
+#line 344
  testRunner.Then("\'[Ring not found]\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 346
+#line 345
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 347
+#line 346
  testRunner.Then("\'19083_Project\' content is displayed in \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 348
+#line 347
  testRunner.Then("\'[Ring not found]\' content is displayed in \'Ring\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 349
+#line 348
  testRunner.Then("\'The selected ring cannot be found\' error message is displayed for \'Ring\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 350
+#line 349
  testRunner.When("User selects \'Unassigned\' option from \'Ring\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 351
+#line 350
  testRunner.Then("No error message is displayed for \'Ring\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 352
+#line 351
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1250,31 +1248,31 @@ this.FeatureBackground();
                         "Automations",
                         "DAS19083",
                         "Cleanup"});
-#line 355
+#line 354
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 357
+#line 356
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 358
+#line 357
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 359
+#line 358
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 360
+#line 359
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table19.AddRow(new string[] {
                         "00KWQ4J3WKQM0G"});
-#line 361
+#line 360
  testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table19, "When ");
-#line 364
+#line 363
  testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 365
+#line 364
  testRunner.And("User create static list with \"1190831_TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 366
+#line 365
  testRunner.Then("\"1190831_TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1287,45 +1285,45 @@ this.FeatureBackground();
                         "All Devices",
                         "None",
                         "Standalone Project"});
-#line 368
+#line 367
  testRunner.When("Project created via API and opened", ((string)(null)), table20, "When ");
-#line 371
+#line 370
  testRunner.Then("Page with \'119083_Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 372
+#line 371
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 373
+#line 372
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 374
+#line 373
  testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table21.AddRow(new string[] {
                         "00KWQ4J3WKQM0G"});
-#line 375
+#line 374
  testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table21, "When ");
-#line 378
+#line 377
  testRunner.When("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 379
+#line 378
  testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 380
+#line 379
  testRunner.Then("\'1 object queued for onboarding, 0 objects offboarded\' text is displayed on inlin" +
                     "e success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 381
+#line 380
  testRunner.When("User navigates to the \'Queue\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 382
+#line 381
  testRunner.When("User waits until Queue disappears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 384
+#line 383
  testRunner.When("User navigates to the \'Rings\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 385
+#line 384
  testRunner.When("User clicks \'CREATE PROJECT RING\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 386
+#line 385
  testRunner.Then("Page with \'Create Project Ring\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 387
+#line 386
  testRunner.When("User enters \'19083_TestRing\' text to \'Ring name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 388
+#line 387
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 389
+#line 388
  testRunner.Then("\'The ring has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1342,107 +1340,107 @@ this.FeatureBackground();
                         "false",
                         "1190831_TestList",
                         "Manual"});
-#line 391
+#line 390
  testRunner.When("User creates new Automation via API and open it", ((string)(null)), table22, "When ");
+#line 393
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 394
- testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 395
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 397
+#line 396
  testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 398
+#line 397
  testRunner.And("User enters \'19083_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 399
+#line 398
  testRunner.When("User selects \'Update ring\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 400
+#line 399
  testRunner.When("User selects \'119083_Project\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 401
+#line 400
  testRunner.When("User selects \'19083_TestRing\' option from \'Ring\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 402
+#line 401
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 404
+#line 403
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 404
+ testRunner.When("User enters \"19083_3_Automation\" text in the Search field for \"Automation\" column" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 405
- testRunner.When("User enters \"19083_3_Automation\" text in the Search field for \"Automation\" column" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'19083_3_Automation\' item from \'Auto" +
+                    "mation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 406
- testRunner.When("User clicks \'Run now\' option in Cog-menu for \'19083_3_Automation\' item from \'Auto" +
-                    "mation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("\'19083_3_Automation\' automation \'19083_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 407
- testRunner.When("\'19083_3_Automation\' automation \'19083_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 408
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 409
+#line 408
  testRunner.When("User enters \"19083_3_Automation\" text in the Search field for \"Automation\" column" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 410
+#line 409
  testRunner.Then("\"SUCCESS\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 411
+#line 410
  testRunner.When("User clicks String Filter button for \"Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 412
+#line 411
  testRunner.When("User selects \"Automation Finish\" checkbox from String Filter with item list on th" +
                     "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 413
+#line 412
  testRunner.Then("\'1\' content is displayed in the \'Objects\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 415
+#line 414
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 416
+#line 415
  testRunner.And("User enters \"119083_Project\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 417
+#line 416
  testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 418
+#line 417
  testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 420
+#line 419
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 421
+#line 420
  testRunner.When("User enters \"19083_3_Automation\" text in the Search field for \"Automation\" column" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 422
+#line 421
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'19083_3_Automation\' item from \'Auto" +
                     "mation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 423
+#line 422
  testRunner.When("\'19083_3_Automation\' automation \'19083_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 424
+#line 423
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 425
+#line 424
  testRunner.When("User enters \"19083_3_Automation\" text in the Search field for \"Automation\" column" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 426
+#line 425
  testRunner.Then("\"ONE OR MORE ACTIONS FAILED\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 427
+#line 426
  testRunner.When("User clicks String Filter button for \"Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 428
+#line 427
  testRunner.When("User selects \"Automation Finish\" checkbox from String Filter with item list on th" +
                     "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 429
+#line 428
  testRunner.Then("\"PROJECT DOES NOT EXIST\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 430
+#line 429
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 431
+#line 430
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 432
+#line 431
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 433
+#line 432
  testRunner.Then("\'[Project not found]\' content is displayed in the \'Project\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 434
+#line 433
  testRunner.Then("\'\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 435
+#line 434
  testRunner.Then("\'\' content is displayed in the \'Task or Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 436
+#line 435
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 437
+#line 436
  testRunner.Then("\'[Project not found]\' content is displayed in \'Project or Evergreen\' autocomplete" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 438
+#line 437
  testRunner.Then("\'The selected project cannot be found\' error message is displayed for \'Project or" +
                     " Evergreen\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 439
+#line 438
  testRunner.When("User selects \'2004 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 440
+#line 439
  testRunner.When("User selects \'Unassigned\' option from \'Ring\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 441
+#line 440
  testRunner.Then("No error message is displayed for \'Project or Evergreen\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 442
+#line 441
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

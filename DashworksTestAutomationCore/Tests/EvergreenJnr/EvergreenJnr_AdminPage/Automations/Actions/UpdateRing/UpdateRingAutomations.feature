@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @DAS17288 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType
 	When User creates new Automation via API and open it
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| Test_Automation_17556 | 17556       | true   | false              | <ListName> | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| Test_Automation_17556 | 17556       | true     | false              | <ListName> | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
@@ -227,8 +227,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects
 	When User waits until Queue disappears
 	#Create Automation
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope             | Run    |
-	| 19083_Automation | 19083       | true   | false              | AutoTestList19083 | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope             | Run    |
+	| 19083_Automation | 19083       | true     | false              | AutoTestList19083 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -291,8 +291,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing
 	Then 'The ring has been created' text is displayed on inline success banner
 	#Create Automation
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope           | Run    |
-	| 19083_2_Automation | 19083       | true   | false              | 190831_TestList | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope           | Run    |
+	| 19083_2_Automation | 19083       | true     | false              | 190831_TestList | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -314,7 +314,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then '1' content is displayed in the 'Objects' column
 	#Delete Ring
-	When User clicks 'Automations' header breadcrumb
 	When User navigates to the 'Projects' left menu item
 	And User enters "19083_Project" text in the Search field for "Project" column
 	When User clicks content from "Project" column
