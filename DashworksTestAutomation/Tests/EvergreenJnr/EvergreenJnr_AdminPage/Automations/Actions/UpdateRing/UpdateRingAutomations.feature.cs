@@ -87,7 +87,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
         [NUnit.Framework.CategoryAttribute("DAS17556")]
         [NUnit.Framework.CategoryAttribute("DAS17288")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         [NUnit.Framework.TestCaseAttribute("All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("All Users", null)]
         [NUnit.Framework.TestCaseAttribute("All Mailboxes", null)]
@@ -125,8 +124,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
                     "Automations",
                     "DAS17556",
                     "DAS17288",
-                    "Cleanup",
-                    "Wormhole"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -193,7 +191,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17556")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLists()
         {
             System.Exception lastException = null;
@@ -227,8 +224,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17556",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 35
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -288,7 +284,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17556")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         [NUnit.Framework.TestCaseAttribute("All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("All Mailboxes", null)]
         public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality(string listName, string[] exampleTags)
@@ -324,8 +319,7 @@ this.FeatureBackground();
                     "EvergreenJnr_AdminPage",
                     "Automations",
                     "DAS17556",
-                    "Cleanup",
-                    "Wormhole"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -387,7 +381,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17556")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionality()
         {
             System.Exception lastException = null;
@@ -421,8 +414,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17556",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 77
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -494,7 +486,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17556")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckEditActionPageForUpdateRing()
         {
             System.Exception lastException = null;
@@ -528,8 +519,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17556",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 102
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -617,7 +607,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19083")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLinkedDevicesAndAllLinkedMailboxes()
         {
             System.Exception lastException = null;
@@ -652,8 +641,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS19083",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 137
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -801,7 +789,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19083")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects()
         {
             System.Exception lastException = null;
@@ -835,8 +822,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS19083",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 200
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -975,7 +961,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19083")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing()
         {
             System.Exception lastException = null;
@@ -1009,8 +994,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS19083",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 257
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1232,7 +1216,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19083")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject()
         {
             System.Exception lastException = null;
@@ -1266,8 +1249,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS19083",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 355
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

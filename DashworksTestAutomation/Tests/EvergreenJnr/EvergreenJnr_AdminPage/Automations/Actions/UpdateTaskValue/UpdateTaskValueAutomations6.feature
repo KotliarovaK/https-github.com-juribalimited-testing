@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOwnerDropdownDisplayingAfterSelectingEmpty
 	When User selects 'Unassigned' option from 'Owner' autocomplete
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20363 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20363 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingAction
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |

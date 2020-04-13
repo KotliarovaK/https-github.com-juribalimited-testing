@@ -708,7 +708,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS20363")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingAction()
         {
             System.Exception lastException = null;
@@ -742,8 +741,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS20363",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 200
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
