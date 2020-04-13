@@ -2983,8 +2983,8 @@ this.FeatureBackground();
  testRunner.Then("\"Windows7Mi: Migration \\ Values but no RAG is One or Three\" is displayed in added" +
                     " filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 629
- testRunner.Then("\"UserSchedu: One \\ Radio Rag Date Comp is Not Applicable, Started, Failed or Comp" +
-                    "lete\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"UserSchedu: One \\ Radio Rag Date Comp is Complete, Failed, Not Applicable or Sta" +
+                    "rted\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 630
  testRunner.When("User click Edit button for \"Windows7Mi: Migration \\ Values but no RAG\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

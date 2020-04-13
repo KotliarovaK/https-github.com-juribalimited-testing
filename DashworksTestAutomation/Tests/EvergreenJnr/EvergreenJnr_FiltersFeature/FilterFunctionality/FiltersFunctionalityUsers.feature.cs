@@ -1749,8 +1749,8 @@ this.FeatureBackground();
 #line 420
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 421
- testRunner.Then("\"Windows7Mi: Stage for User Tasks \\ Read Only on Bulk Update Page is Not Applicab" +
-                    "le, Started, Failed or Complete\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Windows7Mi: Stage for User Tasks \\ Read Only on Bulk Update Page is Complete, Fa" +
+                    "iled, Not Applicable or Started\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 422
  testRunner.Then("\"Windows7Mi: User Acceptance Test \\ T-60 SMS Message Sent is Not Applicable\" is d" +
                     "isplayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

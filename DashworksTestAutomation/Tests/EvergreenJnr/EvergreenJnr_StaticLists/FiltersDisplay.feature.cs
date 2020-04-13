@@ -298,8 +298,8 @@ this.FeatureBackground();
 #line 57
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
- testRunner.And("\"Windows7Mi: Portal Self Service \\ SS Application List Completed is Not Applicabl" +
-                    "e or No\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Windows7Mi: Portal Self Service \\ SS Application List Completed is No or Not App" +
+                    "licable\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
