@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using AutomationUtils.Extensions;
+using AutomationUtils.Utils;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
@@ -30,6 +30,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public string AllCellsInTheGrid = ".//div[@ref='eBodyViewport']//div[@role='gridcell']";
 
         private string GridCellByColumnName = ".//div[@col-id='{0}' and @role='gridcell']";
+
+        private static string NamedLinkSelector = ".//a[@href]//span[text()='{0}']";
 
         //TODO I think there should be some duplicated webElement simillar to this one
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-menu')]")]
@@ -474,15 +476,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #region Links
 
-        public By GetLinkByNameSelector(string linkName)
+        public IWebElement GetLinkByName(string linkName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Medium)
         {
-            var selector = $".//a[@href][text()='{linkName}']";
-            return By.XPath(selector);
-        }
-
-        public IWebElement GetLinkByName(string linkName)
-        {
-            var by = GetLinkByNameSelector(linkName);
+            var by = By.XPath(string.Format(NamedLinkSelector, linkName));
+            if (!Driver.IsElementDisplayed(by, wait))
+            {
+                throw new Exception($"Link with '{linkName}' text is not displayed");
+            }
             return Driver.FindElement(by);
         }
 
