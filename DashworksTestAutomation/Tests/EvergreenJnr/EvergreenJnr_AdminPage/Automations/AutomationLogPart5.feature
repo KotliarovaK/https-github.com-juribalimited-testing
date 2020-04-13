@@ -138,13 +138,14 @@ Scenario: EvergreenJnr_AdminPage_CheckArchivedObjectNumbersFromAnutomationLogGri
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User opens 'Type' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Operation ID" checkbox on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
+	When User select "Operation ID" checkbox on the Column Settings panel
 	When User select "Scope" checkbox on the Column Settings panel
-	When User enters "59" text in the Search field for "Objects" column
+	When User clicks Column button on the Column Settings panel
 	Then content is present in the following newly added columns:
 	| ColumnName   |
 	| Operation ID |
+	When User enters "18265_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Scope" column
 	Then '2004 Rollout' list should be displayed to the user
 

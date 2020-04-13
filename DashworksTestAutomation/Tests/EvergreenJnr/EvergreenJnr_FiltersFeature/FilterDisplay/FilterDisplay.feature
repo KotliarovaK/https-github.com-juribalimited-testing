@@ -586,7 +586,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheComplianceAndIm
 	Then "Compliance" filter is added to the list
 	When User add "Import" filter where type is "Does not equal" with added column and "A01 SMS (Spoof)" Lookup option
 	Then "Import" filter is added to the list
-	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof))" text is displayed in filter container
+	Then "(Compliance = Amber, Green, Red or Unknown) OR (Import != A01 SMS (Spoof))" text is displayed in filter container
 
 @Evergreen @Evergreen_FiltersFeature @FiltersDisplay @DAS11054 @DAS11578
 Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheDepartmentCodeFilterContainerIsDisplayed
@@ -754,9 +754,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterIn
 	Then "Windows7Mi: Hide From End Users" filter is added to the list
 	Then Values is displayed in added filter info
 		| Values |
-		| True   |
-		| False  |
 		| Empty  |
+		| False  |
+		| True   |
 
 @Evergreen @Evergreen_FiltersFeature @FiltersDisplay @DAS10754 @DAS11142 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckSpecialCharactersDisplayInFilterInfo
@@ -831,18 +831,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavi
 	Then "Compliance" filter is added to the list
 	Then Values is displayed in added filter info
 		| Values |
-		| Red    |
 		| Amber  |
 		| Green  |
+		| Red    |
 	When User create dynamic list with "Users - Nav between lists" name on "Users" page
 	Then "Users - Nav between lists" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
 		| Values |
-		| Red    |
 		| Amber  |
 		| Green  |
+		| Red    |
 	When User navigates to the "All Users" list
 	When User navigates to the "Users - Nav between lists" list
 	Then "Users - Nav between lists" list is displayed to user
@@ -850,9 +850,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavi
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
 		| Values |
-		| Red    |
 		| Amber  |
 		| Green  |
+		| Red    |
 
 @Evergreen @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists

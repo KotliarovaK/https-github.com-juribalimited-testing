@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS17808 @DAS18408 @DAS19246
+@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS17808 @DAS18408 @DAS19246 @DAS20802
 Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	When User navigates to the 'User' details page for 'ZZP911429' item
 	Then Details page for 'ZZP911429' item is displayed to the user
@@ -25,16 +25,20 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	| Target App           |
 	| Target App Readiness |
 	Then following columns are displayed on the Item details page:
-	| ColumnName           |
-	| Vendor               |
-	| Version              |
-	| Rationalisation      |
-	| Path                 |
-	| Category             |
-	| Workflow             |
-	| Date                 |
-	| App Readiness        |
-	| Stage 3              |
+	| ColumnName                     |
+	| Vendor                         |
+	| Version                        |
+	| Criticality                    |
+	| Rationalisation                |
+	| Target App                     |
+	| Target App Criticality         |
+	| Target App Hide From End Users |
+	| Target App Readiness           |
+	| Path                           |
+	| Category                       |
+	| Workflow                       |
+	| Date                           |
+	| Stage 3                        |
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS18700
 Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrectlyOnProjectOwnedTab 

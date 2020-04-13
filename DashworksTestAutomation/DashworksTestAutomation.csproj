@@ -262,6 +262,7 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
+    <Compile Include="Pages\Evergreen\Base\TextComponentElements.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\Components\AppOwnershipComponentPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientErrorPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientBasePage.cs" />
@@ -753,6 +754,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Automations2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\EditAutomation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditAutomation.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2360,6 +2366,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Automations2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Automations2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\EditAutomation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditAutomation.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

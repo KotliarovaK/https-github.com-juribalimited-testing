@@ -25,7 +25,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
-using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -141,6 +140,37 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 var expectedText = row.Values.First();
                 Verify.IsFalse(textEditorContent.Contains(expectedText), $"Text editor contains '{expectedText}' text");
             }
+        }
+
+        [Then(@"formatting options are displayed on the text component")]
+        public void ThenFormattingOptionsAreDisplayedOnTheTextComponentPage()
+        {
+            var page = _driver.NowAt<TextComponentElements>();
+
+            Verify.That(page.BoldStyleButton.Displayed(), "Bold style button is not displayed");
+            Verify.That(page.ItalicStyleButton.Displayed(), "Italic style button is not displayed");
+            Verify.That(page.UnderlineStyleButton.Displayed(), "Underline style button is not displayed");
+            Verify.That(page.HeadersPickerButton.Displayed(), "Headers picker button is not displayed");
+        }
+
+        [Then(@"header format options are displayed on the text component")]
+        public void ThenHeaderFormatOptionsAreDisplayedOnTheTextComponentPage(Table table)
+        {
+            var page = _driver.NowAt<TextComponentElements>();
+
+            page.HeadersPickerButton.Click();
+            _driver.WaitForElementsToBeDisplayed(page.HeaderOptions);
+
+            List<string> expectedOptionNames = table.Rows.SelectMany(row => row.Values).ToList();
+            List<string> actualheaderOptionNames = new List<string>();
+
+            for (int i = 0; i < page.HeaderOptions.Count; i++)
+            {
+                string value = _driver.GetPseudoElementValue(page.HeaderOptions[i], ":before", "content");
+                actualheaderOptionNames.Add(value);
+            }
+
+            Verify.AreEqual(expectedOptionNames, actualheaderOptionNames, "Header format options does not equals to expecting options");
         }
 
         #endregion

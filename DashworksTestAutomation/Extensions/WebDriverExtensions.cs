@@ -546,6 +546,12 @@ namespace DashworksTestAutomation.Extensions
             return ((IJavaScriptExecutor)driver).ExecuteScript("return window.getSelection().toString()").ToString();
         }
 
+        public static string GetPseudoElementValue(this RemoteWebDriver driver, IWebElement element, string pseudo, string value)
+        {
+            string script = $"return window.getComputedStyle(arguments[0], '{pseudo}').getPropertyValue('{value}');";
+            return driver.ExecuteScript(script, element).ToString().Trim('"');
+        }
+
         #endregion Actions with Javascript
 
         #region JavaSctipt Alert

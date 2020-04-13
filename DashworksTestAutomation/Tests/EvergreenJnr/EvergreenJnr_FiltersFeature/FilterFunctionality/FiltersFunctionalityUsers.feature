@@ -418,7 +418,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	When User navigates to the "Users_ProjectTaskFilters_AND" list
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "Windows7Mi: Stage for User Tasks \ Read Only on Bulk Update Page is Not Applicable, Started, Failed or Complete" is displayed in added filter info
+	Then "Windows7Mi: Stage for User Tasks \ Read Only on Bulk Update Page is Complete, Failed, Not Applicable or Started" is displayed in added filter info
 	Then "Windows7Mi: User Acceptance Test \ T-60 SMS Message Sent is Not Applicable" is displayed in added filter info
 	When User click Edit button for "Windows7Mi: Stage for User Tasks \ Read Only on Bulk Update Page" filter
 	When User select "Does not equal" Operator value

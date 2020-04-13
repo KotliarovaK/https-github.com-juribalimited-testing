@@ -520,6 +520,117 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatTextEditorOptionsIsAvailableForTextComponent")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS20160")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatTextEditorOptionsIsAvailableForTextComponent()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatTextEditorOptionsIsAvailableForTextComponentInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatTextEditorOptionsIsAvailableForTextComponentInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatTextEditorOptionsIsAvailableForTextComponent", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "SelfService",
+                        "DAS20160",
+                        "Cleanup"});
+#line 126
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table15.AddRow(new string[] {
+                        "VSCmdShell"});
+#line 127
+ testRunner.When("User create static list with \"DAS_20160\" name on \"Applications\" page with followi" +
+                    "ng items", ((string)(null)), table15, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "ServiceIdentifier",
+                        "Enabled",
+                        "AllowAnonymousUsers",
+                        "Scope"});
+            table16.AddRow(new string[] {
+                        "DAS_20160_SS_3",
+                        "20160_3_SI",
+                        "true",
+                        "true",
+                        "DAS_20160"});
+#line 130
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table16, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ComponentName",
+                        "ExtraPropertiesText",
+                        "ShowInSelfService"});
+            table17.AddRow(new string[] {
+                        "Text_Component_Name",
+                        "<p>Some_Content</p>",
+                        "true"});
+#line 133
+ testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table17, "When ");
+#line 136
+ testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 137
+ testRunner.When("User selects \'Edit\' cogmenu option for \'Text\' item type with \'Text_Component_Name" +
+                    "\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 138
+ testRunner.Then("formatting options are displayed on the text component", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table18.AddRow(new string[] {
+                        "Heading 1"});
+            table18.AddRow(new string[] {
+                        "Heading 2"});
+            table18.AddRow(new string[] {
+                        "Heading 3"});
+            table18.AddRow(new string[] {
+                        "Heading 4"});
+            table18.AddRow(new string[] {
+                        "Heading 5"});
+            table18.AddRow(new string[] {
+                        "Normal"});
+#line 139
+ testRunner.Then("header format options are displayed on the text component", ((string)(null)), table18, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

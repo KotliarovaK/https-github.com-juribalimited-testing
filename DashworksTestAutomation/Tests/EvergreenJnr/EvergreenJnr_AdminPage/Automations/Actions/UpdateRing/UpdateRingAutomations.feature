@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @DAS17288 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @DAS17288 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType
 	When User creates new Automation via API and open it
 	| AutomationName        | Description | Active | StopOnFailedAction | Scope      | Run    |
@@ -31,7 +31,7 @@ Examples:
 	| All Users     |
 	| All Mailboxes |
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLists
 	When User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLis
 	| Update path                   |
 	| Update task value             |
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
@@ -73,7 +73,7 @@ Examples:
 	| All Devices   |
 	| All Mailboxes |
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionality
 	When User creates new Automation via API and open it
 	| AutomationName         | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionality
 	When User selects 'Owned mailboxes only' in the 'Also Move Mailboxes' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateRing
 	When User creates new Automation via API and open it
 	| AutomationName        | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateRing
 	Then 'All linked devices' content is displayed in 'Also Move Devices' dropdown
 	Then 'Owned mailboxes only' content is displayed in 'Also Move Mailboxes' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLinkedDevicesAndAllLinkedMailboxes
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLink
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'Evergreen Ring' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects
 	#Create list
 	When User clicks 'Devices' on the left-hand menu
@@ -253,7 +253,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'NewProject19083: Ring' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing
 	#Create list
 	When User clicks 'Devices' on the left-hand menu
@@ -351,7 +351,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing
 	Then No error message is displayed for 'Ring' field
 	Then 'UPDATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject
 	#Create list
 	When User clicks 'Devices' on the left-hand menu

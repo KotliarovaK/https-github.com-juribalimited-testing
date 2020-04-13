@@ -316,7 +316,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEmptyValueIsDisplayedAndRedirectsThe
 	And User enters "00CWZRC4UK6W20" text in the Search field for "Device" column
 	Then "" content is displayed for "Owner" column
 	Then "" content is displayed for "Owner Display Name" column
-	When User clicks "00CWZRC4UK6W20" link on the Details Page
+	When User click content from "Device" column
 	Then 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' content is displayed in 'Item Details Project' dropdown
 	Then Details page for '00CWZRC4UK6W20' item is displayed to the user
 

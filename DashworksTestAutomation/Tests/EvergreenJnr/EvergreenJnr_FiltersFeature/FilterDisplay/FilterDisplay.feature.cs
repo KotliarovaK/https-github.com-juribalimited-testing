@@ -2663,7 +2663,7 @@ this.FeatureBackground();
 #line 588
  testRunner.Then("\"Import\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 589
- testRunner.Then("\"(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof))\" text" +
+ testRunner.Then("\"(Compliance = Amber, Green, Red or Unknown) OR (Import != A01 SMS (Spoof))\" text" +
                     " is displayed in filter container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -3360,11 +3360,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table50.AddRow(new string[] {
-                        "True"});
+                        "Empty"});
             table50.AddRow(new string[] {
                         "False"});
             table50.AddRow(new string[] {
-                        "Empty"});
+                        "True"});
 #line 755
  testRunner.Then("Values is displayed in added filter info", ((string)(null)), table50, "Then ");
 #line hidden
@@ -3671,11 +3671,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table60.AddRow(new string[] {
-                        "Red"});
-            table60.AddRow(new string[] {
                         "Amber"});
             table60.AddRow(new string[] {
                         "Green"});
+            table60.AddRow(new string[] {
+                        "Red"});
 #line 832
  testRunner.Then("Values is displayed in added filter info", ((string)(null)), table60, "Then ");
 #line 837
@@ -3690,11 +3690,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table61.AddRow(new string[] {
-                        "Red"});
-            table61.AddRow(new string[] {
                         "Amber"});
             table61.AddRow(new string[] {
                         "Green"});
+            table61.AddRow(new string[] {
+                        "Red"});
 #line 841
  testRunner.Then("Values is displayed in added filter info", ((string)(null)), table61, "Then ");
 #line 846
@@ -3711,11 +3711,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table62.AddRow(new string[] {
-                        "Red"});
-            table62.AddRow(new string[] {
                         "Amber"});
             table62.AddRow(new string[] {
                         "Green"});
+            table62.AddRow(new string[] {
+                        "Red"});
 #line 851
  testRunner.Then("Values is displayed in added filter info", ((string)(null)), table62, "Then ");
 #line hidden
