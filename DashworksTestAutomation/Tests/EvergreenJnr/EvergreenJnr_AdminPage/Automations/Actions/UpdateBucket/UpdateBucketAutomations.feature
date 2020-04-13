@@ -5,11 +5,11 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17339 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17339 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateBucket
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 17339_Automation | 17339       | true   | false              | <ListName> | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 17339_Automation | 17339       | true     | false              | <ListName> | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
@@ -28,7 +28,7 @@ Examples:
 	| All Devices   |
 	| All Mailboxes |
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17339 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17339 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityForUpdateBucket
 	When User creates new Automation via API and open it
 	| AutomationName         | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -53,11 +53,11 @@ Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityFo
 	When User selects 'Owned mailboxes only' in the 'Also Move Mailboxes' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17339 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17339 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateBucket
 	When User creates new Automation via API and open it
-	| AutomationName          | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17339_Automation_Bucket | 17339       | true   | false              | All Users | Manual |
+	| Name                    | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17339_Automation_Bucket | 17339       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateBucket
 	Then 'All linked devices' content is displayed in 'Also Move Devices' dropdown
 	Then 'Owned mailboxes only' content is displayed in 'Also Move Mailboxes' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18397 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18397 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForEvergreenAllLinkedDevicesAndAllLinkedMailboxes
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -101,8 +101,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForEvergreenAllLi
 	And User create static list with "TestList18397" name
 	Then "TestList18397" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope         | Run    |
-	| 18397_Automation | 18397       | true   | false              | TestList18397 | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope         | Run    |
+	| 18397_Automation | 18397       | true     | false              | TestList18397 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForEvergreenAllLi
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'Evergreen Bucket' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18397 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18397 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForProjects
 	#Create list
 	When User clicks 'Devices' on the left-hand menu
@@ -166,8 +166,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForProjects
 	Then "AutoTestList18397" list is displayed to user
 	#Create Automation
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope             | Run    |
-	| 18397_Automation1 | 18397       | true   | false              | AutoTestList18397 | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope             | Run    |
+	| 18397_Automation1 | 18397       | true     | false              | AutoTestList18397 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -193,7 +193,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForProjects
 	When User clicks content from "Objects" column
 	Then 'TestGroup' content is displayed in the 'zDeviceAut: Bucket' column
 	
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18397 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18397 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket
 	#Create Bucket
 	When User creates new Bucket via api
@@ -212,8 +212,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket
 	Then "18397_TestList" list is displayed to user
 	#Create Automation
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope          | Run    |
-	| 18397_2_Automation | 18397       | true   | false              | 18397_TestList | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope          | Run    |
+	| 18397_2_Automation | 18397       | true     | false              | 18397_TestList | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	Then '2' content is displayed in the 'Objects' column
+	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then '18397_TestBucket' content is displayed in the 'Evergreen Bucket' column
 	#Delete Bucket
@@ -259,7 +259,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	#Then '1' content is displayed in the 'Objects' column
+	Then '1' content is displayed in the 'Objects' column
 	Then "BUCKET DOES NOT EXIST" content is displayed for "Outcome" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket
 	Then No error message is displayed for 'Bucket' field
 	Then 'UPDATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18397 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18397 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedProject
 	#Create list
 	When User clicks 'Mailboxes' on the left-hand menu
@@ -304,8 +304,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedProject
 	When User waits until Queue disappears
 	#Create Automation
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope           | Run    |
-	| 18397_3_Automation | 18397       | true   | false              | 18397_TestList1 | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope           | Run    |
+	| 18397_3_Automation | 18397       | true     | false              | 18397_TestList1 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -351,7 +351,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedProject
 	Then '' content is displayed in the 'Task or Field' column
 	When User clicks content from "Action" column
 	Then '[Project not found]' content is displayed in 'Project or Evergreen' autocomplete
-	Then 'The selected project cannot be found' error message is displayed for 'Project or Evergreen' field
+	#Then 'The selected project cannot be found' error message is displayed for 'Project or Evergreen' field
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'Amsterdam' option from 'Bucket' autocomplete
 	Then No error message is displayed for 'Project or Evergreen' field

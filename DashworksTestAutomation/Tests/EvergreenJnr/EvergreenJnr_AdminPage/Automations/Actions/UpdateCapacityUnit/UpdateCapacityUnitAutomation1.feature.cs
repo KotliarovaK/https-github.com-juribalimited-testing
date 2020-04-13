@@ -298,7 +298,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17288")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckEditActionPageForUpdateCapacityUnit()
         {
             System.Exception lastException = null;
@@ -332,8 +331,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17288",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 59
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -379,7 +377,7 @@ this.FeatureBackground();
 #line 75
  testRunner.Then("\'Update capacity unit\' content is displayed in the \'Type\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 76
- testRunner.Then("\'London - City\' content is displayed in the \'Task or Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Capacity Unit\' content is displayed in the \'Task or Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 77
  testRunner.Then("\'Unassigned, All linked devices, Owned mailboxes only\' content is displayed in th" +
                     "e \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

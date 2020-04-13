@@ -86,7 +86,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17339")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         [NUnit.Framework.TestCaseAttribute("All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("All Mailboxes", null)]
         public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateBucket(string listName, string[] exampleTags)
@@ -122,8 +121,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
                     "EvergreenJnr_AdminPage",
                     "Automations",
                     "DAS17339",
-                    "Cleanup",
-                    "Wormhole"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -136,9 +134,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -186,7 +184,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17339")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityForUpdateBucket()
         {
             System.Exception lastException = null;
@@ -221,8 +218,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17339",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 32
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -294,7 +290,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17339")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckEditActionPageForUpdateBucket()
         {
             System.Exception lastException = null;
@@ -328,8 +323,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17339",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 57
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -337,9 +331,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -417,7 +411,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18397")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForEvergreenAllLinkedDevicesAndAllLinkedMailboxes()
         {
             System.Exception lastException = null;
@@ -452,8 +445,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18397",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 92
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -482,9 +474,9 @@ this.FeatureBackground();
  testRunner.Then("\"TestList18397\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -601,7 +593,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18397")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForProjects()
         {
             System.Exception lastException = null;
@@ -635,8 +626,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18397",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 155
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -665,9 +655,9 @@ this.FeatureBackground();
  testRunner.Then("\"AutoTestList18397\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -739,7 +729,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18397")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket()
         {
             System.Exception lastException = null;
@@ -773,8 +762,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18397",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 197
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -814,9 +802,9 @@ this.FeatureBackground();
  testRunner.Then("\"18397_TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -870,7 +858,7 @@ this.FeatureBackground();
  testRunner.When("User selects \"Automation Finish\" checkbox from String Filter with item list on th" +
                     "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 237
- testRunner.Then("\'2\' content is displayed in the \'Objects\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'1\' content is displayed in the \'Objects\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 238
  testRunner.When("User clicks content from \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 239
@@ -921,6 +909,8 @@ this.FeatureBackground();
 #line 261
  testRunner.When("User selects \"Automation Finish\" checkbox from String Filter with item list on th" +
                     "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 262
+ testRunner.Then("\'1\' content is displayed in the \'Objects\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 263
  testRunner.Then("\"BUCKET DOES NOT EXIST\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 264
@@ -958,7 +948,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18397")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedProject()
         {
             System.Exception lastException = null;
@@ -992,8 +981,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18397",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 277
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1061,9 +1049,9 @@ this.FeatureBackground();
  testRunner.When("User waits until Queue disappears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -1167,9 +1155,6 @@ this.FeatureBackground();
 #line 353
  testRunner.Then("\'[Project not found]\' content is displayed in \'Project or Evergreen\' autocomplete" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 354
- testRunner.Then("\'The selected project cannot be found\' error message is displayed for \'Project or" +
-                    " Evergreen\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 355
  testRunner.When("User selects \'Email Migration\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 356

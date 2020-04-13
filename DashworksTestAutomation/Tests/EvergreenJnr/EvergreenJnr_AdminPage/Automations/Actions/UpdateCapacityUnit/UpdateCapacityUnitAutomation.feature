@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUp
 	Then 'CREATE' button is not disabled
 	Then 'SAVE & CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17288 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17288 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateCapacityUnit
 	When User creates new Automation via API and open it
 	| Name                | Description | IsActive | StopOnFailedAction | Scope     | Run    |
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateCapacityUnit
 	When User clicks 'CREATE' button
 	#Check Action Grid
 	Then 'Update capacity unit' content is displayed in the 'Type' column
-	Then 'London - City' content is displayed in the 'Task or Field' column
+	Then 'Capacity Unit' content is displayed in the 'Task or Field' column
 	Then 'Unassigned, All linked devices, Owned mailboxes only' content is displayed in the 'Value' column
 	#Check Edit Action Page
 	When User clicks 'Administration' header breadcrumb
