@@ -30,7 +30,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By> { };
+            return new List<By>
+            {
+                SelectorFor(this, p => p.ToolbarWithFormattingOptions)
+            };
         }
     }
 }

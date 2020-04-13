@@ -26,6 +26,7 @@ using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.Components;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -141,6 +142,40 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 var expectedText = row.Values.First();
                 Verify.IsFalse(textEditorContent.Contains(expectedText), $"Text editor contains '{expectedText}' text");
             }
+        }
+
+        [Then(@"formatting options are displayed on the text component page")]
+        public void ThenFormattingOptionsAreDisplayedOnTheTextComponentPage()
+        {
+            var page = _driver.NowAt<TextComponentPage>();
+            _driver.WaitForElementToBeDisplayed(page.ToolbarWithFormattingOptions);
+
+            Verify.That(page.BoldStyleButton.Displayed(), "Bold style button is not displayed");
+            Verify.That(page.ItalicStyleButton.Displayed(), "Italic style button is not displayed");
+            Verify.That(page.UnderlineStyleButton.Displayed(), "Underline style button is not displayed");
+            Verify.That(page.HeadersPickerButton.Displayed(), "Headers picker button is not displayed");
+        }
+
+        [Then(@"header format options are displayed on the text component page")]
+        public void ThenHeaderFormatOptionsAreDisplayedOnTheTextComponentPage(Table table)
+        {
+            var page = _driver.NowAt<TextComponentPage>();
+            _driver.WaitForElementToBeDisplayed(page.ToolbarWithFormattingOptions);
+
+            page.HeadersPickerButton.Click();
+            _driver.WaitForElementsToBeDisplayed(page.HeaderOptions);
+
+            List<string> expectedOptionNames = table.Rows.SelectMany(row => row.Values).ToList();
+            List<string> actualheaderOptionNames = new List<string>();
+
+            for (int i = 0; i < page.HeaderOptions.Count; i++)
+            {
+                string script = $"return window.getComputedStyle(document.getElementsByClassName('ql-picker-item')[{i}], ':before').getPropertyValue('content');";
+                string value = _driver.ExecuteScript(script).ToString().Trim('"');
+                actualheaderOptionNames.Add(value);
+            }
+
+            Verify.AreEqual(expectedOptionNames, actualheaderOptionNames, "Header format options does not equals to expecting options");
         }
 
         #endregion
