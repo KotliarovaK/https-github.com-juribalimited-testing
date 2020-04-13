@@ -11,6 +11,7 @@ using AutomationUtils.Extensions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.Steps.Dashworks.AdminPage;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Base;
 
 namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 {
@@ -82,12 +83,28 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 $"'{contextPanelName}' button tooltip is incorrect");
         }
 
+        #region CogMenu Actions
+
         [When(@"User selects '(.*)' cogmenu option for '(.*)' item type with '(.*)' name on Self Service Builder Panel")]
         public void WhenUserSelectsCogmenuOptionForItemTypeWithNameOnSelfServiceBuilderPanel(string option, string contextPanelType, string contextPanelName)
         {
             ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
             var cogMenu = new EvergreenJnr_CogMenuActions(_driver, _automationStartTime);
             cogMenu.ClickOnCogMenuOption(option);
+        }
+
+        [When(@"User moves item with type '(.*)' and '(.*)' name to '(.*)' position on Self Service Builder Panel")]
+        public void WhenUserMovesItemWithTypeAndNameToPositionOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName, string position)
+        {
+            ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
+            var cogMenu = new EvergreenJnr_CogMenuActions(_driver, _automationStartTime);
+            cogMenu.ClickOnCogMenuOption("Move to position");
+
+            var cogMenuPopUp = _driver.NowAt<CogMenuElements>();
+            cogMenuPopUp.MoveToPositionField.Clear();
+            cogMenuPopUp.MoveToPositionField.SendKeys(position);
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetButton("MOVE").Click();
         }
 
         [Then(@"User sees item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
@@ -104,6 +121,22 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
 
             rightSidePanel.CheckBuilderContextPanelItemDisplayState(contextPanelType, contextPanelName, false);
+        }
+
+        //| ComponentType | ComponentName | ComponentPosition |
+        [Then(@"User sees component on position in '(.*)' page of Self Service Builder Panel")]
+        public void ThenUserSeesComponentOnPositionInPageOfSelfServiceBuilderPanel(string pageName, Table table)
+        {
+            var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
+
+            foreach (var row in table.Rows)
+            {
+                var componentName = row["ComponentName"];
+                var componentType = row["ComponentType"];
+                var componentPosition = row["ComponentPosition"];
+
+                Verify.IsTrue(rightSidePanel.IsTheComponentOrderInSSBuilderAsExpected(componentName, componentType, componentPosition, pageName), $"Component '{componentName}' wasn't placed on '{componentPosition}' position");
+            }
         }
 
         [Then(@"Item with '(.*)' type and '(.*)' name on Self Service Builder Panel is highlighted")]
@@ -133,7 +166,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
             var cogMenu = _driver.NowAt<CogMenuElements>();
             CheckThatFollowingItemsAreDisplaysInCogMenu(options);
+
+            //Click on BodyContainer to avoid click interception because of cogMenu overlap
+            var page = _driver.NowAt<BasePage>();
+            page.BodyContainer.Click();
         }
+
+        #endregion
 
         public void ClickOnCogMenuButtonOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {
