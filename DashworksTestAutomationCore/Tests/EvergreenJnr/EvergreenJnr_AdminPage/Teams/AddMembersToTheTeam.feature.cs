@@ -222,14 +222,14 @@ this.FeatureBackground();
 #line 23
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1454 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1725 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1454.AddRow(new string[] {
+                table1725.AddRow(new string[] {
                             "Migration Phase 3 Team"});
-                table1454.AddRow(new string[] {
+                table1725.AddRow(new string[] {
                             "Retail Team"});
 #line 24
- testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table1454, "When ");
+ testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table1725, "When ");
 #line hidden
 #line 28
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -276,12 +276,12 @@ this.FeatureBackground();
 #line 42
  testRunner.When("User selects \'Add individual members\' in the \'Add Members (Optional)\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1455 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1726 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1455.AddRow(new string[] {
+                table1726.AddRow(new string[] {
                             "automation_admin1"});
 #line 43
- testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table1455, "And ");
+ testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table1726, "And ");
 #line hidden
 #line 46
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -397,16 +397,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1456 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1727 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1456.AddRow(new string[] {
+                table1727.AddRow(new string[] {
                             "TestTeam7",
                             "test",
                             "false"});
 #line 58
- testRunner.When("User creates new Team via api", ((string)(null)), table1456, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1727, "When ");
 #line hidden
 #line 61
  testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -432,18 +432,18 @@ this.FeatureBackground();
 #line 68
  testRunner.When("User clicks \'ADD MEMBERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1457 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1728 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1457.AddRow(new string[] {
+                table1728.AddRow(new string[] {
                             "automation_admin1"});
-                table1457.AddRow(new string[] {
+                table1728.AddRow(new string[] {
                             "automation_admin2"});
-                table1457.AddRow(new string[] {
+                table1728.AddRow(new string[] {
                             "automation_admin3"});
-                table1457.AddRow(new string[] {
+                table1728.AddRow(new string[] {
                             "eugene"});
 #line 69
- testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table1457, "And ");
+ testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table1728, "And ");
 #line hidden
 #line 75
  testRunner.And("User clicks \'ADD USERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -615,16 +615,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1458 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1729 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1458.AddRow(new string[] {
+                table1729.AddRow(new string[] {
                             "DAS12326",
                             "12326",
                             "false"});
 #line 106
- testRunner.When("User creates new Team via api", ((string)(null)), table1458, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1729, "When ");
 #line hidden
 #line 109
  testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -650,16 +650,16 @@ this.FeatureBackground();
 #line 116
  testRunner.And("User clicks \'ADD MEMBERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1459 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1730 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1459.AddRow(new string[] {
+                table1730.AddRow(new string[] {
                             "automation_admin1"});
-                table1459.AddRow(new string[] {
+                table1730.AddRow(new string[] {
                             "automation_admin2"});
-                table1459.AddRow(new string[] {
+                table1730.AddRow(new string[] {
                             "automation_admin3"});
 #line 117
- testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table1459, "And ");
+ testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table1730, "And ");
 #line hidden
 #line 122
  testRunner.And("User clicks \'ADD USERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -679,17 +679,17 @@ this.FeatureBackground();
 #line 127
  testRunner.And("User clicks \'CONTINUE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1460 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1731 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table1460.AddRow(new string[] {
+                table1731.AddRow(new string[] {
                             "Migration Phase 2"});
-                table1460.AddRow(new string[] {
+                table1731.AddRow(new string[] {
                             "Migration Phase 3 Team"});
-                table1460.AddRow(new string[] {
+                table1731.AddRow(new string[] {
                             "My Team"});
 #line 128
  testRunner.Then("only below options are displayed in \'Select a new team\' autocomplete after search" +
-                        " by \'M\' text", ((string)(null)), table1460, "Then ");
+                        " by \'M\' text", ((string)(null)), table1731, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -808,12 +808,12 @@ this.FeatureBackground();
 #line 145
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1461 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1732 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1461.AddRow(new string[] {
+                table1732.AddRow(new string[] {
                             "2004 Team"});
 #line 146
- testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table1461, "When ");
+ testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table1732, "When ");
 #line hidden
 #line 149
  testRunner.When("User selects \'Add individual members\' in the \'Add Members (Optional)\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

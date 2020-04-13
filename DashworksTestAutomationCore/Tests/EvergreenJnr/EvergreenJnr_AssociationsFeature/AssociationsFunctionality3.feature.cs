@@ -324,13 +324,13 @@ this.FeatureBackground();
 #line 44
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1481 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1752 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1481.AddRow(new string[] {
+                table1752.AddRow(new string[] {
                             "-1"});
 #line 45
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following valu" +
-                            "e:", filter), ((string)(null)), table1481, "When ");
+                            "e:", filter), ((string)(null)), table1752, "When ");
 #line hidden
 #line 48
  testRunner.When("User clicks the Associations button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -178,55 +178,55 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User navigates to the \'Devices\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2798 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3076 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2798.AddRow(new string[] {
+                table3076.AddRow(new string[] {
                             "Hostname"});
-                table2798.AddRow(new string[] {
+                table3076.AddRow(new string[] {
                             "Device Type"});
-                table2798.AddRow(new string[] {
+                table3076.AddRow(new string[] {
                             "Owner Display Name"});
-                table2798.AddRow(new string[] {
+                table3076.AddRow(new string[] {
                             "Operating System"});
-                table2798.AddRow(new string[] {
+                table3076.AddRow(new string[] {
                             "Compliance"});
 #line 13
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2798, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3076, "Then ");
 #line hidden
 #line 20
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                         "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2799 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3077 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2799.AddRow(new string[] {
+                table3077.AddRow(new string[] {
                             "Operating System"});
 #line 21
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Hostname\' co" +
-                        "lumn:", ((string)(null)), table2799, "When ");
+                        "lumn:", ((string)(null)), table3077, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2800 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3078 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2800.AddRow(new string[] {
+                table3078.AddRow(new string[] {
                             "Hostname"});
-                table2800.AddRow(new string[] {
+                table3078.AddRow(new string[] {
                             "Device Type"});
-                table2800.AddRow(new string[] {
+                table3078.AddRow(new string[] {
                             "Owner"});
-                table2800.AddRow(new string[] {
+                table3078.AddRow(new string[] {
                             "Owner Display Name"});
-                table2800.AddRow(new string[] {
+                table3078.AddRow(new string[] {
                             "Readiness"});
-                table2800.AddRow(new string[] {
+                table3078.AddRow(new string[] {
                             "Path"});
-                table2800.AddRow(new string[] {
+                table3078.AddRow(new string[] {
                             "Category"});
-                table2800.AddRow(new string[] {
+                table3078.AddRow(new string[] {
                             "Application Readiness"});
-                table2800.AddRow(new string[] {
+                table3078.AddRow(new string[] {
                             "Stage 1"});
 #line 24
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2800, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3078, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

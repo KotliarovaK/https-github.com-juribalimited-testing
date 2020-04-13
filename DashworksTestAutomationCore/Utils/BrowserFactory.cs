@@ -17,9 +17,6 @@ namespace DashworksTestAutomation.Utils
     {
         public static RemoteWebDriver CreateDriver()
         {
-<<<<<<<< HEAD:DashworksTestAutomation/Base/BaseTest.cs
-            return BrowserFactory.CreateDriver();
-========
             try
             {
                 return CreateDriverInstance();
@@ -117,7 +114,6 @@ namespace DashworksTestAutomation.Utils
         private static RemoteWebDriver CreateSauceLabsDriver()
         {
             throw new NotImplementedException();
->>>>>>>> NetCore:DashworksTestAutomationCore/Utils/BrowserFactory.cs
         }
     }
 }

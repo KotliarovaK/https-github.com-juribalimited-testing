@@ -166,18 +166,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2590 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2868 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table2590.AddRow(new string[] {
+                table2868.AddRow(new string[] {
                             "cu_DAS19538_3",
                             "DAS19538",
                             "false",
                             "USE ME FOR AUTOMATION(USR SCHDLD)"});
 #line 10
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2590, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2868, "When ");
 #line hidden
 #line 13
  testRunner.When("User navigates to the \'Application\' details page for the item with \'419\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -214,14 +214,14 @@ this.FeatureBackground();
  testRunner.Then("\'Application successfully moved to cu_DAS19538_3\' text is displayed on inline suc" +
                         "cess banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2591 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2869 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2591.AddRow(new string[] {
+                table2869.AddRow(new string[] {
                             "Capacity Unit",
                             "cu_DAS19538_3"});
 #line 24
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2591, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2869, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -316,29 +316,29 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2592 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2870 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2592.AddRow(new string[] {
+                table2870.AddRow(new string[] {
                             "Criticality",
                             "Uncategorised"});
 #line 33
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2592, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2870, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2593 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2871 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table2593.AddRow(new string[] {
+                table2871.AddRow(new string[] {
                             "Core"});
-                table2593.AddRow(new string[] {
+                table2871.AddRow(new string[] {
                             "Critical"});
-                table2593.AddRow(new string[] {
+                table2871.AddRow(new string[] {
                             "Important"});
-                table2593.AddRow(new string[] {
+                table2871.AddRow(new string[] {
                             "Not Important"});
-                table2593.AddRow(new string[] {
+                table2871.AddRow(new string[] {
                             "Uncategorised"});
 #line 36
- testRunner.Then("following Values are displayed in the dropdown for the \'Criticality\' field:", ((string)(null)), table2593, "Then ");
+ testRunner.Then("following Values are displayed in the dropdown for the \'Criticality\' field:", ((string)(null)), table2871, "Then ");
 #line hidden
 #line 43
  testRunner.When("User selects \'Important\' in the dropdown for the \'Criticality\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -349,26 +349,26 @@ this.FeatureBackground();
 #line 45
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2594 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2872 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2594.AddRow(new string[] {
+                table2872.AddRow(new string[] {
                             "Criticality",
                             "Important"});
 #line 46
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2594, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2872, "Then ");
 #line hidden
 #line 49
  testRunner.When("User selects \'Uncategorised\' in the dropdown for the \'Criticality\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2595 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2873 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2595.AddRow(new string[] {
+                table2873.AddRow(new string[] {
                             "Criticality",
                             "Uncategorised"});
 #line 50
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2595, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2873, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -459,14 +459,14 @@ this.FeatureBackground();
 #line 56
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2596 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2874 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2596.AddRow(new string[] {
+                table2874.AddRow(new string[] {
                             "TestBucketAuto",
                             "123456"});
 #line 57
-  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2596, "When ");
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2874, "When ");
 #line hidden
 #line 60
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -481,39 +481,39 @@ this.FeatureBackground();
 #line 63
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2597 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2875 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table2597.AddRow(new string[] {
+                table2875.AddRow(new string[] {
                             "TRUE"});
-                table2597.AddRow(new string[] {
+                table2875.AddRow(new string[] {
                             "FALSE"});
 #line 64
- testRunner.Then("following Values are displayed in the dropdown for the \'In Catalog\' field:", ((string)(null)), table2597, "Then ");
+ testRunner.Then("following Values are displayed in the dropdown for the \'In Catalog\' field:", ((string)(null)), table2875, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2598 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2876 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table2598.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Core"});
-                table2598.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Critical"});
-                table2598.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Important"});
-                table2598.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Not Important"});
-                table2598.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Uncategorised"});
 #line 68
- testRunner.Then("following Values are displayed in the dropdown for the \'Criticality\' field:", ((string)(null)), table2598, "Then ");
+ testRunner.Then("following Values are displayed in the dropdown for the \'Criticality\' field:", ((string)(null)), table2876, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2599 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2877 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table2599.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "TRUE"});
-                table2599.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "FALSE"});
 #line 75
  testRunner.Then("following Values are displayed in the dropdown for the \'Hide From End Users\' fiel" +
-                        "d:", ((string)(null)), table2599, "Then ");
+                        "d:", ((string)(null)), table2877, "Then ");
 #line hidden
 #line 79
  testRunner.When("User clicks on edit button for \'Evergreen Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

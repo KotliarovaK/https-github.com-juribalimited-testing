@@ -167,31 +167,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1450 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1721 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1450.AddRow(new string[] {
+                table1721.AddRow(new string[] {
                             "TestTeam5",
                             "test",
                             "false"});
 #line 10
- testRunner.When("User creates new Team via api", ((string)(null)), table1450, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1721, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1451 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1722 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "TeamName",
                             "IsDefault"});
-                table1451.AddRow(new string[] {
+                table1722.AddRow(new string[] {
                             "TestBucket6",
                             "Team 1045",
                             "false"});
-                table1451.AddRow(new string[] {
+                table1722.AddRow(new string[] {
                             "TestBucket7",
                             "Team 1045",
                             "false"});
 #line 13
- testRunner.And("User creates new Bucket via api", ((string)(null)), table1451, "And ");
+ testRunner.And("User creates new Bucket via api", ((string)(null)), table1722, "And ");
 #line hidden
 #line 17
  testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -220,14 +220,14 @@ this.FeatureBackground();
 #line 25
  testRunner.Then("Page with \'Add Buckets\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1452 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1723 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1452.AddRow(new string[] {
+                table1723.AddRow(new string[] {
                             "TestBucket6"});
-                table1452.AddRow(new string[] {
+                table1723.AddRow(new string[] {
                             "TestBucket7"});
 #line 26
- testRunner.When("User expands \'Evergreen\' multiselect and selects following Objects", ((string)(null)), table1452, "When ");
+ testRunner.When("User expands \'Evergreen\' multiselect and selects following Objects", ((string)(null)), table1723, "When ");
 #line hidden
 #line 30
  testRunner.When("User clicks \'ADD BUCKETS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -441,13 +441,13 @@ this.FeatureBackground();
 #line 75
  testRunner.Then("numeric data in table is sorted by \'Mailboxes\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1453 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1724 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1453.AddRow(new string[] {
+                table1724.AddRow(new string[] {
                             "False"});
 #line 77
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default\' " +
-                        "column:", ((string)(null)), table1453, "When ");
+                        "column:", ((string)(null)), table1724, "When ");
 #line hidden
 #line 80
  testRunner.Then("Rows counter shows \"0\" of \"9\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
