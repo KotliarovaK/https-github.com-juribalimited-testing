@@ -65,3 +65,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDataInTheGridIsCropedByRingColumnOnO
 	| Checkboxes | State |
 	| Ring       | true  |
 	Then Grid is grouped
+
+#AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
+@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20683 @Zion_NewGrid @X_Ray
+Scenario: EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnApplicationsTabCollectionsSubTabForGroupPage
+	When User type "GSMS-ReportViewer" in Global Search Field
+	Then User clicks on "GSMS-ReportViewer" search result
+	And Details page for 'GSMS-ReportViewer' item is displayed to the user
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Collections' left submenu item
+	When User clicks following checkboxes from Column Settings panel for the 'Username' column:
+	| checkboxes |
+	| Key        |
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Key        | true  |
+	Then Grid is grouped
