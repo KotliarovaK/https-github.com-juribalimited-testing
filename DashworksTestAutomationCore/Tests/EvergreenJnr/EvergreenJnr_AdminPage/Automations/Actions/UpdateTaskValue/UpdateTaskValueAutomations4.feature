@@ -48,8 +48,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	#Create Automation
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17564_Automation | 17564       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17564_Automation | 17564       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -136,8 +136,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForU
 	#Create Automation
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17565_Automation | 17564       | true   | false              | All Users | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17565_Automation | 17564       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -224,8 +224,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	#Create Automation
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17566_Automation | 17564       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17566_Automation | 17564       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -350,7 +350,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForUnpublishedTas
 	And User enters '1 Oct 2019' text to 'Date' datepicker
 	Then 'UPDATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18669 @DAS20038 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18669 @DAS20038 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForReadOnlyInAutomationsTask
 	When Project created via API and opened
 	| ProjectName    | Scope       | ProjectTemplate | Mode               |
@@ -395,8 +395,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForReadOnlyInAuto
 	#Create Automation
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18669_Automation1 | 18669       | true   | false              | All Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18669_Automation1 | 18669       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

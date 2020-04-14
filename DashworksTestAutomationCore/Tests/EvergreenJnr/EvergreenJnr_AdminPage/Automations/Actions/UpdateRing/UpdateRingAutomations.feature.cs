@@ -285,9 +285,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
                 TechTalk.SpecFlow.Table table425 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
@@ -319,9 +319,9 @@ this.FeatureBackground();
                 TechTalk.SpecFlow.Table table426 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
                 table426.AddRow(new string[] {
-                            "Update bucket"});
-                table426.AddRow(new string[] {
                             "Update application attributes"});
+                table426.AddRow(new string[] {
+                            "Update capacity unit"});
                 table426.AddRow(new string[] {
                             "Update custom field"});
                 table426.AddRow(new string[] {
@@ -409,9 +409,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
                 TechTalk.SpecFlow.Table table427 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
@@ -534,9 +534,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
                 TechTalk.SpecFlow.Table table428 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
@@ -681,9 +681,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
                 TechTalk.SpecFlow.Table table429 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
@@ -880,9 +880,9 @@ this.FeatureBackground();
  testRunner.Then("\"TestList19083\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table431 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
@@ -1024,7 +1024,7 @@ this.FeatureBackground();
                         "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 195
- testRunner.Then("\'2\' content is displayed in the \'Objects\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'1\' content is displayed in the \'Objects\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 196
  testRunner.When("User clicks content from \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1783,9 +1783,9 @@ this.FeatureBackground();
  testRunner.Then("\'The ring has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table444 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
@@ -1927,10 +1927,6 @@ this.FeatureBackground();
 #line 436
  testRunner.Then("\'[Project not found]\' content is displayed in \'Project or Evergreen\' autocomplete" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 437
- testRunner.Then("\'The selected project cannot be found\' error message is displayed for \'Project or" +
-                        " Evergreen\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 438
  testRunner.When("User selects \'2004 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

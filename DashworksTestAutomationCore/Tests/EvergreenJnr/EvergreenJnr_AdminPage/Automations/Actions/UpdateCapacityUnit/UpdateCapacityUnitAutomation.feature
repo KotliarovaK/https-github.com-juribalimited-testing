@@ -28,7 +28,7 @@ Examples:
 	| All Devices      |
 	| All Mailboxes    |
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17288 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17288 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUpdateCapacityUnit
 	When User creates new Automation via API and open it
 	| Name                   | Description | IsActive | StopOnFailedAction | Scope     | Run    |

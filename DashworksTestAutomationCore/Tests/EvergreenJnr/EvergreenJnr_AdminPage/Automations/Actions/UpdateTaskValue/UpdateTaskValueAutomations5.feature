@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterTaskChangingToTaskWithNoDueDate
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -36,8 +36,8 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18712_Automation | 18712       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18712_Automation | 18712       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -45,19 +45,17 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User enters '18712_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '18712_Project' option from 'Project' autocomplete
-	When User selects '18712_Stage' option from 'Stage' autocomplete
-	When User selects '18712_Task' option from 'Task' autocomplete
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Failed' in the 'Value' dropdown
+	When User selects '18712_Stage \ 18712_Task' option from 'Task' autocomplete
+	When User selects 'Failed' in the 'Update Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '1 Nov 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
-	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects '2004 Team' option from 'Team' autocomplete
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	When User clicks 'CREATE' button
 	#Check Actions grid
 	Then 'The automation action has been created' text is displayed on inline success banner
-	Then "Failed, 2019-11-01, 1803 Team, Akhila Varghese" content is displayed for "Value" column
+	Then "Failed, 2019-11-01, 2004 Team, Akhila Varghese" content is displayed for "Value" column
 	#Change Task
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -76,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Check Actions grid
-	Then "Failed, 1803 Team, Akhila Varghese" content is displayed for "Value" column
+	Then "Failed, 2004 Team, Akhila Varghese" content is displayed for "Value" column
 	When User clicks content from "Action" column
 	#Warning message check
 	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on inline error banner
@@ -114,8 +112,8 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18712_Automation1 | 18712       | true   | false              | All Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18712_Automation1 | 18712       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -192,8 +190,8 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18712_Automation2 | 18712       | true   | false              | All Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18712_Automation2 | 18712       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
