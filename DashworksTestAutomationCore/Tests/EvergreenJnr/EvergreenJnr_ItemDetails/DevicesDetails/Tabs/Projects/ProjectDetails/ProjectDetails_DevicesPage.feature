@@ -19,6 +19,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAppOwnerLinkFromProjectDetailsTabFo
 	Then 'User' left submenu item is active
 	Then 'Projects' left menu item is collapsed
 
+#AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @X_Ray
 Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectly
 	When User navigates to the 'Device' details page for '00CWZRC4UK6W20' item
@@ -52,6 +53,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjec
 	When User enters "Felicienne Vadnais" text in the Search field for "Display Name" column
 	Then 'Felicienne Vadnais' content is displayed in the 'Display Name' column
 
+#AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @X_Ray
 Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectlyWithSelectedCheckbox
 	When User navigates to the 'Device' details page for '01N3Y2GUS6XTK7' item
@@ -85,6 +87,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjec
 	When User enters "Nicolas O. Mc Millan" text in the Search field for "Display Name" column
 	Then 'Nicolas O. Mc Millan' content is displayed in the 'Display Name' column
 
+#AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @Cleanup @X_Ray
 Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObjectEditorRoleIsWorkingCorrectlyForTheOwnerField
 	When User create new User via API
@@ -117,6 +120,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObje
 	When User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Mailbox Owner' field is not displayed
 
+#AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @Cleanup @X_Ray
 Scenario: EvergreenJnr_MailboxesList_ChecksthatThePermissionForProjectMailboxObjectEditorRoleIsWorkingCorrectlyForTheOwnerField
 	When User create new User via API
@@ -149,6 +153,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksthatThePermissionForProjectMailboxObj
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Mailbox Owner' field
 
+#AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @Cleanup @X_Ray
 Scenario: EvergreenJnr_ApplicationList_ChecksthatThePermissionForProjectApplicationObjectEditorRoleIsWorkingCorrectlyForTheOwnerField
 	When User create new User via API
