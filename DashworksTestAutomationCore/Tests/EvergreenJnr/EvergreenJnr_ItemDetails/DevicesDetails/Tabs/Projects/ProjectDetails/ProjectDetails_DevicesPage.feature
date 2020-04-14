@@ -18,3 +18,24 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAppOwnerLinkFromProjectDetailsTabFo
 	Then 'Details' left menu item is expanded
 	Then 'User' left submenu item is active
 	Then 'Projects' left menu item is collapsed
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @X_Ray
+Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectly
+	When User navigates to the 'Device' details page for '00CWZRC4UK6W20' item
+	Then Details page for '00CWZRC4UK6W20' item is displayed to the user
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User clicks on edit button for 'Project Details' field
+	When User clicks on edit button for 'Device Owner' field
+	Then 'UPDATE' button is disabled on popup
+	Then 'Retain the existing owner as a user of this device' checkbox is disabled
+	When User selects 'UK\ACG370114 (5539) - James N. Snow' option from 'User' autocomplete
+	Then "Retain the existing owner as a user of this device" checkbox is not disabled
+	Then 'Retain the existing owner as a user of this device' checkbox is checked
+	When User clicks 'UPDATE' button on popup
+	Then 'Device Owner will be changed to James N. Snow' text is displayed on inline tip banner
+	When User clicks 'UPDATE' button on popup
+	Then 'Device Owner successfully updated to James N. Snow' text is displayed on inline success banner
+	Then following content is displayed on the Details Page
+	| Title        | Value         |
+	| Device Owner | James N. Snow |

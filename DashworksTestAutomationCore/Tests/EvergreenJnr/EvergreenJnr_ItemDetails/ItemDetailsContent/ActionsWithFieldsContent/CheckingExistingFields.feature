@@ -216,7 +216,7 @@ Examples:
 	| Device   | 00HA7MKAVVFDAV                   |
 	| Mailbox  | 000F977AC8824FE39B8@bclabs.local |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923 @DAS17093 @DAS17093 @DAS17236
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923 @DAS17093 @DAS17093 @DAS17236 @DAS20806
 Scenario: EvergreenJnr_UsersList_CheckThatProjectSummarySectionIsDisplayedSuccessfully
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for '0072B088173449E3A93' item is displayed to the user
