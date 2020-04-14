@@ -161,23 +161,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3246 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3247 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table3246.AddRow(new string[] {
+                table3247.AddRow(new string[] {
                             "RingDAS17144_1",
                             "DAS17144",
                             "false",
                             "zMailbox Sch for Automations Feature"});
-                table3246.AddRow(new string[] {
+                table3247.AddRow(new string[] {
                             "RingDAS17144_2",
                             "DAS17144",
                             "false",
                             "zMailbox Sch for Automations Feature"});
 #line 10
- testRunner.When("User creates new Ring via api", ((string)(null)), table3246, "When ");
+ testRunner.When("User creates new Ring via api", ((string)(null)), table3247, "When ");
 #line hidden
 #line 14
  testRunner.When("User navigates to the \'Mailbox\' details page for \'05E1205F294549EC822@bclabs.loca" +
@@ -204,24 +204,24 @@ this.FeatureBackground();
  testRunner.Then("\'Mailbox successfully moved to RingDAS17144_1\' text is displayed on inline succes" +
                         "s banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3247 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3248 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3247.AddRow(new string[] {
+                table3248.AddRow(new string[] {
                             "Ring",
                             "RingDAS17144_1"});
 #line 21
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3247, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3248, "Then ");
 #line hidden
 #line 24
  testRunner.When("User navigates to \'evergreen/#/admin/project/77/rings\' URL in a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3248 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3249 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3248.AddRow(new string[] {
+                table3249.AddRow(new string[] {
                             "RingDAS17144_2"});
 #line 25
- testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table3248, "When ");
+ testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table3249, "When ");
 #line hidden
 #line 28
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -338,14 +338,14 @@ this.FeatureBackground();
 #line 42
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3249 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3250 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3249.AddRow(new string[] {
+                table3250.AddRow(new string[] {
                             "Ring",
                             "Unassigned"});
 #line 43
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3249, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3250, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

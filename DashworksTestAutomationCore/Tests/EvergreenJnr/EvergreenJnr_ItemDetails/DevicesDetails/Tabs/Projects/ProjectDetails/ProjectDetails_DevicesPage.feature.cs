@@ -286,7 +286,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 28
- testRunner.When("User clicks on edit button for \'Project Details\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 29
  testRunner.When("User clicks on edit button for \'Device Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -298,8 +298,8 @@ this.FeatureBackground();
  testRunner.Then("\'Retain the existing owner as a user of this device\' checkbox is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 32
- testRunner.When("User selects \'UK\\ACG370114 (5539) - James N. Snow\' option from \'User\' autocomplet" +
-                        "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'Austin O. Ball\' in the \'User\' autocomplete field and selects \'US-W\\A" +
+                        "DL183503 (19831) - Austin O. Ball\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 33
  testRunner.Then("\"Retain the existing owner as a user of this device\" checkbox is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -307,28 +307,66 @@ this.FeatureBackground();
 #line 34
  testRunner.Then("\'Retain the existing owner as a user of this device\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 35
- testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 36
- testRunner.Then("\'Device Owner will be changed to James N. Snow\' text is displayed on inline tip b" +
-                        "anner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 37
- testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'Device Owner will be changed to Austin O. Ball\' text is displayed on inline tip " +
+                        "banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 38
- testRunner.Then("\'Device Owner successfully updated to James N. Snow\' text is displayed on inline " +
-                        "success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 39
+ testRunner.Then("\'Device Owner successfully updated to Austin O. Ball\' text is displayed on inline" +
+                        " success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table2997 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
                 table2997.AddRow(new string[] {
                             "Device Owner",
-                            "James N. Snow"});
-#line 39
+                            "Austin O. Ball"});
+#line 40
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2997, "Then ");
+#line hidden
+#line 43
+ testRunner.When("User clicks on edit button for \'Device Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 44
+ testRunner.When("User enters \'Felicienne Vadnais\' in the \'User\' autocomplete field and selects \'FR" +
+                        "\\AAV4528222 (6) - Felicienne Vadnais\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 45
+ testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 46
+ testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table2998 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Title",
+                            "Value"});
+                table2998.AddRow(new string[] {
+                            "Device Owner",
+                            "Felicienne Vadnais"});
+#line 47
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2998, "Then ");
+#line hidden
+#line 50
+ testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 51
+ testRunner.When("User enters \"Austin O. Ball\" text in the Search field for \"Display Name\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 52
+ testRunner.Then("\'Austin O. Ball\' content is displayed in the \'Display Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 53
+ testRunner.When("User enters \"Felicienne Vadnais\" text in the Search field for \"Display Name\" colu" +
+                        "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 54
+ testRunner.Then("\'Felicienne Vadnais\' content is displayed in the \'Display Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

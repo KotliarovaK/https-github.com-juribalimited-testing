@@ -165,12 +165,12 @@ this.FeatureBackground();
 #line 11
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3325 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3326 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3325.AddRow(new string[] {
+                table3326.AddRow(new string[] {
                             string.Format("{0}", row)});
 #line 12
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", column), ((string)(null)), table3325, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", column), ((string)(null)), table3326, "When ");
 #line hidden
 #line 15
  testRunner.When("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -281,26 +281,26 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3326 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3327 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3326.AddRow(new string[] {
+                table3327.AddRow(new string[] {
                             string.Format("{0}", rowGroup)});
 #line 33
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table3326, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table3327 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Columns"});
-                table3327.AddRow(new string[] {
-                            string.Format("{0}", column)});
-#line 36
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table3327, "When ");
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table3327, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table3328 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Values"});
+                            "Columns"});
                 table3328.AddRow(new string[] {
+                            string.Format("{0}", column)});
+#line 36
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table3328, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3329 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Values"});
+                table3329.AddRow(new string[] {
                             string.Format("{0}", value)});
 #line 39
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table3328, "When ");
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table3329, "When ");
 #line hidden
 #line 42
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -415,14 +415,14 @@ this.FeatureBackground();
 #line 60
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3329 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3330 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3329.AddRow(new string[] {
+                table3330.AddRow(new string[] {
                             "001PSUMZYOW581"});
-                table3329.AddRow(new string[] {
+                table3330.AddRow(new string[] {
                             "00CWZRC4UK6W20"});
 #line 61
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3329, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3330, "When ");
 #line hidden
 #line 65
  testRunner.When("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -439,15 +439,15 @@ this.FeatureBackground();
 #line 69
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3330 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3331 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3330.AddRow(new string[] {
+                table3331.AddRow(new string[] {
                             "StaticDeviceList18376",
                             "Used on device"});
 #line 70
  testRunner.When("User add \"Device (Saved List)\" filter where type is \"In list\" with Selected Value" +
-                        " and following Association:", ((string)(null)), table3330, "When ");
+                        " and following Association:", ((string)(null)), table3331, "When ");
 #line hidden
 #line 73
  testRunner.When("User create dynamic list with \"ApplicationsDynamicList18376\" name on \"Application" +
@@ -561,12 +561,12 @@ this.FeatureBackground();
 #line 85
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3331 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3332 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3331.AddRow(new string[] {
+                table3332.AddRow(new string[] {
                             "CPU Virtualisation Capable"});
 #line 86
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3331, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3332, "When ");
 #line hidden
 #line 89
  testRunner.When("User create dynamic list with \"List20393\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -589,14 +589,14 @@ this.FeatureBackground();
 #line 95
  testRunner.When("User selects \'Specific users / teams\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3332 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3333 = new TechTalk.SpecFlow.Table(new string[] {
                             "User",
                             "Permission"});
-                table3332.AddRow(new string[] {
+                table3333.AddRow(new string[] {
                             "Automation Admin 1",
                             "Admin"});
 #line 96
- testRunner.When("User adds user to list of shared person", ((string)(null)), table3332, "When ");
+ testRunner.When("User adds user to list of shared person", ((string)(null)), table3333, "When ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -179,20 +179,20 @@ this.FeatureBackground();
 #line 13
  testRunner.And("User navigates to the \'Application Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3206 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3207 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnHeader"});
-                table3206.AddRow(new string[] {
+                table3207.AddRow(new string[] {
                             "RED"});
-                table3206.AddRow(new string[] {
+                table3207.AddRow(new string[] {
                             "AMBER"});
-                table3206.AddRow(new string[] {
+                table3207.AddRow(new string[] {
                             "GREEN"});
-                table3206.AddRow(new string[] {
+                table3207.AddRow(new string[] {
                             "UNKNOWN"});
-                table3206.AddRow(new string[] {
+                table3207.AddRow(new string[] {
                             "IGNORE"});
 #line 14
- testRunner.Then("Name of colors are displayed in following order on the Details Page:", ((string)(null)), table3206, "Then ");
+ testRunner.Then("Name of colors are displayed in following order on the Details Page:", ((string)(null)), table3207, "Then ");
 #line hidden
 #line 21
  testRunner.When("User navigates to the \'Application Issues\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -203,12 +203,12 @@ this.FeatureBackground();
 #line 23
  testRunner.And("\"Manufacturer\" column is not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3207 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3208 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3207.AddRow(new string[] {
+                table3208.AddRow(new string[] {
                             "Vendor"});
 #line 24
- testRunner.And("following columns added to the table:", ((string)(null)), table3207, "And ");
+ testRunner.And("following columns added to the table:", ((string)(null)), table3208, "And ");
 #line hidden
 #line 27
  testRunner.Then("string filter is displayed for \'Vendor\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -616,24 +616,24 @@ this.FeatureBackground();
 #line 83
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3208 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3209 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3208.AddRow(new string[] {
+                table3209.AddRow(new string[] {
                             "Application"});
-                table3208.AddRow(new string[] {
+                table3209.AddRow(new string[] {
                             "Vendor"});
-                table3208.AddRow(new string[] {
+                table3209.AddRow(new string[] {
                             "Version"});
-                table3208.AddRow(new string[] {
+                table3209.AddRow(new string[] {
                             "Compliance"});
-                table3208.AddRow(new string[] {
+                table3209.AddRow(new string[] {
                             "Installed"});
-                table3208.AddRow(new string[] {
+                table3209.AddRow(new string[] {
                             "Used"});
-                table3208.AddRow(new string[] {
+                table3209.AddRow(new string[] {
                             "Entitled"});
 #line 84
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3208, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3209, "Then ");
 #line hidden
 #line 93
  testRunner.When("User navigates to the \'Evergreen Detail\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -656,30 +656,30 @@ this.FeatureBackground();
 #line 99
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3209 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3210 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3209.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             "Version"});
-                table3209.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             "Compliance"});
-                table3209.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             "Association"});
-                table3209.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             "Advertisement"});
-                table3209.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             "Collection"});
-                table3209.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             "Program"});
-                table3209.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             "Installed Date"});
-                table3209.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             "Used By"});
-                table3209.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             "Used Date"});
-                table3209.AddRow(new string[] {
+                table3210.AddRow(new string[] {
                             "Used Duration (Mins)"});
 #line 100
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3209, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3210, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

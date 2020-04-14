@@ -410,18 +410,18 @@ this.FeatureBackground();
 #line 53
  testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3972 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3973 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "ShortName",
                             "Description",
                             "Type"});
-                table3972.AddRow(new string[] {
+                table3973.AddRow(new string[] {
                             "ProjectForDAS14322",
                             "14322",
                             "",
                             ""});
 #line 54
- testRunner.When("User creates new Project on Senior", ((string)(null)), table3972, "When ");
+ testRunner.When("User creates new Project on Senior", ((string)(null)), table3973, "When ");
 #line hidden
 #line 57
  testRunner.And("User navigate to \"Stages\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -432,12 +432,12 @@ this.FeatureBackground();
 #line 59
  testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3973 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3974 = new TechTalk.SpecFlow.Table(new string[] {
                             "StageName"});
-                table3973.AddRow(new string[] {
+                table3974.AddRow(new string[] {
                             "Stage 14322"});
 #line 60
- testRunner.And("User create Stage", ((string)(null)), table3973, "And ");
+ testRunner.And("User create Stage", ((string)(null)), table3974, "And ");
 #line hidden
 #line 63
  testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -448,7 +448,7 @@ this.FeatureBackground();
 #line 65
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3974 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3975 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -456,7 +456,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table3974.AddRow(new string[] {
+                table3975.AddRow(new string[] {
                             "for 14322",
                             "for 14322",
                             "Stage 14322",
@@ -465,7 +465,7 @@ this.FeatureBackground();
                             "User",
                             "None"});
 #line 66
- testRunner.And("User creates Task", ((string)(null)), table3974, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table3975, "And ");
 #line hidden
 #line 69
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -476,16 +476,16 @@ this.FeatureBackground();
 #line 71
  testRunner.And("User clicks \"Add value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3975 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3976 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "TaskStatusString",
                             "DefaultValue"});
-                table3975.AddRow(new string[] {
+                table3976.AddRow(new string[] {
                             "TestValueName",
                             "Open",
                             "false"});
 #line 72
- testRunner.When("User create new Value", ((string)(null)), table3975, "When ");
+ testRunner.When("User create new Value", ((string)(null)), table3976, "When ");
 #line hidden
 #line 75
  testRunner.And("User clicks \"Save Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -696,22 +696,6 @@ this.FeatureBackground();
 #line 100
  testRunner.And("User selects \"Date\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3976 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Items"});
-                table3976.AddRow(new string[] {
-                            "[Select]"});
-                table3976.AddRow(new string[] {
-                            "User"});
-                table3976.AddRow(new string[] {
-                            "Computer"});
-                table3976.AddRow(new string[] {
-                            "Application"});
-#line 101
- testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table3976, "Then ");
-#line hidden
-#line 107
- testRunner.When("User selects \"Text\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
                 TechTalk.SpecFlow.Table table3977 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
                 table3977.AddRow(new string[] {
@@ -722,8 +706,24 @@ this.FeatureBackground();
                             "Computer"});
                 table3977.AddRow(new string[] {
                             "Application"});
-#line 108
+#line 101
  testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table3977, "Then ");
+#line hidden
+#line 107
+ testRunner.When("User selects \"Text\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3978 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Items"});
+                table3978.AddRow(new string[] {
+                            "[Select]"});
+                table3978.AddRow(new string[] {
+                            "User"});
+                table3978.AddRow(new string[] {
+                            "Computer"});
+                table3978.AddRow(new string[] {
+                            "Application"});
+#line 108
+ testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table3978, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -800,18 +800,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3978 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3979 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table3978.AddRow(new string[] {
+                table3979.AddRow(new string[] {
                             "ProjectForTask18247",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 117
- testRunner.When("Project created via API and opened", ((string)(null)), table3978, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table3979, "When ");
 #line hidden
 #line 120
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -834,12 +834,12 @@ this.FeatureBackground();
 #line 126
  testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3979 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3980 = new TechTalk.SpecFlow.Table(new string[] {
                             "StageName"});
-                table3979.AddRow(new string[] {
+                table3980.AddRow(new string[] {
                             "Stage18247"});
 #line 127
- testRunner.And("User create Stage", ((string)(null)), table3979, "And ");
+ testRunner.And("User create Stage", ((string)(null)), table3980, "And ");
 #line hidden
 #line 130
  testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -853,7 +853,7 @@ this.FeatureBackground();
 #line 133
  testRunner.When("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3980 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3981 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -861,7 +861,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table3980.AddRow(new string[] {
+                table3981.AddRow(new string[] {
                             "Task“\'<>13152",
                             "Help“\'<>13152",
                             "Stage18247",
@@ -870,7 +870,7 @@ this.FeatureBackground();
                             "Computer",
                             ""});
 #line 134
- testRunner.And("User creates Task", ((string)(null)), table3980, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table3981, "And ");
 #line hidden
 #line 137
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

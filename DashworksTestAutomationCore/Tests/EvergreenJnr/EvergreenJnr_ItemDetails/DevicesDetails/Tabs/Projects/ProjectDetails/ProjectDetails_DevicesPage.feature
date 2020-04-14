@@ -25,17 +25,30 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjec
 	Then Details page for '00CWZRC4UK6W20' item is displayed to the user
 	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
-	When User clicks on edit button for 'Project Details' field
+	When User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Device Owner' field
 	Then 'UPDATE' button is disabled on popup
 	Then 'Retain the existing owner as a user of this device' checkbox is disabled
-	When User selects 'UK\ACG370114 (5539) - James N. Snow' option from 'User' autocomplete
+	When User enters 'Austin O. Ball' in the 'User' autocomplete field and selects 'US-W\ADL183503 (19831) - Austin O. Ball' value
 	Then "Retain the existing owner as a user of this device" checkbox is not disabled
 	Then 'Retain the existing owner as a user of this device' checkbox is checked
+	#When User unchecks 'Retain the existing owner as a user of this device' checkbox
 	When User clicks 'UPDATE' button on popup
-	Then 'Device Owner will be changed to James N. Snow' text is displayed on inline tip banner
+	Then 'Device Owner will be changed to Austin O. Ball' text is displayed on inline tip banner
 	When User clicks 'UPDATE' button on popup
-	Then 'Device Owner successfully updated to James N. Snow' text is displayed on inline success banner
+	Then 'Device Owner successfully updated to Austin O. Ball' text is displayed on inline success banner
 	Then following content is displayed on the Details Page
-	| Title        | Value         |
-	| Device Owner | James N. Snow |
+	| Title        | Value          |
+	| Device Owner | Austin O. Ball |
+	When User clicks on edit button for 'Device Owner' field
+	When User enters 'Felicienne Vadnais' in the 'User' autocomplete field and selects 'FR\AAV4528222 (6) - Felicienne Vadnais' value
+	When User clicks 'UPDATE' button on popup
+	When User clicks 'UPDATE' button on popup
+	Then following content is displayed on the Details Page
+	| Title        | Value              |
+	| Device Owner | Felicienne Vadnais |
+	When User navigates to the 'Users' left menu item
+	When User enters "Austin O. Ball" text in the Search field for "Display Name" column
+	Then 'Austin O. Ball' content is displayed in the 'Display Name' column
+	When User enters "Felicienne Vadnais" text in the Search field for "Display Name" column
+	Then 'Felicienne Vadnais' content is displayed in the 'Display Name' column
