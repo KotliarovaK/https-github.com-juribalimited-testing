@@ -251,7 +251,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
-	Then 'Unassigned' content is displayed in the 'NewProject19083: Ring' column
+	Then 'Unassigned' content is displayed in the 'NewProject: Ring' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing
