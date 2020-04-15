@@ -169,14 +169,14 @@ this.FeatureBackground();
 #line 11
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3325 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3311 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3325.AddRow(new string[] {
+                table3311.AddRow(new string[] {
                             "TestAnalysisEditor",
                             "qa111111"});
 #line 12
-  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3325, "When ");
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3311, "When ");
 #line hidden
 #line 15
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -190,14 +190,14 @@ this.FeatureBackground();
 #line 18
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3326 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3312 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3326.AddRow(new string[] {
+                table3312.AddRow(new string[] {
                             "Evergreen Bucket",
                             "Evergreen"});
 #line 19
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3326, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3312, "Then ");
 #line hidden
 #line 22
  testRunner.When("User clicks on edit button for \'Evergreen Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -241,14 +241,14 @@ this.FeatureBackground();
  testRunner.Then("\'You no longer has the permission to edit this User\' text is displayed on inline " +
                         "error banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3327 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3313 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3327.AddRow(new string[] {
+                table3313.AddRow(new string[] {
                             "Evergreen Bucket",
                             "Birmingham"});
 #line 35
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3327, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3313, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

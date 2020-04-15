@@ -38,18 +38,18 @@ Examples:
 	| Users        | All Users        | City            | Description   | Floor                |
 	| Mailboxes    | All Mailboxes    | Alias           | Time Zone     | Building             |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS14183
-Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS14183 @DAS12334
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsDisplayedAfterChangingPinnedColumns
 	When User clicks '<ListName>' on the left-hand menu
 	Then '<ListLabel>' list should be displayed to the user
 	When User opens '<ColumnName>' column settings
 	When User selects 'Pin left' option from column settings
 	Then '<ListLabel>' list should be displayed to the user
-	Then Save to New Custom List element is NOT displayed
+	Then Save to New Custom List element is displayed
 	When User opens '<ColumnName>' column settings
 	When User selects 'Pin right' option from column settings
 	Then '<ListLabel>' list should be displayed to the user
-	Then Save to New Custom List element is NOT displayed
+	Then Save to New Custom List element is displayed
 	When User opens '<ColumnName>' column settings
 	When User selects 'No pin' option from column settings
 	Then '<ListLabel>' list should be displayed to the user

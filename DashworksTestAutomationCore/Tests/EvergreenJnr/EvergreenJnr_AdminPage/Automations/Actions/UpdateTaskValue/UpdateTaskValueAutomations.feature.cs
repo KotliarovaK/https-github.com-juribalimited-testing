@@ -793,9 +793,9 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table456 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});

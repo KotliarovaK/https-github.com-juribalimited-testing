@@ -1476,12 +1476,12 @@ this.FeatureBackground();
 #line 210
  testRunner.When("User navigates to the \'Preferences\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3718 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3704 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table3718.AddRow(new string[] {
+                table3704.AddRow(new string[] {
                             "(UTC-12:00) International Date Line West"});
 #line 211
- testRunner.Then("\'Time Zone\' autocomplete contains following options:", ((string)(null)), table3718, "Then ");
+ testRunner.Then("\'Time Zone\' autocomplete contains following options:", ((string)(null)), table3704, "Then ");
 #line hidden
 #line 214
  testRunner.Then("inline error banner is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

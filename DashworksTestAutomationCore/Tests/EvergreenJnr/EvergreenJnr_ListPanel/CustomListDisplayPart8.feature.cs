@@ -86,8 +86,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColu" +
-            "mns")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsDisplayedAfterChangingPinnedC" +
+            "olumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
@@ -95,19 +95,20 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("DAS14183")]
+        [NUnit.Framework.CategoryAttribute("DAS12334")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Device Type", "Hostname", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Vendor", "Application", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Domain", "Username", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Mailbox Platform", "Email Address", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns(string listName, string listLabel, string columnName, string pinnedColumnName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsDisplayedAfterChangingPinnedColumns(string listName, string listLabel, string columnName, string pinnedColumnName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumnsInternal(listName,listLabel,columnName,pinnedColumnName,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsDisplayedAfterChangingPinnedColumnsInternal(listName,listLabel,columnName,pinnedColumnName,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -126,7 +127,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumnsInternal(string listName, string listLabel, string columnName, string pinnedColumnName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsDisplayedAfterChangingPinnedColumnsInternal(string listName, string listLabel, string columnName, string pinnedColumnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -136,14 +137,15 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
                     "DAS10972",
                     "DAS12602",
                     "DAS14183",
+                    "DAS12334",
                     "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColu" +
-                    "mns", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsDisplayedAfterChangingPinnedC" +
+                    "olumns", null, @__tags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -192,7 +194,7 @@ this.FeatureBackground();
  testRunner.Then("\"DynamicList3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 18
- testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 19
  testRunner.When(string.Format("User opens \'{0}\' column settings", pinnedColumnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -204,7 +206,7 @@ this.FeatureBackground();
  testRunner.Then("\"DynamicList3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 22
- testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 23
  testRunner.When(string.Format("User opens \'{0}\' column settings", pinnedColumnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -216,7 +218,7 @@ this.FeatureBackground();
  testRunner.Then("\"DynamicList3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 26
- testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 27
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -243,7 +245,7 @@ this.FeatureBackground();
  testRunner.Then("\"StaticList3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 35
- testRunner.And("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 36
  testRunner.When(string.Format("User opens \'{0}\' column settings", pinnedColumnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -255,7 +257,7 @@ this.FeatureBackground();
  testRunner.Then("\"StaticList3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 39
- testRunner.And("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 40
  testRunner.When(string.Format("User opens \'{0}\' column settings", pinnedColumnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -376,12 +378,12 @@ this.FeatureBackground();
 #line 61
  testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3476 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3462 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3476.AddRow(new string[] {
+                table3462.AddRow(new string[] {
                             ""});
 #line 62
- testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticListName, listName), ((string)(null)), table3476, "When ");
+ testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticListName, listName), ((string)(null)), table3462, "When ");
 #line hidden
 #line 65
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -520,19 +522,19 @@ this.FeatureBackground();
 #line 92
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3477 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3463 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3477.AddRow(new string[] {
+                table3463.AddRow(new string[] {
                             string.Format("{0}", addColumn)});
 #line 93
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3477, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3463, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3478 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3464 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3478.AddRow(new string[] {
+                table3464.AddRow(new string[] {
                             string.Format("{0}", addColumn)});
 #line 96
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table3478, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table3464, "Then ");
 #line hidden
 #line 99
  testRunner.When("User clicks \'SAVE\' button and select \'SAVE AS NEW DYNAMIC LIST\' menu button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -638,19 +640,19 @@ this.FeatureBackground();
 #line 116
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3479 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3465 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3479.AddRow(new string[] {
+                table3465.AddRow(new string[] {
                             "Device Count (Used)"});
 #line 117
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3479, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3465, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3480 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3466 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3480.AddRow(new string[] {
+                table3466.AddRow(new string[] {
                             "Device Count (Used)"});
 #line 120
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table3480, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table3466, "Then ");
 #line hidden
 #line 123
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

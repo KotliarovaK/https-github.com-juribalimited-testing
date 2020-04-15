@@ -5,8 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @DAS14183 @Cleanup
-Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @DAS14183 @DAS12334 @Cleanup
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsDisplayedAfterChangingPinnedColumns
 	When User clicks '<ListName>' on the left-hand menu
 	Then '<ListLabel>' list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
@@ -15,15 +15,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfte
 	When User opens '<PinnedColumnName>' column settings
 	When User selects 'Pin left' option from column settings
 	Then "DynamicList3" list is displayed to user
-	Then Edit List menu is not displayed
+	Then Edit List menu is displayed
 	When User opens '<PinnedColumnName>' column settings
 	When User selects 'Pin right' option from column settings
 	Then "DynamicList3" list is displayed to user
-	Then Edit List menu is not displayed
+	Then Edit List menu is displayed
 	When User opens '<PinnedColumnName>' column settings
 	When User selects 'No pin' option from column settings
 	Then "DynamicList3" list is displayed to user
-	Then Edit List menu is not displayed
+	Then Edit List menu is displayed
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
@@ -32,11 +32,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfte
 	And User opens '<PinnedColumnName>' column settings
 	And User selects 'Pin left' option from column settings
 	Then "StaticList3" list is displayed to user
-	And Edit List menu is not displayed
+	And Edit List menu is displayed
 	When User opens '<PinnedColumnName>' column settings
 	And User selects 'Pin right' option from column settings
 	Then "StaticList3" list is displayed to user
-	And Edit List menu is not displayed
+	And Edit List menu is displayed
 	When User opens '<PinnedColumnName>' column settings
 	And User selects 'No pin' option from column settings
 	Then "StaticList3" list is displayed to user

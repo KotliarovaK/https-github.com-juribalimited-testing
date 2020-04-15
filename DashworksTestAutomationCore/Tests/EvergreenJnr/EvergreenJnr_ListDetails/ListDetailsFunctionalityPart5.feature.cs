@@ -175,17 +175,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3360 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3346 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3360.AddRow(new string[] {
+                table3346.AddRow(new string[] {
                             "Python 2.2a4"});
-                table3360.AddRow(new string[] {
+                table3346.AddRow(new string[] {
                             "Quartus II Programmer 4.0"});
-                table3360.AddRow(new string[] {
+                table3346.AddRow(new string[] {
                             "Multi Edit 9 Client"});
 #line 10
  testRunner.When("User create static list with \"Application12075\" name on \"Applications\" page with " +
-                        "following items", ((string)(null)), table3360, "When ");
+                        "following items", ((string)(null)), table3346, "When ");
 #line hidden
 #line 15
  testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -205,15 +205,15 @@ this.FeatureBackground();
 #line 20
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3361 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3347 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3361.AddRow(new string[] {
+                table3347.AddRow(new string[] {
                             "Application12075",
                             "Used on device"});
 #line 21
  testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                        "Value and following Association:", ((string)(null)), table3361, "When ");
+                        "Value and following Association:", ((string)(null)), table3347, "When ");
 #line hidden
 #line 24
  testRunner.And("User create dynamic list with \"Devices12075\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -361,17 +361,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3362 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3348 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3362.AddRow(new string[] {
+                table3348.AddRow(new string[] {
                             "Microsoft SDK Update February 2003 (5.2.3790.0)"});
-                table3362.AddRow(new string[] {
+                table3348.AddRow(new string[] {
                             "Quartus II Programmer 4.0"});
-                table3362.AddRow(new string[] {
+                table3348.AddRow(new string[] {
                             "Mindreef SOAPscope 4.0"});
 #line 43
  testRunner.When("User create static list with \"Application3_12075\" name on \"Applications\" page wit" +
-                        "h following items", ((string)(null)), table3362, "When ");
+                        "h following items", ((string)(null)), table3348, "When ");
 #line hidden
 #line 48
  testRunner.Then("\"Application3_12075\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -394,15 +394,15 @@ this.FeatureBackground();
 #line 54
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3363 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3349 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3363.AddRow(new string[] {
+                table3349.AddRow(new string[] {
                             "Application3_12075",
                             "Used on device"});
 #line 55
  testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                        "Value and following Association:", ((string)(null)), table3363, "When ");
+                        "Value and following Association:", ((string)(null)), table3349, "When ");
 #line hidden
 #line 58
  testRunner.And("User create dynamic list with \"Devices3_12075\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -422,15 +422,15 @@ this.FeatureBackground();
 #line 63
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3364 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3350 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3364.AddRow(new string[] {
+                table3350.AddRow(new string[] {
                             "Application3_12075",
                             "Entitled to device"});
 #line 64
  testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                        "Value and following Association:", ((string)(null)), table3364, "When ");
+                        "Value and following Association:", ((string)(null)), table3350, "When ");
 #line hidden
 #line 67
  testRunner.And("User create dynamic list with \"Devices4_12075\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -587,12 +587,12 @@ this.FeatureBackground();
 #line 90
  testRunner.And("User create dynamic list with \"Application4\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3365 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3351 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3365.AddRow(new string[] {
+                table3351.AddRow(new string[] {
                             "Compliance"});
 #line 91
- testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table3365, "And ");
+ testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table3351, "And ");
 #line hidden
 #line 94
  testRunner.And("User create dynamic list with \"Application5\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -609,18 +609,18 @@ this.FeatureBackground();
 #line 98
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3366 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3352 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3366.AddRow(new string[] {
+                table3352.AddRow(new string[] {
                             "Application4",
                             "Used on device"});
-                table3366.AddRow(new string[] {
+                table3352.AddRow(new string[] {
                             "Application5",
                             "Used on device"});
 #line 99
  testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                        "Value and following Association:", ((string)(null)), table3366, "When ");
+                        "Value and following Association:", ((string)(null)), table3352, "When ");
 #line hidden
 #line 103
  testRunner.And("User create dynamic list with \"Devices15551\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -776,15 +776,15 @@ this.FeatureBackground();
 #line 127
  testRunner.When("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3367 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3353 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3367.AddRow(new string[] {
+                table3353.AddRow(new string[] {
                             "000F977AC8824FE39B8"});
-                table3367.AddRow(new string[] {
+                table3353.AddRow(new string[] {
                             "002B5DC7D4D34D5C895"});
 #line 128
  testRunner.And("User create static list with \"StaticList2584\" name on \"Users\" page with following" +
-                        " items", ((string)(null)), table3367, "And ");
+                        " items", ((string)(null)), table3353, "And ");
 #line hidden
 #line 132
  testRunner.Then("\"StaticList2584\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

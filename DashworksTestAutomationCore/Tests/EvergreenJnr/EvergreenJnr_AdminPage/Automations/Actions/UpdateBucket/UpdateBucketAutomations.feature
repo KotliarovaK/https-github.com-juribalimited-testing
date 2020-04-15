@@ -31,8 +31,8 @@ Examples:
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17339 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityForUpdateBucket
 	When User creates new Automation via API and open it
-	| AutomationName         | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17339_Automation_Users | 17339       | true   | false              | All Users | Manual |
+	| Name                   | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17339_Automation_Users | 17339       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item

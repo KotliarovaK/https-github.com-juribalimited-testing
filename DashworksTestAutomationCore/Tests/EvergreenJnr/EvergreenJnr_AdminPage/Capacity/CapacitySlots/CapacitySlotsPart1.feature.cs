@@ -188,18 +188,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table693 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table694 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table693.AddRow(new string[] {
+                table694.AddRow(new string[] {
                             "ProjectForCapacity13171",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table693, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table694, "When ");
 #line hidden
 #line 13
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -225,29 +225,29 @@ this.FeatureBackground();
 #line 20
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table694 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table695 = new TechTalk.SpecFlow.Table(new string[] {
                             "SlotName",
                             "DisplayName",
                             "CapacityType"});
-                table694.AddRow(new string[] {
+                table695.AddRow(new string[] {
                             "CapacitySlot1",
                             "DAS13432",
                             "Capacity Units"});
 #line 21
- testRunner.And("User creates new Slot", ((string)(null)), table694, "And ");
+ testRunner.And("User creates new Slot", ((string)(null)), table695, "And ");
 #line hidden
 #line 24
  testRunner.Then("\'Your capacity slot has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table695 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table696 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table695.AddRow(new string[] {
+                table696.AddRow(new string[] {
                             "Monday"});
-                table695.AddRow(new string[] {
+                table696.AddRow(new string[] {
                             "Tuesday"});
 #line 25
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Capacity Slo" +
-                        "t\' column:", ((string)(null)), table695, "When ");
+                        "t\' column:", ((string)(null)), table696, "When ");
 #line hidden
 #line 29
  testRunner.Then("\'All Capacity Units\' content is displayed in the \'Capacity Units\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -265,16 +265,16 @@ this.FeatureBackground();
 #line 33
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table696 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table697 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName"});
-                table696.AddRow(new string[] {
+                table697.AddRow(new string[] {
                             "ProjectForCapacity13171",
                             "UniqueNameSlot",
                             "DAS13432"});
 #line 34
- testRunner.When("User creates new Slot via Api", ((string)(null)), table696, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table697, "When ");
 #line hidden
 #line 37
  testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -316,29 +316,29 @@ this.FeatureBackground();
 #line 49
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table697 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table698 = new TechTalk.SpecFlow.Table(new string[] {
                             "SlotName",
                             "DisplayName",
                             "CapacityType"});
-                table697.AddRow(new string[] {
+                table698.AddRow(new string[] {
                             "CapacitySlot2",
                             "DAS13432",
                             "Teams and Paths"});
 #line 50
- testRunner.When("User creates new Slot", ((string)(null)), table697, "When ");
+ testRunner.When("User creates new Slot", ((string)(null)), table698, "When ");
 #line hidden
 #line 53
  testRunner.Then("\'Your capacity slot has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table698 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table699 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table698.AddRow(new string[] {
+                table699.AddRow(new string[] {
                             "Monday"});
-                table698.AddRow(new string[] {
+                table699.AddRow(new string[] {
                             "Tuesday"});
 #line 54
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Capacity Slo" +
-                        "t\' column:", ((string)(null)), table698, "When ");
+                        "t\' column:", ((string)(null)), table699, "When ");
 #line hidden
 #line 58
  testRunner.When("User clicks String Filter button for \"Capacity Units\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -433,39 +433,39 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table699 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table700 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table699.AddRow(new string[] {
+                table700.AddRow(new string[] {
                             "ProjectDAS13780",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 64
- testRunner.When("Project created via API and opened", ((string)(null)), table699, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table700, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table700 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table701 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
                             "SlotAvailableFrom",
                             "SlotAvailableTo"});
-                table700.AddRow(new string[] {
+                table701.AddRow(new string[] {
                             "ProjectDAS13780",
                             "SlotDAS13780_1",
                             "13780_1",
                             "17 Oct 2018",
                             "18 Oct 2018"});
-                table700.AddRow(new string[] {
+                table701.AddRow(new string[] {
                             "ProjectDAS13780",
                             "SlotDAS13780_2",
                             "13780_2",
                             "17 Oct 2018",
                             "18 Oct 2018"});
 #line 67
- testRunner.When("User creates new Slot via Api", ((string)(null)), table700, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table701, "When ");
 #line hidden
 #line 71
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -624,33 +624,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table701 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table702 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table701.AddRow(new string[] {
+                table702.AddRow(new string[] {
                             "ProjectDAS13789",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 97
- testRunner.When("Project created via API and opened", ((string)(null)), table701, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table702, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table702 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table703 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
                             "SlotAvailableFrom",
                             "SlotAvailableTo"});
-                table702.AddRow(new string[] {
+                table703.AddRow(new string[] {
                             "ProjectDAS13789",
                             "capacityslotDAS13789",
                             "DAS13779slot",
                             "28 Oct 2018",
                             "29 Oct 2018"});
 #line 100
- testRunner.When("User creates new Slot via Api", ((string)(null)), table702, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table703, "When ");
 #line hidden
 #line 103
  testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -782,33 +782,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table703 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table704 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table703.AddRow(new string[] {
+                table704.AddRow(new string[] {
                             "ProjectForCapacityDAS13824",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 120
- testRunner.When("Project created via API and opened", ((string)(null)), table703, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table704, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table704 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table705 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
                             "SlotAvailableFrom",
                             "SlotAvailableTo"});
-                table704.AddRow(new string[] {
+                table705.AddRow(new string[] {
                             "ProjectForCapacityDAS13824",
                             "CapacitySlotDAS13824",
                             "DAS13824",
                             "29 Oct 2018",
                             "30 Oct 2018"});
 #line 123
- testRunner.When("User creates new Slot via Api", ((string)(null)), table704, "When ");
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table705, "When ");
 #line hidden
 #line 126
  testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

@@ -5,11 +5,11 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS20360 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS20360 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicationsAutomation
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 18292_Automation | 18292       | true   | false              | Apps with a Vendor | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 18292_Automation | 18292       | true     | false              | Apps with a Vendor | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -125,8 +125,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 #Waiting for 'Update relative to current value' value in dropdown
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInDevicesAutomation
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 182922_Automation | 18292       | true   | false              | New York - Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 182922_Automation | 18292       | true     | false              | New York - Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -165,8 +165,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInDevicesAu
 #Waiting for 'Update relative to current value' value in dropdown
 Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnTheTask
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 18543_Automation | 18543       | true   | false              | All Users | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 18543_Automation | 18543       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

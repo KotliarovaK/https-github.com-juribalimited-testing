@@ -205,13 +205,13 @@ this.FeatureBackground();
 #line 21
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2377 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2378 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2377.AddRow(new string[] {
+                table2378.AddRow(new string[] {
                             "Jeremiah S. O\'Connor"});
 #line 22
  testRunner.When("User add \"Display Name\" filter where type is \"Equals\" with added column and follo" +
-                        "wing value:", ((string)(null)), table2377, "When ");
+                        "wing value:", ((string)(null)), table2378, "When ");
 #line hidden
 #line 25
  testRunner.Then("Update list option is NOT available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -581,14 +581,14 @@ this.FeatureBackground();
 #line 74
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2378 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2379 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2378.AddRow(new string[] {
+                table2379.AddRow(new string[] {
                             "automation_admin1",
                             "m!gration"});
 #line 75
- testRunner.When("User login with following credentials:", ((string)(null)), table2378, "When ");
+ testRunner.When("User login with following credentials:", ((string)(null)), table2379, "When ");
 #line hidden
 #line 78
  testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
