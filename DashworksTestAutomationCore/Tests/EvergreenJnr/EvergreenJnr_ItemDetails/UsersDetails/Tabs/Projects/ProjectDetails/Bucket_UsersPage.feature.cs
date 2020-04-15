@@ -188,16 +188,16 @@ this.FeatureBackground();
  testRunner.Then("\'Select the bucket to move this user to. Select devices associated to this user t" +
                         "o move at the same time.\' text is displayed on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3280 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3290 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3280.AddRow(new string[] {
+                table3290.AddRow(new string[] {
                             "Hostname"});
-                table3280.AddRow(new string[] {
+                table3290.AddRow(new string[] {
                             "Owned"});
-                table3280.AddRow(new string[] {
+                table3290.AddRow(new string[] {
                             "Bucket"});
 #line 18
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3280, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3290, "Then ");
 #line hidden
 #line 23
  testRunner.When("User selects \'Group102\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -323,24 +323,24 @@ this.FeatureBackground();
  testRunner.Then("\'The selected objects successfully moved to Group111\' text is displayed on inline" +
                         " success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3281 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3291 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3281.AddRow(new string[] {
+                table3291.AddRow(new string[] {
                             "Bucket",
                             "Group111"});
 #line 39
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3281, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3291, "Then ");
 #line hidden
 #line 42
  testRunner.When("User clicks on edit button for \'Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3282 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3292 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table3282.AddRow(new string[] {
+                table3292.AddRow(new string[] {
                             "Group111"});
 #line 43
- testRunner.Then("\'Bucket\' column contains following content", ((string)(null)), table3282, "Then ");
+ testRunner.Then("\'Bucket\' column contains following content", ((string)(null)), table3292, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -452,18 +452,18 @@ this.FeatureBackground();
  testRunner.Then("\'Select the bucket to move this user to. Select mailboxes associated to this user" +
                         " to move at the same time.\' text is displayed on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3283 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3293 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3283.AddRow(new string[] {
+                table3293.AddRow(new string[] {
                             "Email Address"});
-                table3283.AddRow(new string[] {
+                table3293.AddRow(new string[] {
                             "Owner Display Name"});
-                table3283.AddRow(new string[] {
+                table3293.AddRow(new string[] {
                             "Owned"});
-                table3283.AddRow(new string[] {
+                table3293.AddRow(new string[] {
                             "Bucket"});
 #line 57
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3283, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3293, "Then ");
 #line hidden
 #line 63
  testRunner.When("User selects \'A Group with AdminIT team\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -591,24 +591,24 @@ this.FeatureBackground();
  testRunner.Then("\'The selected objects successfully moved to A Group with AdminIT team\' text is di" +
                         "splayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3284 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3294 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3284.AddRow(new string[] {
+                table3294.AddRow(new string[] {
                             "Bucket",
                             "A Group with AdminIT team"});
 #line 79
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3284, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3294, "Then ");
 #line hidden
 #line 82
  testRunner.When("User clicks on edit button for \'Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3285 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3295 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table3285.AddRow(new string[] {
+                table3295.AddRow(new string[] {
                             "A Group with AdminIT team"});
 #line 83
- testRunner.Then("\'Bucket\' column contains following content", ((string)(null)), table3285, "Then ");
+ testRunner.Then("\'Bucket\' column contains following content", ((string)(null)), table3295, "Then ");
 #line hidden
 #line 86
  testRunner.When("User selects \'Unassigned\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

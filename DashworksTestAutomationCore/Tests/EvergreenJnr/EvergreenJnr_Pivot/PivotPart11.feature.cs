@@ -164,26 +164,26 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3517 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3527 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3517.AddRow(new string[] {
+                table3527.AddRow(new string[] {
                             "Recipient Type"});
 #line 13
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table3517, "When ");
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table3527, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3518 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3528 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3518.AddRow(new string[] {
+                table3528.AddRow(new string[] {
                             "Mailbox Platform"});
 #line 16
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table3518, "When ");
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table3528, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3519 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3529 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3519.AddRow(new string[] {
+                table3529.AddRow(new string[] {
                             "Email Address"});
 #line 19
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table3519, "When ");
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table3529, "When ");
 #line hidden
 #line 22
  testRunner.When("User selects aggregate function \"Count\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

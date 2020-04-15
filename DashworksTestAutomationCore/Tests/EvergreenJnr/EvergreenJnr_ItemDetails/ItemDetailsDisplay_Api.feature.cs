@@ -250,59 +250,59 @@ this.FeatureBackground();
  testRunner.When("I perform test request to the \"Users\" API and get \"002B5DC7D4D34D5C895\" item summ" +
                         "ary for \"Department and Location\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3213 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3223 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "DisplayState"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Department Name",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Department Full Path",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Department Code",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Cost Centre",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Location Name",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Region",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Country",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "City",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Building Name",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Floor",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Address 1",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Address 2",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Address 3",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Address 4",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "State/County",
                             "True"});
-                table3213.AddRow(new string[] {
+                table3223.AddRow(new string[] {
                             "Postal Code",
                             "True"});
 #line 21
- testRunner.Then("following fields are displayed with next state on Details tab API", ((string)(null)), table3213, "Then ");
+ testRunner.Then("following fields are displayed with next state on Details tab API", ((string)(null)), table3223, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

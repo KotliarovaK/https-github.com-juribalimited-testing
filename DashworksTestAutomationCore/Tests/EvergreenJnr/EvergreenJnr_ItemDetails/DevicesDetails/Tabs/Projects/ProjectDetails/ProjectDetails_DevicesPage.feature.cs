@@ -249,7 +249,7 @@ this.FeatureBackground();
                         "ProjectDetailsTab",
                         "DAS20214",
                         "X_Ray"});
-#line 23
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -272,39 +272,39 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 24
+#line 25
  testRunner.When("User navigates to the \'Device\' details page for \'00CWZRC4UK6W20\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 25
+#line 26
  testRunner.Then("Details page for \'00CWZRC4UK6W20\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 26
+#line 27
  testRunner.When("User selects \'Devices Evergreen Capacity Project\' in the \'Item Details Project\' d" +
                         "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
+#line 28
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
+#line 29
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 30
  testRunner.When("User clicks on edit button for \'Device Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 31
  testRunner.Then("\'UPDATE\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 31
+#line 32
  testRunner.Then("\'Retain the existing owner as a user of this device\' checkbox is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 32
+#line 33
  testRunner.When("User enters \'Austin O. Ball\' in the \'User\' autocomplete field and selects \'US-W\\A" +
                         "DL183503 (19831) - Austin O. Ball\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 34
  testRunner.Then("\"Retain the existing owner as a user of this device\" checkbox is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 34
+#line 35
  testRunner.Then("\'Retain the existing owner as a user of this device\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 36
@@ -367,6 +367,698 @@ this.FeatureBackground();
 #line hidden
 #line 54
  testRunner.Then("\'Felicienne Vadnais\' content is displayed in the \'Display Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTab" +
+            "IsDisplayedCorrectlyWithSelectedCheckbox")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS20214")]
+        [NUnit.Framework.CategoryAttribute("X_Ray")]
+        public virtual void EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectlyWithSelectedCheckbox()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectlyWithSelectedCheckboxInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectlyWithSelectedCheckboxInternal()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_ItemDetails",
+                    "ProjectDetailsTab",
+                    "DAS20214",
+                    "X_Ray"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTab" +
+                    "IsDisplayedCorrectlyWithSelectedCheckbox", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ProjectDetailsTab",
+                        "DAS20214",
+                        "X_Ray"});
+#line 58
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 59
+ testRunner.When("User navigates to the \'Device\' details page for \'01N3Y2GUS6XTK7\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 60
+ testRunner.Then("Details page for \'01N3Y2GUS6XTK7\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 61
+ testRunner.When("User selects \'Devices Evergreen Capacity Project\' in the \'Item Details Project\' d" +
+                        "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 62
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 63
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 64
+ testRunner.When("User clicks on edit button for \'Device Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 65
+ testRunner.Then("\'UPDATE\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 66
+ testRunner.Then("\'Retain the existing owner as a user of this device\' checkbox is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 67
+ testRunner.When("User enters \'Snow\' in the \'User\' autocomplete field and selects \'UK\\ACG370114 (55" +
+                        "39) - James N. Snow\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 68
+ testRunner.Then("\"Retain the existing owner as a user of this device\" checkbox is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 69
+ testRunner.Then("\'Retain the existing owner as a user of this device\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 70
+ testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 71
+ testRunner.Then("\'Device Owner will be changed to James N. Snow\' text is displayed on inline tip b" +
+                        "anner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 72
+ testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 73
+ testRunner.Then("\'Device Owner successfully updated to James N. Snow\' text is displayed on inline " +
+                        "success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table2999 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Title",
+                            "Value"});
+                table2999.AddRow(new string[] {
+                            "Device Owner",
+                            "James N. Snow"});
+#line 74
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2999, "Then ");
+#line hidden
+#line 77
+ testRunner.When("User clicks on edit button for \'Device Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 78
+ testRunner.When("User enters \'Mc Millan\' in the \'User\' autocomplete field and selects \'UK\\ACD25246" +
+                        "8 (15419) - Nicolas O. Mc Millan\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 79
+ testRunner.When("User unchecks \'Retain the existing owner as a user of this device\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 80
+ testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 81
+ testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3000 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Title",
+                            "Value"});
+                table3000.AddRow(new string[] {
+                            "Device Owner",
+                            "Nicolas O. Mc Millan"});
+#line 82
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3000, "Then ");
+#line hidden
+#line 85
+ testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 86
+ testRunner.Then("\'James N. Snow\' content is not displayed in the \'Display Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 87
+ testRunner.When("User enters \"Nicolas O. Mc Millan\" text in the Search field for \"Display Name\" co" +
+                        "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 88
+ testRunner.Then("\'Nicolas O. Mc Millan\' content is displayed in the \'Display Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObjectEditorRol" +
+            "eIsWorkingCorrectlyForTheOwnerField")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS20214")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("X_Ray")]
+        public virtual void EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObjectEditorRoleIsWorkingCorrectlyForTheOwnerField()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObjectEditorRoleIsWorkingCorrectlyForTheOwnerFieldInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObjectEditorRoleIsWorkingCorrectlyForTheOwnerFieldInternal()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_ItemDetails",
+                    "ProjectDetailsTab",
+                    "DAS20214",
+                    "Cleanup",
+                    "X_Ray"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObjectEditorRol" +
+                    "eIsWorkingCorrectlyForTheOwnerField", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ProjectDetailsTab",
+                        "DAS20214",
+                        "Cleanup",
+                        "X_Ray"});
+#line 92
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table3001 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Email",
+                            "FullName",
+                            "Password",
+                            "Roles"});
+                table3001.AddRow(new string[] {
+                            "UserDAS20214_1",
+                            "Value",
+                            "DAS20214",
+                            "m!gration",
+                            "Project Computer Object Editor"});
+#line 93
+ testRunner.When("User create new User via API", ((string)(null)), table3001, "When ");
+#line hidden
+#line 96
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3002 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table3002.AddRow(new string[] {
+                            "UserDAS20214_1",
+                            "m!gration"});
+#line 97
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3002, "When ");
+#line hidden
+#line 100
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 102
+ testRunner.When("User navigates to the \'Device\' details page for the item with \'1703\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 103
+ testRunner.Then("Details page for \'CDBR7TV3Y9T2ITS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 104
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                        "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 105
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 106
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 107
+ testRunner.When("User clicks on edit button for \'Device Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 109
+ testRunner.When("User navigates to the \'Application\' details page for the item with \'966\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 110
+ testRunner.Then("Details page for \'ActiveCGM Browser Netscape Plugin V6P07\' item is displayed to t" +
+                        "he user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 111
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                        "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 112
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 113
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 114
+ testRunner.Then("button for editing the \'App Owner\' field is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 116
+ testRunner.When("User navigates to the \'Mailbox\' details page for the item with \'44237\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 117
+ testRunner.Then("Details page for \'02BE025D56CF4899889@bclabs.local\' item is displayed to the user" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 118
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(MAIL SCHDLD)\' in the \'Item Details Project\' d" +
+                        "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 119
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 120
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 121
+ testRunner.Then("button for editing the \'Mailbox Owner\' field is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_ChecksthatThePermissionForProjectMailboxObjectEditorRo" +
+            "leIsWorkingCorrectlyForTheOwnerField")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS20214")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("X_Ray")]
+        public virtual void EvergreenJnr_MailboxesList_ChecksthatThePermissionForProjectMailboxObjectEditorRoleIsWorkingCorrectlyForTheOwnerField()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_ChecksthatThePermissionForProjectMailboxObjectEditorRoleIsWorkingCorrectlyForTheOwnerFieldInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_ChecksthatThePermissionForProjectMailboxObjectEditorRoleIsWorkingCorrectlyForTheOwnerFieldInternal()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Evergreen",
+                    "Mailboxes",
+                    "EvergreenJnr_ItemDetails",
+                    "ProjectDetailsTab",
+                    "DAS20214",
+                    "Cleanup",
+                    "X_Ray"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_ChecksthatThePermissionForProjectMailboxObjectEditorRo" +
+                    "leIsWorkingCorrectlyForTheOwnerField", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_ItemDetails",
+                        "ProjectDetailsTab",
+                        "DAS20214",
+                        "Cleanup",
+                        "X_Ray"});
+#line 125
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table3003 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Email",
+                            "FullName",
+                            "Password",
+                            "Roles"});
+                table3003.AddRow(new string[] {
+                            "UserDAS20214_2",
+                            "Value",
+                            "DAS20214",
+                            "m!gration",
+                            "Project Mailbox Object Editor"});
+#line 126
+ testRunner.When("User create new User via API", ((string)(null)), table3003, "When ");
+#line hidden
+#line 129
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3004 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table3004.AddRow(new string[] {
+                            "UserDAS20214_2",
+                            "m!gration"});
+#line 130
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3004, "When ");
+#line hidden
+#line 133
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 135
+ testRunner.When("User navigates to the \'Device\' details page for the item with \'1703\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 136
+ testRunner.Then("Details page for \'CDBR7TV3Y9T2ITS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 137
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                        "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 138
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 139
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 140
+ testRunner.Then("button for editing the \'Device Owner\' field is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 142
+ testRunner.When("User navigates to the \'Application\' details page for the item with \'966\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 143
+ testRunner.Then("Details page for \'ActiveCGM Browser Netscape Plugin V6P07\' item is displayed to t" +
+                        "he user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 144
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                        "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 145
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 146
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 147
+ testRunner.Then("button for editing the \'App Owner\' field is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 149
+ testRunner.When("User navigates to the \'Mailbox\' details page for the item with \'44237\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 150
+ testRunner.Then("Details page for \'02BE025D56CF4899889@bclabs.local\' item is displayed to the user" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 151
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(MAIL SCHDLD)\' in the \'Item Details Project\' d" +
+                        "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 152
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 153
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 154
+ testRunner.When("User clicks on edit button for \'Mailbox Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationList_ChecksthatThePermissionForProjectApplicationObjectEd" +
+            "itorRoleIsWorkingCorrectlyForTheOwnerField")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS20214")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("X_Ray")]
+        public virtual void EvergreenJnr_ApplicationList_ChecksthatThePermissionForProjectApplicationObjectEditorRoleIsWorkingCorrectlyForTheOwnerField()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationList_ChecksthatThePermissionForProjectApplicationObjectEditorRoleIsWorkingCorrectlyForTheOwnerFieldInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationList_ChecksthatThePermissionForProjectApplicationObjectEditorRoleIsWorkingCorrectlyForTheOwnerFieldInternal()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "EvergreenJnr_ItemDetails",
+                    "ProjectDetailsTab",
+                    "DAS20214",
+                    "Cleanup",
+                    "X_Ray"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationList_ChecksthatThePermissionForProjectApplicationObjectEd" +
+                    "itorRoleIsWorkingCorrectlyForTheOwnerField", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_ItemDetails",
+                        "ProjectDetailsTab",
+                        "DAS20214",
+                        "Cleanup",
+                        "X_Ray"});
+#line 158
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table3005 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Email",
+                            "FullName",
+                            "Password",
+                            "Roles"});
+                table3005.AddRow(new string[] {
+                            "UserDAS20214_3",
+                            "Value",
+                            "DAS20214",
+                            "m!gration",
+                            "Project Application Object Editor"});
+#line 159
+ testRunner.When("User create new User via API", ((string)(null)), table3005, "When ");
+#line hidden
+#line 162
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3006 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table3006.AddRow(new string[] {
+                            "UserDAS20214_3",
+                            "m!gration"});
+#line 163
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3006, "When ");
+#line hidden
+#line 166
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 168
+ testRunner.When("User navigates to the \'Device\' details page for the item with \'1703\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 169
+ testRunner.Then("Details page for \'CDBR7TV3Y9T2ITS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 170
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                        "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 171
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 172
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 173
+ testRunner.Then("button for editing the \'Device Owner\' field is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 175
+ testRunner.When("User navigates to the \'Application\' details page for the item with \'966\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 176
+ testRunner.Then("Details page for \'ActiveCGM Browser Netscape Plugin V6P07\' item is displayed to t" +
+                        "he user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 177
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                        "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 178
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 179
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 180
+ testRunner.When("User clicks on edit button for \'App Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 182
+ testRunner.When("User navigates to the \'Mailbox\' details page for the item with \'44237\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 183
+ testRunner.Then("Details page for \'02BE025D56CF4899889@bclabs.local\' item is displayed to the user" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 184
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(MAIL SCHDLD)\' in the \'Item Details Project\' d" +
+                        "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 185
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 186
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 187
+ testRunner.Then("button for editing the \'Mailbox Owner\' field is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

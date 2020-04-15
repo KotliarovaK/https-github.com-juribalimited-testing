@@ -205,48 +205,48 @@ this.FeatureBackground();
 #line 21
  testRunner.Then("\"1\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3260 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3270 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3260.AddRow(new string[] {
+                table3270.AddRow(new string[] {
                             "Current App"});
-                table3260.AddRow(new string[] {
+                table3270.AddRow(new string[] {
                             "Target App"});
-                table3260.AddRow(new string[] {
+                table3270.AddRow(new string[] {
                             "Target App Readiness"});
 #line 22
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Current App\'" +
-                        " column:", ((string)(null)), table3260, "When ");
+                        " column:", ((string)(null)), table3270, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3261 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3271 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Vendor"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Version"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Criticality"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Rationalisation"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Target App"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Target App Criticality"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Target App Hide From End Users"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Target App Readiness"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Path"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Category"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Workflow"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Date"});
-                table3261.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "Stage 3"});
 #line 27
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3261, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3271, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -347,23 +347,23 @@ this.FeatureBackground();
 #line 50
  testRunner.Then("\"Rationalisation\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3262 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3272 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3262.AddRow(new string[] {
+                table3272.AddRow(new string[] {
                             "UNCATEGORISED"});
 #line 51
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Rationali" +
-                        "sation\' column:", ((string)(null)), table3262, "Then ");
+                        "sation\' column:", ((string)(null)), table3272, "Then ");
 #line hidden
 #line 54
  testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3263 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3273 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table3263.AddRow(new string[] {
+                table3273.AddRow(new string[] {
                             "UNCATEGORISED"});
 #line 55
- testRunner.Then("\'Rationalisation\' column contains following content", ((string)(null)), table3263, "Then ");
+ testRunner.Then("\'Rationalisation\' column contains following content", ((string)(null)), table3273, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

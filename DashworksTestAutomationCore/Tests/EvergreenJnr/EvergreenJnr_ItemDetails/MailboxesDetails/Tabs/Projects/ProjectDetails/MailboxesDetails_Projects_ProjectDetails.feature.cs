@@ -219,14 +219,14 @@ this.FeatureBackground();
 #line 29
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3231 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3241 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3231.AddRow(new string[] {
+                table3241.AddRow(new string[] {
                             "Language",
                             "German"});
 #line 30
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3231, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3241, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

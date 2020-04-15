@@ -179,34 +179,34 @@ this.FeatureBackground();
 #line 14
  testRunner.And("User navigates to the \'Devices\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3116 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3124 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3116.AddRow(new string[] {
+                table3124.AddRow(new string[] {
                             "Device Type"});
-                table3116.AddRow(new string[] {
+                table3124.AddRow(new string[] {
                             "Owner Display Name"});
-                table3116.AddRow(new string[] {
+                table3124.AddRow(new string[] {
                             "Operating System"});
 #line 15
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Hostname\' co" +
-                        "lumn:", ((string)(null)), table3116, "When ");
+                        "lumn:", ((string)(null)), table3124, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3117 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3125 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3117.AddRow(new string[] {
+                table3125.AddRow(new string[] {
                             "RED"});
 #line 20
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Migration" +
-                        "\' column:", ((string)(null)), table3117, "Then ");
+                        "\' column:", ((string)(null)), table3125, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3118 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3126 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table3118.AddRow(new string[] {
+                table3126.AddRow(new string[] {
                             "Migration",
                             "true"});
 #line 23
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3118, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3126, "When ");
 #line hidden
 #line 26
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -309,22 +309,22 @@ this.FeatureBackground();
 #line 35
  testRunner.When("User navigates to the \'User Members\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3119 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3127 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3119.AddRow(new string[] {
+                table3127.AddRow(new string[] {
                             "Key"});
 #line 36
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Username\' co" +
-                        "lumn:", ((string)(null)), table3119, "When ");
+                        "lumn:", ((string)(null)), table3127, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3120 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3128 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table3120.AddRow(new string[] {
+                table3128.AddRow(new string[] {
                             "Key",
                             "true"});
 #line 39
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3120, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3128, "When ");
 #line hidden
 #line 42
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -427,14 +427,14 @@ this.FeatureBackground();
 #line 51
  testRunner.When("User navigates to the \'Applications\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3121 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3129 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table3121.AddRow(new string[] {
+                table3129.AddRow(new string[] {
                             "Advertisement",
                             "true"});
 #line 52
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3121, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3129, "When ");
 #line hidden
 #line 55
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -534,16 +534,134 @@ this.FeatureBackground();
 #line 63
  testRunner.When("User navigates to the \'Owner Projects Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3122 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3130 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table3122.AddRow(new string[] {
+                table3130.AddRow(new string[] {
                             "Ring",
                             "true"});
 #line 64
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3122, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3130, "When ");
 #line hidden
 #line 67
+ testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnApplicationsTa" +
+            "bCollectionsSubTabForGroupPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Groups")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS20683")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [NUnit.Framework.CategoryAttribute("X_Ray")]
+        public virtual void EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnApplicationsTabCollectionsSubTabForGroupPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnApplicationsTabCollectionsSubTabForGroupPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnApplicationsTabCollectionsSubTabForGroupPageInternal()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Evergreen",
+                    "Groups",
+                    "EvergreenJnr_ItemDetails",
+                    "ItemDetailsDisplay",
+                    "DAS20683",
+                    "Zion_NewGrid",
+                    "X_Ray"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnApplicationsTa" +
+                    "bCollectionsSubTabForGroupPage", null, new string[] {
+                        "Evergreen",
+                        "Groups",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS20683",
+                        "Zion_NewGrid",
+                        "X_Ray"});
+#line 71
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 72
+ testRunner.When("User type \"GSMS-ReportViewer\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 73
+ testRunner.Then("User clicks on \"GSMS-ReportViewer\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 74
+ testRunner.And("Details page for \'GSMS-ReportViewer\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 75
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 76
+ testRunner.When("User navigates to the \'Collections\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3131 = new TechTalk.SpecFlow.Table(new string[] {
+                            "checkboxes"});
+                table3131.AddRow(new string[] {
+                            "Key"});
+#line 77
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Username\' co" +
+                        "lumn:", ((string)(null)), table3131, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3132 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Checkboxes",
+                            "State"});
+                table3132.AddRow(new string[] {
+                            "Key",
+                            "true"});
+#line 80
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3132, "When ");
+#line hidden
+#line 83
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
