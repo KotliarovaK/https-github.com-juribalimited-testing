@@ -163,19 +163,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3221 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3224 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3221.AddRow(new string[] {
+                table3224.AddRow(new string[] {
                             string.Format("{0}", column)});
 #line 10
- testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", pageName), ((string)(null)), table3221, "When ");
+ testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", pageName), ((string)(null)), table3224, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3222 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3225 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3222.AddRow(new string[] {
+                table3225.AddRow(new string[] {
                             string.Format("{0}", column)});
 #line 13
- testRunner.Then("Content is present in the newly added column", ((string)(null)), table3222, "Then ");
+ testRunner.Then("Content is present in the newly added column", ((string)(null)), table3225, "Then ");
 #line hidden
 #line 16
  testRunner.When(string.Format("User perform search by \"{0}\"", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

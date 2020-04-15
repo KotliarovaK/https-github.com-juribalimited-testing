@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnApp
 	And Details page for 'GSMS-ReportViewer' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Collections' left submenu item
-	When User clicks following checkboxes from Column Settings panel for the 'Username' column:
+	When User clicks following checkboxes from Column Settings panel for the 'Collection' column:
 	| checkboxes |
 	| Key        |
 	When User clicks Group By button and set checkboxes state
