@@ -344,7 +344,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             try
             {
-                var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                var file = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory))) +
                            ResourceFilesNamesProvider.ResourcesFolderRoot + $"{fileNameAndExtension}";
                 page.ButtonChooseFile.SendKeys(file);
             }
