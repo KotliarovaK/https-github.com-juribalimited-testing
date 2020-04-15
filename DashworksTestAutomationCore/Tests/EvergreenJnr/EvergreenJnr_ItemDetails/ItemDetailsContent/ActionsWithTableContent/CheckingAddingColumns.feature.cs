@@ -182,27 +182,27 @@ this.FeatureBackground();
 #line 13
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3041 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3053 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3041.AddRow(new string[] {
+                table3053.AddRow(new string[] {
                             string.Format("{0}", checkboxName)});
 #line 14
  testRunner.When(string.Format("User clicks following checkboxes from Column Settings panel for the \'{0}\' column:" +
-                            "", columnName), ((string)(null)), table3041, "When ");
+                            "", columnName), ((string)(null)), table3053, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3042 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3054 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3042.AddRow(new string[] {
+                table3054.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 17
- testRunner.Then("following columns added to the table:", ((string)(null)), table3042, "Then ");
+ testRunner.Then("following columns added to the table:", ((string)(null)), table3054, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3043 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3055 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3043.AddRow(new string[] {
+                table3055.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 20
- testRunner.And("content is present in the following newly added columns:", ((string)(null)), table3043, "And ");
+ testRunner.And("content is present in the following newly added columns:", ((string)(null)), table3055, "And ");
 #line hidden
 #line 23
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -317,27 +317,27 @@ this.FeatureBackground();
 #line 37
  testRunner.And(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3044 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3056 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3044.AddRow(new string[] {
+                table3056.AddRow(new string[] {
                             string.Format("{0}", checkboxName)});
 #line 38
  testRunner.When(string.Format("User clicks following checkboxes from Column Settings panel for the \'{0}\' column:" +
-                            "", columnName), ((string)(null)), table3044, "When ");
+                            "", columnName), ((string)(null)), table3056, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3045 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3057 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3045.AddRow(new string[] {
+                table3057.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 41
- testRunner.Then("following columns added to the table:", ((string)(null)), table3045, "Then ");
+ testRunner.Then("following columns added to the table:", ((string)(null)), table3057, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3046 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3058 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3046.AddRow(new string[] {
+                table3058.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 44
- testRunner.And("content is present in the following newly added columns:", ((string)(null)), table3046, "And ");
+ testRunner.And("content is present in the following newly added columns:", ((string)(null)), table3058, "And ");
 #line hidden
 #line 47
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -454,27 +454,27 @@ this.FeatureBackground();
 #line 65
  testRunner.And(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3047 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3059 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3047.AddRow(new string[] {
+                table3059.AddRow(new string[] {
                             string.Format("{0}", checkboxName)});
 #line 66
  testRunner.When(string.Format("User clicks following checkboxes from Column Settings panel for the \'{0}\' column:" +
-                            "", columnName), ((string)(null)), table3047, "When ");
+                            "", columnName), ((string)(null)), table3059, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3048 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3060 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3048.AddRow(new string[] {
+                table3060.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 69
- testRunner.Then("following columns added to the table:", ((string)(null)), table3048, "Then ");
+ testRunner.Then("following columns added to the table:", ((string)(null)), table3060, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3049 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3061 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3049.AddRow(new string[] {
+                table3061.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 72
- testRunner.And("content is present in the following newly added columns:", ((string)(null)), table3049, "And ");
+ testRunner.And("content is present in the following newly added columns:", ((string)(null)), table3061, "And ");
 #line hidden
 #line 75
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -574,27 +574,27 @@ this.FeatureBackground();
 #line 101
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3050 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3062 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3050.AddRow(new string[] {
+                table3062.AddRow(new string[] {
                             string.Format("{0}", checkboxName)});
 #line 102
  testRunner.When(string.Format("User clicks following checkboxes from Column Settings panel for the \'{0}\' column:" +
-                            "", columnName), ((string)(null)), table3050, "When ");
+                            "", columnName), ((string)(null)), table3062, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3051 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3063 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3051.AddRow(new string[] {
+                table3063.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 105
- testRunner.Then("following columns added to the table:", ((string)(null)), table3051, "Then ");
+ testRunner.Then("following columns added to the table:", ((string)(null)), table3063, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3052 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3064 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3052.AddRow(new string[] {
+                table3064.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 108
- testRunner.And("content is present in the following newly added columns:", ((string)(null)), table3052, "And ");
+ testRunner.And("content is present in the following newly added columns:", ((string)(null)), table3064, "And ");
 #line hidden
 #line 111
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -717,19 +717,19 @@ this.FeatureBackground();
 #line 131
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3053 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3065 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3053.AddRow(new string[] {
+                table3065.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 132
- testRunner.Then("following columns added to the table:", ((string)(null)), table3053, "Then ");
+ testRunner.Then("following columns added to the table:", ((string)(null)), table3065, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3054 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3066 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3054.AddRow(new string[] {
+                table3066.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 135
- testRunner.And("content is present in the following newly added columns:", ((string)(null)), table3054, "And ");
+ testRunner.And("content is present in the following newly added columns:", ((string)(null)), table3066, "And ");
 #line hidden
 #line 138
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -856,65 +856,65 @@ this.FeatureBackground();
 #line 161
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3055 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3067 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3055.AddRow(new string[] {
+                table3067.AddRow(new string[] {
                             "Key"});
-                table3055.AddRow(new string[] {
+                table3067.AddRow(new string[] {
                             "Object ID"});
 #line 162
- testRunner.Then("following columns added to the table:", ((string)(null)), table3055, "Then ");
+ testRunner.Then("following columns added to the table:", ((string)(null)), table3067, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3056 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3068 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3056.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Key"});
-                table3056.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Object ID"});
-                table3056.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Bucket"});
-                table3056.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Ring"});
-                table3056.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Path"});
-                table3056.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Workflow"});
-                table3056.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Status"});
-                table3056.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Date"});
-                table3056.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Slot"});
-                table3056.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Readiness"});
 #line 166
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3056, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3068, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3057 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3069 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkbox"});
-                table3057.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             "Key"});
-                table3057.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             "Object ID"});
-                table3057.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             "Bucket"});
-                table3057.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             "Ring"});
-                table3057.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             "Path"});
-                table3057.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             "Workflow"});
-                table3057.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             "Status"});
-                table3057.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             "Date"});
-                table3057.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             "Slot"});
-                table3057.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             "Readiness"});
 #line 178
  testRunner.And("Checkboxes are checked on the Column Settings panel for \"Key\" Column Settings pan" +
-                        "el:", ((string)(null)), table3057, "And ");
+                        "el:", ((string)(null)), table3069, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
