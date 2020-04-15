@@ -158,7 +158,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1371 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1372 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -171,7 +171,7 @@ this.FeatureBackground();
                             "AllowAnonymousUsers",
                             "ScopeId",
                             "scopeName"});
-                table1371.AddRow(new string[] {
+                table1372.AddRow(new string[] {
                             "1",
                             "TestSelfService_name3_test",
                             "id193803",
@@ -185,7 +185,7 @@ this.FeatureBackground();
                             "2",
                             "bob"});
 #line 9
- testRunner.When("User creates Self Service via API", ((string)(null)), table1371, "When ");
+ testRunner.When("User creates Self Service via API", ((string)(null)), table1372, "When ");
 #line hidden
 #line 12
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -274,7 +274,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1372 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1373 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -287,7 +287,7 @@ this.FeatureBackground();
                             "AllowAnonymousUsers",
                             "ScopeId",
                             "scopeName"});
-                table1372.AddRow(new string[] {
+                table1373.AddRow(new string[] {
                             "1",
                             "TestSelfService_name54_test",
                             "id193854",
@@ -301,7 +301,7 @@ this.FeatureBackground();
                             "2",
                             "bob"});
 #line 17
- testRunner.When("User creates Self Service via API", ((string)(null)), table1372, "When ");
+ testRunner.When("User creates Self Service via API", ((string)(null)), table1373, "When ");
 #line hidden
 #line 20
  testRunner.Then("User checks the Self Services Grid via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -387,7 +387,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1373 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1374 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -400,7 +400,7 @@ this.FeatureBackground();
                             "AllowAnonymousUsers",
                             "ScopeId",
                             "scopeName"});
-                table1373.AddRow(new string[] {
+                table1374.AddRow(new string[] {
                             "1",
                             "TestSelfService_name3_test",
                             "id193806",
@@ -414,7 +414,7 @@ this.FeatureBackground();
                             "2",
                             "bob"});
 #line 24
- testRunner.When("User creates Self Service via API", ((string)(null)), table1373, "When ");
+ testRunner.When("User creates Self Service via API", ((string)(null)), table1374, "When ");
 #line hidden
 #line 27
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -509,7 +509,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1374 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1375 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -522,7 +522,7 @@ this.FeatureBackground();
                             "AllowAnonymousUsers",
                             "ScopeId",
                             "scopeName"});
-                table1374.AddRow(new string[] {
+                table1375.AddRow(new string[] {
                             "1",
                             "TestSelfService_name3_test",
                             "id193808",
@@ -536,7 +536,7 @@ this.FeatureBackground();
                             "2",
                             "bob"});
 #line 34
- testRunner.When("User creates Self Service via API", ((string)(null)), table1374, "When ");
+ testRunner.When("User creates Self Service via API", ((string)(null)), table1375, "When ");
 #line hidden
 #line 37
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -631,7 +631,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1375 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1376 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -644,7 +644,7 @@ this.FeatureBackground();
                             "AllowAnonymousUsers",
                             "ScopeId",
                             "scopeName"});
-                table1375.AddRow(new string[] {
+                table1376.AddRow(new string[] {
                             "1",
                             "TestSelfService_name3_test",
                             "id193803",
@@ -658,7 +658,7 @@ this.FeatureBackground();
                             "2",
                             "bob"});
 #line 44
- testRunner.When("User creates Self Service via API", ((string)(null)), table1375, "When ");
+ testRunner.When("User creates Self Service via API", ((string)(null)), table1376, "When ");
 #line hidden
 #line 47
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

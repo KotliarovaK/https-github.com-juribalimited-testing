@@ -172,18 +172,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table937 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table938 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table937.AddRow(new string[] {
+                table938.AddRow(new string[] {
                             "project12949",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table937, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table938, "When ");
 #line hidden
 #line 13
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -218,20 +218,20 @@ this.FeatureBackground();
 #line 23
  testRunner.When("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table938 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table939 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table938.AddRow(new string[] {
+                table939.AddRow(new string[] {
                             "ADD135461 (Luke W. Clark)"});
-                table938.AddRow(new string[] {
+                table939.AddRow(new string[] {
                             "ADO048752 (Elena Z. Le)"});
-                table938.AddRow(new string[] {
+                table939.AddRow(new string[] {
                             "ADX520696 (Bridgett E. Cobb)"});
-                table938.AddRow(new string[] {
+                table939.AddRow(new string[] {
                             "CKB423934 (Tracie N. Bright)"});
-                table938.AddRow(new string[] {
+                table939.AddRow(new string[] {
                             "CKB423934 (Tracie N. Bright)"});
 #line 24
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table938, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table939, "And ");
 #line hidden
 #line 31
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -249,16 +249,16 @@ this.FeatureBackground();
 #line 35
  testRunner.When("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table939 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table940 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table939.AddRow(new string[] {
+                table940.AddRow(new string[] {
                             "Adobe Reader 5ver2.1"});
-                table939.AddRow(new string[] {
+                table940.AddRow(new string[] {
                             "allCLEAR 6.0 Viewer"});
-                table939.AddRow(new string[] {
+                table940.AddRow(new string[] {
                             "AnalogX TrackSeek"});
 #line 36
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table939, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table940, "And ");
 #line hidden
 #line 41
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -276,30 +276,30 @@ this.FeatureBackground();
 #line 45
  testRunner.When("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table940 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table941 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table940.AddRow(new string[] {
+                table941.AddRow(new string[] {
                             "ADD135461 (Luke W. Clark)"});
-                table940.AddRow(new string[] {
+                table941.AddRow(new string[] {
                             "ADO048752 (Elena Z. Le)"});
-                table940.AddRow(new string[] {
+                table941.AddRow(new string[] {
                             "ADX520696 (Bridgett E. Cobb)"});
 #line 46
- testRunner.Then("following objects were not found", ((string)(null)), table940, "Then ");
+ testRunner.Then("following objects were not found", ((string)(null)), table941, "Then ");
 #line hidden
 #line 51
  testRunner.When("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table941 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table942 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table941.AddRow(new string[] {
+                table942.AddRow(new string[] {
                             "Adobe Reader 5ver2.1"});
-                table941.AddRow(new string[] {
+                table942.AddRow(new string[] {
                             "allCLEAR 6.0 Viewer"});
-                table941.AddRow(new string[] {
+                table942.AddRow(new string[] {
                             "AnalogX TrackSeek"});
 #line 52
- testRunner.Then("following objects were not found", ((string)(null)), table941, "Then ");
+ testRunner.Then("following objects were not found", ((string)(null)), table942, "Then ");
 #line hidden
 #line 57
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -396,18 +396,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table942 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table943 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table942.AddRow(new string[] {
+                table943.AddRow(new string[] {
                             "1DevicesProject",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 62
- testRunner.When("Project created via API and opened", ((string)(null)), table942, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table943, "When ");
 #line hidden
 #line 65
  testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -569,18 +569,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table943 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table944 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table943.AddRow(new string[] {
+                table944.AddRow(new string[] {
                             "UsersProject2",
                             "All Users",
                             "None",
                             "Standalone Project"});
 #line 92
- testRunner.When("Project created via API and opened", ((string)(null)), table943, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table944, "When ");
 #line hidden
 #line 95
  testRunner.Then("Page with \'UsersProject2\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -597,22 +597,22 @@ this.FeatureBackground();
 #line 99
  testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table944 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table945 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table944.AddRow(new string[] {
+                table945.AddRow(new string[] {
                             "01HMZTRG6OQAOF"});
-                table944.AddRow(new string[] {
+                table945.AddRow(new string[] {
                             "02C80G8RFTPA9E"});
-                table944.AddRow(new string[] {
+                table945.AddRow(new string[] {
                             "04FPR090BNW80E"});
-                table944.AddRow(new string[] {
+                table945.AddRow(new string[] {
                             "05LG3HCJLEDEMTR"});
-                table944.AddRow(new string[] {
+                table945.AddRow(new string[] {
                             "2QP6MWKI0BM87U"});
-                table944.AddRow(new string[] {
+                table945.AddRow(new string[] {
                             "2QP6MWKI0BM87U"});
 #line 100
- testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table944, "And ");
+ testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table945, "And ");
 #line hidden
 #line 108
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -648,15 +648,15 @@ this.FeatureBackground();
 #line 118
  testRunner.And("User navigates to the \'Devices\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table945 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table946 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table945.AddRow(new string[] {
+                table946.AddRow(new string[] {
                             "01HMZTRG6OQAOF"});
-                table945.AddRow(new string[] {
+                table946.AddRow(new string[] {
                             "02C80G8RFTPA9E"});
 #line 119
  testRunner.And("User expands \'Devices to remove\' multiselect to the \'Devices\' tab on Project Scop" +
-                        "e Changes page and selects following Objects", ((string)(null)), table945, "And ");
+                        "e Changes page and selects following Objects", ((string)(null)), table946, "And ");
 #line hidden
 #line 123
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

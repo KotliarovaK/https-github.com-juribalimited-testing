@@ -321,13 +321,13 @@ this.FeatureBackground();
 #line 35
  testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1738 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1739 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1738.AddRow(new string[] {
+                table1739.AddRow(new string[] {
                             "True"});
 #line 36
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default\' " +
-                        "column:", ((string)(null)), table1738, "When ");
+                        "column:", ((string)(null)), table1739, "When ");
 #line hidden
 #line 39
  testRunner.Then("Rows counter shows more than \"2793\" found rows of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

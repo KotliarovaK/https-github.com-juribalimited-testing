@@ -501,17 +501,17 @@ this.FeatureBackground();
 #line 54
  testRunner.When("User navigates to the \'Evergreen Detail\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2936 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2937 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2936.AddRow(new string[] {
+                table2937.AddRow(new string[] {
                             "Advertisement"});
-                table2936.AddRow(new string[] {
+                table2937.AddRow(new string[] {
                             "Association"});
-                table2936.AddRow(new string[] {
+                table2937.AddRow(new string[] {
                             "Compliance"});
 #line 55
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Application\'" +
-                        " column:", ((string)(null)), table2936, "When ");
+                        " column:", ((string)(null)), table2937, "When ");
 #line hidden
 #line 60
  testRunner.When("User clicks on \'Used Duration (Mins)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

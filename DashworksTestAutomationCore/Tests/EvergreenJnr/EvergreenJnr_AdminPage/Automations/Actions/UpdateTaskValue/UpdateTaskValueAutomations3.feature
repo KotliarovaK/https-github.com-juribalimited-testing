@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17481 @DAS18871 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17481 @DAS18871 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasOwner
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -36,8 +36,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasOwner
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17481_Automation | 17481       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17481_Automation | 17481       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -101,8 +101,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasDueDate
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17482_Automation | 17481       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17482_Automation | 17481       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -169,8 +169,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasNotDueDate
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17482_Automation | 17481       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17482_Automation | 17481       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -234,8 +234,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasNotOwner
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17484_Automation | 17481       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17484_Automation | 17481       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

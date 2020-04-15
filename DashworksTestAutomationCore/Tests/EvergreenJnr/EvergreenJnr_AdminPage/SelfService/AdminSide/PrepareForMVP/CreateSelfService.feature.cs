@@ -161,13 +161,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1554 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1555 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1554.AddRow(new string[] {
+                table1555.AddRow(new string[] {
                             ""});
 #line 10
  testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1554, "When ");
+                        "ng items", ((string)(null)), table1555, "When ");
 #line hidden
 #line 13
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -389,15 +389,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1555 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1556 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1555.AddRow(new string[] {
+                table1556.AddRow(new string[] {
                             ""});
 #line 39
  testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1555, "When ");
+                        "ng items", ((string)(null)), table1556, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1556 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1557 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -411,7 +411,7 @@ this.FeatureBackground();
                             "ScopeId",
                             "scopeName",
                             "Scope"});
-                table1556.AddRow(new string[] {
+                table1557.AddRow(new string[] {
                             "1",
                             "TestProj_3",
                             "Test_ID_3",
@@ -426,7 +426,7 @@ this.FeatureBackground();
                             "bob",
                             "2004 Apps"});
 #line 42
-    testRunner.When("User creates Self Service via API", ((string)(null)), table1556, "When ");
+    testRunner.When("User creates Self Service via API", ((string)(null)), table1557, "When ");
 #line hidden
 #line 45
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -750,15 +750,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1557 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1558 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1557.AddRow(new string[] {
+                table1558.AddRow(new string[] {
                             ""});
 #line 81
  testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1557, "When ");
+                        "ng items", ((string)(null)), table1558, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1558 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1559 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -772,7 +772,7 @@ this.FeatureBackground();
                             "ScopeId",
                             "scopeName",
                             "Scope"});
-                table1558.AddRow(new string[] {
+                table1559.AddRow(new string[] {
                             "1",
                             "TestProj_6",
                             "Test_ID_6",
@@ -787,7 +787,7 @@ this.FeatureBackground();
                             "bob",
                             "1803 Apps"});
 #line 84
-    testRunner.When("User creates Self Service via API", ((string)(null)), table1558, "When ");
+    testRunner.When("User creates Self Service via API", ((string)(null)), table1559, "When ");
 #line hidden
 #line 87
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -896,13 +896,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1559 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1560 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1559.AddRow(new string[] {
+                table1560.AddRow(new string[] {
                             ""});
 #line 98
  testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1559, "When ");
+                        "ng items", ((string)(null)), table1560, "When ");
 #line hidden
 #line 101
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1011,13 +1011,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1560 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1561 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1560.AddRow(new string[] {
+                table1561.AddRow(new string[] {
                             ""});
 #line 118
  testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1560, "When ");
+                        "ng items", ((string)(null)), table1561, "When ");
 #line hidden
 #line 121
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1218,13 +1218,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1561 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1562 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1561.AddRow(new string[] {
+                table1562.AddRow(new string[] {
                             ""});
 #line 146
     testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1561, "When ");
+                        "ng items", ((string)(null)), table1562, "When ");
 #line hidden
 #line 149
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1344,15 +1344,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1562 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1563 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1562.AddRow(new string[] {
+                table1563.AddRow(new string[] {
                             ""});
 #line 163
     testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1562, "When ");
+                        "ng items", ((string)(null)), table1563, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1563 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1564 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -1366,7 +1366,7 @@ this.FeatureBackground();
                             "ScopeId",
                             "scopeName",
                             "Scope"});
-                table1563.AddRow(new string[] {
+                table1564.AddRow(new string[] {
                             "1",
                             "TestProj_8",
                             "Test_ID_8",
@@ -1381,7 +1381,7 @@ this.FeatureBackground();
                             "bob",
                             "1803 Apps"});
 #line 166
-    testRunner.When("User creates Self Service via API", ((string)(null)), table1563, "When ");
+    testRunner.When("User creates Self Service via API", ((string)(null)), table1564, "When ");
 #line hidden
 #line 169
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1524,15 +1524,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1564 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1565 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1564.AddRow(new string[] {
+                table1565.AddRow(new string[] {
                             ""});
 #line 192
     testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1564, "When ");
+                        "ng items", ((string)(null)), table1565, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1565 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1566 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -1546,7 +1546,7 @@ this.FeatureBackground();
                             "ScopeId",
                             "scopeName",
                             "Scope"});
-                table1565.AddRow(new string[] {
+                table1566.AddRow(new string[] {
                             "1",
                             "TestProj_9",
                             "Test_ID_9",
@@ -1561,7 +1561,7 @@ this.FeatureBackground();
                             "bob",
                             "1803 Apps"});
 #line 195
-    testRunner.When("User creates Self Service via API", ((string)(null)), table1565, "When ");
+    testRunner.When("User creates Self Service via API", ((string)(null)), table1566, "When ");
 #line hidden
 #line 198
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1660,15 +1660,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1566 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1567 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1566.AddRow(new string[] {
+                table1567.AddRow(new string[] {
                             ""});
 #line 206
     testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1566, "When ");
+                        "ng items", ((string)(null)), table1567, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1567 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1568 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -1682,7 +1682,7 @@ this.FeatureBackground();
                             "ScopeId",
                             "scopeName",
                             "Scope"});
-                table1567.AddRow(new string[] {
+                table1568.AddRow(new string[] {
                             "1",
                             "TestProj_3",
                             "Test_ID_3",
@@ -1697,7 +1697,7 @@ this.FeatureBackground();
                             "bob",
                             "2004 Apps"});
 #line 209
-    testRunner.When("User creates Self Service via API", ((string)(null)), table1567, "When ");
+    testRunner.When("User creates Self Service via API", ((string)(null)), table1568, "When ");
 #line hidden
 #line 212
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1714,12 +1714,12 @@ this.FeatureBackground();
 #line 216
  testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1568 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1569 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table1568.AddRow(new string[] {
+                table1569.AddRow(new string[] {
                             "All Applications"});
 #line 217
- testRunner.Then("\'Self Service Scope\' autocomplete contains following options:", ((string)(null)), table1568, "Then ");
+ testRunner.Then("\'Self Service Scope\' autocomplete contains following options:", ((string)(null)), table1569, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

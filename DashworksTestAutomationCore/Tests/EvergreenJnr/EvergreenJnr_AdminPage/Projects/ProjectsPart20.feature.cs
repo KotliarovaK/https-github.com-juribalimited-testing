@@ -167,18 +167,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1042 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1043 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1042.AddRow(new string[] {
+                table1043.AddRow(new string[] {
                             "Project13347",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table1042, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1043, "When ");
 #line hidden
 #line 13
  testRunner.Then("Page with \'Project13347\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -192,55 +192,55 @@ this.FeatureBackground();
 #line 16
  testRunner.And("User navigates to the \'Devices\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1043 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1044 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1043.AddRow(new string[] {
+                table1044.AddRow(new string[] {
                             "00K4CEEQ737BA4L"});
-                table1043.AddRow(new string[] {
+                table1044.AddRow(new string[] {
                             "00YWR8TJU4ZF8V"});
-                table1043.AddRow(new string[] {
+                table1044.AddRow(new string[] {
                             "019BFPQGKK5QT8N"});
-                table1043.AddRow(new string[] {
+                table1044.AddRow(new string[] {
                             "02C80G8RFTPA9E"});
-                table1043.AddRow(new string[] {
+                table1044.AddRow(new string[] {
                             "06T5FX3CUY08AE"});
 #line 17
  testRunner.And("User expands \'Devices to add\' multiselect to the \'Devices\' tab on Project Scope C" +
-                        "hanges page and selects following Objects", ((string)(null)), table1043, "And ");
+                        "hanges page and selects following Objects", ((string)(null)), table1044, "And ");
 #line hidden
 #line 24
  testRunner.And("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1044 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1045 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1044.AddRow(new string[] {
+                table1045.AddRow(new string[] {
                             "AAC860150 (Kerrie D. Ruiz)"});
-                table1044.AddRow(new string[] {
+                table1045.AddRow(new string[] {
                             "AAD1011948 (Pinabel Cinq-Mars)"});
-                table1044.AddRow(new string[] {
+                table1045.AddRow(new string[] {
                             "AAM044531 (Dustin R. Alvarez)"});
 #line 25
  testRunner.And("User expands \'Users to add\' multiselect to the \'Users\' tab on Project Scope Chang" +
-                        "es page and selects following Objects", ((string)(null)), table1044, "And ");
+                        "es page and selects following Objects", ((string)(null)), table1045, "And ");
 #line hidden
 #line 30
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1045 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1046 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1045.AddRow(new string[] {
+                table1046.AddRow(new string[] {
                             "ACDSee 4.0.2 PowerPack Trial Version (4.00.0002)"});
-                table1045.AddRow(new string[] {
+                table1046.AddRow(new string[] {
                             "%SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 (12.0.2430.0)"});
-                table1045.AddRow(new string[] {
+                table1046.AddRow(new string[] {
                             "%SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI (12.0.2430.0)"});
-                table1045.AddRow(new string[] {
+                table1046.AddRow(new string[] {
                             "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
-                table1045.AddRow(new string[] {
+                table1046.AddRow(new string[] {
                             "0036 - Microsoft Access 97 SR-2 English (8.0)"});
 #line 31
  testRunner.And("User expands \'Applications to add\' multiselect to the \'Applications\' tab on Proje" +
-                        "ct Scope Changes page and selects following Objects", ((string)(null)), table1045, "And ");
+                        "ct Scope Changes page and selects following Objects", ((string)(null)), table1046, "And ");
 #line hidden
 #line 38
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -282,17 +282,17 @@ this.FeatureBackground();
 #line 52
  testRunner.And("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1046 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1047 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1046.AddRow(new string[] {
+                table1047.AddRow(new string[] {
                             "AAC860150 (Kerrie D. Ruiz)"});
-                table1046.AddRow(new string[] {
+                table1047.AddRow(new string[] {
                             "AAD1011948 (Pinabel Cinq-Mars)"});
-                table1046.AddRow(new string[] {
+                table1047.AddRow(new string[] {
                             "AAM044531 (Dustin R. Alvarez)"});
 #line 53
  testRunner.And("User expands \'Users to remove\' multiselect to the \'Users\' tab on Project Scope Ch" +
-                        "anges page and selects following Objects", ((string)(null)), table1046, "And ");
+                        "anges page and selects following Objects", ((string)(null)), table1047, "And ");
 #line hidden
 #line 58
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -747,20 +747,20 @@ this.FeatureBackground();
 #line 133
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1047 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1048 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table1047.AddRow(new string[] {
+                table1048.AddRow(new string[] {
                             "Scope Details"});
-                table1047.AddRow(new string[] {
+                table1048.AddRow(new string[] {
                             "Scope Changes"});
-                table1047.AddRow(new string[] {
+                table1048.AddRow(new string[] {
                             "Automated Onboarding"});
-                table1047.AddRow(new string[] {
+                table1048.AddRow(new string[] {
                             "Queue"});
-                table1047.AddRow(new string[] {
+                table1048.AddRow(new string[] {
                             "History"});
 #line 134
- testRunner.Then("\'Scope\' left menu have following submenu items:", ((string)(null)), table1047, "Then ");
+ testRunner.Then("\'Scope\' left menu have following submenu items:", ((string)(null)), table1048, "Then ");
 #line hidden
 #line 141
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -775,18 +775,18 @@ this.FeatureBackground();
  testRunner.Then("\"90\" content is displayed in \"Percentage capacity to reach before showing amber\" " +
                         "field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1048 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1049 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table1048.AddRow(new string[] {
+                table1049.AddRow(new string[] {
                             "Capacity Details"});
-                table1048.AddRow(new string[] {
+                table1049.AddRow(new string[] {
                             "Units"});
-                table1048.AddRow(new string[] {
+                table1049.AddRow(new string[] {
                             "Slots"});
-                table1048.AddRow(new string[] {
+                table1049.AddRow(new string[] {
                             "Override Dates"});
 #line 145
- testRunner.Then("\'Capacity\' left menu have following submenu items:", ((string)(null)), table1048, "Then ");
+ testRunner.Then("\'Capacity\' left menu have following submenu items:", ((string)(null)), table1049, "Then ");
 #line hidden
 #line 151
  testRunner.When("User clicks \'Administration\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

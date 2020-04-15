@@ -222,7 +222,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17288")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUpdateCapacityUnit()
         {
             System.Exception lastException = null;
@@ -256,16 +255,14 @@ this.FeatureBackground();
                     "EvergreenJnr_AdminPage",
                     "Automations",
                     "DAS17288",
-                    "Cleanup",
-                    "Wormhole"};
+                    "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUpdateCapacit" +
                     "yUnit", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17288",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 32
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

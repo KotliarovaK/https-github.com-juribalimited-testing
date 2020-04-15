@@ -287,18 +287,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1158 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1159 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1158.AddRow(new string[] {
+                table1159.AddRow(new string[] {
                             "NewProject15397",
                             "All Users",
                             "None",
                             "Standalone Project"});
 #line 27
- testRunner.When("Project created via API and opened", ((string)(null)), table1158, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1159, "When ");
 #line hidden
 #line 30
  testRunner.When("User navigates to the \'Rings\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -93,7 +93,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         [NUnit.Framework.CategoryAttribute("DAS17481")]
         [NUnit.Framework.CategoryAttribute("DAS18871")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckValidationForTaskThatHasOwner()
         {
             System.Exception lastException = null;
@@ -128,16 +127,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
                     "Automations",
                     "DAS17481",
                     "DAS18871",
-                    "Cleanup",
-                    "Wormhole"};
+                    "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckValidationForTaskThatHasOwner", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17481",
                         "DAS18871",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -274,9 +271,9 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table484 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
@@ -581,9 +578,9 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table490 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
@@ -894,9 +891,9 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table496 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
@@ -1197,9 +1194,9 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table502 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});

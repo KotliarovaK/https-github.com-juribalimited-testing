@@ -34,8 +34,8 @@ Examples:
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLists
 	When User creates new Automation via API and open it
-	| AutomationName      | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| AppAutomation_17556 | 17556       | true   | false              | All Applications | Manual |
+	| Name                | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| AppAutomation_17556 | 17556       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
@@ -44,8 +44,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLis
 	Then Create Action page is displayed to the User
 	Then following Values are displayed in the 'Action Type' dropdown:
 	| Values                        |
-	| Update bucket                 |
 	| Update application attributes |
+	| Update capacity unit          |
 	| Update custom field           |
 	| Update path                   |
 	| Update task value             |
@@ -53,8 +53,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLis
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 17556_Automation | 17556       | true   | false              | <ListName> | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 17556_Automation | 17556       | true     | false              | <ListName> | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
@@ -76,8 +76,8 @@ Examples:
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionality
 	When User creates new Automation via API and open it
-	| AutomationName         | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17556_Automation_Users | 17556       | true   | false              | All Users | Manual |
+	| Name                   | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17556_Automation_Users | 17556       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
@@ -101,8 +101,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionality
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateRing
 	When User creates new Automation via API and open it
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17556_Automation_Ring | 17556       | true   | false              | All Users | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17556_Automation_Ring | 17556       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -146,8 +146,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLink
 	And User create static list with "TestList19083" name
 	Then "TestList19083" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope         | Run    |
-	| 19083_Automation | 19083       | true   | false              | TestList19083 | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope         | Run    |
+	| 19083_Automation | 19083       | true     | false              | TestList19083 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -192,7 +192,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLink
 	When User enters "19083_Automation" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	Then '2' content is displayed in the 'Objects' column
+	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'Evergreen Ring' column
 
@@ -251,7 +251,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
-	Then 'Unassigned' content is displayed in the 'NewProject19083: Ring' column
+	Then 'Unassigned' content is displayed in the 'NewProject: Ring' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing
@@ -388,8 +388,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject
 	Then 'The ring has been created' text is displayed on inline success banner
 	#Create Automation
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19083_3_Automation | 19083       | true   | false              | 1190831_TestList | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19083_3_Automation | 19083       | true     | false              | 1190831_TestList | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -434,7 +434,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject
 	Then '' content is displayed in the 'Task or Field' column
 	When User clicks content from "Action" column
 	Then '[Project not found]' content is displayed in 'Project or Evergreen' autocomplete
-	Then 'The selected project cannot be found' error message is displayed for 'Project or Evergreen' field
+	#Then 'The selected project cannot be found' error message is displayed for 'Project or Evergreen' field
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	Then No error message is displayed for 'Project or Evergreen' field

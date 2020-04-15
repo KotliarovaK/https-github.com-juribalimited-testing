@@ -163,13 +163,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1208 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1209 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1208.AddRow(new string[] {
+                table1209.AddRow(new string[] {
                             ""});
 #line 10
     testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1208, "When ");
+                        "ng items", ((string)(null)), table1209, "When ");
 #line hidden
 #line 13
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -339,13 +339,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1209 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1210 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1209.AddRow(new string[] {
+                table1210.AddRow(new string[] {
                             ""});
 #line 43
     testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1209, "When ");
+                        "ng items", ((string)(null)), table1210, "When ");
 #line hidden
 #line 46
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -520,13 +520,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1210 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1211 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1210.AddRow(new string[] {
+                table1211.AddRow(new string[] {
                             ""});
 #line 77
     testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1210, "When ");
+                        "ng items", ((string)(null)), table1211, "When ");
 #line hidden
 #line 80
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -552,21 +552,21 @@ this.FeatureBackground();
 #line 87
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1211 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Options"});
-                table1211.AddRow(new string[] {
-                            "Edit"});
-#line 88
- testRunner.Then("User clicks on cogmenu button for item with \'Page\' type and \'Welcome\' name on Sel" +
-                        "f Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1211, "Then ");
-#line hidden
                 TechTalk.SpecFlow.Table table1212 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
                 table1212.AddRow(new string[] {
                             "Edit"});
+#line 88
+ testRunner.Then("User clicks on cogmenu button for item with \'Page\' type and \'Welcome\' name on Sel" +
+                        "f Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1212, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table1213 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Options"});
+                table1213.AddRow(new string[] {
+                            "Edit"});
 #line 91
  testRunner.Then("User clicks on cogmenu button for item with \'Page\' type and \'Thank You\' name on S" +
-                        "elf Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1212, "Then ");
+                        "elf Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1213, "Then ");
 #line hidden
 #line 94
  testRunner.Then("\'CREATE PAGE\' button is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -654,13 +654,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1213 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1214 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1213.AddRow(new string[] {
+                table1214.AddRow(new string[] {
                             ""});
 #line 98
     testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1213, "When ");
+                        "ng items", ((string)(null)), table1214, "When ");
 #line hidden
 #line 101
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -818,13 +818,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1214 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1215 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1214.AddRow(new string[] {
+                table1215.AddRow(new string[] {
                             ""});
 #line 127
     testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1214, "When ");
+                        "ng items", ((string)(null)), table1215, "When ");
 #line hidden
 #line 130
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

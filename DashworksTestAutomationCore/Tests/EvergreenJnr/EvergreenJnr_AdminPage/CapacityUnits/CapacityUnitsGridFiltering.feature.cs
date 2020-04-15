@@ -173,13 +173,13 @@ this.FeatureBackground();
 #line 14
  testRunner.Then("Page with \'Capacity Units\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table686 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table687 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table686.AddRow(new string[] {
+                table687.AddRow(new string[] {
                             "True"});
 #line 15
  testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default\' co" +
-                        "lumn:", ((string)(null)), table686, "When ");
+                        "lumn:", ((string)(null)), table687, "When ");
 #line hidden
 #line 18
  testRunner.Then("\'FALSE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -190,13 +190,13 @@ this.FeatureBackground();
 #line 20
  testRunner.Then("Page with \'Capacity Units\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table687 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table688 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table687.AddRow(new string[] {
+                table688.AddRow(new string[] {
                             "False"});
 #line 21
  testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default\' co" +
-                        "lumn:", ((string)(null)), table687, "When ");
+                        "lumn:", ((string)(null)), table688, "When ");
 #line hidden
 #line 24
  testRunner.Then("\'TRUE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
