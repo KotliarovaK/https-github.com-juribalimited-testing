@@ -172,18 +172,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table946 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table947 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table946.AddRow(new string[] {
+                table947.AddRow(new string[] {
                             "UsersProject3",
                             "All Users",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table946, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table947, "When ");
 #line hidden
 #line 13
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -212,12 +212,12 @@ this.FeatureBackground();
 #line 21
  testRunner.When("User clicks \"Create Group\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table947 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table948 = new TechTalk.SpecFlow.Table(new string[] {
                             "GroupName"});
-                table947.AddRow(new string[] {
+                table948.AddRow(new string[] {
                             "UsersProject3Group"});
 #line 22
- testRunner.And("User create Group owned existing \"Admin IT\" Team", ((string)(null)), table947, "And ");
+ testRunner.And("User create Group owned existing \"Admin IT\" Team", ((string)(null)), table948, "And ");
 #line hidden
 #line 25
  testRunner.When("User clicks \"Create Group\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -246,12 +246,12 @@ this.FeatureBackground();
 #line 33
  testRunner.When("User selects \'UsersProject3Group\' in the \'Bucket\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table948 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table949 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table948.AddRow(new string[] {
+                table949.AddRow(new string[] {
                             "003F5D8E1A844B1FAA5 (Hunter, Melanie)"});
 #line 34
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table948, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table949, "And ");
 #line hidden
 #line 37
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -266,12 +266,12 @@ this.FeatureBackground();
 #line 40
  testRunner.When("User navigates to the \'Queue\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table949 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table950 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table949.AddRow(new string[] {
+                table950.AddRow(new string[] {
                             "003F5D8E1A844B1FAA5"});
 #line 41
- testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table949, "Then ");
+ testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table950, "Then ");
 #line hidden
 #line 44
  testRunner.Then("\'UsersProject3Group\' content is displayed in the \'Bucket\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -279,24 +279,24 @@ this.FeatureBackground();
 #line 45
  testRunner.Then("\'Unassigned\' content is displayed in the \'Capacity Unit\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table950 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table951 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table950.AddRow(new string[] {
+                table951.AddRow(new string[] {
                             "Date"});
-                table950.AddRow(new string[] {
+                table951.AddRow(new string[] {
                             "Item"});
-                table950.AddRow(new string[] {
+                table951.AddRow(new string[] {
                             "Object Type"});
-                table950.AddRow(new string[] {
+                table951.AddRow(new string[] {
                             "Action"});
-                table950.AddRow(new string[] {
+                table951.AddRow(new string[] {
                             "Bucket"});
-                table950.AddRow(new string[] {
+                table951.AddRow(new string[] {
                             "Capacity Unit"});
-                table950.AddRow(new string[] {
+                table951.AddRow(new string[] {
                             "Ring"});
 #line 46
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table950, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table951, "Then ");
 #line hidden
 #line 55
  testRunner.When("User enters \"Unassigned\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -307,12 +307,12 @@ this.FeatureBackground();
 #line 57
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table951 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table952 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table951.AddRow(new string[] {
+                table952.AddRow(new string[] {
                             "003F5D8E1A844B1FAA5"});
 #line 58
- testRunner.Then("following Items are displayed in the History table", ((string)(null)), table951, "Then ");
+ testRunner.Then("following Items are displayed in the History table", ((string)(null)), table952, "Then ");
 #line hidden
 #line 61
  testRunner.And("\'UsersProject3Group\' content is displayed in the \'Bucket\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -320,26 +320,26 @@ this.FeatureBackground();
 #line 62
  testRunner.Then("\'Unassigned\' content is displayed in the \'Capacity Unit\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table952 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table953 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table952.AddRow(new string[] {
+                table953.AddRow(new string[] {
                             "Date"});
-                table952.AddRow(new string[] {
+                table953.AddRow(new string[] {
                             "Item"});
-                table952.AddRow(new string[] {
+                table953.AddRow(new string[] {
                             "Object Type"});
-                table952.AddRow(new string[] {
+                table953.AddRow(new string[] {
                             "Action"});
-                table952.AddRow(new string[] {
+                table953.AddRow(new string[] {
                             "Bucket"});
-                table952.AddRow(new string[] {
+                table953.AddRow(new string[] {
                             "Capacity Unit"});
-                table952.AddRow(new string[] {
+                table953.AddRow(new string[] {
                             "Ring"});
-                table952.AddRow(new string[] {
+                table953.AddRow(new string[] {
                             "Status"});
 #line 63
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table952, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table953, "Then ");
 #line hidden
 #line 73
  testRunner.When("User enters \"Units\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -433,62 +433,62 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table953 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table954 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table953.AddRow(new string[] {
+                table954.AddRow(new string[] {
                             "0I29CJMQ159EOR"});
 #line 78
  testRunner.When("User create static list with \"DevicesList12157\" name on \"Devices\" page with follo" +
-                        "wing items", ((string)(null)), table953, "When ");
+                        "wing items", ((string)(null)), table954, "When ");
 #line hidden
 #line 81
  testRunner.Then("\"DevicesList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table954 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table955 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table954.AddRow(new string[] {
+                table955.AddRow(new string[] {
                             "TSI892249"});
 #line 82
  testRunner.When("User create static list with \"UsersList12157\" name on \"Users\" page with following" +
-                        " items", ((string)(null)), table954, "When ");
+                        " items", ((string)(null)), table955, "When ");
 #line hidden
 #line 85
  testRunner.Then("\"UsersList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table955 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table956 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table955.AddRow(new string[] {
+                table956.AddRow(new string[] {
                             "elsonje@bclabs.local"});
 #line 86
  testRunner.When("User create static list with \"MailboxesList12157\" name on \"Mailboxes\" page with f" +
-                        "ollowing items", ((string)(null)), table955, "When ");
+                        "ollowing items", ((string)(null)), table956, "When ");
 #line hidden
 #line 89
  testRunner.Then("\"MailboxesList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table956 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table957 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table956.AddRow(new string[] {
+                table957.AddRow(new string[] {
                             "Adobe SVG Viewer 3.0"});
 #line 90
  testRunner.When("User create static list with \"ApplicationsStaticList12157\" name on \"Applications\"" +
-                        " page with following items", ((string)(null)), table956, "When ");
+                        " page with following items", ((string)(null)), table957, "When ");
 #line hidden
 #line 93
  testRunner.Then("\"ApplicationsStaticList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table957 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table958 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table957.AddRow(new string[] {
+                table958.AddRow(new string[] {
                             string.Format("{0}", testName),
                             string.Format("{0}", mainList),
                             "None",
                             "Standalone Project"});
 #line 94
- testRunner.When("Project created via API and opened", ((string)(null)), table957, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table958, "When ");
 #line hidden
 #line 97
  testRunner.Then(string.Format("Page with \'{0}\' header is displayed to user", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -619,18 +619,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table958 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table959 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table958.AddRow(new string[] {
+                table959.AddRow(new string[] {
                             "DAS11981",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 121
- testRunner.When("Project created via API and opened", ((string)(null)), table958, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table959, "When ");
 #line hidden
 #line 124
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -638,20 +638,20 @@ this.FeatureBackground();
 #line 125
  testRunner.And("User navigates to the \'Application Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table959 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table960 = new TechTalk.SpecFlow.Table(new string[] {
                             "CheckboxesToBeClicked"});
-                table959.AddRow(new string[] {
+                table960.AddRow(new string[] {
                             "Entitled to the device"});
-                table959.AddRow(new string[] {
+                table960.AddRow(new string[] {
                             "Installed on the device"});
-                table959.AddRow(new string[] {
+                table960.AddRow(new string[] {
                             "Used by the device owner on any device"});
-                table959.AddRow(new string[] {
+                table960.AddRow(new string[] {
                             "Used on the device by the device owner"});
-                table959.AddRow(new string[] {
+                table960.AddRow(new string[] {
                             "Used on the device by any user"});
 #line 126
- testRunner.And("User checks following checkboxes:", ((string)(null)), table959, "And ");
+ testRunner.And("User checks following checkboxes:", ((string)(null)), table960, "And ");
 #line hidden
 #line 133
  testRunner.And("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -783,18 +783,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table960 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table961 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table960.AddRow(new string[] {
+                table961.AddRow(new string[] {
                             "Project13428",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 151
- testRunner.When("Project created via API and opened", ((string)(null)), table960, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table961, "When ");
 #line hidden
 #line 154
  testRunner.Then("Page with \'Project13428\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -811,12 +811,12 @@ this.FeatureBackground();
 #line 158
  testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table961 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table962 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table961.AddRow(new string[] {
+                table962.AddRow(new string[] {
                             "0623U41CZ73RV2Q"});
 #line 159
- testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table961, "And ");
+ testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table962, "And ");
 #line hidden
 #line 162
  testRunner.When("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -831,22 +831,22 @@ this.FeatureBackground();
 #line 165
  testRunner.When("User navigates to the \'Queue\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table962 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Items"});
-                table962.AddRow(new string[] {
-                            "0623U41CZ73RV2Q"});
-#line 166
- testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table962, "Then ");
-#line hidden
-#line 169
- testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
                 TechTalk.SpecFlow.Table table963 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
                 table963.AddRow(new string[] {
                             "0623U41CZ73RV2Q"});
+#line 166
+ testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table963, "Then ");
+#line hidden
+#line 169
+ testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table964 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Items"});
+                table964.AddRow(new string[] {
+                            "0623U41CZ73RV2Q"});
 #line 170
- testRunner.Then("following Items are displayed in the History table", ((string)(null)), table963, "Then ");
+ testRunner.Then("following Items are displayed in the History table", ((string)(null)), table964, "Then ");
 #line hidden
 #line 173
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

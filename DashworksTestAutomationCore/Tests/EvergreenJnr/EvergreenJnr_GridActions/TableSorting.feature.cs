@@ -158,24 +158,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2817 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2818 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2817.AddRow(new string[] {
+                table2818.AddRow(new string[] {
                             "Boot Up Date"});
-                table2817.AddRow(new string[] {
+                table2818.AddRow(new string[] {
                             "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task"});
 #line 11
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2817, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2818, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2818 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2819 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2818.AddRow(new string[] {
+                table2819.AddRow(new string[] {
                             "Android",
                             "22"});
 #line 15
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2818, "Then ");
+                        "s are returned", ((string)(null)), table2819, "Then ");
 #line hidden
 #line 18
  testRunner.When("User clicks on \'Boot Up Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -189,15 +189,15 @@ this.FeatureBackground();
 #line 21
  testRunner.Then("date in table is sorted by \'Boot Up Date\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2819 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2820 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2819.AddRow(new string[] {
+                table2820.AddRow(new string[] {
                             "Windows 10",
                             "16,969"});
 #line 22
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2819, "Then ");
+                        "s are returned", ((string)(null)), table2820, "Then ");
 #line hidden
 #line 25
  testRunner.When("User clicks on \'Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Dat" +
@@ -290,22 +290,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2820 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2821 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2820.AddRow(new string[] {
+                table2821.AddRow(new string[] {
                             "Barry\'sUse: Audit & Configuration \\ Package Delivery Date"});
 #line 32
- testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table2820, "When ");
+ testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table2821, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2821 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2822 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2821.AddRow(new string[] {
+                table2822.AddRow(new string[] {
                             "Software",
                             "94"});
 #line 35
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2821, "Then ");
+                        "s are returned", ((string)(null)), table2822, "Then ");
 #line hidden
 #line 38
  testRunner.When("User clicks on \'Barry\'sUse: Audit & Configuration \\ Package Delivery Date\' column" +
@@ -398,24 +398,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2822 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2823 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2822.AddRow(new string[] {
+                table2823.AddRow(new string[] {
                             "Created Date"});
-                table2822.AddRow(new string[] {
+                table2823.AddRow(new string[] {
                             "EmailMigra: Pre-Migration \\ Scheduled date"});
 #line 45
- testRunner.When("User add following columns using URL to the \"Mailboxes\" page:", ((string)(null)), table2822, "When ");
+ testRunner.When("User add following columns using URL to the \"Mailboxes\" page:", ((string)(null)), table2823, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2823 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2824 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2823.AddRow(new string[] {
+                table2824.AddRow(new string[] {
                             "Office",
                             "38"});
 #line 49
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2823, "Then ");
+                        "s are returned", ((string)(null)), table2824, "Then ");
 #line hidden
 #line 52
  testRunner.When("User clicks on \'Created Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -518,24 +518,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2824 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2825 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2824.AddRow(new string[] {
+                table2825.AddRow(new string[] {
                             "Last Logon Date"});
-                table2824.AddRow(new string[] {
+                table2825.AddRow(new string[] {
                             "Barry\'sUse: Project Dates \\ Migrated Date"});
 #line 63
- testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table2824, "When ");
+ testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table2825, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2825 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2826 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2825.AddRow(new string[] {
+                table2826.AddRow(new string[] {
                             "Tim",
                             "147"});
 #line 67
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2825, "Then ");
+                        "s are returned", ((string)(null)), table2826, "Then ");
 #line hidden
 #line 70
  testRunner.When("User clicks on \'Last Logon Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -652,12 +652,12 @@ this.FeatureBackground();
 #line 84
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2826 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2827 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2826.AddRow(new string[] {
+                table2827.AddRow(new string[] {
                             "Owner Compliance"});
 #line 85
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2826, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2827, "When ");
 #line hidden
 #line 88
  testRunner.Then("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -863,19 +863,19 @@ this.FeatureBackground();
 #line 114
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2827 = new TechTalk.SpecFlow.Table(new string[] {
-                            "ColumnName"});
-                table2827.AddRow(new string[] {
-                            string.Format("{0}", columnName)});
-#line 115
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2827, "When ");
-#line hidden
                 TechTalk.SpecFlow.Table table2828 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
                 table2828.AddRow(new string[] {
                             string.Format("{0}", columnName)});
+#line 115
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2828, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table2829 = new TechTalk.SpecFlow.Table(new string[] {
+                            "ColumnName"});
+                table2829.AddRow(new string[] {
+                            string.Format("{0}", columnName)});
 #line 118
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table2828, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table2829, "Then ");
 #line hidden
 #line 121
  testRunner.When(string.Format("User clicks on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -901,12 +901,12 @@ this.FeatureBackground();
 #line 128
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", dynamicListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2829 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2830 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2829.AddRow(new string[] {
+                table2830.AddRow(new string[] {
                             string.Format("{0}", columnName)});
 #line 129
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table2829, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table2830, "Then ");
 #line hidden
 #line 132
  testRunner.Then(string.Format("numeric data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

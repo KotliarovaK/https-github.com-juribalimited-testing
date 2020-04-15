@@ -5,11 +5,11 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19656 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19656 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope                   | Run    |
-	| 19656_Automation | 19656       | true   | false              | Users with Device Count | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope                   | Run    |
+	| 19656_Automation | 19656       | true     | false              | Users with Device Count | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -18,10 +18,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
-	When User selects 'Update relative to current value' in the 'Update Date' dropdown
-	When User enters '5' text to 'Value' textbox
-	When User selects 'Week days' in the 'Units' dropdown
-	When User selects 'After current value' in the 'Before or After' dropdown
+	When User selects 'Update' in the 'Update Date' dropdown
+	When User enters '17 Feb 2020' text to 'Date' datepicker
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -34,7 +32,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	Then '24 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -44,8 +41,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	When User selects 'Update' in the 'Update Date' dropdown
-	When User enters '17 Feb 2020' text to 'Date' datepicker
+	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User enters '5' text to 'Value' textbox
+	When User selects 'weekdays before current value' in the 'Units' dropdown
 	When User clicks 'UPDATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -58,13 +56,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	Then '17 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
+	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19274 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19274 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope                   | Run    |
-	| 192741_Automation | 19274_19656 | true   | false              | Users with Device Count | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope                   | Run    |
+	| 192741_Automation | 19274_19656 | true     | false              | Users with Device Count | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -114,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @DAS2036 @Cleanup @X_Ray
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @DAS20736 @DAS20743 @Cleanup @X_Ray 
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
@@ -146,6 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
 	Then '20 Feb 2020' content is displayed in the 'zUserAutom: Stage 1 \ Original Auto Task (Date)' column
+	Then '20 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Relative Task (Date)' column
 	Then 'COMPLETE' content is displayed in the 'zUserAutom: Stage 1 \ Original Auto Task' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
@@ -175,14 +174,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	Then '' content is displayed in the 'zUserAutom: Stage 1 \ Original Auto Task (Date)' column
 	Then 'COMPLETE' content is displayed in the 'zUserAutom: Stage 1 \ Original Auto Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20278 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20278 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckOwnerDropdownDisplayingAfterSelectingEmptyTeam
 	When User creates new Team via api
 	| TeamName   | Description | IsDefault |
 	| 20278_Test | test        | false     |
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 20278_Automation | 20278       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 20278_Automation | 20278       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -199,8 +198,8 @@ Scenario: EvergreenJnr_AdminPage_CheckOwnerDropdownDisplayingAfterSelectingEmpty
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS20363 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingAction
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 20364_Automation | 20364       | true   | false              | New York - Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 20364_Automation | 20364       | true     | false              | New York - Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -210,12 +209,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingActio
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ Original Auto Task' option from 'Task' autocomplete
 	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Complete' in the 'Value' dropdown
+	When User selects 'Complete' in the 'Update Value' dropdown
 	When User selects 'Stage 2 \ Relative Task' option from 'Relative Task' autocomplete
 	When User enters '0' text to 'Value' textbox
-	When User selects 'Week days' in the 'Units' dropdown
-	When User selects 'After task value' in the 'Before or After' dropdown
+	When User selects 'weekdays after task value' in the 'DateUnit' dropdown
 	When User clicks 'CREATE' button
 	When User clicks content from "Action" column
 	When User selects 'Update' in the 'Update Date' dropdown

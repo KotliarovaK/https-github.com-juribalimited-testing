@@ -184,18 +184,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table833 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table834 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table833.AddRow(new string[] {
+                table834.AddRow(new string[] {
                             "ProjectForCapacity13790",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table833, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table834, "When ");
 #line hidden
 #line 13
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -258,23 +258,23 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table834 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table835 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table834.AddRow(new string[] {
+                table835.AddRow(new string[] {
                             "CapacityUnit13790",
                             "DAS13528",
                             "false",
                             "ProjectForCapacity13790"});
-                table834.AddRow(new string[] {
+                table835.AddRow(new string[] {
                             "CapacityUnit2",
                             "DAS13528",
                             "false",
                             "ProjectForCapacity13790"});
 #line 33
- testRunner.And("User creates new Capacity Unit via api", ((string)(null)), table834, "And ");
+ testRunner.And("User creates new Capacity Unit via api", ((string)(null)), table835, "And ");
 #line hidden
 #line 37
  testRunner.When("User navigates to the \'Capacity Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -374,18 +374,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table835 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table836 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table835.AddRow(new string[] {
+                table836.AddRow(new string[] {
                             "ProjectForCapacity12672",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 46
- testRunner.When("Project created via API and opened", ((string)(null)), table835, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table836, "When ");
 #line hidden
 #line 49
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -393,22 +393,22 @@ this.FeatureBackground();
 #line 50
  testRunner.And("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table836 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table837 = new TechTalk.SpecFlow.Table(new string[] {
                             "units"});
-                table836.AddRow(new string[] {
+                table837.AddRow(new string[] {
                             "Unassigned"});
 #line 51
- testRunner.Then("User sees next Units on the Capacity Units page:", ((string)(null)), table836, "Then ");
+ testRunner.Then("User sees next Units on the Capacity Units page:", ((string)(null)), table837, "Then ");
 #line hidden
 #line 54
  testRunner.And("\'TRUE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table837 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table838 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table837.AddRow(new string[] {
+                table838.AddRow(new string[] {
                             "Unassigned"});
 #line 55
- testRunner.When("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table837, "When ");
+ testRunner.When("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table838, "When ");
 #line hidden
 #line 58
  testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -591,18 +591,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table838 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table839 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table838.AddRow(new string[] {
+                table839.AddRow(new string[] {
                             "CapacityUnit14240",
                             "14240",
                             "false",
                             "Email Migration"});
 #line 93
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table838, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table839, "When ");
 #line hidden
 #line 96
  testRunner.And("User navigates to \"Email Migration\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -661,14 +661,14 @@ this.FeatureBackground();
 #line 114
  testRunner.And("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table839 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table840 = new TechTalk.SpecFlow.Table(new string[] {
                             "units"});
-                table839.AddRow(new string[] {
+                table840.AddRow(new string[] {
                             "Unassigned"});
-                table839.AddRow(new string[] {
+                table840.AddRow(new string[] {
                             "CapacityUnit14240"});
 #line 115
- testRunner.Then("User sees next Units on the Capacity Units page:", ((string)(null)), table839, "Then ");
+ testRunner.Then("User sees next Units on the Capacity Units page:", ((string)(null)), table840, "Then ");
 #line hidden
 #line 119
  testRunner.When("User enters \"CapacityUnit14240\" text in the Search field for \"Capacity Unit\" colu" +
@@ -687,21 +687,21 @@ this.FeatureBackground();
  testRunner.Then("\'The capacity unit details have been updated\' text is displayed on inline success" +
                         " banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table840 = new TechTalk.SpecFlow.Table(new string[] {
-                            "units"});
-                table840.AddRow(new string[] {
-                            "Unassigned"});
-                table840.AddRow(new string[] {
-                            "CapacityUnit14240NameUpdated"});
-#line 124
- testRunner.And("User sees next Units on the Capacity Units page:", ((string)(null)), table840, "And ");
-#line hidden
                 TechTalk.SpecFlow.Table table841 = new TechTalk.SpecFlow.Table(new string[] {
-                            "SelectedRowsName"});
+                            "units"});
+                table841.AddRow(new string[] {
+                            "Unassigned"});
                 table841.AddRow(new string[] {
                             "CapacityUnit14240NameUpdated"});
+#line 124
+ testRunner.And("User sees next Units on the Capacity Units page:", ((string)(null)), table841, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table842 = new TechTalk.SpecFlow.Table(new string[] {
+                            "SelectedRowsName"});
+                table842.AddRow(new string[] {
+                            "CapacityUnit14240NameUpdated"});
 #line 128
- testRunner.When("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table841, "When ");
+ testRunner.When("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table842, "When ");
 #line hidden
 #line 131
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -799,18 +799,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table842 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table843 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table842.AddRow(new string[] {
+                table843.AddRow(new string[] {
                             "ProjectForDAS13945_2",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 139
- testRunner.When("Project created via API and opened", ((string)(null)), table842, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table843, "When ");
 #line hidden
 #line 142
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

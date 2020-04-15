@@ -41,3 +41,19 @@ Scenario: EvergreenJnr_AdminPage_CheckScopeListsForDifferentScopeAutomations
 	Then 'Users List (Complex)' content is not displayed in 'Scope' autocomplete after search
 	When User clicks 'Automations' header breadcrumb
 	When User clicks 'YES' button on popup
+	
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20798 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateWhileChangingScopeLists
+	When User creates new Automation via API and open it
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 20798_Automation | 20798       | true     | false              | All Users | Manual |
+	Then Automation page is displayed correctly
+	When User selects '(broken) Missing Column' option from 'Scope' autocomplete
+	Then 'This list has errors' error message is displayed for 'Scope' field
+	Then 'UPDATE' button is disabled
+	When User selects 'Mailbox List (Complex)' option from 'Scope' autocomplete
+	Then 'List validated' success message for 'Scope' field
+	Then 'UPDATE' button is not disabled
+	When User selects 'All Device Types' option from 'Scope' autocomplete
+	Then 'List validated' success message for 'Scope' field
+	Then 'UPDATE' button is not disabled

@@ -211,13 +211,13 @@ this.FeatureBackground();
 #line 25
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table672 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table673 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table672.AddRow(new string[] {
+                table673.AddRow(new string[] {
                             "True"});
 #line 26
  testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default\' co" +
-                        "lumn:", ((string)(null)), table672, "When ");
+                        "lumn:", ((string)(null)), table673, "When ");
 #line hidden
 #line 29
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -619,29 +619,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table673 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table674 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "TeamName"});
-                table673.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "1ba",
                             "Admin IT"});
-                table673.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "2ab",
                             "K-Team"});
-                table673.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "aaa",
                             "Admin IT"});
-                table673.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "aab",
                             "I-Team"});
-                table673.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "aba",
                             "Admin IT"});
-                table673.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "waa",
                             "IB Team"});
 #line 90
- testRunner.When("User creates new Bucket via api", ((string)(null)), table673, "When ");
+ testRunner.When("User creates new Bucket via api", ((string)(null)), table674, "When ");
 #line hidden
 #line 98
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
