@@ -163,18 +163,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1075 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1076 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1075.AddRow(new string[] {
+                table1076.AddRow(new string[] {
                             "DAS19363_AllDevices",
                             "All Mailboxes",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table1075, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1076, "When ");
 #line hidden
 #line 13
  testRunner.When("User navigates to \"DAS19363_AllDevices\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -457,18 +457,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1076 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1077 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1076.AddRow(new string[] {
+                table1077.AddRow(new string[] {
                             "Prj_D_DAS19883",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 57
- testRunner.When("Project created via API and opened", ((string)(null)), table1076, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1077, "When ");
 #line hidden
 #line 60
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -482,12 +482,12 @@ this.FeatureBackground();
 #line 63
  testRunner.Then("open tab in the Project Scope Changes section is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1077 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1078 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1077.AddRow(new string[] {
+                table1078.AddRow(new string[] {
                             "001PSUMZYOW581"});
 #line 64
- testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table1077, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table1078, "When ");
 #line hidden
 #line 67
  testRunner.When("User clicks \'Projects\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -584,18 +584,18 @@ this.FeatureBackground();
 #line 73
  testRunner.When("User creates broken list with \'Broken list DAS20276\' name on \'Devices\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1078 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1079 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1078.AddRow(new string[] {
+                table1079.AddRow(new string[] {
                             "20276_Project",
                             "Broken list DAS20276",
                             "None",
                             "Standalone Project"});
 #line 74
- testRunner.When("Project created via API and opened", ((string)(null)), table1078, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1079, "When ");
 #line hidden
 #line 77
  testRunner.Then("Page with \'20276_Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

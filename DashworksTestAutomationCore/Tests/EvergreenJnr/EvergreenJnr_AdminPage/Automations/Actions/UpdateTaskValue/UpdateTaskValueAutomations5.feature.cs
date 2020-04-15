@@ -94,7 +94,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         [NUnit.Framework.CategoryAttribute("DAS18712")]
         [NUnit.Framework.CategoryAttribute("DAS18677")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterTaskChangingToTaskWithNoDueDate()
         {
             System.Exception lastException = null;
@@ -129,8 +128,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
                     "Automations",
                     "DAS18712",
                     "DAS18677",
-                    "Cleanup",
-                    "Not_Ready"};
+                    "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterTaskChanging" +
                     "ToTaskWithNoDueDate", null, new string[] {
                         "Evergreen",
@@ -138,8 +136,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
                         "Automations",
                         "DAS18712",
                         "DAS18677",
-                        "Cleanup",
-                        "Not_Ready"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

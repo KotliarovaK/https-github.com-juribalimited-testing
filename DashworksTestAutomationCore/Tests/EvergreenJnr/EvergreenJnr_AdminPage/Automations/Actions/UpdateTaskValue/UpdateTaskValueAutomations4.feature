@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup @Not_Ready
-#Waiting for new banner message on the Create Actions page
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForDevicesAutomation
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -57,8 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	When User enters '17564_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17564_Project' option from 'Project' autocomplete
-	When User selects '17564_Stage' option from 'Stage' autocomplete
-	When User selects '17564_Task' option from 'Task' autocomplete
+	When User selects '17564_Stage \ 17564_Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	And User enters '1 Oct 2019' text to 'Date' datepicker
 	And User selects 'CapacitySlot1' in the 'Capacity Slot' dropdown
@@ -93,8 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then "SLOT NOT ASSOCIATED TO THE TASK" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup @Not_Ready
-#Waiting for new banner message on the Create Actions page
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForUsersAutomation
 	When Project created via API and opened
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
@@ -145,8 +142,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForU
 	When User enters '17565_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17565_Project' option from 'Project' autocomplete
-	When User selects '17565_Stage' option from 'Stage' autocomplete
-	When User selects '17565_Task' option from 'Task' autocomplete
+	When User selects '17565_Stage \ 17565_Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	And User enters '1 Oct 2019' text to 'Date' datepicker
 	And User selects 'CapacitySlot1' in the 'Capacity Slot' dropdown

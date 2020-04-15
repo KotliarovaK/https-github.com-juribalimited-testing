@@ -165,18 +165,18 @@ this.FeatureBackground();
 #line 11
  testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3357 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3358 = new TechTalk.SpecFlow.Table(new string[] {
                             "OptionsName"});
-                table3357.AddRow(new string[] {
+                table3358.AddRow(new string[] {
                             "Copy cell"});
-                table3357.AddRow(new string[] {
+                table3358.AddRow(new string[] {
                             "Copy row"});
-                table3357.AddRow(new string[] {
+                table3358.AddRow(new string[] {
                             "Open in new tab"});
-                table3357.AddRow(new string[] {
+                table3358.AddRow(new string[] {
                             "Open in new window"});
 #line 12
- testRunner.Then("User sees context menu with next options", ((string)(null)), table3357, "Then ");
+ testRunner.Then("User sees context menu with next options", ((string)(null)), table3358, "Then ");
 #line hidden
 #line 18
  testRunner.When("User selects \'Copy cell\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -193,30 +193,30 @@ this.FeatureBackground();
 #line 22
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3358 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3359 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3358.AddRow(new string[] {
+                table3359.AddRow(new string[] {
                             string.Format("{0}", selectedRow)});
 #line 23
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table3358, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table3359, "When ");
 #line hidden
 #line 26
  testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3359 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3360 = new TechTalk.SpecFlow.Table(new string[] {
                             "OptionsName"});
-                table3359.AddRow(new string[] {
+                table3360.AddRow(new string[] {
                             "Copy cell"});
-                table3359.AddRow(new string[] {
+                table3360.AddRow(new string[] {
                             "Copy row"});
-                table3359.AddRow(new string[] {
+                table3360.AddRow(new string[] {
                             "Copy selected rows"});
-                table3359.AddRow(new string[] {
+                table3360.AddRow(new string[] {
                             "Open in new tab"});
-                table3359.AddRow(new string[] {
+                table3360.AddRow(new string[] {
                             "Open in new window"});
 #line 27
- testRunner.Then("User sees context menu with next options", ((string)(null)), table3359, "Then ");
+ testRunner.Then("User sees context menu with next options", ((string)(null)), table3360, "Then ");
 #line hidden
 #line 34
  testRunner.When("User selects \'Copy cell\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -316,12 +316,12 @@ this.FeatureBackground();
 #line 48
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3360 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3361 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3360.AddRow(new string[] {
+                table3361.AddRow(new string[] {
                             string.Format("{0}", selectedRow)});
 #line 49
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table3360, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table3361, "When ");
 #line hidden
 #line 52
  testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -426,14 +426,14 @@ this.FeatureBackground();
 #line 68
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3361 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3362 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3361.AddRow(new string[] {
+                table3362.AddRow(new string[] {
                             string.Format("{0}", selectedRow1)});
-                table3361.AddRow(new string[] {
+                table3362.AddRow(new string[] {
                             string.Format("{0}", selectedRow2)});
 #line 69
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table3361, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table3362, "When ");
 #line hidden
 #line 73
  testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -530,13 +530,13 @@ this.FeatureBackground();
 #line 87
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3362 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3363 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3362.AddRow(new string[] {
+                table3363.AddRow(new string[] {
                             "TRUE"});
 #line 88
  testRunner.And("User add \"2004: In Scope\" filter where type is \"Equals\" with added column and fol" +
-                        "lowing checkboxes:", ((string)(null)), table3362, "And ");
+                        "lowing checkboxes:", ((string)(null)), table3363, "And ");
 #line hidden
 #line 91
  testRunner.And("User create dynamic list with \"TestListName4682\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -631,12 +631,12 @@ this.FeatureBackground();
 #line 99
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3363 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3364 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3363.AddRow(new string[] {
+                table3364.AddRow(new string[] {
                             "Device Key"});
 #line 100
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3363, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3364, "When ");
 #line hidden
 #line 103
  testRunner.And("User sets includes archived devices in \'true\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

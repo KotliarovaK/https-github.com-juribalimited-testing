@@ -161,18 +161,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1070 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1071 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1070.AddRow(new string[] {
+                table1071.AddRow(new string[] {
                             "DAS17699_AllDevices",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table1070, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1071, "When ");
 #line hidden
 #line 13
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -288,18 +288,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1071 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1072 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1071.AddRow(new string[] {
+                table1072.AddRow(new string[] {
                             "DAS17699_AllMailboxes",
                             "All Mailboxes",
                             "None",
                             "Standalone Project"});
 #line 27
- testRunner.When("Project created via API and opened", ((string)(null)), table1071, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1072, "When ");
 #line hidden
 #line 30
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -537,14 +537,14 @@ this.FeatureBackground();
 #line 65
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1072 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1073 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table1072.AddRow(new string[] {
+                table1073.AddRow(new string[] {
                             "Project",
                             "true"});
 #line 66
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table1072, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table1073, "When ");
 #line hidden
 #line 69
  testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -653,16 +653,16 @@ this.FeatureBackground();
 #line 80
  testRunner.Then("All items in the \'Scope\' dropdown have icons", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1073 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1074 = new TechTalk.SpecFlow.Table(new string[] {
                             "tooltip"});
-                table1073.AddRow(new string[] {
+                table1074.AddRow(new string[] {
                             "System"});
-                table1073.AddRow(new string[] {
+                table1074.AddRow(new string[] {
                             "Private"});
-                table1073.AddRow(new string[] {
+                table1074.AddRow(new string[] {
                             "Shared"});
 #line 81
- testRunner.Then("All icon items in the \'Scope\' dropdown have any of tooltip", ((string)(null)), table1073, "Then ");
+ testRunner.Then("All icon items in the \'Scope\' dropdown have any of tooltip", ((string)(null)), table1074, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -758,10 +758,10 @@ this.FeatureBackground();
 #line 97
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1074 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1075 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedValues"});
 #line 98
- testRunner.When(string.Format("User add \"{0}\" filter where type is \"{1}\" with added column and Lookup option", filter, @operator), ((string)(null)), table1074, "When ");
+ testRunner.When(string.Format("User add \"{0}\" filter where type is \"{1}\" with added column and Lookup option", filter, @operator), ((string)(null)), table1075, "When ");
 #line hidden
 #line 100
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

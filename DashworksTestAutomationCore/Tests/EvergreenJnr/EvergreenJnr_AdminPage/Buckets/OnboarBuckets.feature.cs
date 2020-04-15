@@ -190,18 +190,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table674 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table675 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table674.AddRow(new string[] {
+                table675.AddRow(new string[] {
                             "TestProject20",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table674, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table675, "When ");
 #line hidden
 #line 13
  testRunner.Then("Page with \'TestProject20\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -222,14 +222,14 @@ this.FeatureBackground();
 #line 18
  testRunner.Then("\'Match to Evergreen Bucket\' content is displayed in \'Bucket\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table675 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table676 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table675.AddRow(new string[] {
+                table676.AddRow(new string[] {
                             "0281Z793OLLLDU6"});
-                table675.AddRow(new string[] {
+                table676.AddRow(new string[] {
                             "03U75EKEMUQMUS"});
 #line 19
- testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table675, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table676, "When ");
 #line hidden
 #line 23
  testRunner.Then("\'Devices 2/0\' tab is displayed on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

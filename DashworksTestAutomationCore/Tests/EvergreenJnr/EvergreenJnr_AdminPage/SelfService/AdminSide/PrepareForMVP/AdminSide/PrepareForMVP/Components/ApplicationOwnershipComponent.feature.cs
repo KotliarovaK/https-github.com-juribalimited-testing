@@ -161,67 +161,67 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1287 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1288 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1287.AddRow(new string[] {
+                table1288.AddRow(new string[] {
                             "DAS_20019_Proj",
                             "All Users",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API", ((string)(null)), table1287, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table1288 = new TechTalk.SpecFlow.Table(new string[] {
-                            "ItemName"});
-                table1288.AddRow(new string[] {
-                            ""});
-#line 13
- testRunner.When("User create static list with \"DAS_20019_1\" name on \"Applications\" page with follo" +
-                        "wing items", ((string)(null)), table1288, "When ");
+ testRunner.When("Project created via API", ((string)(null)), table1288, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table1289 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
                 table1289.AddRow(new string[] {
                             ""});
-#line 16
- testRunner.When("User create static list with \"DAS_20019_11\" name on \"Users\" page with following i" +
-                        "tems", ((string)(null)), table1289, "When ");
+#line 13
+ testRunner.When("User create static list with \"DAS_20019_1\" name on \"Applications\" page with follo" +
+                        "wing items", ((string)(null)), table1289, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table1290 = new TechTalk.SpecFlow.Table(new string[] {
+                            "ItemName"});
+                table1290.AddRow(new string[] {
+                            ""});
+#line 16
+ testRunner.When("User create static list with \"DAS_20019_11\" name on \"Users\" page with following i" +
+                        "tems", ((string)(null)), table1290, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table1291 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1290.AddRow(new string[] {
+                table1291.AddRow(new string[] {
                             "DAS_20019_SS_1",
                             "20019_1_SI",
                             "true",
                             "true",
                             "DAS_20019_1"});
 #line 19
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1290, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1291, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1291 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1292 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1291.AddRow(new string[] {
+                table1292.AddRow(new string[] {
                             "20019_1_SI",
                             "TestPageSs1",
                             "DAS_20019_Page_1",
                             "true"});
-                table1291.AddRow(new string[] {
+                table1292.AddRow(new string[] {
                             "20019_1_SI",
                             "TestPageSs2",
                             "DAS_20019_Page_2",
                             "true"});
 #line 22
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1291, "When ");
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1292, "When ");
 #line hidden
 #line 26
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -242,17 +242,17 @@ this.FeatureBackground();
 #line 31
  testRunner.Then("Page with \'Owner\' second level subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1292 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1293 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields to display"});
-                table1292.AddRow(new string[] {
+                table1293.AddRow(new string[] {
                             "Username"});
-                table1292.AddRow(new string[] {
+                table1293.AddRow(new string[] {
                             "Domain"});
-                table1292.AddRow(new string[] {
+                table1293.AddRow(new string[] {
                             "Display Name"});
 #line 32
  testRunner.Then("following fields to display are displayed on application ownership component page" +
-                        "", ((string)(null)), table1292, "Then ");
+                        "", ((string)(null)), table1293, "Then ");
 #line hidden
 #line 37
  testRunner.Then("\'TestPageSs1\' label with self service parent page name is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -272,12 +272,12 @@ this.FeatureBackground();
 #line 43
  testRunner.Then("\'\' content is displayed in \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1293 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1294 = new TechTalk.SpecFlow.Table(new string[] {
                             "values"});
-                table1293.AddRow(new string[] {
+                table1294.AddRow(new string[] {
                             "DAS_20019_Proj"});
 #line 44
- testRunner.Then("\'Project\' autocomplete contains following options:", ((string)(null)), table1293, "Then ");
+ testRunner.Then("\'Project\' autocomplete contains following options:", ((string)(null)), table1294, "Then ");
 #line hidden
 #line 47
  testRunner.Then("\'Do not allow owner to be changed\' radio button is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -306,29 +306,29 @@ this.FeatureBackground();
 #line 55
  testRunner.Then("\'\' content is displayed in \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1294 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1295 = new TechTalk.SpecFlow.Table(new string[] {
                             "values"});
-                table1294.AddRow(new string[] {
+                table1295.AddRow(new string[] {
                             "All Users"});
-                table1294.AddRow(new string[] {
+                table1295.AddRow(new string[] {
                             "DAS_20019_11"});
 #line 56
- testRunner.Then("\'User Scope\' autocomplete contains following options:", ((string)(null)), table1294, "Then ");
+ testRunner.Then("\'User Scope\' autocomplete contains following options:", ((string)(null)), table1295, "Then ");
 #line hidden
 #line 60
  testRunner.Then("\'User Scope\' autocomplete first option is \'All Users\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1295 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1296 = new TechTalk.SpecFlow.Table(new string[] {
                             "fields"});
-                table1295.AddRow(new string[] {
+                table1296.AddRow(new string[] {
                             "Username"});
-                table1295.AddRow(new string[] {
+                table1296.AddRow(new string[] {
                             "Domain"});
-                table1295.AddRow(new string[] {
+                table1296.AddRow(new string[] {
                             "Display Name"});
 #line 61
  testRunner.Then("following fields to display are displayed on application ownership component page" +
-                        "", ((string)(null)), table1295, "Then ");
+                        "", ((string)(null)), table1296, "Then ");
 #line hidden
 #line 66
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -414,92 +414,92 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1296 = new TechTalk.SpecFlow.Table(new string[] {
-                            "ProjectName",
-                            "Scope",
-                            "ProjectTemplate",
-                            "Mode"});
-                table1296.AddRow(new string[] {
-                            "DAS_19909_Proj",
-                            "All Users",
-                            "None",
-                            "Standalone Project"});
-#line 71
- testRunner.When("Project created via API", ((string)(null)), table1296, "When ");
-#line hidden
                 TechTalk.SpecFlow.Table table1297 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
                 table1297.AddRow(new string[] {
+                            "DAS_19909_Proj",
+                            "All Users",
+                            "None",
+                            "Standalone Project"});
+#line 71
+ testRunner.When("Project created via API", ((string)(null)), table1297, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table1298 = new TechTalk.SpecFlow.Table(new string[] {
+                            "ProjectName",
+                            "Scope",
+                            "ProjectTemplate",
+                            "Mode"});
+                table1298.AddRow(new string[] {
                             "DAS_19909_Proj_Up",
                             "All Users",
                             "None",
                             "Standalone Project"});
 #line 74
- testRunner.When("Project created via API and opened", ((string)(null)), table1297, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table1298 = new TechTalk.SpecFlow.Table(new string[] {
-                            "ItemName"});
-                table1298.AddRow(new string[] {
-                            ""});
-#line 77
- testRunner.When("User create static list with \"DAS_19909_2\" name on \"Applications\" page with follo" +
-                        "wing items", ((string)(null)), table1298, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1298, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table1299 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
                 table1299.AddRow(new string[] {
                             ""});
-#line 80
- testRunner.When("User create static list with \"DAS_19909_3\" name on \"Users\" page with following it" +
-                        "ems", ((string)(null)), table1299, "When ");
+#line 77
+ testRunner.When("User create static list with \"DAS_19909_2\" name on \"Applications\" page with follo" +
+                        "wing items", ((string)(null)), table1299, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table1300 = new TechTalk.SpecFlow.Table(new string[] {
+                            "ItemName"});
+                table1300.AddRow(new string[] {
+                            ""});
+#line 80
+ testRunner.When("User create static list with \"DAS_19909_3\" name on \"Users\" page with following it" +
+                        "ems", ((string)(null)), table1300, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table1301 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1300.AddRow(new string[] {
+                table1301.AddRow(new string[] {
                             "DAS_19909_SS_2",
                             "19909_2_SI",
                             "true",
                             "true",
                             "DAS_19909_2"});
 #line 83
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1300, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1301, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1301 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1302 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1301.AddRow(new string[] {
+                table1302.AddRow(new string[] {
                             "19909_2_SI",
                             "TestPageSs1",
                             "DAS_19909_Page_1",
                             "true"});
-                table1301.AddRow(new string[] {
+                table1302.AddRow(new string[] {
                             "19909_2_SI",
                             "TestPageSs2",
                             "DAS_19909_Page_2",
                             "true"});
 #line 86
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1301, "When ");
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1302, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1302 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1303 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ProjectName",
                             "OwnerPermission"});
-                table1302.AddRow(new string[] {
+                table1303.AddRow(new string[] {
                             "AOC Name",
                             "DAS_19909_Proj",
                             "Do not allow owner to be changed"});
 #line 90
  testRunner.When("User creates new application ownership component for \'TestPageSs1\' Self Service p" +
-                        "age via API", ((string)(null)), table1302, "When ");
+                        "age via API", ((string)(null)), table1303, "When ");
 #line hidden
 #line 93
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -656,74 +656,74 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1303 = new TechTalk.SpecFlow.Table(new string[] {
-                            "ProjectName",
-                            "Scope",
-                            "ProjectTemplate",
-                            "Mode"});
-                table1303.AddRow(new string[] {
-                            "DAS_19909_Proj",
-                            "All Users",
-                            "None",
-                            "Standalone Project"});
-#line 124
- testRunner.When("Project created via API", ((string)(null)), table1303, "When ");
-#line hidden
                 TechTalk.SpecFlow.Table table1304 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
                 table1304.AddRow(new string[] {
+                            "DAS_19909_Proj",
+                            "All Users",
+                            "None",
+                            "Standalone Project"});
+#line 124
+ testRunner.When("Project created via API", ((string)(null)), table1304, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table1305 = new TechTalk.SpecFlow.Table(new string[] {
+                            "ProjectName",
+                            "Scope",
+                            "ProjectTemplate",
+                            "Mode"});
+                table1305.AddRow(new string[] {
                             "DAS_19909_Proj_Up",
                             "All Users",
                             "None",
                             "Standalone Project"});
 #line 127
- testRunner.When("Project created via API and opened", ((string)(null)), table1304, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table1305 = new TechTalk.SpecFlow.Table(new string[] {
-                            "ItemName"});
-                table1305.AddRow(new string[] {
-                            ""});
-#line 130
- testRunner.When("User create static list with \"DAS_19909_2\" name on \"Applications\" page with follo" +
-                        "wing items", ((string)(null)), table1305, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1305, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table1306 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
                 table1306.AddRow(new string[] {
                             ""});
-#line 133
- testRunner.When("User create static list with \"DAS_19909_3\" name on \"Users\" page with following it" +
-                        "ems", ((string)(null)), table1306, "When ");
+#line 130
+ testRunner.When("User create static list with \"DAS_19909_2\" name on \"Applications\" page with follo" +
+                        "wing items", ((string)(null)), table1306, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table1307 = new TechTalk.SpecFlow.Table(new string[] {
+                            "ItemName"});
+                table1307.AddRow(new string[] {
+                            ""});
+#line 133
+ testRunner.When("User create static list with \"DAS_19909_3\" name on \"Users\" page with following it" +
+                        "ems", ((string)(null)), table1307, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table1308 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1307.AddRow(new string[] {
+                table1308.AddRow(new string[] {
                             "DAS_19909_SS_2",
                             "19909_2_SI",
                             "true",
                             "true",
                             "DAS_19909_2"});
 #line 136
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1307, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1308, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1308 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1309 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ProjectName",
                             "OwnerPermission"});
-                table1308.AddRow(new string[] {
+                table1309.AddRow(new string[] {
                             "AOC Name",
                             "DAS_19909_Proj",
                             "Do not allow owner to be changed"});
 #line 139
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                        "via API", ((string)(null)), table1308, "When ");
+                        "via API", ((string)(null)), table1309, "When ");
 #line hidden
 #line 142
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
