@@ -114,8 +114,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
             var button = page.GetButtonOnEndUserPage(buttonName);
             _driver.MouseHover(button);
-            //For tooltip display
-            Thread.Sleep(300);
             Verify.IsFalse(_driver.IsTooltipDisplayed(),
                 $"Tooltip for '{buttonName}' button is displayed");
         }
