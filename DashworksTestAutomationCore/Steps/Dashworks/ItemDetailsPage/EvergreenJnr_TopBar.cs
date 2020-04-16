@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
                 "Top bar should not be displayed");
         }
 
-        #region Items/Colors check
+        #region Items/Colors check (Top bar)
 
         [Then(@"following items are displayed in the top bar:")]
         public void ThenFollowingItemsAreDisplayedInTheTopBar(Table table)
@@ -61,6 +61,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
             var actualList = topBar.GetTopBarItemsText();
             Verify.IsEmpty(actualList, "Compliance items in Top bar on the Item details page is incorrect!");
+        }
+
+        [Then(@"User sees '(.*)' tooltip for '(.*)' value in the top bar")]
+        public void ThenUserSeesTooltipForValueInTheTopBar(string tooltip, string value)
+        {
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
+            _driver.MouseHover(topBar.GetTobBarItemTextElement(value));
+            var tooltipText = _driver.GetTooltipText();
+            Verify.AreEqual(tooltip, tooltipText, $"Oops, it looks like '{tooltip}' is not displayed!");
         }
 
         #endregion

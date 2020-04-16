@@ -165,10 +165,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees '(.*)' tooltip for '(.*)' value in the field")]
-        public void ThenUserSeesTooltipForValueInTheField(string tooltip, string text)
+        public void ThenUserSeesTooltipForValueInTheField(string tooltip, string value)
         {
             var fields = _driver.NowAt<DetailsPage>();
-            _driver.MouseHover(fields.GetCellByTextFromKeyValueGrid(text));
+            _driver.MouseHover(fields.GetCellByTextFromKeyValueGrid(value));
             var tooltipText = _driver.GetTooltipText();
             Verify.AreEqual(tooltip, tooltipText, $"Oops, it looks like '{tooltip}' is not displayed!");
         }
