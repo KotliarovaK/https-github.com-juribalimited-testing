@@ -161,7 +161,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyValueIsDisplayedForFieldOnTheDetailsPage(string fieldName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Verify.AreEqual(detailsPage.GetFildWithEmptyValueByName(fieldName), "", $"{fieldName} field must be empty!");
+            Verify.AreEqual(detailsPage.GetFieldWithEmptyValueByName(fieldName), "", $"{fieldName} field must be empty!");
+        }
+
+        [Then(@"User sees '(.*)' tooltip for '(.*)' value in the field")]
+        public void ThenUserSeesTooltipForValueInTheField(string tooltip, string text)
+        {
+            var fields = _driver.NowAt<DetailsPage>();
+            _driver.MouseHover(fields.GetCellByTextFromKeyValueGrid(text));
+            var tooltipText = _driver.GetTooltipText();
+            Verify.AreEqual(tooltip, tooltipText, $"Oops, it looks like '{tooltip}' is not displayed!");
         }
 
         #endregion
