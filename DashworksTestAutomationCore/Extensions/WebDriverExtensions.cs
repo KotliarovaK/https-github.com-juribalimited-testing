@@ -8,6 +8,7 @@ using SeleniumExtras.PageObjects;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
@@ -376,10 +377,8 @@ namespace DashworksTestAutomation.Extensions
 
         public static bool IsTooltipDisplayed(this RemoteWebDriver driver)
         {
-            var toolTips = driver.FindElements(By.XPath(_toolTipSelector));
-            var toolTipBubbles = driver.FindElements(By.XPath(_toolTipBubbleSelector));
-
-            return toolTips.Count > 0 || toolTipBubbles.Count > 0;
+            return driver.IsElementDisplayed(By.XPath(_toolTipSelector), WebDriverExtensions.WaitTime.Short) 
+                   || driver.IsElementDisplayed(By.XPath(_toolTipBubbleSelector), WebDriverExtensions.WaitTime.Short);
         }
 
         public static void WhatForElementToBeSelected(this RemoteWebDriver driver, IWebElement element, bool selectorState)
