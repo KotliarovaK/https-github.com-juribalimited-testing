@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20325 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20325 @DAS20430 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEndUserLastPage
 	When User create static list with "DAS_20325" name on "Applications" page with following items
 	| ItemName   |
@@ -23,15 +23,23 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEndUserLastPage
 	When User navigates to the 'Builder' left menu item
 	Then User sees item with 'Text' type and 'Thank You' name on Self Service Builder Panel
 	When User navigates to End User landing page with '20325_1_SI' Self Service Identifier
+	Then tooltip is not displayed for 'Continue' button on end user Self Service page
+	And 'Back' button is disabled for End User
+	And 'Back' button has tooltip with 'This is the first page of self service' text on end user Self Service page
 	When User clicks on 'Continue' button on end user Self Service page
 	Then Header is displayed on End User page
+	And Subject Title 'Application: VSCmdShell' is displayed on End User page
+	And 'Continue' button is not displayed for End User
+	And 'Undo all changes I made on this page' button is not displayed for End User
+	And 'Back' button displayed for End User
+	And User sees 'Thank You' text component 'Thank You' on end user page
+	And User sees 'You have completed the self service.' text styled as 'Normal' in 'Thank You' Text Component of 'Thank You' on end user page
+	And User sees 'You can now close the page.' text styled as 'Normal' in 'Thank You' Text Component of 'Thank You' on end user page
+	When User clicks on 'Back' button on end user Self Service page
 	Then Subject Title 'Application: VSCmdShell' is displayed on End User page
-	Then 'Continue' button is not displayed for End User
-	Then 'Undo all changes I made on this page' button is not displayed for End User
-	Then 'Back' button displayed for End User
-	Then User sees 'Thank You' text component 'Thank You' on end user page
-	Then User sees 'You have completed the self service.' text styled as 'Normal' in 'Thank You' Text Component of 'Thank You' on end user page
-	Then User sees 'You can now close the page.' text styled as 'Normal' in 'Thank You' Text Component of 'Thank You' on end user page
+	And 'Back' button is disabled for End User
+	And 'Continue' button displayed for End User
+	And 'Continue' button is enabled for End User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20291 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
