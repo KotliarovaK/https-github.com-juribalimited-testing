@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("WidgetCard")]
+    [TechTalk.SpecRun.FeatureAttribute("WidgetCard", Description="\tRuns tests for Card Widgets creation or editing", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_DashboardsPage\\WidgetCard.feature", SourceLine=0)]
     public partial class WidgetCardFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line 1 "WidgetCard.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,15 +82,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsed" +
-            "CpuVirtField")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15364")]
-        [NUnit.Framework.CategoryAttribute("DAS15316")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsed" +
+            "CpuVirtField", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15364",
+                "DAS15316",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField()
         {
             string[] tagsOfScenario = new string[] {
@@ -200,13 +196,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15207")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15207",
+                "Cleanup"}, SourceLine=31)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList()
         {
             string[] tagsOfScenario = new string[] {
@@ -289,13 +284,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16138")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16138",
+                "Cleanup"}, SourceLine=45)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -393,16 +387,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilte" +
-            "redPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16069")]
-        [NUnit.Framework.CategoryAttribute("DAS15134")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilte" +
+            "redPage", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16069",
+                "DAS15134",
+                "Cleanup",
+                "Not_Run"}, SourceLine=65)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -543,13 +536,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplayedInWidget")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15355")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplayedInWidget", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15355",
+                "Cleanup"}, SourceLine=98)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplayedInWidget()
         {
             string[] tagsOfScenario = new string[] {
@@ -727,15 +719,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15134")]
-        [NUnit.Framework.CategoryAttribute("DAS16263")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours" +
+            "", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15134",
+                "DAS16263",
+                "Cleanup"}, SourceLine=154)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours()
         {
             string[] tagsOfScenario = new string[] {
@@ -829,14 +820,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectl" +
-            "yOnDashboard")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15722")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectl" +
+            "yOnDashboard", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15722",
+                "Cleanup"}, SourceLine=172)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard()
         {
             string[] tagsOfScenario = new string[] {
@@ -947,12 +937,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget")]
-        [NUnit.Framework.CategoryAttribute("Evergreen@EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15355")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget", new string[] {
+                "Evergreen@EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15355",
+                "Cleanup"}, SourceLine=195)]
         public virtual void EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget()
         {
             string[] tagsOfScenario = new string[] {
@@ -1113,14 +1102,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15355")]
-        [NUnit.Framework.CategoryAttribute("DAS15662")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15355",
+                "DAS15662",
+                "Cleanup"}, SourceLine=238)]
         public virtual void EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget()
         {
             string[] tagsOfScenario = new string[] {
@@ -1289,14 +1277,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirst" +
-            "Cell")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16266")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirst" +
+            "Cell", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16266",
+                "Cleanup"}, SourceLine=283)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell()
         {
             string[] tagsOfScenario = new string[] {
@@ -1391,14 +1378,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellS" +
-            "elected")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15914")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellS" +
+            "elected", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15914",
+                "Cleanup"}, SourceLine=302)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellSelected()
         {
             string[] tagsOfScenario = new string[] {
@@ -1519,14 +1505,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasRea" +
-            "dinessColumnFirst")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16127")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasRea" +
+            "dinessColumnFirst", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16127",
+                "Cleanup"}, SourceLine=331)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst()
         {
             string[] tagsOfScenario = new string[] {
@@ -1639,14 +1624,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellI" +
-            "sEmpty")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15765")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellI" +
+            "sEmpty", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15765",
+                "Cleanup"}, SourceLine=357)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsEmpty()
         {
             string[] tagsOfScenario = new string[] {
@@ -1762,14 +1746,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadi" +
-            "nessFirstCellWidget")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16336")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadi" +
+            "nessFirstCellWidget", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16336",
+                "Cleanup"}, SourceLine=384)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadinessFirstCellWidget()
         {
             string[] tagsOfScenario = new string[] {
@@ -1943,15 +1926,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellI" +
-            "sSortedBool")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16325")]
-        [NUnit.Framework.CategoryAttribute("DAS15145")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellI" +
+            "sSortedBool", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16325",
+                "DAS15145",
+                "Cleanup"}, SourceLine=434)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsSortedBool()
         {
             string[] tagsOfScenario = new string[] {
@@ -2058,12 +2040,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRingColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen@EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16347")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRingColumn", new string[] {
+                "Evergreen@EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16347",
+                "Cleanup"}, SourceLine=457)]
         public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRingColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -2172,16 +2153,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWit" +
-            "hCorrectDatatypeInAggregateByDropdown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15514")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("First", null)]
-        [NUnit.Framework.TestCaseAttribute("Last", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown(string aggFunc, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -2283,14 +2254,41 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingD" +
-            "ynamicListContainsArchivedItems")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16844")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWit" +
+            "hCorrectDatatypeInAggregateByDropdown, First", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15514",
+                "Cleanup"}, SourceLine=507)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown_First()
+        {
+#line 483
+this.EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown("First", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWit" +
+            "hCorrectDatatypeInAggregateByDropdown, Last", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15514",
+                "Cleanup"}, SourceLine=507)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown_Last()
+        {
+#line 483
+this.EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown("Last", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingD" +
+            "ynamicListContainsArchivedItems", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16844",
+                "Cleanup"}, SourceLine=511)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingDynamicListContainsArchivedItems()
         {
             string[] tagsOfScenario = new string[] {
@@ -2384,14 +2382,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingS" +
-            "taticListContainsArchivedItems")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16844")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingS" +
+            "taticListContainsArchivedItems", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16844",
+                "Cleanup"}, SourceLine=530)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingStaticListContainsArchivedItems()
         {
             string[] tagsOfScenario = new string[] {
@@ -2501,14 +2498,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidgetsIfTheSourc" +
-            "eListHasNoRows")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16167")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidgetsIfTheSourc" +
+            "eListHasNoRows", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=554)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidgetsIfTheSourceListHasNoRows()
         {
             string[] tagsOfScenario = new string[] {
@@ -2615,14 +2611,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedInPreviewWhenWidgetBAsedOnSt" +
-            "ickyComplianceColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS19015")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedInPreviewWhenWidgetBAsedOnSt" +
+            "ickyComplianceColumn", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS19015",
+                "Cleanup"}, SourceLine=577)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedInPreviewWhenWidgetBAsedOnStickyComplianceColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -2720,14 +2715,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatFilterAppliesWhenDrilledDownCardWidgetBasedO" +
-            "nSeverity")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS18939")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatFilterAppliesWhenDrilledDownCardWidgetBasedO" +
+            "nSeverity", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS18939",
+                "Cleanup"}, SourceLine=596)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatFilterAppliesWhenDrilledDownCardWidgetBasedOnSeverity()
         {
             string[] tagsOfScenario = new string[] {
@@ -2813,14 +2807,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedWhenCreatingWidgetBasedOnEmp" +
-            "tyStage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS19115")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedWhenCreatingWidgetBasedOnEmp" +
+            "tyStage", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS19115",
+                "Cleanup"}, SourceLine=610)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedWhenCreatingWidgetBasedOnEmptyStage()
         {
             string[] tagsOfScenario = new string[] {
@@ -2930,13 +2923,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetCreation")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS17715")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetCreation", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17715",
+                "Cleanup"}, SourceLine=633)]
         public virtual void EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetCreation()
         {
             string[] tagsOfScenario = new string[] {
@@ -3038,6 +3030,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

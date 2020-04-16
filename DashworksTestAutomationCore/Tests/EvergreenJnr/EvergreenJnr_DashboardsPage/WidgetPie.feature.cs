@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("WidgetPie")]
+    [TechTalk.SpecRun.FeatureAttribute("WidgetPie", Description="\tRuns tests for Pie Widgets creation or editing", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_DashboardsPage\\WidgetPie.feature", SourceLine=0)]
     public partial class WidgetPieFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line 1 "WidgetPie.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,14 +82,13 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggreg" +
-            "ateByDateColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS14668")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggreg" +
+            "ateByDateColumn", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS14668",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -226,15 +222,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUses" +
-            "CpuArchitField")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15372")]
-        [NUnit.Framework.CategoryAttribute("DAS15317")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUses" +
+            "CpuArchitField", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15372",
+                "DAS15317",
+                "Cleanup"}, SourceLine=36)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField()
         {
             string[] tagsOfScenario = new string[] {
@@ -339,15 +334,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedS" +
-            "avedList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15365")]
-        [NUnit.Framework.CategoryAttribute("DAS15352")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedS" +
+            "avedList", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15365",
+                "DAS15352",
+                "Cleanup"}, SourceLine=55)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList()
         {
             string[] tagsOfScenario = new string[] {
@@ -519,16 +513,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15662")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Pie", "00RUUMAH9OZN9A", null)]
-        [NUnit.Framework.TestCaseAttribute("Half donut", "00RUUMAH9OZN9A", null)]
-        [NUnit.Framework.TestCaseAttribute("Donut", "00RUUMAH9OZN9A", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget(string widgetType, string dataLabel, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -629,19 +613,45 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelecti" +
-            "onIsBeforeAggregateBySelection")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15500")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Bar", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", null)]
-        [NUnit.Framework.TestCaseAttribute("Line", null)]
-        [NUnit.Framework.TestCaseAttribute("Donut", null)]
-        [NUnit.Framework.TestCaseAttribute("Half donut", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget, Pie", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15662",
+                "Cleanup"}, SourceLine=114)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget_Pie()
+        {
+#line 94
+this.EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget("Pie", "00RUUMAH9OZN9A", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget, Half donut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15662",
+                "Cleanup"}, SourceLine=114)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget_HalfDonut()
+        {
+#line 94
+this.EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget("Half donut", "00RUUMAH9OZN9A", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget, Donut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15662",
+                "Cleanup"}, SourceLine=114)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget_Donut()
+        {
+#line 94
+this.EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget("Donut", "00RUUMAH9OZN9A", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection(string widgetType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -724,14 +734,83 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFields" +
-            "WithCorrectDatatypeInAggregateByDropdown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15508")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelecti" +
+            "onIsBeforeAggregateBySelection, Bar", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15500",
+                "Cleanup"}, SourceLine=133)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection_Bar()
+        {
+#line 120
+this.EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection("Bar", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelecti" +
+            "onIsBeforeAggregateBySelection, Column", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15500",
+                "Cleanup"}, SourceLine=133)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection_Column()
+        {
+#line 120
+this.EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection("Column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelecti" +
+            "onIsBeforeAggregateBySelection, Line", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15500",
+                "Cleanup"}, SourceLine=133)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection_Line()
+        {
+#line 120
+this.EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection("Line", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelecti" +
+            "onIsBeforeAggregateBySelection, Donut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15500",
+                "Cleanup"}, SourceLine=133)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection_Donut()
+        {
+#line 120
+this.EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection("Donut", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelecti" +
+            "onIsBeforeAggregateBySelection, Half donut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15500",
+                "Cleanup"}, SourceLine=133)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection_HalfDonut()
+        {
+#line 120
+this.EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection("Half donut", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFields" +
+            "WithCorrectDatatypeInAggregateByDropdown", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15508",
+                "Cleanup"}, SourceLine=140)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown()
         {
             string[] tagsOfScenario = new string[] {
@@ -827,14 +906,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionSho" +
-            "wsFieldsWithCorrectDatatypeInAggregateByDropdown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15509")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionSho" +
+            "wsFieldsWithCorrectDatatypeInAggregateByDropdown", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15509",
+                "Cleanup"}, SourceLine=163)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown()
         {
             string[] tagsOfScenario = new string[] {
@@ -949,20 +1027,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCor" +
-            "rectDatatypeInAggregateByDropdown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15510")]
-        [NUnit.Framework.CategoryAttribute("DAS15511")]
-        [NUnit.Framework.CategoryAttribute("DAS15512")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Sum", null)]
-        [NUnit.Framework.TestCaseAttribute("Minimum", null)]
-        [NUnit.Framework.TestCaseAttribute("Maximum", null)]
-        [NUnit.Framework.TestCaseAttribute("Average", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown(string aggFunc, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1061,14 +1125,77 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFields" +
-            "WithCorrectValuesInOrderByDropDown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15524")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCor" +
+            "rectDatatypeInAggregateByDropdown, Sum", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15510",
+                "DAS15511",
+                "DAS15512",
+                "Cleanup"}, SourceLine=221)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown_Sum()
+        {
+#line 197
+this.EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown("Sum", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCor" +
+            "rectDatatypeInAggregateByDropdown, Minimum", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15510",
+                "DAS15511",
+                "DAS15512",
+                "Cleanup"}, SourceLine=221)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown_Minimum()
+        {
+#line 197
+this.EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown("Minimum", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCor" +
+            "rectDatatypeInAggregateByDropdown, Maximum", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15510",
+                "DAS15511",
+                "DAS15512",
+                "Cleanup"}, SourceLine=221)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown_Maximum()
+        {
+#line 197
+this.EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown("Maximum", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCor" +
+            "rectDatatypeInAggregateByDropdown, Average", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15510",
+                "DAS15511",
+                "DAS15512",
+                "Cleanup"}, SourceLine=221)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown_Average()
+        {
+#line 197
+this.EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown("Average", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFields" +
+            "WithCorrectValuesInOrderByDropDown", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15524",
+                "Cleanup"}, SourceLine=227)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectValuesInOrderByDropDown()
         {
             string[] tagsOfScenario = new string[] {
@@ -1174,14 +1301,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAggregateFunct" +
-            "ionIsSelected")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15362")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAggregateFunct" +
+            "ionIsSelected", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15362",
+                "Cleanup"}, SourceLine=255)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAggregateFunctionIsSelected()
         {
             string[] tagsOfScenario = new string[] {
@@ -1261,14 +1387,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDistinctAggreg" +
-            "ateFunctionIsSelected")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15362")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDistinctAggreg" +
+            "ateFunctionIsSelected", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15362",
+                "Cleanup"}, SourceLine=272)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDistinctAggregateFunctionIsSelected()
         {
             string[] tagsOfScenario = new string[] {
@@ -1351,14 +1476,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggregateFunctio" +
-            "nIsSelected")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15362")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggregateFunctio" +
+            "nIsSelected", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15362",
+                "Cleanup"}, SourceLine=290)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggregateFunctionIsSelected()
         {
             string[] tagsOfScenario = new string[] {
@@ -1454,14 +1578,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggregateFunctio" +
-            "nIsSelected")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15362")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggregateFunctio" +
+            "nIsSelected", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15362",
+                "Cleanup"}, SourceLine=313)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggregateFunctionIsSelected()
         {
             string[] tagsOfScenario = new string[] {
@@ -1557,14 +1680,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggregateFunctio" +
-            "nIsSelected")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15362")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggregateFunctio" +
+            "nIsSelected", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15362",
+                "Cleanup"}, SourceLine=336)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggregateFunctionIsSelected()
         {
             string[] tagsOfScenario = new string[] {
@@ -1660,14 +1782,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggregateFunctio" +
-            "nIsSelected")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15362")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggregateFunctio" +
+            "nIsSelected", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15362",
+                "Cleanup"}, SourceLine=359)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggregateFunctionIsSelected()
         {
             string[] tagsOfScenario = new string[] {
@@ -1763,15 +1884,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerComplianc" +
-            "e")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS17467")]
-        [NUnit.Framework.CategoryAttribute("DAS17515")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerComplianc" +
+            "e", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17467",
+                "DAS17515",
+                "Cleanup"}, SourceLine=382)]
         public virtual void EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwnerCompliance()
         {
             string[] tagsOfScenario = new string[] {
@@ -1910,14 +2030,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS17467")]
-        [NUnit.Framework.CategoryAttribute("DAS17515")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17467",
+                "DAS17515",
+                "Cleanup"}, SourceLine=416)]
         public virtual void EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness()
         {
             string[] tagsOfScenario = new string[] {
@@ -2036,15 +2155,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByR" +
-            "eadinessAndComplianceFields")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS17515")]
-        [NUnit.Framework.CategoryAttribute("DAS17987")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByR" +
+            "eadinessAndComplianceFields", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17515",
+                "DAS17987",
+                "Cleanup"}, SourceLine=442)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByReadinessAndComplianceFields()
         {
             string[] tagsOfScenario = new string[] {
@@ -2193,14 +2311,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAn" +
-            "otherFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS18072")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAn" +
+            "otherFilter", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS18072",
+                "Cleanup"}, SourceLine=477)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAnotherFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -2311,14 +2428,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatPreviewDisplayedForWidgetWhenReadinessSelect" +
-            "edAsSplitBy")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS18635")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatPreviewDisplayedForWidgetWhenReadinessSelect" +
+            "edAsSplitBy", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS18635",
+                "Cleanup"}, SourceLine=500)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatPreviewDisplayedForWidgetWhenReadinessSelectedAsSplitBy()
         {
             string[] tagsOfScenario = new string[] {
@@ -2427,13 +2543,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWidget")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS18574")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWidget", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS18574",
+                "Cleanup"}, SourceLine=519)]
         public virtual void EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWidget()
         {
             string[] tagsOfScenario = new string[] {
@@ -2547,14 +2662,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageDisplayedForWidgetBasedOnListW" +
-            "ithMissingColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS20366")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageDisplayedForWidgetBasedOnListW" +
+            "ithMissingColumn", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS20366",
+                "Cleanup"}, SourceLine=544)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageDisplayedForWidgetBasedOnListWithMissingColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -2684,6 +2798,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

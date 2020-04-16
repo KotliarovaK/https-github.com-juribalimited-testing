@@ -19,9 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ColumnOrder")]
-    [NUnit.Framework.CategoryAttribute("retry:1")]
+    [TechTalk.SpecRun.FeatureAttribute("ColumnOrder", new string[] {
+            "retry:1"}, Description="\tRuns Column Order related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_GridActions\\ColumnOrder.feature", SourceLine=1)]
     public partial class ColumnOrderFeature
     {
         
@@ -33,7 +32,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
 #line 1 "ColumnOrder.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -42,19 +41,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,7 +61,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -88,15 +85,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
-        [NUnit.Framework.CategoryAttribute("DAS10836")]
-        [NUnit.Framework.CategoryAttribute("DAS11666")]
-        [NUnit.Framework.CategoryAttribute("DAS12325")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_GridActions",
+                "ColumnOrder",
+                "DAS10836",
+                "DAS11666",
+                "DAS12325"}, SourceLine=9)]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch()
         {
             string[] tagsOfScenario = new string[] {
@@ -170,16 +166,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
-        [NUnit.Framework.CategoryAttribute("DAS10836")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
-        [NUnit.Framework.CategoryAttribute("DAS12325")]
-        [NUnit.Framework.CategoryAttribute("DAS14183")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_GridActions",
+                "ColumnOrder",
+                "DAS10836",
+                "DAS11664",
+                "DAS12325",
+                "DAS14183"}, SourceLine=21)]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch()
         {
             string[] tagsOfScenario = new string[] {
@@ -268,16 +263,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
-        [NUnit.Framework.CategoryAttribute("DAS10621")]
-        [NUnit.Framework.CategoryAttribute("DAS11666")]
-        [NUnit.Framework.CategoryAttribute("DAS12156")]
-        [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_GridActions",
+                "ColumnOrder",
+                "DAS10621",
+                "DAS11666",
+                "DAS12156",
+                "DAS12351"}, SourceLine=38)]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -399,14 +393,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
-        [NUnit.Framework.CategoryAttribute("DAS11666")]
-        [NUnit.Framework.CategoryAttribute("DAS12156")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_GridActions",
+                "ColumnOrder",
+                "DAS11666",
+                "DAS12156"}, SourceLine=72)]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -510,14 +503,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGridSearch")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
-        [NUnit.Framework.CategoryAttribute("DAS11666")]
-        [NUnit.Framework.CategoryAttribute("DAS12156")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGridSearch", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_GridActions",
+                "ColumnOrder",
+                "DAS11666",
+                "DAS12156"}, SourceLine=101)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGridSearch()
         {
             string[] tagsOfScenario = new string[] {
@@ -614,14 +606,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColumnsOrderIsD" +
-            "isplayedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("RemoveColumn")]
-        [NUnit.Framework.CategoryAttribute("DAS11625")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColumnsOrderIsD" +
+            "isplayedCorrectly", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Columns",
+                "RemoveColumn",
+                "DAS11625"}, SourceLine=128)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColumnsOrderIsDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -698,20 +689,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturne" +
-            "dToDefaultPositionWhenActionsPanelWasOpen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
-        [NUnit.Framework.CategoryAttribute("DAS12345")]
-        [NUnit.Framework.CategoryAttribute("DAS12823")]
-        [NUnit.Framework.CategoryAttribute("DAS13668")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Type", "Operating System", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "Domain", "Display Name", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", "Version", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Mailbox Platform", "Mail Server", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen(string pageName, string firstColumnName, string secondColumnName, string toColumnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -783,18 +760,70 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemoved" +
-            "AndReturnedToDefaultPosition")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
-        [NUnit.Framework.CategoryAttribute("DAS11836")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Display Name", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Distinguished Name", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Version", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Display Name", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturne" +
+            "dToDefaultPositionWhenActionsPanelWasOpen, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnOrder",
+                "DAS12345",
+                "DAS12823",
+                "DAS13668"}, SourceLine=157)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen_Devices()
+        {
+#line 145
+this.EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen("Devices", "Hostname", "Device Type", "Operating System", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturne" +
+            "dToDefaultPositionWhenActionsPanelWasOpen, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnOrder",
+                "DAS12345",
+                "DAS12823",
+                "DAS13668"}, SourceLine=157)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen_Users()
+        {
+#line 145
+this.EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen("Users", "Username", "Domain", "Display Name", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturne" +
+            "dToDefaultPositionWhenActionsPanelWasOpen, Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnOrder",
+                "DAS12345",
+                "DAS12823",
+                "DAS13668"}, SourceLine=157)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen_Applications()
+        {
+#line 145
+this.EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen("Applications", "Application", "Vendor", "Version", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturne" +
+            "dToDefaultPositionWhenActionsPanelWasOpen, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnOrder",
+                "DAS12345",
+                "DAS12823",
+                "DAS13668"}, SourceLine=157)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen_Mailboxes()
+        {
+#line 145
+this.EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen("Mailboxes", "Email Address", "Mailbox Platform", "Mail Server", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition(string pageName, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -874,6 +903,68 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemoved" +
+            "AndReturnedToDefaultPosition, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnOrder",
+                "DAS11836"}, SourceLine=182)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition_Devices()
+        {
+#line 164
+this.EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition("Devices", "Owner Display Name", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemoved" +
+            "AndReturnedToDefaultPosition, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnOrder",
+                "DAS11836"}, SourceLine=182)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition_Users()
+        {
+#line 164
+this.EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition("Users", "Distinguished Name", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemoved" +
+            "AndReturnedToDefaultPosition, Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnOrder",
+                "DAS11836"}, SourceLine=182)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition_Applications()
+        {
+#line 164
+this.EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition("Applications", "Version", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemoved" +
+            "AndReturnedToDefaultPosition, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnOrder",
+                "DAS11836"}, SourceLine=182)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition_Mailboxes()
+        {
+#line 164
+this.EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition("Mailboxes", "Owner Display Name", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

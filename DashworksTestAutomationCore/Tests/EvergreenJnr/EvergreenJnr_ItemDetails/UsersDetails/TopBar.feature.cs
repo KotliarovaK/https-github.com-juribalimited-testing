@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TopBar")]
+    [TechTalk.SpecRun.FeatureAttribute("TopBar", Description="\tRuns User Item Details Top Bar  related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\UsersDetails\\TopBar.feature", SourceLine=0)]
     public partial class TopBarFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "TopBar.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,16 +82,15 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnUsersP" +
-            "age")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15552")]
-        [NUnit.Framework.CategoryAttribute("DAS16921")]
-        [NUnit.Framework.CategoryAttribute("DAS16743")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnUsersP" +
+            "age", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS15552",
+                "DAS16921",
+                "DAS16743"}, SourceLine=8)]
         public virtual void EvergreenJnr_UsersList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnUsersPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -160,18 +156,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnUsersPag" +
-            "e")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS14975")]
-        [NUnit.Framework.CategoryAttribute("DAS15333")]
-        [NUnit.Framework.CategoryAttribute("DAS16762")]
-        [NUnit.Framework.CategoryAttribute("DAS17166")]
-        [NUnit.Framework.CategoryAttribute("DAS17075")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnUsersPag" +
+            "e", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS14975",
+                "DAS15333",
+                "DAS16762",
+                "DAS17166",
+                "DAS17075"}, SourceLine=19)]
         public virtual void EvergreenJnr_UsersList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnUsersPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -260,15 +255,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPage" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17355")]
-        [NUnit.Framework.CategoryAttribute("DAS17075")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPage" +
+            "", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17355",
+                "DAS17075"}, SourceLine=37)]
         public virtual void EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -334,21 +328,20 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedI" +
-            "nAlphabeticalOrder")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16698")]
-        [NUnit.Framework.CategoryAttribute("DAS17005")]
-        [NUnit.Framework.CategoryAttribute("DAS15347")]
-        [NUnit.Framework.CategoryAttribute("DAS16668")]
-        [NUnit.Framework.CategoryAttribute("DAS16903")]
-        [NUnit.Framework.CategoryAttribute("DAS16907")]
-        [NUnit.Framework.CategoryAttribute("DAS16857")]
-        [NUnit.Framework.CategoryAttribute("DAS17005")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedI" +
+            "nAlphabeticalOrder", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16698",
+                "DAS17005",
+                "DAS15347",
+                "DAS16668",
+                "DAS16903",
+                "DAS16907",
+                "DAS16857",
+                "DAS17005"}, SourceLine=48)]
         public virtual void EvergreenJnr_UsersList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder()
         {
             string[] tagsOfScenario = new string[] {
@@ -429,17 +422,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplia" +
-            "nceFromTopBarInEvergreenMode")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16857")]
-        [NUnit.Framework.CategoryAttribute("DAS19241")]
-        [NUnit.Framework.TestCaseAttribute("User", "ACG370114", "User", "RED", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "allanj", "User", "UNKNOWN", null)]
         public virtual void EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode(string pageName, string itemName, string subMenu, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -510,16 +492,45 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplia" +
-            "nceFromTopBarInProjectMode")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16857")]
-        [NUnit.Framework.CategoryAttribute("DAS16928")]
-        [NUnit.Framework.CategoryAttribute("DAS18405")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplia" +
+            "nceFromTopBarInEvergreenMode, Variant 0", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16857",
+                "DAS19241"}, SourceLine=71)]
+        public virtual void EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode_Variant0()
+        {
+#line 59
+this.EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode("User", "ACG370114", "User", "RED", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplia" +
+            "nceFromTopBarInEvergreenMode, Variant 1", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16857",
+                "DAS19241"}, SourceLine=71)]
+        public virtual void EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode_Variant1()
+        {
+#line 59
+this.EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode("User", "allanj", "User", "UNKNOWN", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplia" +
+            "nceFromTopBarInProjectMode", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16857",
+                "DAS16928",
+                "DAS18405"}, SourceLine=76)]
         public virtual void EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode()
         {
             string[] tagsOfScenario = new string[] {
@@ -598,6 +609,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

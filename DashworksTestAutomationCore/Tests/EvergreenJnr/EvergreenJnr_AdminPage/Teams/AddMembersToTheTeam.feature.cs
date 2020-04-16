@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AddMembersToTheTeam")]
+    [TechTalk.SpecRun.FeatureAttribute("AddMembersToTheTeam", Description="\tAdd Members To The Team", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AdminPage\\Teams\\AddMembersToTheTeam.feature", SourceLine=0)]
     public partial class AddMembersToTheTeamFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line 1 "AddMembersToTheTeam.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,21 +82,20 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS12999")]
-        [NUnit.Framework.CategoryAttribute("DAS13199")]
-        [NUnit.Framework.CategoryAttribute("DAS13254")]
-        [NUnit.Framework.CategoryAttribute("DAS13172")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
-        [NUnit.Framework.CategoryAttribute("Set_Default_Team")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "AdminPage",
+                "DAS12999",
+                "DAS13199",
+                "DAS13254",
+                "DAS13172",
+                "Cleanup",
+                "Teams",
+                "Do_Not_Run_With_Teams",
+                "Do_Not_Run_With_Buckets",
+                "Set_Default_Team"}, SourceLine=8)]
         public virtual void EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam()
         {
             string[] tagsOfScenario = new string[] {
@@ -288,17 +284,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_AddingMembersToTheTeam")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS12999")]
-        [NUnit.Framework.CategoryAttribute("DAS13254")]
-        [NUnit.Framework.CategoryAttribute("DAS13421")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_AddingMembersToTheTeam", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "AdminPage",
+                "DAS12999",
+                "DAS13254",
+                "DAS13421",
+                "Teams",
+                "Cleanup"}, SourceLine=56)]
         public virtual void EvergreenJnr_AdminPage_AddingMembersToTheTeam()
         {
             string[] tagsOfScenario = new string[] {
@@ -482,16 +477,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS12326")]
-        [NUnit.Framework.CategoryAttribute("DAS16130")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "AdminPage",
+                "DAS12326",
+                "DAS16130",
+                "Teams",
+                "Cleanup"}, SourceLine=104)]
         public virtual void EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -615,17 +609,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatNoErrorAppearsAfterCreatingTeamHavingChosenMember" +
-            "sInNotSelectedAddMembersOption")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS18614")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckThatNoErrorAppearsAfterCreatingTeamHavingChosenMember" +
+            "sInNotSelectedAddMembersOption", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "AdminPage",
+                "DAS18614",
+                "Cleanup",
+                "Teams",
+                "Do_Not_Run_With_Teams"}, SourceLine=134)]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoErrorAppearsAfterCreatingTeamHavingChosenMembersInNotSelectedAddMembersOption()
         {
             string[] tagsOfScenario = new string[] {
@@ -728,6 +721,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

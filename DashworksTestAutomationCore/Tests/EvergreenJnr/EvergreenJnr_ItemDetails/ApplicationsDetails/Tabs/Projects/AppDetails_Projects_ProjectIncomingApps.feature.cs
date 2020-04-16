@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AppDetails_Projects_ProjectIncomingApps")]
+    [TechTalk.SpecRun.FeatureAttribute("AppDetails_Projects_ProjectIncomingApps", Description="\tRuns related tests for Projects > Project Incoming Apps tab", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ApplicationsDetails\\Tabs\\Projects\\App" +
+        "Details_Projects_ProjectIncomingApps.feature", SourceLine=0)]
     public partial class AppDetails_Projects_ProjectIncomingAppsFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "AppDetails_Projects_ProjectIncomingApps.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,16 +83,15 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOn" +
-            "ProjectIncomingAppsTab")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ProjectsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS20286")]
-        [NUnit.Framework.CategoryAttribute("DAS20362")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOn" +
+            "ProjectIncomingAppsTab", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "ProjectsTab",
+                "DAS20286",
+                "DAS20362",
+                "Not_Ready"}, SourceLine=9)]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnProjectIncomingAppsTab()
         {
             string[] tagsOfScenario = new string[] {
@@ -179,17 +176,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatOpenedProjectIncomingAppsTabIsWorkedCorrec" +
-            "tlyAfterSwitchingBetweenProjectsAndEvergreenModes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ProjectsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS20356")]
-        [NUnit.Framework.CategoryAttribute("DAS20445")]
-        [NUnit.Framework.CategoryAttribute("DAS19704")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatOpenedProjectIncomingAppsTabIsWorkedCorrec" +
+            "tlyAfterSwitchingBetweenProjectsAndEvergreenModes", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "ProjectsTab",
+                "DAS20356",
+                "DAS20445",
+                "DAS19704",
+                "Wormhole"}, SourceLine=26)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatOpenedProjectIncomingAppsTabIsWorkedCorrectlyAfterSwitchingBetweenProjectsAndEvergreenModes()
         {
             string[] tagsOfScenario = new string[] {
@@ -273,6 +269,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

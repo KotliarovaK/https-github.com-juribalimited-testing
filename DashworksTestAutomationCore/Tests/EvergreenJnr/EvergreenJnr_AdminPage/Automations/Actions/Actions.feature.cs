@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ActionsPage")]
+    [TechTalk.SpecRun.FeatureAttribute("ActionsPage", Description="\tRuns Actions Page related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AdminPage\\Automations\\Actions\\Actions.feature", SourceLine=0)]
     public partial class ActionsPageFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line 1 "Actions.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,20 +82,19 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS15427")]
-        [NUnit.Framework.CategoryAttribute("DAS15832")]
-        [NUnit.Framework.CategoryAttribute("DAS15833")]
-        [NUnit.Framework.CategoryAttribute("DAS17276")]
-        [NUnit.Framework.CategoryAttribute("DAS17625")]
-        [NUnit.Framework.CategoryAttribute("DAS17774")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "Actions",
+                "DAS15427",
+                "DAS15832",
+                "DAS15833",
+                "DAS17276",
+                "DAS17625",
+                "DAS17774",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions()
         {
             string[] tagsOfScenario = new string[] {
@@ -332,21 +328,20 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS15427")]
-        [NUnit.Framework.CategoryAttribute("DAS15428")]
-        [NUnit.Framework.CategoryAttribute("DAS16728")]
-        [NUnit.Framework.CategoryAttribute("DAS16976")]
-        [NUnit.Framework.CategoryAttribute("DAS17067")]
-        [NUnit.Framework.CategoryAttribute("DAS16890")]
-        [NUnit.Framework.CategoryAttribute("DAS17594")]
-        [NUnit.Framework.CategoryAttribute("DAS17774")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS15427",
+                "DAS15428",
+                "DAS16728",
+                "DAS16976",
+                "DAS17067",
+                "DAS16890",
+                "DAS17594",
+                "DAS17774",
+                "Cleanup"}, SourceLine=78)]
         public virtual void EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations()
         {
             string[] tagsOfScenario = new string[] {
@@ -582,20 +577,19 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS15428")]
-        [NUnit.Framework.CategoryAttribute("DAS15938")]
-        [NUnit.Framework.CategoryAttribute("DAS17186")]
-        [NUnit.Framework.CategoryAttribute("DAS17057")]
-        [NUnit.Framework.CategoryAttribute("DAS17253")]
-        [NUnit.Framework.CategoryAttribute("DAS17625")]
-        [NUnit.Framework.CategoryAttribute("DAS17625")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS15428",
+                "DAS15938",
+                "DAS17186",
+                "DAS17057",
+                "DAS17253",
+                "DAS17625",
+                "DAS17625",
+                "Cleanup"}, SourceLine=152)]
         public virtual void EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality()
         {
             string[] tagsOfScenario = new string[] {
@@ -824,15 +818,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS15938")]
-        [NUnit.Framework.CategoryAttribute("DAS17076")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS15938",
+                "DAS17076",
+                "Cleanup"}, SourceLine=217)]
         public virtual void EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction()
         {
             string[] tagsOfScenario = new string[] {
@@ -1071,19 +1064,18 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckEditActionPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS15425")]
-        [NUnit.Framework.CategoryAttribute("DAS16143")]
-        [NUnit.Framework.CategoryAttribute("DAS17336")]
-        [NUnit.Framework.CategoryAttribute("DAS17367")]
-        [NUnit.Framework.CategoryAttribute("DAS17802")]
-        [NUnit.Framework.CategoryAttribute("DAS19228")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckEditActionPage", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS15425",
+                "DAS16143",
+                "DAS17336",
+                "DAS17367",
+                "DAS17802",
+                "DAS19228",
+                "Cleanup"}, SourceLine=284)]
         public virtual void EvergreenJnr_AdminPage_CheckEditActionPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1270,16 +1262,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS16992")]
-        [NUnit.Framework.CategoryAttribute("DAS17427")]
-        [NUnit.Framework.CategoryAttribute("DAS17625")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS16992",
+                "DAS17427",
+                "DAS17625",
+                "Cleanup"}, SourceLine=331)]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions()
         {
             string[] tagsOfScenario = new string[] {
@@ -1608,17 +1599,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndDueDate")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS16992")]
-        [NUnit.Framework.CategoryAttribute("DAS17234")]
-        [NUnit.Framework.CategoryAttribute("DAS17625")]
-        [NUnit.Framework.CategoryAttribute("DAS19117")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndDueDate", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS16992",
+                "DAS17234",
+                "DAS17625",
+                "DAS19117",
+                "Cleanup"}, SourceLine=418)]
         public virtual void EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndDueDate()
         {
             string[] tagsOfScenario = new string[] {
@@ -1885,19 +1875,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS17544")]
-        [NUnit.Framework.CategoryAttribute("DAS19317")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("17544_Automation", "All Devices", "User Scheduled Test (Jo)", "2004 Rollout", "Barry\'s User Project", null)]
-        [NUnit.Framework.TestCaseAttribute("17544_Automation_1", "All Users", "User Scheduled Test (Jo)", "2004 Rollout", "Email Migration", null)]
-        [NUnit.Framework.TestCaseAttribute("17544_Automation_2", "All Applications", "User Scheduled Test (Jo)", "2004 Rollout", "Email Migration", null)]
-        [NUnit.Framework.TestCaseAttribute("17544_Automation-3", "All Mailboxes", "Email Migration", "Mailbox Evergreen Capacity Project", "USE ME FOR AUTOMATION(MAIL SCHDLD)", null)]
         public virtual void EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage(string automationName, string scope, string project1, string project2, string project3, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1995,14 +1972,77 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsLog")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS17542")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage, 17544_Automatio" +
+            "n", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17544",
+                "DAS19317",
+                "Cleanup"}, SourceLine=515)]
+        public virtual void EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage_17544_Automation()
+        {
+#line 493
+this.EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage("17544_Automation", "All Devices", "User Scheduled Test (Jo)", "2004 Rollout", "Barry\'s User Project", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage, 17544_Automatio" +
+            "n_1", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17544",
+                "DAS19317",
+                "Cleanup"}, SourceLine=515)]
+        public virtual void EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage_17544_Automation_1()
+        {
+#line 493
+this.EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage("17544_Automation_1", "All Users", "User Scheduled Test (Jo)", "2004 Rollout", "Email Migration", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage, 17544_Automatio" +
+            "n_2", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17544",
+                "DAS19317",
+                "Cleanup"}, SourceLine=515)]
+        public virtual void EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage_17544_Automation_2()
+        {
+#line 493
+this.EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage("17544_Automation_2", "All Applications", "User Scheduled Test (Jo)", "2004 Rollout", "Email Migration", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage, 17544_Automatio" +
+            "n-3", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17544",
+                "DAS19317",
+                "Cleanup"}, SourceLine=515)]
+        public virtual void EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage_17544_Automation_3()
+        {
+#line 493
+this.EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage("17544_Automation-3", "All Mailboxes", "Email Migration", "Mailbox Evergreen Capacity Project", "USE ME FOR AUTOMATION(MAIL SCHDLD)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsLog", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17542",
+                "Cleanup"}, SourceLine=521)]
         public virtual void EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsLog()
         {
             string[] tagsOfScenario = new string[] {
@@ -2104,15 +2144,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS17602")]
-        [NUnit.Framework.CategoryAttribute("DAS17604")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17602",
+                "DAS17604",
+                "Cleanup"}, SourceLine=544)]
         public virtual void EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue()
         {
             string[] tagsOfScenario = new string[] {
@@ -2247,15 +2286,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS17602")]
-        [NUnit.Framework.CategoryAttribute("DAS17605")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17602",
+                "DAS17605",
+                "Cleanup"}, SourceLine=577)]
         public virtual void EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue()
         {
             string[] tagsOfScenario = new string[] {
@@ -2396,20 +2434,19 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS17602")]
-        [NUnit.Framework.CategoryAttribute("DAS17606")]
-        [NUnit.Framework.CategoryAttribute("DAS19117")]
-        [NUnit.Framework.CategoryAttribute("DAS20455")]
-        [NUnit.Framework.CategoryAttribute("DAS20455")]
-        [NUnit.Framework.CategoryAttribute("DAS20721")]
-        [NUnit.Framework.CategoryAttribute("DAS20720")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17602",
+                "DAS17606",
+                "DAS19117",
+                "DAS20455",
+                "DAS20455",
+                "DAS20721",
+                "DAS20720",
+                "Cleanup"}, SourceLine=611)]
         public virtual void EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate()
         {
             string[] tagsOfScenario = new string[] {
@@ -2619,17 +2656,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS17797")]
-        [NUnit.Framework.CategoryAttribute("DAS17816")]
-        [NUnit.Framework.CategoryAttribute("DAS19117")]
-        [NUnit.Framework.CategoryAttribute("DAS17485")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17797",
+                "DAS17816",
+                "DAS19117",
+                "DAS17485",
+                "Cleanup"}, SourceLine=665)]
         public virtual void EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData()
         {
             string[] tagsOfScenario = new string[] {
@@ -2774,15 +2810,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS17744")]
-        [NUnit.Framework.CategoryAttribute("DAS17485")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17744",
+                "DAS17485",
+                "Cleanup"}, SourceLine=701)]
         public virtual void EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions()
         {
             string[] tagsOfScenario = new string[] {
@@ -2974,15 +3009,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificData")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS17772")]
-        [NUnit.Framework.CategoryAttribute("DAS17948")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificData", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17772",
+                "DAS17948",
+                "Cleanup"}, SourceLine=751)]
         public virtual void EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificData()
         {
             string[] tagsOfScenario = new string[] {
@@ -3109,15 +3143,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS17778")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS17778",
+                "Not_Ready",
+                "Cleanup"}, SourceLine=781)]
         public virtual void EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions()
         {
             string[] tagsOfScenario = new string[] {
@@ -3272,14 +3305,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS18886")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS18886",
+                "Universe"}, SourceLine=821)]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -3387,14 +3419,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckValidationForActionName")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Actions")]
-        [NUnit.Framework.CategoryAttribute("DAS19066")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckValidationForActionName", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "Actions",
+                "DAS19066",
+                "Cleanup"}, SourceLine=848)]
         public virtual void EvergreenJnr_AdminPage_CheckValidationForActionName()
         {
             string[] tagsOfScenario = new string[] {
@@ -3481,6 +3512,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

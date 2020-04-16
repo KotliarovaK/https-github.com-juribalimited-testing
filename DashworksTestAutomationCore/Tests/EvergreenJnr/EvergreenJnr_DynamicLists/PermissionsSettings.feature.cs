@@ -19,9 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_DynamicLis
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("PermissionsSettings")]
-    [NUnit.Framework.CategoryAttribute("retry:1")]
+    [TechTalk.SpecRun.FeatureAttribute("PermissionsSettings", new string[] {
+            "retry:1"}, Description="\tRuns Dynamic List permissions setting related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_DynamicLists\\PermissionsSettings.feature", SourceLine=1)]
     public partial class PermissionsSettingsFeature
     {
         
@@ -33,7 +32,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_DynamicLis
 #line 1 "PermissionsSettings.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -42,19 +41,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_DynamicLis
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,7 +61,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_DynamicLis
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -88,18 +85,17 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_DynamicLis
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicLi" +
-            "st")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DynamicLists")]
-        [NUnit.Framework.CategoryAttribute("PermissionsSettings")]
-        [NUnit.Framework.CategoryAttribute("DAS10945")]
-        [NUnit.Framework.CategoryAttribute("DAS11553")]
-        [NUnit.Framework.CategoryAttribute("DAS10880")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicLi" +
+            "st", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_DynamicLists",
+                "PermissionsSettings",
+                "DAS10945",
+                "DAS11553",
+                "DAS10880",
+                "DAS11951",
+                "Cleanup"}, SourceLine=9)]
         public virtual void EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicList()
         {
             string[] tagsOfScenario = new string[] {
@@ -197,18 +193,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DynamicLists")]
-        [NUnit.Framework.CategoryAttribute("PermissionsSettings")]
-        [NUnit.Framework.CategoryAttribute("DAS10979")]
-        [NUnit.Framework.CategoryAttribute("DAS11553")]
-        [NUnit.Framework.CategoryAttribute("DAS10880")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("DAS14263")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_DynamicLists",
+                "PermissionsSettings",
+                "DAS10979",
+                "DAS11553",
+                "DAS10880",
+                "DAS11951",
+                "DAS14263",
+                "Cleanup"}, SourceLine=28)]
         public virtual void EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList()
         {
             string[] tagsOfScenario = new string[] {
@@ -326,14 +321,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatSavedDynamicListIsNotDisplayedInEditModeIfUseDep" +
-            "artmentFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DynamicLists")]
-        [NUnit.Framework.CategoryAttribute("DAS12941")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatSavedDynamicListIsNotDisplayedInEditModeIfUseDep" +
+            "artmentFilter", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_DynamicLists",
+                "DAS12941",
+                "Cleanup"}, SourceLine=53)]
         public virtual void EvergreenJnr_UsersList_ChecksThatSavedDynamicListIsNotDisplayedInEditModeIfUseDepartmentFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -410,14 +404,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserShareItForTheT" +
-            "eamToWhichHeAlsoBelongs")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DynamicLists")]
-        [NUnit.Framework.CategoryAttribute("DAS16228")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserShareItForTheT" +
+            "eamToWhichHeAlsoBelongs", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_DynamicLists",
+                "DAS16228",
+                "Cleanup"}, SourceLine=67)]
         public virtual void EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserShareItForTheTeamToWhichHeAlsoBelongs()
         {
             string[] tagsOfScenario = new string[] {
@@ -535,14 +528,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatExpandIconIsInactiveForOwnerDdlForNonOwnerUserI" +
-            "nItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DynamicLists")]
-        [NUnit.Framework.CategoryAttribute("DAS16405")]
-        [NUnit.Framework.CategoryAttribute("DAS16555")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatExpandIconIsInactiveForOwnerDdlForNonOwnerUserI" +
+            "nItemDetails", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_DynamicLists",
+                "DAS16405",
+                "DAS16555"}, SourceLine=95)]
         public virtual void EvergreenJnr_DevicesList_CheckThatExpandIconIsInactiveForOwnerDdlForNonOwnerUserInItemDetails()
         {
             string[] tagsOfScenario = new string[] {
@@ -601,6 +593,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CustomListDisplayPart3")]
+    [TechTalk.SpecRun.FeatureAttribute("CustomListDisplayPart3", Description="\tRuns Custom List Creation block related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ListPanel\\CustomListDisplayPart3.feature", SourceLine=0)]
     public partial class CustomListDisplayPart3Feature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
 #line 1 "CustomListDisplayPart3.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,17 +82,16 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedAfterStartTy" +
-            "pingAListName")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11018")]
-        [NUnit.Framework.CategoryAttribute("DAS12194")]
-        [NUnit.Framework.CategoryAttribute("DAS12199")]
-        [NUnit.Framework.CategoryAttribute("DAS12220")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedAfterStartTy" +
+            "pingAListName", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ListPanel",
+                "CustomListDisplay",
+                "DAS11018",
+                "DAS12194",
+                "DAS12199",
+                "DAS12220"}, SourceLine=8)]
         public virtual void EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedAfterStartTypingAListName()
         {
             string[] tagsOfScenario = new string[] {
@@ -189,14 +185,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11018")]
-        [NUnit.Framework.CategoryAttribute("DAS16242")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ListPanel",
+                "CustomListDisplay",
+                "DAS11018",
+                "DAS16242"}, SourceLine=26)]
         public virtual void EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock()
         {
             string[] tagsOfScenario = new string[] {
@@ -291,18 +286,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfte" +
-            "rClickingResetButtonInColumnsMenu")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11394")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("DAS12595")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfte" +
+            "rClickingResetButtonInColumnsMenu", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ListPanel",
+                "CustomListDisplay",
+                "DAS11394",
+                "DAS11951",
+                "DAS12152",
+                "DAS12595",
+                "Cleanup"}, SourceLine=48)]
         public virtual void EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfterClickingResetButtonInColumnsMenu()
         {
             string[] tagsOfScenario = new string[] {
@@ -465,18 +459,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAnd" +
-            "SortsAndTheSameRowsOfData")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11011")]
-        [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("DAS12595")]
-        [NUnit.Framework.CategoryAttribute("DAS14783")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAnd" +
+            "SortsAndTheSameRowsOfData", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ListPanel",
+                "CustomListDisplay",
+                "DAS11011",
+                "DAS12152",
+                "DAS12595",
+                "DAS14783",
+                "Cleanup"}, SourceLine=89)]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData()
         {
             string[] tagsOfScenario = new string[] {
@@ -613,6 +606,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

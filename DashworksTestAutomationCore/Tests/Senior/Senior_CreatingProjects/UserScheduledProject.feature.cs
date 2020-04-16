@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.Senior.Senior_CreatingProjects
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CreateUserScheduledProject")]
+    [TechTalk.SpecRun.FeatureAttribute("CreateUserScheduledProject", Description="\tRuns Project related tests", SourceFile="Tests\\Senior\\Senior_CreatingProjects\\UserScheduledProject.feature", SourceLine=0)]
     public partial class CreateUserScheduledProjectFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.Senior.Senior_CreatingProjects
 #line 1 "UserScheduledProject.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.Senior.Senior_CreatingProjects
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.Senior.Senior_CreatingProjects
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,11 +82,10 @@ namespace DashworksTestAutomationCore.Tests.Senior.Senior_CreatingProjects
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Projects_CreateUserScheduledProject")]
-        [NUnit.Framework.CategoryAttribute("ProjectsOnSenior")]
-        [NUnit.Framework.CategoryAttribute("Projects_Administration")]
-        [NUnit.Framework.CategoryAttribute("UserScheduledProject")]
+        [TechTalk.SpecRun.ScenarioAttribute("Projects_CreateUserScheduledProject", new string[] {
+                "ProjectsOnSenior",
+                "Projects_Administration",
+                "UserScheduledProject"}, SourceLine=8)]
         public virtual void Projects_CreateUserScheduledProject()
         {
             string[] tagsOfScenario = new string[] {
@@ -1396,6 +1392,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

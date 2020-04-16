@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ItemDetailsContent_ActionsWithTable")]
+    [TechTalk.SpecRun.FeatureAttribute("ItemDetailsContent_ActionsWithTable", Description="\tRuns Item Details Content Actions With Table related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ItemDetailsContent\\ItemDetailsContent" +
+        "_ActionsWithTable.feature", SourceLine=0)]
     public partial class ItemDetailsContent_ActionsWithTableFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "ItemDetailsContent_ActionsWithTable.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,20 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssue" +
-            "sSectionOnTheDetailsPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11091")]
-        [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.CategoryAttribute("DAS16121")]
-        [NUnit.Framework.CategoryAttribute("DAS17305")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
-        [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "2", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "EKS951231", "4", null)]
         public virtual void EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage(string pageName, string selectedName, string countRows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -191,21 +175,42 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilte" +
-            "rTextField")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11762")]
-        [NUnit.Framework.CategoryAttribute("DAS12235")]
-        [NUnit.Framework.CategoryAttribute("DAS13813")]
-        [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
-        [NUnit.Framework.TestCaseAttribute("Device", "30BGMTLBM9PTW5", "Applications", "Application", null)]
-        [NUnit.Framework.TestCaseAttribute("Application", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "MSI", "File Name", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox", "aaron.u.flores@dwlabs.local", "Users", "Username", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssue" +
+            "sSectionOnTheDetailsPage, Device", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11091",
+                "DAS14923",
+                "DAS16121",
+                "DAS17305",
+                "Zion_NewGrid"}, SourceLine=30)]
+        public virtual void EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage_Device()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage("Device", "001BAQXT6JWFPI", "2", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssue" +
+            "sSectionOnTheDetailsPage, User", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11091",
+                "DAS14923",
+                "DAS16121",
+                "DAS17305",
+                "Zion_NewGrid"}, SourceLine=30)]
+        public virtual void EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage_User()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage("User", "EKS951231", "4", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField(string pageName, string searchTerm, string tabName, string selectedColumn, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -276,16 +281,60 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11647")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
-        [NUnit.Framework.TestCaseAttribute("Advertisements", null)]
-        [NUnit.Framework.TestCaseAttribute("Collections", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilte" +
+            "rTextField, Device", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11762",
+                "DAS12235",
+                "DAS13813",
+                "DAS14923",
+                "Zion_NewGrid"}, SourceLine=46)]
+        public virtual void EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField_Device()
+        {
+#line 35
+this.EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField("Device", "30BGMTLBM9PTW5", "Applications", "Application", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilte" +
+            "rTextField, Application", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11762",
+                "DAS12235",
+                "DAS13813",
+                "DAS14923",
+                "Zion_NewGrid"}, SourceLine=46)]
+        public virtual void EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField_Application()
+        {
+#line 35
+this.EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField("Application", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "MSI", "File Name", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilte" +
+            "rTextField, Mailbox", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11762",
+                "DAS12235",
+                "DAS13813",
+                "DAS14923",
+                "Zion_NewGrid"}, SourceLine=46)]
+        public virtual void EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField_Mailbox()
+        {
+#line 35
+this.EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField("Mailbox", "aaron.u.flores@dwlabs.local", "Users", "Username", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn(string subMenuName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -352,17 +401,36 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ALlLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12491")]
-        [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
-        [NUnit.Framework.TestCaseAttribute("Application", "IEWatch 2.1", "MSI", "MSI Files", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "01A921EFD05545818AA", "Mailboxes", "Mailboxes", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn, Adve" +
+            "rtisements", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11647",
+                "Zion_NewGrid"}, SourceLine=63)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn_Advertisements()
+        {
+#line 52
+this.EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn("Advertisements", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn, Coll" +
+            "ections", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11647",
+                "Zion_NewGrid"}, SourceLine=63)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn_Collections()
+        {
+#line 52
+this.EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn("Collections", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages(string pageName, string searchTerm, string mainTab, string subTab, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -421,17 +489,48 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsSumma" +
-            "rySection")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16009")]
-        [NUnit.Framework.CategoryAttribute("DAS15951")]
-        [NUnit.Framework.CategoryAttribute("DAS20748")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages, Appl" +
+            "ication", new string[] {
+                "Evergreen",
+                "ALlLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS12491",
+                "DAS14923",
+                "Zion_NewGrid"}, SourceLine=76)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages_Application()
+        {
+#line 68
+this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages("Application", "IEWatch 2.1", "MSI", "MSI Files", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages, User" +
+            "", new string[] {
+                "Evergreen",
+                "ALlLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS12491",
+                "DAS14923",
+                "Zion_NewGrid"}, SourceLine=76)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages_User()
+        {
+#line 68
+this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages("User", "01A921EFD05545818AA", "Mailboxes", "Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsSumma" +
+            "rySection", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16009",
+                "DAS15951",
+                "DAS20748",
+                "Zion_NewGrid"}, SourceLine=80)]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsSummarySection()
         {
             string[] tagsOfScenario = new string[] {
@@ -551,15 +650,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectD" +
-            "etailsPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16719")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectD" +
+            "etailsPage", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16719",
+                "Zion_NewGrid"}, SourceLine=113)]
         public virtual void EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -617,6 +715,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

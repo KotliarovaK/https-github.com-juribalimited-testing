@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Columns
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ColumnSectionDisplay")]
+    [TechTalk.SpecRun.FeatureAttribute("ColumnSectionDisplay", Description="\tRuns Column Panel related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_Columns\\ColumnSectionDisplay.feature", SourceLine=0)]
     public partial class ColumnSectionDisplayFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Columns
 #line 1 "ColumnSectionDisplay.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Columns
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Columns
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,13 +82,12 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Columns
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategoryAreAdded")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10584")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategoryAreAdded", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS10584"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategoryAreAdded()
         {
             string[] tagsOfScenario = new string[] {
@@ -155,14 +151,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterClearingAColumnSe" +
-            "archValue")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11539")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterClearingAColumnSe" +
+            "archValue", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS11539"}, SourceLine=19)]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterClearingAColumnSearchValue()
         {
             string[] tagsOfScenario = new string[] {
@@ -229,14 +224,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnIsNotRemovedAfterApplyFilterForTheSameCol" +
-            "umnName")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10583")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatColumnIsNotRemovedAfterApplyFilterForTheSameCol" +
+            "umnName", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS10583"}, SourceLine=30)]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnIsNotRemovedAfterApplyFilterForTheSameColumnName()
         {
             string[] tagsOfScenario = new string[] {
@@ -311,14 +305,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAppropriateIconsAreDisplayedForMaximizedAndMini" +
-            "mizeGroups")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11480")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAppropriateIconsAreDisplayedForMaximizedAndMini" +
+            "mizeGroups", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS11480"}, SourceLine=45)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAppropriateIconsAreDisplayedForMaximizedAndMinimizeGroups()
         {
             string[] tagsOfScenario = new string[] {
@@ -382,14 +375,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantCategoryAfte" +
-            "rResetting")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11668")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantCategoryAfte" +
+            "rResetting", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS11668"}, SourceLine=55)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantCategoryAfterResetting()
         {
             string[] tagsOfScenario = new string[] {
@@ -456,14 +448,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11548")]
-        [NUnit.Framework.CategoryAttribute("DAS13423")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS11548",
+                "DAS13423"}, SourceLine=67)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns()
         {
             string[] tagsOfScenario = new string[] {
@@ -540,13 +531,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11768")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingColumn", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS11768"}, SourceLine=82)]
         public virtual void EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -621,16 +611,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamic" +
-            "Lists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11768")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamic" +
+            "Lists", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS11768",
+                "DAS11951",
+                "Cleanup"}, SourceLine=98)]
         public virtual void EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -741,18 +730,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnFor" +
-            "StaticLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11768")]
-        [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("DAS12553")]
-        [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnFor" +
+            "StaticLists", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS11768",
+                "DAS12152",
+                "DAS12553",
+                "DAS12602",
+                "Cleanup"}, SourceLine=125)]
         public virtual void EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -873,16 +861,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDyn" +
-            "amicLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11768")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDyn" +
+            "amicLists", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS11768",
+                "DAS11951",
+                "Cleanup"}, SourceLine=154)]
         public virtual void EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -993,14 +980,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGr" +
-            "id")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
-        [NUnit.Framework.CategoryAttribute("DAS11463")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGr" +
+            "id", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "ColumnOrder",
+                "DAS11463"}, SourceLine=181)]
         public virtual void EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGrid()
         {
             string[] tagsOfScenario = new string[] {
@@ -1240,15 +1226,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFil" +
-            "terFromApplicationCustomFieldsCategory")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13181")]
-        [NUnit.Framework.CategoryAttribute("DAS13376")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFil" +
+            "terFromApplicationCustomFieldsCategory", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS13181",
+                "DAS13376"}, SourceLine=263)]
         public virtual void EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFilterFromApplicationCustomFieldsCategory()
         {
             string[] tagsOfScenario = new string[] {
@@ -1327,15 +1312,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheC" +
-            "olumnsIsDisplayedCorrectlyOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheC" +
+            "olumnsIsDisplayedCorrectlyOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS13059",
+                "Cleanup"}, SourceLine=277)]
         public virtual void EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1484,15 +1468,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheCol" +
-            "umnsIsDisplayedCorrectlyOnUsersPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheCol" +
+            "umnsIsDisplayedCorrectlyOnUsersPage", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS13059",
+                "Cleanup"}, SourceLine=321)]
         public virtual void EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnUsersPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1632,15 +1615,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFromTheAllLis" +
-            "tTheColumnsIsDisplayedCorrectlyOnApplicationsPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFromTheAllLis" +
+            "tTheColumnsIsDisplayedCorrectlyOnApplicationsPage", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS13059",
+                "Cleanup"}, SourceLine=362)]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnApplicationsPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1778,15 +1760,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTh" +
-            "eColumnsIsDisplayedCorrectlyOnMailboxesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTh" +
+            "eColumnsIsDisplayedCorrectlyOnMailboxesPage", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS13059",
+                "Cleanup"}, SourceLine=402)]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnMailboxesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1928,15 +1909,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADynamicListTh" +
-            "eColumnsIsDisplayedCorrectlyOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADynamicListTh" +
+            "eColumnsIsDisplayedCorrectlyOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS13059",
+                "Cleanup"}, SourceLine=444)]
         public virtual void EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADynamicListTheColumnsIsDisplayedCorrectlyOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -2092,15 +2072,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromAStaticListThe" +
-            "ColumnsIsDisplayedCorrectlyOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromAStaticListThe" +
+            "ColumnsIsDisplayedCorrectlyOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS13059",
+                "Cleanup"}, SourceLine=490)]
         public virtual void EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromAStaticListTheColumnsIsDisplayedCorrectlyOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -2275,15 +2254,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilter" +
-            "Search")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13245")]
-        [NUnit.Framework.CategoryAttribute("DAS15566")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilter" +
+            "Search", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS13245",
+                "DAS15566"}, SourceLine=543)]
         public virtual void EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilterSearch()
         {
             string[] tagsOfScenario = new string[] {
@@ -2375,13 +2353,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAddingAFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13245")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAddingAFilter", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS13245"}, SourceLine=565)]
         public virtual void EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAddingAFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -2479,15 +2456,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlpha" +
-            "beticalOrder")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12861")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlpha" +
+            "beticalOrder", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS12861"}, SourceLine=591)]
         public virtual void EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlphabeticalOrder()
         {
             string[] tagsOfScenario = new string[] {
@@ -2600,20 +2576,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergree" +
-            "nCategoryInColumnsPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12940")]
-        [NUnit.Framework.CategoryAttribute("DAS13201")]
-        [NUnit.Framework.CategoryAttribute("DAS14325")]
-        [NUnit.Framework.TestCaseAttribute("Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel(string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -2685,17 +2647,67 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCa" +
-            "tegoryInColumnsPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12940")]
-        [NUnit.Framework.CategoryAttribute("DAS13201")]
-        [NUnit.Framework.CategoryAttribute("DAS14325")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergree" +
+            "nCategoryInColumnsPanel, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS12940",
+                "DAS13201",
+                "DAS14325"}, SourceLine=635)]
+        public virtual void EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel_Devices()
+        {
+#line 622
+this.EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel("Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergree" +
+            "nCategoryInColumnsPanel, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS12940",
+                "DAS13201",
+                "DAS14325"}, SourceLine=635)]
+        public virtual void EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel_Users()
+        {
+#line 622
+this.EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel("Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergree" +
+            "nCategoryInColumnsPanel, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS12940",
+                "DAS13201",
+                "DAS14325"}, SourceLine=635)]
+        public virtual void EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel_Mailboxes()
+        {
+#line 622
+this.EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel("Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCa" +
+            "tegoryInColumnsPanel", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS12940",
+                "DAS13201",
+                "DAS14325"}, SourceLine=640)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInColumnsPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -2784,16 +2796,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedIn" +
-            "AlphabeticalOrderAfterAddingFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12861")]
-        [NUnit.Framework.CategoryAttribute("DAS13299")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedIn" +
+            "AlphabeticalOrderAfterAddingFilters", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS12861",
+                "DAS13299"}, SourceLine=660)]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -2913,15 +2924,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabe" +
-            "ticalOrderAfterAddingDepartmentFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12861")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabe" +
+            "ticalOrderAfterAddingDepartmentFilters", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS12861"}, SourceLine=691)]
         public virtual void EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingDepartmentFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -3131,13 +3141,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12922")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS12922"}, SourceLine=761)]
         public virtual void EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs()
         {
             string[] tagsOfScenario = new string[] {
@@ -3252,14 +3261,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrec" +
-            "tlyAfterAddingObjectIdFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12910")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrec" +
+            "tlyAfterAddingObjectIdFilter", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS12910"}, SourceLine=789)]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrectlyAfterAddingObjectIdFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -3369,16 +3377,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelFo" +
-            "rUsersList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS14629")]
-        [NUnit.Framework.CategoryAttribute("DAS14660")]
-        [NUnit.Framework.CategoryAttribute("DAS15167")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelFo" +
+            "rUsersList", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS14629",
+                "DAS14660",
+                "DAS15167"}, SourceLine=817)]
         public virtual void EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList()
         {
             string[] tagsOfScenario = new string[] {
@@ -3455,15 +3462,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS14969")]
-        [NUnit.Framework.CategoryAttribute("archived")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories" +
+            "", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS14969",
+                "archived"}, SourceLine=830)]
         public virtual void EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories()
         {
             string[] tagsOfScenario = new string[] {
@@ -3555,14 +3561,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS14969")]
-        [NUnit.Framework.CategoryAttribute("archived")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS14969",
+                "archived"}, SourceLine=850)]
         public virtual void EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories()
         {
             string[] tagsOfScenario = new string[] {
@@ -3645,15 +3650,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCateg" +
-            "ories")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS14969")]
-        [NUnit.Framework.CategoryAttribute("archived")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCateg" +
+            "ories", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS14969",
+                "archived"}, SourceLine=866)]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories()
         {
             string[] tagsOfScenario = new string[] {
@@ -3737,15 +3741,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategori" +
-            "es")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS14969")]
-        [NUnit.Framework.CategoryAttribute("archived")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategori" +
+            "es", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS14969",
+                "archived"}, SourceLine=882)]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories()
         {
             string[] tagsOfScenario = new string[] {
@@ -3834,15 +3837,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailable" +
-            "InPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15140")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailable" +
+            "InPanel", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS15140",
+                "Do_Not_Run_With_Projects"}, SourceLine=902)]
         public virtual void EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -3935,15 +3937,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableIn" +
-            "Panel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15140")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableIn" +
+            "Panel", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS15140",
+                "Do_Not_Run_With_Projects"}, SourceLine=921)]
         public virtual void EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -4018,15 +4019,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailab" +
-            "leInPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15140")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailab" +
+            "leInPanel", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS15140",
+                "Do_Not_Run_With_Projects"}, SourceLine=934)]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -4095,15 +4095,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvai" +
-            "lableInPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15140")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvai" +
+            "lableInPanel", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS15140",
+                "Do_Not_Run_With_Projects"}, SourceLine=945)]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -4163,14 +4162,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS15899"}, SourceLine=953)]
         public virtual void EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -4269,14 +4267,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS15899"}, SourceLine=980)]
         public virtual void EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -4355,14 +4352,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS15899"}, SourceLine=996)]
         public virtual void EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -4455,14 +4451,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS15899"}, SourceLine=1019)]
         public virtual void EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -4542,15 +4537,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatProjectRingsCategoryCorrectlyPlacedInColum" +
-            "nsPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18795")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatProjectRingsCategoryCorrectlyPlacedInColum" +
+            "nsPanel", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Columns",
+                "ColumnSectionOrder",
+                "ColumnSectionDisplay",
+                "DAS18795"}, SourceLine=1035)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectRingsCategoryCorrectlyPlacedInColumnsPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -4610,13 +4604,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSubcategoriesForOwnerCategoryColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18861")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckSubcategoriesForOwnerCategoryColumn", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Columns",
+                "ColumnSectionDisplay",
+                "DAS18861"}, SourceLine=1043)]
         public virtual void EvergreenJnr_MailboxesList_CheckSubcategoriesForOwnerCategoryColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -4714,6 +4707,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

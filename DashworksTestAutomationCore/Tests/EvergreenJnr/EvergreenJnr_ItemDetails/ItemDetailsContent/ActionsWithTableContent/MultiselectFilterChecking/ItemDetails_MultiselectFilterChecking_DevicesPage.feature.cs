@@ -19,8 +19,9 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ItemDetails_MultiselectFilterChecking_DevicesPage")]
+    [TechTalk.SpecRun.FeatureAttribute("ItemDetails_MultiselectFilterChecking_DevicesPage", Description="\tRuns Multiselect Filter Checking for Devices Page related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ItemDetailsContent\\ActionsWithTableCo" +
+        "ntent\\MultiselectFilterChecking\\ItemDetails_MultiselectFilterChecking_DevicesPag" +
+        "e.feature", SourceLine=0)]
     public partial class ItemDetails_MultiselectFilterChecking_DevicesPageFeature
     {
         
@@ -31,7 +32,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "ItemDetails_MultiselectFilterChecking_DevicesPage.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +40,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +60,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,16 +84,15 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
-            "atedMultiselectFilterForUsersTabOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17761")]
-        [NUnit.Framework.CategoryAttribute("DAS18405")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForUsersTabOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17761",
+                "DAS18405",
+                "Zion_NewGrid"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForUsersTabOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -223,15 +221,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
-            "atedMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17761")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17761",
+                "Zion_NewGrid"}, SourceLine=41)]
         public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -340,15 +337,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
-            "atedMultiselectFilterForApplicationsTabEvergreenDetailOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17761")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForApplicationsTabEvergreenDetailOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17761",
+                "Zion_NewGrid"}, SourceLine=66)]
         public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenDetailOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -501,15 +497,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
-            "atedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17761")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17761",
+                "Zion_NewGrid"}, SourceLine=112)]
         public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -585,15 +580,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
-            "atedMultiselectFilterForApplicationsTabCollectionsOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17761")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForApplicationsTabCollectionsOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17761",
+                "Zion_NewGrid"}, SourceLine=125)]
         public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -691,15 +685,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
-            "atedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17761")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17761",
+                "Zion_NewGrid"}, SourceLine=146)]
         public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -771,15 +764,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
-            "atedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17761")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRel" +
+            "atedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17761",
+                "Zion_NewGrid"}, SourceLine=158)]
         public virtual void EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -877,15 +869,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowColumnBlanksFi" +
-            "lterAfterUncheckingIt")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12253")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowColumnBlanksFi" +
+            "lterAfterUncheckingIt", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS12253",
+                "Zion_NewGrid"}, SourceLine=179)]
         public virtual void EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowColumnBlanksFilterAfterUncheckingIt()
         {
             string[] tagsOfScenario = new string[] {
@@ -959,6 +950,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

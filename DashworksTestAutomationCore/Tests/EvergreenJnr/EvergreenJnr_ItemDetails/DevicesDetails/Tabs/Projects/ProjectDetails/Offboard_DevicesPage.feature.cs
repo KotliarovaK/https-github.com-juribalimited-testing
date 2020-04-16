@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Offboard_DevicesPage")]
+    [TechTalk.SpecRun.FeatureAttribute("Offboard_DevicesPage", Description="\tRuns Offboard Devices Page related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\DevicesDetails\\Tabs\\Projects\\ProjectD" +
+        "etails\\Offboard_DevicesPage.feature", SourceLine=0)]
     public partial class Offboard_DevicesPageFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "Offboard_DevicesPage.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,18 +83,17 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWi" +
-            "ndowWithNoAssotiatedDevicesOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS17964")]
-        [NUnit.Framework.CategoryAttribute("DAS17990")]
-        [NUnit.Framework.CategoryAttribute("DAS17000")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWi" +
+            "ndowWithNoAssotiatedDevicesOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS17964",
+                "DAS17990",
+                "DAS17000",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=10)]
         public virtual void EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -235,18 +232,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWi" +
-            "ndowWithAssotiatedDevicesOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS17964")]
-        [NUnit.Framework.CategoryAttribute("DAS17990")]
-        [NUnit.Framework.CategoryAttribute("DAS17000")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWi" +
+            "ndowWithAssotiatedDevicesOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS17964",
+                "DAS17990",
+                "DAS17000",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=47)]
         public virtual void EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -372,16 +368,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWi" +
-            "ndowWithoutUserOnDevicesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS17964")]
-        [NUnit.Framework.CategoryAttribute("DAS17990")]
-        [NUnit.Framework.CategoryAttribute("DAS17000")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWi" +
+            "ndowWithoutUserOnDevicesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS17964",
+                "DAS17990",
+                "DAS17000"}, SourceLine=77)]
         public virtual void EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -454,17 +449,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheO" +
-            "bjectWasSuccessfullyQueuedForTheOffboarding")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS17912")]
-        [NUnit.Framework.CategoryAttribute("DAS19836")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheO" +
+            "bjectWasSuccessfullyQueuedForTheOffboarding", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS17912",
+                "DAS19836",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=89)]
         public virtual void EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyQueuedForTheOffboarding()
         {
             string[] tagsOfScenario = new string[] {
@@ -558,14 +552,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS18036")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS18036",
+                "Zion_NewGrid"}, SourceLine=107)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -747,17 +740,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboa" +
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboa" +
             "rdingPopUpWhenMainObjectWasAlreadyOffboardedWithAssociatedObjectsFromAnotherTabO" +
-            "rByAnotherUser")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS18026")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+            "rByAnotherUser", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS18026",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=169)]
         public virtual void EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboardingPopUpWhenMainObjectWasAlreadyOffboardedWithAssociatedObjectsFromAnotherTabOrByAnotherUser()
         {
             string[] tagsOfScenario = new string[] {
@@ -853,14 +845,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheOffboardPopUp")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ProjectsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS19843")]
-        [NUnit.Framework.CategoryAttribute("DAS20088")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheOffboardPopUp", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ProjectsTab",
+                "DAS19843",
+                "DAS20088"}, SourceLine=187)]
         public virtual void EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheOffboardPopUp()
         {
             string[] tagsOfScenario = new string[] {
@@ -933,6 +924,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

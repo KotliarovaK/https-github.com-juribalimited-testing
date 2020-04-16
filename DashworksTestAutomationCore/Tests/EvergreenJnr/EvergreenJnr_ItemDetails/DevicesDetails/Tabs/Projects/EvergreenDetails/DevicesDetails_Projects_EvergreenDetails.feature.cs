@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("DevicesDetails_Projects_EvergreenDetails")]
+    [TechTalk.SpecRun.FeatureAttribute("DevicesDetails_Projects_EvergreenDetails", Description="\tRuns related tests for Projects > Evergreen Details tab", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\DevicesDetails\\Tabs\\Projects\\Evergree" +
+        "nDetails\\DevicesDetails_Projects_EvergreenDetails.feature", SourceLine=0)]
     public partial class DevicesDetails_Projects_EvergreenDetailsFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "DevicesDetails_Projects_EvergreenDetails.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,15 +83,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS14941")]
-        [NUnit.Framework.CategoryAttribute("DAS12963")]
-        [NUnit.Framework.CategoryAttribute("DAS20166")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS14941",
+                "DAS12963",
+                "DAS20166"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting()
         {
             string[] tagsOfScenario = new string[] {
@@ -179,19 +176,18 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhe" +
-            "nMailboxesSectionIsExpanded")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13335")]
-        [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.CategoryAttribute("DAS12963")]
-        [NUnit.Framework.CategoryAttribute("DAS16233")]
-        [NUnit.Framework.CategoryAttribute("DAS16360")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhe" +
+            "nMailboxesSectionIsExpanded", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS13335",
+                "DAS14923",
+                "DAS12963",
+                "DAS16233",
+                "DAS16360",
+                "Cleanup"}, SourceLine=26)]
         public virtual void EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded()
         {
             string[] tagsOfScenario = new string[] {
@@ -295,22 +291,21 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorr" +
-            "ectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12883")]
-        [NUnit.Framework.CategoryAttribute("DAS13208")]
-        [NUnit.Framework.CategoryAttribute("DAS13478")]
-        [NUnit.Framework.CategoryAttribute("DAS13971")]
-        [NUnit.Framework.CategoryAttribute("DAS13892")]
-        [NUnit.Framework.CategoryAttribute("DAS16824")]
-        [NUnit.Framework.CategoryAttribute("DAS17093")]
-        [NUnit.Framework.CategoryAttribute("DAS16360")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorr" +
+            "ectly", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS12883",
+                "DAS13208",
+                "DAS13478",
+                "DAS13971",
+                "DAS13892",
+                "DAS16824",
+                "DAS17093",
+                "DAS16360",
+                "Cleanup"}, SourceLine=46)]
         public virtual void EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -553,16 +548,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCor" +
-            "rectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16360")]
-        [NUnit.Framework.CategoryAttribute("DAS20433")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCor" +
+            "rectly", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16360",
+                "DAS20433",
+                "Cleanup"}, SourceLine=118)]
         public virtual void EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -672,14 +666,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuccessfully")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS16360")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuccessfully", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ProjectDetailsTab",
+                "DAS16360",
+                "Cleanup"}, SourceLine=143)]
         public virtual void EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuccessfully()
         {
             string[] tagsOfScenario = new string[] {
@@ -813,15 +806,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheEvergreen" +
-            "Bucket")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS16360")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheEvergreen" +
+            "Bucket", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ProjectDetailsTab",
+                "DAS16360",
+                "Cleanup"}, SourceLine=175)]
         public virtual void EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheEvergreenBucket()
         {
             string[] tagsOfScenario = new string[] {
@@ -908,14 +900,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTheShowOnlySelectedItemsButtonAreNotDisplayedOn" +
-            "TheMoveBucketPopupIfDeviceDoesntHaveAnyAssociatedUsers")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS20336")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatTheShowOnlySelectedItemsButtonAreNotDisplayedOn" +
+            "TheMoveBucketPopupIfDeviceDoesntHaveAnyAssociatedUsers", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ProjectDetailsTab",
+                "DAS20336"}, SourceLine=190)]
         public virtual void EvergreenJnr_DevicesList_CheckThatTheShowOnlySelectedItemsButtonAreNotDisplayedOnTheMoveBucketPopupIfDeviceDoesntHaveAnyAssociatedUsers()
         {
             string[] tagsOfScenario = new string[] {
@@ -977,6 +968,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

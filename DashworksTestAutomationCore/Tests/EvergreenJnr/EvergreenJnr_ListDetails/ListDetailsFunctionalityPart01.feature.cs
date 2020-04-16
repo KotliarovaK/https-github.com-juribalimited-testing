@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ListDetailsFunctionalityPar1")]
+    [TechTalk.SpecRun.FeatureAttribute("ListDetailsFunctionalityPar1", Description="\tRuns List Details Panel related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ListDetails\\ListDetailsFunctionalityPart01.featur" +
+        "e", SourceLine=0)]
     public partial class ListDetailsFunctionalityPar1Feature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
 #line 1 "ListDetailsFunctionalityPart01.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,20 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS10880")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("DAS12624")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists(string pageName, string columnname, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -206,23 +190,74 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS10880")]
-        [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("DAS12555")]
-        [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.CategoryAttribute("DAS12624")]
-        [NUnit.Framework.CategoryAttribute("DAS16866")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "00BDM1JUR8IF419", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "003F5D8E1A844B1FAA5", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "0036 - Microsoft Access 97 SR-2 English", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "0335B318ED7B4752A28@bclabs.local", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists, Devi" +
+            "ces", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS11951",
+                "DAS12624",
+                "Cleanup"}, SourceLine=33)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists_Devices()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists("Devices", "Hostname", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists, User" +
+            "s", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS11951",
+                "DAS12624",
+                "Cleanup"}, SourceLine=33)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists_Users()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists("Users", "Username", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists, Appl" +
+            "ications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS11951",
+                "DAS12624",
+                "Cleanup"}, SourceLine=33)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists_Applications()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists("Applications", "Application", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists, Mail" +
+            "boxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS11951",
+                "DAS12624",
+                "Cleanup"}, SourceLine=33)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists_Mailboxes()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists("Mailboxes", "Email Address", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists(string pageName, string itemName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -359,19 +394,86 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS10880")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "All Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "All Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "All Applications", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "All Mailboxes", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists, Devic" +
+            "es", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS12152",
+                "DAS12555",
+                "DAS12602",
+                "DAS12624",
+                "DAS16866",
+                "Cleanup"}, SourceLine=71)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists_Devices()
+        {
+#line 40
+this.EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists("Devices", "00BDM1JUR8IF419", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists, Users" +
+            "", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS12152",
+                "DAS12555",
+                "DAS12602",
+                "DAS12624",
+                "DAS16866",
+                "Cleanup"}, SourceLine=71)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists_Users()
+        {
+#line 40
+this.EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists("Users", "003F5D8E1A844B1FAA5", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists, Appli" +
+            "cations", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS12152",
+                "DAS12555",
+                "DAS12602",
+                "DAS12624",
+                "DAS16866",
+                "Cleanup"}, SourceLine=71)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists_Applications()
+        {
+#line 40
+this.EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists("Applications", "0036 - Microsoft Access 97 SR-2 English", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists, Mailb" +
+            "oxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS12152",
+                "DAS12555",
+                "DAS12602",
+                "DAS12624",
+                "DAS16866",
+                "Cleanup"}, SourceLine=71)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists_Mailboxes()
+        {
+#line 40
+this.EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists("Mailboxes", "0335B318ED7B4752A28@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists(string pageName, string columnname, string listToNavigate, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -469,21 +571,70 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS10880")]
-        [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("DAS12555")]
-        [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists, Devi" +
+            "ces", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS11951",
+                "Cleanup"}, SourceLine=99)]
+        public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists_Devices()
+        {
+#line 78
+this.EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists("Devices", "Hostname", "All Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists, User" +
+            "s", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS11951",
+                "Cleanup"}, SourceLine=99)]
+        public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists_Users()
+        {
+#line 78
+this.EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists("Users", "Username", "All Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists, Appl" +
+            "ications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS11951",
+                "Cleanup"}, SourceLine=99)]
+        public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists_Applications()
+        {
+#line 78
+this.EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists("Applications", "Application", "All Applications", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists, Mail" +
+            "boxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS11951",
+                "Cleanup"}, SourceLine=99)]
+        public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists_Mailboxes()
+        {
+#line 78
+this.EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists("Mailboxes", "Email Address", "All Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists(string pageName, string listToNavigate, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -590,6 +741,84 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists, Devic" +
+            "es", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS12152",
+                "DAS12555",
+                "DAS12602",
+                "Cleanup"}, SourceLine=130)]
+        public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists_Devices()
+        {
+#line 106
+this.EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists("Devices", "All Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists, Users" +
+            "", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS12152",
+                "DAS12555",
+                "DAS12602",
+                "Cleanup"}, SourceLine=130)]
+        public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists_Users()
+        {
+#line 106
+this.EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists("Users", "All Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists, Appli" +
+            "cations", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS12152",
+                "DAS12555",
+                "DAS12602",
+                "Cleanup"}, SourceLine=130)]
+        public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists_Applications()
+        {
+#line 106
+this.EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists("Applications", "All Applications", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists, Mailb" +
+            "oxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10880",
+                "DAS12152",
+                "DAS12555",
+                "DAS12602",
+                "Cleanup"}, SourceLine=130)]
+        public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists_Mailboxes()
+        {
+#line 106
+this.EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists("Mailboxes", "All Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

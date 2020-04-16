@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("PivotPart10")]
+    [TechTalk.SpecRun.FeatureAttribute("PivotPart10", Description="\tRuns Pivot block related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_Pivot\\PivotPart10.feature", SourceLine=0)]
     public partial class PivotPart10Feature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
 #line 1 "PivotPart10.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,14 +82,13 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13863")]
-        [NUnit.Framework.CategoryAttribute("DAS14375")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13863",
+                "DAS14375"}, SourceLine=8)]
         public virtual void EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -203,14 +199,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13863")]
-        [NUnit.Framework.CategoryAttribute("DAS14375")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13863",
+                "DAS14375"}, SourceLine=39)]
         public virtual void EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -307,20 +302,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValue" +
-            "s")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS15758")]
-        [NUnit.Framework.CategoryAttribute("DAS15328")]
-        [NUnit.Framework.CategoryAttribute("DAS14246")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Owner City", "Count(Owner City)", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Building", "Count(Building)", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Application", "Count(Application)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Building", "Count(Building)", null)]
         public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues(string list, string listLabel, string addValues, string countAggregateFunctions, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -407,19 +388,70 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS15758")]
-        [NUnit.Framework.CategoryAttribute("DAS15328")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Build Date", "Count(Build Date)", "First(Build Date)", "Last(Build Date)", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Last Logon Date", "Count(Last Logon Date)", "First(Last Logon Date)", "Last(Last Logon Date)", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Windows7Mi: Application Information \\ Technical Task3 (Date)", "Count(Windows7Mi: Application Information \\ Technical Task3 (Date))", "First(Windows7Mi: Application Information \\ Technical Task3 (Date))", "Last(Windows7Mi: Application Information \\ Technical Task3 (Date))", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Created Date", "Count(Created Date)", "First(Created Date)", "Last(Created Date)", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValue" +
+            "s, Devices", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328",
+                "DAS14246"}, SourceLine=84)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues_Devices()
+        {
+#line 65
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues("Devices", "All Devices", "Owner City", "Count(Owner City)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValue" +
+            "s, Users", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328",
+                "DAS14246"}, SourceLine=84)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues_Users()
+        {
+#line 65
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues("Users", "All Users", "Building", "Count(Building)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValue" +
+            "s, Applications", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328",
+                "DAS14246"}, SourceLine=84)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues_Applications()
+        {
+#line 65
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues("Applications", "All Applications", "Application", "Count(Application)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValue" +
+            "s, Mailboxes", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328",
+                "DAS14246"}, SourceLine=84)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues_Mailboxes()
+        {
+#line 65
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues("Mailboxes", "All Mailboxes", "Building", "Count(Building)", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues(string list, string listLabel, string addValues, string countAggregateFunctions, string firstAggregateFunctions, string lastAggregateFunctions, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -520,19 +552,66 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericVal" +
-            "ues")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS15758")]
-        [NUnit.Framework.CategoryAttribute("DAS15328")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "HDD Count", "Count(HDD Count)", "Sum(HDD Count)", "Min(HDD Count)", "Max(HDD Count)", "Avg(HDD Count)", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Device Count", "Count(Device Count)", "Sum(Device Count)", "Min(Device Count)", "Max(Device Count)", "Avg(Device Count)", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "2004: Current User Count", "Count(2004: Current User Count)", "Sum(2004: Current User Count)", "Min(2004: Current User Count)", "Max(2004: Current User Count)", "Avg(2004: Current User Count)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Associated Item Count", "Count(Associated Item Count)", "Sum(Associated Item Count)", "Min(Associated Item Count)", "Max(Associated Item Count)", "Avg(Associated Item Count)", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues" +
+            ", Devices", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328"}, SourceLine=115)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues_Devices()
+        {
+#line 91
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues("Devices", "All Devices", "Build Date", "Count(Build Date)", "First(Build Date)", "Last(Build Date)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues" +
+            ", Users", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328"}, SourceLine=115)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues_Users()
+        {
+#line 91
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues("Users", "All Users", "Last Logon Date", "Count(Last Logon Date)", "First(Last Logon Date)", "Last(Last Logon Date)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues" +
+            ", Applications", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328"}, SourceLine=115)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues_Applications()
+        {
+#line 91
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues("Applications", "All Applications", "Windows7Mi: Application Information \\ Technical Task3 (Date)", "Count(Windows7Mi: Application Information \\ Technical Task3 (Date))", "First(Windows7Mi: Application Information \\ Technical Task3 (Date))", "Last(Windows7Mi: Application Information \\ Technical Task3 (Date))", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues" +
+            ", Mailboxes", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328"}, SourceLine=115)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues_Mailboxes()
+        {
+#line 91
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues("Mailboxes", "All Mailboxes", "Created Date", "Count(Created Date)", "First(Created Date)", "Last(Created Date)", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues(string list, string listLabel, string addValues, string countAggregateFunctions, string sumAggregateFunctions, string minAggregateFunctions, string maxAggregateFunctions, string avgAggregateFunctions, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -651,16 +730,75 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("DevicesLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS14263")]
-        [NUnit.Framework.CategoryAttribute("DAS16403")]
-        [NUnit.Framework.CategoryAttribute("DAS16407")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericVal" +
+            "ues, Devices", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328"}, SourceLine=152)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues_Devices()
+        {
+#line 122
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues("Devices", "All Devices", "HDD Count", "Count(HDD Count)", "Sum(HDD Count)", "Min(HDD Count)", "Max(HDD Count)", "Avg(HDD Count)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericVal" +
+            "ues, Users", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328"}, SourceLine=152)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues_Users()
+        {
+#line 122
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues("Users", "All Users", "Device Count", "Count(Device Count)", "Sum(Device Count)", "Min(Device Count)", "Max(Device Count)", "Avg(Device Count)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericVal" +
+            "ues, Applications", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328"}, SourceLine=152)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues_Applications()
+        {
+#line 122
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues("Applications", "All Applications", "2004: Current User Count", "Count(2004: Current User Count)", "Sum(2004: Current User Count)", "Min(2004: Current User Count)", "Max(2004: Current User Count)", "Avg(2004: Current User Count)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericVal" +
+            "ues, Mailboxes", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS15758",
+                "DAS15328"}, SourceLine=152)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues_Mailboxes()
+        {
+#line 122
+this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues("Mailboxes", "All Mailboxes", "Associated Item Count", "Count(Associated Item Count)", "Sum(Associated Item Count)", "Min(Associated Item Count)", "Max(Associated Item Count)", "Avg(Associated Item Count)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel", new string[] {
+                "Evergreen",
+                "DevicesLists",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS14263",
+                "DAS16403",
+                "DAS16407",
+                "Cleanup"}, SourceLine=158)]
         public virtual void EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -813,14 +951,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("DevicesLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS16815")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot", new string[] {
+                "Evergreen",
+                "DevicesLists",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS16815",
+                "Cleanup"}, SourceLine=198)]
         public virtual void EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot()
         {
             string[] tagsOfScenario = new string[] {
@@ -938,6 +1075,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

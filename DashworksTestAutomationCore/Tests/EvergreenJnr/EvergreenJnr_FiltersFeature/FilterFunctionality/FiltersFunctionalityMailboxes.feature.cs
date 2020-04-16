@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("FiltersFunctionalityMailboxes")]
+    [TechTalk.SpecRun.FeatureAttribute("FiltersFunctionalityMailboxes", Description="\tRuns Filters Functionality related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_FiltersFeature\\FilterFunctionality\\FiltersFunctio" +
+        "nalityMailboxes.feature", SourceLine=0)]
     public partial class FiltersFunctionalityMailboxesFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
 #line 1 "FiltersFunctionalityMailboxes.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,15 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfU" +
-            "seSelectedFilterOnMailboxesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
-        [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.TestCaseAttribute("EmailMigra: Category", "Mailbox Category A", "6", null)]
-        [NUnit.Framework.TestCaseAttribute("EmailMigra: Path", "Personal Mailbox - VIP", "6", null)]
         public virtual void EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -164,12 +153,37 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
-        [NUnit.Framework.CategoryAttribute("DAS15291")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfU" +
+            "seSelectedFilterOnMailboxesPage, EmailMigra: Category", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS12351"}, SourceLine=22)]
+        public virtual void EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage_EmailMigraCategory()
+        {
+#line 9
+this.EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage("EmailMigra: Category", "Mailbox Category A", "6", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfU" +
+            "seSelectedFilterOnMailboxesPage, EmailMigra: Path", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS12351"}, SourceLine=22)]
+        public virtual void EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage_EmailMigraPath()
+        {
+#line 9
+this.EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage("EmailMigra: Path", "Personal Mailbox - VIP", "6", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS15291"}, SourceLine=26)]
         public virtual void EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes()
         {
             string[] tagsOfScenario = new string[] {
@@ -269,12 +283,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
-        [NUnit.Framework.CategoryAttribute("DAS17004")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS17004"}, SourceLine=53)]
         public virtual void EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems()
         {
             string[] tagsOfScenario = new string[] {
@@ -333,13 +346,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNavigatingToAN" +
-            "ewList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
-        [NUnit.Framework.CategoryAttribute("DAS11552")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNavigatingToAN" +
+            "ewList", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS11552"}, SourceLine=63)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNavigatingToANewList()
         {
             string[] tagsOfScenario = new string[] {
@@ -417,13 +429,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingThe" +
-            "CharactersInEmailMigraTeamFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
-        [NUnit.Framework.CategoryAttribute("DAS11831")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingThe" +
+            "CharactersInEmailMigraTeamFilter", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS11831"}, SourceLine=79)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -493,13 +504,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketF" +
-            "ilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
-        [NUnit.Framework.CategoryAttribute("DAS12940")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketF" +
+            "ilter", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS12940"}, SourceLine=92)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -625,14 +635,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenC" +
-            "apacityUnitFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
-        [NUnit.Framework.CategoryAttribute("DAS13201")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenC" +
+            "apacityUnitFilter", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS13201",
+                "Cleanup"}, SourceLine=123)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenCapacityUnitFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -775,12 +784,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
-        [NUnit.Framework.CategoryAttribute("DAS12547")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS12547"}, SourceLine=158)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock()
         {
             string[] tagsOfScenario = new string[] {
@@ -880,12 +888,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatThereIsNoEmptyOptionInInListFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
-        [NUnit.Framework.CategoryAttribute("DAS18367")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatThereIsNoEmptyOptionInInListFilter", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS18367"}, SourceLine=187)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatThereIsNoEmptyOptionInInListFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -943,12 +950,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
-        [NUnit.Framework.CategoryAttribute("DAS19348")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectly", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_MailboxesList",
+                "DAS19348"}, SourceLine=196)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -1042,6 +1048,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Relink_ApplicationsPage")]
+    [TechTalk.SpecRun.FeatureAttribute("Relink_ApplicationsPage", Description="\tRuns Relink related tests on Applications Page", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ApplicationsDetails\\Tabs\\Projects\\Pro" +
+        "jectDetails\\Relink_ApplicationsPage.feature", SourceLine=0)]
     public partial class Relink_ApplicationsPageFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "Relink_ApplicationsPage.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,18 +83,17 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDet" +
-            "ailsOnApplicationsPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Relink")]
-        [NUnit.Framework.CategoryAttribute("DAS18002")]
-        [NUnit.Framework.CategoryAttribute("DAS18112")]
-        [NUnit.Framework.CategoryAttribute("DAS17899")]
-        [NUnit.Framework.CategoryAttribute("DAS18196")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDet" +
+            "ailsOnApplicationsPage", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "Relink",
+                "DAS18002",
+                "DAS18112",
+                "DAS17899",
+                "DAS18196",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -228,15 +225,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPopupAfterEnt" +
-            "eringTwoSymbolsAndSpaceToTheSearchFieldAndClickingEnterButton")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Relink")]
-        [NUnit.Framework.CategoryAttribute("DAS18769")]
-        [NUnit.Framework.CategoryAttribute("DAS19124")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPopupAfterEnt" +
+            "eringTwoSymbolsAndSpaceToTheSearchFieldAndClickingEnterButton", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "Relink",
+                "DAS18769",
+                "DAS19124"}, SourceLine=36)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPopupAfterEnteringTwoSymbolsAndSpaceToTheSearchFieldAndClickingEnterButton()
         {
             string[] tagsOfScenario = new string[] {
@@ -317,18 +313,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDet" +
-            "ailsOnApplicationsPage_WithOwnerToWithoutOwner")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Relink")]
-        [NUnit.Framework.CategoryAttribute("DAS18002")]
-        [NUnit.Framework.CategoryAttribute("DAS18112")]
-        [NUnit.Framework.CategoryAttribute("DAS17899")]
-        [NUnit.Framework.CategoryAttribute("DAS18196")]
-        [NUnit.Framework.CategoryAttribute("DAS18980")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDet" +
+            "ailsOnApplicationsPage_WithOwnerToWithoutOwner", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "Relink",
+                "DAS18002",
+                "DAS18112",
+                "DAS17899",
+                "DAS18196",
+                "DAS18980"}, SourceLine=50)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithOwnerToWithoutOwner()
         {
             string[] tagsOfScenario = new string[] {
@@ -445,18 +440,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDet" +
-            "ailsOnApplicationsPage_WithoutOwnerToWithoutOwner")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Relink")]
-        [NUnit.Framework.CategoryAttribute("DAS18002")]
-        [NUnit.Framework.CategoryAttribute("DAS18112")]
-        [NUnit.Framework.CategoryAttribute("DAS17899")]
-        [NUnit.Framework.CategoryAttribute("DAS18196")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDet" +
+            "ailsOnApplicationsPage_WithoutOwnerToWithoutOwner", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "Relink",
+                "DAS18002",
+                "DAS18112",
+                "DAS17899",
+                "DAS18196",
+                "Wormhole"}, SourceLine=75)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithoutOwnerToWithoutOwner()
         {
             string[] tagsOfScenario = new string[] {
@@ -562,13 +556,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS19335")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19335"}, SourceLine=96)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed()
         {
             string[] tagsOfScenario = new string[] {
@@ -637,15 +630,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationList_CheckThatObjectsAreDisplayedInSearchResultAfterEnter" +
-            "ingPartOfObjectKeyToAutocomplete")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Application")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS19323")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationList_CheckThatObjectsAreDisplayedInSearchResultAfterEnter" +
+            "ingPartOfObjectKeyToAutocomplete", new string[] {
+                "Evergreen",
+                "Application",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19323",
+                "Universe"}, SourceLine=107)]
         public virtual void EvergreenJnr_ApplicationList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete()
         {
             string[] tagsOfScenario = new string[] {
@@ -710,6 +702,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

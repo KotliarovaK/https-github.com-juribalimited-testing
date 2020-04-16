@@ -19,9 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TableSorting")]
-    [NUnit.Framework.CategoryAttribute("retry:1")]
+    [TechTalk.SpecRun.FeatureAttribute("TableSorting", new string[] {
+            "retry:1"}, Description="\tRuns Table Sorting related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_GridActions\\TableSorting.feature", SourceLine=1)]
     public partial class TableSortingFeature
     {
         
@@ -33,7 +32,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
 #line 1 "TableSorting.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -42,19 +41,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,7 +61,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -88,13 +85,12 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckSortByDateFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS10612")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckSortByDateFunctionality", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS10612"}, SourceLine=9)]
         public virtual void EvergreenJnr_DevicesList_CheckSortByDateFunctionality()
         {
             string[] tagsOfScenario = new string[] {
@@ -193,13 +189,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS10612")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS10612"}, SourceLine=30)]
         public virtual void EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality()
         {
             string[] tagsOfScenario = new string[] {
@@ -274,13 +269,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSortByDateFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS10612")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckSortByDateFunctionality", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS10612"}, SourceLine=43)]
         public virtual void EvergreenJnr_MailboxesList_CheckSortByDateFunctionality()
         {
             string[] tagsOfScenario = new string[] {
@@ -367,13 +361,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckSortByDateFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS10612")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckSortByDateFunctionality", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS10612"}, SourceLine=61)]
         public virtual void EvergreenJnr_UsersList_CheckSortByDateFunctionality()
         {
             string[] tagsOfScenario = new string[] {
@@ -460,14 +453,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianc" +
-            "eColumnOnDevicesList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS11568")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianc" +
+            "eColumnOnDevicesList", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS11568"}, SourceLine=79)]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList()
         {
             string[] tagsOfScenario = new string[] {
@@ -541,17 +533,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Domain", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Version", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Display Name", null)]
         public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate(string listName, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -611,19 +592,59 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS12545")]
-        [NUnit.Framework.CategoryAttribute("DAS14287")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Team ID", "All Devices", "DynamicList4857", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "UserEvergr: Team ID", "All Users", "DynamicList1857", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "ComputerSc: Project ID", "All Applications", "DynamicList2857", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Team ID", "All Mailboxes", "DynamicList3857", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS11951"}, SourceLine=103)]
+        public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate_Devices()
+        {
+#line 94
+this.EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate("Devices", "Hostname", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS11951"}, SourceLine=103)]
+        public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate_Users()
+        {
+#line 94
+this.EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate("Users", "Domain", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate, Application" +
+            "s", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS11951"}, SourceLine=103)]
+        public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate_Applications()
+        {
+#line 94
+this.EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate("Applications", "Version", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS11951"}, SourceLine=103)]
+        public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate_Mailboxes()
+        {
+#line 94
+this.EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate("Mailboxes", "Owner Display Name", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList(string listName, string columnName, string allListName, string dynamicListName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -728,6 +749,72 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS12545",
+                "DAS14287",
+                "Cleanup"}, SourceLine=136)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList_Devices()
+        {
+#line 110
+this.EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList("Devices", "ComputerSc: Team ID", "All Devices", "DynamicList4857", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS12545",
+                "DAS14287",
+                "Cleanup"}, SourceLine=136)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList_Users()
+        {
+#line 110
+this.EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList("Users", "UserEvergr: Team ID", "All Users", "DynamicList1857", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList, Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS12545",
+                "DAS14287",
+                "Cleanup"}, SourceLine=136)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList_Applications()
+        {
+#line 110
+this.EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList("Applications", "ComputerSc: Project ID", "All Applications", "DynamicList2857", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS12545",
+                "DAS14287",
+                "Cleanup"}, SourceLine=136)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList_Mailboxes()
+        {
+#line 110
+this.EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList("Mailboxes", "EmailMigra: Team ID", "All Mailboxes", "DynamicList3857", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

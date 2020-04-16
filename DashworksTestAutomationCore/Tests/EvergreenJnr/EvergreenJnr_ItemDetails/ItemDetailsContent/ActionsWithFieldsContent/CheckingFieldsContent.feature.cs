@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CheckingFieldsContent")]
+    [TechTalk.SpecRun.FeatureAttribute("CheckingFieldsContent", Description="\tRuns Item Details Checking Fields Content related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ItemDetailsContent\\ActionsWithFieldsC" +
+        "ontent\\CheckingFieldsContent.feature", SourceLine=0)]
     public partial class CheckingFieldsContentFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "CheckingFieldsContent.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,13 +83,12 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("DevicesLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS14973")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails", new string[] {
+                "Evergreen",
+                "DevicesLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS14973"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails()
         {
             string[] tagsOfScenario = new string[] {
@@ -176,17 +173,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEve" +
-            "nWhenItsDisabledInProjectManagement")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17007")]
-        [NUnit.Framework.CategoryAttribute("DAS17768")]
-        [NUnit.Framework.CategoryAttribute("DAS17768")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEve" +
+            "nWhenItsDisabledInProjectManagement", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17007",
+                "DAS17768",
+                "DAS17768",
+                "Void"}, SourceLine=25)]
         public virtual void EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement()
         {
             string[] tagsOfScenario = new string[] {
@@ -282,19 +278,18 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWor" +
-            "ksCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13208")]
-        [NUnit.Framework.CategoryAttribute("DAS13971")]
-        [NUnit.Framework.CategoryAttribute("DAS13892")]
-        [NUnit.Framework.CategoryAttribute("DAS13892")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWor" +
+            "ksCorrectly", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS13208",
+                "DAS13971",
+                "DAS13892",
+                "DAS13892",
+                "Cleanup",
+                "Wormhole"}, SourceLine=44)]
         public virtual void EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -531,14 +526,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForS" +
-            "tickyComplianceFieldOnTheApplicationDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18865")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForS" +
+            "tickyComplianceFieldOnTheApplicationDetailsTab", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18865"}, SourceLine=116)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForStickyComplianceFieldOnTheApplicationDetailsTab()
         {
             string[] tagsOfScenario = new string[] {
@@ -615,16 +609,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatAppropriateValuesAreDisplayedCorrectlyForEnabledF" +
-            "ieldOnTheUsersDetailsPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS20454")]
-        [NUnit.Framework.CategoryAttribute("DAS20669")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatAppropriateValuesAreDisplayedCorrectlyForEnabledF" +
+            "ieldOnTheUsersDetailsPage", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS20454",
+                "DAS20669",
+                "Wormhole"}, SourceLine=130)]
         public virtual void EvergreenJnr_UsersList_CheckThatAppropriateValuesAreDisplayedCorrectlyForEnabledFieldOnTheUsersDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -686,17 +679,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS19977")]
-        [NUnit.Framework.TestCaseAttribute("Device", "00OMQQXWA1DRI6", "Computer Scheduled Test (Jo)", "Sandra R. Castro", "YRD045946 (Sandra R. Castro)", null)]
-        [NUnit.Framework.TestCaseAttribute("Application", "ABBYY FineReader 8.0 Professional Edition", "Barry\'s User Project", "Sherry M. Berger", "NOK673558 (Sherry M. Berger)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox", "00B5CCB89AD0404B965@bclabs.local", "Mailbox Evergreen Capacity Project", "Smith, Delores", "00B5CCB89AD0404B965 (Smith, Delores)", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage(string pageName, string itemName, string projectName, string ownerLinkName, string ownerPage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -758,6 +740,54 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage" +
+            ", Device", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19977"}, SourceLine=149)]
+        public virtual void EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage_Device()
+        {
+#line 139
+this.EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage("Device", "00OMQQXWA1DRI6", "Computer Scheduled Test (Jo)", "Sandra R. Castro", "YRD045946 (Sandra R. Castro)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage" +
+            ", Application", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19977"}, SourceLine=149)]
+        public virtual void EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage_Application()
+        {
+#line 139
+this.EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage("Application", "ABBYY FineReader 8.0 Professional Edition", "Barry\'s User Project", "Sherry M. Berger", "NOK673558 (Sherry M. Berger)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage" +
+            ", Mailbox", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19977"}, SourceLine=149)]
+        public virtual void EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage_Mailbox()
+        {
+#line 139
+this.EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage("Mailbox", "00B5CCB89AD0404B965@bclabs.local", "Mailbox Evergreen Capacity Project", "Smith, Delores", "00B5CCB89AD0404B965 (Smith, Delores)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

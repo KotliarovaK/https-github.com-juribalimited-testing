@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("СheckingDropdownListValues")]
+    [TechTalk.SpecRun.FeatureAttribute("СheckingDropdownListValues", Description="\tRuns Checking Dropdown List Values related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ActionsPanel\\ActionsPanel\\BulkUpdate_UpdateTaskVa" +
+        "lue\\СheckingDropdownListValues.feature", SourceLine=0)]
     public partial class СheckingDropdownListValuesFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
 #line 1 "СheckingDropdownListValues.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,19 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS12864")]
-        [NUnit.Framework.CategoryAttribute("DAS13355")]
-        [NUnit.Framework.CategoryAttribute("DAS13260")]
-        [NUnit.Framework.CategoryAttribute("DAS13281")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "01BQIYGGUW5PRP6", "Text Computer", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "00DB4000EDD84951993", "Text User- Email Address", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "32VerSee v.231 en (C:\\32VerSee\\)", "Text Application- Future Groups", null)]
         public virtual void EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue(string pageName, string columnName, string rowName, string taskName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -182,14 +167,64 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS13386")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue, Dev" +
+            "ices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13355",
+                "DAS13260",
+                "DAS13281"}, SourceLine=27)]
+        public virtual void EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue_Devices()
+        {
+#line 9
+this.EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue("Devices", "Hostname", "01BQIYGGUW5PRP6", "Text Computer", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue, Use" +
+            "rs", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13355",
+                "DAS13260",
+                "DAS13281"}, SourceLine=27)]
+        public virtual void EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue_Users()
+        {
+#line 9
+this.EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue("Users", "Username", "00DB4000EDD84951993", "Text User- Email Address", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue, App" +
+            "lications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13355",
+                "DAS13260",
+                "DAS13281"}, SourceLine=27)]
+        public virtual void EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue_Applications()
+        {
+#line 9
+this.EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue("Applications", "Application", "32VerSee v.231 en (C:\\32VerSee\\)", "Text Application- Future Groups", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks" +
+            "", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS13386"}, SourceLine=32)]
         public virtual void EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks()
         {
             string[] tagsOfScenario = new string[] {
@@ -297,14 +332,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS13386")]
-        [NUnit.Framework.CategoryAttribute("DAS13477")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS13386",
+                "DAS13477"}, SourceLine=62)]
         public virtual void EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks()
         {
             string[] tagsOfScenario = new string[] {
@@ -484,16 +518,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS15291")]
-        [NUnit.Framework.CategoryAttribute("DAS18368")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Capacity")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Slots")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS15291",
+                "DAS18368",
+                "Do_Not_Run_With_Capacity",
+                "Do_Not_Run_With_Slots"}, SourceLine=126)]
         public virtual void EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot()
         {
             string[] tagsOfScenario = new string[] {
@@ -609,12 +642,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("DAS17103")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ActionsPanel",
+                "DAS17103"}, SourceLine=157)]
         public virtual void EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdate()
         {
             string[] tagsOfScenario = new string[] {
@@ -734,13 +766,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("DAS17580")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ActionsPanel",
+                "DAS17580",
+                "Cleanup"}, SourceLine=192)]
         public virtual void EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker()
         {
             string[] tagsOfScenario = new string[] {
@@ -852,17 +883,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDat" +
-            "eRangeButNotTheTotalCapacity")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("Capacity")]
-        [NUnit.Framework.CategoryAttribute("Slots")]
-        [NUnit.Framework.CategoryAttribute("DAS17833")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDat" +
+            "eRangeButNotTheTotalCapacity", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "Capacity",
+                "Slots",
+                "DAS17833",
+                "Cleanup"}, SourceLine=212)]
         public virtual void EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDateRangeButNotTheTotalCapacity()
         {
             string[] tagsOfScenario = new string[] {
@@ -1017,6 +1047,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

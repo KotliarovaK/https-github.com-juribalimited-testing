@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ListDetailsFunctionalityPart8")]
+    [TechTalk.SpecRun.FeatureAttribute("ListDetailsFunctionalityPart8", Description="\tRuns List Details Panel related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ListDetails\\ListDetailsFunctionalityPart8.feature" +
+        "", SourceLine=0)]
     public partial class ListDetailsFunctionalityPart8Feature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
 #line 1 "ListDetailsFunctionalityPart8.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,17 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS12968")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "0036 - Microsoft Access 97 SR-2 English", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks(string pageName, string columnName, string targetCell, string selectedRow, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -202,20 +189,58 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS12968")]
-        [NUnit.Framework.CategoryAttribute("DAS20346")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "00HA7MKAVVFDAV\\tLaptop\\tWindows 10\\tKris C. Herman", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", "$6BE000-SUDQ9614UVO8\\tBCLABS\\tExchange Online-ApplicationAccount\\tExchange Online" +
-            "-ApplicationAccount.Users.bclabs.local", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "0036 - Microsoft Access 97 SR-2 English", "0004 - Adobe Acrobat Reader 5.0.5 Francais\\tAdobe\\t5.0.5", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local", "000F977AC8824FE39B8@bclabs.local\\tExchange 2007\\tbc-exch07\\tUserMailbox\\tSpruill," +
-            " Shea", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968"}, SourceLine=38)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks_Devices()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968"}, SourceLine=38)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks_Users()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks, Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968"}, SourceLine=38)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks_Applications()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "0036 - Microsoft Access 97 SR-2 English", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968"}, SourceLine=38)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks_Mailboxes()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks(string pageName, string columnName, string targetCell, string selectedRow, string expectedData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -283,23 +308,64 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS12968")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "001PSUMZYOW581", "001BAQXT6JWFPI\\tDesktop\\tWindows 10\\tNicole P. Braun \\t001PSUMZYOW581\\tLaptop\\tWi" +
-            "ndows 10\\tTricia G. Huang", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", "002B5DC7D4D34D5C895", "000F977AC8824FE39B8\\tBCLABS\\tSpruill, Shea\\tSpruill\\, Shea.Employees.Birmingham.U" +
-            "K.bclabs.local \\t002B5DC7D4D34D5C895\\tDWLABS\\tCollor, Christopher\\tCollor\\, Chri" +
-            "stopher.Users.Birmingham.dwlabs.local", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "0036 - Microsoft Access 97 SR-2 English", "20040610sqlserverck", "0036 - Microsoft Access 97 SR-2 English\\tMicrosoft\\t8.0 \\t20040610sqlserverck\\tMi" +
-            "crosoft\\t1.0.0", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local", "0072B088173449E3A93@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local\\tExchange 2013\\tbc-exch13\\tUserMailbox\\tCollor, " +
-            "Christopher \\t0072B088173449E3A93@bclabs.local\\tExchange 2007\\tbc-exch07\\tUserMa" +
-            "ilbox\\tRegister, Donna", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968",
+                "DAS20346"}, SourceLine=57)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks_Devices()
+        {
+#line 45
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "00HA7MKAVVFDAV\\tLaptop\\tWindows 10\\tKris C. Herman", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968",
+                "DAS20346"}, SourceLine=57)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks_Users()
+        {
+#line 45
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", "$6BE000-SUDQ9614UVO8\\tBCLABS\\tExchange Online-ApplicationAccount\\tExchange Online" +
+                    "-ApplicationAccount.Users.bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks, Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968",
+                "DAS20346"}, SourceLine=57)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks_Applications()
+        {
+#line 45
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "0036 - Microsoft Access 97 SR-2 English", "0004 - Adobe Acrobat Reader 5.0.5 Francais\\tAdobe\\t5.0.5", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968",
+                "DAS20346"}, SourceLine=57)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks_Mailboxes()
+        {
+#line 45
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local", "000F977AC8824FE39B8@bclabs.local\\tExchange 2007\\tbc-exch07\\tUserMailbox\\tSpruill," +
+                    " Shea", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks(string pageName, string columnName, string targetCell, string selectedRow1, string selectedRow2, string expectedData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -368,15 +434,74 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsP" +
-            "ane")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS16332")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968"}, SourceLine=78)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks_Devices()
+        {
+#line 65
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "001PSUMZYOW581", "001BAQXT6JWFPI\\tDesktop\\tWindows 10\\tNicole P. Braun \\t001PSUMZYOW581\\tLaptop\\tWi" +
+                    "ndows 10\\tTricia G. Huang", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968"}, SourceLine=78)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks_Users()
+        {
+#line 65
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", "002B5DC7D4D34D5C895", "000F977AC8824FE39B8\\tBCLABS\\tSpruill, Shea\\tSpruill\\, Shea.Employees.Birmingham.U" +
+                    "K.bclabs.local \\t002B5DC7D4D34D5C895\\tDWLABS\\tCollor, Christopher\\tCollor\\, Chri" +
+                    "stopher.Users.Birmingham.dwlabs.local", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks, Applicat" +
+            "ions", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968"}, SourceLine=78)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks_Applications()
+        {
+#line 65
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "0036 - Microsoft Access 97 SR-2 English", "20040610sqlserverck", "0036 - Microsoft Access 97 SR-2 English\\tMicrosoft\\t8.0 \\t20040610sqlserverck\\tMi" +
+                    "crosoft\\t1.0.0", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks, Mailboxe" +
+            "s", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12968"}, SourceLine=78)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks_Mailboxes()
+        {
+#line 65
+this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local", "0072B088173449E3A93@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local\\tExchange 2013\\tbc-exch13\\tUserMailbox\\tCollor, " +
+                    "Christopher \\t0072B088173449E3A93@bclabs.local\\tExchange 2007\\tbc-exch07\\tUserMa" +
+                    "ilbox\\tRegister, Donna", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsP" +
+            "ane", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS16332",
+                "Cleanup"}, SourceLine=84)]
         public virtual void EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsPane()
         {
             string[] tagsOfScenario = new string[] {
@@ -450,13 +575,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatArchivedEmptyNameCantBeClicked")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS17632")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_CheckThatArchivedEmptyNameCantBeClicked", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS17632"}, SourceLine=97)]
         public virtual void EvergreenJnr_DevicesLists_CheckThatArchivedEmptyNameCantBeClicked()
         {
             string[] tagsOfScenario = new string[] {
@@ -521,6 +645,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

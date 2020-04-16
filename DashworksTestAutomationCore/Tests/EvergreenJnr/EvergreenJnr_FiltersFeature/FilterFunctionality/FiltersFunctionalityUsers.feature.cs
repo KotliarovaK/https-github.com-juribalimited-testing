@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("FiltersFunctionalityUsers")]
+    [TechTalk.SpecRun.FeatureAttribute("FiltersFunctionalityUsers", Description="\tRuns Filters Functionality related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_FiltersFeature\\FilterFunctionality\\FiltersFunctio" +
+        "nalityUsers.feature", SourceLine=0)]
     public partial class FiltersFunctionalityUsersFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
 #line 1 "FiltersFunctionalityUsers.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,13 +83,12 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecte" +
-            "r")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS10612")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecte" +
+            "r", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS10612"}, SourceLine=8)]
         public virtual void EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecter()
         {
             string[] tagsOfScenario = new string[] {
@@ -158,19 +155,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS11577")]
-        [NUnit.Framework.TestCaseAttribute("accountexpires", "Equals", "9223372036854775807", "Add accountexpires column", null)]
-        [NUnit.Framework.TestCaseAttribute("badpasswordtime", "Contains", "13146", "Add badpasswordtime column", null)]
-        [NUnit.Framework.TestCaseAttribute("admincount", "Empty", "", "Add admincount column", null)]
-        [NUnit.Framework.TestCaseAttribute("employeeid", "Begins with", "ZY or ZX", "Add employeeid column", null)]
-        [NUnit.Framework.TestCaseAttribute("whencreated", "Does not contain", "2017", "Add whencreated column", null)]
-        [NUnit.Framework.TestCaseAttribute("department", "Ends with", "LongName01234567890123456789012345678901234567890123456789", "Add Department column", null)]
-        [NUnit.Framework.TestCaseAttribute("iscriticalsystemobject", "Not empty", "", "Add iscriticalsystemobject column", null)]
         public virtual void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes(string filterName, string operatorValues, string enteredText, string selectedCheckboxes, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -239,15 +223,105 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUserSavedList" +
-            "Filter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS12167")]
-        [NUnit.Framework.CategoryAttribute("DAS12056")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes, accoun" +
+            "texpires", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS11577"}, SourceLine=34)]
+        public virtual void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes_Accountexpires()
+        {
+#line 21
+this.EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes("accountexpires", "Equals", "9223372036854775807", "Add accountexpires column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes, badpas" +
+            "swordtime", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS11577"}, SourceLine=34)]
+        public virtual void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes_Badpasswordtime()
+        {
+#line 21
+this.EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes("badpasswordtime", "Contains", "13146", "Add badpasswordtime column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes, adminc" +
+            "ount", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS11577"}, SourceLine=34)]
+        public virtual void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes_Admincount()
+        {
+#line 21
+this.EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes("admincount", "Empty", "", "Add admincount column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes, employ" +
+            "eeid", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS11577"}, SourceLine=34)]
+        public virtual void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes_Employeeid()
+        {
+#line 21
+this.EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes("employeeid", "Begins with", "ZY or ZX", "Add employeeid column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes, whencr" +
+            "eated", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS11577"}, SourceLine=34)]
+        public virtual void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes_Whencreated()
+        {
+#line 21
+this.EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes("whencreated", "Does not contain", "2017", "Add whencreated column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes, depart" +
+            "ment", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS11577"}, SourceLine=34)]
+        public virtual void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes_Department()
+        {
+#line 21
+this.EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes("department", "Ends with", "LongName01234567890123456789012345678901234567890123456789", "Add Department column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes, iscrit" +
+            "icalsystemobject", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS11577"}, SourceLine=34)]
+        public virtual void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes_Iscriticalsystemobject()
+        {
+#line 21
+this.EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes("iscriticalsystemobject", "Not empty", "", "Add iscriticalsystemobject column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUserSavedList" +
+            "Filter", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS12167",
+                "DAS12056",
+                "Cleanup"}, SourceLine=43)]
         public virtual void EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUserSavedListFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -356,14 +430,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUse" +
-            "rnameAndApplicationSavedList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS12181")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUse" +
+            "rnameAndApplicationSavedList", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS12181",
+                "Cleanup"}, SourceLine=67)]
         public virtual void EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUsernameAndApplicationSavedList()
         {
             string[] tagsOfScenario = new string[] {
@@ -492,19 +565,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
-            "lectedFilterOnUsersPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "Terminated", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Stage for User Tasks \\ Read Only on Bulk Update Page", "Not Applicable", "4,642", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Category", "Empty", "41,339", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Path", "[Default (User)]", "7,578", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Group Stage \\ Group User Default Request Type", "Not Applicable", "679", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Group Stage \\ Group User Default Request Type", "Not Applicable", "1,809", null)]
         public virtual void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -575,13 +635,93 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS12804")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
+            "lectedFilterOnUsersPage, Windows7Mi: Category", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS12351"}, SourceLine=112)]
+        public virtual void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage_Windows7MiCategory()
+        {
+#line 99
+this.EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage("Windows7Mi: Category", "Terminated", "1", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
+            "lectedFilterOnUsersPage, Windows7Mi: Stage for User Tasks \\ Read Only on Bulk Up" +
+            "date Page", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS12351"}, SourceLine=112)]
+        public virtual void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage_Windows7MiStageForUserTasksReadOnlyOnBulkUpdatePage()
+        {
+#line 99
+this.EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage("Windows7Mi: Stage for User Tasks \\ Read Only on Bulk Update Page", "Not Applicable", "4,642", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
+            "lectedFilterOnUsersPage, Barry\'sUse: Category", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS12351"}, SourceLine=112)]
+        public virtual void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage_BarrysUseCategory()
+        {
+#line 99
+this.EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage("Barry\'sUse: Category", "Empty", "41,339", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
+            "lectedFilterOnUsersPage, Havoc(BigD: Path", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS12351"}, SourceLine=112)]
+        public virtual void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage_HavocBigDPath()
+        {
+#line 99
+this.EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage("Havoc(BigD: Path", "[Default (User)]", "7,578", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
+            "lectedFilterOnUsersPage, UserSchedu: Group Stage \\ Group User Default Request Ty" +
+            "pe", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS12351"}, SourceLine=112)]
+        public virtual void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage_UserScheduGroupStageGroupUserDefaultRequestType()
+        {
+#line 99
+this.EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage("UserSchedu: Group Stage \\ Group User Default Request Type", "Not Applicable", "679", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
+            "lectedFilterOnUsersPage, ComputerSc: Group Stage \\ Group User Default Request Ty" +
+            "pe", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS12351"}, SourceLine=112)]
+        public virtual void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage_ComputerScGroupStageGroupUserDefaultRequestType()
+        {
+#line 99
+this.EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage("ComputerSc: Group Stage \\ Group User Default Request Type", "Not Applicable", "1,809", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS12804",
+                "Cleanup"}, SourceLine=120)]
         public virtual void EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode()
         {
             string[] tagsOfScenario = new string[] {
@@ -678,14 +818,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSectionIfEditFormO" +
-            "penWhenYouSaveList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS13384")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSectionIfEditFormO" +
+            "penWhenYouSaveList", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS13384",
+                "Cleanup"}, SourceLine=143)]
         public virtual void EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSectionIfEditFormOpenWhenYouSaveList()
         {
             string[] tagsOfScenario = new string[] {
@@ -773,17 +912,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersP" +
-            "age")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS9820")]
-        [NUnit.Framework.CategoryAttribute("DAS13296")]
-        [NUnit.Framework.TestCaseAttribute("Device Count", "6", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Group Count", "13", "32", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox Count (Access)", "3", "6", null)]
         public virtual void EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersPage(string filterName, string values, string rowsCount, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -846,14 +974,55 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS14629")]
-        [NUnit.Framework.CategoryAttribute("DAS14664")]
-        [NUnit.Framework.CategoryAttribute("DAS14669")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersP" +
+            "age, Device Count", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS9820",
+                "DAS13296"}, SourceLine=173)]
+        public virtual void EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersPage_DeviceCount()
+        {
+#line 163
+this.EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersPage("Device Count", "6", "1", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersP" +
+            "age, Group Count", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS9820",
+                "DAS13296"}, SourceLine=173)]
+        public virtual void EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersPage_GroupCount()
+        {
+#line 163
+this.EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersPage("Group Count", "13", "32", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersP" +
+            "age, Mailbox Count (Access)", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS9820",
+                "DAS13296"}, SourceLine=173)]
+        public virtual void EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersPage_MailboxCountAccess()
+        {
+#line 163
+this.EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersPage("Mailbox Count (Access)", "3", "6", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS14629",
+                "DAS14664",
+                "DAS14669"}, SourceLine=179)]
         public virtual void EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved()
         {
             string[] tagsOfScenario = new string[] {
@@ -1056,13 +1225,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatUrlOfSavedListHasNoEmptyParameters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS15246")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatUrlOfSavedListHasNoEmptyParameters", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS15246",
+                "Cleanup"}, SourceLine=243)]
         public virtual void EvergreenJnr_UsersList_CheckThatUrlOfSavedListHasNoEmptyParameters()
         {
             string[] tagsOfScenario = new string[] {
@@ -1153,12 +1321,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS15291")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS15291"}, SourceLine=262)]
         public virtual void EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList()
         {
             string[] tagsOfScenario = new string[] {
@@ -1274,12 +1441,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatLanguageFilterIsDisplayedOnTheUserList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS15807")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatLanguageFilterIsDisplayedOnTheUserList", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS15807"}, SourceLine=295)]
         public virtual void EvergreenJnr_UsersList_CheckThatLanguageFilterIsDisplayedOnTheUserList()
         {
             string[] tagsOfScenario = new string[] {
@@ -1339,12 +1505,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckDepartmentLevelFilterItems")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS17004")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckDepartmentLevelFilterItems", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS17004"}, SourceLine=305)]
         public virtual void EvergreenJnr_UsersList_CheckDepartmentLevelFilterItems()
         {
             string[] tagsOfScenario = new string[] {
@@ -1423,13 +1588,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckCustomFieldsUsingInFilterAndPivotsCreation")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS17715")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckCustomFieldsUsingInFilterAndPivotsCreation", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS17715",
+                "Cleanup"}, SourceLine=323)]
         public virtual void EvergreenJnr_UsersList_CheckCustomFieldsUsingInFilterAndPivotsCreation()
         {
             string[] tagsOfScenario = new string[] {
@@ -1528,13 +1692,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResettingFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS11552")]
-        [NUnit.Framework.CategoryAttribute("DAS12207")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResettingFilter", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS11552",
+                "DAS12207"}, SourceLine=348)]
         public virtual void EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResettingFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -1611,14 +1774,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListRes" +
-            "ultsOnUsersPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS11144")]
-        [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListRes" +
+            "ultsOnUsersPage", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS11144",
+                "DAS12351"}, SourceLine=363)]
         public virtual void EvergreenJnr_UsersList_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsOnUsersPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1683,17 +1845,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS14629")]
-        [NUnit.Framework.CategoryAttribute("DAS14664")]
-        [NUnit.Framework.CategoryAttribute("DAS14665")]
-        [NUnit.Framework.CategoryAttribute("DAS14667")]
-        [NUnit.Framework.TestCaseAttribute("Empty", "28,117", null)]
-        [NUnit.Framework.TestCaseAttribute("Not empty", "13,222", null)]
         public virtual void EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly(string operatorValue, string rowsCount, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1786,15 +1937,46 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectl" +
-            "yOnUsersPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS12232")]
-        [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("DAS14288")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly, Empty" +
+            "", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS14629",
+                "DAS14664",
+                "DAS14665",
+                "DAS14667"}, SourceLine=394)]
+        public virtual void EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly_Empty()
+        {
+#line 374
+this.EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly("Empty", "28,117", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly, Not e" +
+            "mpty", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS14629",
+                "DAS14664",
+                "DAS14665",
+                "DAS14667"}, SourceLine=394)]
+        public virtual void EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly_NotEmpty()
+        {
+#line 374
+this.EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly("Not empty", "13,222", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectl" +
+            "yOnUsersPage", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS12232",
+                "DAS12351",
+                "DAS14288"}, SourceLine=398)]
         public virtual void EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnUsersPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1959,12 +2141,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatThereIsNoErrorAfterTryingToFilterDataByWrongDate")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS19714")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatThereIsNoErrorAfterTryingToFilterDataByWrongDate", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS19714"}, SourceLine=441)]
         public virtual void EvergreenJnr_UsersList_CheckThatThereIsNoErrorAfterTryingToFilterDataByWrongDate()
         {
             string[] tagsOfScenario = new string[] {
@@ -2031,14 +2212,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
-        [NUnit.Framework.CategoryAttribute("DAS18367")]
-        [NUnit.Framework.TestCaseAttribute("User (Saved List)", null)]
-        [NUnit.Framework.TestCaseAttribute("Application (Saved List)", null)]
         public virtual void EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter(string list, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -2095,6 +2268,38 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter, User (Saved L" +
+            "ist)", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS18367"}, SourceLine=463)]
+        public virtual void EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter_UserSavedList()
+        {
+#line 454
+this.EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter("User (Saved List)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter, Application (" +
+            "Saved List)", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "Filter_UsersList",
+                "DAS18367"}, SourceLine=463)]
+        public virtual void EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter_ApplicationSavedList()
+        {
+#line 454
+this.EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter("Application (Saved List)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

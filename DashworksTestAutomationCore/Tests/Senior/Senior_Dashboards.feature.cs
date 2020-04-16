@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.Senior
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Projects_Dashboards")]
+    [TechTalk.SpecRun.FeatureAttribute("Projects_Dashboards", Description="\tRuns Projects Page related tests", SourceFile="Tests\\Senior\\Senior_Dashboards.feature", SourceLine=0)]
     public partial class Projects_DashboardsFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.Senior
 #line 1 "Senior_Dashboards.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.Senior
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.Senior
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,14 +82,6 @@ namespace DashworksTestAutomationCore.Tests.Senior
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Senior_Projects")]
-        [NUnit.Framework.CategoryAttribute("DAS12651")]
-        [NUnit.Framework.TestCaseAttribute("User Dashboard", null)]
-        [NUnit.Framework.TestCaseAttribute("Computer Dashboard", null)]
         public virtual void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -154,13 +143,38 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Senior_Teams")]
-        [NUnit.Framework.CategoryAttribute("DAS13000")]
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly, Us" +
+            "er Dashboard", new string[] {
+                "Senior",
+                "Dashworks",
+                "Senior_Projects",
+                "DAS12651"}, SourceLine=19)]
+        public virtual void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly_UserDashboard()
+        {
+#line 9
+this.Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly("User Dashboard", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly, Co" +
+            "mputer Dashboard", new string[] {
+                "Senior",
+                "Dashworks",
+                "Senior_Projects",
+                "DAS12651"}, SourceLine=19)]
+        public virtual void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly_ComputerDashboard()
+        {
+#line 9
+this.Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly("Computer Dashboard", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage", new string[] {
+                "Senior",
+                "Dashworks",
+                "Projects_Dashworks",
+                "Senior_Teams",
+                "DAS13000"}, SourceLine=23)]
         public virtual void Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -268,15 +282,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Senior_Projects")]
-        [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
-        [NUnit.Framework.CategoryAttribute("DAS14322")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask", new string[] {
+                "Senior",
+                "Dashworks",
+                "Projects_Dashworks",
+                "Senior_Projects",
+                "Senior_Tasks",
+                "DAS14322",
+                "Cleanup"}, SourceLine=48)]
         public virtual void Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask()
         {
             string[] tagsOfScenario = new string[] {
@@ -432,13 +445,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
-        [NUnit.Framework.CategoryAttribute("Senior_Projects")]
-        [NUnit.Framework.CategoryAttribute("DAS14171")]
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError" +
+            "", new string[] {
+                "Senior",
+                "Projects_Dashboards",
+                "Senior_Projects",
+                "DAS14171"}, SourceLine=83)]
         public virtual void Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError()
         {
             string[] tagsOfScenario = new string[] {
@@ -497,13 +509,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosin" +
-            "gValueType")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
-        [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
-        [NUnit.Framework.CategoryAttribute("DAS13887")]
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosin" +
+            "gValueType", new string[] {
+                "Senior",
+                "Projects_Dashboards",
+                "Senior_Tasks",
+                "DAS13887"}, SourceLine=92)]
         public virtual void Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueType()
         {
             string[] tagsOfScenario = new string[] {
@@ -595,13 +606,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
-        [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
-        [NUnit.Framework.CategoryAttribute("DAS18247")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName", new string[] {
+                "Senior",
+                "Projects_Dashboards",
+                "Senior_Tasks",
+                "DAS18247",
+                "Cleanup"}, SourceLine=115)]
         public virtual void Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName()
         {
             string[] tagsOfScenario = new string[] {
@@ -722,6 +732,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

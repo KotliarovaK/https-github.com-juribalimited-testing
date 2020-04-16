@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListFromCS
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ListsFromCSV")]
+    [TechTalk.SpecRun.FeatureAttribute("ListsFromCSV", Description="\tRuns Lists From CSV related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ListFromCSV\\ListsFromCSV.feature", SourceLine=0)]
     public partial class ListsFromCSVFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListFromCS
 #line 1 "ListsFromCSV.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListFromCS
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListFromCS
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,22 +82,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListFromCS
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListFromCSV")]
-        [NUnit.Framework.CategoryAttribute("ListsFromCSV")]
-        [NUnit.Framework.CategoryAttribute("DAS13221")]
-        [NUnit.Framework.CategoryAttribute("DAS13222")]
-        [NUnit.Framework.CategoryAttribute("DAS13223")]
-        [NUnit.Framework.CategoryAttribute("DAS13224")]
-        [NUnit.Framework.CategoryAttribute("DAS16585")]
-        [NUnit.Framework.CategoryAttribute("DAS18336")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Import Users from CSV", "User key", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Import Applications from CSV", "Application key", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Import Mailboxes from CSV", "Mailbox key", null)]
         public virtual void EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage(string listName, string listName1, string importPage, string fileContains, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -173,15 +154,71 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListFromCSV")]
-        [NUnit.Framework.CategoryAttribute("ListsFromCSV")]
-        [NUnit.Framework.CategoryAttribute("DAS16616")]
-        [NUnit.Framework.CategoryAttribute("DAS16585")]
-        [NUnit.Framework.CategoryAttribute("DAS18336")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListFromCSV",
+                "ListsFromCSV",
+                "DAS13221",
+                "DAS13222",
+                "DAS13223",
+                "DAS13224",
+                "DAS16585",
+                "DAS18336",
+                "Not_Ready"}, SourceLine=21)]
+        public virtual void EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage_Users()
+        {
+#line 10
+this.EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage("Users", "All Users", "Import Users from CSV", "User key", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage, Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListFromCSV",
+                "ListsFromCSV",
+                "DAS13221",
+                "DAS13222",
+                "DAS13223",
+                "DAS13224",
+                "DAS16585",
+                "DAS18336",
+                "Not_Ready"}, SourceLine=21)]
+        public virtual void EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage_Applications()
+        {
+#line 10
+this.EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage("Applications", "All Applications", "Import Applications from CSV", "Application key", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListFromCSV",
+                "ListsFromCSV",
+                "DAS13221",
+                "DAS13222",
+                "DAS13223",
+                "DAS13224",
+                "DAS16585",
+                "DAS18336",
+                "Not_Ready"}, SourceLine=21)]
+        public virtual void EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage_Mailboxes()
+        {
+#line 10
+this.EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage("Mailboxes", "All Mailboxes", "Import Mailboxes from CSV", "Mailbox key", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ListFromCSV",
+                "ListsFromCSV",
+                "DAS16616",
+                "DAS16585",
+                "DAS18336",
+                "Not_Ready"}, SourceLine=27)]
         public virtual void EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV()
         {
             string[] tagsOfScenario = new string[] {
@@ -288,14 +325,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckErrorBannerWhenTryingUploadIncorrectFileOnCreateListFr" +
-            "omCSV")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListFromCSV")]
-        [NUnit.Framework.CategoryAttribute("ListsFromCSV")]
-        [NUnit.Framework.CategoryAttribute("DAS18451")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckErrorBannerWhenTryingUploadIncorrectFileOnCreateListFr" +
+            "omCSV", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ListFromCSV",
+                "ListsFromCSV",
+                "DAS18451",
+                "Not_Ready"}, SourceLine=51)]
         public virtual void EvergreenJnr_AllLists_CheckErrorBannerWhenTryingUploadIncorrectFileOnCreateListFromCSV()
         {
             string[] tagsOfScenario = new string[] {
@@ -379,6 +415,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AddObjectsToCapacityUnits")]
+    [TechTalk.SpecRun.FeatureAttribute("AddObjectsToCapacityUnits", Description="\tAdd Objects To Capacity Units on Admin page", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AdminPage\\CapacityUnits\\AddObjectsToCapacityUnits" +
+        ".feature", SourceLine=0)]
     public partial class AddObjectsToCapacityUnitsFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line 1 "AddObjectsToCapacityUnits.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,17 +83,16 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("CapacityUnits")]
-        [NUnit.Framework.CategoryAttribute("DAS12141")]
-        [NUnit.Framework.CategoryAttribute("DAS13808")]
-        [NUnit.Framework.CategoryAttribute("DAS14200")]
-        [NUnit.Framework.CategoryAttribute("DAS14236")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "CapacityUnits",
+                "DAS12141",
+                "DAS13808",
+                "DAS14200",
+                "DAS14236",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -227,17 +224,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("CapacityUnits")]
-        [NUnit.Framework.CategoryAttribute("DAS12141")]
-        [NUnit.Framework.CategoryAttribute("DAS13808")]
-        [NUnit.Framework.CategoryAttribute("DAS14200")]
-        [NUnit.Framework.CategoryAttribute("DAS14236")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "CapacityUnits",
+                "DAS12141",
+                "DAS13808",
+                "DAS14200",
+                "DAS14236",
+                "Cleanup"}, SourceLine=39)]
         public virtual void EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -369,20 +365,19 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("CapacityUnits")]
-        [NUnit.Framework.CategoryAttribute("DAS12141")]
-        [NUnit.Framework.CategoryAttribute("DAS13808")]
-        [NUnit.Framework.CategoryAttribute("DAS14200")]
-        [NUnit.Framework.CategoryAttribute("DAS14236")]
-        [NUnit.Framework.CategoryAttribute("DAS14237")]
-        [NUnit.Framework.CategoryAttribute("DAS14757")]
-        [NUnit.Framework.CategoryAttribute("DAS16124")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "CapacityUnits",
+                "DAS12141",
+                "DAS13808",
+                "DAS14200",
+                "DAS14236",
+                "DAS14237",
+                "DAS14757",
+                "DAS16124",
+                "Cleanup"}, SourceLine=70)]
         public virtual void EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -521,17 +516,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("CapacityUnits")]
-        [NUnit.Framework.CategoryAttribute("DAS12141")]
-        [NUnit.Framework.CategoryAttribute("DAS13808")]
-        [NUnit.Framework.CategoryAttribute("DAS14200")]
-        [NUnit.Framework.CategoryAttribute("DAS14236")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "CapacityUnits",
+                "DAS12141",
+                "DAS13808",
+                "DAS14200",
+                "DAS14236",
+                "Cleanup"}, SourceLine=101)]
         public virtual void EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -662,6 +656,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

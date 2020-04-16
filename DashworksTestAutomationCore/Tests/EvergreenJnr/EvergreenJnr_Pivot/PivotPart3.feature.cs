@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("PivotPart3")]
+    [TechTalk.SpecRun.FeatureAttribute("PivotPart3", Description="\tRuns Pivot block related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_Pivot\\PivotPart3.feature", SourceLine=0)]
     public partial class PivotPart3Feature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
 #line 1 "PivotPart3.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,15 +82,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOr" +
-            "der")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS14377")]
-        [NUnit.Framework.CategoryAttribute("DAS13864")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOr" +
+            "der", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS14377",
+                "DAS13864"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrder()
         {
             string[] tagsOfScenario = new string[] {
@@ -180,18 +176,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrec" +
-            "tOrder")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS14378")]
-        [NUnit.Framework.CategoryAttribute("DAS13864")]
-        [NUnit.Framework.CategoryAttribute("DAS13786")]
-        [NUnit.Framework.CategoryAttribute("DAS13867")]
-        [NUnit.Framework.CategoryAttribute("DAS15376")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrec" +
+            "tOrder", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS14378",
+                "DAS13864",
+                "DAS13786",
+                "DAS13867",
+                "DAS15376"}, SourceLine=27)]
         public virtual void EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder()
         {
             string[] tagsOfScenario = new string[] {
@@ -301,16 +296,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadine" +
-            "ssFieldForMailboxes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13860")]
-        [NUnit.Framework.CategoryAttribute("DAS14555")]
-        [NUnit.Framework.CategoryAttribute("DAS15376")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadine" +
+            "ssFieldForMailboxes", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13860",
+                "DAS14555",
+                "DAS15376"}, SourceLine=53)]
         public virtual void EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes()
         {
             string[] tagsOfScenario = new string[] {
@@ -439,19 +433,18 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForRead" +
-            "inessFieldForApplications")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13860")]
-        [NUnit.Framework.CategoryAttribute("DAS14555")]
-        [NUnit.Framework.CategoryAttribute("DAS13786")]
-        [NUnit.Framework.CategoryAttribute("DAS13771")]
-        [NUnit.Framework.CategoryAttribute("DAS15376")]
-        [NUnit.Framework.CategoryAttribute("DAS17669")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForRead" +
+            "inessFieldForApplications", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13860",
+                "DAS14555",
+                "DAS13786",
+                "DAS13771",
+                "DAS15376",
+                "DAS17669"}, SourceLine=85)]
         public virtual void EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForApplications()
         {
             string[] tagsOfScenario = new string[] {
@@ -605,15 +598,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFi" +
-            "eldForUsers")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13860")]
-        [NUnit.Framework.CategoryAttribute("DAS14555")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFi" +
+            "eldForUsers", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13860",
+                "DAS14555"}, SourceLine=125)]
         public virtual void EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForUsers()
         {
             string[] tagsOfScenario = new string[] {
@@ -741,16 +733,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableForReadiness" +
-            "FieldForDevices")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13860")]
-        [NUnit.Framework.CategoryAttribute("DAS14555")]
-        [NUnit.Framework.CategoryAttribute("DAS17669")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableForReadiness" +
+            "FieldForDevices", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13860",
+                "DAS14555",
+                "DAS17669"}, SourceLine=158)]
         public virtual void EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForDevices()
         {
             string[] tagsOfScenario = new string[] {
@@ -854,6 +845,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

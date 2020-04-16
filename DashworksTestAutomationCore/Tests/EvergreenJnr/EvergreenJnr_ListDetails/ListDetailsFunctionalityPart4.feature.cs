@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ListDetailsFunctionalityPart4")]
+    [TechTalk.SpecRun.FeatureAttribute("ListDetailsFunctionalityPart4", Description="\tRuns List Details Panel related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ListDetails\\ListDetailsFunctionalityPart4.feature" +
+        "", SourceLine=0)]
     public partial class ListDetailsFunctionalityPart4Feature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
 #line 1 "ListDetailsFunctionalityPart4.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,19 +83,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS10713")]
-        [NUnit.Framework.CategoryAttribute("DAS12190")]
-        [NUnit.Framework.CategoryAttribute("DAS12204")]
-        [NUnit.Framework.CategoryAttribute("DAS13207")]
-        [NUnit.Framework.CategoryAttribute("DAS14963")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("archived")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10713",
+                "DAS12190",
+                "DAS12204",
+                "DAS13207",
+                "DAS14963",
+                "Cleanup",
+                "archived"}, SourceLine=12)]
         public virtual void EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock()
         {
             string[] tagsOfScenario = new string[] {
@@ -254,21 +251,20 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS10713")]
-        [NUnit.Framework.CategoryAttribute("DAS12169")]
-        [NUnit.Framework.CategoryAttribute("DAS12286")]
-        [NUnit.Framework.CategoryAttribute("DAS12192")]
-        [NUnit.Framework.CategoryAttribute("DAS12623")]
-        [NUnit.Framework.CategoryAttribute("DAS12687")]
-        [NUnit.Framework.CategoryAttribute("DAS14963")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("archived")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10713",
+                "DAS12169",
+                "DAS12286",
+                "DAS12192",
+                "DAS12623",
+                "DAS12687",
+                "DAS14963",
+                "Cleanup",
+                "archived"}, SourceLine=54)]
         public virtual void EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList()
         {
             string[] tagsOfScenario = new string[] {
@@ -435,17 +431,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS10713")]
-        [NUnit.Framework.CategoryAttribute("DAS12192")]
-        [NUnit.Framework.CategoryAttribute("DAS14963")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList" +
+            "", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS10713",
+                "DAS12192",
+                "DAS14963",
+                "Cleanup"}, SourceLine=93)]
         public virtual void EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList()
         {
             string[] tagsOfScenario = new string[] {
@@ -574,21 +569,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDyn" +
-            "amicLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS12075")]
-        [NUnit.Framework.CategoryAttribute("DAS12874")]
-        [NUnit.Framework.CategoryAttribute("DAS14222")]
-        [NUnit.Framework.CategoryAttribute("DAS15551")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Application1", "Devices1", "Used on device", "Any Application in list [List not found] used on device", null)]
-        [NUnit.Framework.TestCaseAttribute("Application2", "Devices2", "Used by device\'s owner", "Any Application in list [List not found] used by device\'s owner", null)]
-        [NUnit.Framework.TestCaseAttribute("Application3", "Devices3", "Not used by device\'s owner", "Any Application in list [List not found] not used by device\'s owner", null)]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists(string listName1, string listName2, string association, string filterInfoText, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -728,6 +708,66 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDyn" +
+            "amicLists, Application1", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12075",
+                "DAS12874",
+                "DAS14222",
+                "DAS15551",
+                "Cleanup"}, SourceLine=157)]
+        public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists_Application1()
+        {
+#line 123
+this.EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists("Application1", "Devices1", "Used on device", "Any Application in list [List not found] used on device", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDyn" +
+            "amicLists, Application2", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12075",
+                "DAS12874",
+                "DAS14222",
+                "DAS15551",
+                "Cleanup"}, SourceLine=157)]
+        public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists_Application2()
+        {
+#line 123
+this.EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists("Application2", "Devices2", "Used by device\'s owner", "Any Application in list [List not found] used by device\'s owner", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDyn" +
+            "amicLists, Application3", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS12075",
+                "DAS12874",
+                "DAS14222",
+                "DAS15551",
+                "Cleanup"}, SourceLine=157)]
+        public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists_Application3()
+        {
+#line 123
+this.EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists("Application3", "Devices3", "Not used by device\'s owner", "Any Application in list [List not found] not used by device\'s owner", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

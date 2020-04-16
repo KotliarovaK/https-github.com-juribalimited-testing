@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Bucket_UsersPage")]
+    [TechTalk.SpecRun.FeatureAttribute("Bucket_UsersPage", Description="\tRuns related tests for Bucket field", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\UsersDetails\\Tabs\\Projects\\ProjectDet" +
+        "ails\\Bucket_UsersPage.feature", SourceLine=0)]
     public partial class Bucket_UsersPageFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "Bucket_UsersPage.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,16 +83,15 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyFor" +
-            "AssociatedDevices")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS18227")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyFor" +
+            "AssociatedDevices", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "ProjectDetailsTab",
+                "DAS18227",
+                "Zion_NewGrid"}, SourceLine=8)]
         public virtual void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedDevices()
         {
             string[] tagsOfScenario = new string[] {
@@ -187,16 +184,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAsso" +
-            "ciatedDevices")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS18227")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAsso" +
+            "ciatedDevices", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "ProjectDetailsTab",
+                "DAS18227",
+                "Cleanup"}, SourceLine=27)]
         public virtual void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedDevices()
         {
             string[] tagsOfScenario = new string[] {
@@ -293,16 +289,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyFor" +
-            "AssociatedMailboxes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS18227")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyFor" +
+            "AssociatedMailboxes", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "ProjectDetailsTab",
+                "DAS18227",
+                "Zion_NewGrid"}, SourceLine=47)]
         public virtual void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedMailboxes()
         {
             string[] tagsOfScenario = new string[] {
@@ -399,16 +394,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAsso" +
-            "ciatedMailboxes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS18227")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAsso" +
+            "ciatedMailboxes", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "ProjectDetailsTab",
+                "DAS18227",
+                "Cleanup"}, SourceLine=67)]
         public virtual void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedMailboxes()
         {
             string[] tagsOfScenario = new string[] {
@@ -514,6 +508,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

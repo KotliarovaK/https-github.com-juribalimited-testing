@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("PivotPart6")]
+    [TechTalk.SpecRun.FeatureAttribute("PivotPart6", Description="\tRuns Pivot block related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_Pivot\\PivotPart6.feature", SourceLine=0)]
     public partial class PivotPart6Feature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
 #line 1 "PivotPart6.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,15 +82,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderF" +
-            "orMailboxes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13865")]
-        [NUnit.Framework.CategoryAttribute("DAS14426")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderF" +
+            "orMailboxes", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13865",
+                "DAS14426"}, SourceLine=8)]
         public virtual void EvergreenJnr_MailboxesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForMailboxes()
         {
             string[] tagsOfScenario = new string[] {
@@ -181,15 +177,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForUs" +
-            "ers")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13865")]
-        [NUnit.Framework.CategoryAttribute("DAS14426")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForUs" +
+            "ers", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13865",
+                "DAS14426"}, SourceLine=27)]
         public virtual void EvergreenJnr_UsersLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForUsers()
         {
             string[] tagsOfScenario = new string[] {
@@ -277,15 +272,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderFor" +
-            "Devices")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13865")]
-        [NUnit.Framework.CategoryAttribute("DAS14426")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderFor" +
+            "Devices", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13865",
+                "DAS14426"}, SourceLine=46)]
         public virtual void EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForDevices()
         {
             string[] tagsOfScenario = new string[] {
@@ -373,15 +367,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessColumnsDispla" +
-            "yInTheCorrectOrder")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13865")]
-        [NUnit.Framework.CategoryAttribute("DAS14427")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessColumnsDispla" +
+            "yInTheCorrectOrder", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13865",
+                "DAS14427"}, SourceLine=65)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessColumnsDisplayInTheCorrectOrder()
         {
             string[] tagsOfScenario = new string[] {
@@ -469,15 +462,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorr" +
-            "ectOrder")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS14428")]
-        [NUnit.Framework.CategoryAttribute("DAS13865")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorr" +
+            "ectOrder", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS14428",
+                "DAS13865"}, SourceLine=84)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder()
         {
             string[] tagsOfScenario = new string[] {
@@ -577,15 +569,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheCorrectOrder" +
-            "ForApplications")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13865")]
-        [NUnit.Framework.CategoryAttribute("DAS14429")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheCorrectOrder" +
+            "ForApplications", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13865",
+                "DAS14429"}, SourceLine=109)]
         public virtual void EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForApplications()
         {
             string[] tagsOfScenario = new string[] {
@@ -683,6 +674,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UpdateCustomFieldPart2")]
+    [TechTalk.SpecRun.FeatureAttribute("UpdateCustomFieldPart2", Description="\tRuns Actions Panel related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ActionsPanel\\ActionsPanel\\BulkUpdate_UpdateCustom" +
+        "Field\\UpdateCustomFieldPart2.feature", SourceLine=0)]
     public partial class UpdateCustomFieldPart2Feature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
 #line 1 "UpdateCustomFieldPart2.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,16 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldValues")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS17292")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "Computer Warranty", "Zip Code", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "003F5D8E1A844B1FAA5", "Telephone", "App field 2", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7-Zip 16.02 (x64)", "Application Owner", "Mailbox Filter 1", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "002B5DC7D4D34D5C895@bclabs.local", "Mailbox Filter 2", "Friendly Model Name", null)]
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldValues(string listName, string columnName, string row, string customFieldValue, string missingContent, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -166,14 +154,61 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValues")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS18045")]
-        [NUnit.Framework.CategoryAttribute("DAS18027")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldValues, Devices", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17292"}, SourceLine=23)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldValues_Devices()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldValues("Devices", "Hostname", "00HA7MKAVVFDAV", "Computer Warranty", "Zip Code", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldValues, Users", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17292"}, SourceLine=23)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldValues_Users()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldValues("Users", "Username", "003F5D8E1A844B1FAA5", "Telephone", "App field 2", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldValues, Applications", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17292"}, SourceLine=23)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldValues_Applications()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldValues("Applications", "Application", "7-Zip 16.02 (x64)", "Application Owner", "Mailbox Filter 1", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldValues, Mailboxes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17292"}, SourceLine=23)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldValues_Mailboxes()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldValues("Mailboxes", "Email Address", "002B5DC7D4D34D5C895@bclabs.local", "Mailbox Filter 2", "Friendly Model Name", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValues", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS18045",
+                "DAS18027"}, SourceLine=29)]
         public virtual void EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValues()
         {
             string[] tagsOfScenario = new string[] {
@@ -326,16 +361,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValues" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS18045")]
-        [NUnit.Framework.CategoryAttribute("DAS18031")]
-        [NUnit.Framework.CategoryAttribute("DAS18027")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValues" +
+            "", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS18045",
+                "DAS18031",
+                "DAS18027"}, SourceLine=69)]
         public virtual void EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValues()
         {
             string[] tagsOfScenario = new string[] {
@@ -497,16 +531,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingl" +
-            "eValue")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS18045")]
-        [NUnit.Framework.CategoryAttribute("DAS18031")]
-        [NUnit.Framework.CategoryAttribute("DAS18027")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingl" +
+            "eValue", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS18045",
+                "DAS18031",
+                "DAS18027"}, SourceLine=115)]
         public virtual void EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue()
         {
             string[] tagsOfScenario = new string[] {
@@ -668,17 +701,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleVa" +
-            "lue")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS18045")]
-        [NUnit.Framework.CategoryAttribute("DAS18031")]
-        [NUnit.Framework.CategoryAttribute("DAS18027")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleVa" +
+            "lue", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS18045",
+                "DAS18031",
+                "DAS18027",
+                "Not_Ready"}, SourceLine=160)]
         public virtual void EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue()
         {
             string[] tagsOfScenario = new string[] {
@@ -852,6 +884,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -19,9 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Search
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Search")]
-    [NUnit.Framework.CategoryAttribute("retry:1")]
+    [TechTalk.SpecRun.FeatureAttribute("Search", new string[] {
+            "retry:1"}, Description="\tRuns Search related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_Search\\Search.feature", SourceLine=1)]
     public partial class SearchFeature
     {
         
@@ -33,7 +32,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Search
 #line 1 "Search.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -42,19 +41,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Search
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,7 +61,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Search
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -88,15 +85,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Search
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS10704")]
-        [NUnit.Framework.CategoryAttribute("DAS12762")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS10704",
+                "DAS12762",
+                "Cleanup"}, SourceLine=9)]
         public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -171,13 +167,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS10704")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS10704"}, SourceLine=22)]
         public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu()
         {
             string[] tagsOfScenario = new string[] {
@@ -238,19 +233,18 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
-            "s")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS10580")]
-        [NUnit.Framework.CategoryAttribute("DAS10667")]
-        [NUnit.Framework.CategoryAttribute("DAS10624")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
+            "s", new string[] {
+                "Evergreen",
+                "Devices",
+                "Applications",
+                "Users",
+                "Mailboxes",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS10580",
+                "DAS10667",
+                "DAS10624"}, SourceLine=31)]
         public virtual void EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages()
         {
             string[] tagsOfScenario = new string[] {
@@ -400,14 +394,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_SearchTests")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS12206")]
-        [NUnit.Framework.CategoryAttribute("DAS10475")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_SearchTests", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS12206",
+                "DAS10475"}, SourceLine=65)]
         public virtual void EvergreenJnr_DevicesList_SearchTests()
         {
             string[] tagsOfScenario = new string[] {
@@ -490,14 +483,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11012")]
-        [NUnit.Framework.CategoryAttribute("DAS12206")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11012",
+                "DAS12206"}, SourceLine=83)]
         public virtual void EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet()
         {
             string[] tagsOfScenario = new string[] {
@@ -569,14 +561,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11012")]
-        [NUnit.Framework.CategoryAttribute("DAS12206")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11012",
+                "DAS12206"}, SourceLine=95)]
         public virtual void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet()
         {
             string[] tagsOfScenario = new string[] {
@@ -648,12 +639,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search"}, SourceLine=107)]
         public virtual void EvergreenJnr_DevicesList_Search_NoDevicesFound()
         {
             string[] tagsOfScenario = new string[] {
@@ -728,13 +718,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11350"}, SourceLine=126)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton()
         {
             string[] tagsOfScenario = new string[] {
@@ -788,17 +777,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ALlLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS12491")]
-        [NUnit.Framework.TestCaseAttribute("Applications", "ABBYY FineReader 8.0 Professional Edition", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "002B5DC7D4D34D5C895@bclabs.local", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "$231000-3AC04R8AR431", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar(string pageName, string searchTerm, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -852,13 +830,68 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar, Ap" +
+            "plications", new string[] {
+                "Evergreen",
+                "ALlLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS12491"}, SourceLine=141)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar_Applications()
+        {
+#line 134
+this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar("Applications", "ABBYY FineReader 8.0 Professional Edition", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar, Ma" +
+            "ilboxes", new string[] {
+                "Evergreen",
+                "ALlLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS12491"}, SourceLine=141)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar_Mailboxes()
+        {
+#line 134
+this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar("Mailboxes", "002B5DC7D4D34D5C895@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar, De" +
+            "vices", new string[] {
+                "Evergreen",
+                "ALlLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS12491"}, SourceLine=141)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar_Devices()
+        {
+#line 134
+this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar("Devices", "001BAQXT6JWFPI", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar, Us" +
+            "ers", new string[] {
+                "Evergreen",
+                "ALlLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS12491"}, SourceLine=141)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar_Users()
+        {
+#line 134
+this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar("Users", "$231000-3AC04R8AR431", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11350"}, SourceLine=147)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -921,13 +954,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11350"}, SourceLine=157)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -987,14 +1019,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetBut" +
-            "ton")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetBut" +
+            "ton", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11350"}, SourceLine=166)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetButton()
         {
             string[] tagsOfScenario = new string[] {
@@ -1058,15 +1089,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11350",
+                "DAS11951",
+                "Cleanup"}, SourceLine=176)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -1133,17 +1163,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11511")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "GREEN", "100", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,116", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Import Type", "Altiris 6", "31", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "department", "The Last Department With A Really Lond Name", "10", null)]
         public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly(string pageName, string columnName, string searchCriteria, string numberOfRows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1202,14 +1221,65 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForAp" +
-            "plicationColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11511")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly, Variant 0", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11511"}, SourceLine=196)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant0()
+        {
+#line 187
+this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Devices", "Compliance", "GREEN", "100", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly, Variant 1", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11511"}, SourceLine=196)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant1()
+        {
+#line 187
+this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,116", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly, Variant 2", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11511"}, SourceLine=196)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant2()
+        {
+#line 187
+this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Applications", "Import Type", "Altiris 6", "31", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly, Variant 3", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11511"}, SourceLine=196)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant3()
+        {
+#line 187
+this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Users", "department", "The Last Department With A Really Lond Name", "10", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForAp" +
+            "plicationColumn", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11511"}, SourceLine=203)]
         public virtual void EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1268,14 +1338,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDispla" +
-            "yNameColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDispla" +
+            "yNameColumn", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11664"}, SourceLine=211)]
         public virtual void EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1362,14 +1431,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUserna" +
-            "meColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUserna" +
+            "meColumn", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11664"}, SourceLine=231)]
         public virtual void EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1461,14 +1529,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameCo" +
-            "lumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameCo" +
+            "lumn", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11664"}, SourceLine=254)]
         public virtual void EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1555,14 +1622,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisp" +
-            "layNameColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisp" +
+            "layNameColumn", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11664"}, SourceLine=274)]
         public virtual void EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1653,14 +1719,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUser" +
-            "nameColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUser" +
+            "nameColumn", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11664"}, SourceLine=296)]
         public virtual void EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1756,14 +1821,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFo" +
-            "undAfterUsingAgGrid")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11663")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFo" +
+            "undAfterUsingAgGrid", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11663"}, SourceLine=321)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterUsingAgGrid()
         {
             string[] tagsOfScenario = new string[] {
@@ -1822,14 +1886,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchE" +
-            "verythingAndSearchTableFieldsIsPresented")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11706")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchE" +
+            "verythingAndSearchTableFieldsIsPresented", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11706"}, SourceLine=329)]
         public virtual void EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchEverythingAndSearchTableFieldsIsPresented()
         {
             string[] tagsOfScenario = new string[] {
@@ -1892,14 +1955,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAft" +
-            "erClickingTheSearchCrossButton")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS13342")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAft" +
+            "erClickingTheSearchCrossButton", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS13342"}, SourceLine=339)]
         public virtual void EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheSearchCrossButton()
         {
             string[] tagsOfScenario = new string[] {
@@ -1963,15 +2025,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCou" +
-            "ntAfterClickingTheFilterButtonAfterRunningASearch")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS13342")]
-        [NUnit.Framework.CategoryAttribute("DAS13366")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCou" +
+            "ntAfterClickingTheFilterButtonAfterRunningASearch", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS13342",
+                "DAS13366"}, SourceLine=349)]
         public virtual void EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheFilterButtonAfterRunningASearch()
         {
             string[] tagsOfScenario = new string[] {
@@ -2066,14 +2127,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfR" +
-            "ing")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS16375")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfR" +
+            "ing", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS16375"}, SourceLine=369)]
         public virtual void EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing()
         {
             string[] tagsOfScenario = new string[] {
@@ -2136,14 +2196,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderO" +
-            "fRing")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS16375")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderO" +
+            "fRing", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS16375"}, SourceLine=379)]
         public virtual void EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing()
         {
             string[] tagsOfScenario = new string[] {
@@ -2228,14 +2287,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLangua" +
-            "geOnList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS17633")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLangua" +
+            "geOnList", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS17633"}, SourceLine=399)]
         public virtual void EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguageOnList()
         {
             string[] tagsOfScenario = new string[] {
@@ -2291,6 +2349,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UpdateCapacityUnitAutomations")]
+    [TechTalk.SpecRun.FeatureAttribute("UpdateCapacityUnitAutomations", Description="\tRuns Update Capacity Unit Actions type related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AdminPage\\Automations\\Actions\\UpdateCapacityUnit\\" +
+        "UpdateCapacityUnitAutomation.feature", SourceLine=0)]
     public partial class UpdateCapacityUnitAutomationsFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line 1 "UpdateCapacityUnitAutomation.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,16 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS17288")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
-        [NUnit.Framework.TestCaseAttribute("All Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("All Mailboxes", null)]
         public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit(string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -187,14 +175,43 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUpdateCapacit" +
-            "yUnit")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS17288")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit, All " +
+            "Devices", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17288",
+                "Cleanup",
+                "Wormhole"}, SourceLine=27)]
+        public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit_AllDevices()
+        {
+#line 9
+this.EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit("All Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit, All " +
+            "Mailboxes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17288",
+                "Cleanup",
+                "Wormhole"}, SourceLine=27)]
+        public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit_AllMailboxes()
+        {
+#line 9
+this.EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit("All Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUpdateCapacit" +
+            "yUnit", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17288",
+                "Cleanup"}, SourceLine=31)]
         public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUpdateCapacityUnit()
         {
             string[] tagsOfScenario = new string[] {
@@ -315,13 +332,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckEditActionPageForUpdateCapacityUnit")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS17288")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckEditActionPageForUpdateCapacityUnit", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17288",
+                "Cleanup"}, SourceLine=58)]
         public virtual void EvergreenJnr_AdminPage_CheckEditActionPageForUpdateCapacityUnit()
         {
             string[] tagsOfScenario = new string[] {
@@ -457,15 +473,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergreenAllLinkedD" +
-            "evicesAndAllLinkedMailboxes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS20409")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergreenAllLinkedD" +
+            "evicesAndAllLinkedMailboxes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS20409",
+                "Cleanup",
+                "Wormhole"}, SourceLine=92)]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergreenAllLinkedDevicesAndAllLinkedMailboxes()
         {
             string[] tagsOfScenario = new string[] {
@@ -691,14 +706,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS20409")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS20409",
+                "Cleanup",
+                "Wormhole"}, SourceLine=155)]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects()
         {
             string[] tagsOfScenario = new string[] {
@@ -900,15 +914,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedCapacityUnit" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS20409")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedCapacityUnit" +
+            "", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS20409",
+                "Cleanup",
+                "Wormhole"}, SourceLine=212)]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedCapacityUnit()
         {
             string[] tagsOfScenario = new string[] {
@@ -1173,14 +1186,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedProject")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS20409")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedProject", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS20409",
+                "Cleanup",
+                "Wormhole"}, SourceLine=290)]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedProject()
         {
             string[] tagsOfScenario = new string[] {
@@ -1459,6 +1471,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UpdateRingAutomations")]
+    [TechTalk.SpecRun.FeatureAttribute("UpdateRingAutomations", Description="\tRuns Update Ring Actions type related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AdminPage\\Automations\\Actions\\UpdateRing\\UpdateRi" +
+        "ngAutomations.feature", SourceLine=0)]
     public partial class UpdateRingAutomationsFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line 1 "UpdateRingAutomations.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,17 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS17556")]
-        [NUnit.Framework.CategoryAttribute("DAS17288")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("All Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("All Users", null)]
-        [NUnit.Framework.TestCaseAttribute("All Mailboxes", null)]
         public virtual void EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType(string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -187,13 +174,56 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS17556")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType, All Devices" +
+            "", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17556",
+                "DAS17288",
+                "Cleanup"}, SourceLine=29)]
+        public virtual void EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType_AllDevices()
+        {
+#line 9
+this.EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType("All Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType, All Users", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17556",
+                "DAS17288",
+                "Cleanup"}, SourceLine=29)]
+        public virtual void EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType_AllUsers()
+        {
+#line 9
+this.EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType("All Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType, All Mailbox" +
+            "es", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17556",
+                "DAS17288",
+                "Cleanup"}, SourceLine=29)]
+        public virtual void EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType_AllMailboxes()
+        {
+#line 9
+this.EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType("All Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLists", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17556",
+                "Cleanup"}, SourceLine=34)]
         public virtual void EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -282,15 +312,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS17556")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("All Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("All Mailboxes", null)]
         public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality(string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -382,13 +403,38 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS17556")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality, All Devices", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17556",
+                "Cleanup"}, SourceLine=72)]
+        public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality_AllDevices()
+        {
+#line 54
+this.EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality("All Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality, All Mailboxes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17556",
+                "Cleanup"}, SourceLine=72)]
+        public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality_AllMailboxes()
+        {
+#line 54
+this.EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionality("All Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionality", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17556",
+                "Cleanup"}, SourceLine=76)]
         public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionality()
         {
             string[] tagsOfScenario = new string[] {
@@ -502,13 +548,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckEditActionPageForUpdateRing")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS17556")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckEditActionPageForUpdateRing", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS17556",
+                "Cleanup"}, SourceLine=101)]
         public virtual void EvergreenJnr_AdminPage_CheckEditActionPageForUpdateRing()
         {
             string[] tagsOfScenario = new string[] {
@@ -644,14 +689,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLinkedDevicesAn" +
-            "dAllLinkedMailboxes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS19083")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLinkedDevicesAn" +
+            "dAllLinkedMailboxes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS19083",
+                "Cleanup"}, SourceLine=136)]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLinkedDevicesAndAllLinkedMailboxes()
         {
             string[] tagsOfScenario = new string[] {
@@ -875,13 +919,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS19083")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS19083",
+                "Cleanup"}, SourceLine=199)]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects()
         {
             string[] tagsOfScenario = new string[] {
@@ -1081,13 +1124,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS19083")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS19083",
+                "Cleanup"}, SourceLine=256)]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing()
         {
             string[] tagsOfScenario = new string[] {
@@ -1402,13 +1444,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS19083")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject", new string[] {
+                "Evergreen",
+                "EvergreenJnr_AdminPage",
+                "Automations",
+                "DAS19083",
+                "Cleanup"}, SourceLine=353)]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject()
         {
             string[] tagsOfScenario = new string[] {
@@ -1700,6 +1741,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

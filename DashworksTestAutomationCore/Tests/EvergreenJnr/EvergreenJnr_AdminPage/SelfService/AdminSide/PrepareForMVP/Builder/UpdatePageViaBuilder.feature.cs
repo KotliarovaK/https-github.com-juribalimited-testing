@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UpdatePageViaBuilder")]
+    [TechTalk.SpecRun.FeatureAttribute("UpdatePageViaBuilder", Description="\tSelf Service", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AdminPage\\SelfService\\AdminSide\\PrepareForMVP\\Bui" +
+        "lder\\UpdatePageViaBuilder.feature", SourceLine=0)]
     public partial class UpdatePageViaBuilderFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line 1 "UpdatePageViaBuilder.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,15 +83,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationS" +
-            "hownWhenUserEditPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19792")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationS" +
+            "hownWhenUserEditPage", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "SelfService",
+                "DAS19792",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationShownWhenUserEditPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -224,15 +221,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnab" +
-            "ledIfUserDidDidntChangesAndProperToolTipsAreDisplays")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19792")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnab" +
+            "ledIfUserDidDidntChangesAndProperToolTipsAreDisplays", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "SelfService",
+                "DAS19792",
+                "Cleanup"}, SourceLine=30)]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnabledIfUserDidDidntChangesAndProperToolTipsAreDisplays()
         {
             string[] tagsOfScenario = new string[] {
@@ -420,15 +416,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWil" +
-            "lBeSavedWithProperNotificationAndHighlightedOnContextPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19792")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWil" +
+            "lBeSavedWithProperNotificationAndHighlightedOnContextPanel", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "SelfService",
+                "DAS19792",
+                "Cleanup"}, SourceLine=71)]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWillBeSavedWithProperNotificationAndHighlightedOnContextPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -589,26 +584,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValida" +
-            "tion")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19792")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("DisplayPage_2", "", null)]
-        [NUnit.Framework.TestCaseAttribute("60_S\"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kknnnljfjndfjk9849804", "254_S\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjn" +
-            "gjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLF" +
-            "S\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjn" +
-            "gnrniorngiwep", null)]
-        [NUnit.Framework.TestCaseAttribute("41_S\"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kk", "255_AS\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkj" +
-            "ngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NL" +
-            "FS\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngj" +
-            "ngnrniorngiwep", null)]
-        [NUnit.Framework.TestCaseAttribute("40_S\"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^kk", @"256_AS""ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS""FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep", null)]
-        [NUnit.Framework.TestCaseAttribute("39_S\"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^k", @"256_AS""ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS""FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep256_AS""ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS""FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep", null)]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation(string pageName, string pageDisplayName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -741,15 +716,95 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClick" +
-            "edThePagePreviewIsShownOnTheDesignSurface")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19792")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValida" +
+            "tion, DisplayPage_2", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "SelfService",
+                "DAS19792",
+                "Cleanup"}, SourceLine=126)]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation_DisplayPage_2()
+        {
+#line 103
+this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation("DisplayPage_2", "", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValida" +
+            "tion, 60_S\"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kknnnljfjndfjk9849804", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "SelfService",
+                "DAS19792",
+                "Cleanup"}, SourceLine=126)]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation_60_SFEIJOJYnifnoifnosndfJDNKknnnljfjndfjk9849804()
+        {
+#line 103
+this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation("60_S\"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kknnnljfjndfjk9849804", "254_S\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjn" +
+                    "gjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLF" +
+                    "S\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjn" +
+                    "gnrniorngiwep", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValida" +
+            "tion, 41_S\"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kk", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "SelfService",
+                "DAS19792",
+                "Cleanup"}, SourceLine=126)]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation_41_SFEIJOJYnifnoifnosndfJDNKk()
+        {
+#line 103
+this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation("41_S\"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kk", "255_AS\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkj" +
+                    "ngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NL" +
+                    "FS\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngj" +
+                    "ngnrniorngiwep", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValida" +
+            "tion, 40_S\"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^kk", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "SelfService",
+                "DAS19792",
+                "Cleanup"}, SourceLine=126)]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation_40_SFEJOJYnifnoifnosndfJDNKk()
+        {
+#line 103
+this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation("40_S\"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^kk", @"256_AS""ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS""FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValida" +
+            "tion, 39_S\"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^k", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "SelfService",
+                "DAS19792",
+                "Cleanup"}, SourceLine=126)]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation_39_SFEJOJYnifnoifnosndfJDNK()
+        {
+#line 103
+this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation("39_S\"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^k", @"256_AS""ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS""FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep256_AS""ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS""FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClick" +
+            "edThePagePreviewIsShownOnTheDesignSurface", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "SelfService",
+                "DAS19792",
+                "Cleanup"}, SourceLine=133)]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedThePagePreviewIsShownOnTheDesignSurface()
         {
             string[] tagsOfScenario = new string[] {
@@ -877,15 +932,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheUserLeavesThePageCo" +
-            "nfigurationWithoutSavingChangesTheySeeTheStandardWarningModalWindowPopup")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19792")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheUserLeavesThePageCo" +
+            "nfigurationWithoutSavingChangesTheySeeTheStandardWarningModalWindowPopup", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "SelfService",
+                "DAS19792",
+                "Cleanup"}, SourceLine=154)]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheUserLeavesThePageConfigurationWithoutSavingChangesTheySeeTheStandardWarningModalWindowPopup()
         {
             string[] tagsOfScenario = new string[] {
@@ -1014,6 +1068,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

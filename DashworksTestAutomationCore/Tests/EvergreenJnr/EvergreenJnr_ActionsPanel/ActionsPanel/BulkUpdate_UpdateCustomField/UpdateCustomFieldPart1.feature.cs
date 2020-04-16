@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UpdateCustomFieldPart1")]
+    [TechTalk.SpecRun.FeatureAttribute("UpdateCustomFieldPart1", Description="\tRuns Actions Panel related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ActionsPanel\\ActionsPanel\\BulkUpdate_UpdateCustom" +
+        "Field\\UpdateCustomFieldPart1.feature", SourceLine=0)]
     public partial class UpdateCustomFieldPart1Feature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
 #line 1 "UpdateCustomFieldPart1.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,17 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS17878")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "003F5D8E1A844B1FAA5", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7-Zip 16.02 (x64)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "002B5DC7D4D34D5C895@bclabs.local", null)]
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation(string listName, string columnName, string row, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -171,18 +158,61 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS17878")]
-        [NUnit.Framework.CategoryAttribute("DAS18031")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00YTY8U3ZYP2WT", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "00A5B910A1004CF5AC4", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation, Devices" +
+            "", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=25)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation_Devices()
+        {
+#line 10
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation("Devices", "Hostname", "00HA7MKAVVFDAV", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation, Users", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=25)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation_Users()
+        {
+#line 10
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation("Users", "Username", "003F5D8E1A844B1FAA5", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation, Applica" +
+            "tions", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=25)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation_Applications()
+        {
+#line 10
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation("Applications", "Application", "7-Zip 16.02 (x64)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation, Mailbox" +
+            "es", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=25)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation_Mailboxes()
+        {
+#line 10
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation("Mailboxes", "Email Address", "002B5DC7D4D34D5C895@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation(string listName, string columnName, string row, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -290,17 +320,65 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS17878")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00YTY8U3ZYP2WT", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "00A5B910A1004CF5AC4", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation, Device" +
+            "s", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "DAS18031",
+                "Not_Ready"}, SourceLine=59)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation_Devices()
+        {
+#line 33
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation("Devices", "Hostname", "00YTY8U3ZYP2WT", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation, Users", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "DAS18031",
+                "Not_Ready"}, SourceLine=59)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation_Users()
+        {
+#line 33
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation("Users", "Username", "00A5B910A1004CF5AC4", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation, Applic" +
+            "ations", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "DAS18031",
+                "Not_Ready"}, SourceLine=59)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation_Applications()
+        {
+#line 33
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation, Mailbo" +
+            "xes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "DAS18031",
+                "Not_Ready"}, SourceLine=59)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation_Mailboxes()
+        {
+#line 33
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation(string listName, string columnName, string row, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -376,17 +454,62 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS17878")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00YTY8U3ZYP2WT", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "00A5B910A1004CF5AC4", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation, Dev" +
+            "ices", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=82)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation_Devices()
+        {
+#line 67
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation("Devices", "Hostname", "00YTY8U3ZYP2WT", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation, Use" +
+            "rs", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=82)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation_Users()
+        {
+#line 67
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation("Users", "Username", "00A5B910A1004CF5AC4", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation, App" +
+            "lications", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=82)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation_Applications()
+        {
+#line 67
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation, Mai" +
+            "lboxes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=82)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation_Mailboxes()
+        {
+#line 67
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation(string listName, string columnName, string row, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -462,17 +585,62 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS17878")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00YTY8U3ZYP2WT", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "00A5B910A1004CF5AC4", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation, De" +
+            "vices", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=105)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation_Devices()
+        {
+#line 90
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation("Devices", "Hostname", "00YTY8U3ZYP2WT", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation, Us" +
+            "ers", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=105)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation_Users()
+        {
+#line 90
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation("Users", "Username", "00A5B910A1004CF5AC4", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation, Ap" +
+            "plications", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=105)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation_Applications()
+        {
+#line 90
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation, Ma" +
+            "ilboxes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=105)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation_Mailboxes()
+        {
+#line 90
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation(string listName, string columnName, string row, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -552,6 +720,68 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation, Devi" +
+            "ces", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=130)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation_Devices()
+        {
+#line 113
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation("Devices", "Hostname", "00YTY8U3ZYP2WT", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation, User" +
+            "s", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=130)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation_Users()
+        {
+#line 113
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation("Users", "Username", "00A5B910A1004CF5AC4", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation, Appl" +
+            "ications", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=130)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation_Applications()
+        {
+#line 113
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation, Mail" +
+            "boxes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS17878",
+                "Not_Ready"}, SourceLine=130)]
+        public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation_Mailboxes()
+        {
+#line 113
+this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

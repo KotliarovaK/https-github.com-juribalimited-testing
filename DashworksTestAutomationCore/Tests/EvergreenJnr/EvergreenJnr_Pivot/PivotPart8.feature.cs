@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("PivotPart8")]
+    [TechTalk.SpecRun.FeatureAttribute("PivotPart8", Description="\tRuns Pivot block related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_Pivot\\PivotPart8.feature", SourceLine=0)]
     public partial class PivotPart8Feature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
 #line 1 "PivotPart8.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,16 +82,15 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyForFilteredL" +
-            "ist")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13833")]
-        [NUnit.Framework.CategoryAttribute("DAS13846")]
-        [NUnit.Framework.CategoryAttribute("DAS16994")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyForFilteredL" +
+            "ist", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13833",
+                "DAS13846",
+                "DAS16994"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyForFilteredList()
         {
             string[] tagsOfScenario = new string[] {
@@ -185,19 +181,18 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfterClosingLis" +
-            "tsPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13119")]
-        [NUnit.Framework.CategoryAttribute("DAS13652")]
-        [NUnit.Framework.CategoryAttribute("DAS13637")]
-        [NUnit.Framework.CategoryAttribute("DAS17421")]
-        [NUnit.Framework.CategoryAttribute("DAS13649")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfterClosingLis" +
+            "tsPanel", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13119",
+                "DAS13652",
+                "DAS13637",
+                "DAS17421",
+                "DAS13649",
+                "Cleanup"}, SourceLine=26)]
         public virtual void EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfterClosingListsPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -307,20 +302,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS11103")]
-        [NUnit.Framework.CategoryAttribute("DAS11264")]
-        [NUnit.Framework.CategoryAttribute("DAS11360")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Compliance", "2004: Application Readiness", "Last Seen Date", "OS Branch", "Devices_List_11103", "Application Compliance", "Red", "Operating System", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Compliance", "App Count (Entitled)", "Domain", "Dashworks First Seen", "Users_List_11103", "Compliance", "Red", "User", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Import", "Owner City", "Created Date", "Alias", "Mailboxes_List_11103", "Enabled", "TRUE", "Mailbox", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Application", "Evergreen Capacity Unit", "Vendor", "Application Owner", "Applications_List_11103", "Compliance", "Red", "Custom Fields", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly(string pageName, string pageLabel, string rowGroup, string column, string value, string additionalValue, string listName, string filterName, string valuesForFilter, string categoryName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -455,17 +436,83 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS11103")]
-        [NUnit.Framework.CategoryAttribute("DAS13819")]
-        [NUnit.Framework.CategoryAttribute("DAS13818")]
-        [NUnit.Framework.CategoryAttribute("DAS13817")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly, Device" +
+            "s", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS11103",
+                "DAS11264",
+                "DAS11360",
+                "Cleanup"}, SourceLine=87)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly_Devices()
+        {
+#line 51
+this.EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly("Devices", "All Devices", "Compliance", "2004: Application Readiness", "Last Seen Date", "OS Branch", "Devices_List_11103", "Application Compliance", "Red", "Operating System", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS11103",
+                "DAS11264",
+                "DAS11360",
+                "Cleanup"}, SourceLine=87)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly_Users()
+        {
+#line 51
+this.EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly("Users", "All Users", "Compliance", "App Count (Entitled)", "Domain", "Dashworks First Seen", "Users_List_11103", "Compliance", "Red", "User", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly, Mailbo" +
+            "xes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS11103",
+                "DAS11264",
+                "DAS11360",
+                "Cleanup"}, SourceLine=87)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly_Mailboxes()
+        {
+#line 51
+this.EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly("Mailboxes", "All Mailboxes", "Import", "Owner City", "Created Date", "Alias", "Mailboxes_List_11103", "Enabled", "TRUE", "Mailbox", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly, Applic" +
+            "ations", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS11103",
+                "DAS11264",
+                "DAS11360",
+                "Cleanup"}, SourceLine=87)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly_Applications()
+        {
+#line 51
+this.EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly("Applications", "All Applications", "Application", "Evergreen Capacity Unit", "Vendor", "Application Owner", "Applications_List_11103", "Compliance", "Red", "Custom Fields", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS11103",
+                "DAS13819",
+                "DAS13818",
+                "DAS13817",
+                "Cleanup"}, SourceLine=93)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues()
         {
             string[] tagsOfScenario = new string[] {
@@ -587,20 +634,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectO" +
-            "rder")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13862")]
-        [NUnit.Framework.CategoryAttribute("DAS14372")]
-        [NUnit.Framework.CategoryAttribute("DAS14373")]
-        [NUnit.Framework.TestCaseAttribute("Operating System", "Owner Compliance", null)]
-        [NUnit.Framework.TestCaseAttribute("Service Pack or Build", "Owner Compliance", null)]
-        [NUnit.Framework.TestCaseAttribute("Application Compliance", "Operating System", null)]
-        [NUnit.Framework.TestCaseAttribute("Application Compliance", "Service Pack or Build", null)]
         public virtual void EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder(string rowGroups, string columns, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -685,15 +718,78 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildRowGroupDis" +
-            "playInTheCorrectOrder")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("DAS13862")]
-        [NUnit.Framework.CategoryAttribute("DAS14372")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectO" +
+            "rder, Variant 0", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13862",
+                "DAS14372",
+                "DAS14373"}, SourceLine=145)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder_Variant0()
+        {
+#line 127
+this.EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder("Operating System", "Owner Compliance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectO" +
+            "rder, Variant 1", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13862",
+                "DAS14372",
+                "DAS14373"}, SourceLine=145)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder_Variant1()
+        {
+#line 127
+this.EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder("Service Pack or Build", "Owner Compliance", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectO" +
+            "rder, Variant 2", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13862",
+                "DAS14372",
+                "DAS14373"}, SourceLine=145)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder_Variant2()
+        {
+#line 127
+this.EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder("Application Compliance", "Operating System", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectO" +
+            "rder, Variant 3", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13862",
+                "DAS14372",
+                "DAS14373"}, SourceLine=145)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder_Variant3()
+        {
+#line 127
+this.EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder("Application Compliance", "Service Pack or Build", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildRowGroupDis" +
+            "playInTheCorrectOrder", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Pivot",
+                "Pivot",
+                "DAS13862",
+                "DAS14372"}, SourceLine=151)]
         public virtual void EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildRowGroupDisplayInTheCorrectOrder()
         {
             string[] tagsOfScenario = new string[] {
@@ -778,6 +874,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

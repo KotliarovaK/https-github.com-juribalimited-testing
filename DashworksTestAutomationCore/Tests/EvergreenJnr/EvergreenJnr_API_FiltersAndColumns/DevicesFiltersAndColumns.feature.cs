@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("DevicesFiltersAndColumns")]
+    [TechTalk.SpecRun.FeatureAttribute("DevicesFiltersAndColumns", Description="\tCheck all Columns and Filters via API", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_API_FiltersAndColumns\\DevicesFiltersAndColumns.fe" +
+        "ature", SourceLine=0)]
     public partial class DevicesFiltersAndColumnsFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
 #line 1 "DevicesFiltersAndColumns.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -82,12 +80,11 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckAllColumns")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckAllColumns", new string[] {
+                "Evergreen",
+                "Devices",
+                "API",
+                "FiltersAndColumns"}, SourceLine=7)]
         public virtual void EvergreenJnr_DevicesList_CheckAllColumns()
         {
             string[] tagsOfScenario = new string[] {
@@ -130,12 +127,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckAllFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckAllFilters", new string[] {
+                "Evergreen",
+                "Devices",
+                "API",
+                "FiltersAndColumns"}, SourceLine=11)]
         public virtual void EvergreenJnr_DevicesList_CheckAllFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -178,15 +174,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.TestCaseAttribute("Suggested", "Windows7Mi: Category", "devices?$filter=(project_1_subCategoryId%20EQUALS%20(\'NULL\'%2C\'76\'))&$select=host" +
-            "name,chassisCategory,oSCategory,ownerDisplayName,project_1_subCategoryId,project" +
-            "_1_subCategory", null)]
         public virtual void EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -236,6 +223,26 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData, Suggested", new string[] {
+                "Evergreen",
+                "Devices",
+                "API",
+                "FiltersAndColumns"}, SourceLine=22)]
+        public virtual void EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData_Suggested()
+        {
+#line 16
+this.EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData("Suggested", "Windows7Mi: Category", "devices?$filter=(project_1_subCategoryId%20EQUALS%20(\'NULL\'%2C\'76\'))&$select=host" +
+                    "name,chassisCategory,oSCategory,ownerDisplayName,project_1_subCategoryId,project" +
+                    "_1_subCategory", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

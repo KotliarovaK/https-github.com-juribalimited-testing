@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ItemDetailsDisplay")]
+    [TechTalk.SpecRun.FeatureAttribute("ItemDetailsDisplay", Description="\tRuns Item Details Display related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ItemDetailsDisplay.feature", SourceLine=0)]
     public partial class ItemDetailsDisplayFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "ItemDetailsDisplay.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,19 +82,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDet" +
-            "ailsPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12386")]
-        [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Device Key", "00KLL9S8NRF0X6", "evergreen/#/device/8892/details/device", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "User Key", "0072B088173449E3A93", "evergreen/#/user/85167/details/user", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application Key", "ACDSee for Windows 95", "evergreen/#/application/312/details/application", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Key", "01BC4B0500344065B61@bclabs.local", "evergreen/#/mailbox/45374/details/mailbox", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage(string pageName, string column, string itemName, string uRL, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -167,14 +151,73 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplaye" +
-            "d")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16338")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDet" +
+            "ailsPage, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS12386",
+                "DAS14923"}, SourceLine=22)]
+        public virtual void EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage_Devices()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage("Devices", "Device Key", "00KLL9S8NRF0X6", "evergreen/#/device/8892/details/device", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDet" +
+            "ailsPage, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS12386",
+                "DAS14923"}, SourceLine=22)]
+        public virtual void EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage_Users()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage("Users", "User Key", "0072B088173449E3A93", "evergreen/#/user/85167/details/user", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDet" +
+            "ailsPage, Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS12386",
+                "DAS14923"}, SourceLine=22)]
+        public virtual void EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage_Applications()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage("Applications", "Application Key", "ACDSee for Windows 95", "evergreen/#/application/312/details/application", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDet" +
+            "ailsPage, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS12386",
+                "DAS14923"}, SourceLine=22)]
+        public virtual void EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage_Mailboxes()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage("Mailboxes", "Mailbox Key", "01BC4B0500344065B61@bclabs.local", "evergreen/#/mailbox/45374/details/mailbox", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplaye" +
+            "d", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16338"}, SourceLine=28)]
         public virtual void EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplayed()
         {
             string[] tagsOfScenario = new string[] {
@@ -287,14 +330,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSiteContinueWorkingAfterNavigationToNotExistingIt" +
-            "em")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18827")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatSiteContinueWorkingAfterNavigationToNotExistingIt" +
+            "em", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18827"}, SourceLine=53)]
         public virtual void EvergreenJnr_UsersList_CheckThatSiteContinueWorkingAfterNavigationToNotExistingItem()
         {
             string[] tagsOfScenario = new string[] {
@@ -358,17 +400,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("DAS15785")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "00KLL9S8NRF0X6", "Hostname", "/device/8892/", "7", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "$231000-3AC04R8AR431", "Username", "/user/67941/", "7", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "WPF/E\" (codename) Community Technology Preview (Feb 2007)", "Application", "/application/493/", "6", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "000F977AC8824FE39B8@bclabs.local", "Email Address", "/mailbox/43917/", "6", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount(string listType, string listTitle, string itemName, string column, string url, string requests, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -426,6 +457,68 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount, Devi" +
+            "ces", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "DAS15785",
+                "Not_Ready"}, SourceLine=74)]
+        public virtual void EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount_Devices()
+        {
+#line 65
+this.EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount("Devices", "All Devices", "00KLL9S8NRF0X6", "Hostname", "/device/8892/", "7", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount, User" +
+            "s", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "DAS15785",
+                "Not_Ready"}, SourceLine=74)]
+        public virtual void EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount_Users()
+        {
+#line 65
+this.EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount("Users", "All Users", "$231000-3AC04R8AR431", "Username", "/user/67941/", "7", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount, Appl" +
+            "ications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "DAS15785",
+                "Not_Ready"}, SourceLine=74)]
+        public virtual void EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount_Applications()
+        {
+#line 65
+this.EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount("Applications", "All Applications", "WPF/E\" (codename) Community Technology Preview (Feb 2007)", "Application", "/application/493/", "6", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount, Mail" +
+            "boxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "DAS15785",
+                "Not_Ready"}, SourceLine=74)]
+        public virtual void EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount_Mailboxes()
+        {
+#line 65
+this.EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount("Mailboxes", "All Mailboxes", "000F977AC8824FE39B8@bclabs.local", "Email Address", "/mailbox/43917/", "6", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

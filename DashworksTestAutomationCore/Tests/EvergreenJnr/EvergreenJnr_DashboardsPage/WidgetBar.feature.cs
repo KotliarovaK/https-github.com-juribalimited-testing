@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("WidgetBar")]
+    [TechTalk.SpecRun.FeatureAttribute("WidgetBar", Description="\tRuns tests for Bar Widgets creation or editing", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_DashboardsPage\\WidgetBar.feature", SourceLine=0)]
     public partial class WidgetBarFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line 1 "WidgetBar.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,14 +82,13 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpec" +
-            "ificColumns")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15356")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpec" +
+            "ificColumns", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15356",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumns()
         {
             string[] tagsOfScenario = new string[] {
@@ -202,21 +198,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
-            "tHasNoRows")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16167")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Pie", null)]
-        [NUnit.Framework.TestCaseAttribute("Bar", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", null)]
-        [NUnit.Framework.TestCaseAttribute("Line", null)]
-        [NUnit.Framework.TestCaseAttribute("Donut", null)]
-        [NUnit.Framework.TestCaseAttribute("Half donut", null)]
-        [NUnit.Framework.TestCaseAttribute("Table", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows(string widgetType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -322,16 +303,104 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS18100")]
-        [NUnit.Framework.CategoryAttribute("DAS19348")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Import Type", "Not empty", "ListForDAS18100_2", "DAS18100_Dashboard", "WidgetForDAS18100", "Import Type ASC", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Recipient Type", "Not empty", "ListForDAS19348_2", "DAS19348_Dashboard", "WidgetForDAS19348", "Recipient Type ASC", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Pie", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Pie()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Pie", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Bar", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Bar()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Bar", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Column", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Column()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Line", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Line()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Line", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Donut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Donut()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Donut", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Half donut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_HalfDonut()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Half donut", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Table", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Table()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Table", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated(string listType, string listName, string filter, string @operator, string savedList, string dashboardName, string widgetName, string orderBy, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -438,17 +507,36 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS17360")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Bar", "Stacked", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", "Stacked", null)]
-        [NUnit.Framework.TestCaseAttribute("Bar", "Clustered", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", "Clustered", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated, Device" +
+            "s", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS18100",
+                "DAS19348",
+                "Cleanup"}, SourceLine=84)]
+        public virtual void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated_Devices()
+        {
+#line 62
+this.EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated("Devices", "All Devices", "Import Type", "Not empty", "ListForDAS18100_2", "DAS18100_Dashboard", "WidgetForDAS18100", "Import Type ASC", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated, Mailbo" +
+            "xes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS18100",
+                "DAS19348",
+                "Cleanup"}, SourceLine=84)]
+        public virtual void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated_Mailboxes()
+        {
+#line 62
+this.EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated("Mailboxes", "All Mailboxes", "Recipient Type", "Not empty", "ListForDAS19348_2", "DAS19348_Dashboard", "WidgetForDAS19348", "Recipient Type ASC", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType(string widgetType, string displyType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -535,15 +623,62 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS17360")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Bar", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType, Va" +
+            "riant 0", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=103)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType_Variant0()
+        {
+#line 89
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType("Bar", "Stacked", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType, Va" +
+            "riant 1", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=103)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType_Variant1()
+        {
+#line 89
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType("Column", "Stacked", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType, Va" +
+            "riant 2", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=103)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType_Variant2()
+        {
+#line 89
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType("Bar", "Clustered", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType, Va" +
+            "riant 3", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=103)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType_Variant3()
+        {
+#line 89
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType("Column", "Clustered", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet(string widgetType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -624,6 +759,39 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet, Bar", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=124)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet_Bar()
+        {
+#line 110
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet("Bar", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet, Column" +
+            "", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=124)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet_Column()
+        {
+#line 110
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet("Column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

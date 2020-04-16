@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ItemsManagement2")]
+    [TechTalk.SpecRun.FeatureAttribute("ItemsManagement2", Description="\tRuns Section and Widget management tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_DashboardsPage\\ItemsManagement2.feature", SourceLine=0)]
     public partial class ItemsManagement2Feature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line 1 "ItemsManagement2.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,14 +82,13 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16326")]
-        [NUnit.Framework.CategoryAttribute("DAS17150")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16326",
+                "DAS17150",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage()
         {
             string[] tagsOfScenario = new string[] {
@@ -175,14 +171,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS17551")]
-        [NUnit.Framework.CategoryAttribute("DAS17150")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17551",
+                "DAS17150",
+                "Cleanup"}, SourceLine=21)]
         public virtual void EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList()
         {
             string[] tagsOfScenario = new string[] {
@@ -330,12 +325,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS15877")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS15877",
+                "Cleanup"}, SourceLine=56)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard()
         {
             string[] tagsOfScenario = new string[] {
@@ -397,12 +391,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS12974")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS12974",
+                "Cleanup"}, SourceLine=68)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite()
         {
             string[] tagsOfScenario = new string[] {
@@ -472,12 +465,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS12974")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS12974",
+                "Cleanup"}, SourceLine=81)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault()
         {
             string[] tagsOfScenario = new string[] {
@@ -544,15 +536,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS12974")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("DAS12974DUPLICATED", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS12974duplicated", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists(string dashboardName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -612,15 +595,32 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisapp" +
-            "earsAfterCancelCreatingDashboard")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS20395")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("DAS20395DUPLICATED", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS20395duplicated", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists" +
+            ", DAS12974DUPLICATED", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS12974",
+                "Cleanup"}, SourceLine=103)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists_DAS12974DUPLICATED()
+        {
+#line 94
+this.EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists("DAS12974DUPLICATED", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists" +
+            ", DAS12974duplicated", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS12974",
+                "Cleanup"}, SourceLine=103)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists_DAS12974Duplicated()
+        {
+#line 94
+this.EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists("DAS12974duplicated", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisappearsAfterCancelCreatingDashboard(string dashboardName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -683,14 +683,39 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOf" +
-            "f")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS17985")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisapp" +
+            "earsAfterCancelCreatingDashboard, DAS20395DUPLICATED", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS20395",
+                "Cleanup"}, SourceLine=118)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisappearsAfterCancelCreatingDashboard_DAS20395DUPLICATED()
+        {
+#line 108
+this.EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisappearsAfterCancelCreatingDashboard("DAS20395DUPLICATED", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisapp" +
+            "earsAfterCancelCreatingDashboard, DAS20395duplicated", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS20395",
+                "Cleanup"}, SourceLine=118)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisappearsAfterCancelCreatingDashboard_DAS20395Duplicated()
+        {
+#line 108
+this.EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisappearsAfterCancelCreatingDashboard("DAS20395duplicated", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOf" +
+            "f", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17985",
+                "Cleanup"}, SourceLine=122)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOff()
         {
             string[] tagsOfScenario = new string[] {
@@ -770,13 +795,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS18152")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS18152",
+                "Cleanup"}, SourceLine=133)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget()
         {
             string[] tagsOfScenario = new string[] {
@@ -883,12 +907,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewMode" +
-            "AfterClickingTheDashworksLogo")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS18080")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewMode" +
+            "AfterClickingTheDashworksLogo", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS18080"}, SourceLine=155)]
         public virtual void EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo()
         {
             string[] tagsOfScenario = new string[] {
@@ -939,12 +962,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatDashboardsCanBeFoundUsingAnyCapsOrSmallLetters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS18483")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Dashboard_CheckThatDashboardsCanBeFoundUsingAnyCapsOrSmallLetters", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS18483",
+                "Cleanup"}, SourceLine=162)]
         public virtual void EvergreenJnr_Dashboard_CheckThatDashboardsCanBeFoundUsingAnyCapsOrSmallLetters()
         {
             string[] tagsOfScenario = new string[] {
@@ -1005,11 +1027,10 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatNumberOfRequestsDontExceedAllowedCount")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS15896")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Dashboard_CheckThatNumberOfRequestsDontExceedAllowedCount", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS15896"}, SourceLine=172)]
         public virtual void EvergreenJnr_Dashboard_CheckThatNumberOfRequestsDontExceedAllowedCount()
         {
             string[] tagsOfScenario = new string[] {
@@ -1050,15 +1071,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
-            "ype")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS20070")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("DashboardDAS20070_1", "Column", "DAS20070_1", "Pie", null)]
-        [NUnit.Framework.TestCaseAttribute("DashboardDAS20070_2", "Pie", "DAS20070_2", "Column", null)]
         public virtual void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetType(string dashboardName, string widgetType, string widgetName, string updatedType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1141,13 +1153,38 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
-            "ypeIfAllFieldsAreFilled")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS20070")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
+            "ype, DashboardDAS20070_1", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS20070",
+                "Cleanup"}, SourceLine=191)]
+        public virtual void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetType_DashboardDAS20070_1()
+        {
+#line 177
+this.EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetType("DashboardDAS20070_1", "Column", "DAS20070_1", "Pie", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
+            "ype, DashboardDAS20070_2", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS20070",
+                "Cleanup"}, SourceLine=191)]
+        public virtual void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetType_DashboardDAS20070_2()
+        {
+#line 177
+this.EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetType("DashboardDAS20070_2", "Pie", "DAS20070_2", "Column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
+            "ypeIfAllFieldsAreFilled", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS20070",
+                "Cleanup"}, SourceLine=195)]
         public virtual void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeIfAllFieldsAreFilled()
         {
             string[] tagsOfScenario = new string[] {
@@ -1231,6 +1268,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

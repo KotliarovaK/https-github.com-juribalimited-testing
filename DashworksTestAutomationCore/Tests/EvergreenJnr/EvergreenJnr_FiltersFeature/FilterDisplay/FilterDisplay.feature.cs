@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("FilterDisplay")]
+    [TechTalk.SpecRun.FeatureAttribute("FilterDisplay", Description="\tRuns Dynamic Filters Display related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_FiltersFeature\\FilterDisplay\\FilterDisplay.featur" +
+        "e", SourceLine=0)]
     public partial class FilterDisplayFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
 #line 1 "FilterDisplay.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,13 +83,12 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnteringInvalidD" +
-            "ata")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11678")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnteringInvalidD" +
+            "ata", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11678"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnteringInvalidData()
         {
             string[] tagsOfScenario = new string[] {
@@ -153,16 +150,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterD" +
-            "isplayed")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11738")]
-        [NUnit.Framework.CategoryAttribute("DAS12194")]
-        [NUnit.Framework.CategoryAttribute("DAS12199")]
-        [NUnit.Framework.CategoryAttribute("DAS12220")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterD" +
+            "isplayed", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11738",
+                "DAS12194",
+                "DAS12199",
+                "DAS12220"}, SourceLine=18)]
         public virtual void EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed()
         {
             string[] tagsOfScenario = new string[] {
@@ -238,17 +234,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsP" +
-            "anelWhileFiltersSectionExpanded")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13182")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded(string listName, string linkName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -314,17 +299,58 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumn" +
-            "s")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17943")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsP" +
+            "anelWhileFiltersSectionExpanded, Devices", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS13182"}, SourceLine=43)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded_Devices()
+        {
+#line 32
+this.EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded("Devices", "All Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsP" +
+            "anelWhileFiltersSectionExpanded, Users", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS13182"}, SourceLine=43)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded_Users()
+        {
+#line 32
+this.EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded("Users", "All Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsP" +
+            "anelWhileFiltersSectionExpanded, Applications", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS13182"}, SourceLine=43)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded_Applications()
+        {
+#line 32
+this.EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded("Applications", "All Applications", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsP" +
+            "anelWhileFiltersSectionExpanded, Mailboxes", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS13182"}, SourceLine=43)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded_Mailboxes()
+        {
+#line 32
+this.EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded("Mailboxes", "All Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumns(string pageName, string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -387,14 +413,65 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTheUserDescriptionFieldIsNotDisplayedForEm" +
-            "ptyNotEmptyOptions")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12819")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumn" +
+            "s, Devices", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS17943"}, SourceLine=60)]
+        public virtual void EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumns_Devices()
+        {
+#line 50
+this.EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumns("Devices", "All Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumn" +
+            "s, Users", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS17943"}, SourceLine=60)]
+        public virtual void EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumns_Users()
+        {
+#line 50
+this.EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumns("Users", "All Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumn" +
+            "s, Applications", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS17943"}, SourceLine=60)]
+        public virtual void EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumns_Applications()
+        {
+#line 50
+this.EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumns("Applications", "All Applications", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumn" +
+            "s, Mailboxes", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS17943"}, SourceLine=60)]
+        public virtual void EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumns_Mailboxes()
+        {
+#line 50
+this.EvergreenJnr_AdminPage_CheckThaSearchfieldHasProperPlaceholderForFiltersAndColumns("Mailboxes", "All Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatTheUserDescriptionFieldIsNotDisplayedForEm" +
+            "ptyNotEmptyOptions", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12819",
+                "Cleanup"}, SourceLine=66)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTheUserDescriptionFieldIsNotDisplayedForEmptyNotEmptyOptions()
         {
             string[] tagsOfScenario = new string[] {
@@ -490,14 +567,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValu" +
-            "e")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11760")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValu" +
+            "e", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11760",
+                "Cleanup"}, SourceLine=86)]
         public virtual void EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValue()
         {
             string[] tagsOfScenario = new string[] {
@@ -590,15 +666,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOn" +
-            "TheFiltersPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12543")]
-        [NUnit.Framework.CategoryAttribute("DAS13001")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOn" +
+            "TheFiltersPanel", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12543",
+                "DAS13001",
+                "Cleanup"}, SourceLine=105)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -698,12 +773,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11009")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11009"}, SourceLine=128)]
         public virtual void EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount()
         {
             string[] tagsOfScenario = new string[] {
@@ -794,12 +868,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11506")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11506"}, SourceLine=149)]
         public virtual void EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount()
         {
             string[] tagsOfScenario = new string[] {
@@ -896,15 +969,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11009")]
-        [NUnit.Framework.CategoryAttribute("DAS11044")]
-        [NUnit.Framework.CategoryAttribute("DAS12199")]
-        [NUnit.Framework.CategoryAttribute("DAS14603")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11009",
+                "DAS11044",
+                "DAS12199",
+                "DAS14603"}, SourceLine=172)]
         public virtual void EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount()
         {
             string[] tagsOfScenario = new string[] {
@@ -1027,14 +1099,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTh" +
-            "eFullDataSet")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10996")]
-        [NUnit.Framework.CategoryAttribute("DAS12207")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTh" +
+            "eFullDataSet", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10996",
+                "DAS12207"}, SourceLine=203)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTheFullDataSet()
         {
             string[] tagsOfScenario = new string[] {
@@ -1115,13 +1186,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12635")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12635",
+                "Cleanup"}, SourceLine=219)]
         public virtual void EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList()
         {
             string[] tagsOfScenario = new string[] {
@@ -1281,14 +1351,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckBrokenListDisplayingAfterFilterRemoving")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17436")]
-        [NUnit.Framework.CategoryAttribute("DAS18561")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_CheckBrokenListDisplayingAfterFilterRemoving", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS17436",
+                "DAS18561",
+                "Cleanup"}, SourceLine=262)]
         public virtual void EvergreenJnr_DevicesLists_CheckBrokenListDisplayingAfterFilterRemoving()
         {
             string[] tagsOfScenario = new string[] {
@@ -1356,21 +1425,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10795")]
-        [NUnit.Framework.CategoryAttribute("DAS10781")]
-        [NUnit.Framework.CategoryAttribute("DAS11573")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Operating System", "Add Operating System column", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "City", "Add City column", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Zip Code", "Add Zip Code column", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application Owner", "Add Application Owner column", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Filter 1", "Add Mailbox Filter 1 column", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "Add Compliance column", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Department Code", "Add Owner Department Code column", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters(string pageName, string filterName, string selectedCheckboxes, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1435,15 +1489,112 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForApplicationCust" +
-            "omFieldsFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10795")]
-        [NUnit.Framework.CategoryAttribute("DAS11187")]
-        [NUnit.Framework.CategoryAttribute("DAS13376")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters, Variant 0", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10795",
+                "DAS10781",
+                "DAS11573"}, SourceLine=285)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters_Variant0()
+        {
+#line 274
+this.EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters("Devices", "Operating System", "Add Operating System column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters, Variant 1", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10795",
+                "DAS10781",
+                "DAS11573"}, SourceLine=285)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters_Variant1()
+        {
+#line 274
+this.EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters("Devices", "City", "Add City column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters, Variant 2", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10795",
+                "DAS10781",
+                "DAS11573"}, SourceLine=285)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters_Variant2()
+        {
+#line 274
+this.EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters("Users", "Zip Code", "Add Zip Code column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters, Variant 3", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10795",
+                "DAS10781",
+                "DAS11573"}, SourceLine=285)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters_Variant3()
+        {
+#line 274
+this.EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters("Applications", "Application Owner", "Add Application Owner column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters, Variant 4", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10795",
+                "DAS10781",
+                "DAS11573"}, SourceLine=285)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters_Variant4()
+        {
+#line 274
+this.EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters("Mailboxes", "Mailbox Filter 1", "Add Mailbox Filter 1 column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters, Variant 5", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10795",
+                "DAS10781",
+                "DAS11573"}, SourceLine=285)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters_Variant5()
+        {
+#line 274
+this.EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters("Devices", "Compliance", "Add Compliance column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters, Variant 6", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10795",
+                "DAS10781",
+                "DAS11573"}, SourceLine=285)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters_Variant6()
+        {
+#line 274
+this.EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters("Mailboxes", "Owner Department Code", "Add Owner Department Code column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForApplicationCust" +
+            "omFieldsFilters", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10795",
+                "DAS11187",
+                "DAS13376"}, SourceLine=294)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForApplicationCustomFieldsFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -1507,15 +1658,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepa" +
-            "rtmentFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11351")]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", null)]
         public virtual void EvergreenJnr_AllLists_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1581,29 +1723,32 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
-            "n")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11619")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Device Type", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Operating System", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Display Name", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Domain", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Display Name", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Distinguished Name", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Version", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address (Primary)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Platform", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mail Server", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Type", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Display Name", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepa" +
+            "rtmentFilter, Mailboxes", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11351"}, SourceLine=316)]
+        public virtual void EvergreenJnr_AllLists_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter_Mailboxes()
+        {
+#line 304
+this.EvergreenJnr_AllLists_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter("Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepa" +
+            "rtmentFilter, Devices", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11351"}, SourceLine=316)]
+        public virtual void EvergreenJnr_AllLists_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter_Devices()
+        {
+#line 304
+this.EvergreenJnr_AllLists_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter("Devices", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn(string listName, string filterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1663,21 +1808,214 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
-            "yFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11829")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Department Name", "Add Department Name column", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Department Full Path", "Add Department Full Path column", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Department Name", "Add Owner Department Name column", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Department Full Path", "Add Owner Department Full Path column", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Department Name", "Add Department Name column", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Department Full Path", "Add Department Full Path column", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Department Name", "Add Owner Department Name column", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Department Full Path", "Add Owner Department Full Path column", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 0", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant0()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Devices", "Hostname", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 1", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant1()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Devices", "Device Type", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 2", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant2()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Devices", "Operating System", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 3", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant3()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Devices", "Owner Display Name", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 4", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant4()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Users", "Username", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 5", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant5()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Users", "Domain", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 6", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant6()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Users", "Display Name", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 7", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant7()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Users", "Distinguished Name", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 8", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant8()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Applications", "Application", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 9", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant9()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Applications", "Vendor", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 10", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant10()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Applications", "Version", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 11", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant11()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Mailboxes", "Email Address (Primary)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 12", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant12()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Mailboxes", "Mailbox Platform", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 13", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant13()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Mailboxes", "Mail Server", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 14", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant14()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Mailboxes", "Mailbox Type", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
+            "n, Variant 15", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11619"}, SourceLine=330)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn_Variant15()
+        {
+#line 321
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn("Mailboxes", "Owner Display Name", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters(string listName, string filterName, string selectedCheckboxes, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1741,14 +2079,117 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInAN" +
-            "ewList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11042")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
+            "yFilters, Variant 0", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11829"}, SourceLine=360)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters_Variant0()
+        {
+#line 349
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters("Devices", "Department Name", "Add Department Name column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
+            "yFilters, Variant 1", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11829"}, SourceLine=360)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters_Variant1()
+        {
+#line 349
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters("Devices", "Department Full Path", "Add Department Full Path column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
+            "yFilters, Variant 2", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11829"}, SourceLine=360)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters_Variant2()
+        {
+#line 349
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters("Devices", "Owner Department Name", "Add Owner Department Name column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
+            "yFilters, Variant 3", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11829"}, SourceLine=360)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters_Variant3()
+        {
+#line 349
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters("Devices", "Owner Department Full Path", "Add Owner Department Full Path column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
+            "yFilters, Variant 4", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11829"}, SourceLine=360)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters_Variant4()
+        {
+#line 349
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters("Mailboxes", "Department Name", "Add Department Name column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
+            "yFilters, Variant 5", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11829"}, SourceLine=360)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters_Variant5()
+        {
+#line 349
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters("Mailboxes", "Department Full Path", "Add Department Full Path column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
+            "yFilters, Variant 6", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11829"}, SourceLine=360)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters_Variant6()
+        {
+#line 349
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters("Mailboxes", "Owner Department Name", "Add Owner Department Name column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
+            "yFilters, Variant 7", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11829"}, SourceLine=360)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters_Variant7()
+        {
+#line 349
+this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters("Mailboxes", "Owner Department Full Path", "Add Owner Department Full Path column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInAN" +
+            "ewList", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11042",
+                "Cleanup"}, SourceLine=370)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewList()
         {
             string[] tagsOfScenario = new string[] {
@@ -1847,13 +2288,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterA" +
-            "ndRemovingAColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11042")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterA" +
+            "ndRemovingAColumn", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11042"}, SourceLine=392)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterAndRemovingAColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1938,15 +2378,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10734")]
-        [NUnit.Framework.CategoryAttribute("DAS11507")]
-        [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("DAS12512")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10734",
+                "DAS11507",
+                "DAS12351",
+                "DAS12512"}, SourceLine=411)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -2024,12 +2463,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11042")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11042"}, SourceLine=425)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -2101,12 +2539,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17016")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS17016"}, SourceLine=439)]
         public virtual void EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected()
         {
             string[] tagsOfScenario = new string[] {
@@ -2178,13 +2615,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatFilterExpressionSectionIsMovedToFilterPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17252")]
-        [NUnit.Framework.CategoryAttribute("DAS16485")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatFilterExpressionSectionIsMovedToFilterPanel", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS17252",
+                "DAS16485"}, SourceLine=453)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterExpressionSectionIsMovedToFilterPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -2247,13 +2683,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingSpecialChara" +
-            "ctersIntoTheApplicationNameFilterAndRefreshingThePage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11824")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingSpecialChara" +
+            "ctersIntoTheApplicationNameFilterAndRefreshingThePage", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11824"}, SourceLine=463)]
         public virtual void EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingSpecialCharactersIntoTheApplicationNameFilterAndRefreshingThePage()
         {
             string[] tagsOfScenario = new string[] {
@@ -2338,13 +2773,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13831")]
-        [NUnit.Framework.CategoryAttribute("DAS15376")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilters", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS13831",
+                "DAS15376"}, SourceLine=480)]
         public virtual void EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -2524,14 +2958,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInTheUserLastLog" +
-            "onDateFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13831")]
-        [NUnit.Framework.CategoryAttribute("DAS15376")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInTheUserLastLog" +
+            "onDateFilter", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS13831",
+                "DAS15376"}, SourceLine=526)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInTheUserLastLogonDateFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -2620,15 +3053,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15376")]
-        [NUnit.Framework.CategoryAttribute("DAS15331")]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", null)]
         public virtual void EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator(string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -2696,12 +3120,38 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11165")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator, Mailboxes" +
+            "", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS15376",
+                "DAS15331"}, SourceLine=554)]
+        public virtual void EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator_Mailboxes()
+        {
+#line 543
+this.EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator("Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator, Users", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS15376",
+                "DAS15331"}, SourceLine=554)]
+        public virtual void EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator_Users()
+        {
+#line 543
+this.EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator("Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForFilters", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11165"}, SourceLine=558)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -2780,14 +3230,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheComplianceAndImportFilters" +
-            "ContainerIsDisplayed")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11054")]
-        [NUnit.Framework.CategoryAttribute("DAS11578")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheComplianceAndImportFilters" +
+            "ContainerIsDisplayed", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11054",
+                "DAS11578"}, SourceLine=574)]
         public virtual void EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheComplianceAndImportFiltersContainerIsDisplayed()
         {
             string[] tagsOfScenario = new string[] {
@@ -2870,14 +3319,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheDepartmentCodeFilterContai" +
-            "nerIsDisplayed")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11054")]
-        [NUnit.Framework.CategoryAttribute("DAS11578")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheDepartmentCodeFilterContai" +
+            "nerIsDisplayed", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11054",
+                "DAS11578"}, SourceLine=591)]
         public virtual void EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheDepartmentCodeFilterContainerIsDisplayed()
         {
             string[] tagsOfScenario = new string[] {
@@ -3003,14 +3451,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheBootUpDateAndCpuCountFilte" +
-            "rsContainerIsDisplayed")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11054")]
-        [NUnit.Framework.CategoryAttribute("DAS11578")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheBootUpDateAndCpuCountFilte" +
+            "rsContainerIsDisplayed", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11054",
+                "DAS11578"}, SourceLine=623)]
         public virtual void EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheBootUpDateAndCpuCountFiltersContainerIsDisplayed()
         {
             string[] tagsOfScenario = new string[] {
@@ -3128,14 +3575,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationNameDisplaye" +
-            "dCorrectlyWhenUsingTheContainsOperator")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11467")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationNameDisplaye" +
+            "dCorrectlyWhenUsingTheContainsOperator", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11467",
+                "Cleanup"}, SourceLine=651)]
         public virtual void EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationNameDisplayedCorrectlyWhenUsingTheContainsOperator()
         {
             string[] tagsOfScenario = new string[] {
@@ -3232,15 +3678,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12121")]
-        [NUnit.Framework.CategoryAttribute("DAS13376")]
-        [NUnit.Framework.CategoryAttribute("DAS14222")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12121",
+                "DAS13376",
+                "DAS14222",
+                "Cleanup"}, SourceLine=671)]
         public virtual void EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName()
         {
             string[] tagsOfScenario = new string[] {
@@ -3388,13 +3833,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatApostrophesAreDisplayedCorrectlyInFilterInfo")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11142")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatApostrophesAreDisplayedCorrectlyInFilterInfo", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11142",
+                "Cleanup"}, SourceLine=708)]
         public virtual void EvergreenJnr_DevicesList_CheckThatApostrophesAreDisplayedCorrectlyInFilterInfo()
         {
             string[] tagsOfScenario = new string[] {
@@ -3462,17 +3906,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15374")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("english us", "Equals", "Jul 10, 2019", null)]
-        [NUnit.Framework.TestCaseAttribute("english uk", "Equals", "10 Jul 2019", null)]
-        [NUnit.Framework.TestCaseAttribute("deutsch", "Gleich", "10. Juli 2019", null)]
-        [NUnit.Framework.TestCaseAttribute("français", "Avant", "10 juil. 2019", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific(string language, string option, string expectedDate, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -3544,12 +3977,63 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterInfo")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10651")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific, english us", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS15374",
+                "Cleanup"}, SourceLine=735)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific_EnglishUs()
+        {
+#line 721
+this.EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific("english us", "Equals", "Jul 10, 2019", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific, english uk", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS15374",
+                "Cleanup"}, SourceLine=735)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific_EnglishUk()
+        {
+#line 721
+this.EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific("english uk", "Equals", "10 Jul 2019", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific, deutsch", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS15374",
+                "Cleanup"}, SourceLine=735)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific_Deutsch()
+        {
+#line 721
+this.EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific("deutsch", "Gleich", "10. Juli 2019", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific, français", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS15374",
+                "Cleanup"}, SourceLine=735)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific_Francais()
+        {
+#line 721
+this.EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpecific("français", "Avant", "10 juil. 2019", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterInfo", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10651"}, SourceLine=741)]
         public virtual void EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterInfo()
         {
             string[] tagsOfScenario = new string[] {
@@ -3632,14 +4116,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckSpecialCharactersDisplayInFilterInfo")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10754")]
-        [NUnit.Framework.CategoryAttribute("DAS11142")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckSpecialCharactersDisplayInFilterInfo", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10754",
+                "DAS11142",
+                "Cleanup"}, SourceLine=761)]
         public virtual void EvergreenJnr_UsersList_CheckSpecialCharactersDisplayInFilterInfo()
         {
             string[] tagsOfScenario = new string[] {
@@ -3754,14 +4237,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBet" +
-            "weenLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBet" +
+            "weenLists", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "Cleanup"}, SourceLine=790)]
         public virtual void EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -3877,16 +4359,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetwe" +
-            "enLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.CategoryAttribute("DAS12199")]
-        [NUnit.Framework.CategoryAttribute("DAS12220")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetwe" +
+            "enLists", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS12199",
+                "DAS12220",
+                "Cleanup"}, SourceLine=820)]
         public virtual void EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -4020,14 +4501,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigati" +
-            "ngBetweenLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigati" +
+            "ngBetweenLists", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "Cleanup"}, SourceLine=857)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -4142,15 +4622,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingB" +
-            "etweenLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingB" +
+            "etweenLists", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS12114",
+                "Cleanup"}, SourceLine=886)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -4267,20 +4746,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.TestCaseAttribute("Equals", "00BDM1JUR8IF419", "1", "is", null)]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "00BDM1JUR8IF419", "17,278", "is not", null)]
-        [NUnit.Framework.TestCaseAttribute("Contains", "00B", "6", "contains", null)]
-        [NUnit.Framework.TestCaseAttribute("Does not contain", "00BDM1J", "17,278", "does not contain", null)]
-        [NUnit.Framework.TestCaseAttribute("Begins with", "00", "14", "begins with", null)]
-        [NUnit.Framework.TestCaseAttribute("Ends with", "41", "7", "ends with", null)]
-        [NUnit.Framework.TestCaseAttribute("Empty", "", "", "is empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Not empty", "", "17,279", "is not empty", null)]
         public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -4354,16 +4819,107 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.CategoryAttribute("DAS12199")]
-        [NUnit.Framework.CategoryAttribute("DAS12220")]
-        [NUnit.Framework.TestCaseAttribute("Equals", "Red", "9,438", "is", null)]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "Red", "31,901", "is not", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Equals", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=931)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
+        {
+#line 916
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "00BDM1JUR8IF419", "1", "is", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Does not " +
+            "equal", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=931)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
+        {
+#line 916
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "00BDM1JUR8IF419", "17,278", "is not", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Contains", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=931)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Contains()
+        {
+#line 916
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Contains", "00B", "6", "contains", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Does not " +
+            "contain", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=931)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotContain()
+        {
+#line 916
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not contain", "00BDM1J", "17,278", "does not contain", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Begins wi" +
+            "th", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=931)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_BeginsWith()
+        {
+#line 916
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Begins with", "00", "14", "begins with", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Ends with" +
+            "", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=931)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_EndsWith()
+        {
+#line 916
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Ends with", "41", "7", "ends with", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Empty", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=931)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Empty()
+        {
+#line 916
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Empty", "", "", "is empty", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Not empty" +
+            "", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=931)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_NotEmpty()
+        {
+#line 916
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Not empty", "", "17,279", "is not empty", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -4436,18 +4992,35 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.TestCaseAttribute("Equals", "1", "2", "is", null)]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "1", "2,221", "is not", null)]
-        [NUnit.Framework.TestCaseAttribute("Greater than", "1", "1,057", "is greater than", null)]
-        [NUnit.Framework.TestCaseAttribute("Greater than or equal to", "1", "1,059", "is greater than or equal to", null)]
-        [NUnit.Framework.TestCaseAttribute("Less than", "1", "1,164", "is less than", null)]
-        [NUnit.Framework.TestCaseAttribute("Less than or equal to", "1", "1,166", "is less than or equal to", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Equals", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS12199",
+                "DAS12220"}, SourceLine=957)]
+        public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
+        {
+#line 942
+this.EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "Red", "9,438", "is", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Does not eq" +
+            "ual", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS12199",
+                "DAS12220"}, SourceLine=957)]
+        public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
+        {
+#line 942
+this.EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "Red", "31,901", "is not", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -4521,19 +5094,84 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,878", "is not empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "8 Mar 2016", "14,881", "is not", null)]
-        [NUnit.Framework.TestCaseAttribute("Equals", "8 Mar 2016", "3", "is", null)]
-        [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Before", "8 Mar 2016", "4,799", "is before", null)]
-        [NUnit.Framework.TestCaseAttribute("After", "8 Mar 2016", "10,076", "is after", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Equa" +
+            "ls", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=977)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
+        {
+#line 962
+this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "1", "2", "is", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Does" +
+            " not equal", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=977)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
+        {
+#line 962
+this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "1", "2,221", "is not", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Grea" +
+            "ter than", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=977)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_GreaterThan()
+        {
+#line 962
+this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Greater than", "1", "1,057", "is greater than", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Grea" +
+            "ter than or equal to", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=977)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_GreaterThanOrEqualTo()
+        {
+#line 962
+this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Greater than or equal to", "1", "1,059", "is greater than or equal to", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Less" +
+            " than", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=977)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_LessThan()
+        {
+#line 962
+this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Less than", "1", "1,164", "is less than", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Less" +
+            " than or equal to", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=977)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_LessThanOrEqualTo()
+        {
+#line 962
+this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Less than or equal to", "1", "1,166", "is less than or equal to", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -4608,21 +5246,86 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.CategoryAttribute("DAS11090")]
-        [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.CategoryAttribute("DAS12698")]
-        [NUnit.Framework.TestCaseAttribute("Equals", "22 Nov 2012", "16", "is", null)]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "22 Nov 2012", "17,263", "is not", null)]
-        [NUnit.Framework.TestCaseAttribute("Before", "22 Nov 2012", "1", "is before", null)]
-        [NUnit.Framework.TestCaseAttribute("After", "14 May 2012", "16", "is after", null)]
-        [NUnit.Framework.TestCaseAttribute("Empty", "", "17,262", "is empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Not empty", "", "17", "is not empty", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Not emp" +
+            "ty", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS12114"}, SourceLine=1001)]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_NotEmpty()
+        {
+#line 986
+this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Not empty", "", "14,878", "is not empty", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Does no" +
+            "t equal", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS12114"}, SourceLine=1001)]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
+        {
+#line 986
+this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "8 Mar 2016", "14,881", "is not", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Equals", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS12114"}, SourceLine=1001)]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
+        {
+#line 986
+this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "8 Mar 2016", "3", "is", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Empty", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS12114"}, SourceLine=1001)]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Empty()
+        {
+#line 986
+this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Empty", "", "6", "is empty", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, Before", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS12114"}, SourceLine=1001)]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Before()
+        {
+#line 986
+this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Before", "8 Mar 2016", "4,799", "is before", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo, After", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS12114"}, SourceLine=1001)]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_After()
+        {
+#line 986
+this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("After", "8 Mar 2016", "10,076", "is after", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -4700,14 +5403,102 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.TestCaseAttribute("Equals", "TRUE", "41,231", "is", null)]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "TRUE", "108", "is not", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime, E" +
+            "quals", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS11090",
+                "DAS12114",
+                "DAS12698"}, SourceLine=1025)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_Equals()
+        {
+#line 1010
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Equals", "22 Nov 2012", "16", "is", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime, D" +
+            "oes not equal", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS11090",
+                "DAS12114",
+                "DAS12698"}, SourceLine=1025)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_DoesNotEqual()
+        {
+#line 1010
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Does not equal", "22 Nov 2012", "17,263", "is not", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime, B" +
+            "efore", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS11090",
+                "DAS12114",
+                "DAS12698"}, SourceLine=1025)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_Before()
+        {
+#line 1010
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Before", "22 Nov 2012", "1", "is before", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime, A" +
+            "fter", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS11090",
+                "DAS12114",
+                "DAS12698"}, SourceLine=1025)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_After()
+        {
+#line 1010
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("After", "14 May 2012", "16", "is after", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime, E" +
+            "mpty", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS11090",
+                "DAS12114",
+                "DAS12698"}, SourceLine=1025)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_Empty()
+        {
+#line 1010
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Empty", "", "17,262", "is empty", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime, N" +
+            "ot empty", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS11090",
+                "DAS12114",
+                "DAS12698"}, SourceLine=1025)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_NotEmpty()
+        {
+#line 1010
+this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Not empty", "", "17", "is not empty", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -4781,16 +5572,41 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWorkingCorrect" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.CategoryAttribute("DAS11512")]
-        [NUnit.Framework.CategoryAttribute("DAS13376")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled, Equa" +
+            "ls", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=1049)]
+        public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled_Equals()
+        {
+#line 1034
+this.EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled("Equals", "TRUE", "41,231", "is", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled, Does" +
+            " not equal", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696"}, SourceLine=1049)]
+        public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled_DoesNotEqual()
+        {
+#line 1034
+this.EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled("Does not equal", "TRUE", "108", "is not", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWorkingCorrect" +
+            "", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10696",
+                "DAS11512",
+                "DAS13376",
+                "Cleanup"}, SourceLine=1053)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWorkingCorrect()
         {
             string[] tagsOfScenario = new string[] {
@@ -4885,14 +5701,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyInFilterInfo")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11142")]
-        [NUnit.Framework.CategoryAttribute("DAS11665")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyInFilterInfo", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11142",
+                "DAS11665",
+                "Cleanup"}, SourceLine=1073)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyInFilterInfo()
         {
             string[] tagsOfScenario = new string[] {
@@ -5043,16 +5858,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevices" +
-            "ListAreRestoredCorrectlyAndAreShownInTheFiltersPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10790")]
-        [NUnit.Framework.CategoryAttribute("DAS13206")]
-        [NUnit.Framework.CategoryAttribute("DAS13178")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevices" +
+            "ListAreRestoredCorrectlyAndAreShownInTheFiltersPanel", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS10790",
+                "DAS13206",
+                "DAS13178",
+                "Cleanup"}, SourceLine=1116)]
         public virtual void EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevicesListAreRestoredCorrectlyAndAreShownInTheFiltersPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -5165,12 +5979,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckDisplayingListAfterAppliyingFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18833")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckDisplayingListAfterAppliyingFilter", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS18833"}, SourceLine=1140)]
         public virtual void EvergreenJnr_DevicesList_CheckDisplayingListAfterAppliyingFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -5234,16 +6047,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDis" +
-            "playedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12812")]
-        [NUnit.Framework.CategoryAttribute("DAS12056")]
-        [NUnit.Framework.TestCaseAttribute("User Enabled", "FALSE", "User whose Enabled is False has used app", null)]
-        [NUnit.Framework.TestCaseAttribute("User Compliance", "Red", "User whose Compliance is Red has used app", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly(string filterName, string checkbox, string filterInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -5317,17 +6120,34 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorr" +
-            "ectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12812")]
-        [NUnit.Framework.CategoryAttribute("DAS12056")]
-        [NUnit.Framework.TestCaseAttribute("User SID", "Begins with", "S-1-5-99", "User whose SID begins with S-1-5-99 has used app", null)]
-        [NUnit.Framework.TestCaseAttribute("User GUID", "Begins with", "180a2898-9ab2", "User whose GUID begins with 180a2898-9ab2 has used app", null)]
-        [NUnit.Framework.TestCaseAttribute("User Username", "Contains", "ZDP", "User whose Username contains ZDP has used app", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDis" +
+            "playedCorrectly, User Enabled", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12812",
+                "DAS12056"}, SourceLine=1165)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly_UserEnabled()
+        {
+#line 1152
+this.EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly("User Enabled", "FALSE", "User whose Enabled is False has used app", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDis" +
+            "playedCorrectly, User Compliance", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12812",
+                "DAS12056"}, SourceLine=1165)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly_UserCompliance()
+        {
+#line 1152
+this.EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly("User Compliance", "Red", "User whose Compliance is Red has used app", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly(string filterName, string filterType, string filterValue, string filterInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -5400,15 +6220,56 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUserKeyFilters" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12854")]
-        [NUnit.Framework.CategoryAttribute("DAS12812")]
-        [NUnit.Framework.CategoryAttribute("DAS12056")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorr" +
+            "ectly, User SID", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12812",
+                "DAS12056"}, SourceLine=1183)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly_UserSID()
+        {
+#line 1170
+this.EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly("User SID", "Begins with", "S-1-5-99", "User whose SID begins with S-1-5-99 has used app", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorr" +
+            "ectly, User GUID", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12812",
+                "DAS12056"}, SourceLine=1183)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly_UserGUID()
+        {
+#line 1170
+this.EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly("User GUID", "Begins with", "180a2898-9ab2", "User whose GUID begins with 180a2898-9ab2 has used app", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorr" +
+            "ectly, User Username", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12812",
+                "DAS12056"}, SourceLine=1183)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly_UserUsername()
+        {
+#line 1170
+this.EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly("User Username", "Contains", "ZDP", "User whose Username contains ZDP has used app", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUserKeyFilters" +
+            "", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12854",
+                "DAS12812",
+                "DAS12056"}, SourceLine=1188)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUserKeyFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -5505,15 +6366,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatFloorFilterEqualsEmptyValueIsDisplayedCorrectlyIn" +
-            "TheFilterPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12520")]
-        [NUnit.Framework.CategoryAttribute("DAS12785")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatFloorFilterEqualsEmptyValueIsDisplayedCorrectlyIn" +
+            "TheFilterPanel", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12520",
+                "DAS12785",
+                "Cleanup"}, SourceLine=1207)]
         public virtual void EvergreenJnr_UsersList_CheckThatFloorFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -5609,14 +6469,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValueIsDisplaye" +
-            "dCorrectlyInTheFilterPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12520")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValueIsDisplaye" +
+            "dCorrectlyInTheFilterPanel", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12520",
+                "Cleanup"}, SourceLine=1227)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -5699,15 +6558,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12205")]
-        [NUnit.Framework.CategoryAttribute("DAS12624")]
-        [NUnit.Framework.CategoryAttribute("DAS13376")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12205",
+                "DAS12624",
+                "DAS13376",
+                "Cleanup"}, SourceLine=1243)]
         public virtual void EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName()
         {
             string[] tagsOfScenario = new string[] {
@@ -5845,16 +6703,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFil" +
-            "terPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS12520")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "OS Branch", "TestList5433", "All Devices", "OS Branch is Empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Country", "TestList5436", "All Mailboxes", "Country is Empty", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel(string listName, string filterName, string customList, string allList, string filterInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -5935,18 +6783,45 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAs" +
-            "sociationsList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11468")]
-        [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.CategoryAttribute("DAS13376")]
-        [NUnit.Framework.CategoryAttribute("DAS14222")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFil" +
+            "terPanel, Devices", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12520",
+                "Cleanup"}, SourceLine=1293)]
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel_Devices()
+        {
+#line 1277
+this.EvergreenJnr_AllLists_CheckThatFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel("Devices", "OS Branch", "TestList5433", "All Devices", "OS Branch is Empty", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFil" +
+            "terPanel, Mailboxes", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS12520",
+                "Cleanup"}, SourceLine=1293)]
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel_Mailboxes()
+        {
+#line 1277
+this.EvergreenJnr_AllLists_CheckThatFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel("Mailboxes", "Country", "TestList5436", "All Mailboxes", "Country is Empty", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAs" +
+            "sociationsList", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11468",
+                "DAS12152",
+                "DAS12602",
+                "DAS13376",
+                "DAS14222",
+                "Cleanup"}, SourceLine=1298)]
         public virtual void EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList()
         {
             string[] tagsOfScenario = new string[] {
@@ -6068,16 +6943,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingA" +
-            "ssociationsList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11468")]
-        [NUnit.Framework.CategoryAttribute("DAS13376")]
-        [NUnit.Framework.CategoryAttribute("DAS14222")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingA" +
+            "ssociationsList", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11468",
+                "DAS13376",
+                "DAS14222",
+                "Cleanup"}, SourceLine=1324)]
         public virtual void EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingAssociationsList()
         {
             string[] tagsOfScenario = new string[] {
@@ -6190,12 +7064,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18065")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPanel", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS18065"}, SourceLine=1349)]
         public virtual void EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -6292,18 +7165,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFilters" +
-            "Panel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13391")]
-        [NUnit.Framework.CategoryAttribute("DAS15776")]
-        [NUnit.Framework.TestCaseAttribute("Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel(string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -6358,13 +7219,68 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicationCategory" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11466")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFilters" +
+            "Panel, Devices", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS13391",
+                "DAS15776"}, SourceLine=1381)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel_Devices()
+        {
+#line 1374
+this.EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel("Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFilters" +
+            "Panel, Users", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS13391",
+                "DAS15776"}, SourceLine=1381)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel_Users()
+        {
+#line 1374
+this.EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel("Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFilters" +
+            "Panel, Applications", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS13391",
+                "DAS15776"}, SourceLine=1381)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel_Applications()
+        {
+#line 1374
+this.EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel("Applications", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFilters" +
+            "Panel, Mailboxes", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS13391",
+                "DAS15776"}, SourceLine=1381)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel_Mailboxes()
+        {
+#line 1374
+this.EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel("Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicationCategory" +
+            "", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11466"}, SourceLine=1387)]
         public virtual void EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicationCategory()
         {
             string[] tagsOfScenario = new string[] {
@@ -6423,13 +7339,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterClearingAFilterSe" +
-            "archValue")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11539")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterClearingAFilterSe" +
+            "archValue", new string[] {
+                "Evergreen",
+                "Evergreen_FiltersFeature",
+                "FiltersDisplay",
+                "DAS11539"}, SourceLine=1396)]
         public virtual void EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterClearingAFilterSearchValue()
         {
             string[] tagsOfScenario = new string[] {
@@ -6495,6 +7410,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }
