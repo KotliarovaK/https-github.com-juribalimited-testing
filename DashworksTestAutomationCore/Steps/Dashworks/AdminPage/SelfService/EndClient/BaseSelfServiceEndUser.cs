@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
@@ -94,6 +95,29 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
 
             Verify.IsFalse(page.GetButtonOnEndUserPage(buttonTitle).Disabled(), $"'{buttonTitle}' button wasn't enabled for End User");
+        }
+
+        [Then(@"'(.*)' button has tooltip with '(.*)' text on end user Self Service page")]
+        public void ThenButtonHasTooltipWithTextOnEndUserSelfServicePage(string buttonName, string tooltipText)
+        {
+            var page = _driver.NowAt<SelfServiceEndClientBasePage>();
+            var button = page.GetButtonOnEndUserPage(buttonName);
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(tooltipText, toolTipText,
+                $"'{buttonName}' button tooltip is incorrect");
+        }
+
+        [Then(@"tooltip is not displayed for '(.*)' button on end user Self Service page")]
+        public void TooltipIsNotDisplayedForButtonOnEndUserSelfServicePage(string buttonName)
+        {
+            var page = _driver.NowAt<SelfServiceEndClientBasePage>();
+            var button = page.GetButtonOnEndUserPage(buttonName);
+            _driver.MouseHover(button);
+            //For tooltip display
+            Thread.Sleep(300);
+            Verify.IsFalse(_driver.IsTooltipDisplayed(),
+                $"Tooltip for '{buttonName}' button is displayed");
         }
 
         [Then(@"Header is displayed on End User page")]
