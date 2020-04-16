@@ -216,3 +216,28 @@ Scenario: EvergreenJnr_ApplicationList_ChecksthatThePermissionForProjectApplicat
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Mailbox Owner' field is not displayed
+
+#AnnI 4/15/20: DAS20672 will be fixed only for 'X_Ray'
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @DAS20839 @X_Ray
+Scenario: EvergreenJnr_DevicesList_ChecksThatEmptyOwnerFieldOnProjectDetailsTabIsDisplayedCorrectly
+	When User navigates to the 'Mailbox' details page for the item with '14' ID
+	Then Details page for '0405FHJHVG45U71' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Device Owner' field
+	When User enters 'Jon' in the 'User' autocomplete field and selects 'BCLABS\03C54BC1198843A4A03 (88868) - Jones, Tina' value
+	When User clicks 'UPDATE' button on popup
+	When User clicks 'UPDATE' button on popup
+	Then following content is displayed on the Details Page
+	| Title        | Value       |
+	| Device Owner | Jones, Tina |
+	When User clicks on edit button for 'Device Owner' field
+	When User enters '71622' in the 'User' autocomplete field and selects 'UK\Unknown (71622) - Unknown' value
+	When User clicks 'UPDATE' button on popup
+	Then 'Device Owner will be changed to Unknown' text is displayed on inline tip banner
+	When User clicks 'UPDATE' button on popup
+	Then 'Device Owner successfully updated to Unknown' text is displayed on inline success banner
+	Then following content is displayed on the Details Page
+	| Title        | Value |
+	| Device Owner | Empty |
