@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("MailboxesFiltersAndColumns")]
+    [TechTalk.SpecRun.FeatureAttribute("MailboxesFiltersAndColumns", Description="\tCheck all Columns and Filters via API", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_API_FiltersAndColumns\\MailboxesFiltersAndColumns." +
+        "feature", SourceLine=0)]
     public partial class MailboxesFiltersAndColumnsFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
 #line 1 "MailboxesFiltersAndColumns.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -82,12 +80,11 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckAllColumns")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckAllColumns", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "API",
+                "FiltersAndColumns"}, SourceLine=7)]
         public virtual void EvergreenJnr_MailboxesList_CheckAllColumns()
         {
             string[] tagsOfScenario = new string[] {
@@ -130,12 +127,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckAllFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckAllFilters", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "API",
+                "FiltersAndColumns"}, SourceLine=11)]
         public virtual void EvergreenJnr_MailboxesList_CheckAllFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -178,13 +174,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.TestCaseAttribute("Organization", "Department Level 1", "mailboxes?$filter=(departmentLevelFieldId_1%20EQUALS%20(\'2\'%2C\'9\'))", null)]
         public virtual void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -221,19 +210,37 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1743 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1688 = new TechTalk.SpecFlow.Table(new string[] {
                             "FilterCategory",
                             "FilterName",
                             "QueryString"});
-                table1743.AddRow(new string[] {
+                table1688.AddRow(new string[] {
                             string.Format("{0}", filterCategory),
                             string.Format("{0}", filterName),
                             string.Format("{0}", queryString)});
 #line 17
- testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1743, "Then ");
+ testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1688, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData, Organization", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "API",
+                "FiltersAndColumns"}, SourceLine=22)]
+        public virtual void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData_Organization()
+        {
+#line 16
+this.EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData("Organization", "Department Level 1", "mailboxes?$filter=(departmentLevelFieldId_1%20EQUALS%20(\'2\'%2C\'9\'))", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

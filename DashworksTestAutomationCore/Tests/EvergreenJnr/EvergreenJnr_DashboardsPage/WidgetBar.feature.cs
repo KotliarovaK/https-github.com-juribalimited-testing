@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("WidgetBar")]
+    [TechTalk.SpecRun.FeatureAttribute("WidgetBar", Description="\tRuns tests for Bar Widgets creation or editing", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_DashboardsPage\\WidgetBar.feature", SourceLine=0)]
     public partial class WidgetBarFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line 1 "WidgetBar.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,14 +82,13 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpec" +
-            "ificColumns")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15356")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpec" +
+            "ificColumns", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15356",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumns()
         {
             string[] tagsOfScenario = new string[] {
@@ -134,16 +130,16 @@ this.FeatureBackground();
 #line 10
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2168 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2113 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2168.AddRow(new string[] {
+                table2113.AddRow(new string[] {
                             "Secure Boot Enabled"});
-                table2168.AddRow(new string[] {
+                table2113.AddRow(new string[] {
                             "Manufacturer"});
-                table2168.AddRow(new string[] {
+                table2113.AddRow(new string[] {
                             "Compliance"});
 #line 11
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2168, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2113, "When ");
 #line hidden
 #line 16
  testRunner.And("User clicks on \'Manufacturer\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -163,7 +159,7 @@ this.FeatureBackground();
 #line 21
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2169 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2114 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
@@ -173,7 +169,7 @@ this.FeatureBackground();
                             "OrderBy",
                             "MaxValues",
                             "ShowLegend"});
-                table2169.AddRow(new string[] {
+                table2114.AddRow(new string[] {
                             "Bar",
                             "WidgetForDAS15356",
                             "List15356",
@@ -184,7 +180,7 @@ this.FeatureBackground();
                             "10",
                             "true"});
 #line 22
- testRunner.And("User adds new Widget", ((string)(null)), table2169, "And ");
+ testRunner.And("User adds new Widget", ((string)(null)), table2114, "And ");
 #line hidden
 #line 25
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -202,21 +198,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
-            "tHasNoRows")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16167")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Pie", null)]
-        [NUnit.Framework.TestCaseAttribute("Bar", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", null)]
-        [NUnit.Framework.TestCaseAttribute("Line", null)]
-        [NUnit.Framework.TestCaseAttribute("Donut", null)]
-        [NUnit.Framework.TestCaseAttribute("Half donut", null)]
-        [NUnit.Framework.TestCaseAttribute("Table", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows(string widgetType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -261,13 +242,13 @@ this.FeatureBackground();
 #line 33
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2170 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2115 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2170.AddRow(new string[] {
+                table2115.AddRow(new string[] {
                             "ZZZZ"});
 #line 34
  testRunner.When("User add \"Owner Display Name\" filter where type is \"Equals\" with added column and" +
-                        " following value:", ((string)(null)), table2170, "When ");
+                        " following value:", ((string)(null)), table2115, "When ");
 #line hidden
 #line 37
  testRunner.When("User selects \'SAVE AS DYNAMIC LIST\' option from Save menu and creates \'ListForDAS" +
@@ -285,14 +266,14 @@ this.FeatureBackground();
 #line 41
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2171 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2116 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "SplitBy",
                             "AggregateFunction",
                             "OrderBy"});
-                table2171.AddRow(new string[] {
+                table2116.AddRow(new string[] {
                             string.Format("{0}", widgetType),
                             "WidgetForDAS16167",
                             "ListForDAS16167",
@@ -300,7 +281,7 @@ this.FeatureBackground();
                             "Count",
                             "Operating System ASC"});
 #line 42
- testRunner.When("User adds new Widget", ((string)(null)), table2171, "When ");
+ testRunner.When("User adds new Widget", ((string)(null)), table2116, "When ");
 #line hidden
 #line 45
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -322,16 +303,104 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS18100")]
-        [NUnit.Framework.CategoryAttribute("DAS19348")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Import Type", "Not empty", "ListForDAS18100_2", "DAS18100_Dashboard", "WidgetForDAS18100", "Import Type ASC", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Recipient Type", "Not empty", "ListForDAS19348_2", "DAS19348_Dashboard", "WidgetForDAS19348", "Recipient Type ASC", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Pie", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Pie()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Pie", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Bar", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Bar()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Bar", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Column", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Column()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Line", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Line()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Line", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Donut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Donut()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Donut", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Half donut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_HalfDonut()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Half donut", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
+            "tHasNoRows, Table", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=52)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows_Table()
+        {
+#line 31
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows("Table", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated(string listType, string listName, string filter, string @operator, string savedList, string dashboardName, string widgetName, string orderBy, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -379,10 +448,10 @@ this.FeatureBackground();
 #line 65
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2172 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2117 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedValues"});
 #line 66
- testRunner.When(string.Format("User add \"{0}\" filter where type is \"{1}\" with added column and Lookup option", filter, @operator), ((string)(null)), table2172, "When ");
+ testRunner.When(string.Format("User add \"{0}\" filter where type is \"{1}\" with added column and Lookup option", filter, @operator), ((string)(null)), table2117, "When ");
 #line hidden
 #line 68
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -402,14 +471,14 @@ this.FeatureBackground();
 #line 73
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2173 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2118 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "SplitBy",
                             "AggregateFunction",
                             "OrderBy"});
-                table2173.AddRow(new string[] {
+                table2118.AddRow(new string[] {
                             "Bar",
                             string.Format("{0}", widgetName),
                             string.Format("{0}", savedList),
@@ -417,7 +486,7 @@ this.FeatureBackground();
                             "Count",
                             string.Format("{0}", orderBy)});
 #line 74
- testRunner.When("User adds new Widget", ((string)(null)), table2173, "When ");
+ testRunner.When("User adds new Widget", ((string)(null)), table2118, "When ");
 #line hidden
 #line 77
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -438,17 +507,36 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS17360")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Bar", "Stacked", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", "Stacked", null)]
-        [NUnit.Framework.TestCaseAttribute("Bar", "Clustered", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", "Clustered", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated, Device" +
+            "s", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS18100",
+                "DAS19348",
+                "Cleanup"}, SourceLine=84)]
+        public virtual void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated_Devices()
+        {
+#line 62
+this.EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated("Devices", "All Devices", "Import Type", "Not empty", "ListForDAS18100_2", "DAS18100_Dashboard", "WidgetForDAS18100", "Import Type ASC", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated, Mailbo" +
+            "xes", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS18100",
+                "DAS19348",
+                "Cleanup"}, SourceLine=84)]
+        public virtual void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated_Mailboxes()
+        {
+#line 62
+this.EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated("Mailboxes", "All Mailboxes", "Recipient Type", "Not empty", "ListForDAS19348_2", "DAS19348_Dashboard", "WidgetForDAS19348", "Recipient Type ASC", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType(string widgetType, string displyType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -495,7 +583,7 @@ this.FeatureBackground();
 #line 92
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2174 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2119 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
@@ -504,7 +592,7 @@ this.FeatureBackground();
                             "DisplayType",
                             "AggregateFunction",
                             "OrderBy"});
-                table2174.AddRow(new string[] {
+                table2119.AddRow(new string[] {
                             string.Format("{0}", widgetType),
                             "WidgetForDAS17360",
                             "All Devices",
@@ -514,7 +602,7 @@ this.FeatureBackground();
                             "Count",
                             "Hostname ASC"});
 #line 93
- testRunner.When("User adds new Widget", ((string)(null)), table2174, "When ");
+ testRunner.When("User adds new Widget", ((string)(null)), table2119, "When ");
 #line hidden
 #line 96
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -535,15 +623,62 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS17360")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Bar", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType, Va" +
+            "riant 0", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=103)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType_Variant0()
+        {
+#line 89
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType("Bar", "Stacked", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType, Va" +
+            "riant 1", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=103)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType_Variant1()
+        {
+#line 89
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType("Column", "Stacked", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType, Va" +
+            "riant 2", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=103)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType_Variant2()
+        {
+#line 89
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType("Bar", "Clustered", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType, Va" +
+            "riant 3", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=103)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType_Variant3()
+        {
+#line 89
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType("Column", "Clustered", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet(string widgetType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -590,14 +725,14 @@ this.FeatureBackground();
 #line 113
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2175 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2120 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "SplitBy",
                             "AggregateFunction",
                             "OrderBy"});
-                table2175.AddRow(new string[] {
+                table2120.AddRow(new string[] {
                             string.Format("{0}", widgetType),
                             "WidgetForDAS17360Cat",
                             "All Devices",
@@ -605,7 +740,7 @@ this.FeatureBackground();
                             "Count",
                             "Hostname ASC"});
 #line 114
- testRunner.When("User adds new Widget", ((string)(null)), table2175, "When ");
+ testRunner.When("User adds new Widget", ((string)(null)), table2120, "When ");
 #line hidden
 #line 117
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -624,6 +759,39 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet, Bar", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=124)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet_Bar()
+        {
+#line 110
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet("Bar", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet, Column" +
+            "", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS17360",
+                "Cleanup"}, SourceLine=124)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet_Column()
+        {
+#line 110
+this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet("Column", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

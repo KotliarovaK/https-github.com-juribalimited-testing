@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CheckingExistingFields")]
+    [TechTalk.SpecRun.FeatureAttribute("CheckingExistingFields", Description="\tRuns Item Details Checking Existing Fields related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ItemDetailsContent\\ActionsWithFieldsC" +
+        "ontent\\CheckingExistingFields.feature", SourceLine=0)]
     public partial class CheckingExistingFieldsFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "CheckingExistingFields.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,15 +83,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheComputerAdObject" +
-            "Section")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15889")]
-        [NUnit.Framework.CategoryAttribute("DAS16378")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheComputerAdObject" +
+            "Section", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS15889",
+                "DAS16378"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheComputerAdObjectSection()
         {
             string[] tagsOfScenario = new string[] {
@@ -143,52 +140,51 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User navigates to the \'Active Directory\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3036 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2981 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3036.AddRow(new string[] {
+                table2981.AddRow(new string[] {
                             "Directory Type"});
-                table3036.AddRow(new string[] {
+                table2981.AddRow(new string[] {
                             "Domain"});
-                table3036.AddRow(new string[] {
+                table2981.AddRow(new string[] {
                             "Fully Distinguished Object Name"});
-                table3036.AddRow(new string[] {
+                table2981.AddRow(new string[] {
                             "Common Name"});
-                table3036.AddRow(new string[] {
+                table2981.AddRow(new string[] {
                             "Display Name"});
-                table3036.AddRow(new string[] {
+                table2981.AddRow(new string[] {
                             "Description"});
 #line 13
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3036, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2981, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3037 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2982 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3037.AddRow(new string[] {
+                table2982.AddRow(new string[] {
                             "Common Name",
                             "00OMQQXWA1DRI6"});
 #line 21
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3037, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2982, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyFo" +
-            "rDeviceObjects")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16829")]
-        [NUnit.Framework.CategoryAttribute("DAS16859")]
-        [NUnit.Framework.CategoryAttribute("DAS17645")]
-        [NUnit.Framework.CategoryAttribute("DAS17785")]
-        [NUnit.Framework.CategoryAttribute("DAS17809")]
-        [NUnit.Framework.CategoryAttribute("DAS18095")]
-        [NUnit.Framework.CategoryAttribute("DAS18011")]
-        [NUnit.Framework.CategoryAttribute("DAS17810")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyFo" +
+            "rDeviceObjects", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16829",
+                "DAS16859",
+                "DAS17645",
+                "DAS17785",
+                "DAS17809",
+                "DAS18095",
+                "DAS18011",
+                "DAS17810",
+                "Void"}, SourceLine=25)]
         public virtual void EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects()
         {
             string[] tagsOfScenario = new string[] {
@@ -263,56 +259,55 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3038 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2983 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Object ID"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Name"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Device Owner"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Readiness"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Path"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Team"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Bucket"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Capacity Unit"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Ring"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Category"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Self Service URL"});
-                table3038.AddRow(new string[] {
+                table2983.AddRow(new string[] {
                             "Tags"});
 #line 33
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3038, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2983, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForU" +
-            "serObjects")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16829")]
-        [NUnit.Framework.CategoryAttribute("DAS16858")]
-        [NUnit.Framework.CategoryAttribute("DAS17160")]
-        [NUnit.Framework.CategoryAttribute("DAS17325")]
-        [NUnit.Framework.CategoryAttribute("DAS17645")]
-        [NUnit.Framework.CategoryAttribute("DAS17809")]
-        [NUnit.Framework.CategoryAttribute("DAS18095")]
-        [NUnit.Framework.CategoryAttribute("DAS18011")]
-        [NUnit.Framework.CategoryAttribute("DAS17810")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForU" +
+            "serObjects", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16829",
+                "DAS16858",
+                "DAS17160",
+                "DAS17325",
+                "DAS17645",
+                "DAS17809",
+                "DAS18095",
+                "DAS18011",
+                "DAS17810",
+                "Void"}, SourceLine=48)]
         public virtual void EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects()
         {
             string[] tagsOfScenario = new string[] {
@@ -385,58 +380,57 @@ this.FeatureBackground();
 #line 54
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3039 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2984 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Object ID"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Name"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Primary Device"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Readiness"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Path"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Team"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Bucket"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Capacity Unit"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Ring"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Category"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Self Service URL"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Language"});
-                table3039.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Tags"});
 #line 55
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3039, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2984, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrec" +
-            "tlyForApplicationObjects")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16829")]
-        [NUnit.Framework.CategoryAttribute("DAS16861")]
-        [NUnit.Framework.CategoryAttribute("DAS17158")]
-        [NUnit.Framework.CategoryAttribute("DAS17239")]
-        [NUnit.Framework.CategoryAttribute("DAS17645")]
-        [NUnit.Framework.CategoryAttribute("DAS17809")]
-        [NUnit.Framework.CategoryAttribute("DAS18095")]
-        [NUnit.Framework.CategoryAttribute("DAS18011")]
-        [NUnit.Framework.CategoryAttribute("DAS17810")]
-        [NUnit.Framework.CategoryAttribute("DAS19923")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrec" +
+            "tlyForApplicationObjects", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16829",
+                "DAS16861",
+                "DAS17158",
+                "DAS17239",
+                "DAS17645",
+                "DAS17809",
+                "DAS18095",
+                "DAS18011",
+                "DAS17810",
+                "DAS19923"}, SourceLine=71)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects()
         {
             string[] tagsOfScenario = new string[] {
@@ -511,59 +505,58 @@ this.FeatureBackground();
 #line 77
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3040 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2985 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Object ID"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Name"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "App Owner"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Readiness"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "App Readiness"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "App Rationalisation"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Target App"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Criticality"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Hide From End Users"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Path"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Team"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Capacity Unit"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Category"});
-                table3040.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Tags"});
 #line 78
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3040, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2985, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectly" +
-            "ForMailboxObjects")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16829")]
-        [NUnit.Framework.CategoryAttribute("DAS16957")]
-        [NUnit.Framework.CategoryAttribute("DAS17645")]
-        [NUnit.Framework.CategoryAttribute("DAS17785")]
-        [NUnit.Framework.CategoryAttribute("DAS17809")]
-        [NUnit.Framework.CategoryAttribute("DAS18095")]
-        [NUnit.Framework.CategoryAttribute("DAS18011")]
-        [NUnit.Framework.CategoryAttribute("DAS17810")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectly" +
+            "ForMailboxObjects", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16829",
+                "DAS16957",
+                "DAS17645",
+                "DAS17785",
+                "DAS17809",
+                "DAS18095",
+                "DAS18011",
+                "DAS17810",
+                "Void"}, SourceLine=95)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects()
         {
             string[] tagsOfScenario = new string[] {
@@ -636,49 +629,48 @@ this.FeatureBackground();
 #line 101
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3041 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2986 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Object ID"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Name"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Mailbox Owner"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Readiness"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Path"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Team"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Bucket"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Capacity Unit"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Ring"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Category"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Self Service URL"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Language"});
-                table3041.AddRow(new string[] {
+                table2986.AddRow(new string[] {
                             "Tags"});
 #line 102
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3041, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2986, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwn" +
-            "erBlockOfDeviceDetails")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11510")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwn" +
+            "erBlockOfDeviceDetails", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11510"}, SourceLine=118)]
         public virtual void EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails()
         {
             string[] tagsOfScenario = new string[] {
@@ -733,14 +725,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheMailbox" +
-            "OwnerBlockOfDeviceDetails")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17775")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheMailbox" +
+            "OwnerBlockOfDeviceDetails", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17775"}, SourceLine=125)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheMailboxOwnerBlockOfDeviceDetails()
         {
             string[] tagsOfScenario = new string[] {
@@ -796,14 +787,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigatingToTheMat" +
-            "erialTableOnObjectDetails")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17735")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigatingToTheMat" +
+            "erialTableOnObjectDetails", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17735"}, SourceLine=132)]
         public virtual void EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigatingToTheMaterialTableOnObjectDetails()
         {
             string[] tagsOfScenario = new string[] {
@@ -858,22 +848,22 @@ this.FeatureBackground();
 #line 138
  testRunner.And("User navigates to the \'Device\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3042 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2987 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3042.AddRow(new string[] {
+                table2987.AddRow(new string[] {
                             "Key"});
-                table3042.AddRow(new string[] {
+                table2987.AddRow(new string[] {
                             "Hostname"});
-                table3042.AddRow(new string[] {
+                table2987.AddRow(new string[] {
                             "Source"});
-                table3042.AddRow(new string[] {
+                table2987.AddRow(new string[] {
                             "Source Type"});
-                table3042.AddRow(new string[] {
+                table2987.AddRow(new string[] {
                             "Inventory Site"});
-                table3042.AddRow(new string[] {
+                table2987.AddRow(new string[] {
                             "Dashworks First Seen Date"});
 #line 139
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3042, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2987, "Then ");
 #line hidden
 #line 147
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -882,17 +872,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18162")]
-        [NUnit.Framework.CategoryAttribute("DAS17394")]
-        [NUnit.Framework.TestCaseAttribute("Device", "00YTY8U3ZYP2WT", "Device Owner", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "013DA2178AB4444CAF2", "User", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox", "ZGF0027767@bclabs.local", "Mailbox Owner", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages(string pageName, string itemName, string subTabName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -940,66 +919,95 @@ this.FeatureBackground();
 #line 153
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3043 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2988 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Key"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Directory Type"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Domain"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Username"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Common Name"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Distinguished Name"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Display Name"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "SID"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "GUID"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Last Logon Date"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Compliance"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Enabled"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Parent Distinguished Name"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Given Name"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Surname"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Description"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Home Drive"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Home Directory"});
-                table3043.AddRow(new string[] {
+                table2988.AddRow(new string[] {
                             "Email Address"});
 #line 154
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3043, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2988, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11983")]
-        [NUnit.Framework.CategoryAttribute("DAS11926")]
-        [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "00K4CEEQ737BA4L", "Hostname", "Department and Location", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "$231000-3AC04R8AR431", "Username", "Department and Location", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "aaron.u.flores@dwlabs.local", "Email Address", "Department and Location", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "000F977AC8824FE39B8@bclabs.local", "Email Address", "Mailbox", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages, Device", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18162",
+                "DAS17394"}, SourceLine=177)]
+        public virtual void EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages_Device()
+        {
+#line 150
+this.EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages("Device", "00YTY8U3ZYP2WT", "Device Owner", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages, User", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18162",
+                "DAS17394"}, SourceLine=177)]
+        public virtual void EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages_User()
+        {
+#line 150
+this.EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages("User", "013DA2178AB4444CAF2", "User", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages, Mailbox", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18162",
+                "DAS17394"}, SourceLine=177)]
+        public virtual void EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages_Mailbox()
+        {
+#line 150
+this.EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages("Mailbox", "ZGF0027767@bclabs.local", "Mailbox Owner", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown(string pageName, string selectedName, string columnName, string subMenuName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1061,20 +1069,70 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13679")]
-        [NUnit.Framework.CategoryAttribute("DAS14216")]
-        [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.CategoryAttribute("DAS17093")]
-        [NUnit.Framework.CategoryAttribute("DAS17093")]
-        [NUnit.Framework.CategoryAttribute("DAS17236")]
-        [NUnit.Framework.TestCaseAttribute("Device", "00HA7MKAVVFDAV", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox", "000F977AC8824FE39B8@bclabs.local", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown, Variant " +
+            "0", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11983",
+                "DAS11926",
+                "DAS14923"}, SourceLine=194)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown_Variant0()
+        {
+#line 185
+this.EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown("Devices", "00K4CEEQ737BA4L", "Hostname", "Department and Location", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown, Variant " +
+            "1", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11983",
+                "DAS11926",
+                "DAS14923"}, SourceLine=194)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown_Variant1()
+        {
+#line 185
+this.EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown("Users", "$231000-3AC04R8AR431", "Username", "Department and Location", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown, Variant " +
+            "2", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11983",
+                "DAS11926",
+                "DAS14923"}, SourceLine=194)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown_Variant2()
+        {
+#line 185
+this.EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown("Mailboxes", "aaron.u.flores@dwlabs.local", "Email Address", "Department and Location", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown, Variant " +
+            "3", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11983",
+                "DAS11926",
+                "DAS14923"}, SourceLine=194)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown_Variant3()
+        {
+#line 185
+this.EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown("Mailboxes", "000F977AC8824FE39B8@bclabs.local", "Email Address", "Mailbox", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully(string listName, string itemName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1129,18 +1187,18 @@ this.FeatureBackground();
 #line 205
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3044 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2989 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3044.AddRow(new string[] {
+                table2989.AddRow(new string[] {
                             "Project Count"});
-                table3044.AddRow(new string[] {
+                table2989.AddRow(new string[] {
                             "Evergreen Bucket"});
-                table3044.AddRow(new string[] {
+                table2989.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table3044.AddRow(new string[] {
+                table2989.AddRow(new string[] {
                             "Evergreen Ring"});
 #line 206
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3044, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2989, "Then ");
 #line hidden
 #line 212
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1149,19 +1207,56 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatProjectSummarySectionIsDisplayedSuccessfully")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13679")]
-        [NUnit.Framework.CategoryAttribute("DAS14216")]
-        [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.CategoryAttribute("DAS17093")]
-        [NUnit.Framework.CategoryAttribute("DAS17093")]
-        [NUnit.Framework.CategoryAttribute("DAS17236")]
-        [NUnit.Framework.CategoryAttribute("DAS20806")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully, Devi" +
+            "ce", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS13679",
+                "DAS14216",
+                "DAS14923",
+                "DAS17093",
+                "DAS17093",
+                "DAS17236"}, SourceLine=215)]
+        public virtual void EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully_Device()
+        {
+#line 201
+this.EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully("Device", "00HA7MKAVVFDAV", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully, Mail" +
+            "box", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS13679",
+                "DAS14216",
+                "DAS14923",
+                "DAS17093",
+                "DAS17093",
+                "DAS17236"}, SourceLine=215)]
+        public virtual void EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully_Mailbox()
+        {
+#line 201
+this.EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully("Mailbox", "000F977AC8824FE39B8@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatProjectSummarySectionIsDisplayedSuccessfully", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS13679",
+                "DAS14216",
+                "DAS14923",
+                "DAS17093",
+                "DAS17093",
+                "DAS17236",
+                "DAS20806"}, SourceLine=219)]
         public virtual void EvergreenJnr_UsersList_CheckThatProjectSummarySectionIsDisplayedSuccessfully()
         {
             string[] tagsOfScenario = new string[] {
@@ -1223,20 +1318,20 @@ this.FeatureBackground();
 #line 224
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3045 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2990 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3045.AddRow(new string[] {
+                table2990.AddRow(new string[] {
                             "Project Count"});
-                table3045.AddRow(new string[] {
+                table2990.AddRow(new string[] {
                             "Evergreen Team"});
-                table3045.AddRow(new string[] {
+                table2990.AddRow(new string[] {
                             "Evergreen Bucket"});
-                table3045.AddRow(new string[] {
+                table2990.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table3045.AddRow(new string[] {
+                table2990.AddRow(new string[] {
                             "Evergreen Ring"});
 #line 225
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3045, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2990, "Then ");
 #line hidden
 #line 232
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1245,14 +1340,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSpecificationTabForDevicesWithDeviceTypeOtherIs" +
-            "DisplayedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18423")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatSpecificationTabForDevicesWithDeviceTypeOtherIs" +
+            "DisplayedCorrectly", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18423"}, SourceLine=234)]
         public virtual void EvergreenJnr_DevicesList_CheckThatSpecificationTabForDevicesWithDeviceTypeOtherIsDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -1300,64 +1394,64 @@ this.FeatureBackground();
 #line 238
  testRunner.When("User navigates to the \'Specification\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3046 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2991 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Manufacturer"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Model"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Device Type"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Device Format"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "OS Full Name"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Operating System"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "OS Version Number"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "OS Architecture"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Service Pack or Build"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "OS Branch"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "OS Servicing State"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Serial Number"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "First Seen Date"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Last Seen Date"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Build Date"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Boot Up Date"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Warranty Date"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Memory (GB)"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "HDD Count"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "HDD Total Size (GB)"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Target Drive Free Space (GB)"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "BIOS Manufacturer"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "BIOS Name"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "BIOS Version"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "Secure Boot Enabled"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "TPM Enabled"});
-                table3046.AddRow(new string[] {
+                table2991.AddRow(new string[] {
                             "TPM Version"});
 #line 239
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3046, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2991, "Then ");
 #line hidden
 #line 268
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1366,15 +1460,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDe" +
-            "tailsTab")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18850")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDe" +
+            "tailsTab", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18850",
+                "Universe"}, SourceLine=270)]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDetailsTab()
         {
             string[] tagsOfScenario = new string[] {
@@ -1426,36 +1519,35 @@ this.FeatureBackground();
 #line 274
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3047 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2992 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3047.AddRow(new string[] {
+                table2992.AddRow(new string[] {
                             "Project Count"});
-                table3047.AddRow(new string[] {
+                table2992.AddRow(new string[] {
                             "Evergreen Capacity Unit"});
-                table3047.AddRow(new string[] {
+                table2992.AddRow(new string[] {
                             "In Catalog"});
-                table3047.AddRow(new string[] {
+                table2992.AddRow(new string[] {
                             "Criticality"});
-                table3047.AddRow(new string[] {
+                table2992.AddRow(new string[] {
                             "Rationalisation"});
-                table3047.AddRow(new string[] {
+                table2992.AddRow(new string[] {
                             "Hide From End Users"});
 #line 275
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3047, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2992, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplay" +
-            "edCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS19352")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplay" +
+            "edCorrectly", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19352",
+                "Universe"}, SourceLine=284)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -1503,85 +1595,91 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'ConfRoom-CanisMinor@dwlabs.local\' item is displayed to the user" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3048 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2993 = new TechTalk.SpecFlow.Table(new string[] {
                             "Fields"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Key"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Mailbox Platform"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Mail Server"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Principal Email Address"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Mailbox Database"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Alias"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Display Name"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "User Principal Name"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "User GUID"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Mailbox GUID"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Language"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Time Zone"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Mailbox Enabled"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Email Count"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Mailbox Size (MB)"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Associated Item Count"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Deleted Item Count"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Deleted Item Size (MB)"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Max Send Size (MB)"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Max Receive Size (MB)"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Forwarding Address (External)"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Forwarding Address (Internal)"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Created Date"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Retention Hold Enabled"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Retain Deleted Items (Days)"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Last Logon By"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Last Logon Date"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Last Logoff Date"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Mailbox Type"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Recipient Type"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Hidden From Address Lists Enabled"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Prohibit Send Quota (MB)"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Prohibit Send Receive Quota (MB)"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Issue Warning Quota (MB)"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Use Database Quota Defaults"});
-                table3048.AddRow(new string[] {
+                table2993.AddRow(new string[] {
                             "Mailbox Plan"});
 #line 288
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table3048, "Then ");
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table2993, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

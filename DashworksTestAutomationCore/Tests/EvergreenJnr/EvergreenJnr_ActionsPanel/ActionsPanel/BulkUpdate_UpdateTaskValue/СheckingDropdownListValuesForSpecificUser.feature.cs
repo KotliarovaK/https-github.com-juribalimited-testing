@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("СheckingDropdownListValuesForSpecificUser")]
+    [TechTalk.SpecRun.FeatureAttribute("СheckingDropdownListValuesForSpecificUser", Description="\tRuns Checking Dropdown List Values For Specific User related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ActionsPanel\\ActionsPanel\\BulkUpdate_UpdateTaskVa" +
+        "lue\\СheckingDropdownListValuesForSpecificUser.feature", SourceLine=0)]
     public partial class СheckingDropdownListValuesForSpecificUserFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
 #line 1 "СheckingDropdownListValuesForSpecificUser.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,23 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWith" +
-            "ProjectBulkUpdaterRole")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS12864")]
-        [NUnit.Framework.CategoryAttribute("DAS13264")]
-        [NUnit.Framework.CategoryAttribute("DAS13265")]
-        [NUnit.Framework.CategoryAttribute("DAS13278")]
-        [NUnit.Framework.CategoryAttribute("DAS14448")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("DAS13264_Devices", "Devices", "Hostname", "00CWZRC4UK6W20", "Computer Scheduled Test (Jo)", "One \\ Date Computer", "Remove", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS13264_Users", "Users", "Username", "0088FC8A50DD4344B92", "Barry\'s User Project", "Project Dates \\ Scheduled Date", "Remove", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS13264_Applications", "Applications", "Application", "0047 - Microsoft Access 97 SR-2 Francais", "Barry\'s User Project", "Audit & Configuration \\ Package Delivery Date", "Remove", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS13264_Mailboxes", "Mailboxes", "Email Address", "00C8BC63E7424A6E862@bclabs.local", "Email Migration", "Pre-Migration \\ Out Of Office Start Date", "Remove", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole(string userName, string pageName, string columnName, string rowName, string projectName, string taskName, string updateDate, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -270,22 +251,97 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTask" +
-            "ThatHasAnTeamOrOwner")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS12864")]
-        [NUnit.Framework.CategoryAttribute("DAS13268")]
-        [NUnit.Framework.CategoryAttribute("DAS13269")]
-        [NUnit.Framework.CategoryAttribute("DAS13272")]
-        [NUnit.Framework.CategoryAttribute("DAS13273")]
-        [NUnit.Framework.CategoryAttribute("DAS13276")]
-        [NUnit.Framework.CategoryAttribute("DAS13275")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWith" +
+            "ProjectBulkUpdaterRole, DAS13264_Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13264",
+                "DAS13265",
+                "DAS13278",
+                "DAS14448",
+                "Cleanup"}, SourceLine=51)]
+        public virtual void EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole_DAS13264_Devices()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole("DAS13264_Devices", "Devices", "Hostname", "00CWZRC4UK6W20", "Computer Scheduled Test (Jo)", "One \\ Date Computer", "Remove", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWith" +
+            "ProjectBulkUpdaterRole, DAS13264_Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13264",
+                "DAS13265",
+                "DAS13278",
+                "DAS14448",
+                "Cleanup"}, SourceLine=51)]
+        public virtual void EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole_DAS13264_Users()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole("DAS13264_Users", "Users", "Username", "0088FC8A50DD4344B92", "Barry\'s User Project", "Project Dates \\ Scheduled Date", "Remove", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWith" +
+            "ProjectBulkUpdaterRole, DAS13264_Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13264",
+                "DAS13265",
+                "DAS13278",
+                "DAS14448",
+                "Cleanup"}, SourceLine=51)]
+        public virtual void EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole_DAS13264_Applications()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole("DAS13264_Applications", "Applications", "Application", "0047 - Microsoft Access 97 SR-2 Francais", "Barry\'s User Project", "Audit & Configuration \\ Package Delivery Date", "Remove", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWith" +
+            "ProjectBulkUpdaterRole, DAS13264_Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13264",
+                "DAS13265",
+                "DAS13278",
+                "DAS14448",
+                "Cleanup"}, SourceLine=51)]
+        public virtual void EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole_DAS13264_Mailboxes()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole("DAS13264_Mailboxes", "Mailboxes", "Email Address", "00C8BC63E7424A6E862@bclabs.local", "Email Migration", "Pre-Migration \\ Out Of Office Start Date", "Remove", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTask" +
+            "ThatHasAnTeamOrOwner", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13268",
+                "DAS13269",
+                "DAS13272",
+                "DAS13273",
+                "DAS13276",
+                "DAS13275",
+                "Cleanup",
+                "Wormhole"}, SourceLine=58)]
         public virtual void EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner()
         {
             string[] tagsOfScenario = new string[] {
@@ -511,15 +567,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS12864")]
-        [NUnit.Framework.CategoryAttribute("DAS13280")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13280",
+                "Cleanup"}, SourceLine=121)]
         public virtual void EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues()
         {
             string[] tagsOfScenario = new string[] {
@@ -662,20 +717,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS12864")]
-        [NUnit.Framework.CategoryAttribute("DAS13281")]
-        [NUnit.Framework.CategoryAttribute("DAS13284")]
-        [NUnit.Framework.CategoryAttribute("DAS13285")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
-        [NUnit.Framework.TestCaseAttribute("00HA7MKAVVFDAV", "1 of 1 object was in the selected project and has been queued", null)]
-        [NUnit.Framework.TestCaseAttribute("00I0COBFWHOF27", "0 of 1 object was in the selected project and has been queued", null)]
         public virtual void EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly(string rowName, string messageText, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -942,24 +983,44 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS12864")]
-        [NUnit.Framework.CategoryAttribute("DAS13288")]
-        [NUnit.Framework.CategoryAttribute("DAS13289")]
-        [NUnit.Framework.CategoryAttribute("DAS13287")]
-        [NUnit.Framework.CategoryAttribute("DAS14127")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        [NUnit.Framework.TestCaseAttribute("DAS1330", "CQV0623434", "Admin IT", "Administrative Team", "Complete", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS1331", "BBZ877343", "Admin IT", "Retail Team", "Failed", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS1332", "DLL972653", "Admin IT", "K-Team", "Complete", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS1333", "LZI970280", "Admin IT", "IB Team", "Not Applicable", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS1334", "ZQX656408", "Admin IT", "Migration Phase 2", "Not Applicable", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly, 00HA7MKAVVFDA" +
+            "V", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13281",
+                "DAS13284",
+                "DAS13285",
+                "Cleanup",
+                "Wormhole"}, SourceLine=240)]
+        public virtual void EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly_00HA7MKAVVFDAV()
+        {
+#line 157
+this.EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly("00HA7MKAVVFDAV", "1 of 1 object was in the selected project and has been queued", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly, 00I0COBFWHOF2" +
+            "7", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13281",
+                "DAS13284",
+                "DAS13285",
+                "Cleanup",
+                "Wormhole"}, SourceLine=240)]
+        public virtual void EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly_00I0COBFWHOF27()
+        {
+#line 157
+this.EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly("00I0COBFWHOF27", "0 of 1 object was in the selected project and has been queued", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField(string name, string rowName, string newTeam, string defaultTeam, string defaultValue, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1204,6 +1265,112 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField, " +
+            "DAS1330", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13288",
+                "DAS13289",
+                "DAS13287",
+                "DAS14127",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=315)]
+        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField_DAS1330()
+        {
+#line 247
+this.EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField("DAS1330", "CQV0623434", "Admin IT", "Administrative Team", "Complete", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField, " +
+            "DAS1331", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13288",
+                "DAS13289",
+                "DAS13287",
+                "DAS14127",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=315)]
+        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField_DAS1331()
+        {
+#line 247
+this.EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField("DAS1331", "BBZ877343", "Admin IT", "Retail Team", "Failed", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField, " +
+            "DAS1332", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13288",
+                "DAS13289",
+                "DAS13287",
+                "DAS14127",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=315)]
+        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField_DAS1332()
+        {
+#line 247
+this.EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField("DAS1332", "DLL972653", "Admin IT", "K-Team", "Complete", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField, " +
+            "DAS1333", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13288",
+                "DAS13289",
+                "DAS13287",
+                "DAS14127",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=315)]
+        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField_DAS1333()
+        {
+#line 247
+this.EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField("DAS1333", "LZI970280", "Admin IT", "IB Team", "Not Applicable", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField, " +
+            "DAS1334", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ActionsPanel",
+                "BulkUpdate",
+                "DAS12864",
+                "DAS13288",
+                "DAS13289",
+                "DAS13287",
+                "DAS14127",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=315)]
+        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField_DAS1334()
+        {
+#line 247
+this.EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField("DAS1334", "ZQX656408", "Admin IT", "Migration Phase 2", "Not Applicable", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

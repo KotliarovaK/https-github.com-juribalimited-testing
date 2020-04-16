@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TeamsGrid")]
+    [TechTalk.SpecRun.FeatureAttribute("TeamsGrid", Description="\tTeams Grid", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AdminPage\\Teams\\TeamsGrid.feature", SourceLine=0)]
     public partial class TeamsGridFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line 1 "TeamsGrid.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,18 +82,17 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckMessageWhenDeletingTeam")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS13000")]
-        [NUnit.Framework.CategoryAttribute("DAS13632")]
-        [NUnit.Framework.CategoryAttribute("DAS13602")]
-        [NUnit.Framework.CategoryAttribute("DAS17123")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckMessageWhenDeletingTeam", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "AdminPage",
+                "DAS13000",
+                "DAS13632",
+                "DAS13602",
+                "DAS17123",
+                "Teams",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_AdminPage_CheckMessageWhenDeletingTeam()
         {
             string[] tagsOfScenario = new string[] {
@@ -144,16 +140,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1736 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1681 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1736.AddRow(new string[] {
+                table1681.AddRow(new string[] {
                             "NewTeam_Test",
                             "12894587454",
                             "false"});
 #line 10
- testRunner.When("User creates new Team via api", ((string)(null)), table1736, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1681, "When ");
 #line hidden
 #line 13
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -195,23 +191,22 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatDefaultTeamUpdatesToFalseAfterCreatingNewDefault" +
-            "Team")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS13000")]
-        [NUnit.Framework.CategoryAttribute("DAS13632")]
-        [NUnit.Framework.CategoryAttribute("DAS13602")]
-        [NUnit.Framework.CategoryAttribute("DAS17123")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
-        [NUnit.Framework.CategoryAttribute("Set_Default_Team")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_ChecksThatDefaultTeamUpdatesToFalseAfterCreatingNewDefault" +
+            "Team", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "AdminPage",
+                "DAS13000",
+                "DAS13632",
+                "DAS13602",
+                "DAS17123",
+                "Teams",
+                "Do_Not_Run_With_Teams",
+                "Set_Default_Team",
+                "Do_Not_Run_With_Buckets",
+                "Do_Not_Run_With_Projects",
+                "Cleanup"}, SourceLine=25)]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultTeamUpdatesToFalseAfterCreatingNewDefaultTeam()
         {
             string[] tagsOfScenario = new string[] {
@@ -268,16 +263,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1737 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1682 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1737.AddRow(new string[] {
+                table1682.AddRow(new string[] {
                             "das13000test_default",
                             "test_team",
                             "true"});
 #line 27
- testRunner.When("User creates new Team via api", ((string)(null)), table1737, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1682, "When ");
 #line hidden
 #line 30
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -297,16 +292,16 @@ this.FeatureBackground();
 #line 35
  testRunner.Then("\'TRUE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1738 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1683 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1738.AddRow(new string[] {
+                table1683.AddRow(new string[] {
                             "das15000test_default2",
                             "12894587454",
                             "true"});
 #line 36
- testRunner.When("User creates new Team via api", ((string)(null)), table1738, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1683, "When ");
 #line hidden
 #line 39
  testRunner.When("User clicks Refresh button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -319,6 +314,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

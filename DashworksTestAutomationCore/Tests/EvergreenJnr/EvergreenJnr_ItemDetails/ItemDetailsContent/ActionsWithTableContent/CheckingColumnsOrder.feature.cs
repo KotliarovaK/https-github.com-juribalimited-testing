@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CheckingColumnsOrder")]
+    [TechTalk.SpecRun.FeatureAttribute("CheckingColumnsOrder", Description="\tRuns Item Details Checking Columns Order related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ItemDetailsContent\\ActionsWithTableCo" +
+        "ntent\\CheckingColumnsOrder.feature", SourceLine=0)]
     public partial class CheckingColumnsOrderFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "CheckingColumnsOrder.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,18 +83,17 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDet" +
-            "ailsPageForProjectMode")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17182")]
-        [NUnit.Framework.CategoryAttribute("DAS17218")]
-        [NUnit.Framework.CategoryAttribute("DAS11053")]
-        [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDet" +
+            "ailsPageForProjectMode", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17182",
+                "DAS17218",
+                "DAS11053",
+                "DAS14923",
+                "Zion_NewGrid"}, SourceLine=8)]
         public virtual void EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDetailsPageForProjectMode()
         {
             string[] tagsOfScenario = new string[] {
@@ -152,58 +149,64 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User navigates to the \'Devices\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3092 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3037 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3092.AddRow(new string[] {
+                table3037.AddRow(new string[] {
                             "Hostname"});
-                table3092.AddRow(new string[] {
+                table3037.AddRow(new string[] {
                             "Device Type"});
-                table3092.AddRow(new string[] {
+                table3037.AddRow(new string[] {
                             "Owner Display Name"});
-                table3092.AddRow(new string[] {
+                table3037.AddRow(new string[] {
                             "Operating System"});
-                table3092.AddRow(new string[] {
+                table3037.AddRow(new string[] {
                             "Compliance"});
 #line 13
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3092, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3037, "Then ");
 #line hidden
 #line 20
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                         "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3093 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3038 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3093.AddRow(new string[] {
+                table3038.AddRow(new string[] {
                             "Operating System"});
 #line 21
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Hostname\' co" +
-                        "lumn:", ((string)(null)), table3093, "When ");
+                        "lumn:", ((string)(null)), table3038, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3094 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3039 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3094.AddRow(new string[] {
+                table3039.AddRow(new string[] {
                             "Hostname"});
-                table3094.AddRow(new string[] {
+                table3039.AddRow(new string[] {
                             "Device Type"});
-                table3094.AddRow(new string[] {
+                table3039.AddRow(new string[] {
                             "Owner"});
-                table3094.AddRow(new string[] {
+                table3039.AddRow(new string[] {
                             "Owner Display Name"});
-                table3094.AddRow(new string[] {
+                table3039.AddRow(new string[] {
                             "Readiness"});
-                table3094.AddRow(new string[] {
+                table3039.AddRow(new string[] {
                             "Path"});
-                table3094.AddRow(new string[] {
+                table3039.AddRow(new string[] {
                             "Category"});
-                table3094.AddRow(new string[] {
+                table3039.AddRow(new string[] {
                             "Application Readiness"});
-                table3094.AddRow(new string[] {
+                table3039.AddRow(new string[] {
                             "Stage 1"});
 #line 24
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3094, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3039, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

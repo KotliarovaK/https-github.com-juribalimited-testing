@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ListDetailsFunctionalityPart10")]
+    [TechTalk.SpecRun.FeatureAttribute("ListDetailsFunctionalityPart10", Description="\tRuns List Details Panel related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ListDetails\\ListDetailsFunctionalityPart10.featur" +
+        "e", SourceLine=0)]
     public partial class ListDetailsFunctionalityPart10Feature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
 #line 1 "ListDetailsFunctionalityPart10.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,16 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS18127")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "$231000-3AC04R8AR431", "AStaticUsers18127", "List Type: Static", "Data: Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "AStaticApplications18127", "List Type: Static", "Data: Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList(string lists, string column, string row, string listName, string listType, string data, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -139,12 +127,12 @@ this.FeatureBackground();
 #line 11
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3342 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3287 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3342.AddRow(new string[] {
+                table3287.AddRow(new string[] {
                             string.Format("{0}", row)});
 #line 12
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", column), ((string)(null)), table3342, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", column), ((string)(null)), table3287, "When ");
 #line hidden
 #line 15
  testRunner.When("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -174,16 +162,36 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS18127")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Owner Compliance", "Owner City", "APivotDevices18127", "List Type: Dynamic Pivot", "Data: Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner City", "Created Date", "APivotMailboxes18127", "List Type: Dynamic Pivot", "Data: Mailboxes", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList, Use" +
+            "rs", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS18127",
+                "Cleanup"}, SourceLine=25)]
+        public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList_Users()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList("Users", "Username", "$231000-3AC04R8AR431", "AStaticUsers18127", "List Type: Static", "Data: Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList, Mai" +
+            "lboxes", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS18127",
+                "Cleanup"}, SourceLine=25)]
+        public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList_Mailboxes()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "AStaticApplications18127", "List Type: Static", "Data: Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot(string lists, string rowGroup, string column, string value, string pivotName, string listType, string data, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -228,26 +236,26 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3343 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3288 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3343.AddRow(new string[] {
+                table3288.AddRow(new string[] {
                             string.Format("{0}", rowGroup)});
 #line 33
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table3343, "When ");
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table3288, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3344 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3289 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3344.AddRow(new string[] {
+                table3289.AddRow(new string[] {
                             string.Format("{0}", column)});
 #line 36
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table3344, "When ");
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table3289, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3345 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3290 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3345.AddRow(new string[] {
+                table3290.AddRow(new string[] {
                             string.Format("{0}", value)});
 #line 39
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table3345, "When ");
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table3290, "When ");
 #line hidden
 #line 42
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -280,15 +288,43 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNoRedBannerWithErrorIsDisplayedAfterSelectingLi" +
-            "stWithTheAppliedAdvancedFilterOn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS18376")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot, Devices", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS18127",
+                "Cleanup"}, SourceLine=53)]
+        public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot_Devices()
+        {
+#line 30
+this.EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot("Devices", "Hostname", "Owner Compliance", "Owner City", "APivotDevices18127", "List Type: Dynamic Pivot", "Data: Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot, Mailboxe" +
+            "s", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS18127",
+                "Cleanup"}, SourceLine=53)]
+        public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot_Mailboxes()
+        {
+#line 30
+this.EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot("Mailboxes", "Alias", "Owner City", "Created Date", "APivotMailboxes18127", "List Type: Dynamic Pivot", "Data: Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatNoRedBannerWithErrorIsDisplayedAfterSelectingLi" +
+            "stWithTheAppliedAdvancedFilterOn", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS18376",
+                "Cleanup"}, SourceLine=57)]
         public virtual void EvergreenJnr_DevicesList_CheckThatNoRedBannerWithErrorIsDisplayedAfterSelectingListWithTheAppliedAdvancedFilterOn()
         {
             string[] tagsOfScenario = new string[] {
@@ -335,14 +371,14 @@ this.FeatureBackground();
 #line 60
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3346 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3291 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3346.AddRow(new string[] {
+                table3291.AddRow(new string[] {
                             "001PSUMZYOW581"});
-                table3346.AddRow(new string[] {
+                table3291.AddRow(new string[] {
                             "00CWZRC4UK6W20"});
 #line 61
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3346, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3291, "When ");
 #line hidden
 #line 65
  testRunner.When("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -359,15 +395,15 @@ this.FeatureBackground();
 #line 69
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3347 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3292 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3347.AddRow(new string[] {
+                table3292.AddRow(new string[] {
                             "StaticDeviceList18376",
                             "Used on device"});
 #line 70
  testRunner.When("User add \"Device (Saved List)\" filter where type is \"In list\" with Selected Value" +
-                        " and following Association:", ((string)(null)), table3347, "When ");
+                        " and following Association:", ((string)(null)), table3292, "When ");
 #line hidden
 #line 73
  testRunner.When("User create dynamic list with \"ApplicationsDynamicList18376\" name on \"Application" +
@@ -402,15 +438,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatPermissionPanelContinuesToWorkAfterReselectingS" +
-            "haringOption")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
-        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS20393")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatPermissionPanelContinuesToWorkAfterReselectingS" +
+            "haringOption", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ListDetails",
+                "ListDetailsFunctionality",
+                "DAS20393",
+                "Cleanup"}, SourceLine=83)]
         public virtual void EvergreenJnr_DevicesList_CheckThatPermissionPanelContinuesToWorkAfterReselectingSharingOption()
         {
             string[] tagsOfScenario = new string[] {
@@ -454,12 +489,12 @@ this.FeatureBackground();
 #line 85
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3348 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3293 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3348.AddRow(new string[] {
+                table3293.AddRow(new string[] {
                             "CPU Virtualisation Capable"});
 #line 86
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3348, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3293, "When ");
 #line hidden
 #line 89
  testRunner.When("User create dynamic list with \"List20393\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -482,17 +517,23 @@ this.FeatureBackground();
 #line 95
  testRunner.When("User selects \'Specific users / teams\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3349 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3294 = new TechTalk.SpecFlow.Table(new string[] {
                             "User",
                             "Permission"});
-                table3349.AddRow(new string[] {
+                table3294.AddRow(new string[] {
                             "Automation Admin 1",
                             "Admin"});
 #line 96
- testRunner.When("User adds user to list of shared person", ((string)(null)), table3349, "When ");
+ testRunner.When("User adds user to list of shared person", ((string)(null)), table3294, "When ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

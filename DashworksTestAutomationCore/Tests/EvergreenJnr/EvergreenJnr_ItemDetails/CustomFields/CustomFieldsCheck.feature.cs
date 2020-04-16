@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CustomFieldsCheck")]
+    [TechTalk.SpecRun.FeatureAttribute("CustomFieldsCheck", Description="\tCustom Fields Check", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\CustomFields\\CustomFieldsCheck.featur" +
+        "e", SourceLine=0)]
     public partial class CustomFieldsCheckFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "CustomFieldsCheck.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,14 +83,13 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatContextMenuCopyСellForTheRowActionsIsDisplayedA" +
-            "ndWorkedCorrectlyForCustomFields")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS17323")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatContextMenuCopyСellForTheRowActionsIsDisplayedA" +
+            "ndWorkedCorrectlyForCustomFields", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17323"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckThatContextMenuCopyСellForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields()
         {
             string[] tagsOfScenario = new string[] {
@@ -150,14 +147,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAn" +
-            "dWorkedCorrectlyForCustomFields")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS17323")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAn" +
+            "dWorkedCorrectlyForCustomFields", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17323"}, SourceLine=16)]
         public virtual void EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields()
         {
             string[] tagsOfScenario = new string[] {
@@ -215,20 +211,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWo" +
-            "rkedCorrectlyForCustomFields")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS17909")]
-        [NUnit.Framework.CategoryAttribute("DAS17959")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
-        [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "ACG370114", null)]
-        [NUnit.Framework.TestCaseAttribute("Application", "Adobe Download Manager 2.0 (Remove Only)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox", "000F977AC8824FE39B8@bclabs.local", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields(string itemType, string itemName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -275,41 +257,104 @@ this.FeatureBackground();
 #line 27
  testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2910 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2855 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnSettings"});
-                table2910.AddRow(new string[] {
+                table2855.AddRow(new string[] {
                             "Pin left"});
-                table2910.AddRow(new string[] {
+                table2855.AddRow(new string[] {
                             "Pin right"});
-                table2910.AddRow(new string[] {
+                table2855.AddRow(new string[] {
                             "No pin"});
-                table2910.AddRow(new string[] {
+                table2855.AddRow(new string[] {
                             "Autosize this column"});
-                table2910.AddRow(new string[] {
+                table2855.AddRow(new string[] {
                             "Autosize all columns"});
-                table2910.AddRow(new string[] {
+                table2855.AddRow(new string[] {
                             "Group by Custom Field"});
-                table2910.AddRow(new string[] {
+                table2855.AddRow(new string[] {
                             "Sort ascending"});
-                table2910.AddRow(new string[] {
+                table2855.AddRow(new string[] {
                             "Sort descending"});
-                table2910.AddRow(new string[] {
+                table2855.AddRow(new string[] {
                             "No sort"});
 #line 28
- testRunner.Then("User sees following options for \'Custom Field\' column settings", ((string)(null)), table2910, "Then ");
+ testRunner.Then("User sees following options for \'Custom Field\' column settings", ((string)(null)), table2855, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTranslatedAccord" +
-            "ingToAccountLanguage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS17908")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWo" +
+            "rkedCorrectlyForCustomFields, Device", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17909",
+                "DAS17959",
+                "Zion_NewGrid"}, SourceLine=41)]
+        public virtual void EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields_Device()
+        {
+#line 25
+this.EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields("Device", "001BAQXT6JWFPI", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWo" +
+            "rkedCorrectlyForCustomFields, User", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17909",
+                "DAS17959",
+                "Zion_NewGrid"}, SourceLine=41)]
+        public virtual void EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields_User()
+        {
+#line 25
+this.EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields("User", "ACG370114", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWo" +
+            "rkedCorrectlyForCustomFields, Application", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17909",
+                "DAS17959",
+                "Zion_NewGrid"}, SourceLine=41)]
+        public virtual void EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields_Application()
+        {
+#line 25
+this.EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields("Application", "Adobe Download Manager 2.0 (Remove Only)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWo" +
+            "rkedCorrectlyForCustomFields, Mailbox", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17909",
+                "DAS17959",
+                "Zion_NewGrid"}, SourceLine=41)]
+        public virtual void EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields_Mailbox()
+        {
+#line 25
+this.EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields("Mailbox", "000F977AC8824FE39B8@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTranslatedAccord" +
+            "ingToAccountLanguage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17908"}, SourceLine=47)]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTranslatedAccordingToAccountLanguage()
         {
             string[] tagsOfScenario = new string[] {
@@ -357,42 +402,41 @@ this.FeatureBackground();
 #line 51
  testRunner.When("User navigates to the \'Benutzerdefinierte Felder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2911 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2856 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnSettings"});
-                table2911.AddRow(new string[] {
+                table2856.AddRow(new string[] {
                             "Links fixieren"});
-                table2911.AddRow(new string[] {
+                table2856.AddRow(new string[] {
                             "Rechts fixieren"});
-                table2911.AddRow(new string[] {
+                table2856.AddRow(new string[] {
                             "Nicht fixiert"});
-                table2911.AddRow(new string[] {
+                table2856.AddRow(new string[] {
                             "Größe dieser Spalte automatisch festlegen"});
-                table2911.AddRow(new string[] {
+                table2856.AddRow(new string[] {
                             "Größe aller Spalten automatisch festlegen"});
-                table2911.AddRow(new string[] {
+                table2856.AddRow(new string[] {
                             "Gruppieren nach Benutzerdefiniertes Feld"});
-                table2911.AddRow(new string[] {
+                table2856.AddRow(new string[] {
                             "Aufsteigend sortieren"});
-                table2911.AddRow(new string[] {
+                table2856.AddRow(new string[] {
                             "Absteigend sortieren"});
-                table2911.AddRow(new string[] {
+                table2856.AddRow(new string[] {
                             "Nicht sortieren"});
 #line 52
- testRunner.Then("User sees following options for \'Benutzerdefiniertes Feld\' column settings", ((string)(null)), table2911, "Then ");
+ testRunner.Then("User sees following options for \'Benutzerdefiniertes Feld\' column settings", ((string)(null)), table2856, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContainOnlyVisible" +
-            "Columns")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS17907")]
-        [NUnit.Framework.CategoryAttribute("DAS17960")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContainOnlyVisible" +
+            "Columns", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17907",
+                "DAS17960"}, SourceLine=64)]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContainOnlyVisibleColumns()
         {
             string[] tagsOfScenario = new string[] {
@@ -451,33 +495,17 @@ this.FeatureBackground();
 #line 71
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2912 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2857 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2912.AddRow(new string[] {
+                table2857.AddRow(new string[] {
                             "Custom Field"});
 #line 72
- testRunner.Then("following Group By values ​​are displayed for User on menu panel", ((string)(null)), table2912, "Then ");
+ testRunner.Then("following Group By values ​​are displayed for User on menu panel", ((string)(null)), table2857, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomField" +
-            "sTab")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS17776")]
-        [NUnit.Framework.CategoryAttribute("DAS18363")]
-        [NUnit.Framework.CategoryAttribute("DAS18502")]
-        [NUnit.Framework.CategoryAttribute("DAS18436")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
-        [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "ACG370114", null)]
-        [NUnit.Framework.TestCaseAttribute("Application", "Adobe Download Manager 2.0 (Remove Only)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox", "000F977AC8824FE39B8@bclabs.local", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab(string itemType, string itemName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -544,26 +572,26 @@ this.FeatureBackground();
 #line 85
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2913 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2858 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2913.AddRow(new string[] {
+                table2858.AddRow(new string[] {
                             ""});
 #line 86
- testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2913, "Then ");
+ testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2858, "Then ");
 #line hidden
 #line 89
  testRunner.When("User clicks button with \'reload\' aria label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2914 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2859 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2914.AddRow(new string[] {
+                table2859.AddRow(new string[] {
                             "Custom Field"});
-                table2914.AddRow(new string[] {
+                table2859.AddRow(new string[] {
                             ""});
-                table2914.AddRow(new string[] {
+                table2859.AddRow(new string[] {
                             "Value"});
 #line 90
- testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2914, "Then ");
+ testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2859, "Then ");
 #line hidden
 #line 95
  testRunner.Then("data in table is sorted by \'Custom Field\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -572,14 +600,85 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedForCustomFiel" +
-            "ds")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS18155")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomField" +
+            "sTab, Device", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17776",
+                "DAS18363",
+                "DAS18502",
+                "DAS18436",
+                "Zion_NewGrid"}, SourceLine=98)]
+        public virtual void EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab_Device()
+        {
+#line 77
+this.EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab("Device", "001BAQXT6JWFPI", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomField" +
+            "sTab, User", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17776",
+                "DAS18363",
+                "DAS18502",
+                "DAS18436",
+                "Zion_NewGrid"}, SourceLine=98)]
+        public virtual void EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab_User()
+        {
+#line 77
+this.EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab("User", "ACG370114", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomField" +
+            "sTab, Application", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17776",
+                "DAS18363",
+                "DAS18502",
+                "DAS18436",
+                "Zion_NewGrid"}, SourceLine=98)]
+        public virtual void EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab_Application()
+        {
+#line 77
+this.EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab("Application", "Adobe Download Manager 2.0 (Remove Only)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomField" +
+            "sTab, Mailbox", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17776",
+                "DAS18363",
+                "DAS18502",
+                "DAS18436",
+                "Zion_NewGrid"}, SourceLine=98)]
+        public virtual void EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab_Mailbox()
+        {
+#line 77
+this.EvergreenJnr_AllLists_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab("Mailbox", "000F977AC8824FE39B8@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedForCustomFiel" +
+            "ds", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS18155"}, SourceLine=104)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedForCustomFields()
         {
             string[] tagsOfScenario = new string[] {
@@ -645,14 +744,14 @@ this.FeatureBackground();
 #line 114
  testRunner.Then("\'Custom Field\' column is \'Left\' Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2915 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2860 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table2915.AddRow(new string[] {
+                table2860.AddRow(new string[] {
                             "Custom Field",
                             "true"});
 #line 115
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2915, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2860, "When ");
 #line hidden
 #line 118
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -670,14 +769,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS18121")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS18121",
+                "Cleanup"}, SourceLine=123)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid()
         {
             string[] tagsOfScenario = new string[] {
@@ -717,48 +815,48 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2916 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2861 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value",
                             "FieldIndex"});
-                table2916.AddRow(new string[] {
+                table2861.AddRow(new string[] {
                             "device",
                             "5539",
                             "ComputerWarranty",
                             "bbb",
                             "0"});
-                table2916.AddRow(new string[] {
+                table2861.AddRow(new string[] {
                             "device",
                             "5539",
                             "ComputerWarranty",
                             "001",
                             "0"});
-                table2916.AddRow(new string[] {
+                table2861.AddRow(new string[] {
                             "device",
                             "5539",
                             "ComputerWarranty",
                             "aaa",
                             "0"});
-                table2916.AddRow(new string[] {
+                table2861.AddRow(new string[] {
                             "device",
                             "5539",
                             "ComputerWarranty",
                             "002",
                             "0"});
 #line 125
- testRunner.When("User creates Custom Field via API", ((string)(null)), table2916, "When ");
+ testRunner.When("User creates Custom Field via API", ((string)(null)), table2861, "When ");
 #line hidden
 #line 131
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2917 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2862 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2917.AddRow(new string[] {
+                table2862.AddRow(new string[] {
                             "Computer Warranty"});
 #line 132
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2917, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2862, "When ");
 #line hidden
 #line 135
  testRunner.When("User perform search by \"Z75ievru6r751l\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -770,18 +868,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS17159")]
-        [NUnit.Framework.CategoryAttribute("DAS17161")]
-        [NUnit.Framework.CategoryAttribute("DAS17162")]
-        [NUnit.Framework.CategoryAttribute("DAS17228")]
-        [NUnit.Framework.CategoryAttribute("DAS17229")]
-        [NUnit.Framework.CategoryAttribute("DAS17265")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17159",
+                "DAS17161",
+                "DAS17162",
+                "DAS17228",
+                "DAS17229",
+                "DAS17265"}, SourceLine=138)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -853,16 +950,16 @@ this.FeatureBackground();
 #line 147
  testRunner.Then("data in table is sorted by \'Custom Field\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2918 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2863 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2918.AddRow(new string[] {
+                table2863.AddRow(new string[] {
                             "Custom Field"});
-                table2918.AddRow(new string[] {
+                table2863.AddRow(new string[] {
                             ""});
-                table2918.AddRow(new string[] {
+                table2863.AddRow(new string[] {
                             "Value"});
 #line 148
- testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2918, "Then ");
+ testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2863, "Then ");
 #line hidden
 #line 153
  testRunner.Then("User sees \"2\" rows in grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -894,14 +991,14 @@ this.FeatureBackground();
 #line 162
  testRunner.Then("\'ResetFilters\' button with aria label is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2919 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2864 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table2919.AddRow(new string[] {
+                table2864.AddRow(new string[] {
                             "Value",
                             "true"});
 #line 163
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2919, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2864, "When ");
 #line hidden
 #line 166
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -910,14 +1007,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupBy" +
-            "Action")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS17906")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupBy" +
+            "Action", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17906"}, SourceLine=168)]
         public virtual void EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupByAction()
         {
             string[] tagsOfScenario = new string[] {
@@ -968,28 +1064,34 @@ this.FeatureBackground();
 #line 173
  testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2920 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2865 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2920.AddRow(new string[] {
+                table2865.AddRow(new string[] {
                             "Value"});
 #line 174
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Custom Field" +
-                        "\' column:", ((string)(null)), table2920, "When ");
+                        "\' column:", ((string)(null)), table2865, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2921 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2866 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table2921.AddRow(new string[] {
+                table2866.AddRow(new string[] {
                             "Custom Field",
                             "true"});
 #line 177
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2921, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2866, "When ");
 #line hidden
 #line 180
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

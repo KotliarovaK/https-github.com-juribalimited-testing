@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ItemDetailsDisplay_Api")]
+    [TechTalk.SpecRun.FeatureAttribute("ItemDetailsDisplay_Api", Description="\tRuns Item Details Display API related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ItemDetailsDisplay_Api.feature", SourceLine=0)]
     public partial class ItemDetailsDisplay_ApiFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "ItemDetailsDisplay_Api.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -82,19 +79,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11478")]
-        [NUnit.Framework.CategoryAttribute("DAS11477")]
-        [NUnit.Framework.CategoryAttribute("DAS11476")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox", "Mailbox Database", "True", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox", "Cloud Mail Server", "False", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "alex.cristea@juriba.com", "Mailbox", "Mail Server", "False", null)]
         public virtual void EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI(string pageName, string itemName, string sectionName, string fieldName, string displayState, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -146,14 +130,61 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserList_CheckThatDataDepartmentAndLocationTabIsDisplayedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17274")]
-        [NUnit.Framework.CategoryAttribute("API")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI, Variant 0", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11478",
+                "DAS11477",
+                "DAS11476",
+                "API"}, SourceLine=13)]
+        public virtual void EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI_Variant0()
+        {
+#line 8
+this.EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox", "Mailbox Database", "True", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI, Variant 1", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11478",
+                "DAS11477",
+                "DAS11476",
+                "API"}, SourceLine=13)]
+        public virtual void EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI_Variant1()
+        {
+#line 8
+this.EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox", "Cloud Mail Server", "False", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI, Variant 2", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS11478",
+                "DAS11477",
+                "DAS11476",
+                "API"}, SourceLine=13)]
+        public virtual void EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI_Variant2()
+        {
+#line 8
+this.EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI("Mailboxes", "alex.cristea@juriba.com", "Mailbox", "Mail Server", "False", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserList_CheckThatDataDepartmentAndLocationTabIsDisplayedCorrectly", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17274",
+                "API"}, SourceLine=18)]
         public virtual void EvergreenJnr_UserList_CheckThatDataDepartmentAndLocationTabIsDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -197,62 +228,68 @@ this.FeatureBackground();
  testRunner.When("I perform test request to the \"Users\" API and get \"002B5DC7D4D34D5C895\" item summ" +
                         "ary for \"Department and Location\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3229 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3174 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "DisplayState"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Department Name",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Department Full Path",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Department Code",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Cost Centre",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Location Name",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Region",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Country",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "City",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Building Name",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Floor",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Address 1",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Address 2",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Address 3",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Address 4",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "State/County",
                             "True"});
-                table3229.AddRow(new string[] {
+                table3174.AddRow(new string[] {
                             "Postal Code",
                             "True"});
 #line 21
- testRunner.Then("following fields are displayed with next state on Details tab API", ((string)(null)), table3229, "Then ");
+ testRunner.Then("following fields are displayed with next state on Details tab API", ((string)(null)), table3174, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

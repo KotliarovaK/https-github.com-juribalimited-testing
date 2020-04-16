@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("DashboardSharing1")]
+    [TechTalk.SpecRun.FeatureAttribute("DashboardSharing1", Description="\tRuns Dashboard sharing tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_DashboardsPage\\DashboardSharing1.feature", SourceLine=0)]
     public partial class DashboardSharing1Feature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line 1 "DashboardSharing1.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,13 +82,12 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpecificUserWi" +
-            "thDifferentPermissions")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS14911")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpecificUserWi" +
+            "thDifferentPermissions", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS14911",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpecificUserWithDifferentPermissions()
         {
             string[] tagsOfScenario = new string[] {
@@ -128,38 +124,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2071 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2016 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2071.AddRow(new string[] {
+                table2016.AddRow(new string[] {
                             "DAS14911_1",
                             "Value",
                             "FN14911_1",
                             "m!gration",
                             "Project Administrator"});
-                table2071.AddRow(new string[] {
+                table2016.AddRow(new string[] {
                             "DAS14911_2",
                             "Value",
                             "FN14911_2",
                             "m!gration",
                             "Project Administrator"});
 #line 10
- testRunner.When("User create new User via API", ((string)(null)), table2071, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2016, "When ");
 #line hidden
 #line 15
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2072 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2017 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2072.AddRow(new string[] {
+                table2017.AddRow(new string[] {
                             "DAS14911_1",
                             "m!gration"});
 #line 16
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2072, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2017, "When ");
 #line hidden
 #line 19
  testRunner.When("Dashboard with \'Dashboard for DAS14911\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -179,14 +175,14 @@ this.FeatureBackground();
 #line 24
  testRunner.When("User selects \'Specific users / teams\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2073 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2018 = new TechTalk.SpecFlow.Table(new string[] {
                             "User",
                             "Permission"});
-                table2073.AddRow(new string[] {
+                table2018.AddRow(new string[] {
                             "FN14911_2",
                             "Admin"});
 #line 25
- testRunner.When("User adds user to list of shared person", ((string)(null)), table2073, "When ");
+ testRunner.When("User adds user to list of shared person", ((string)(null)), table2018, "When ");
 #line hidden
 #line 28
  testRunner.Then("User \'DAS14911_2\' was added to shared list with \'Admin\' permission of Details pan" +
@@ -204,14 +200,14 @@ this.FeatureBackground();
 #line 32
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2074 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2019 = new TechTalk.SpecFlow.Table(new string[] {
                             "User",
                             "Permission"});
-                table2074.AddRow(new string[] {
+                table2019.AddRow(new string[] {
                             "FN14911_2",
                             "Edit"});
 #line 33
- testRunner.When("User adds user to list of shared person", ((string)(null)), table2074, "When ");
+ testRunner.When("User adds user to list of shared person", ((string)(null)), table2019, "When ");
 #line hidden
 #line 36
  testRunner.Then("User \'DAS14911_2\' was added to shared list with \'Edit\' permission of Details pane" +
@@ -229,14 +225,14 @@ this.FeatureBackground();
 #line 40
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2075 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2020 = new TechTalk.SpecFlow.Table(new string[] {
                             "User",
                             "Permission"});
-                table2075.AddRow(new string[] {
+                table2020.AddRow(new string[] {
                             "FN14911_2",
                             "Read"});
 #line 41
- testRunner.When("User adds user to list of shared person", ((string)(null)), table2075, "When ");
+ testRunner.When("User adds user to list of shared person", ((string)(null)), table2020, "When ");
 #line hidden
 #line 44
  testRunner.Then("User \'DAS14911_2\' was added to shared list with \'Read Only\' permission of Details" +
@@ -258,14 +254,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPublicDashboard" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16380")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPublicDashboard" +
+            "", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16380",
+                "Cleanup"}, SourceLine=50)]
         public virtual void EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPublicDashboard()
         {
             string[] tagsOfScenario = new string[] {
@@ -304,42 +299,42 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2076 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2021 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2076.AddRow(new string[] {
+                table2021.AddRow(new string[] {
                             "DAS16380_1",
                             "Value",
                             "FN16380_1",
                             "m!gration",
                             "Project Administrator"});
 #line 52
- testRunner.When("User create new User via API", ((string)(null)), table2076, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2021, "When ");
 #line hidden
 #line 56
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2077 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2022 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2077.AddRow(new string[] {
+                table2022.AddRow(new string[] {
                             "DAS16380_1",
                             "m!gration"});
 #line 57
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2077, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2022, "When ");
 #line hidden
 #line 61
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2078 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2023 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2078.AddRow(new string[] {
+                table2023.AddRow(new string[] {
                             "Build Date"});
 #line 62
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2078, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2023, "When ");
 #line hidden
 #line 65
  testRunner.When("User create dynamic list with \"First_List_DAS16380_1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -365,20 +360,20 @@ this.FeatureBackground();
 #line 72
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2079 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2024 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2079.AddRow(new string[] {
+                table2024.AddRow(new string[] {
                             "List",
                             "Widget_For_DAS16380",
                             "First_List_DAS16380_1",
                             "10",
                             "10"});
 #line 73
- testRunner.When("User creates new Widget", ((string)(null)), table2079, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2024, "When ");
 #line hidden
 #line 76
  testRunner.Then("\'Widget_For_DAS16380\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -487,14 +482,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChangingDashboardPe" +
-            "rmisson")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS14841")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChangingDashboardPe" +
+            "rmisson", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS14841",
+                "Cleanup"}, SourceLine=113)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChangingDashboardPermisson()
         {
             string[] tagsOfScenario = new string[] {
@@ -533,42 +527,42 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2080 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2025 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2080.AddRow(new string[] {
+                table2025.AddRow(new string[] {
                             "DAS14841_1",
                             "Value",
                             "FN14841_1",
                             "m!gration",
                             "Project Administrator"});
 #line 115
- testRunner.When("User create new User via API", ((string)(null)), table2080, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2025, "When ");
 #line hidden
 #line 119
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2081 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2026 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2081.AddRow(new string[] {
+                table2026.AddRow(new string[] {
                             "DAS14841_1",
                             "m!gration"});
 #line 120
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2081, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2026, "When ");
 #line hidden
 #line 124
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2082 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2027 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2082.AddRow(new string[] {
+                table2027.AddRow(new string[] {
                             "Service Pack or Build"});
 #line 125
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2082, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2027, "When ");
 #line hidden
 #line 128
  testRunner.When("User create dynamic list with \"DeviceListFor14841\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -582,14 +576,14 @@ this.FeatureBackground();
 #line 133
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2083 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2028 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "SplitBy",
                             "AggregateFunction",
                             "OrderBy"});
-                table2083.AddRow(new string[] {
+                table2028.AddRow(new string[] {
                             "Table",
                             "WidgetForDAS14841",
                             "DeviceListFor14841",
@@ -597,7 +591,7 @@ this.FeatureBackground();
                             "Count",
                             "Count DESC"});
 #line 134
- testRunner.When("User creates new Widget", ((string)(null)), table2083, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2028, "When ");
 #line hidden
 #line 137
  testRunner.Then("\'WidgetForDAS14841\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -626,17 +620,17 @@ this.FeatureBackground();
  testRunner.Then("New Permission \'Do not change\' displayed for \'DeviceListFor14841\' list on Permiss" +
                         "ions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2084 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2029 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table2084.AddRow(new string[] {
+                table2029.AddRow(new string[] {
                             "Do not change"});
-                table2084.AddRow(new string[] {
+                table2029.AddRow(new string[] {
                             "Everyone can see"});
-                table2084.AddRow(new string[] {
+                table2029.AddRow(new string[] {
                             "Everyone can edit"});
 #line 148
  testRunner.Then("User sees next options of New Permission field for \'DeviceListFor14841\' list on P" +
-                        "ermissions Pop-up", ((string)(null)), table2084, "Then ");
+                        "ermissions Pop-up", ((string)(null)), table2029, "Then ");
 #line hidden
 #line 154
  testRunner.Then("\'UPDATE & SHARE\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -682,14 +676,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarningPermissi" +
-            "onPoup")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS14841")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarningPermissi" +
+            "onPoup", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS14841",
+                "Cleanup"}, SourceLine=169)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarningPermissionPoup()
         {
             string[] tagsOfScenario = new string[] {
@@ -728,42 +721,42 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2085 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2030 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2085.AddRow(new string[] {
+                table2030.AddRow(new string[] {
                             "DAS14841_2",
                             "Value",
                             "FN14841_2",
                             "m!gration",
                             "Project Administrator"});
 #line 171
- testRunner.When("User create new User via API", ((string)(null)), table2085, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2030, "When ");
 #line hidden
 #line 175
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2086 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2031 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2086.AddRow(new string[] {
+                table2031.AddRow(new string[] {
                             "DAS14841_2",
                             "m!gration"});
 #line 176
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2086, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2031, "When ");
 #line hidden
 #line 180
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2087 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2032 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2087.AddRow(new string[] {
+                table2032.AddRow(new string[] {
                             "Service Pack or Build"});
 #line 181
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2087, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2032, "When ");
 #line hidden
 #line 184
  testRunner.When("User create dynamic list with \"DeviceListFor14841_1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -777,14 +770,14 @@ this.FeatureBackground();
 #line 189
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2088 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2033 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "SplitBy",
                             "AggregateFunction",
                             "OrderBy"});
-                table2088.AddRow(new string[] {
+                table2033.AddRow(new string[] {
                             "Table",
                             "WidgetForDAS14841",
                             "DeviceListFor14841_1",
@@ -792,7 +785,7 @@ this.FeatureBackground();
                             "Count",
                             "Count DESC"});
 #line 190
- testRunner.When("User creates new Widget", ((string)(null)), table2088, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2033, "When ");
 #line hidden
 #line 193
  testRunner.Then("\'WidgetForDAS14841\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -838,14 +831,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarningPermissi" +
-            "onPopup")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS14841")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarningPermissi" +
+            "onPopup", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS14841",
+                "Cleanup"}, SourceLine=211)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarningPermissionPopup()
         {
             string[] tagsOfScenario = new string[] {
@@ -884,42 +876,42 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2089 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2034 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2089.AddRow(new string[] {
+                table2034.AddRow(new string[] {
                             "DAS14841_3",
                             "Value",
                             "FN14841_3",
                             "m!gration",
                             "Project Administrator"});
 #line 213
- testRunner.When("User create new User via API", ((string)(null)), table2089, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2034, "When ");
 #line hidden
 #line 217
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2090 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2035 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2090.AddRow(new string[] {
+                table2035.AddRow(new string[] {
                             "DAS14841_3",
                             "m!gration"});
 #line 218
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2090, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2035, "When ");
 #line hidden
 #line 222
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2091 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2036 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2091.AddRow(new string[] {
+                table2036.AddRow(new string[] {
                             "Service Pack or Build"});
 #line 223
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2091, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2036, "When ");
 #line hidden
 #line 226
  testRunner.And("User create dynamic list with \"DeviceListFor14841_2\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -933,14 +925,14 @@ this.FeatureBackground();
 #line 231
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2092 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2037 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "SplitBy",
                             "AggregateFunction",
                             "OrderBy"});
-                table2092.AddRow(new string[] {
+                table2037.AddRow(new string[] {
                             "Table",
                             "WidgetForDAS14841",
                             "DeviceListFor14841_2",
@@ -948,7 +940,7 @@ this.FeatureBackground();
                             "Count",
                             "Count DESC"});
 #line 232
- testRunner.When("User creates new Widget", ((string)(null)), table2092, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2037, "When ");
 #line hidden
 #line 235
  testRunner.Then("\'WidgetForDAS14841\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -994,13 +986,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticularRow")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS14841")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticularRow", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS14841",
+                "Cleanup"}, SourceLine=252)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticularRow()
         {
             string[] tagsOfScenario = new string[] {
@@ -1038,42 +1029,42 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2093 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2038 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2093.AddRow(new string[] {
+                table2038.AddRow(new string[] {
                             "DAS14841_4",
                             "Value",
                             "FN14841_4",
                             "m!gration",
                             "Project Administrator"});
 #line 254
- testRunner.When("User create new User via API", ((string)(null)), table2093, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2038, "When ");
 #line hidden
 #line 258
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2094 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2039 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2094.AddRow(new string[] {
+                table2039.AddRow(new string[] {
                             "DAS14841_4",
                             "m!gration"});
 #line 259
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2094, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2039, "When ");
 #line hidden
 #line 263
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2095 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2040 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2095.AddRow(new string[] {
+                table2040.AddRow(new string[] {
                             "Service Pack or Build"});
 #line 264
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2095, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2040, "When ");
 #line hidden
 #line 267
  testRunner.When("User create dynamic list with \"DeviceListFor14841_3\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1084,12 +1075,12 @@ this.FeatureBackground();
 #line 270
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2096 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2041 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2096.AddRow(new string[] {
+                table2041.AddRow(new string[] {
                             "OS Architecture"});
 #line 271
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2096, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2041, "When ");
 #line hidden
 #line 274
  testRunner.When("User create dynamic list with \"DeviceListFor14841_4\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1106,14 +1097,14 @@ this.FeatureBackground();
 #line 280
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2097 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2042 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "SplitBy",
                             "AggregateFunction",
                             "OrderBy"});
-                table2097.AddRow(new string[] {
+                table2042.AddRow(new string[] {
                             "Table",
                             "WidgetForDAS14841_1",
                             "DeviceListFor14841_3",
@@ -1121,7 +1112,7 @@ this.FeatureBackground();
                             "Count",
                             "Count DESC"});
 #line 281
- testRunner.When("User creates new Widget", ((string)(null)), table2097, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2042, "When ");
 #line hidden
 #line 284
  testRunner.Then("\'WidgetForDAS14841_1\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1129,14 +1120,14 @@ this.FeatureBackground();
 #line 286
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2098 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2043 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "SplitBy",
                             "AggregateFunction",
                             "OrderBy"});
-                table2098.AddRow(new string[] {
+                table2043.AddRow(new string[] {
                             "Table",
                             "WidgetForDAS14841_2",
                             "DeviceListFor14841_4",
@@ -1144,7 +1135,7 @@ this.FeatureBackground();
                             "Count",
                             "Count DESC"});
 #line 287
- testRunner.When("User creates new Widget", ((string)(null)), table2098, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2043, "When ");
 #line hidden
 #line 290
  testRunner.Then("\'WidgetForDAS14841_2\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1206,17 +1197,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlyShared" +
-            "List")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS14841")]
-        [NUnit.Framework.CategoryAttribute("DAS14393")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("DAS14841R1", "FN14841R1", "DAS14841R2", "FN14841R2", "DeviceListFor14841_Read", "Read", "Dashboard for DAS14841_Read", "WidgetForDAS14841_Read", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS14841E1", "FN14841E1", "DAS14841E2", "FN14841E2", "DeviceListFor14841_Edit", "Edit", "Dashboard for DAS14841_Edit", "WidgetForDAS14841_Edit", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList(string login1, string username1, string login2, string username2, string listName, string shareType, string dashboardName, string widgetName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1256,38 +1236,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2099 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2044 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2099.AddRow(new string[] {
+                table2044.AddRow(new string[] {
                             string.Format("{0}", login1),
                             "Value",
                             string.Format("{0}", username1),
                             "m!gration",
                             "Project Administrator"});
-                table2099.AddRow(new string[] {
+                table2044.AddRow(new string[] {
                             string.Format("{0}", login2),
                             "Value",
                             string.Format("{0}", username2),
                             "m!gration",
                             "Project Administrator"});
 #line 313
- testRunner.When("User create new User via API", ((string)(null)), table2099, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2044, "When ");
 #line hidden
 #line 318
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2100 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2045 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2100.AddRow(new string[] {
+                table2045.AddRow(new string[] {
                             string.Format("{0}", login1),
                             "m!gration"});
 #line 319
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2100, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2045, "When ");
 #line hidden
 #line 323
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1319,26 +1299,26 @@ this.FeatureBackground();
 #line 332
  testRunner.When("User selects \'Specific users / teams\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2101 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2046 = new TechTalk.SpecFlow.Table(new string[] {
                             "User",
                             "Permission"});
-                table2101.AddRow(new string[] {
+                table2046.AddRow(new string[] {
                             string.Format("{0}", username2),
                             string.Format("{0}", shareType)});
 #line 333
- testRunner.When("User adds user to list of shared person", ((string)(null)), table2101, "When ");
+ testRunner.When("User adds user to list of shared person", ((string)(null)), table2046, "When ");
 #line hidden
 #line 336
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2102 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2047 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2102.AddRow(new string[] {
+                table2047.AddRow(new string[] {
                             string.Format("{0}", login2),
                             "m!gration"});
 #line 337
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2102, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2047, "When ");
 #line hidden
 #line 340
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1352,14 +1332,14 @@ this.FeatureBackground();
 #line 344
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2103 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2048 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "SplitBy",
                             "AggregateFunction",
                             "OrderBy"});
-                table2103.AddRow(new string[] {
+                table2048.AddRow(new string[] {
                             "Table",
                             string.Format("{0}", widgetName),
                             string.Format("{0}", listName),
@@ -1367,7 +1347,7 @@ this.FeatureBackground();
                             "Count",
                             "Count DESC"});
 #line 345
- testRunner.When("User creates new Widget", ((string)(null)), table2103, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2048, "When ");
 #line hidden
 #line 348
  testRunner.Then(string.Format("\'{0}\' Widget is displayed to the user", widgetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1404,6 +1384,42 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlyShared" +
+            "List, DAS14841R1", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS14841",
+                "DAS14393",
+                "Cleanup"}, SourceLine=361)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList_DAS14841R1()
+        {
+#line 312
+this.EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList("DAS14841R1", "FN14841R1", "DAS14841R2", "FN14841R2", "DeviceListFor14841_Read", "Read", "Dashboard for DAS14841_Read", "WidgetForDAS14841_Read", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlyShared" +
+            "List, DAS14841E1", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS14841",
+                "DAS14393",
+                "Cleanup"}, SourceLine=361)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList_DAS14841E1()
+        {
+#line 312
+this.EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList("DAS14841E1", "FN14841E1", "DAS14841E2", "FN14841E2", "DeviceListFor14841_Edit", "Edit", "Dashboard for DAS14841_Edit", "WidgetForDAS14841_Edit", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

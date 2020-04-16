@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AssociationsFunctionality3")]
+    [TechTalk.SpecRun.FeatureAttribute("AssociationsFunctionality3", Description="\tRuns Associations Functionality related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AssociationsFeature\\AssociationsFunctionality3.fe" +
+        "ature", SourceLine=0)]
     public partial class AssociationsFunctionality3Feature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
 #line 1 "AssociationsFunctionality3.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,17 +83,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEn" +
-            "titledToDeviceFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS18426")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Used on device", "Not entitled to device", "Not installed on device", "00BDM1JUR8IF419", "20040610sqlserverck", "UNKNOWN", "TRUE", "FALSE", null)]
-        [NUnit.Framework.TestCaseAttribute("Entitled to device", "Installed on device", "Not used on device", "001BAQXT6JWFPI", "AddressGrabber Standard", "TRUE", "UNKNOWN", "TRUE", null)]
-        [NUnit.Framework.TestCaseAttribute("Entitled to device", "Not installed on device", "Not used on device", "00BDM1JUR8IF419", "cdparanoia-libs", "UNKNOWN", "FALSE", "TRUE", null)]
-        [NUnit.Framework.TestCaseAttribute("Installed on device", "Not entitled to device", "Not used on device", "00KWQ4J3WKQM0G", "Adobe Reader 6.0.1 - Fran?ais", "TRUE", "UNKNOWN", "FALSE", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter(string operator1, string operator2, string operator3, string hostname, string application, string installed, string used, string entitled, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -197,25 +184,58 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
-            "NegativeValue")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS18804")]
-        [NUnit.Framework.TestCaseAttribute("Device Key", null)]
-        [NUnit.Framework.TestCaseAttribute("Application Key", null)]
-        [NUnit.Framework.TestCaseAttribute("CPU Count", null)]
-        [NUnit.Framework.TestCaseAttribute("CPU Count", null)]
-        [NUnit.Framework.TestCaseAttribute("CPU Speed (GHz)", null)]
-        [NUnit.Framework.TestCaseAttribute("HDD Count", null)]
-        [NUnit.Framework.TestCaseAttribute("HDD Total Size (GB)", null)]
-        [NUnit.Framework.TestCaseAttribute("Memory (GB)", null)]
-        [NUnit.Framework.TestCaseAttribute("Monitor Count", null)]
-        [NUnit.Framework.TestCaseAttribute("Network Card Count", null)]
-        [NUnit.Framework.TestCaseAttribute("Sound Card Count", null)]
-        [NUnit.Framework.TestCaseAttribute("Target Drive Free Space (GB)", null)]
-        [NUnit.Framework.TestCaseAttribute("Video Card Count", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEn" +
+            "titledToDeviceFilter, Variant 0", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18426",
+                "Cleanup"}, SourceLine=31)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter_Variant0()
+        {
+#line 9
+this.EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter("Used on device", "Not entitled to device", "Not installed on device", "00BDM1JUR8IF419", "20040610sqlserverck", "UNKNOWN", "TRUE", "FALSE", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEn" +
+            "titledToDeviceFilter, Variant 1", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18426",
+                "Cleanup"}, SourceLine=31)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter_Variant1()
+        {
+#line 9
+this.EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter("Entitled to device", "Installed on device", "Not used on device", "001BAQXT6JWFPI", "AddressGrabber Standard", "TRUE", "UNKNOWN", "TRUE", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEn" +
+            "titledToDeviceFilter, Variant 2", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18426",
+                "Cleanup"}, SourceLine=31)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter_Variant2()
+        {
+#line 9
+this.EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter("Entitled to device", "Not installed on device", "Not used on device", "00BDM1JUR8IF419", "cdparanoia-libs", "UNKNOWN", "FALSE", "TRUE", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEn" +
+            "titledToDeviceFilter, Variant 3", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18426",
+                "Cleanup"}, SourceLine=31)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter_Variant3()
+        {
+#line 9
+this.EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter("Installed on device", "Not entitled to device", "Not used on device", "00KWQ4J3WKQM0G", "Adobe Reader 6.0.1 - Fran?ais", "TRUE", "UNKNOWN", "FALSE", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue(string filter, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -271,13 +291,13 @@ this.FeatureBackground();
 #line 44
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1753 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1698 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1753.AddRow(new string[] {
+                table1698.AddRow(new string[] {
                             "-1"});
 #line 45
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following valu" +
-                            "e:", filter), ((string)(null)), table1753, "When ");
+                            "e:", filter), ((string)(null)), table1698, "When ");
 #line hidden
 #line 48
  testRunner.When("User clicks the Associations button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -292,13 +312,168 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAfterSortingAn" +
-            "dRunninList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS18454")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 0", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant0()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("Device Key", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 1", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant1()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("Application Key", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 2", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant2()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("CPU Count", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 3", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant3()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("CPU Count", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 4", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant4()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("CPU Speed (GHz)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 5", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant5()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("HDD Count", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 6", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant6()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("HDD Total Size (GB)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 7", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant7()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("Memory (GB)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 8", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant8()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("Monitor Count", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 9", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant9()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("Network Card Count", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 10", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant10()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("Sound Card Count", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 11", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant11()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("Target Drive Free Space (GB)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWith" +
+            "NegativeValue, Variant 12", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18804"}, SourceLine=53)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue_Variant12()
+        {
+#line 38
+this.EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue("Video Card Count", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAfterSortingAn" +
+            "dRunninList", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18454",
+                "Cleanup"}, SourceLine=68)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAfterSortingAndRunninList()
         {
             string[] tagsOfScenario = new string[] {
@@ -376,13 +551,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfterRunningLis" +
-            "t")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS18897")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfterRunningLis" +
+            "t", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18897",
+                "Cleanup"}, SourceLine=83)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfterRunningList()
         {
             string[] tagsOfScenario = new string[] {
@@ -448,13 +622,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAfterGoingToA" +
-            "llDeviceApplicationsPageFromSavedList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS18447")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAfterGoingToA" +
+            "llDeviceApplicationsPageFromSavedList", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18447",
+                "Cleanup"}, SourceLine=94)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAfterGoingToAllDeviceApplicationsPageFromSavedList()
         {
             string[] tagsOfScenario = new string[] {
@@ -530,6 +703,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

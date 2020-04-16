@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AllCheckbox")]
+    [TechTalk.SpecRun.FeatureAttribute("AllCheckbox", Description="\tRuns All Checkbox related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ActionsPanel\\AllCheckbox.feature", SourceLine=0)]
     public partial class AllCheckboxFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
 #line 1 "AllCheckbox.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,15 +82,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("AllCheckbox")]
-        [NUnit.Framework.CategoryAttribute("DAS10769")]
-        [NUnit.Framework.CategoryAttribute("DAS10656")]
-        [NUnit.Framework.CategoryAttribute("DAS12206")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch", new string[] {
+                "Evergreen",
+                "Users",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10769",
+                "DAS10656",
+                "DAS12206"}, SourceLine=8)]
         public virtual void EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch()
         {
             string[] tagsOfScenario = new string[] {
@@ -206,19 +202,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("AllCheckbox")]
-        [NUnit.Framework.CategoryAttribute("DAS10775")]
-        [NUnit.Framework.CategoryAttribute("DAS10656")]
-        [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.TestCaseAttribute("Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -283,16 +266,79 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_SearchWithinAllRows")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("AllCheckbox")]
-        [NUnit.Framework.CategoryAttribute("DAS10772")]
-        [NUnit.Framework.CategoryAttribute("DAS10656")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
-        [NUnit.Framework.CategoryAttribute("DAS12602")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel, De" +
+            "vices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10775",
+                "DAS10656",
+                "DAS12602"}, SourceLine=44)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel_Devices()
+        {
+#line 34
+this.EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel("Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel, Us" +
+            "ers", new string[] {
+                "Evergreen",
+                "AllLists",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10775",
+                "DAS10656",
+                "DAS12602"}, SourceLine=44)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel_Users()
+        {
+#line 34
+this.EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel("Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel, Ap" +
+            "plications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10775",
+                "DAS10656",
+                "DAS12602"}, SourceLine=44)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel_Applications()
+        {
+#line 34
+this.EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel("Applications", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel, Ma" +
+            "ilboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10775",
+                "DAS10656",
+                "DAS12602"}, SourceLine=44)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel_Mailboxes()
+        {
+#line 34
+this.EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel("Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_SearchWithinAllRows", new string[] {
+                "Evergreen",
+                "Devices",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10772",
+                "DAS10656",
+                "DAS11664",
+                "DAS12602"}, SourceLine=50)]
         public virtual void EvergreenJnr_DevicesList_SearchWithinAllRows()
         {
             string[] tagsOfScenario = new string[] {
@@ -377,18 +423,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("AllCheckbox")]
-        [NUnit.Framework.CategoryAttribute("DAS10656")]
-        [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "17279", "Hostname", "00BDM1JUR8IF419", "17278", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "41339", "Username", "002B5DC7D4D34D5C895", "41338", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "2223", "Application", "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)", "2222", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "14884", "Email Address", "000F977AC8824FE39B8@bclabs.local", "14883", null)]
         public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest(string pageName, string selectedRowsCount, string columnname, string selectedRowName, string selectedRowsCountAfterDiselect, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -480,15 +514,70 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditi" +
-            "onalColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("AllCheckbox")]
-        [NUnit.Framework.CategoryAttribute("DAS10656")]
-        [NUnit.Framework.CategoryAttribute("DAS12602")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10656",
+                "DAS12602"}, SourceLine=86)]
+        public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Devices()
+        {
+#line 66
+this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Devices", "17279", "Hostname", "00BDM1JUR8IF419", "17278", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10656",
+                "DAS12602"}, SourceLine=86)]
+        public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Users()
+        {
+#line 66
+this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Users", "41339", "Username", "002B5DC7D4D34D5C895", "41338", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest, Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10656",
+                "DAS12602"}, SourceLine=86)]
+        public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Applications()
+        {
+#line 66
+this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Applications", "2223", "Application", "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)", "2222", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10656",
+                "DAS12602"}, SourceLine=86)]
+        public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Mailboxes()
+        {
+#line 66
+this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Mailboxes", "14884", "Email Address", "000F977AC8824FE39B8@bclabs.local", "14883", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditi" +
+            "onalColumn", new string[] {
+                "Evergreen",
+                "AllLists",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS10656",
+                "DAS12602"}, SourceLine=92)]
         public virtual void EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -579,14 +668,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatAllCheckboxesAreCheckedAfterAFirstClick")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_ActionsPanel")]
-        [NUnit.Framework.CategoryAttribute("AllCheckbox")]
-        [NUnit.Framework.CategoryAttribute("DAS11894")]
-        [NUnit.Framework.CategoryAttribute("DAS12602")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatAllCheckboxesAreCheckedAfterAFirstClick", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "Evergreen_ActionsPanel",
+                "AllCheckbox",
+                "DAS11894",
+                "DAS12602"}, SourceLine=112)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatAllCheckboxesAreCheckedAfterAFirstClick()
         {
             string[] tagsOfScenario = new string[] {
@@ -649,6 +737,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

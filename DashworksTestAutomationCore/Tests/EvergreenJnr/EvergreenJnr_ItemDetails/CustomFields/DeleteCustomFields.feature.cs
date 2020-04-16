@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("DeleteCustomFields")]
+    [TechTalk.SpecRun.FeatureAttribute("DeleteCustomFields", Description="\tDelete Custom fields", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\CustomFields\\DeleteCustomFields.featu" +
+        "re", SourceLine=0)]
     public partial class DeleteCustomFieldsFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "DeleteCustomFields.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,14 +83,13 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckCustomFieldDeleting")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS16489")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckCustomFieldDeleting", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS16489",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckCustomFieldDeleting()
         {
             string[] tagsOfScenario = new string[] {
@@ -132,33 +129,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2922 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2867 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Computer"});
-                table2922.AddRow(new string[] {
+                table2867.AddRow(new string[] {
                             "CfDAS16489_1",
                             "FlDAS16489_1",
                             "true",
                             "true",
                             "true"});
 #line 10
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table2922, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table2867, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2923 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2868 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value"});
-                table2923.AddRow(new string[] {
+                table2868.AddRow(new string[] {
                             "device",
                             "17266",
                             "CfDAS16489_1",
                             "ValueDAS16489_1"});
 #line 13
- testRunner.And("User creates Custom Field via API", ((string)(null)), table2923, "And ");
+ testRunner.And("User creates Custom Field via API", ((string)(null)), table2868, "And ");
 #line hidden
 #line 17
  testRunner.And("User navigates to the \'Device\' details page for \'WIN-KTJC6PMV2P5\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -217,15 +214,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_DeleteGroupedCustomFields")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS17695")]
-        [NUnit.Framework.CategoryAttribute("DAS18362")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_DeleteGroupedCustomFields", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17695",
+                "DAS18362",
+                "Cleanup"}, SourceLine=36)]
         public virtual void EvergreenJnr_MailboxesList_DeleteGroupedCustomFields()
         {
             string[] tagsOfScenario = new string[] {
@@ -267,38 +263,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2924 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2869 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Mailbox"});
-                table2924.AddRow(new string[] {
+                table2869.AddRow(new string[] {
                             "CfDAS17695_1",
                             "FlDAS17695_1",
                             "true",
                             "true",
                             "true"});
 #line 38
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table2924, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table2869, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2925 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2870 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value"});
-                table2925.AddRow(new string[] {
+                table2870.AddRow(new string[] {
                             "mailbox",
                             "48731",
                             "CfDAS17695_1",
                             "ValueDAS17695_1A"});
-                table2925.AddRow(new string[] {
+                table2870.AddRow(new string[] {
                             "mailbox",
                             "48731",
                             "CfDAS17695_1",
                             "ValueDAS17695_1B"});
 #line 41
- testRunner.And("User creates Custom Field via API", ((string)(null)), table2925, "And ");
+ testRunner.And("User creates Custom Field via API", ((string)(null)), table2870, "And ");
 #line hidden
 #line 45
  testRunner.And("User navigates to the \'Mailbox\' details page for \'gregoja@bclabs.local\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -309,14 +305,14 @@ this.FeatureBackground();
 #line 47
  testRunner.When("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2926 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2871 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table2926.AddRow(new string[] {
+                table2871.AddRow(new string[] {
                             "Value",
                             "true"});
 #line 48
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2926, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2871, "When ");
 #line hidden
 #line 51
  testRunner.Then("Cog menu is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -359,6 +355,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

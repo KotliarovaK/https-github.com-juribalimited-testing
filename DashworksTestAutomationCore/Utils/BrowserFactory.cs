@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Providers;
@@ -61,7 +63,7 @@ namespace DashworksTestAutomation.Utils
                     options.UseSpecCompliantProtocol = false;
                     options.SetLoggingPreference(LogType.Browser, LogLevel.All);
 
-                    var driver = new ChromeDriver(options);
+                    var driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), options);
 
                     return driver;
 

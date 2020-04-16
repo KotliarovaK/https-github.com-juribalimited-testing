@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("WidgetHalfDonut")]
+    [TechTalk.SpecRun.FeatureAttribute("WidgetHalfDonut", Description="\tRuns tests for Half Donut Widgets creation or editing", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_DashboardsPage\\WidgetHalfDonut.feature", SourceLine=0)]
     public partial class WidgetHalfDonutFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line 1 "WidgetHalfDonut.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,12 +82,11 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15918")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15918"}, SourceLine=8)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut()
         {
             string[] tagsOfScenario = new string[] {
@@ -132,49 +128,38 @@ this.FeatureBackground();
 #line 11
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2239 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2184 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "AggregateFunction",
                             "SplitBy"});
-                table2239.AddRow(new string[] {
+                table2184.AddRow(new string[] {
                             "Half donut",
                             "WidgetForDAS15918",
                             "2004 Rollout",
                             "Count",
                             "2004: Pre-Migration \\ Ready to Migrate"});
 #line 12
- testRunner.And("User adds new Widget", ((string)(null)), table2239, "And ");
+ testRunner.And("User adds new Widget", ((string)(null)), table2184, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2240 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2185 = new TechTalk.SpecFlow.Table(new string[] {
                             "items"});
-                table2240.AddRow(new string[] {
+                table2185.AddRow(new string[] {
                             "2004: Pre-Migration \\ Ready to Migrate ASC"});
-                table2240.AddRow(new string[] {
+                table2185.AddRow(new string[] {
                             "2004: Pre-Migration \\ Ready to Migrate DESC"});
-                table2240.AddRow(new string[] {
+                table2185.AddRow(new string[] {
                             "Count ASC"});
-                table2240.AddRow(new string[] {
+                table2185.AddRow(new string[] {
                             "Count DESC"});
 #line 15
- testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table2240, "Then ");
+ testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table2185, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetRes" +
-            "ultsAreAllZero")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16167")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Pie", null)]
-        [NUnit.Framework.TestCaseAttribute("Donut", null)]
-        [NUnit.Framework.TestCaseAttribute("Half donut", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZero(string widgetType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -216,12 +201,12 @@ this.FeatureBackground();
 #line 24
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2241 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2186 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2241.AddRow(new string[] {
+                table2186.AddRow(new string[] {
                             "HDD Total Size (GB)"});
 #line 25
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2241, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2186, "When ");
 #line hidden
 #line 28
  testRunner.And("User create dynamic list with \"DAS16167_HddList\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -235,7 +220,7 @@ this.FeatureBackground();
 #line 31
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2242 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2187 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
@@ -243,7 +228,7 @@ this.FeatureBackground();
                             "AggregateFunction",
                             "AggregateBy",
                             "OrderBy"});
-                table2242.AddRow(new string[] {
+                table2187.AddRow(new string[] {
                             string.Format("{0}", widgetType),
                             "HddListDAS16167",
                             "DAS16167_HddList",
@@ -252,7 +237,7 @@ this.FeatureBackground();
                             "HDD Total Size (GB)",
                             "HDD Total Size (GB) Minimum ASC"});
 #line 32
- testRunner.And("User adds new Widget", ((string)(null)), table2242, "And ");
+ testRunner.And("User adds new Widget", ((string)(null)), table2187, "And ");
 #line hidden
 #line 35
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -271,6 +256,54 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetRes" +
+            "ultsAreAllZero, Pie", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=42)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZero_Pie()
+        {
+#line 23
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZero("Pie", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetRes" +
+            "ultsAreAllZero, Donut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=42)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZero_Donut()
+        {
+#line 23
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZero("Donut", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetRes" +
+            "ultsAreAllZero, Half donut", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS16167",
+                "Cleanup"}, SourceLine=42)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZero_HalfDonut()
+        {
+#line 23
+this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZero("Half donut", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

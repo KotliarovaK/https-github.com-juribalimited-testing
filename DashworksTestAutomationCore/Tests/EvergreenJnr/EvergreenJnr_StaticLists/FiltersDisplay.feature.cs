@@ -19,9 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_StaticList
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("FiltersDisplay")]
-    [NUnit.Framework.CategoryAttribute("retry:1")]
+    [TechTalk.SpecRun.FeatureAttribute("FiltersDisplay", new string[] {
+            "retry:1"}, Description="\tRuns Static Filters Display related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_StaticLists\\FiltersDisplay.feature", SourceLine=1)]
     public partial class FiltersDisplayFeature
     {
         
@@ -33,7 +32,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_StaticList
 #line 1 "FiltersDisplay.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -42,19 +41,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_StaticList
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,7 +61,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_StaticList
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -88,19 +85,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_StaticList
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpene" +
-            "dAfterDynamicLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_StaticLists")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("DAS10993")]
-        [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("DAS13389")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpene" +
+            "dAfterDynamicLists", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_StaticLists",
+                "FiltersDisplay",
+                "Evergreen_FiltersFeature",
+                "DAS10993",
+                "DAS12152",
+                "DAS12351",
+                "DAS13389",
+                "Cleanup"}, SourceLine=9)]
         public virtual void EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -161,13 +157,13 @@ this.FeatureBackground();
 #line 14
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3785 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3730 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3785.AddRow(new string[] {
+                table3730.AddRow(new string[] {
                             "Empty"});
 #line 15
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" with added column a" +
-                        "nd following checkboxes:", ((string)(null)), table3785, "When ");
+                        "nd following checkboxes:", ((string)(null)), table3730, "When ");
 #line hidden
 #line 18
  testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -187,15 +183,15 @@ this.FeatureBackground();
 #line 23
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3786 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3731 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3786.AddRow(new string[] {
+                table3731.AddRow(new string[] {
                             "0281Z79JGPVPH4"});
-                table3786.AddRow(new string[] {
+                table3731.AddRow(new string[] {
                             "00HA7MKAVVFDAV"});
 #line 24
  testRunner.When("User create static list with \"Static List TestName14\" name on \"Devices\" page with" +
-                        " following items", ((string)(null)), table3786, "When ");
+                        " following items", ((string)(null)), table3731, "When ");
 #line hidden
 #line 28
  testRunner.Then("\"Static List TestName14\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -225,19 +221,18 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("DAS10978")]
-        [NUnit.Framework.CategoryAttribute("DAS12034")]
-        [NUnit.Framework.CategoryAttribute("DAS12221")]
-        [NUnit.Framework.CategoryAttribute("DAS12232")]
-        [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ListPanel",
+                "CustomListDisplay",
+                "Evergreen_FiltersFeature",
+                "DAS10978",
+                "DAS12034",
+                "DAS12221",
+                "DAS12232",
+                "DAS12351",
+                "Cleanup"}, SourceLine=37)]
         public virtual void EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList()
         {
             string[] tagsOfScenario = new string[] {
@@ -299,15 +294,15 @@ this.FeatureBackground();
 #line 42
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3787 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3732 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3787.AddRow(new string[] {
+                table3732.AddRow(new string[] {
                             "Not Applicable"});
-                table3787.AddRow(new string[] {
+                table3732.AddRow(new string[] {
                             "No"});
 #line 43
  testRunner.When("User add \"Windows7Mi: Portal Self Service \\ SS Application List Completed\" filter" +
-                        " where type is \"Equals\" with added column and following checkboxes:", ((string)(null)), table3787, "When ");
+                        " where type is \"Equals\" with added column and following checkboxes:", ((string)(null)), table3732, "When ");
 #line hidden
 #line 47
  testRunner.Then("\"Windows7Mi: Portal Self Service \\ SS Application List Completed\" filter is added" +
@@ -351,18 +346,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExistingObjectT" +
-            "oStaticList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_StaticLists")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("DAS10695")]
-        [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("DAS12966")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExistingObjectT" +
+            "oStaticList", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_StaticLists",
+                "FiltersDisplay",
+                "Evergreen_FiltersFeature",
+                "DAS10695",
+                "DAS12152",
+                "DAS12966",
+                "Cleanup"}, SourceLine=60)]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExistingObjectToStaticList()
         {
             string[] tagsOfScenario = new string[] {
@@ -421,18 +415,18 @@ this.FeatureBackground();
 #line 65
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3788 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3733 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3788.AddRow(new string[] {
+                table3733.AddRow(new string[] {
                             "00BDM1JUR8IF419"});
-                table3788.AddRow(new string[] {
+                table3733.AddRow(new string[] {
                             "00K4CEEQ737BA4L"});
-                table3788.AddRow(new string[] {
+                table3733.AddRow(new string[] {
                             "011PLA470S0B9DJ"});
-                table3788.AddRow(new string[] {
+                table3733.AddRow(new string[] {
                             "019BFPQGKK5QT8N"});
 #line 66
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3788, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3733, "When ");
 #line hidden
 #line 72
  testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -458,14 +452,14 @@ this.FeatureBackground();
 #line 79
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3789 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3734 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3789.AddRow(new string[] {
+                table3734.AddRow(new string[] {
                             "00BDM1JUR8IF419"});
-                table3789.AddRow(new string[] {
+                table3734.AddRow(new string[] {
                             "00K4CEEQ737BA4L"});
 #line 80
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3789, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3734, "When ");
 #line hidden
 #line 84
  testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -482,14 +476,14 @@ this.FeatureBackground();
 #line 88
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3790 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3735 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3790.AddRow(new string[] {
+                table3735.AddRow(new string[] {
                             "00BDM1JUR8IF419"});
-                table3790.AddRow(new string[] {
+                table3735.AddRow(new string[] {
                             "00K4CEEQ737BA4L"});
 #line 89
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3790, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3735, "When ");
 #line hidden
 #line 93
  testRunner.Then("User add selected rows in \"TopFour TestName\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -502,6 +496,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

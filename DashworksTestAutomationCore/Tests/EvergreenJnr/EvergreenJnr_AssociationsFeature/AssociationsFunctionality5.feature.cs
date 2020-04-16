@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AssociationsFunctionality5")]
+    [TechTalk.SpecRun.FeatureAttribute("AssociationsFunctionality5", Description="\tRuns Associations Functionality related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AssociationsFeature\\AssociationsFunctionality5.fe" +
+        "ature", SourceLine=0)]
     public partial class AssociationsFunctionality5Feature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
 #line 1 "AssociationsFunctionality5.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,12 +83,11 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociation" +
-            "sDropdown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS18092")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociation" +
+            "sDropdown", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18092"}, SourceLine=8)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociationsDropdown()
         {
             string[] tagsOfScenario = new string[] {
@@ -174,12 +171,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBranchFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS18987")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBranchFilter", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18987",
+                "Cleanup"}, SourceLine=25)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBranchFilter()
         {
             string[] tagsOfScenario = new string[] {
@@ -234,13 +230,13 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1758 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1703 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table1758.AddRow(new string[] {
+                table1703.AddRow(new string[] {
                             "Empty"});
 #line 33
  testRunner.When("User add \"Device OS Branch\" filter where type is \"Equals\" without added column an" +
-                        "d following checkboxes:", ((string)(null)), table1758, "When ");
+                        "d following checkboxes:", ((string)(null)), table1703, "When ");
 #line hidden
 #line 36
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -267,11 +263,10 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThat")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS19320")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThat", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS19320"}, SourceLine=44)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThat()
         {
             string[] tagsOfScenario = new string[] {
@@ -333,14 +328,14 @@ this.FeatureBackground();
 #line 54
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1759 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1704 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1759.AddRow(new string[] {
+                table1704.AddRow(new string[] {
                             "Manufacturer"});
-                table1759.AddRow(new string[] {
+                table1704.AddRow(new string[] {
                             "CPU Architecture"});
 #line 55
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1759, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1704, "When ");
 #line hidden
 #line 59
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -355,13 +350,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatListRunSuccessfullyAfterAddingColumnsForTh" +
-            "eSameCustomFieldForDeviceAndApplication")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS19185")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatListRunSuccessfullyAfterAddingColumnsForTh" +
+            "eSameCustomFieldForDeviceAndApplication", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS19185",
+                "Cleanup"}, SourceLine=63)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatListRunSuccessfullyAfterAddingColumnsForTheSameCustomFieldForDeviceAndApplication()
         {
             string[] tagsOfScenario = new string[] {
@@ -398,14 +392,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1760 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1705 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Computer",
                             "Application"});
-                table1760.AddRow(new string[] {
+                table1705.AddRow(new string[] {
                             "CustomDAS19185",
                             "LabelDAS19185",
                             "true",
@@ -413,7 +407,7 @@ this.FeatureBackground();
                             "true",
                             "true"});
 #line 65
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table1760, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table1705, "When ");
 #line hidden
 #line 68
  testRunner.When("User navigates to the \'Device\' details page for \'QFI94WAUX17N4I\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -476,17 +470,17 @@ this.FeatureBackground();
 #line 87
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1761 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1706 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
 #line 88
  testRunner.When("User add \"Device LabelDAS19185\" filter where type is \"Not empty\" with added colum" +
-                        "n and following value:", ((string)(null)), table1761, "When ");
+                        "n and following value:", ((string)(null)), table1706, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1762 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1707 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
 #line 90
  testRunner.When("User add \"App LabelDAS19185\" filter where type is \"Not empty\" with added column a" +
-                        "nd following value:", ((string)(null)), table1762, "When ");
+                        "nd following value:", ((string)(null)), table1707, "When ");
 #line hidden
 #line 92
  testRunner.When("User clicks the Associations button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -502,6 +496,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

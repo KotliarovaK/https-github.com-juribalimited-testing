@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UsersFiltersAndColumns")]
+    [TechTalk.SpecRun.FeatureAttribute("UsersFiltersAndColumns", Description="\tCheck all Columns and Filters via API", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_API_FiltersAndColumns\\UsersFiltersAndColumns.feat" +
+        "ure", SourceLine=0)]
     public partial class UsersFiltersAndColumnsFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
 #line 1 "UsersFiltersAndColumns.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -82,12 +80,11 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckAllColumns")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckAllColumns", new string[] {
+                "Evergreen",
+                "Users",
+                "API",
+                "FiltersAndColumns"}, SourceLine=7)]
         public virtual void EvergreenJnr_UsersList_CheckAllColumns()
         {
             string[] tagsOfScenario = new string[] {
@@ -130,12 +127,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckAllFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckAllFilters", new string[] {
+                "Evergreen",
+                "Users",
+                "API",
+                "FiltersAndColumns"}, SourceLine=11)]
         public virtual void EvergreenJnr_UsersList_CheckAllFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -178,16 +174,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("DAS19261")]
-        [NUnit.Framework.TestCaseAttribute("Application", "App Count (Installed on Owned Device)", "users?$filter=(installedApplications%20%3D%201)&$select=username,directoryName,di" +
-            "splayName,fullyDistinguishedObjectName,installedApplications", null)]
-        [NUnit.Framework.TestCaseAttribute("Suggested", "Display Name", "users?$filter=(displayName%20EQUALS%20(\'Jeremiah%20S.%20O\'\'Connor\'))", null)]
         public virtual void EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -225,19 +211,53 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1744 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1689 = new TechTalk.SpecFlow.Table(new string[] {
                             "FilterCategory",
                             "FilterName",
                             "QueryString"});
-                table1744.AddRow(new string[] {
+                table1689.AddRow(new string[] {
                             string.Format("{0}", filterCategory),
                             string.Format("{0}", filterName),
                             string.Format("{0}", queryString)});
 #line 17
-testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1744, "Then ");
+testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1689, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData, Examples 1, Applicatio" +
+            "n", new string[] {
+                "Evergreen",
+                "Users",
+                "API",
+                "FiltersAndColumns",
+                "DAS19261"}, SourceLine=22)]
+        public virtual void EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData_ExampleSet0_Application()
+        {
+#line 16
+this.EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData("Application", "App Count (Installed on Owned Device)", "users?$filter=(installedApplications%20%3D%201)&$select=username,directoryName,di" +
+                    "splayName,fullyDistinguishedObjectName,installedApplications", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData, Examples 1, Suggested", new string[] {
+                "Evergreen",
+                "Users",
+                "API",
+                "FiltersAndColumns",
+                "DAS19261"}, SourceLine=22)]
+        public virtual void EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData_ExampleSet1_Suggested()
+        {
+#line 16
+this.EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData("Suggested", "Display Name", "users?$filter=(displayName%20EQUALS%20(\'Jeremiah%20S.%20O\'\'Connor\'))", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

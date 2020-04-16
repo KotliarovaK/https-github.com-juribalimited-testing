@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AssociationsFunctionality7")]
+    [TechTalk.SpecRun.FeatureAttribute("AssociationsFunctionality7", Description="\tRuns Associations Functionality related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AssociationsFeature\\AssociationsFunctionality7.fe" +
+        "ature", SourceLine=0)]
     public partial class AssociationsFunctionality7Feature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
 #line 1 "AssociationsFunctionality7.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,13 +83,12 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatProjectApplicationAssociationsArePersisted" +
-            "OfTheAllValues")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS20187")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatProjectApplicationAssociationsArePersisted" +
+            "OfTheAllValues", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS20187",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectApplicationAssociationsArePersistedOfTheAllValues()
         {
             string[] tagsOfScenario = new string[] {
@@ -183,11 +180,10 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatUserCantAddMoreThanFiveAssociations")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS20131")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatUserCantAddMoreThanFiveAssociations", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS20131"}, SourceLine=27)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatUserCantAddMoreThanFiveAssociations()
         {
             string[] tagsOfScenario = new string[] {
@@ -288,12 +284,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatParticularAssociationWork")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS20130")]
-        [NUnit.Framework.CategoryAttribute("DAS20450")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatParticularAssociationWork", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS20130",
+                "DAS20450"}, SourceLine=49)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatParticularAssociationWork()
         {
             string[] tagsOfScenario = new string[] {
@@ -346,12 +341,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatParticularFilterWorkWithAssociations")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS20130")]
-        [NUnit.Framework.CategoryAttribute("DAS20450")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatParticularFilterWorkWithAssociations", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS20130",
+                "DAS20450"}, SourceLine=56)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatParticularFilterWorkWithAssociations()
         {
             string[] tagsOfScenario = new string[] {
@@ -410,14 +404,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS18234")]
-        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_ProfileDetails",
+                "UserProfile",
+                "DAS18234",
+                "Remove_Profile_Changes"}, SourceLine=64)]
         public virtual void EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying()
         {
             string[] tagsOfScenario = new string[] {
@@ -510,13 +503,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithColumnApplicationCusto" +
-            "mField")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS19810")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithColumnApplicationCusto" +
+            "mField", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS19810",
+                "Cleanup"}, SourceLine=83)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithColumnApplicationCustomField()
         {
             string[] tagsOfScenario = new string[] {
@@ -573,12 +565,12 @@ this.FeatureBackground();
 #line 90
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1769 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1714 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1769.AddRow(new string[] {
+                table1714.AddRow(new string[] {
                             "App Phoenix Field"});
 #line 91
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1769, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1714, "When ");
 #line hidden
 #line 94
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -594,6 +586,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

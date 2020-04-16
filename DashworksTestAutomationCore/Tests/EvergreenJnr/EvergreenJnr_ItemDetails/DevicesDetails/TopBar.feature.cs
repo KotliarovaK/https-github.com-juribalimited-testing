@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TopBar")]
+    [TechTalk.SpecRun.FeatureAttribute("TopBar", Description="\tRuns Devices Item Details Top Bar  related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\DevicesDetails\\TopBar.feature", SourceLine=0)]
     public partial class TopBarFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "TopBar.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,16 +82,15 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnDevi" +
-            "cesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15552")]
-        [NUnit.Framework.CategoryAttribute("DAS16921")]
-        [NUnit.Framework.CategoryAttribute("DAS16743")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnDevi" +
+            "cesPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS15552",
+                "DAS16921",
+                "DAS16743"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -152,33 +148,32 @@ this.FeatureBackground();
 #line 14
  testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3024 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2969 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComplianceItems"});
-                table3024.AddRow(new string[] {
+                table2969.AddRow(new string[] {
                             "Overall Compliance"});
-                table3024.AddRow(new string[] {
+                table2969.AddRow(new string[] {
                             "App Compliance"});
-                table3024.AddRow(new string[] {
+                table2969.AddRow(new string[] {
                             "Hardware Compliance"});
 #line 15
- testRunner.And("following items are displayed in the top bar:", ((string)(null)), table3024, "And ");
+ testRunner.And("following items are displayed in the top bar:", ((string)(null)), table2969, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnDevice" +
-            "sPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS14975")]
-        [NUnit.Framework.CategoryAttribute("DAS15333")]
-        [NUnit.Framework.CategoryAttribute("DAS16762")]
-        [NUnit.Framework.CategoryAttribute("DAS17166")]
-        [NUnit.Framework.CategoryAttribute("DAS17075")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnDevice" +
+            "sPage", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS14975",
+                "DAS15333",
+                "DAS16762",
+                "DAS17166",
+                "DAS17075"}, SourceLine=21)]
         public virtual void EvergreenJnr_DevicesList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -244,47 +239,46 @@ this.FeatureBackground();
  testRunner.When("User selects \'USE ME FOR AUTOMATION(USR SCHDLD)\' in the \'Item Details Project\' dr" +
                         "opdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3025 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2970 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComplianceItems"});
-                table3025.AddRow(new string[] {
+                table2970.AddRow(new string[] {
                             "Overall Readiness"});
-                table3025.AddRow(new string[] {
+                table2970.AddRow(new string[] {
                             "App Readiness"});
-                table3025.AddRow(new string[] {
+                table2970.AddRow(new string[] {
                             "Task Readiness"});
 #line 29
- testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table3025, "Then ");
+ testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table2970, "Then ");
 #line hidden
 #line 34
  testRunner.When("User selects \'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' in the \'Item Details Project\'" +
                         " dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3026 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2971 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComplianceItems"});
-                table3026.AddRow(new string[] {
+                table2971.AddRow(new string[] {
                             "Overall Readiness"});
-                table3026.AddRow(new string[] {
+                table2971.AddRow(new string[] {
                             "App Readiness"});
-                table3026.AddRow(new string[] {
+                table2971.AddRow(new string[] {
                             "Task Readiness"});
-                table3026.AddRow(new string[] {
+                table2971.AddRow(new string[] {
                             "Workflow"});
 #line 35
- testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table3026, "Then ");
+ testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table2971, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsDisplayedCor" +
-            "rectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17166")]
-        [NUnit.Framework.CategoryAttribute("DAS17355")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsDisplayedCor" +
+            "rectly", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17166",
+                "DAS17355"}, SourceLine=42)]
         public virtual void EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -344,35 +338,34 @@ this.FeatureBackground();
  testRunner.When("User selects \'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' in the \'Item Details Project\'" +
                         " dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3027 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2972 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComplianceItems",
                             "ColorName"});
-                table3027.AddRow(new string[] {
+                table2972.AddRow(new string[] {
                             "Overall Readiness",
                             "RED"});
-                table3027.AddRow(new string[] {
+                table2972.AddRow(new string[] {
                             "App Readiness",
                             "BLUE"});
-                table3027.AddRow(new string[] {
+                table2972.AddRow(new string[] {
                             "Task Readiness",
                             "PURPLE"});
-                table3027.AddRow(new string[] {
+                table2972.AddRow(new string[] {
                             "Workflow",
                             "Failed"});
 #line 50
- testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table3027, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table2972, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Devices_CheckThatProjectsSwitcherDoesNotDuplicateItem")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16959")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Devices_CheckThatProjectsSwitcherDoesNotDuplicateItem", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16959"}, SourceLine=57)]
         public virtual void EvergreenJnr_Devices_CheckThatProjectsSwitcherDoesNotDuplicateItem()
         {
             string[] tagsOfScenario = new string[] {
@@ -419,12 +412,12 @@ this.FeatureBackground();
 #line 61
  testRunner.Then("dropdown is not opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3028 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2973 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table3028.AddRow(new string[] {
+                table2973.AddRow(new string[] {
                             "Evergreen"});
 #line 62
- testRunner.Then("following Values are not displayed in the \'Item Details Project\' dropdown:", ((string)(null)), table3028, "Then ");
+ testRunner.Then("following Values are not displayed in the \'Item Details Project\' dropdown:", ((string)(null)), table2973, "Then ");
 #line hidden
 #line 65
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -442,21 +435,20 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplaye" +
-            "dInAlphabeticalOrder")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16698")]
-        [NUnit.Framework.CategoryAttribute("DAS17005")]
-        [NUnit.Framework.CategoryAttribute("DAS15347")]
-        [NUnit.Framework.CategoryAttribute("DAS16668")]
-        [NUnit.Framework.CategoryAttribute("DAS16903")]
-        [NUnit.Framework.CategoryAttribute("DAS16907")]
-        [NUnit.Framework.CategoryAttribute("DAS16857")]
-        [NUnit.Framework.CategoryAttribute("DAS17005")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplaye" +
+            "dInAlphabeticalOrder", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16698",
+                "DAS17005",
+                "DAS15347",
+                "DAS16668",
+                "DAS16903",
+                "DAS16907",
+                "DAS16857",
+                "DAS17005"}, SourceLine=70)]
         public virtual void EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder()
         {
             string[] tagsOfScenario = new string[] {
@@ -537,14 +529,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallCompl" +
-            "ianceFromTopBarInEvergreenMode")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16857")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallCompl" +
+            "ianceFromTopBarInEvergreenMode", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16857"}, SourceLine=80)]
         public virtual void EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode()
         {
             string[] tagsOfScenario = new string[] {
@@ -592,38 +583,37 @@ this.FeatureBackground();
 #line 84
  testRunner.When("User navigates to the \'Device Owner\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3029 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2974 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3029.AddRow(new string[] {
+                table2974.AddRow(new string[] {
                             "Compliance",
                             "RED"});
 #line 85
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3029, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2974, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3030 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2975 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComplianceItems",
                             "ColorName"});
-                table3030.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "Overall Compliance",
                             "RED"});
 #line 88
- testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table3030, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table2975, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallCompl" +
-            "ianceFromTopBarInProjectMode")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS16857")]
-        [NUnit.Framework.CategoryAttribute("DAS16928")]
-        [NUnit.Framework.CategoryAttribute("DAS18405")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallCompl" +
+            "ianceFromTopBarInProjectMode", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS16857",
+                "DAS16928",
+                "DAS18405"}, SourceLine=92)]
         public virtual void EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode()
         {
             string[] tagsOfScenario = new string[] {
@@ -682,26 +672,32 @@ this.FeatureBackground();
 #line 98
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3031 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2976 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3031.AddRow(new string[] {
+                table2976.AddRow(new string[] {
                             "Readiness",
                             "GREY"});
 #line 99
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3031, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2976, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3032 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2977 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComplianceItems",
                             "ColorName"});
-                table3032.AddRow(new string[] {
+                table2977.AddRow(new string[] {
                             "Overall Readiness",
                             "GREY"});
 #line 102
- testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table3032, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table2977, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

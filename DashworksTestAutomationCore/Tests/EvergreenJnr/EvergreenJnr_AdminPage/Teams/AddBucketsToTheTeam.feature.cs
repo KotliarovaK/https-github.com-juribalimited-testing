@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AddBucketsToTheTeam")]
+    [TechTalk.SpecRun.FeatureAttribute("AddBucketsToTheTeam", Description="\tAdd Buckets To The Team", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AdminPage\\Teams\\AddBucketsToTheTeam.feature", SourceLine=0)]
     public partial class AddBucketsToTheTeamFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line 1 "AddBucketsToTheTeam.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,17 +82,16 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_AddingBucketsToTheTeam")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS12999")]
-        [NUnit.Framework.CategoryAttribute("DAS13421")]
-        [NUnit.Framework.CategoryAttribute("DAS12788")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_AddingBucketsToTheTeam", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "AdminPage",
+                "DAS12999",
+                "DAS13421",
+                "DAS12788",
+                "Teams",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_AdminPage_AddingBucketsToTheTeam()
         {
             string[] tagsOfScenario = new string[] {
@@ -141,31 +137,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1722 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1667 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1722.AddRow(new string[] {
+                table1667.AddRow(new string[] {
                             "TestTeam5",
                             "test",
                             "false"});
 #line 10
- testRunner.When("User creates new Team via api", ((string)(null)), table1722, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1667, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1723 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1668 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "TeamName",
                             "IsDefault"});
-                table1723.AddRow(new string[] {
+                table1668.AddRow(new string[] {
                             "TestBucket6",
                             "Team 1045",
                             "false"});
-                table1723.AddRow(new string[] {
+                table1668.AddRow(new string[] {
                             "TestBucket7",
                             "Team 1045",
                             "false"});
 #line 13
- testRunner.And("User creates new Bucket via api", ((string)(null)), table1723, "And ");
+ testRunner.And("User creates new Bucket via api", ((string)(null)), table1668, "And ");
 #line hidden
 #line 17
  testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -194,14 +190,14 @@ this.FeatureBackground();
 #line 25
  testRunner.Then("Page with \'Add Buckets\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1724 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1669 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1724.AddRow(new string[] {
+                table1669.AddRow(new string[] {
                             "TestBucket6"});
-                table1724.AddRow(new string[] {
+                table1669.AddRow(new string[] {
                             "TestBucket7"});
 #line 26
- testRunner.When("User expands \'Evergreen\' multiselect and selects following Objects", ((string)(null)), table1724, "When ");
+ testRunner.When("User expands \'Evergreen\' multiselect and selects following Objects", ((string)(null)), table1669, "When ");
 #line hidden
 #line 30
  testRunner.When("User clicks \'ADD BUCKETS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -245,15 +241,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS13421")]
-        [NUnit.Framework.CategoryAttribute("DAS12788")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams", new string[] {
+                "Evergreen",
+                "Admin",
+                "EvergreenJnr_AdminPage",
+                "AdminPage",
+                "DAS13421",
+                "DAS12788",
+                "Teams"}, SourceLine=43)]
         public virtual void EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams()
         {
             string[] tagsOfScenario = new string[] {
@@ -388,13 +383,13 @@ this.FeatureBackground();
 #line 75
  testRunner.Then("numeric data in table is sorted by \'Mailboxes\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1725 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1670 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1725.AddRow(new string[] {
+                table1670.AddRow(new string[] {
                             "False"});
 #line 77
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default\' " +
-                        "column:", ((string)(null)), table1725, "When ");
+                        "column:", ((string)(null)), table1670, "When ");
 #line hidden
 #line 80
  testRunner.Then("Rows counter shows \"0\" of \"9\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -456,6 +451,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

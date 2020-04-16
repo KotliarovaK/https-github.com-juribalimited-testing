@@ -19,9 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GlobalSear
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("MainFunctionality")]
-    [NUnit.Framework.CategoryAttribute("retry:1")]
+    [TechTalk.SpecRun.FeatureAttribute("MainFunctionality", new string[] {
+            "retry:1"}, Description="\tRuns Main Functionality related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_GlobalSearch\\MainFunctionality.feature", SourceLine=1)]
     public partial class MainFunctionalityFeature
     {
         
@@ -33,7 +32,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GlobalSear
 #line 1 "MainFunctionality.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -42,19 +41,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GlobalSear
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,7 +61,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GlobalSear
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -88,20 +85,19 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GlobalSear
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpac" +
-            "es")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("MainFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS11490")]
-        [NUnit.Framework.CategoryAttribute("DAS11745")]
-        [NUnit.Framework.CategoryAttribute("DAS11706")]
-        [NUnit.Framework.CategoryAttribute("DAS12544")]
-        [NUnit.Framework.CategoryAttribute("DAS12047")]
-        [NUnit.Framework.CategoryAttribute("DAS12603")]
-        [NUnit.Framework.CategoryAttribute("DAS12728")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpac" +
+            "es", new string[] {
+                "Evergreen",
+                "GlobalSearch",
+                "EvergreenJnr_GlobalSearch",
+                "MainFunctionality",
+                "DAS11490",
+                "DAS11745",
+                "DAS11706",
+                "DAS12544",
+                "DAS12047",
+                "DAS12603",
+                "DAS12728"}, SourceLine=9)]
         public virtual void EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpaces()
         {
             string[] tagsOfScenario = new string[] {
@@ -269,13 +265,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("MainFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton", new string[] {
+                "Evergreen",
+                "GlobalSearch",
+                "EvergreenJnr_GlobalSearch",
+                "MainFunctionality",
+                "DAS11350"}, SourceLine=47)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton()
         {
             string[] tagsOfScenario = new string[] {
@@ -329,18 +324,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
-            "heSpecificCharacters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("MainFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS11495")]
-        [NUnit.Framework.TestCaseAttribute("Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -395,13 +378,68 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("MainFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS14731")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
+            "heSpecificCharacters, Devices", new string[] {
+                "Evergreen",
+                "GlobalSearch",
+                "EvergreenJnr_GlobalSearch",
+                "MainFunctionality",
+                "DAS11495"}, SourceLine=62)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters_Devices()
+        {
+#line 55
+this.EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters("Devices", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
+            "heSpecificCharacters, Users", new string[] {
+                "Evergreen",
+                "GlobalSearch",
+                "EvergreenJnr_GlobalSearch",
+                "MainFunctionality",
+                "DAS11495"}, SourceLine=62)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters_Users()
+        {
+#line 55
+this.EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters("Users", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
+            "heSpecificCharacters, Applications", new string[] {
+                "Evergreen",
+                "GlobalSearch",
+                "EvergreenJnr_GlobalSearch",
+                "MainFunctionality",
+                "DAS11495"}, SourceLine=62)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters_Applications()
+        {
+#line 55
+this.EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters("Applications", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
+            "heSpecificCharacters, Mailboxes", new string[] {
+                "Evergreen",
+                "GlobalSearch",
+                "EvergreenJnr_GlobalSearch",
+                "MainFunctionality",
+                "DAS11495"}, SourceLine=62)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters_Mailboxes()
+        {
+#line 55
+this.EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters("Mailboxes", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed", new string[] {
+                "Evergreen",
+                "GlobalSearch",
+                "EvergreenJnr_GlobalSearch",
+                "MainFunctionality",
+                "DAS14731"}, SourceLine=68)]
         public virtual void EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed()
         {
             string[] tagsOfScenario = new string[] {
@@ -458,14 +496,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLangua" +
-            "ge")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("MainFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS17633")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLangua" +
+            "ge", new string[] {
+                "Evergreen",
+                "GlobalSearch",
+                "EvergreenJnr_GlobalSearch",
+                "MainFunctionality",
+                "DAS17633"}, SourceLine=76)]
         public virtual void EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguage()
         {
             string[] tagsOfScenario = new string[] {
@@ -530,13 +567,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Search_CheckThatPressToSeeAllResultsWorksInGlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GlobalSearch")]
-        [NUnit.Framework.CategoryAttribute("MainFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS17368")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Search_CheckThatPressToSeeAllResultsWorksInGlobalSearch", new string[] {
+                "Evergreen",
+                "GlobalSearch",
+                "EvergreenJnr_GlobalSearch",
+                "MainFunctionality",
+                "DAS17368"}, SourceLine=86)]
         public virtual void EvergreenJnr_Search_CheckThatPressToSeeAllResultsWorksInGlobalSearch()
         {
             string[] tagsOfScenario = new string[] {
@@ -589,6 +625,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

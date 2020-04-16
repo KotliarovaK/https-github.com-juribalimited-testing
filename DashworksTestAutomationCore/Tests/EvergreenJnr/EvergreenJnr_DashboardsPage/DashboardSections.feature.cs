@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("DashboardSections")]
+    [TechTalk.SpecRun.FeatureAttribute("DashboardSections", Description="\tRuns Section and Widget management tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_DashboardsPage\\DashboardSections.feature", SourceLine=0)]
     public partial class DashboardSectionsFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line 1 "DashboardSections.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,13 +82,12 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Sections")]
-        [NUnit.Framework.CategoryAttribute("DAS14358")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Sections",
+                "DAS14358",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated()
         {
             string[] tagsOfScenario = new string[] {
@@ -138,7 +134,7 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2040 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1985 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
@@ -148,7 +144,7 @@ this.FeatureBackground();
                             "OrderBy",
                             "MaxValues",
                             "ShowLegend"});
-                table2040.AddRow(new string[] {
+                table1985.AddRow(new string[] {
                             "Pie",
                             "WidgetForDAS14358",
                             "All Applications",
@@ -159,7 +155,7 @@ this.FeatureBackground();
                             "10",
                             "true"});
 #line 13
- testRunner.When("User creates new Widget", ((string)(null)), table2040, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1985, "When ");
 #line hidden
 #line 16
  testRunner.When("User remembers number of Sections and Widgets on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -177,13 +173,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS14728")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS14728",
+                "Cleanup"}, SourceLine=21)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection()
         {
             string[] tagsOfScenario = new string[] {
@@ -230,7 +225,7 @@ this.FeatureBackground();
 #line 25
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2041 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1986 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
@@ -240,7 +235,7 @@ this.FeatureBackground();
                             "OrderBy",
                             "MaxValues",
                             "ShowLegend"});
-                table2041.AddRow(new string[] {
+                table1986.AddRow(new string[] {
                             "Pie",
                             "WidgetForDAS14728",
                             "All Applications",
@@ -251,7 +246,7 @@ this.FeatureBackground();
                             "10",
                             "true"});
 #line 26
- testRunner.When("User creates new Widget", ((string)(null)), table2041, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1986, "When ");
 #line hidden
 #line 29
  testRunner.Then("User sees \'1\' Widgets with Legend on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -266,16 +261,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreati" +
-            "ng")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS15721")]
-        [NUnit.Framework.CategoryAttribute("DAS15937")]
-        [NUnit.Framework.CategoryAttribute("DAS18911")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreati" +
+            "ng", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS15721",
+                "DAS15937",
+                "DAS18911",
+                "Cleanup"}, SourceLine=33)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating()
         {
             string[] tagsOfScenario = new string[] {
@@ -327,20 +321,20 @@ this.FeatureBackground();
 #line 37
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2042 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1987 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2042.AddRow(new string[] {
+                table1987.AddRow(new string[] {
                             "List",
                             "1_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 38
- testRunner.When("User creates new Widget", ((string)(null)), table2042, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1987, "When ");
 #line hidden
 #line 41
  testRunner.Then("\'1_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -348,20 +342,20 @@ this.FeatureBackground();
 #line 43
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2043 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1988 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2043.AddRow(new string[] {
+                table1988.AddRow(new string[] {
                             "List",
                             "2_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 44
- testRunner.When("User creates new Widget", ((string)(null)), table2043, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1988, "When ");
 #line hidden
 #line 47
  testRunner.Then("\'2_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -369,20 +363,20 @@ this.FeatureBackground();
 #line 49
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2044 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1989 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2044.AddRow(new string[] {
+                table1989.AddRow(new string[] {
                             "List",
                             "3_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 50
- testRunner.When("User creates new Widget", ((string)(null)), table2044, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1989, "When ");
 #line hidden
 #line 53
  testRunner.Then("\'3_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -390,20 +384,20 @@ this.FeatureBackground();
 #line 55
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2045 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1990 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2045.AddRow(new string[] {
+                table1990.AddRow(new string[] {
                             "List",
                             "4_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 56
- testRunner.When("User creates new Widget", ((string)(null)), table2045, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1990, "When ");
 #line hidden
 #line 59
  testRunner.Then("\'4_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -411,20 +405,20 @@ this.FeatureBackground();
 #line 61
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2046 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1991 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2046.AddRow(new string[] {
+                table1991.AddRow(new string[] {
                             "List",
                             "5_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 62
- testRunner.When("User creates new Widget", ((string)(null)), table2046, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1991, "When ");
 #line hidden
 #line 65
  testRunner.Then("\'5_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -432,20 +426,20 @@ this.FeatureBackground();
 #line 67
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2047 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1992 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2047.AddRow(new string[] {
+                table1992.AddRow(new string[] {
                             "List",
                             "6_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 68
- testRunner.When("User creates new Widget", ((string)(null)), table2047, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1992, "When ");
 #line hidden
 #line 71
  testRunner.Then("\'6_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -453,20 +447,20 @@ this.FeatureBackground();
 #line 73
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2048 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1993 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2048.AddRow(new string[] {
+                table1993.AddRow(new string[] {
                             "List",
                             "7_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 74
- testRunner.When("User creates new Widget", ((string)(null)), table2048, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1993, "When ");
 #line hidden
 #line 77
  testRunner.Then("\'7_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -474,20 +468,20 @@ this.FeatureBackground();
 #line 79
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2049 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1994 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2049.AddRow(new string[] {
+                table1994.AddRow(new string[] {
                             "List",
                             "8_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 80
- testRunner.When("User creates new Widget", ((string)(null)), table2049, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1994, "When ");
 #line hidden
 #line 83
  testRunner.Then("\'8_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -495,20 +489,20 @@ this.FeatureBackground();
 #line 85
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2050 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1995 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2050.AddRow(new string[] {
+                table1995.AddRow(new string[] {
                             "List",
                             "9_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 86
- testRunner.When("User creates new Widget", ((string)(null)), table2050, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1995, "When ");
 #line hidden
 #line 89
  testRunner.Then("\'9_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -516,20 +510,20 @@ this.FeatureBackground();
 #line 91
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2051 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1996 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2051.AddRow(new string[] {
+                table1996.AddRow(new string[] {
                             "List",
                             "10_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 92
- testRunner.When("User creates new Widget", ((string)(null)), table2051, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1996, "When ");
 #line hidden
 #line 95
  testRunner.Then("\'10_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -561,13 +555,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS14618")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Widgets",
+                "DAS14618",
+                "Cleanup"}, SourceLine=106)]
         public virtual void EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections()
         {
             string[] tagsOfScenario = new string[] {
@@ -614,7 +607,7 @@ this.FeatureBackground();
 #line 110
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2052 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1997 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
@@ -622,7 +615,7 @@ this.FeatureBackground();
                             "AggregateBy",
                             "AggregateFunction",
                             "OrderBy"});
-                table2052.AddRow(new string[] {
+                table1997.AddRow(new string[] {
                             "Pie",
                             "WidgetForDAS14618",
                             "All Applications",
@@ -631,7 +624,7 @@ this.FeatureBackground();
                             "Count distinct",
                             "Vendor ASC"});
 #line 111
- testRunner.When("User creates new Widget", ((string)(null)), table2052, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1997, "When ");
 #line hidden
 #line 114
  testRunner.Then("\'WidgetForDAS14618\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -682,12 +675,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS12974")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS12974",
+                "Cleanup"}, SourceLine=130)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted()
         {
             string[] tagsOfScenario = new string[] {
@@ -732,7 +724,7 @@ this.FeatureBackground();
 #line 134
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2053 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1998 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
@@ -742,7 +734,7 @@ this.FeatureBackground();
                             "OrderBy",
                             "MaxValues",
                             "ShowLegend"});
-                table2053.AddRow(new string[] {
+                table1998.AddRow(new string[] {
                             "Pie",
                             "DAS12974SECTION1",
                             "All Applications",
@@ -753,7 +745,7 @@ this.FeatureBackground();
                             "10",
                             "true"});
 #line 135
- testRunner.When("User creates new Widget", ((string)(null)), table2053, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1998, "When ");
 #line hidden
 #line 138
  testRunner.Then("\'DAS12974SECTION1\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -764,7 +756,7 @@ this.FeatureBackground();
 #line 140
  testRunner.When("User clicks ADD WIDGET button for \'2\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2054 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1999 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
@@ -774,7 +766,7 @@ this.FeatureBackground();
                             "OrderBy",
                             "MaxValues",
                             "ShowLegend"});
-                table2054.AddRow(new string[] {
+                table1999.AddRow(new string[] {
                             "Pie",
                             "DAS12974SECTION2",
                             "All Applications",
@@ -785,7 +777,7 @@ this.FeatureBackground();
                             "10",
                             "true"});
 #line 141
- testRunner.When("User creates new Widget", ((string)(null)), table2054, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table1999, "When ");
 #line hidden
 #line 144
  testRunner.Then("\'DAS12974SECTION2\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -809,12 +801,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSectionCanBeHiddenAndShown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS14472")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSectionCanBeHiddenAndShown", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS14472",
+                "Cleanup"}, SourceLine=151)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSectionCanBeHiddenAndShown()
         {
             string[] tagsOfScenario = new string[] {
@@ -859,18 +850,18 @@ this.FeatureBackground();
 #line 155
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2055 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2000 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "Type"});
-                table2055.AddRow(new string[] {
+                table2000.AddRow(new string[] {
                             "Card",
                             "SectionDisplaying",
                             "All Devices",
                             "First Cell"});
 #line 156
- testRunner.When("User creates new Widget", ((string)(null)), table2055, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2000, "When ");
 #line hidden
 #line 159
  testRunner.Then("\'SectionDisplaying\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -912,12 +903,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSectionCanMovedUpAndDown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS14472")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSectionCanMovedUpAndDown", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS14472",
+                "Cleanup"}, SourceLine=174)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSectionCanMovedUpAndDown()
         {
             string[] tagsOfScenario = new string[] {
@@ -962,18 +952,18 @@ this.FeatureBackground();
 #line 178
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2056 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2001 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "Type"});
-                table2056.AddRow(new string[] {
+                table2001.AddRow(new string[] {
                             "Card",
                             "SectionMoving",
                             "All Devices",
                             "First Cell"});
 #line 179
- testRunner.When("User creates new Widget", ((string)(null)), table2056, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2001, "When ");
 #line hidden
 #line 182
  testRunner.Then("\'SectionMoving\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1046,13 +1036,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSectionCantBeDuplicatedWhenWidgetLimitIsReac" +
-            "hed")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("DAS14472")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatSectionCantBeDuplicatedWhenWidgetLimitIsReac" +
+            "hed", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "DAS14472",
+                "Cleanup"}, SourceLine=208)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSectionCantBeDuplicatedWhenWidgetLimitIsReached()
         {
             string[] tagsOfScenario = new string[] {
@@ -1098,20 +1087,20 @@ this.FeatureBackground();
 #line 212
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2057 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2002 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2057.AddRow(new string[] {
+                table2002.AddRow(new string[] {
                             "List",
                             "1_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 213
- testRunner.When("User creates new Widget", ((string)(null)), table2057, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2002, "When ");
 #line hidden
 #line 216
  testRunner.Then("\'1_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1119,20 +1108,20 @@ this.FeatureBackground();
 #line 218
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2058 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2003 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2058.AddRow(new string[] {
+                table2003.AddRow(new string[] {
                             "List",
                             "2_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 219
- testRunner.When("User creates new Widget", ((string)(null)), table2058, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2003, "When ");
 #line hidden
 #line 222
  testRunner.Then("\'2_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1140,20 +1129,20 @@ this.FeatureBackground();
 #line 224
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2059 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2004 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2059.AddRow(new string[] {
+                table2004.AddRow(new string[] {
                             "List",
                             "3_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 225
- testRunner.When("User creates new Widget", ((string)(null)), table2059, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2004, "When ");
 #line hidden
 #line 228
  testRunner.Then("\'3_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1161,20 +1150,20 @@ this.FeatureBackground();
 #line 230
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2060 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2005 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2060.AddRow(new string[] {
+                table2005.AddRow(new string[] {
                             "List",
                             "4_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 231
- testRunner.When("User creates new Widget", ((string)(null)), table2060, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2005, "When ");
 #line hidden
 #line 234
  testRunner.Then("\'4_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1185,20 +1174,20 @@ this.FeatureBackground();
 #line 239
  testRunner.When("User clicks ADD WIDGET button for \'2\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2061 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2006 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2061.AddRow(new string[] {
+                table2006.AddRow(new string[] {
                             "List",
                             "6_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 240
- testRunner.When("User creates new Widget", ((string)(null)), table2061, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2006, "When ");
 #line hidden
 #line 243
  testRunner.Then("\'6_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1206,20 +1195,20 @@ this.FeatureBackground();
 #line 245
  testRunner.When("User clicks ADD WIDGET button for \'2\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2062 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2007 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2062.AddRow(new string[] {
+                table2007.AddRow(new string[] {
                             "List",
                             "7_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 246
- testRunner.When("User creates new Widget", ((string)(null)), table2062, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2007, "When ");
 #line hidden
 #line 249
  testRunner.Then("\'7_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1227,20 +1216,20 @@ this.FeatureBackground();
 #line 251
  testRunner.When("User clicks ADD WIDGET button for \'2\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2063 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2008 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2063.AddRow(new string[] {
+                table2008.AddRow(new string[] {
                             "List",
                             "8_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 252
- testRunner.When("User creates new Widget", ((string)(null)), table2063, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2008, "When ");
 #line hidden
 #line 255
  testRunner.Then("\'8_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1248,20 +1237,20 @@ this.FeatureBackground();
 #line 257
  testRunner.When("User clicks ADD WIDGET button for \'2\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2064 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2009 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2064.AddRow(new string[] {
+                table2009.AddRow(new string[] {
                             "List",
                             "9_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 258
- testRunner.When("User creates new Widget", ((string)(null)), table2064, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2009, "When ");
 #line hidden
 #line 261
  testRunner.Then("\'9_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1277,13 +1266,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Sections")]
-        [NUnit.Framework.CategoryAttribute("DAS14472")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Sections",
+                "DAS14472",
+                "Cleanup"}, SourceLine=266)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection()
         {
             string[] tagsOfScenario = new string[] {
@@ -1330,20 +1318,20 @@ this.FeatureBackground();
 #line 270
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2065 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2010 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2065.AddRow(new string[] {
+                table2010.AddRow(new string[] {
                             "List",
                             "1_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 271
- testRunner.When("User creates new Widget", ((string)(null)), table2065, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2010, "When ");
 #line hidden
 #line 274
  testRunner.Then("\'1_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1351,20 +1339,20 @@ this.FeatureBackground();
 #line 276
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2066 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2011 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2066.AddRow(new string[] {
+                table2011.AddRow(new string[] {
                             "List",
                             "2_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 277
- testRunner.When("User creates new Widget", ((string)(null)), table2066, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2011, "When ");
 #line hidden
 #line 280
  testRunner.Then("\'2_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1372,20 +1360,20 @@ this.FeatureBackground();
 #line 282
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2067 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2012 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2067.AddRow(new string[] {
+                table2012.AddRow(new string[] {
                             "List",
                             "3_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 283
- testRunner.When("User creates new Widget", ((string)(null)), table2067, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2012, "When ");
 #line hidden
 #line 286
  testRunner.Then("\'3_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1414,16 +1402,16 @@ this.FeatureBackground();
 #line 295
  testRunner.Then("User sees \'DescriptionName\' description for \'SectionName\' section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2068 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2013 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetName"});
-                table2068.AddRow(new string[] {
+                table2013.AddRow(new string[] {
                             "1_Widget"});
-                table2068.AddRow(new string[] {
+                table2013.AddRow(new string[] {
                             "2_Widget"});
-                table2068.AddRow(new string[] {
+                table2013.AddRow(new string[] {
                             "3_Widget"});
 #line 296
- testRunner.Then("Listed widgets are placed by \'3\' in line:", ((string)(null)), table2068, "Then ");
+ testRunner.Then("Listed widgets are placed by \'3\' in line:", ((string)(null)), table2013, "Then ");
 #line hidden
 #line 302
  testRunner.When("User clicks \'Edit\' menu option for section with \'3_Widget\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1440,16 +1428,16 @@ this.FeatureBackground();
 #line 306
  testRunner.When("User sets expand status to \'true\' for \'SectionName\' section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2069 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2014 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetName"});
-                table2069.AddRow(new string[] {
+                table2014.AddRow(new string[] {
                             "1_Widget"});
-                table2069.AddRow(new string[] {
+                table2014.AddRow(new string[] {
                             "2_Widget"});
-                table2069.AddRow(new string[] {
+                table2014.AddRow(new string[] {
                             "3_Widget"});
 #line 307
- testRunner.Then("Listed widgets are placed by \'1\' in line:", ((string)(null)), table2069, "Then ");
+ testRunner.Then("Listed widgets are placed by \'1\' in line:", ((string)(null)), table2014, "Then ");
 #line hidden
 #line 313
  testRunner.When("User clicks \'Edit\' menu option for section with \'3_Widget\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1467,13 +1455,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckLongDescriptionCanBeHiddenAndShown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Sections")]
-        [NUnit.Framework.CategoryAttribute("DAS14472")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DashboardsPage_CheckLongDescriptionCanBeHiddenAndShown", new string[] {
+                "Evergreen",
+                "EvergreenJnr_DashboardsPage",
+                "Sections",
+                "DAS14472",
+                "Cleanup"}, SourceLine=318)]
         public virtual void EvergreenJnr_DashboardsPage_CheckLongDescriptionCanBeHiddenAndShown()
         {
             string[] tagsOfScenario = new string[] {
@@ -1521,20 +1508,20 @@ this.FeatureBackground();
 #line 322
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2070 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2015 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "MaxRows",
                             "MaxColumns"});
-                table2070.AddRow(new string[] {
+                table2015.AddRow(new string[] {
                             "List",
                             "1_Widget",
                             "All Devices",
                             "5",
                             "5"});
 #line 323
- testRunner.When("User creates new Widget", ((string)(null)), table2070, "When ");
+ testRunner.When("User creates new Widget", ((string)(null)), table2015, "When ");
 #line hidden
 #line 326
  testRunner.Then("\'1_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1563,6 +1550,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

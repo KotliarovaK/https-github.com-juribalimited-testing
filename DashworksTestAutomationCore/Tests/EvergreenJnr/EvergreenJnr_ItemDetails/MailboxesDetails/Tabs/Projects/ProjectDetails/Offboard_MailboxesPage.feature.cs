@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Offboard_MailboxesPage")]
+    [TechTalk.SpecRun.FeatureAttribute("Offboard_MailboxesPage", Description="\tRuns Offboard Mailboxes Page related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\MailboxesDetails\\Tabs\\Projects\\Projec" +
+        "tDetails\\Offboard_MailboxesPage.feature", SourceLine=0)]
     public partial class Offboard_MailboxesPageFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "Offboard_MailboxesPage.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,18 +83,17 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
-            "WindowWithNoAssotiatedDevicesOnMailboxesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS17964")]
-        [NUnit.Framework.CategoryAttribute("DAS17990")]
-        [NUnit.Framework.CategoryAttribute("DAS17000")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
+            "WindowWithNoAssotiatedDevicesOnMailboxesPage", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS17964",
+                "DAS17990",
+                "DAS17000",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=10)]
         public virtual void EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnMailboxesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -170,28 +167,28 @@ this.FeatureBackground();
 #line 19
  testRunner.Then("select all rows checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3248 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3193 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3248.AddRow(new string[] {
+                table3193.AddRow(new string[] {
                             "Username"});
-                table3248.AddRow(new string[] {
+                table3193.AddRow(new string[] {
                             "Display Name"});
-                table3248.AddRow(new string[] {
+                table3193.AddRow(new string[] {
                             "Domain"});
-                table3248.AddRow(new string[] {
+                table3193.AddRow(new string[] {
                             "Owner"});
 #line 20
- testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table3248, "And ");
+ testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table3193, "And ");
 #line hidden
 #line 26
  testRunner.When("User deselect all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3249 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3194 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3249.AddRow(new string[] {
+                table3194.AddRow(new string[] {
                             "01DEAC5F18B34084B04"});
 #line 27
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table3249, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table3194, "When ");
 #line hidden
 #line 30
  testRunner.When("User clicks \'OFFBOARD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -237,19 +234,18 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
-            "WindowWithAssotiatedDevicesOnPageMailboxes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS17964")]
-        [NUnit.Framework.CategoryAttribute("DAS17990")]
-        [NUnit.Framework.CategoryAttribute("DAS17000")]
-        [NUnit.Framework.CategoryAttribute("DAS18067")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
+            "WindowWithAssotiatedDevicesOnPageMailboxes", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS17964",
+                "DAS17990",
+                "DAS17000",
+                "DAS18067",
+                "Cleanup",
+                "Not_Ready"}, SourceLine=47)]
         public virtual void EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnPageMailboxes()
         {
             string[] tagsOfScenario = new string[] {
@@ -325,18 +321,18 @@ this.FeatureBackground();
 #line 56
  testRunner.Then("select all rows checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3250 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3195 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3250.AddRow(new string[] {
+                table3195.AddRow(new string[] {
                             "Username"});
-                table3250.AddRow(new string[] {
+                table3195.AddRow(new string[] {
                             "Display Name"});
-                table3250.AddRow(new string[] {
+                table3195.AddRow(new string[] {
                             "Domain"});
-                table3250.AddRow(new string[] {
+                table3195.AddRow(new string[] {
                             "Owner"});
 #line 57
- testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table3250, "And ");
+ testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table3195, "And ");
 #line hidden
 #line 63
  testRunner.When("User clicks \'OFFBOARD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -383,16 +379,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
-            "WindowWithoutUserOnMailboxesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS17964")]
-        [NUnit.Framework.CategoryAttribute("DAS17990")]
-        [NUnit.Framework.CategoryAttribute("DAS17000")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUp" +
+            "WindowWithoutUserOnMailboxesPage", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS17964",
+                "DAS17990",
+                "DAS17000"}, SourceLine=78)]
         public virtual void EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnMailboxesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -464,14 +459,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatLinkOnTheOffboardPopupForTheAssociatedUserRed" +
-            "irectsCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS18785")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatLinkOnTheOffboardPopupForTheAssociatedUserRed" +
+            "irectsCorrectly", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS18785"}, SourceLine=89)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatLinkOnTheOffboardPopupForTheAssociatedUserRedirectsCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -545,15 +539,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Offboard")]
-        [NUnit.Framework.CategoryAttribute("DAS19175")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly" +
+            "", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "Offboard",
+                "DAS19175",
+                "Zion_NewGrid"}, SourceLine=101)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -618,124 +611,130 @@ this.FeatureBackground();
 #line 109
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3251 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3196 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3251.AddRow(new string[] {
+                table3196.AddRow(new string[] {
                             "Username"});
-                table3251.AddRow(new string[] {
+                table3196.AddRow(new string[] {
                             "Display Name"});
-                table3251.AddRow(new string[] {
+                table3196.AddRow(new string[] {
                             "Domain"});
-                table3251.AddRow(new string[] {
+                table3196.AddRow(new string[] {
                             "Owner"});
-                table3251.AddRow(new string[] {
+                table3196.AddRow(new string[] {
                             "Bucket"});
 #line 110
- testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table3251, "And ");
+ testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table3196, "And ");
 #line hidden
 #line 117
  testRunner.When("User deselect all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3252 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3197 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3252.AddRow(new string[] {
+                table3197.AddRow(new string[] {
                             "Username"});
-                table3252.AddRow(new string[] {
+                table3197.AddRow(new string[] {
                             "Display Name"});
-                table3252.AddRow(new string[] {
+                table3197.AddRow(new string[] {
                             "Domain"});
-                table3252.AddRow(new string[] {
+                table3197.AddRow(new string[] {
                             "Owner"});
-                table3252.AddRow(new string[] {
+                table3197.AddRow(new string[] {
                             "Bucket"});
 #line 118
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3252, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3197, "Then ");
 #line hidden
 #line 125
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3253 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3198 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3253.AddRow(new string[] {
+                table3198.AddRow(new string[] {
                             "Username"});
-                table3253.AddRow(new string[] {
+                table3198.AddRow(new string[] {
                             "Display Name"});
-                table3253.AddRow(new string[] {
+                table3198.AddRow(new string[] {
                             "Domain"});
-                table3253.AddRow(new string[] {
+                table3198.AddRow(new string[] {
                             "Owner"});
-                table3253.AddRow(new string[] {
+                table3198.AddRow(new string[] {
                             "Bucket"});
 #line 126
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3253, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3198, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3254 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3199 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3254.AddRow(new string[] {
+                table3199.AddRow(new string[] {
                             "Username"});
-                table3254.AddRow(new string[] {
+                table3199.AddRow(new string[] {
                             "Display Name"});
 #line 133
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owner\' colum" +
-                        "n:", ((string)(null)), table3254, "When ");
+                        "n:", ((string)(null)), table3199, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3255 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3200 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3255.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Domain"});
-                table3255.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Owner"});
-                table3255.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Bucket"});
 #line 137
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3255, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3200, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3256 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3201 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3256.AddRow(new string[] {
+                table3201.AddRow(new string[] {
                             "Display Name"});
 #line 142
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owner\' colum" +
-                        "n:", ((string)(null)), table3256, "When ");
+                        "n:", ((string)(null)), table3201, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3257 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3202 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3257.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Display Name"});
-                table3257.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Domain"});
-                table3257.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Owner"});
-                table3257.AddRow(new string[] {
+                table3202.AddRow(new string[] {
                             "Bucket"});
 #line 145
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3257, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3202, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3258 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3203 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3258.AddRow(new string[] {
+                table3203.AddRow(new string[] {
                             "Username"});
 #line 151
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owner\' colum" +
-                        "n:", ((string)(null)), table3258, "When ");
+                        "n:", ((string)(null)), table3203, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3259 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3204 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3259.AddRow(new string[] {
+                table3204.AddRow(new string[] {
                             "Username"});
-                table3259.AddRow(new string[] {
+                table3204.AddRow(new string[] {
                             "Display Name"});
-                table3259.AddRow(new string[] {
+                table3204.AddRow(new string[] {
                             "Domain"});
-                table3259.AddRow(new string[] {
+                table3204.AddRow(new string[] {
                             "Owner"});
-                table3259.AddRow(new string[] {
+                table3204.AddRow(new string[] {
                             "Bucket"});
 #line 154
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3259, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3204, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UsersDetails_Applications_EvergreenOwned.feature")]
+    [TechTalk.SpecRun.FeatureAttribute("UsersDetails_Applications_EvergreenOwned.feature", Description="\tRuns related tests for Applications > Evergreen Owned tab", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\UsersDetails\\Tabs\\Applications\\UsersD" +
+        "etails_Applications_EvergreenOwned.feature", SourceLine=0)]
     public partial class UsersDetails_Applications_EvergreenOwned_FeatureFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "UsersDetails_Applications_EvergreenOwned.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,16 +83,15 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18198")]
-        [NUnit.Framework.CategoryAttribute("DAS18876")]
-        [NUnit.Framework.CategoryAttribute("Set_Application_Owned_User")]
-        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18198",
+                "DAS18876",
+                "Set_Application_Owned_User",
+                "Zion_NewGrid"}, SourceLine=8)]
         public virtual void EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -138,14 +135,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3270 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3215 = new TechTalk.SpecFlow.Table(new string[] {
                             "UserName",
                             "ApplicationId"});
-                table3270.AddRow(new string[] {
+                table3215.AddRow(new string[] {
                             "ZZP911429",
                             "57"});
 #line 10
- testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table3270, "Given ");
+ testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table3215, "Given ");
 #line hidden
 #line 13
  testRunner.When("User navigates to the \'User\' details page for the item with \'1100\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -174,28 +171,28 @@ this.FeatureBackground();
 #line 21
  testRunner.And("User navigates to the \'Evergreen Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3271 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3216 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3271.AddRow(new string[] {
+                table3216.AddRow(new string[] {
                             "Application"});
-                table3271.AddRow(new string[] {
+                table3216.AddRow(new string[] {
                             "Vendor"});
-                table3271.AddRow(new string[] {
+                table3216.AddRow(new string[] {
                             "Version"});
-                table3271.AddRow(new string[] {
+                table3216.AddRow(new string[] {
                             "Compliance"});
-                table3271.AddRow(new string[] {
+                table3216.AddRow(new string[] {
                             "Rationalisation"});
-                table3271.AddRow(new string[] {
+                table3216.AddRow(new string[] {
                             "Target App"});
-                table3271.AddRow(new string[] {
+                table3216.AddRow(new string[] {
                             "In Catalog"});
-                table3271.AddRow(new string[] {
+                table3216.AddRow(new string[] {
                             "Criticality"});
-                table3271.AddRow(new string[] {
+                table3216.AddRow(new string[] {
                             "Hide From End User"});
 #line 22
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3271, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3216, "Then ");
 #line hidden
 #line 33
  testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -204,14 +201,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18854")]
-        [NUnit.Framework.CategoryAttribute("Set_Application_Owned_User")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingCorrectly", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18854",
+                "Set_Application_Owned_User"}, SourceLine=35)]
         public virtual void EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -251,14 +247,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3272 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3217 = new TechTalk.SpecFlow.Table(new string[] {
                             "UserName",
                             "ApplicationId"});
-                table3272.AddRow(new string[] {
+                table3217.AddRow(new string[] {
                             "ZZP911429",
                             "57"});
 #line 37
- testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table3272, "Given ");
+ testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table3217, "Given ");
 #line hidden
 #line 40
  testRunner.When("User navigates to the \'User\' details page for \'ZZP911429\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -289,15 +285,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatGroupedNameIsNotDisplayedAsALink")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS20046")]
-        [NUnit.Framework.CategoryAttribute("DAS20741")]
-        [NUnit.Framework.CategoryAttribute("Set_Application_Owned_User")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatGroupedNameIsNotDisplayedAsALink", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS20046",
+                "DAS20741",
+                "Set_Application_Owned_User"}, SourceLine=49)]
         public virtual void EvergreenJnr_UsersList_CheckThatGroupedNameIsNotDisplayedAsALink()
         {
             string[] tagsOfScenario = new string[] {
@@ -339,14 +334,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3273 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3218 = new TechTalk.SpecFlow.Table(new string[] {
                             "UserName",
                             "ApplicationId"});
-                table3273.AddRow(new string[] {
+                table3218.AddRow(new string[] {
                             "ZZP911429",
                             "57"});
 #line 51
- testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table3273, "Given ");
+ testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table3218, "Given ");
 #line hidden
 #line 54
  testRunner.When("User navigates to the \'User\' details page for \'ZZP911429\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -360,14 +355,14 @@ this.FeatureBackground();
 #line 57
  testRunner.When("User navigates to the \'Evergreen Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3274 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3219 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table3274.AddRow(new string[] {
+                table3219.AddRow(new string[] {
                             "Application",
                             "true"});
 #line 58
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3274, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table3219, "When ");
 #line hidden
 #line 61
  testRunner.Then("\'DirectX 8.1 SDK for Visual Basic\' grouped name is not displayed as a link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -376,15 +371,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnEvergre" +
-            "enOwnedTab")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS20047")]
-        [NUnit.Framework.CategoryAttribute("Set_Application_Owned_User")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnEvergre" +
+            "enOwnedTab", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS20047",
+                "Set_Application_Owned_User"}, SourceLine=63)]
         public virtual void EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnEvergreenOwnedTab()
         {
             string[] tagsOfScenario = new string[] {
@@ -425,14 +419,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3275 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3220 = new TechTalk.SpecFlow.Table(new string[] {
                             "UserName",
                             "ApplicationId"});
-                table3275.AddRow(new string[] {
+                table3220.AddRow(new string[] {
                             "CVS3269200",
                             "4252"});
 #line 65
- testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table3275, "Given ");
+ testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table3220, "Given ");
 #line hidden
 #line 68
  testRunner.When("User navigates to the \'User\' details page for \'CVS3269200\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -451,6 +445,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

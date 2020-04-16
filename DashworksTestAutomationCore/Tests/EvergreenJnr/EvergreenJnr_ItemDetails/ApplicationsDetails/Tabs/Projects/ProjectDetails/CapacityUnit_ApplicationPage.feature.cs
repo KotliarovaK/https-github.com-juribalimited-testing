@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CapacityUnit_ApplicationsPage")]
+    [TechTalk.SpecRun.FeatureAttribute("CapacityUnit_ApplicationsPage", Description="\tRuns related tests for Capacity Unit fields", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ApplicationsDetails\\Tabs\\Projects\\Pro" +
+        "jectDetails\\CapacityUnit_ApplicationPage.feature", SourceLine=0)]
     public partial class CapacityUnit_ApplicationsPageFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "CapacityUnit_ApplicationPage.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,17 +83,16 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatValueForCapacityUnitIsChangingSuccessfully" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS19538")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatValueForCapacityUnitIsChangingSuccessfully" +
+            "", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "ProjectDetailsTab",
+                "DAS19538",
+                "Cleanup",
+                "Set_Default_Capacity_Unit"}, SourceLine=8)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatValueForCapacityUnitIsChangingSuccessfully()
         {
             string[] tagsOfScenario = new string[] {
@@ -140,18 +137,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2869 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2814 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table2869.AddRow(new string[] {
+                table2814.AddRow(new string[] {
                             "cu_DAS19538_3",
                             "DAS19538",
                             "false",
                             "USE ME FOR AUTOMATION(USR SCHDLD)"});
 #line 10
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2869, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2814, "When ");
 #line hidden
 #line 13
  testRunner.When("User navigates to the \'Application\' details page for the item with \'419\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -188,29 +185,28 @@ this.FeatureBackground();
  testRunner.Then("\'Application successfully moved to cu_DAS19538_3\' text is displayed on inline suc" +
                         "cess banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2870 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2815 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2870.AddRow(new string[] {
+                table2815.AddRow(new string[] {
                             "Capacity Unit",
                             "cu_DAS19538_3"});
 #line 24
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2870, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2815, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAndWorkingCor" +
-            "rectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18607")]
-        [NUnit.Framework.CategoryAttribute("DAS19651")]
-        [NUnit.Framework.CategoryAttribute("DAS19318")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAndWorkingCor" +
+            "rectly", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18607",
+                "DAS19651",
+                "DAS19318"}, SourceLine=28)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAndWorkingCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -263,29 +259,29 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2871 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2816 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2871.AddRow(new string[] {
+                table2816.AddRow(new string[] {
                             "Criticality",
                             "Uncategorised"});
 #line 33
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2871, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2816, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2872 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2817 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table2872.AddRow(new string[] {
+                table2817.AddRow(new string[] {
                             "Core"});
-                table2872.AddRow(new string[] {
+                table2817.AddRow(new string[] {
                             "Critical"});
-                table2872.AddRow(new string[] {
+                table2817.AddRow(new string[] {
                             "Important"});
-                table2872.AddRow(new string[] {
+                table2817.AddRow(new string[] {
                             "Not Important"});
-                table2872.AddRow(new string[] {
+                table2817.AddRow(new string[] {
                             "Uncategorised"});
 #line 36
- testRunner.Then("following Values are displayed in the dropdown for the \'Criticality\' field:", ((string)(null)), table2872, "Then ");
+ testRunner.Then("following Values are displayed in the dropdown for the \'Criticality\' field:", ((string)(null)), table2817, "Then ");
 #line hidden
 #line 43
  testRunner.When("User selects \'Important\' in the dropdown for the \'Criticality\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -296,42 +292,41 @@ this.FeatureBackground();
 #line 45
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2873 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2818 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2873.AddRow(new string[] {
+                table2818.AddRow(new string[] {
                             "Criticality",
                             "Important"});
 #line 46
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2873, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2818, "Then ");
 #line hidden
 #line 49
  testRunner.When("User selects \'Uncategorised\' in the dropdown for the \'Criticality\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2874 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2819 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2874.AddRow(new string[] {
+                table2819.AddRow(new string[] {
                             "Criticality",
                             "Uncategorised"});
 #line 50
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2874, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2819, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurityRequirement" +
-            "sForAnalysisEditorRole")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18852")]
-        [NUnit.Framework.CategoryAttribute("DAS19651")]
-        [NUnit.Framework.CategoryAttribute("DAS19318")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurityRequirement" +
+            "sForAnalysisEditorRole", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18852",
+                "DAS19651",
+                "DAS19318",
+                "Universe"}, SourceLine=54)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurityRequirementsForAnalysisEditorRole()
         {
             string[] tagsOfScenario = new string[] {
@@ -379,14 +374,14 @@ this.FeatureBackground();
 #line 56
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2875 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2820 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2875.AddRow(new string[] {
+                table2820.AddRow(new string[] {
                             "TestBucketAuto",
                             "123456"});
 #line 57
-  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2875, "When ");
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2820, "When ");
 #line hidden
 #line 60
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -401,39 +396,39 @@ this.FeatureBackground();
 #line 63
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2876 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2821 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table2876.AddRow(new string[] {
+                table2821.AddRow(new string[] {
                             "TRUE"});
-                table2876.AddRow(new string[] {
+                table2821.AddRow(new string[] {
                             "FALSE"});
 #line 64
- testRunner.Then("following Values are displayed in the dropdown for the \'In Catalog\' field:", ((string)(null)), table2876, "Then ");
+ testRunner.Then("following Values are displayed in the dropdown for the \'In Catalog\' field:", ((string)(null)), table2821, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2877 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2822 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table2877.AddRow(new string[] {
+                table2822.AddRow(new string[] {
                             "Core"});
-                table2877.AddRow(new string[] {
+                table2822.AddRow(new string[] {
                             "Critical"});
-                table2877.AddRow(new string[] {
+                table2822.AddRow(new string[] {
                             "Important"});
-                table2877.AddRow(new string[] {
+                table2822.AddRow(new string[] {
                             "Not Important"});
-                table2877.AddRow(new string[] {
+                table2822.AddRow(new string[] {
                             "Uncategorised"});
 #line 68
- testRunner.Then("following Values are displayed in the dropdown for the \'Criticality\' field:", ((string)(null)), table2877, "Then ");
+ testRunner.Then("following Values are displayed in the dropdown for the \'Criticality\' field:", ((string)(null)), table2822, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2878 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2823 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table2878.AddRow(new string[] {
+                table2823.AddRow(new string[] {
                             "TRUE"});
-                table2878.AddRow(new string[] {
+                table2823.AddRow(new string[] {
                             "FALSE"});
 #line 75
  testRunner.Then("following Values are displayed in the dropdown for the \'Hide From End Users\' fiel" +
-                        "d:", ((string)(null)), table2878, "Then ");
+                        "d:", ((string)(null)), table2823, "Then ");
 #line hidden
 #line 79
  testRunner.When("User clicks on edit button for \'Evergreen Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -455,6 +450,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

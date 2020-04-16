@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ProfileDet
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AccountDetailsFunctionality")]
+    [TechTalk.SpecRun.FeatureAttribute("AccountDetailsFunctionality", Description="\tRuns Profile Details related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ProfileDetails\\AccountDetailsFunctionality.featur" +
+        "e", SourceLine=0)]
     public partial class AccountDetailsFunctionalityFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ProfileDet
 #line 1 "AccountDetailsFunctionality.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ProfileDet
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ProfileDet
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,15 +83,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ProfileDet
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS10756")]
-        [NUnit.Framework.CategoryAttribute("DAS12947")]
-        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_ProfileDetails",
+                "UserProfile",
+                "DAS10756",
+                "DAS12947",
+                "Remove_Profile_Changes"}, SourceLine=8)]
         public virtual void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData()
         {
             string[] tagsOfScenario = new string[] {
@@ -172,16 +169,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS10756")]
-        [NUnit.Framework.CategoryAttribute("DAS12947")]
-        [NUnit.Framework.CategoryAttribute("DAS11523")]
-        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_ProfileDetails",
+                "UserProfile",
+                "DAS10756",
+                "DAS12947",
+                "DAS11523",
+                "Remove_Profile_Changes"}, SourceLine=22)]
         public virtual void EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed()
         {
             string[] tagsOfScenario = new string[] {
@@ -314,16 +310,15 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwic" +
-            "e")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS11524")]
-        [NUnit.Framework.CategoryAttribute("DAS12947")]
-        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwic" +
+            "e", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_ProfileDetails",
+                "UserProfile",
+                "DAS11524",
+                "DAS12947",
+                "Remove_Profile_Changes"}, SourceLine=53)]
         public virtual void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice()
         {
             string[] tagsOfScenario = new string[] {
@@ -409,14 +404,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChecksListPageSizeAPI")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS13026")]
-        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_ChecksListPageSizeAPI", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_FilterFeature",
+                "UserProfile",
+                "DAS13026",
+                "Remove_Profile_Changes"}, SourceLine=69)]
         public virtual void EvergreenJnr_UserProfile_ChecksListPageSizeAPI()
         {
             string[] tagsOfScenario = new string[] {
@@ -505,14 +499,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS11723")]
-        [NUnit.Framework.CategoryAttribute("DAS16979")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_FilterFeature",
+                "UserProfile",
+                "DAS11723",
+                "DAS16979"}, SourceLine=87)]
         public virtual void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API()
         {
             string[] tagsOfScenario = new string[] {
@@ -559,18 +552,17 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS11646")]
-        [NUnit.Framework.CategoryAttribute("DAS12947")]
-        [NUnit.Framework.CategoryAttribute("DAS13026")]
-        [NUnit.Framework.CategoryAttribute("DAS16248")]
-        [NUnit.Framework.CategoryAttribute("DAS16232")]
-        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_ProfileDetails",
+                "UserProfile",
+                "DAS11646",
+                "DAS12947",
+                "DAS13026",
+                "DAS16248",
+                "DAS16232",
+                "Remove_Profile_Changes"}, SourceLine=91)]
         public virtual void EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds()
         {
             string[] tagsOfScenario = new string[] {
@@ -700,14 +692,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS13026")]
-        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_ProfileDetails",
+                "UserProfile",
+                "DAS13026",
+                "Remove_Profile_Changes"}, SourceLine=120)]
         public virtual void EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache()
         {
             string[] tagsOfScenario = new string[] {
@@ -796,15 +787,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChangingPassword")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS13026")]
-        [NUnit.Framework.CategoryAttribute("DAS14187")]
-        [NUnit.Framework.CategoryAttribute("Remove_Password_Changes")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_ChangingPassword", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_ProfileDetails",
+                "UserProfile",
+                "DAS13026",
+                "DAS14187",
+                "Remove_Password_Changes"}, SourceLine=138)]
         public virtual void EvergreenJnr_UserProfile_ChangingPassword()
         {
             string[] tagsOfScenario = new string[] {
@@ -954,13 +944,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdated")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS18672")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdated", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_ProfileDetails",
+                "UserProfile",
+                "DAS18672"}, SourceLine=177)]
         public virtual void EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdated()
         {
             string[] tagsOfScenario = new string[] {
@@ -1045,14 +1034,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckUpdateButtonStateWhenSwitchingBetweenTabsWithoutAny" +
-            "Changes")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS19054")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_CheckUpdateButtonStateWhenSwitchingBetweenTabsWithoutAny" +
+            "Changes", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_ProfileDetails",
+                "UserProfile",
+                "DAS19054"}, SourceLine=193)]
         public virtual void EvergreenJnr_UserProfile_CheckUpdateButtonStateWhenSwitchingBetweenTabsWithoutAnyChanges()
         {
             string[] tagsOfScenario = new string[] {
@@ -1125,14 +1113,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatNoValidationErrorDisplayedAfterReselectingTimeZ" +
-            "oneOption")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("UserProfile")]
-        [NUnit.Framework.CategoryAttribute("DAS19271")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UserProfile_CheckThatNoValidationErrorDisplayedAfterReselectingTimeZ" +
+            "oneOption", new string[] {
+                "Evergreen",
+                "ProfileDetails",
+                "EvergreenJnr_ProfileDetails",
+                "UserProfile",
+                "DAS19271"}, SourceLine=206)]
         public virtual void EvergreenJnr_UserProfile_CheckThatNoValidationErrorDisplayedAfterReselectingTimeZoneOption()
         {
             string[] tagsOfScenario = new string[] {
@@ -1180,12 +1167,12 @@ this.FeatureBackground();
 #line 210
  testRunner.When("User navigates to the \'Preferences\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3721 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3666 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table3721.AddRow(new string[] {
+                table3666.AddRow(new string[] {
                             "(UTC-12:00) International Date Line West"});
 #line 211
- testRunner.Then("\'Time Zone\' autocomplete contains following options:", ((string)(null)), table3721, "Then ");
+ testRunner.Then("\'Time Zone\' autocomplete contains following options:", ((string)(null)), table3666, "Then ");
 #line hidden
 #line 214
  testRunner.Then("inline error banner is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1212,6 +1199,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

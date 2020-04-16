@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CustomListDisplayPart13")]
+    [TechTalk.SpecRun.FeatureAttribute("CustomListDisplayPart13", Description="\tRuns Custom List Creation block related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ListPanel\\CustomListDisplayPart13.feature", SourceLine=0)]
     public partial class CustomListDisplayPart13Feature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
 #line 1 "CustomListDisplayPart13.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,19 +82,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("DAS13122")]
-        [NUnit.Framework.CategoryAttribute("DAS13125")]
-        [NUnit.Framework.CategoryAttribute("DAS13126")]
-        [NUnit.Framework.CategoryAttribute("DAS13123")]
-        [NUnit.Framework.CategoryAttribute("DAS13127")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Hostname", "DeviceDefault1", "DeviceDefault2", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Username", "UserDefault1", "UserDefault2", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicList(string listType, string listTitle, string column, string listName1, string listName2, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -194,20 +178,40 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("DAS13122")]
-        [NUnit.Framework.CategoryAttribute("DAS13125")]
-        [NUnit.Framework.CategoryAttribute("DAS13126")]
-        [NUnit.Framework.CategoryAttribute("DAS13123")]
-        [NUnit.Framework.CategoryAttribute("DAS13127")]
-        [NUnit.Framework.CategoryAttribute("DAS13135")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "ApplicationDefault1", "ApplicationDefault2", "Microsoft SDK Update February 2003 (5.2.3790.0)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "MailboxDefault1", "MailboxDefault2", "000F977AC8824FE39B8@bclabs.local", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicList, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListPanel",
+                "DAS13122",
+                "DAS13125",
+                "DAS13126",
+                "DAS13123",
+                "DAS13127",
+                "Cleanup"}, SourceLine=29)]
+        public virtual void EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicList_Devices()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicList("Devices", "All Devices", "Hostname", "DeviceDefault1", "DeviceDefault2", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicList, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListPanel",
+                "DAS13122",
+                "DAS13125",
+                "DAS13126",
+                "DAS13123",
+                "DAS13127",
+                "Cleanup"}, SourceLine=29)]
+        public virtual void EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicList_Users()
+        {
+#line 9
+this.EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicList("Users", "All Users", "Username", "UserDefault1", "UserDefault2", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticList(string listType, string listTitle, string listName1, string listName2, string itemName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -256,12 +260,12 @@ this.FeatureBackground();
 #line 36
  testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3415 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3360 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3415.AddRow(new string[] {
+                table3360.AddRow(new string[] {
                             string.Format("{0}", itemName)});
 #line 37
- testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", listName1, listType), ((string)(null)), table3415, "When ");
+ testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", listName1, listType), ((string)(null)), table3360, "When ");
 #line hidden
 #line 40
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -303,14 +307,49 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Devices_CheckThatDefaultListOptionInDetailsPanelWorks")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("DAS13129")]
-        [NUnit.Framework.CategoryAttribute("DAS13130")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticList, Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListPanel",
+                "DAS13122",
+                "DAS13125",
+                "DAS13126",
+                "DAS13123",
+                "DAS13127",
+                "DAS13135",
+                "Cleanup"}, SourceLine=54)]
+        public virtual void EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticList_Applications()
+        {
+#line 34
+this.EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticList("Applications", "All Applications", "ApplicationDefault1", "ApplicationDefault2", "Microsoft SDK Update February 2003 (5.2.3790.0)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticList, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListPanel",
+                "DAS13122",
+                "DAS13125",
+                "DAS13126",
+                "DAS13123",
+                "DAS13127",
+                "DAS13135",
+                "Cleanup"}, SourceLine=54)]
+        public virtual void EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticList_Mailboxes()
+        {
+#line 34
+this.EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticList("Mailboxes", "All Mailboxes", "MailboxDefault1", "MailboxDefault2", "000F977AC8824FE39B8@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Devices_CheckThatDefaultListOptionInDetailsPanelWorks", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ListPanel",
+                "DAS13129",
+                "DAS13130",
+                "Cleanup"}, SourceLine=58)]
         public virtual void EvergreenJnr_Devices_CheckThatDefaultListOptionInDetailsPanelWorks()
         {
             string[] tagsOfScenario = new string[] {
@@ -384,13 +423,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Devices_CheckThatNewUserHasNoDefaultListSet")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("DAS13185")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Devices_CheckThatNewUserHasNoDefaultListSet", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ListPanel",
+                "DAS13185",
+                "Cleanup"}, SourceLine=71)]
         public virtual void EvergreenJnr_Devices_CheckThatNewUserHasNoDefaultListSet()
         {
             string[] tagsOfScenario = new string[] {
@@ -428,32 +466,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3416 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3361 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table3416.AddRow(new string[] {
+                table3361.AddRow(new string[] {
                             "DAS13129",
                             "Value",
                             "FN13129",
                             "m!gration",
                             "Project Administrator"});
 #line 73
- testRunner.When("User create new User via API", ((string)(null)), table3416, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table3361, "When ");
 #line hidden
 #line 76
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3417 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3362 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3417.AddRow(new string[] {
+                table3362.AddRow(new string[] {
                             "DAS13129",
                             "m!gration"});
 #line 77
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3417, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3362, "When ");
 #line hidden
 #line 80
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -465,13 +503,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Devices_CheckDefaultListIsResetIfItWasNoLongerAvalaible")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("DAS13136")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Devices_CheckDefaultListIsResetIfItWasNoLongerAvalaible", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ListPanel",
+                "DAS13136",
+                "Cleanup"}, SourceLine=83)]
         public virtual void EvergreenJnr_Devices_CheckDefaultListIsResetIfItWasNoLongerAvalaible()
         {
             string[] tagsOfScenario = new string[] {
@@ -509,38 +546,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3418 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3363 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table3418.AddRow(new string[] {
+                table3363.AddRow(new string[] {
                             "DAS13136_1",
                             "Value",
                             "FN_13136_1",
                             "m!gration",
                             "Project Administrator"});
-                table3418.AddRow(new string[] {
+                table3363.AddRow(new string[] {
                             "DAS13136_2",
                             "Value",
                             "FN_13136_2",
                             "m!gration",
                             "Project Administrator"});
 #line 85
- testRunner.When("User create new User via API", ((string)(null)), table3418, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table3363, "When ");
 #line hidden
 #line 89
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3419 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3364 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3419.AddRow(new string[] {
+                table3364.AddRow(new string[] {
                             "DAS13136_1",
                             "m!gration"});
 #line 90
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3419, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3364, "When ");
 #line hidden
 #line 93
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -563,14 +600,14 @@ this.FeatureBackground();
 #line 99
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3420 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3365 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3420.AddRow(new string[] {
+                table3365.AddRow(new string[] {
                             "DAS13136_2",
                             "m!gration"});
 #line 100
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3420, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3365, "When ");
 #line hidden
 #line 103
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -581,14 +618,14 @@ this.FeatureBackground();
 #line 105
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3421 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3366 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3421.AddRow(new string[] {
+                table3366.AddRow(new string[] {
                             "DAS13136_1",
                             "m!gration"});
 #line 106
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3421, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3366, "When ");
 #line hidden
 #line 109
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -602,14 +639,14 @@ this.FeatureBackground();
 #line 112
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3422 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3367 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3422.AddRow(new string[] {
+                table3367.AddRow(new string[] {
                             "DAS13136_2",
                             "m!gration"});
 #line 113
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3422, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3367, "When ");
 #line hidden
 #line 116
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -619,6 +656,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

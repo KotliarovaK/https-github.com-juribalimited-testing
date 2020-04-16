@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("EditClickableValueField")]
+    [TechTalk.SpecRun.FeatureAttribute("EditClickableValueField", Description="\tEdit clickable value field", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\CustomFields\\EditClickableValueField." +
+        "feature", SourceLine=0)]
     public partial class EditClickableValueFieldFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "EditClickableValueField.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,14 +83,13 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS15473")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS15473",
+                "Cleanup"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips()
         {
             string[] tagsOfScenario = new string[] {
@@ -132,33 +129,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2927 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2872 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Computer"});
-                table2927.AddRow(new string[] {
+                table2872.AddRow(new string[] {
                             "CfDAS15473_1",
                             "FlDAS15473_1",
                             "true",
                             "true",
                             "true"});
 #line 10
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table2927, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table2872, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2928 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2873 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value"});
-                table2928.AddRow(new string[] {
+                table2873.AddRow(new string[] {
                             "device",
                             "6648",
                             "CfDAS15473_1",
                             "ValueDAS15473_#$‡!_1"});
 #line 13
- testRunner.And("User creates Custom Field via API", ((string)(null)), table2928, "And ");
+ testRunner.And("User creates Custom Field via API", ((string)(null)), table2873, "And ");
 #line hidden
 #line 16
  testRunner.And("User navigates to the \'Device\' details page for \'00YWR8TJU4ZF8V\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -179,14 +176,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS15473")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS15473",
+                "Cleanup"}, SourceLine=22)]
         public virtual void EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue()
         {
             string[] tagsOfScenario = new string[] {
@@ -226,33 +222,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2929 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2874 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Application"});
-                table2929.AddRow(new string[] {
+                table2874.AddRow(new string[] {
                             "CfDAS15473_2",
                             "FlDAS15473_2",
                             "true",
                             "true",
                             "true"});
 #line 24
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table2929, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table2874, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2930 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2875 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value"});
-                table2930.AddRow(new string[] {
+                table2875.AddRow(new string[] {
                             "application",
                             "507",
                             "CfDAS15473_2",
                             "ValueDAS15473_2"});
 #line 27
- testRunner.And("User creates Custom Field via API", ((string)(null)), table2930, "And ");
+ testRunner.And("User creates Custom Field via API", ((string)(null)), table2875, "And ");
 #line hidden
 #line 30
  testRunner.And("User navigates to the \'Application\' details page for \'ACDSee 8\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -289,14 +285,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS17584")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS17584",
+                "Cleanup"}, SourceLine=43)]
         public virtual void EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu()
         {
             string[] tagsOfScenario = new string[] {
@@ -336,33 +331,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2931 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2876 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Application"});
-                table2931.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "CfDAS17584_1",
                             "FlDAS17584_1",
                             "true",
                             "true",
                             "true"});
 #line 45
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table2931, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table2876, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2932 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2877 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value"});
-                table2932.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "application",
                             "750",
                             "CfDAS17584_1",
                             "Value17584_1"});
 #line 48
- testRunner.And("User creates Custom Field via API", ((string)(null)), table2932, "And ");
+ testRunner.And("User creates Custom Field via API", ((string)(null)), table2877, "And ");
 #line hidden
 #line 51
  testRunner.And("User navigates to the \'Application\' details page for \'PCFriendly\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -403,14 +398,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS15473")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS15473",
+                "Cleanup"}, SourceLine=65)]
         public virtual void EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost()
         {
             string[] tagsOfScenario = new string[] {
@@ -450,36 +444,36 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2933 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2878 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Mailbox"});
-                table2933.AddRow(new string[] {
+                table2878.AddRow(new string[] {
                             "CfDAS15473_3",
                             "FlDAS15473_3",
                             "true",
                             "true",
                             "true"});
 #line 67
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table2933, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table2878, "When ");
 #line hidden
 #line 70
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2934 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2879 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value"});
-                table2934.AddRow(new string[] {
+                table2879.AddRow(new string[] {
                             "mailbox",
                             "46384",
                             "CfDAS15473_3",
                             "ValueDAS15473_3"});
 #line 71
- testRunner.And("User creates Custom Field via API", ((string)(null)), table2934, "And ");
+ testRunner.And("User creates Custom Field via API", ((string)(null)), table2879, "And ");
 #line hidden
 #line 74
  testRunner.And("User navigates to the \'Mailbox\' details page for \'0072B088173449E3A93@bclabs.loca" +
@@ -509,15 +503,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatEditingOfTheCustomFieldIsActivatedOnTheObject" +
-            "DetailsPageViaTheCogMenuInCaseTheSearchFilterHadBeenApplied")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("CustomFields")]
-        [NUnit.Framework.CategoryAttribute("DAS20064")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatEditingOfTheCustomFieldIsActivatedOnTheObject" +
+            "DetailsPageViaTheCogMenuInCaseTheSearchFilterHadBeenApplied", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "CustomFields",
+                "DAS20064",
+                "Cleanup"}, SourceLine=83)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatEditingOfTheCustomFieldIsActivatedOnTheObjectDetailsPageViaTheCogMenuInCaseTheSearchFilterHadBeenApplied()
         {
             string[] tagsOfScenario = new string[] {
@@ -558,47 +551,47 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2935 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2880 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Mailbox"});
-                table2935.AddRow(new string[] {
+                table2880.AddRow(new string[] {
                             "CfDAS20064_3A",
                             "FlDAS20064_3A",
                             "true",
                             "true",
                             "true"});
-                table2935.AddRow(new string[] {
+                table2880.AddRow(new string[] {
                             "CfDAS20064_3B",
                             "FlDAS20064_3B",
                             "true",
                             "true",
                             "true"});
 #line 85
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table2935, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table2880, "When ");
 #line hidden
 #line 89
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2936 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2881 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value"});
-                table2936.AddRow(new string[] {
+                table2881.AddRow(new string[] {
                             "mailbox",
                             "46384",
                             "CfDAS20064_3A",
                             "ValueDAS20064_3A"});
-                table2936.AddRow(new string[] {
+                table2881.AddRow(new string[] {
                             "mailbox",
                             "46384",
                             "CfDAS20064_3B",
                             "ValueDAS20064_3B"});
 #line 90
- testRunner.And("User creates Custom Field via API", ((string)(null)), table2936, "And ");
+ testRunner.And("User creates Custom Field via API", ((string)(null)), table2881, "And ");
 #line hidden
 #line 94
  testRunner.And("User navigates to the \'Mailbox\' details page for \'0072B088173449E3A93@bclabs.loca" +
@@ -635,6 +628,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

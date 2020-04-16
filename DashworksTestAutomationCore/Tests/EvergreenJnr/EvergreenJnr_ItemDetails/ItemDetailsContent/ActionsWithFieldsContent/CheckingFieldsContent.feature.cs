@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CheckingFieldsContent")]
+    [TechTalk.SpecRun.FeatureAttribute("CheckingFieldsContent", Description="\tRuns Item Details Checking Fields Content related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\ItemDetailsContent\\ActionsWithFieldsC" +
+        "ontent\\CheckingFieldsContent.feature", SourceLine=0)]
     public partial class CheckingFieldsContentFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "CheckingFieldsContent.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,13 +83,12 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("DevicesLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS14973")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails", new string[] {
+                "Evergreen",
+                "DevicesLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS14973"}, SourceLine=8)]
         public virtual void EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails()
         {
             string[] tagsOfScenario = new string[] {
@@ -141,32 +138,32 @@ this.FeatureBackground();
 #line 13
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3049 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2994 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table3049.AddRow(new string[] {
+                table2994.AddRow(new string[] {
                             "Key",
                             "9141"});
 #line 14
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3049, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2994, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3050 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2995 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3050.AddRow(new string[] {
+                table2995.AddRow(new string[] {
                             "Hostname",
                             "001BAQXT6JWFPI"});
-                table3050.AddRow(new string[] {
+                table2995.AddRow(new string[] {
                             "Source",
                             "A01 SMS (Spoof)"});
-                table3050.AddRow(new string[] {
+                table2995.AddRow(new string[] {
                             "Source Type",
                             "SMS/SCCM 2007"});
-                table3050.AddRow(new string[] {
+                table2995.AddRow(new string[] {
                             "Inventory Site",
                             "A01"});
 #line 17
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3050, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2995, "Then ");
 #line hidden
 #line 23
  testRunner.Then("empty value is displayed for \"Dashworks First Seen Date\" field on the Details Pag" +
@@ -176,17 +173,16 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEve" +
-            "nWhenItsDisabledInProjectManagement")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17007")]
-        [NUnit.Framework.CategoryAttribute("DAS17768")]
-        [NUnit.Framework.CategoryAttribute("DAS17768")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEve" +
+            "nWhenItsDisabledInProjectManagement", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS17007",
+                "DAS17768",
+                "DAS17768",
+                "Void"}, SourceLine=25)]
         public virtual void EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement()
         {
             string[] tagsOfScenario = new string[] {
@@ -269,32 +265,31 @@ this.FeatureBackground();
 #line 38
  testRunner.Then("\'Self Service URL\' field is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3051 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2996 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3051.AddRow(new string[] {
+                table2996.AddRow(new string[] {
                             "Language",
                             "English"});
 #line 39
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3051, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2996, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWor" +
-            "ksCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS13208")]
-        [NUnit.Framework.CategoryAttribute("DAS13971")]
-        [NUnit.Framework.CategoryAttribute("DAS13892")]
-        [NUnit.Framework.CategoryAttribute("DAS13892")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWor" +
+            "ksCorrectly", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS13208",
+                "DAS13971",
+                "DAS13892",
+                "DAS13892",
+                "Cleanup",
+                "Wormhole"}, SourceLine=44)]
         public virtual void EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -343,16 +338,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3052 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2997 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault"});
-                table3052.AddRow(new string[] {
+                table2997.AddRow(new string[] {
                             "CapacityUnit12883",
                             "Devices",
                             "false"});
 #line 46
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table3052, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2997, "When ");
 #line hidden
 #line 51
  testRunner.When("User navigates to the \'Device\' details page for \'ZZNKKYW97AL4VS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -531,14 +526,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForS" +
-            "tickyComplianceFieldOnTheApplicationDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18865")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForS" +
+            "tickyComplianceFieldOnTheApplicationDetailsTab", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS18865"}, SourceLine=116)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForStickyComplianceFieldOnTheApplicationDetailsTab()
         {
             string[] tagsOfScenario = new string[] {
@@ -585,14 +579,14 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'Axosoft OnTime 2005 Enterprise Server\' item is displayed to the" +
                         " user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3053 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2998 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table3053.AddRow(new string[] {
+                table2998.AddRow(new string[] {
                             "Sticky Compliance",
                             ""});
 #line 120
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3053, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2998, "Then ");
 #line hidden
 #line 123
  testRunner.When("User navigates to the \'Application\' details page for \'Standard SDK for Windows CE" +
@@ -602,29 +596,28 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'Standard SDK for Windows CE .NET 4.2\' item is displayed to the " +
                         "user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3054 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2999 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table3054.AddRow(new string[] {
+                table2999.AddRow(new string[] {
                             "Sticky Compliance",
                             ""});
 #line 125
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3054, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2999, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatAppropriateValuesAreDisplayedCorrectlyForEnabledF" +
-            "ieldOnTheUsersDetailsPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS20454")]
-        [NUnit.Framework.CategoryAttribute("DAS20669")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatAppropriateValuesAreDisplayedCorrectlyForEnabledF" +
+            "ieldOnTheUsersDetailsPage", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS20454",
+                "DAS20669",
+                "Wormhole"}, SourceLine=130)]
         public virtual void EvergreenJnr_UsersList_CheckThatAppropriateValuesAreDisplayedCorrectlyForEnabledFieldOnTheUsersDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -673,30 +666,19 @@ this.FeatureBackground();
 #line 133
  testRunner.Then("Details page for \'NPS8676905\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3055 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3000 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table3055.AddRow(new string[] {
+                table3000.AddRow(new string[] {
                             "Enabled",
                             "FALSE"});
 #line 134
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3055, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3000, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS19977")]
-        [NUnit.Framework.TestCaseAttribute("Device", "00OMQQXWA1DRI6", "Computer Scheduled Test (Jo)", "Sandra R. Castro", "YRD045946 (Sandra R. Castro)", null)]
-        [NUnit.Framework.TestCaseAttribute("Application", "ABBYY FineReader 8.0 Professional Edition", "Barry\'s User Project", "Sherry M. Berger", "NOK673558 (Sherry M. Berger)", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox", "00B5CCB89AD0404B965@bclabs.local", "Mailbox Evergreen Capacity Project", "Smith, Delores", "00B5CCB89AD0404B965 (Smith, Delores)", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage(string pageName, string itemName, string projectName, string ownerLinkName, string ownerPage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -758,6 +740,54 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage" +
+            ", Device", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19977"}, SourceLine=149)]
+        public virtual void EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage_Device()
+        {
+#line 139
+this.EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage("Device", "00OMQQXWA1DRI6", "Computer Scheduled Test (Jo)", "Sandra R. Castro", "YRD045946 (Sandra R. Castro)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage" +
+            ", Application", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19977"}, SourceLine=149)]
+        public virtual void EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage_Application()
+        {
+#line 139
+this.EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage("Application", "ABBYY FineReader 8.0 Professional Edition", "Barry\'s User Project", "Sherry M. Berger", "NOK673558 (Sherry M. Berger)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage" +
+            ", Mailbox", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19977"}, SourceLine=149)]
+        public virtual void EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage_Mailbox()
+        {
+#line 139
+this.EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage("Mailbox", "00B5CCB89AD0404B965@bclabs.local", "Mailbox Evergreen Capacity Project", "Smith, Delores", "00B5CCB89AD0404B965 (Smith, Delores)", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

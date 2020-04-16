@@ -19,8 +19,7 @@ namespace DashworksTestAutomationCore.Tests.Senior
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Projects_Dashboards")]
+    [TechTalk.SpecRun.FeatureAttribute("Projects_Dashboards", Description="\tRuns Projects Page related tests", SourceFile="Tests\\Senior\\Senior_Dashboards.feature", SourceLine=0)]
     public partial class Projects_DashboardsFeature
     {
         
@@ -31,7 +30,7 @@ namespace DashworksTestAutomationCore.Tests.Senior
 #line 1 "Senior_Dashboards.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +38,18 @@ namespace DashworksTestAutomationCore.Tests.Senior
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +58,6 @@ namespace DashworksTestAutomationCore.Tests.Senior
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,14 +82,6 @@ namespace DashworksTestAutomationCore.Tests.Senior
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Senior_Projects")]
-        [NUnit.Framework.CategoryAttribute("DAS12651")]
-        [NUnit.Framework.TestCaseAttribute("User Dashboard", null)]
-        [NUnit.Framework.TestCaseAttribute("Computer Dashboard", null)]
         public virtual void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -154,13 +143,38 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Senior_Teams")]
-        [NUnit.Framework.CategoryAttribute("DAS13000")]
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly, Us" +
+            "er Dashboard", new string[] {
+                "Senior",
+                "Dashworks",
+                "Senior_Projects",
+                "DAS12651"}, SourceLine=19)]
+        public virtual void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly_UserDashboard()
+        {
+#line 9
+this.Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly("User Dashboard", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly, Co" +
+            "mputer Dashboard", new string[] {
+                "Senior",
+                "Dashworks",
+                "Senior_Projects",
+                "DAS12651"}, SourceLine=19)]
+        public virtual void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly_ComputerDashboard()
+        {
+#line 9
+this.Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly("Computer Dashboard", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage", new string[] {
+                "Senior",
+                "Dashworks",
+                "Projects_Dashworks",
+                "Senior_Teams",
+                "DAS13000"}, SourceLine=23)]
         public virtual void Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -268,15 +282,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Senior_Projects")]
-        [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
-        [NUnit.Framework.CategoryAttribute("DAS14322")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask", new string[] {
+                "Senior",
+                "Dashworks",
+                "Projects_Dashworks",
+                "Senior_Projects",
+                "Senior_Tasks",
+                "DAS14322",
+                "Cleanup"}, SourceLine=48)]
         public virtual void Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask()
         {
             string[] tagsOfScenario = new string[] {
@@ -330,18 +343,18 @@ this.FeatureBackground();
 #line 53
  testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3989 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3934 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "ShortName",
                             "Description",
                             "Type"});
-                table3989.AddRow(new string[] {
+                table3934.AddRow(new string[] {
                             "ProjectForDAS14322",
                             "14322",
                             "",
                             ""});
 #line 54
- testRunner.When("User creates new Project on Senior", ((string)(null)), table3989, "When ");
+ testRunner.When("User creates new Project on Senior", ((string)(null)), table3934, "When ");
 #line hidden
 #line 57
  testRunner.And("User navigate to \"Stages\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -352,12 +365,12 @@ this.FeatureBackground();
 #line 59
  testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3990 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3935 = new TechTalk.SpecFlow.Table(new string[] {
                             "StageName"});
-                table3990.AddRow(new string[] {
+                table3935.AddRow(new string[] {
                             "Stage 14322"});
 #line 60
- testRunner.And("User create Stage", ((string)(null)), table3990, "And ");
+ testRunner.And("User create Stage", ((string)(null)), table3935, "And ");
 #line hidden
 #line 63
  testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -368,7 +381,7 @@ this.FeatureBackground();
 #line 65
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3991 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3936 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -376,7 +389,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table3991.AddRow(new string[] {
+                table3936.AddRow(new string[] {
                             "for 14322",
                             "for 14322",
                             "Stage 14322",
@@ -385,7 +398,7 @@ this.FeatureBackground();
                             "User",
                             "None"});
 #line 66
- testRunner.And("User creates Task", ((string)(null)), table3991, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table3936, "And ");
 #line hidden
 #line 69
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -396,16 +409,16 @@ this.FeatureBackground();
 #line 71
  testRunner.And("User clicks \"Add value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3992 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3937 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "TaskStatusString",
                             "DefaultValue"});
-                table3992.AddRow(new string[] {
+                table3937.AddRow(new string[] {
                             "TestValueName",
                             "Open",
                             "false"});
 #line 72
- testRunner.When("User create new Value", ((string)(null)), table3992, "When ");
+ testRunner.When("User create new Value", ((string)(null)), table3937, "When ");
 #line hidden
 #line 75
  testRunner.And("User clicks \"Save Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -432,13 +445,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
-        [NUnit.Framework.CategoryAttribute("Senior_Projects")]
-        [NUnit.Framework.CategoryAttribute("DAS14171")]
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError" +
+            "", new string[] {
+                "Senior",
+                "Projects_Dashboards",
+                "Senior_Projects",
+                "DAS14171"}, SourceLine=83)]
         public virtual void Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError()
         {
             string[] tagsOfScenario = new string[] {
@@ -497,13 +509,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosin" +
-            "gValueType")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
-        [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
-        [NUnit.Framework.CategoryAttribute("DAS13887")]
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosin" +
+            "gValueType", new string[] {
+                "Senior",
+                "Projects_Dashboards",
+                "Senior_Tasks",
+                "DAS13887"}, SourceLine=92)]
         public virtual void Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueType()
         {
             string[] tagsOfScenario = new string[] {
@@ -562,46 +573,45 @@ this.FeatureBackground();
 #line 100
  testRunner.And("User selects \"Date\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3993 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3938 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table3993.AddRow(new string[] {
+                table3938.AddRow(new string[] {
                             "[Select]"});
-                table3993.AddRow(new string[] {
+                table3938.AddRow(new string[] {
                             "User"});
-                table3993.AddRow(new string[] {
+                table3938.AddRow(new string[] {
                             "Computer"});
-                table3993.AddRow(new string[] {
+                table3938.AddRow(new string[] {
                             "Application"});
 #line 101
- testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table3993, "Then ");
+ testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table3938, "Then ");
 #line hidden
 #line 107
  testRunner.When("User selects \"Text\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3994 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3939 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table3994.AddRow(new string[] {
+                table3939.AddRow(new string[] {
                             "[Select]"});
-                table3994.AddRow(new string[] {
+                table3939.AddRow(new string[] {
                             "User"});
-                table3994.AddRow(new string[] {
+                table3939.AddRow(new string[] {
                             "Computer"});
-                table3994.AddRow(new string[] {
+                table3939.AddRow(new string[] {
                             "Application"});
 #line 108
- testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table3994, "Then ");
+ testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table3939, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
-        [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
-        [NUnit.Framework.CategoryAttribute("DAS18247")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName", new string[] {
+                "Senior",
+                "Projects_Dashboards",
+                "Senior_Tasks",
+                "DAS18247",
+                "Cleanup"}, SourceLine=115)]
         public virtual void Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName()
         {
             string[] tagsOfScenario = new string[] {
@@ -639,18 +649,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3995 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3940 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table3995.AddRow(new string[] {
+                table3940.AddRow(new string[] {
                             "ProjectForTask18247",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 117
- testRunner.When("Project created via API and opened", ((string)(null)), table3995, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table3940, "When ");
 #line hidden
 #line 120
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -673,12 +683,12 @@ this.FeatureBackground();
 #line 126
  testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3996 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3941 = new TechTalk.SpecFlow.Table(new string[] {
                             "StageName"});
-                table3996.AddRow(new string[] {
+                table3941.AddRow(new string[] {
                             "Stage18247"});
 #line 127
- testRunner.And("User create Stage", ((string)(null)), table3996, "And ");
+ testRunner.And("User create Stage", ((string)(null)), table3941, "And ");
 #line hidden
 #line 130
  testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -692,7 +702,7 @@ this.FeatureBackground();
 #line 133
  testRunner.When("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3997 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3942 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Help",
                             "StagesNameString",
@@ -700,7 +710,7 @@ this.FeatureBackground();
                             "ValueTypeString",
                             "ObjectTypeString",
                             "TaskValuesTemplateString"});
-                table3997.AddRow(new string[] {
+                table3942.AddRow(new string[] {
                             "Task“\'<>13152",
                             "Help“\'<>13152",
                             "Stage18247",
@@ -709,7 +719,7 @@ this.FeatureBackground();
                             "Computer",
                             ""});
 #line 134
- testRunner.And("User creates Task", ((string)(null)), table3997, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table3942, "And ");
 #line hidden
 #line 137
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -722,6 +732,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -19,9 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TableSorting")]
-    [NUnit.Framework.CategoryAttribute("retry:1")]
+    [TechTalk.SpecRun.FeatureAttribute("TableSorting", new string[] {
+            "retry:1"}, Description="\tRuns Table Sorting related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_GridActions\\TableSorting.feature", SourceLine=1)]
     public partial class TableSortingFeature
     {
         
@@ -33,7 +32,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
 #line 1 "TableSorting.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -42,19 +41,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,7 +61,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -88,13 +85,12 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckSortByDateFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS10612")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckSortByDateFunctionality", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS10612"}, SourceLine=9)]
         public virtual void EvergreenJnr_DevicesList_CheckSortByDateFunctionality()
         {
             string[] tagsOfScenario = new string[] {
@@ -132,24 +128,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2818 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2763 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2818.AddRow(new string[] {
+                table2763.AddRow(new string[] {
                             "Boot Up Date"});
-                table2818.AddRow(new string[] {
+                table2763.AddRow(new string[] {
                             "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task"});
 #line 11
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2818, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2763, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2819 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2764 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2819.AddRow(new string[] {
+                table2764.AddRow(new string[] {
                             "Android",
                             "22"});
 #line 15
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2819, "Then ");
+                        "s are returned", ((string)(null)), table2764, "Then ");
 #line hidden
 #line 18
  testRunner.When("User clicks on \'Boot Up Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -163,15 +159,15 @@ this.FeatureBackground();
 #line 21
  testRunner.Then("date in table is sorted by \'Boot Up Date\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2820 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2765 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2820.AddRow(new string[] {
+                table2765.AddRow(new string[] {
                             "Windows 10",
                             "16,969"});
 #line 22
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2820, "Then ");
+                        "s are returned", ((string)(null)), table2765, "Then ");
 #line hidden
 #line 25
  testRunner.When("User clicks on \'Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Dat" +
@@ -193,13 +189,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS10612")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS10612"}, SourceLine=30)]
         public virtual void EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality()
         {
             string[] tagsOfScenario = new string[] {
@@ -237,22 +232,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2821 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2766 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2821.AddRow(new string[] {
+                table2766.AddRow(new string[] {
                             "Barry\'sUse: Audit & Configuration \\ Package Delivery Date"});
 #line 32
- testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table2821, "When ");
+ testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table2766, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2822 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2767 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2822.AddRow(new string[] {
+                table2767.AddRow(new string[] {
                             "Software",
                             "94"});
 #line 35
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2822, "Then ");
+                        "s are returned", ((string)(null)), table2767, "Then ");
 #line hidden
 #line 38
  testRunner.When("User clicks on \'Barry\'sUse: Audit & Configuration \\ Package Delivery Date\' column" +
@@ -274,13 +269,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSortByDateFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS10612")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckSortByDateFunctionality", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS10612"}, SourceLine=43)]
         public virtual void EvergreenJnr_MailboxesList_CheckSortByDateFunctionality()
         {
             string[] tagsOfScenario = new string[] {
@@ -318,24 +312,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2823 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2768 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2823.AddRow(new string[] {
+                table2768.AddRow(new string[] {
                             "Created Date"});
-                table2823.AddRow(new string[] {
+                table2768.AddRow(new string[] {
                             "EmailMigra: Pre-Migration \\ Scheduled date"});
 #line 45
- testRunner.When("User add following columns using URL to the \"Mailboxes\" page:", ((string)(null)), table2823, "When ");
+ testRunner.When("User add following columns using URL to the \"Mailboxes\" page:", ((string)(null)), table2768, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2824 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2769 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2824.AddRow(new string[] {
+                table2769.AddRow(new string[] {
                             "Office",
                             "38"});
 #line 49
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2824, "Then ");
+                        "s are returned", ((string)(null)), table2769, "Then ");
 #line hidden
 #line 52
  testRunner.When("User clicks on \'Created Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -367,13 +361,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckSortByDateFunctionality")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS10612")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckSortByDateFunctionality", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS10612"}, SourceLine=61)]
         public virtual void EvergreenJnr_UsersList_CheckSortByDateFunctionality()
         {
             string[] tagsOfScenario = new string[] {
@@ -411,24 +404,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2825 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2770 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2825.AddRow(new string[] {
+                table2770.AddRow(new string[] {
                             "Last Logon Date"});
-                table2825.AddRow(new string[] {
+                table2770.AddRow(new string[] {
                             "Barry\'sUse: Project Dates \\ Migrated Date"});
 #line 63
- testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table2825, "When ");
+ testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table2770, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2826 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2771 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table2826.AddRow(new string[] {
+                table2771.AddRow(new string[] {
                             "Tim",
                             "147"});
 #line 67
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table2826, "Then ");
+                        "s are returned", ((string)(null)), table2771, "Then ");
 #line hidden
 #line 70
  testRunner.When("User clicks on \'Last Logon Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -460,14 +453,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianc" +
-            "eColumnOnDevicesList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS11568")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianc" +
+            "eColumnOnDevicesList", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS11568"}, SourceLine=79)]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList()
         {
             string[] tagsOfScenario = new string[] {
@@ -518,12 +510,12 @@ this.FeatureBackground();
 #line 84
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2827 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2772 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2827.AddRow(new string[] {
+                table2772.AddRow(new string[] {
                             "Owner Compliance"});
 #line 85
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2827, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2772, "When ");
 #line hidden
 #line 88
  testRunner.Then("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -541,17 +533,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Domain", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Version", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Display Name", null)]
         public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate(string listName, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -611,19 +592,59 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
-        [NUnit.Framework.CategoryAttribute("TableSorting")]
-        [NUnit.Framework.CategoryAttribute("DAS12545")]
-        [NUnit.Framework.CategoryAttribute("DAS14287")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Team ID", "All Devices", "DynamicList4857", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "UserEvergr: Team ID", "All Users", "DynamicList1857", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "ComputerSc: Project ID", "All Applications", "DynamicList2857", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Team ID", "All Mailboxes", "DynamicList3857", null)]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS11951"}, SourceLine=103)]
+        public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate_Devices()
+        {
+#line 94
+this.EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate("Devices", "Hostname", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS11951"}, SourceLine=103)]
+        public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate_Users()
+        {
+#line 94
+this.EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate("Users", "Domain", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate, Application" +
+            "s", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS11951"}, SourceLine=103)]
+        public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate_Applications()
+        {
+#line 94
+this.EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate("Applications", "Version", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS11951"}, SourceLine=103)]
+        public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate_Mailboxes()
+        {
+#line 94
+this.EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate("Mailboxes", "Owner Display Name", ((string[])(null)));
+#line hidden
+        }
+        
         public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList(string listName, string columnName, string allListName, string dynamicListName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -675,19 +696,19 @@ this.FeatureBackground();
 #line 114
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2828 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2773 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2828.AddRow(new string[] {
+                table2773.AddRow(new string[] {
                             string.Format("{0}", columnName)});
 #line 115
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2828, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2773, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2829 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2774 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2829.AddRow(new string[] {
+                table2774.AddRow(new string[] {
                             string.Format("{0}", columnName)});
 #line 118
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table2829, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table2774, "Then ");
 #line hidden
 #line 121
  testRunner.When(string.Format("User clicks on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -713,12 +734,12 @@ this.FeatureBackground();
 #line 128
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", dynamicListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2830 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2775 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2830.AddRow(new string[] {
+                table2775.AddRow(new string[] {
                             string.Format("{0}", columnName)});
 #line 129
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table2830, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table2775, "Then ");
 #line hidden
 #line 132
  testRunner.Then(string.Format("numeric data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -728,6 +749,72 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList, Devices", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS12545",
+                "DAS14287",
+                "Cleanup"}, SourceLine=136)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList_Devices()
+        {
+#line 110
+this.EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList("Devices", "ComputerSc: Team ID", "All Devices", "DynamicList4857", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList, Users", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS12545",
+                "DAS14287",
+                "Cleanup"}, SourceLine=136)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList_Users()
+        {
+#line 110
+this.EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList("Users", "UserEvergr: Team ID", "All Users", "DynamicList1857", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList, Applications", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS12545",
+                "DAS14287",
+                "Cleanup"}, SourceLine=136)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList_Applications()
+        {
+#line 110
+this.EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList("Applications", "ComputerSc: Project ID", "All Applications", "DynamicList2857", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList, Mailboxes", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_GridActions",
+                "TableSorting",
+                "DAS12545",
+                "DAS14287",
+                "Cleanup"}, SourceLine=136)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList_Mailboxes()
+        {
+#line 110
+this.EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList("Mailboxes", "EmailMigra: Team ID", "All Mailboxes", "DynamicList3857", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

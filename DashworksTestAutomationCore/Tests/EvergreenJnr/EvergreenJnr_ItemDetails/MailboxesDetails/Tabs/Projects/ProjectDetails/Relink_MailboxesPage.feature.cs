@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Relink_MailboxesPage")]
+    [TechTalk.SpecRun.FeatureAttribute("Relink_MailboxesPage", Description="\tRuns Relink related tests on Mailboxes Page", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_ItemDetails\\MailboxesDetails\\Tabs\\Projects\\Projec" +
+        "tDetails\\Relink_MailboxesPage.feature", SourceLine=0)]
     public partial class Relink_MailboxesPageFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line 1 "Relink_MailboxesPage.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,18 +83,17 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetail" +
-            "sOnMailboxesPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("Relink")]
-        [NUnit.Framework.CategoryAttribute("DAS18002")]
-        [NUnit.Framework.CategoryAttribute("DAS18112")]
-        [NUnit.Framework.CategoryAttribute("DAS18284")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetail" +
+            "sOnMailboxesPage", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "Relink",
+                "DAS18002",
+                "DAS18112",
+                "DAS18284",
+                "Cleanup",
+                "Not_Run"}, SourceLine=9)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnMailboxesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -161,17 +158,17 @@ this.FeatureBackground();
 #line 15
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3260 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3205 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table3260.AddRow(new string[] {
+                table3205.AddRow(new string[] {
                             "Name",
                             "01A921EFD05545818AA@bclabs.local"});
-                table3260.AddRow(new string[] {
+                table3205.AddRow(new string[] {
                             "Mailbox Owner",
                             "Leon, Nacoma"});
 #line 16
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3260, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3205, "Then ");
 #line hidden
 #line 20
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -215,17 +212,17 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'04D158C83A0142F3B79@bclabs.local\' item is displayed to the user" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3261 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3206 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table3261.AddRow(new string[] {
+                table3206.AddRow(new string[] {
                             "Name",
                             "01A921EFD05545818AA@bclabs.local"});
-                table3261.AddRow(new string[] {
+                table3206.AddRow(new string[] {
                             "Mailbox Owner",
                             "Leon, Nacoma"});
 #line 34
- testRunner.And("User verifies data in the fields on details page", ((string)(null)), table3261, "And ");
+ testRunner.And("User verifies data in the fields on details page", ((string)(null)), table3206, "And ");
 #line hidden
 #line 38
  testRunner.When("User clicks \'RESYNC\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -241,17 +238,17 @@ this.FeatureBackground();
 #line 42
  testRunner.When("User waits for \'3\' seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3262 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3207 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table3262.AddRow(new string[] {
+                table3207.AddRow(new string[] {
                             "Name",
                             "04D158C83A0142F3B79@bclabs.local"});
-                table3262.AddRow(new string[] {
+                table3207.AddRow(new string[] {
                             "Mailbox Owner",
                             "Jin, Jh"});
 #line 43
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3262, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3207, "Then ");
 #line hidden
 #line 47
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -298,13 +295,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS19335")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19335"}, SourceLine=62)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed()
         {
             string[] tagsOfScenario = new string[] {
@@ -373,15 +369,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringP" +
-            "artOfObjectKeyToAutocomplete")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailbox")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS19323")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringP" +
+            "artOfObjectKeyToAutocomplete", new string[] {
+                "Evergreen",
+                "Mailbox",
+                "EvergreenJnr_ItemDetails",
+                "ItemDetailsDisplay",
+                "DAS19323",
+                "Universe"}, SourceLine=73)]
         public virtual void EvergreenJnr_MailboxList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete()
         {
             string[] tagsOfScenario = new string[] {
@@ -448,6 +443,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

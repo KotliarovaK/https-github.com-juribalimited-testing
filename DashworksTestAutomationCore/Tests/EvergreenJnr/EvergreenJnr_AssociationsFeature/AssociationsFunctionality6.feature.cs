@@ -19,8 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AssociationsFunctionality6")]
+    [TechTalk.SpecRun.FeatureAttribute("AssociationsFunctionality6", Description="\tRuns Associations Functionality related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_AssociationsFeature\\AssociationsFunctionality6.fe" +
+        "ature", SourceLine=0)]
     public partial class AssociationsFunctionality6Feature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
 #line 1 "AssociationsFunctionality6.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -39,19 +39,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -60,7 +59,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -85,11 +83,10 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatOrRequestHasCorrectOperatorParameter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS18092")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatOrRequestHasCorrectOperatorParameter", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18092"}, SourceLine=8)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatOrRequestHasCorrectOperatorParameter()
         {
             string[] tagsOfScenario = new string[] {
@@ -162,12 +159,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckDeviceLocationColumnsAndFilters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS18859")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckDeviceLocationColumnsAndFilters", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18859",
+                "Cleanup"}, SourceLine=22)]
         public virtual void EvergreenJnr_ApplicationsList_CheckDeviceLocationColumnsAndFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -224,36 +220,36 @@ this.FeatureBackground();
 #line 30
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1763 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1708 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table1763.AddRow(new string[] {
+                table1708.AddRow(new string[] {
                             "Device Country"});
-                table1763.AddRow(new string[] {
+                table1708.AddRow(new string[] {
                             "Device Building"});
-                table1763.AddRow(new string[] {
+                table1708.AddRow(new string[] {
                             "Device City"});
-                table1763.AddRow(new string[] {
+                table1708.AddRow(new string[] {
                             "Device Floor"});
 #line 31
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1763, "When ");
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1708, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1764 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1709 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table1764.AddRow(new string[] {
+                table1709.AddRow(new string[] {
                             "Device Location Name"});
-                table1764.AddRow(new string[] {
+                table1709.AddRow(new string[] {
                             "Device Postal Code"});
 #line 37
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1764, "When ");
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1709, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1765 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1710 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1765.AddRow(new string[] {
+                table1710.AddRow(new string[] {
                             "Device Region"});
-                table1765.AddRow(new string[] {
+                table1710.AddRow(new string[] {
                             "Device State County"});
 #line 41
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1765, "When ");
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1710, "When ");
 #line hidden
 #line 45
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -289,12 +285,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatListWithAllDeviceOsFiltersCanBeCreated")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Associations")]
-        [NUnit.Framework.CategoryAttribute("DAS18467")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckThatListWithAllDeviceOsFiltersCanBeCreated", new string[] {
+                "Evergreen",
+                "Associations",
+                "DAS18467",
+                "Cleanup"}, SourceLine=56)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatListWithAllDeviceOsFiltersCanBeCreated()
         {
             string[] tagsOfScenario = new string[] {
@@ -351,32 +346,32 @@ this.FeatureBackground();
 #line 64
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1766 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1711 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table1766.AddRow(new string[] {
+                table1711.AddRow(new string[] {
                             "Device OS Branch"});
-                table1766.AddRow(new string[] {
+                table1711.AddRow(new string[] {
                             "Device OS Architecture"});
-                table1766.AddRow(new string[] {
+                table1711.AddRow(new string[] {
                             "Device OS Full Name"});
 #line 65
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1766, "When ");
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1711, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1767 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1712 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table1767.AddRow(new string[] {
+                table1712.AddRow(new string[] {
                             "Device OS Servicing State"});
-                table1767.AddRow(new string[] {
+                table1712.AddRow(new string[] {
                             "Device Operating System"});
 #line 70
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1767, "When ");
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1712, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1768 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1713 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1768.AddRow(new string[] {
+                table1713.AddRow(new string[] {
                             "Device Service Pack or Build"});
 #line 74
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1768, "When ");
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1713, "When ");
 #line hidden
 #line 77
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -425,6 +420,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }

@@ -19,9 +19,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Search
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Search")]
-    [NUnit.Framework.CategoryAttribute("retry:1")]
+    [TechTalk.SpecRun.FeatureAttribute("Search", new string[] {
+            "retry:1"}, Description="\tRuns Search related tests", SourceFile="Tests\\EvergreenJnr\\EvergreenJnr_Search\\Search.feature", SourceLine=1)]
     public partial class SearchFeature
     {
         
@@ -33,7 +32,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Search
 #line 1 "Search.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -42,19 +41,18 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Search
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,7 +61,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Search
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -88,15 +85,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Search
 #line hidden
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS10704")]
-        [NUnit.Framework.CategoryAttribute("DAS12762")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS10704",
+                "DAS12762",
+                "Cleanup"}, SourceLine=9)]
         public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists()
         {
             string[] tagsOfScenario = new string[] {
@@ -138,12 +134,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3744 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3689 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3744.AddRow(new string[] {
+                table3689.AddRow(new string[] {
                             "Build Date"});
 #line 11
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3744, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3689, "When ");
 #line hidden
 #line 14
  testRunner.When("User create dynamic list with \"TestList7BA11B\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -151,15 +147,15 @@ this.FeatureBackground();
 #line 15
  testRunner.Then("\"TestList7BA11B\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3745 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3690 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3745.AddRow(new string[] {
+                table3690.AddRow(new string[] {
                             "Smith",
                             "11"});
 #line 16
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3745, "Then ");
+                        "s are returned", ((string)(null)), table3690, "Then ");
 #line hidden
 #line 19
  testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -171,13 +167,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS10704")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS10704"}, SourceLine=22)]
         public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu()
         {
             string[] tagsOfScenario = new string[] {
@@ -221,15 +216,15 @@ this.FeatureBackground();
 #line 25
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3746 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3691 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3746.AddRow(new string[] {
+                table3691.AddRow(new string[] {
                             "Smith",
                             "11"});
 #line 26
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3746, "Then ");
+                        "s are returned", ((string)(null)), table3691, "Then ");
 #line hidden
 #line 29
  testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -238,19 +233,18 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
-            "s")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS10580")]
-        [NUnit.Framework.CategoryAttribute("DAS10667")]
-        [NUnit.Framework.CategoryAttribute("DAS10624")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
+            "s", new string[] {
+                "Evergreen",
+                "Devices",
+                "Applications",
+                "Users",
+                "Mailboxes",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS10580",
+                "DAS10667",
+                "DAS10624"}, SourceLine=31)]
         public virtual void EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages()
         {
             string[] tagsOfScenario = new string[] {
@@ -308,15 +302,15 @@ this.FeatureBackground();
 #line 35
  testRunner.And("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3747 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3692 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3747.AddRow(new string[] {
+                table3692.AddRow(new string[] {
                             "Smith",
                             "11"});
 #line 36
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3747, "And ");
+                        "s are returned", ((string)(null)), table3692, "And ");
 #line hidden
 #line 39
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -330,15 +324,15 @@ this.FeatureBackground();
 #line 42
  testRunner.And("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3748 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3693 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3748.AddRow(new string[] {
+                table3693.AddRow(new string[] {
                             "Smith",
                             "59"});
 #line 43
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3748, "And ");
+                        "s are returned", ((string)(null)), table3693, "And ");
 #line hidden
 #line 46
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -352,15 +346,15 @@ this.FeatureBackground();
 #line 49
  testRunner.And("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3749 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3694 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3749.AddRow(new string[] {
+                table3694.AddRow(new string[] {
                             "Python",
                             "7"});
 #line 50
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3749, "And ");
+                        "s are returned", ((string)(null)), table3694, "And ");
 #line hidden
 #line 53
  testRunner.When("User clicks \'Mailboxes\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -374,15 +368,15 @@ this.FeatureBackground();
 #line 56
  testRunner.And("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3750 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3695 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3750.AddRow(new string[] {
+                table3695.AddRow(new string[] {
                             "Smith",
                             "44"});
 #line 57
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3750, "And ");
+                        "s are returned", ((string)(null)), table3695, "And ");
 #line hidden
 #line 60
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -400,14 +394,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_SearchTests")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS12206")]
-        [NUnit.Framework.CategoryAttribute("DAS10475")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_SearchTests", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS12206",
+                "DAS10475"}, SourceLine=65)]
         public virtual void EvergreenJnr_DevicesList_SearchTests()
         {
             string[] tagsOfScenario = new string[] {
@@ -447,57 +440,56 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3751 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3696 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3751.AddRow(new string[] {
+                table3696.AddRow(new string[] {
                             "Compliance"});
-                table3751.AddRow(new string[] {
+                table3696.AddRow(new string[] {
                             "Owner Email Address"});
-                table3751.AddRow(new string[] {
+                table3696.AddRow(new string[] {
                             "IP Address"});
 #line 67
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3751, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3696, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3752 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3697 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3752.AddRow(new string[] {
+                table3697.AddRow(new string[] {
                             "Véronique Duplessis",
                             "1"});
-                table3752.AddRow(new string[] {
+                table3697.AddRow(new string[] {
                             "Virtual",
                             "1,996"});
-                table3752.AddRow(new string[] {
+                table3697.AddRow(new string[] {
                             "Windows Vista",
                             "124"});
-                table3752.AddRow(new string[] {
+                table3697.AddRow(new string[] {
                             "O\'Connor",
                             "13"});
-                table3752.AddRow(new string[] {
+                table3697.AddRow(new string[] {
                             "@demo.juriba.com",
                             "16,771"});
-                table3752.AddRow(new string[] {
+                table3697.AddRow(new string[] {
                             "192.168.6",
                             "5,094"});
-                table3752.AddRow(new string[] {
+                table3697.AddRow(new string[] {
                             "0JIE",
                             "1"});
 #line 72
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3752, "Then ");
+                        "s are returned", ((string)(null)), table3697, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11012")]
-        [NUnit.Framework.CategoryAttribute("DAS12206")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11012",
+                "DAS12206"}, SourceLine=83)]
         public virtual void EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet()
         {
             string[] tagsOfScenario = new string[] {
@@ -543,15 +535,15 @@ this.FeatureBackground();
 #line 86
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3753 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3698 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3753.AddRow(new string[] {
+                table3698.AddRow(new string[] {
                             "Mary",
                             "18"});
 #line 87
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3753, "And ");
+                        "s are returned", ((string)(null)), table3698, "And ");
 #line hidden
 #line 90
  testRunner.Then("URL is \'evergreen/#/devices\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -569,14 +561,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11012")]
-        [NUnit.Framework.CategoryAttribute("DAS12206")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11012",
+                "DAS12206"}, SourceLine=95)]
         public virtual void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet()
         {
             string[] tagsOfScenario = new string[] {
@@ -622,15 +613,15 @@ this.FeatureBackground();
 #line 98
  testRunner.Then("\'All Users\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3754 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3699 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3754.AddRow(new string[] {
+                table3699.AddRow(new string[] {
                             "Luc",
                             "138"});
 #line 99
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3754, "And ");
+                        "s are returned", ((string)(null)), table3699, "And ");
 #line hidden
 #line 102
  testRunner.Then("URL is \'evergreen/#/users\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -648,12 +639,11 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search"}, SourceLine=107)]
         public virtual void EvergreenJnr_DevicesList_Search_NoDevicesFound()
         {
             string[] tagsOfScenario = new string[] {
@@ -689,52 +679,51 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3755 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3700 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3755.AddRow(new string[] {
+                table3700.AddRow(new string[] {
                             "Compliance"});
-                table3755.AddRow(new string[] {
+                table3700.AddRow(new string[] {
                             "Owner Email Address"});
-                table3755.AddRow(new string[] {
+                table3700.AddRow(new string[] {
                             "IP Address"});
 #line 109
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3755, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3700, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3756 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3701 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria"});
-                table3756.AddRow(new string[] {
+                table3701.AddRow(new string[] {
                             "0281Z793OLLLDU66"});
-                table3756.AddRow(new string[] {
+                table3701.AddRow(new string[] {
                             "Xavier Beaule"});
-                table3756.AddRow(new string[] {
+                table3701.AddRow(new string[] {
                             "BLUE"});
-                table3756.AddRow(new string[] {
+                table3701.AddRow(new string[] {
                             "Virtuals"});
-                table3756.AddRow(new string[] {
+                table3701.AddRow(new string[] {
                             "Windows 2001"});
-                table3756.AddRow(new string[] {
+                table3701.AddRow(new string[] {
                             "192.168.7"});
-                table3756.AddRow(new string[] {
+                table3701.AddRow(new string[] {
                             "demo.juriba.co.uk"});
-                table3756.AddRow(new string[] {
+                table3701.AddRow(new string[] {
                             "67#"});
-                table3756.AddRow(new string[] {
+                table3701.AddRow(new string[] {
                             "#12"});
 #line 114
  testRunner.Then("User enters invalid SearchCriteria into the agGrid Search Box and \"No devices fou" +
-                        "nd\" message is displayed", ((string)(null)), table3756, "Then ");
+                        "nd\" message is displayed", ((string)(null)), table3701, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11350"}, SourceLine=126)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton()
         {
             string[] tagsOfScenario = new string[] {
@@ -788,17 +777,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("ALlLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS12491")]
-        [NUnit.Framework.TestCaseAttribute("Applications", "ABBYY FineReader 8.0 Professional Edition", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "002B5DC7D4D34D5C895@bclabs.local", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "$231000-3AC04R8AR431", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar(string pageName, string searchTerm, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -852,13 +830,68 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar, Ap" +
+            "plications", new string[] {
+                "Evergreen",
+                "ALlLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS12491"}, SourceLine=141)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar_Applications()
+        {
+#line 134
+this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar("Applications", "ABBYY FineReader 8.0 Professional Edition", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar, Ma" +
+            "ilboxes", new string[] {
+                "Evergreen",
+                "ALlLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS12491"}, SourceLine=141)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar_Mailboxes()
+        {
+#line 134
+this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar("Mailboxes", "002B5DC7D4D34D5C895@bclabs.local", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar, De" +
+            "vices", new string[] {
+                "Evergreen",
+                "ALlLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS12491"}, SourceLine=141)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar_Devices()
+        {
+#line 134
+this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar("Devices", "001BAQXT6JWFPI", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar, Us" +
+            "ers", new string[] {
+                "Evergreen",
+                "ALlLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS12491"}, SourceLine=141)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar_Users()
+        {
+#line 134
+this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar("Users", "$231000-3AC04R8AR431", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11350"}, SourceLine=147)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -921,13 +954,12 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11350"}, SourceLine=157)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -987,14 +1019,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetBut" +
-            "ton")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetBut" +
+            "ton", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11350"}, SourceLine=166)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetButton()
         {
             string[] tagsOfScenario = new string[] {
@@ -1058,15 +1089,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11350")]
-        [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11350",
+                "DAS11951",
+                "Cleanup"}, SourceLine=176)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel()
         {
             string[] tagsOfScenario = new string[] {
@@ -1133,17 +1163,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11511")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "GREEN", "100", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,116", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Import Type", "Altiris 6", "31", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "department", "The Last Department With A Really Lond Name", "10", null)]
         public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly(string pageName, string columnName, string searchCriteria, string numberOfRows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1181,35 +1200,86 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3757 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3702 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3757.AddRow(new string[] {
+                table3702.AddRow(new string[] {
                             string.Format("{0}", columnName)});
 #line 188
- testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", pageName), ((string)(null)), table3757, "When ");
+ testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", pageName), ((string)(null)), table3702, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3758 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3703 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3758.AddRow(new string[] {
+                table3703.AddRow(new string[] {
                             string.Format("{0}", searchCriteria),
                             string.Format("{0}", numberOfRows)});
 #line 191
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3758, "Then ");
+                        "s are returned", ((string)(null)), table3703, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForAp" +
-            "plicationColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11511")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly, Variant 0", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11511"}, SourceLine=196)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant0()
+        {
+#line 187
+this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Devices", "Compliance", "GREEN", "100", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly, Variant 1", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11511"}, SourceLine=196)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant1()
+        {
+#line 187
+this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,116", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly, Variant 2", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11511"}, SourceLine=196)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant2()
+        {
+#line 187
+this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Applications", "Import Type", "Altiris 6", "31", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly, Variant 3", new string[] {
+                "Evergreen",
+                "AllLists",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11511"}, SourceLine=196)]
+        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant3()
+        {
+#line 187
+this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Users", "department", "The Last Department With A Really Lond Name", "10", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForAp" +
+            "plicationColumn", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11511"}, SourceLine=203)]
         public virtual void EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1254,28 +1324,27 @@ this.FeatureBackground();
 #line 206
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3759 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3704 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3759.AddRow(new string[] {
+                table3704.AddRow(new string[] {
                             "Zune",
                             "3"});
 #line 207
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3759, "And ");
+                        "s are returned", ((string)(null)), table3704, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDispla" +
-            "yNameColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDispla" +
+            "yNameColumn", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11664"}, SourceLine=211)]
         public virtual void EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1326,50 +1395,49 @@ this.FeatureBackground();
 #line 216
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3760 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3705 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3760.AddRow(new string[] {
+                table3705.AddRow(new string[] {
                             "Hostname"});
-                table3760.AddRow(new string[] {
+                table3705.AddRow(new string[] {
                             "Device Type"});
-                table3760.AddRow(new string[] {
+                table3705.AddRow(new string[] {
                             "Operating System"});
 #line 217
- testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table3760, "When ");
+ testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table3705, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3761 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3706 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3761.AddRow(new string[] {
+                table3706.AddRow(new string[] {
                             "Hostname"});
-                table3761.AddRow(new string[] {
+                table3706.AddRow(new string[] {
                             "Device Type"});
-                table3761.AddRow(new string[] {
+                table3706.AddRow(new string[] {
                             "Operating System"});
 #line 222
- testRunner.Then("ColumnName is removed from the list", ((string)(null)), table3761, "Then ");
+ testRunner.Then("ColumnName is removed from the list", ((string)(null)), table3706, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3762 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3707 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3762.AddRow(new string[] {
+                table3707.AddRow(new string[] {
                             "Anna",
                             "119"});
 #line 227
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3762, "And ");
+                        "s are returned", ((string)(null)), table3707, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUserna" +
-            "meColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUserna" +
+            "meColumn", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11664"}, SourceLine=231)]
         public virtual void EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1408,12 +1476,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3763 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3708 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3763.AddRow(new string[] {
+                table3708.AddRow(new string[] {
                             "Owner Username"});
 #line 233
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3763, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3708, "When ");
 #line hidden
 #line 236
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1421,54 +1489,53 @@ this.FeatureBackground();
 #line 237
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3764 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3709 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3764.AddRow(new string[] {
+                table3709.AddRow(new string[] {
                             "Hostname"});
-                table3764.AddRow(new string[] {
+                table3709.AddRow(new string[] {
                             "Device Type"});
-                table3764.AddRow(new string[] {
+                table3709.AddRow(new string[] {
                             "Operating System"});
-                table3764.AddRow(new string[] {
+                table3709.AddRow(new string[] {
                             "Owner Display Name"});
 #line 238
- testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table3764, "When ");
+ testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table3709, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3765 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3710 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3765.AddRow(new string[] {
+                table3710.AddRow(new string[] {
                             "Hostname"});
-                table3765.AddRow(new string[] {
+                table3710.AddRow(new string[] {
                             "Device Type"});
-                table3765.AddRow(new string[] {
+                table3710.AddRow(new string[] {
                             "Operating System"});
-                table3765.AddRow(new string[] {
+                table3710.AddRow(new string[] {
                             "Owner Display Name"});
 #line 244
- testRunner.Then("ColumnName is removed from the list", ((string)(null)), table3765, "Then ");
+ testRunner.Then("ColumnName is removed from the list", ((string)(null)), table3710, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3766 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3711 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3766.AddRow(new string[] {
+                table3711.AddRow(new string[] {
                             "TON249",
                             "1"});
 #line 250
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3766, "And ");
+                        "s are returned", ((string)(null)), table3711, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameCo" +
-            "lumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameCo" +
+            "lumn", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11664"}, SourceLine=254)]
         public virtual void EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1519,50 +1586,49 @@ this.FeatureBackground();
 #line 259
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3767 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3712 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3767.AddRow(new string[] {
+                table3712.AddRow(new string[] {
                             "Username"});
-                table3767.AddRow(new string[] {
+                table3712.AddRow(new string[] {
                             "Domain"});
-                table3767.AddRow(new string[] {
+                table3712.AddRow(new string[] {
                             "Distinguished Name"});
 #line 260
- testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table3767, "When ");
+ testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table3712, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3768 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3713 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3768.AddRow(new string[] {
+                table3713.AddRow(new string[] {
                             "Username"});
-                table3768.AddRow(new string[] {
+                table3713.AddRow(new string[] {
                             "Domain"});
-                table3768.AddRow(new string[] {
+                table3713.AddRow(new string[] {
                             "Distinguished Name"});
 #line 265
- testRunner.Then("ColumnName is removed from the list", ((string)(null)), table3768, "Then ");
+ testRunner.Then("ColumnName is removed from the list", ((string)(null)), table3713, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3769 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3714 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3769.AddRow(new string[] {
+                table3714.AddRow(new string[] {
                             "Hunter",
                             "26"});
 #line 270
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3769, "And ");
+                        "s are returned", ((string)(null)), table3714, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisp" +
-            "layNameColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisp" +
+            "layNameColumn", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11664"}, SourceLine=274)]
         public virtual void EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1613,54 +1679,53 @@ this.FeatureBackground();
 #line 279
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3770 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3715 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3770.AddRow(new string[] {
+                table3715.AddRow(new string[] {
                             "Email Address"});
-                table3770.AddRow(new string[] {
+                table3715.AddRow(new string[] {
                             "Mailbox Platform"});
-                table3770.AddRow(new string[] {
+                table3715.AddRow(new string[] {
                             "Mail Server"});
-                table3770.AddRow(new string[] {
+                table3715.AddRow(new string[] {
                             "Mailbox Type"});
 #line 280
- testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table3770, "When ");
+ testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table3715, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3771 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3716 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3771.AddRow(new string[] {
+                table3716.AddRow(new string[] {
                             "Email Address"});
-                table3771.AddRow(new string[] {
+                table3716.AddRow(new string[] {
                             "Mailbox Platform"});
-                table3771.AddRow(new string[] {
+                table3716.AddRow(new string[] {
                             "Mail Server"});
-                table3771.AddRow(new string[] {
+                table3716.AddRow(new string[] {
                             "Mailbox Type"});
 #line 286
- testRunner.Then("ColumnName is removed from the list", ((string)(null)), table3771, "Then ");
+ testRunner.Then("ColumnName is removed from the list", ((string)(null)), table3716, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3772 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3717 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3772.AddRow(new string[] {
+                table3717.AddRow(new string[] {
                             "Smith",
                             "43"});
 #line 292
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3772, "And ");
+                        "s are returned", ((string)(null)), table3717, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUser" +
-            "nameColumn")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUser" +
+            "nameColumn", new string[] {
+                "Evergreen",
+                "Mailboxes",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11664"}, SourceLine=296)]
         public virtual void EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn()
         {
             string[] tagsOfScenario = new string[] {
@@ -1699,12 +1764,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3773 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3718 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3773.AddRow(new string[] {
+                table3718.AddRow(new string[] {
                             "Owner Username"});
 #line 298
- testRunner.When("User add following columns using URL to the \"Mailboxes\" page:", ((string)(null)), table3773, "When ");
+ testRunner.When("User add following columns using URL to the \"Mailboxes\" page:", ((string)(null)), table3718, "When ");
 #line hidden
 #line 301
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1712,58 +1777,57 @@ this.FeatureBackground();
 #line 302
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3774 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3719 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3774.AddRow(new string[] {
+                table3719.AddRow(new string[] {
                             "Email Address"});
-                table3774.AddRow(new string[] {
+                table3719.AddRow(new string[] {
                             "Mailbox Platform"});
-                table3774.AddRow(new string[] {
+                table3719.AddRow(new string[] {
                             "Mail Server"});
-                table3774.AddRow(new string[] {
+                table3719.AddRow(new string[] {
                             "Mailbox Type"});
-                table3774.AddRow(new string[] {
+                table3719.AddRow(new string[] {
                             "Owner Display Name"});
 #line 303
- testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table3774, "When ");
+ testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table3719, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3775 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3720 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3775.AddRow(new string[] {
+                table3720.AddRow(new string[] {
                             "Email Address"});
-                table3775.AddRow(new string[] {
+                table3720.AddRow(new string[] {
                             "Mailbox Platform"});
-                table3775.AddRow(new string[] {
+                table3720.AddRow(new string[] {
                             "Mail Server"});
-                table3775.AddRow(new string[] {
+                table3720.AddRow(new string[] {
                             "Mailbox Type"});
-                table3775.AddRow(new string[] {
+                table3720.AddRow(new string[] {
                             "Owner Display Name"});
 #line 310
- testRunner.Then("ColumnName is removed from the list", ((string)(null)), table3775, "Then ");
+ testRunner.Then("ColumnName is removed from the list", ((string)(null)), table3720, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3776 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3721 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3776.AddRow(new string[] {
+                table3721.AddRow(new string[] {
                             "00B",
                             "16"});
 #line 317
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3776, "And ");
+                        "s are returned", ((string)(null)), table3721, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFo" +
-            "undAfterUsingAgGrid")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11663")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFo" +
+            "undAfterUsingAgGrid", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11663"}, SourceLine=321)]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterUsingAgGrid()
         {
             string[] tagsOfScenario = new string[] {
@@ -1808,28 +1872,27 @@ this.FeatureBackground();
 #line 324
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3777 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3722 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3777.AddRow(new string[] {
+                table3722.AddRow(new string[] {
                             "Example",
                             ""});
 #line 325
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3777, "And ");
+                        "s are returned", ((string)(null)), table3722, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchE" +
-            "verythingAndSearchTableFieldsIsPresented")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS11706")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchE" +
+            "verythingAndSearchTableFieldsIsPresented", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS11706"}, SourceLine=329)]
         public virtual void EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchEverythingAndSearchTableFieldsIsPresented()
         {
             string[] tagsOfScenario = new string[] {
@@ -1880,26 +1943,25 @@ this.FeatureBackground();
 #line 334
  testRunner.Then("\"No results found\" message is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3778 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3723 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria"});
-                table3778.AddRow(new string[] {
+                table3723.AddRow(new string[] {
                             "%%%"});
 #line 335
  testRunner.Then("User enters invalid SearchCriteria into the agGrid Search Box and \"No devices fou" +
-                        "nd\" message is displayed", ((string)(null)), table3778, "Then ");
+                        "nd\" message is displayed", ((string)(null)), table3723, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAft" +
-            "erClickingTheSearchCrossButton")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS13342")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAft" +
+            "erClickingTheSearchCrossButton", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS13342"}, SourceLine=339)]
         public virtual void EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheSearchCrossButton()
         {
             string[] tagsOfScenario = new string[] {
@@ -1963,15 +2025,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCou" +
-            "ntAfterClickingTheFilterButtonAfterRunningASearch")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS13342")]
-        [NUnit.Framework.CategoryAttribute("DAS13366")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCou" +
+            "ntAfterClickingTheFilterButtonAfterRunningASearch", new string[] {
+                "Evergreen",
+                "Applications",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS13342",
+                "DAS13366"}, SourceLine=349)]
         public virtual void EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheFilterButtonAfterRunningASearch()
         {
             string[] tagsOfScenario = new string[] {
@@ -2027,21 +2088,21 @@ this.FeatureBackground();
 #line 355
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3779 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3724 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3779.AddRow(new string[] {
+                table3724.AddRow(new string[] {
                             "FALSE"});
 #line 356
  testRunner.When("User add \"Windows7Mi: Hide from End Users\" filter where type is \"Equals\" with add" +
-                        "ed column and following checkboxes:", ((string)(null)), table3779, "When ");
+                        "ed column and following checkboxes:", ((string)(null)), table3724, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3780 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3725 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3780.AddRow(new string[] {
+                table3725.AddRow(new string[] {
                             "DirectX SDK (Version 8.1) (3663.0)"});
 #line 359
  testRunner.When("User add \"Application\" filter where type is \"Equals\" with added column and follow" +
-                        "ing value:", ((string)(null)), table3780, "When ");
+                        "ing value:", ((string)(null)), table3725, "When ");
 #line hidden
 #line 362
  testRunner.Then("\"1,067\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2066,14 +2127,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfR" +
-            "ing")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS16375")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfR" +
+            "ing", new string[] {
+                "Evergreen",
+                "Users",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS16375"}, SourceLine=369)]
         public virtual void EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing()
         {
             string[] tagsOfScenario = new string[] {
@@ -2118,12 +2178,12 @@ this.FeatureBackground();
 #line 372
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3781 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3726 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3781.AddRow(new string[] {
+                table3726.AddRow(new string[] {
                             "Windows7Mi: Ring (All Used Devices)"});
 #line 373
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3781, "And ");
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3726, "And ");
 #line hidden
 #line 376
  testRunner.And("User perform search by \"MOW231210\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2136,14 +2196,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderO" +
-            "fRing")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS16375")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderO" +
+            "fRing", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS16375"}, SourceLine=379)]
         public virtual void EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing()
         {
             string[] tagsOfScenario = new string[] {
@@ -2188,54 +2247,53 @@ this.FeatureBackground();
 #line 382
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3782 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3727 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3782.AddRow(new string[] {
+                table3727.AddRow(new string[] {
                             "Windows7Mi: Ring"});
 #line 383
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3782, "And ");
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3727, "And ");
 #line hidden
 #line 386
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3783 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3728 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3783.AddRow(new string[] {
+                table3728.AddRow(new string[] {
                             "Ring 2"});
-                table3783.AddRow(new string[] {
+                table3728.AddRow(new string[] {
                             "Unassigned"});
-                table3783.AddRow(new string[] {
+                table3728.AddRow(new string[] {
                             "Ring 1"});
 #line 387
  testRunner.And("User add \"Windows7Mi: Ring\" filter where type is \"Equals\" with added column and f" +
-                        "ollowing checkboxes:", ((string)(null)), table3783, "And ");
+                        "ollowing checkboxes:", ((string)(null)), table3728, "And ");
 #line hidden
 #line 392
  testRunner.And("User clicks on \'Windows7Mi: Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3784 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3729 = new TechTalk.SpecFlow.Table(new string[] {
                             "values"});
-                table3784.AddRow(new string[] {
+                table3729.AddRow(new string[] {
                             "Ring 2"});
-                table3784.AddRow(new string[] {
+                table3729.AddRow(new string[] {
                             "Ring 1"});
-                table3784.AddRow(new string[] {
+                table3729.AddRow(new string[] {
                             "Unassigned"});
 #line 393
- testRunner.Then("Content in the \'Windows7Mi: Ring\' column is equal to", ((string)(null)), table3784, "Then ");
+ testRunner.Then("Content in the \'Windows7Mi: Ring\' column is equal to", ((string)(null)), table3729, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLangua" +
-            "geOnList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS17633")]
+        [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLangua" +
+            "geOnList", new string[] {
+                "Evergreen",
+                "Devices",
+                "EvergreenJnr_Search",
+                "Search",
+                "DAS17633"}, SourceLine=399)]
         public virtual void EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionInTestLanguageOnList()
         {
             string[] tagsOfScenario = new string[] {
@@ -2291,6 +2349,12 @@ this.FeatureBackground();
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }
