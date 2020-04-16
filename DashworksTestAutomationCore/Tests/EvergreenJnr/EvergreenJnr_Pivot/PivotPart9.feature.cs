@@ -139,28 +139,28 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3698 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3643 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3698.AddRow(new string[] {
+                table3643.AddRow(new string[] {
                             "Application Compliance"});
 #line 13
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3698, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3643, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3699 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3644 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3699.AddRow(new string[] {
+                table3644.AddRow(new string[] {
                             "Operating System"});
-                table3699.AddRow(new string[] {
+                table3644.AddRow(new string[] {
                             "Service Pack or Build"});
 #line 16
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3699, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3644, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3700 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3645 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3700.AddRow(new string[] {
+                table3645.AddRow(new string[] {
                             "Owner City"});
 #line 20
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3700, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3645, "And ");
 #line hidden
 #line 23
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -231,26 +231,26 @@ this.FeatureBackground();
 #line 31
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3701 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3646 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3701.AddRow(new string[] {
+                table3646.AddRow(new string[] {
                             "Compliance"});
 #line 32
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3701, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3646, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3702 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3647 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3702.AddRow(new string[] {
+                table3647.AddRow(new string[] {
                             "Group Count"});
 #line 35
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3702, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3647, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3703 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3648 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3703.AddRow(new string[] {
+                table3648.AddRow(new string[] {
                             "Device Count"});
 #line 38
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3703, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3648, "And ");
 #line hidden
 #line 41
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -321,46 +321,46 @@ this.FeatureBackground();
 #line 49
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3704 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3649 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3704.AddRow(new string[] {
+                table3649.AddRow(new string[] {
                             "EmailMigra: Status"});
 #line 50
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3704, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3649, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3705 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3650 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3705.AddRow(new string[] {
+                table3650.AddRow(new string[] {
                             "Country"});
 #line 53
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3705, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3650, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3706 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3651 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3706.AddRow(new string[] {
+                table3651.AddRow(new string[] {
                             "City"});
 #line 56
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3706, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3651, "And ");
 #line hidden
 #line 59
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3707 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3652 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3707.AddRow(new string[] {
+                table3652.AddRow(new string[] {
                             "Not Onboarded"});
-                table3707.AddRow(new string[] {
+                table3652.AddRow(new string[] {
                             "Onboarded"});
-                table3707.AddRow(new string[] {
+                table3652.AddRow(new string[] {
                             "Forecast"});
-                table3707.AddRow(new string[] {
+                table3652.AddRow(new string[] {
                             "Targeted"});
-                table3707.AddRow(new string[] {
+                table3652.AddRow(new string[] {
                             "Scheduled"});
-                table3707.AddRow(new string[] {
+                table3652.AddRow(new string[] {
                             "Migrated"});
 #line 60
- testRunner.Then("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table3707, "Then ");
+ testRunner.Then("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table3652, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -424,38 +424,38 @@ this.FeatureBackground();
 #line 73
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3708 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3653 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3708.AddRow(new string[] {
+                table3653.AddRow(new string[] {
                             "2004: Status"});
 #line 74
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3708, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3653, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3709 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3654 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3709.AddRow(new string[] {
+                table3654.AddRow(new string[] {
                             "Country"});
 #line 77
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3709, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3654, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3710 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3655 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3710.AddRow(new string[] {
+                table3655.AddRow(new string[] {
                             "City"});
 #line 80
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3710, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3655, "And ");
 #line hidden
 #line 83
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3711 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3656 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3711.AddRow(new string[] {
+                table3656.AddRow(new string[] {
                             "Not Onboarded"});
-                table3711.AddRow(new string[] {
+                table3656.AddRow(new string[] {
                             "Onboarded"});
 #line 84
- testRunner.Then("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table3711, "Then ");
+ testRunner.Then("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table3656, "Then ");
 #line hidden
 #line 88
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -463,15 +463,15 @@ this.FeatureBackground();
 #line 89
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3712 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3657 = new TechTalk.SpecFlow.Table(new string[] {
                             "StartDateInclusive",
                             "EndDateInclusive"});
-                table3712.AddRow(new string[] {
+                table3657.AddRow(new string[] {
                             "25 Apr 2018",
                             "02 May 2018"});
 #line 90
  testRunner.When("User add \"Last Logon Date\" filter where type is \"Between\" without added column an" +
-                        "d Date options", ((string)(null)), table3712, "When ");
+                        "d Date options", ((string)(null)), table3657, "When ");
 #line hidden
 #line 93
  testRunner.Then("\"(Last Logon Date between (2018-04-25, 2018-05-02))\" text is displayed in filter " +
@@ -536,46 +536,46 @@ this.FeatureBackground();
 #line 99
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3713 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3658 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3713.AddRow(new string[] {
+                table3658.AddRow(new string[] {
                             "ComputerSc: Status"});
 #line 100
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3713, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3658, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3714 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3659 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3714.AddRow(new string[] {
+                table3659.AddRow(new string[] {
                             "Country"});
 #line 103
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3714, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3659, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3715 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3660 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3715.AddRow(new string[] {
+                table3660.AddRow(new string[] {
                             "City"});
 #line 106
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3715, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3660, "And ");
 #line hidden
 #line 109
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3716 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3661 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3716.AddRow(new string[] {
+                table3661.AddRow(new string[] {
                             "Not Onboarded"});
-                table3716.AddRow(new string[] {
+                table3661.AddRow(new string[] {
                             "Onboarded"});
-                table3716.AddRow(new string[] {
+                table3661.AddRow(new string[] {
                             "Forecast"});
-                table3716.AddRow(new string[] {
+                table3661.AddRow(new string[] {
                             "Scheduled"});
-                table3716.AddRow(new string[] {
+                table3661.AddRow(new string[] {
                             "Migrated"});
-                table3716.AddRow(new string[] {
+                table3661.AddRow(new string[] {
                             "Complete"});
 #line 110
- testRunner.Then("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table3716, "Then ");
+ testRunner.Then("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table3661, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -636,26 +636,26 @@ this.FeatureBackground();
 #line 123
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3717 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3662 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table3717.AddRow(new string[] {
+                table3662.AddRow(new string[] {
                             "Building"});
 #line 124
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3717, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3662, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3718 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3663 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table3718.AddRow(new string[] {
+                table3663.AddRow(new string[] {
                             "ComputerSc: Status"});
 #line 127
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3718, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3663, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3719 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3664 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3719.AddRow(new string[] {
+                table3664.AddRow(new string[] {
                             "Region"});
 #line 130
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3719, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3664, "And ");
 #line hidden
 #line 133
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -663,22 +663,22 @@ this.FeatureBackground();
 #line 134
  testRunner.Then("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3720 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3665 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3720.AddRow(new string[] {
+                table3665.AddRow(new string[] {
                             "Not Onboarded"});
-                table3720.AddRow(new string[] {
+                table3665.AddRow(new string[] {
                             "Onboarded"});
-                table3720.AddRow(new string[] {
+                table3665.AddRow(new string[] {
                             "Forecast"});
-                table3720.AddRow(new string[] {
+                table3665.AddRow(new string[] {
                             "Scheduled"});
-                table3720.AddRow(new string[] {
+                table3665.AddRow(new string[] {
                             "Migrated"});
-                table3720.AddRow(new string[] {
+                table3665.AddRow(new string[] {
                             "Complete"});
 #line 135
- testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table3720, "Then ");
+ testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table3665, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -132,12 +132,12 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3466 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3411 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3466.AddRow(new string[] {
+                table3411.AddRow(new string[] {
                             string.Format("{0}", columnName)});
 #line 14
- testRunner.When("User adds columns to the list", ((string)(null)), table3466, "When ");
+ testRunner.When("User adds columns to the list", ((string)(null)), table3411, "When ");
 #line hidden
 #line 17
  testRunner.Then("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -148,29 +148,29 @@ this.FeatureBackground();
 #line 19
  testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3467 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3412 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3467.AddRow(new string[] {
+                table3412.AddRow(new string[] {
                             string.Format("{0}", columnName)});
 #line 20
- testRunner.When("User adds columns to the list", ((string)(null)), table3467, "When ");
+ testRunner.When("User adds columns to the list", ((string)(null)), table3412, "When ");
 #line hidden
 #line 23
  testRunner.Then("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3468 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3413 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3468.AddRow(new string[] {
+                table3413.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 24
- testRunner.When("User adds columns to the list", ((string)(null)), table3468, "When ");
+ testRunner.When("User adds columns to the list", ((string)(null)), table3413, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3469 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3414 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3469.AddRow(new string[] {
+                table3414.AddRow(new string[] {
                             string.Format("{0}", moreColumnName)});
 #line 27
- testRunner.When("User adds columns to the list", ((string)(null)), table3469, "When ");
+ testRunner.When("User adds columns to the list", ((string)(null)), table3414, "When ");
 #line hidden
 #line 30
  testRunner.Then("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -449,24 +449,24 @@ this.FeatureBackground();
 #line 72
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3470 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3415 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3470.AddRow(new string[] {
+                table3415.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 73
- testRunner.And("User adds columns to the list", ((string)(null)), table3470, "And ");
+ testRunner.And("User adds columns to the list", ((string)(null)), table3415, "And ");
 #line hidden
 #line 76
  testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3471 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3416 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3471.AddRow(new string[] {
+                table3416.AddRow(new string[] {
                             string.Format("{0}", addColumnName)});
-                table3471.AddRow(new string[] {
+                table3416.AddRow(new string[] {
                             string.Format("{0}", addAnotherColumn)});
 #line 77
- testRunner.When("User adds columns to the list", ((string)(null)), table3471, "When ");
+ testRunner.When("User adds columns to the list", ((string)(null)), table3416, "When ");
 #line hidden
 #line 81
  testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -477,35 +477,35 @@ this.FeatureBackground();
 #line 83
  testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3472 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3417 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3472.AddRow(new string[] {
+                table3417.AddRow(new string[] {
                             string.Format("{0}", selectedItem)});
 #line 84
  testRunner.When(string.Format("User create static list with \"StaticList\" name on \"{0}\" page with following items" +
-                            "", listName), ((string)(null)), table3472, "When ");
+                            "", listName), ((string)(null)), table3417, "When ");
 #line hidden
 #line 87
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3473 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3418 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3473.AddRow(new string[] {
+                table3418.AddRow(new string[] {
                             string.Format("{0}", newColumnName)});
 #line 88
- testRunner.And("User adds columns to the list", ((string)(null)), table3473, "And ");
+ testRunner.And("User adds columns to the list", ((string)(null)), table3418, "And ");
 #line hidden
 #line 91
  testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3474 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3419 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3474.AddRow(new string[] {
+                table3419.AddRow(new string[] {
                             string.Format("{0}", addColumnName)});
-                table3474.AddRow(new string[] {
+                table3419.AddRow(new string[] {
                             string.Format("{0}", addAnotherColumn)});
 #line 92
- testRunner.When("User adds columns to the list", ((string)(null)), table3474, "When ");
+ testRunner.When("User adds columns to the list", ((string)(null)), table3419, "When ");
 #line hidden
 #line 96
  testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -640,15 +640,15 @@ this.FeatureBackground();
 #line 113
  testRunner.When(string.Format("User create dynamic list with \"DynamicList2\" name on \"{0}\" page", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3475 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3420 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3475.AddRow(new string[] {
+                table3420.AddRow(new string[] {
                             string.Format("{0}", search),
                             string.Format("{0}", rows)});
 #line 114
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3475, "Then ");
+                        "s are returned", ((string)(null)), table3420, "Then ");
 #line hidden
 #line 117
  testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -656,15 +656,15 @@ this.FeatureBackground();
 #line 118
  testRunner.Then("\"DynamicList2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3476 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3421 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3476.AddRow(new string[] {
+                table3421.AddRow(new string[] {
                             "Mary",
                             string.Format("{0}", newRows)});
 #line 119
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3476, "And ");
+                        "s are returned", ((string)(null)), table3421, "And ");
 #line hidden
 #line 122
  testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -702,15 +702,15 @@ this.FeatureBackground();
 #line 133
  testRunner.When("User create static list with \"StaticList2\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3477 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3422 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3477.AddRow(new string[] {
+                table3422.AddRow(new string[] {
                             string.Format("{0}", search),
                             string.Format("{0}", rows)});
 #line 134
  testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3477, "Then ");
+                        "s are returned", ((string)(null)), table3422, "Then ");
 #line hidden
 #line 137
  testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -718,15 +718,15 @@ this.FeatureBackground();
 #line 138
  testRunner.And("\"StaticList2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3478 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3423 = new TechTalk.SpecFlow.Table(new string[] {
                             "SearchCriteria",
                             "NumberOfRows"});
-                table3478.AddRow(new string[] {
+                table3423.AddRow(new string[] {
                             "Mary",
                             string.Format("{0}", newRows)});
 #line 139
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                        "s are returned", ((string)(null)), table3478, "And ");
+                        "s are returned", ((string)(null)), table3423, "And ");
 #line hidden
 #line 142
  testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

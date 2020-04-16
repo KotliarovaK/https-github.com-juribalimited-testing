@@ -89,6 +89,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
                 "EvergreenJnr_AdminPage",
                 "SelfService",
                 "DAS20325",
+                "DAS20430",
                 "Cleanup",
                 "SelfServiceMVP"}, SourceLine=8)]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEndUserLastPage()
@@ -99,6 +100,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
                     "EvergreenJnr_AdminPage",
                     "SelfService",
                     "DAS20325",
+                    "DAS20430",
                     "Cleanup",
                     "SelfServiceMVP"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEndUserLastPage", null, new string[] {
@@ -107,6 +109,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
                         "EvergreenJnr_AdminPage",
                         "SelfService",
                         "DAS20325",
+                        "DAS20430",
                         "Cleanup",
                         "SelfServiceMVP"});
 #line 9
@@ -132,40 +135,40 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1704 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1649 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1704.AddRow(new string[] {
+                table1649.AddRow(new string[] {
                             "VSCmdShell"});
 #line 10
  testRunner.When("User create static list with \"DAS_20325\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1704, "When ");
+                        "ng items", ((string)(null)), table1649, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1705 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1650 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1705.AddRow(new string[] {
+                table1650.AddRow(new string[] {
                             "DAS_20325_SS_1",
                             "20325_1_SI",
                             "true",
                             "true",
                             "DAS_20325"});
 #line 17
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1705, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1650, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1706 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1651 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ProjectName",
                             "OwnerPermission"});
-                table1706.AddRow(new string[] {
+                table1651.AddRow(new string[] {
                             "AOC Name",
                             "2004 Rollout",
                             "Do not allow owner to be changed"});
 #line 20
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                        "via API", ((string)(null)), table1706, "When ");
+                        "via API", ((string)(null)), table1651, "When ");
 #line hidden
 #line 23
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -179,33 +182,58 @@ this.FeatureBackground();
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 26
- testRunner.When("User clicks on \'Continue\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("tooltip is not displayed for \'Continue\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 27
- testRunner.Then("Header is displayed on End User page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("\'Back\' button is disabled for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
- testRunner.Then("Subject Title \'Application: VSCmdShell\' is displayed on End User page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("\'Back\' button has tooltip with \'This is the first page of self service\' text on e" +
+                        "nd user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 29
- testRunner.Then("\'Continue\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks on \'Continue\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 30
- testRunner.Then("\'Undo all changes I made on this page\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Header is displayed on End User page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 31
- testRunner.Then("\'Back\' button displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("Subject Title \'Application: VSCmdShell\' is displayed on End User page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 32
- testRunner.Then("User sees \'Thank You\' text component \'Thank You\' on end user page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("\'Continue\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 33
- testRunner.Then("User sees \'You have completed the self service.\' text styled as \'Normal\' in \'Than" +
-                        "k You\' Text Component of \'Thank You\' on end user page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("\'Undo all changes I made on this page\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 34
- testRunner.Then("User sees \'You can now close the page.\' text styled as \'Normal\' in \'Thank You\' Te" +
-                        "xt Component of \'Thank You\' on end user page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("\'Back\' button displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 35
+ testRunner.And("User sees \'Thank You\' text component \'Thank You\' on end user page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
+ testRunner.And("User sees \'You have completed the self service.\' text styled as \'Normal\' in \'Than" +
+                        "k You\' Text Component of \'Thank You\' on end user page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+ testRunner.And("User sees \'You can now close the page.\' text styled as \'Normal\' in \'Thank You\' Te" +
+                        "xt Component of \'Thank You\' on end user page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 38
+ testRunner.When("User clicks on \'Back\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 39
+ testRunner.Then("Subject Title \'Application: VSCmdShell\' is displayed on End User page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 40
+ testRunner.And("\'Back\' button is disabled for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 41
+ testRunner.And("\'Continue\' button displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 42
+ testRunner.And("\'Continue\' button is enabled for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -218,7 +246,7 @@ this.FeatureBackground();
                 "EvergreenJnr_AdminPage",
                 "SelfService",
                 "DAS20291",
-                "Cleanup"}, SourceLine=36)]
+                "Cleanup"}, SourceLine=44)]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -236,7 +264,7 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS20291",
                         "Cleanup"});
-#line 37
+#line 45
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -259,74 +287,74 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1707 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1652 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1707.AddRow(new string[] {
+                table1652.AddRow(new string[] {
                             "VSCmdShell"});
-#line 38
+#line 46
  testRunner.When("User create static list with \"DAS_20291\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1707, "When ");
+                        "ng items", ((string)(null)), table1652, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1708 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1653 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1708.AddRow(new string[] {
+                table1653.AddRow(new string[] {
                             "DAS_20291_SS_1",
                             "20291_1_SI",
                             "true",
                             "true",
                             "DAS_20291"});
-#line 45
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1708, "When ");
+#line 53
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1653, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1709 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1654 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ProjectName",
                             "OwnerPermission"});
-                table1709.AddRow(new string[] {
+                table1654.AddRow(new string[] {
                             "AOC Name",
                             "2004 Rollout",
                             "Allow owner to be set to another user only"});
-#line 48
+#line 56
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                        "via API", ((string)(null)), table1709, "When ");
+                        "via API", ((string)(null)), table1654, "When ");
 #line hidden
-#line 51
+#line 59
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 52
+#line 60
  testRunner.And("User selects \'Edit\' cogmenu option for \'Page\' item type with \'Welcome\' name on Se" +
                         "lf Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 53
+#line 61
  testRunner.And("User enters \'First Page\' text to \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 54
+#line 62
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 55
+#line 63
  testRunner.Then("Page with \'First Page\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 56
+#line 64
  testRunner.When("User navigates to End User landing page with \'20291_1_SI\' Self Service Identifier" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 57
+#line 65
  testRunner.Then("Subject Title \'Application: VSCmdShell\' is displayed on End User page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 58
+#line 66
  testRunner.Then("Page with \'First Page\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 59
+#line 67
  testRunner.Then("\'Continue\' button displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 60
+#line 68
  testRunner.Then("\'Back\' button displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 61
+#line 69
  testRunner.Then("\'Back\' button is disabled for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -339,7 +367,7 @@ this.FeatureBackground();
                 "EvergreenJnr_AdminPage",
                 "SelfService",
                 "DAS20342",
-                "Cleanup"}, SourceLine=63)]
+                "Cleanup"}, SourceLine=71)]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -356,7 +384,7 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS20342",
                         "Cleanup"});
-#line 64
+#line 72
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -379,68 +407,68 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1710 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1655 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1710.AddRow(new string[] {
+                table1655.AddRow(new string[] {
                             "VSCmdShell"});
-#line 65
+#line 73
  testRunner.When("User create static list with \"DAS_20342\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1710, "When ");
+                        "ng items", ((string)(null)), table1655, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1711 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1656 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1711.AddRow(new string[] {
+                table1656.AddRow(new string[] {
                             "DAS_20342_SS_1",
                             "20342_1_SI",
                             "true",
                             "true",
                             "DAS_20342"});
-#line 72
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1711, "When ");
+#line 80
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1656, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1712 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1657 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ProjectName",
                             "OwnerPermission",
                             "ShowInSelfService"});
-                table1712.AddRow(new string[] {
+                table1657.AddRow(new string[] {
                             "AOC Name",
                             "2004 Rollout",
                             "Do not allow owner to be changed",
                             "true"});
-#line 75
+#line 83
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                        "via API", ((string)(null)), table1712, "When ");
+                        "via API", ((string)(null)), table1657, "When ");
 #line hidden
-#line 78
+#line 86
  testRunner.When("User navigates to End User landing page with \'20342_1_SI\' Self Service Identifier" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 79
+#line 87
  testRunner.Then("\'Owner\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 80
+#line 88
  testRunner.Then("\'Remove Owner\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1713 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1658 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstColumn",
                             "SecondColumn"});
-                table1713.AddRow(new string[] {
+                table1658.AddRow(new string[] {
                             "Username",
                             "VGZ6407126"});
-                table1713.AddRow(new string[] {
+                table1658.AddRow(new string[] {
                             "Domain",
                             "FR"});
-                table1713.AddRow(new string[] {
+                table1658.AddRow(new string[] {
                             "Display Name",
                             "Arlette Sicard"});
-#line 81
+#line 89
  testRunner.Then("User sees following items for \'AOC Name\' application ownership component on \'Welc" +
-                        "ome\' end user page", ((string)(null)), table1713, "Then ");
+                        "ome\' end user page", ((string)(null)), table1658, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
