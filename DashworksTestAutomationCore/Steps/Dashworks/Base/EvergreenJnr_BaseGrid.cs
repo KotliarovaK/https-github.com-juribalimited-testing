@@ -804,7 +804,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.ScrollGridToTheEnd(page.TableBody);
         }
 
-        [When(@"User scrolls grid to the right to the column '(.*)'")]
+        [When(@"User scroll right to the '(.*)' column")]
         public void WhenUserScrollsGridToTheRight(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
