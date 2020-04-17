@@ -170,7 +170,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var fields = _driver.NowAt<DetailsPage>();
             _driver.MouseHover(fields.GetCellByTextFromKeyValueGrid(value));
             var tooltipText = _driver.GetTooltipText();
-            Verify.AreEqual(tooltip, tooltipText, $"Oops, it looks like '{tooltip}' is not displayed!");
+            Verify.AreEqual(tooltip, tooltipText, $"Incorrect tooltip is displayed for '{value}' value in the field");
         }
 
         #endregion

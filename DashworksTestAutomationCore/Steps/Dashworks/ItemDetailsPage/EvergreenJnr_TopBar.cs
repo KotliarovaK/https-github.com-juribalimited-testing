@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
             _driver.MouseHover(topBar.GetTobBarItemTextElement(value));
             var tooltipText = _driver.GetTooltipText();
-            Verify.AreEqual(tooltip, tooltipText, $"Oops, it looks like '{tooltip}' is not displayed!");
+            Verify.AreEqual(tooltip, tooltipText, $"Incorrect tooltip is displayed for '{value}' value in the top bar");
         }
 
         #endregion
