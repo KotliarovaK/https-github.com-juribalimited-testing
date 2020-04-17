@@ -534,15 +534,15 @@ namespace DashworksTestAutomation.Extensions
         public static void ScrollRight(this RemoteWebDriver driver, IWebElement element)
         {
             IJavaScriptExecutor ex = driver;
-            var clientHeight = int.Parse(ex.ExecuteScript("return arguments[0].clientWidth", element).ToString());
-            ex.ExecuteScript($"arguments[0].scrollBy({clientHeight}, 0)", element);
+            var clientWidth = int.Parse(ex.ExecuteScript("return arguments[0].clientWidth", element).ToString());
+            ex.ExecuteScript($"arguments[0].scrollBy({clientWidth}, 0)", element);
         }
 
         public static void ScrollLeft(this RemoteWebDriver driver, IWebElement element)
         {
             IJavaScriptExecutor ex = driver;
-            var clientHeight = int.Parse(ex.ExecuteScript("return arguments[0].clientWidth", element).ToString());
-            ex.ExecuteScript($"arguments[0].scrollBy(-{clientHeight}, 0)", element);
+            var clientWidth = int.Parse(ex.ExecuteScript("return arguments[0].clientWidth", element).ToString());
+            ex.ExecuteScript($"arguments[0].scrollBy(-{clientWidth}, 0)", element);
         }
 
         public static List<string> GetElementAttributes(this RemoteWebDriver driver, IWebElement element)
