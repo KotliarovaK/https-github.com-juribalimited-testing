@@ -220,16 +220,16 @@ this.FeatureBackground();
  testRunner.When("User selects \'USE ME FOR AUTOMATION(MAIL SCHDLD)\' in the \'Item Details Project\' d" +
                         "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3212 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3231 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComplianceItems"});
-                table3212.AddRow(new string[] {
+                table3231.AddRow(new string[] {
                             "Overall Readiness"});
-                table3212.AddRow(new string[] {
+                table3231.AddRow(new string[] {
                             "Task Readiness"});
-                table3212.AddRow(new string[] {
+                table3231.AddRow(new string[] {
                             "Workflow"});
 #line 19
- testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table3212, "Then ");
+ testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table3231, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -398,23 +398,23 @@ this.FeatureBackground();
 #line 41
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3213 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3232 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3213.AddRow(new string[] {
+                table3232.AddRow(new string[] {
                             "Readiness",
                             "IGNORE"});
 #line 42
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3213, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3232, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3214 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3233 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComplianceItems",
                             "ColorName"});
-                table3214.AddRow(new string[] {
+                table3233.AddRow(new string[] {
                             "Overall Readiness",
                             "IGNORE"});
 #line 45
- testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table3214, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table3233, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

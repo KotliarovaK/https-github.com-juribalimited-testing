@@ -572,20 +572,20 @@ this.FeatureBackground();
 #line 77
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3296 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3315 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "FullName",
                             "Password",
                             "ConfirmPassword",
                             "Roles"});
-                table3296.AddRow(new string[] {
+                table3315.AddRow(new string[] {
                             "2User2",
                             "User2",
                             "1234qwer",
                             "1234qwer",
                             ""});
 #line 78
- testRunner.And("User create new User", ((string)(null)), table3296, "And ");
+ testRunner.And("User create new User", ((string)(null)), table3315, "And ");
 #line hidden
 #line 81
  testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -608,19 +608,19 @@ this.FeatureBackground();
 #line 87
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3297 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3316 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3297.AddRow(new string[] {
+                table3316.AddRow(new string[] {
                             "Compliance"});
 #line 88
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3297, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3316, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3298 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3317 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3298.AddRow(new string[] {
+                table3317.AddRow(new string[] {
                             "Compliance"});
 #line 91
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table3298, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table3317, "Then ");
 #line hidden
 #line 94
  testRunner.When("User create dynamic list with \"TestApplicationsList12208\" name on \"Applications\" " +
@@ -650,15 +650,15 @@ this.FeatureBackground();
 #line 102
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3299 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3318 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3299.AddRow(new string[] {
+                table3318.AddRow(new string[] {
                             "TestApplicationsList12208",
                             "Entitled to device"});
 #line 103
  testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                        "Value and following Association:", ((string)(null)), table3299, "When ");
+                        "Value and following Association:", ((string)(null)), table3318, "When ");
 #line hidden
 #line 106
  testRunner.Then("\"Any Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -690,14 +690,14 @@ this.FeatureBackground();
 #line 115
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3300 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3319 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3300.AddRow(new string[] {
+                table3319.AddRow(new string[] {
                             "2User2",
                             "1234qwer"});
 #line 116
- testRunner.When("User login with following credentials:", ((string)(null)), table3300, "When ");
+ testRunner.When("User login with following credentials:", ((string)(null)), table3319, "When ");
 #line hidden
 #line 119
  testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

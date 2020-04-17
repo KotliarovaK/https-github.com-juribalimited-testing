@@ -128,33 +128,33 @@ this.FeatureBackground();
 #line 11
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2184 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2203 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
                             "AggregateFunction",
                             "SplitBy"});
-                table2184.AddRow(new string[] {
+                table2203.AddRow(new string[] {
                             "Half donut",
                             "WidgetForDAS15918",
                             "2004 Rollout",
                             "Count",
                             "2004: Pre-Migration \\ Ready to Migrate"});
 #line 12
- testRunner.And("User adds new Widget", ((string)(null)), table2184, "And ");
+ testRunner.And("User adds new Widget", ((string)(null)), table2203, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2185 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2204 = new TechTalk.SpecFlow.Table(new string[] {
                             "items"});
-                table2185.AddRow(new string[] {
+                table2204.AddRow(new string[] {
                             "2004: Pre-Migration \\ Ready to Migrate ASC"});
-                table2185.AddRow(new string[] {
+                table2204.AddRow(new string[] {
                             "2004: Pre-Migration \\ Ready to Migrate DESC"});
-                table2185.AddRow(new string[] {
+                table2204.AddRow(new string[] {
                             "Count ASC"});
-                table2185.AddRow(new string[] {
+                table2204.AddRow(new string[] {
                             "Count DESC"});
 #line 15
- testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table2185, "Then ");
+ testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table2204, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -201,12 +201,12 @@ this.FeatureBackground();
 #line 24
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2186 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2205 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2186.AddRow(new string[] {
+                table2205.AddRow(new string[] {
                             "HDD Total Size (GB)"});
 #line 25
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2186, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2205, "When ");
 #line hidden
 #line 28
  testRunner.And("User create dynamic list with \"DAS16167_HddList\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -220,7 +220,7 @@ this.FeatureBackground();
 #line 31
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2187 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2206 = new TechTalk.SpecFlow.Table(new string[] {
                             "WidgetType",
                             "Title",
                             "List",
@@ -228,7 +228,7 @@ this.FeatureBackground();
                             "AggregateFunction",
                             "AggregateBy",
                             "OrderBy"});
-                table2187.AddRow(new string[] {
+                table2206.AddRow(new string[] {
                             string.Format("{0}", widgetType),
                             "HddListDAS16167",
                             "DAS16167_HddList",
@@ -237,7 +237,7 @@ this.FeatureBackground();
                             "HDD Total Size (GB)",
                             "HDD Total Size (GB) Minimum ASC"});
 #line 32
- testRunner.And("User adds new Widget", ((string)(null)), table2187, "And ");
+ testRunner.And("User adds new Widget", ((string)(null)), table2206, "And ");
 #line hidden
 #line 35
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

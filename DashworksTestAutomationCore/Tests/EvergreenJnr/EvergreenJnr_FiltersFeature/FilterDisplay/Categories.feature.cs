@@ -157,62 +157,62 @@ this.FeatureBackground();
 #line 15
  testRunner.And("User expands \"User\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2325 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2344 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Common Name"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Compliance"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Dashworks First Seen"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Description"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Device Application Compliance"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Device Count"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Device Hardware Compliance"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Directory Type"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Email Address"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Enabled"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Given Name"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Group Count"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "GUID"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Home Directory"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Home Drive"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Last Logon Date"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Mailbox Count (Access)"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Mailbox Count (Owned)"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Organisational Unit"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Parent Distinguished Name"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Primary Device"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "SID"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "Surname"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "User (Saved List)"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "User Application Compliance"});
-                table2325.AddRow(new string[] {
+                table2344.AddRow(new string[] {
                             "User Key"});
 #line 16
- testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table2325, "Then ");
+ testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table2344, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -421,19 +421,19 @@ this.FeatureBackground();
 #line 72
  testRunner.And("User enters \"readiness\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2326 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2345 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table2326.AddRow(new string[] {
+                table2345.AddRow(new string[] {
                             "EmailMigra: Readiness"});
 #line 73
- testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table2326, "Then ");
+ testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table2345, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2327 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2346 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table2327.AddRow(new string[] {
+                table2346.AddRow(new string[] {
                             "EmailMigra: Application Readiness"});
 #line 76
- testRunner.Then("the following subcategories are NOT displayed for Filters categories:", ((string)(null)), table2327, "Then ");
+ testRunner.Then("the following subcategories are NOT displayed for Filters categories:", ((string)(null)), table2346, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -500,20 +500,20 @@ this.FeatureBackground();
  testRunner.And("User enters \"Device Owner General information field\" text in Search field at Filt" +
                         "ers Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2328 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2347 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table2328.AddRow(new string[] {
+                table2347.AddRow(new string[] {
                             "Device Owner General information field 1"});
-                table2328.AddRow(new string[] {
+                table2347.AddRow(new string[] {
                             "Device Owner General information field 2"});
-                table2328.AddRow(new string[] {
+                table2347.AddRow(new string[] {
                             "Device Owner General information field 3"});
-                table2328.AddRow(new string[] {
+                table2347.AddRow(new string[] {
                             "Device Owner General information field 4"});
-                table2328.AddRow(new string[] {
+                table2347.AddRow(new string[] {
                             "Device Owner General information field 5"});
 #line 122
- testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table2328, "Then ");
+ testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table2347, "Then ");
 #line hidden
 #line 129
  testRunner.When("User clears search textbox in Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -521,12 +521,12 @@ this.FeatureBackground();
 #line 130
  testRunner.And("User enters \"Device Owner Telephone\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2329 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2348 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table2329.AddRow(new string[] {
+                table2348.AddRow(new string[] {
                             "Device Owner Telephone"});
 #line 131
- testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table2329, "Then ");
+ testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table2348, "Then ");
 #line hidden
 #line 134
  testRunner.When("User clears search textbox in Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -534,14 +534,14 @@ this.FeatureBackground();
 #line 135
  testRunner.And("User enters \"Device Owner User Field\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2330 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2349 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table2330.AddRow(new string[] {
+                table2349.AddRow(new string[] {
                             "Device Owner User Field 1"});
-                table2330.AddRow(new string[] {
+                table2349.AddRow(new string[] {
                             "Device Owner User Field 2"});
 #line 136
- testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table2330, "Then ");
+ testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table2349, "Then ");
 #line hidden
 #line 140
  testRunner.When("User clears search textbox in Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -549,12 +549,12 @@ this.FeatureBackground();
 #line 141
  testRunner.And("User enters \"Device Owner Zip Code\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2331 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2350 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table2331.AddRow(new string[] {
+                table2350.AddRow(new string[] {
                             "Device Owner Zip Code"});
 #line 142
- testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table2331, "Then ");
+ testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table2350, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -697,24 +697,24 @@ this.FeatureBackground();
 #line 165
  testRunner.When("User expands \"Operating System\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2332 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2351 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table2332.AddRow(new string[] {
+                table2351.AddRow(new string[] {
                             "Operating System"});
-                table2332.AddRow(new string[] {
+                table2351.AddRow(new string[] {
                             "OS Architecture"});
-                table2332.AddRow(new string[] {
+                table2351.AddRow(new string[] {
                             "OS Branch"});
-                table2332.AddRow(new string[] {
+                table2351.AddRow(new string[] {
                             "OS Full Name"});
-                table2332.AddRow(new string[] {
+                table2351.AddRow(new string[] {
                             "OS Servicing State"});
-                table2332.AddRow(new string[] {
+                table2351.AddRow(new string[] {
                             "OS Version Number"});
-                table2332.AddRow(new string[] {
+                table2351.AddRow(new string[] {
                             "Service Pack or Build"});
 #line 166
- testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table2332, "Then ");
+ testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table2351, "Then ");
 #line hidden
 #line 175
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -734,24 +734,24 @@ this.FeatureBackground();
 #line 180
  testRunner.When("User expands \"Device Operating System\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2333 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2352 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table2333.AddRow(new string[] {
+                table2352.AddRow(new string[] {
                             "Device Operating System"});
-                table2333.AddRow(new string[] {
+                table2352.AddRow(new string[] {
                             "Device OS Architecture"});
-                table2333.AddRow(new string[] {
+                table2352.AddRow(new string[] {
                             "Device OS Branch"});
-                table2333.AddRow(new string[] {
+                table2352.AddRow(new string[] {
                             "Device OS Full Name"});
-                table2333.AddRow(new string[] {
+                table2352.AddRow(new string[] {
                             "Device OS Servicing State"});
-                table2333.AddRow(new string[] {
+                table2352.AddRow(new string[] {
                             "Device OS Version Number"});
-                table2333.AddRow(new string[] {
+                table2352.AddRow(new string[] {
                             "Device Service Pack or Build"});
 #line 181
- testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table2333, "Then ");
+ testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table2352, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -812,12 +812,12 @@ this.FeatureBackground();
 #line 198
  testRunner.And("User moves to the end of categories list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2334 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2353 = new TechTalk.SpecFlow.Table(new string[] {
                             "Subcategories"});
-                table2334.AddRow(new string[] {
+                table2353.AddRow(new string[] {
                             string.Format("{0}", project)});
 #line 199
- testRunner.Then("the following Filters categories are presented in Filter panel:", ((string)(null)), table2334, "Then ");
+ testRunner.Then("the following Filters categories are presented in Filter panel:", ((string)(null)), table2353, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -919,46 +919,46 @@ this.FeatureBackground();
 #line 213
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2335 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2354 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category",
                             "Number"});
-                table2335.AddRow(new string[] {
+                table2354.AddRow(new string[] {
                             "Project: Windows7Mi",
                             "12"});
-                table2335.AddRow(new string[] {
+                table2354.AddRow(new string[] {
                             "Project Owner: Windows7Mi",
                             "12"});
-                table2335.AddRow(new string[] {
+                table2354.AddRow(new string[] {
                             "Project Tasks: Windows7Mi",
                             "91"});
-                table2335.AddRow(new string[] {
+                table2354.AddRow(new string[] {
                             "Project Stages: Windows7Mi",
                             "7"});
-                table2335.AddRow(new string[] {
+                table2354.AddRow(new string[] {
                             "Project: UserEvergr",
                             "11"});
-                table2335.AddRow(new string[] {
+                table2354.AddRow(new string[] {
                             "Project Owner: UserEvergr",
                             "12"});
-                table2335.AddRow(new string[] {
+                table2354.AddRow(new string[] {
                             "Project Tasks: UserEvergr",
                             "12"});
-                table2335.AddRow(new string[] {
+                table2354.AddRow(new string[] {
                             "Project Stages: UserEvergr",
                             "1"});
 #line 214
- testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2335, "Then ");
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2354, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2336 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2355 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category"});
-                table2336.AddRow(new string[] {
+                table2355.AddRow(new string[] {
                             "Project: EmailMigra"});
-                table2336.AddRow(new string[] {
+                table2355.AddRow(new string[] {
                             "Project Tasks: EmailMigra"});
-                table2336.AddRow(new string[] {
+                table2355.AddRow(new string[] {
                             "Project Stages: EmailMigra"});
 #line 224
- testRunner.And("Category is not displayed in the Filter panel", ((string)(null)), table2336, "And ");
+ testRunner.And("Category is not displayed in the Filter panel", ((string)(null)), table2355, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1019,38 +1019,38 @@ this.FeatureBackground();
 #line 234
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2337 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2356 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category",
                             "Number"});
-                table2337.AddRow(new string[] {
+                table2356.AddRow(new string[] {
                             "Project: Windows7Mi",
                             "11"});
-                table2337.AddRow(new string[] {
+                table2356.AddRow(new string[] {
                             "Project Tasks: Windows7Mi",
                             "79"});
-                table2337.AddRow(new string[] {
+                table2356.AddRow(new string[] {
                             "Project Stages: Windows7Mi",
                             "6"});
-                table2337.AddRow(new string[] {
+                table2356.AddRow(new string[] {
                             "Project: UserEvergr",
                             "12"});
-                table2337.AddRow(new string[] {
+                table2356.AddRow(new string[] {
                             "Project Tasks: UserEvergr",
                             "26"});
-                table2337.AddRow(new string[] {
+                table2356.AddRow(new string[] {
                             "Project Stages: UserEvergr",
                             "2"});
-                table2337.AddRow(new string[] {
+                table2356.AddRow(new string[] {
                             "Project: EmailMigra",
                             "11"});
-                table2337.AddRow(new string[] {
+                table2356.AddRow(new string[] {
                             "Project Tasks: EmailMigra",
                             "9"});
-                table2337.AddRow(new string[] {
+                table2356.AddRow(new string[] {
                             "Project Stages: EmailMigra",
                             "3"});
 #line 235
- testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2337, "Then ");
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2356, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1113,38 +1113,38 @@ this.FeatureBackground();
 #line 251
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2338 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2357 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category",
                             "Number"});
-                table2338.AddRow(new string[] {
+                table2357.AddRow(new string[] {
                             "Project: Windows7Mi",
                             "23"});
-                table2338.AddRow(new string[] {
+                table2357.AddRow(new string[] {
                             "Project Tasks: Windows7Mi",
                             "24"});
-                table2338.AddRow(new string[] {
+                table2357.AddRow(new string[] {
                             "Project Stages: Windows7Mi",
                             "2"});
-                table2338.AddRow(new string[] {
+                table2357.AddRow(new string[] {
                             "Project: UserEvergr",
                             "23"});
-                table2338.AddRow(new string[] {
+                table2357.AddRow(new string[] {
                             "Project Tasks: UserEvergr",
                             "14"});
-                table2338.AddRow(new string[] {
+                table2357.AddRow(new string[] {
                             "Project Stages: UserEvergr",
                             "1"});
-                table2338.AddRow(new string[] {
+                table2357.AddRow(new string[] {
                             "Project: EmailMigra",
                             "23"});
-                table2338.AddRow(new string[] {
+                table2357.AddRow(new string[] {
                             "Project Tasks: EmailMigra",
                             "5"});
-                table2338.AddRow(new string[] {
+                table2357.AddRow(new string[] {
                             "Project Stages: EmailMigra",
                             "1"});
 #line 252
- testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2338, "Then ");
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2357, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1207,43 +1207,43 @@ this.FeatureBackground();
 #line 273
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2339 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2358 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category",
                             "Number"});
-                table2339.AddRow(new string[] {
+                table2358.AddRow(new string[] {
                             "Project: EmailMigra",
                             "11"});
-                table2339.AddRow(new string[] {
+                table2358.AddRow(new string[] {
                             "Project Tasks: EmailMigra",
                             "54"});
-                table2339.AddRow(new string[] {
+                table2358.AddRow(new string[] {
                             "Project Stages: EmailMigra",
                             "6"});
-                table2339.AddRow(new string[] {
+                table2358.AddRow(new string[] {
                             "Project: MailboxEve",
                             "11"});
-                table2339.AddRow(new string[] {
+                table2358.AddRow(new string[] {
                             "Project Tasks: MailboxEve",
                             "15"});
 #line 274
- testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2339, "Then ");
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2358, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2340 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2359 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category"});
-                table2340.AddRow(new string[] {
+                table2359.AddRow(new string[] {
                             "Project: Windows7Mi"});
-                table2340.AddRow(new string[] {
+                table2359.AddRow(new string[] {
                             "Project Tasks: Windows7Mi"});
-                table2340.AddRow(new string[] {
+                table2359.AddRow(new string[] {
                             "Project Stages: Windows7Mi"});
-                table2340.AddRow(new string[] {
+                table2359.AddRow(new string[] {
                             "Project: UserEvergr"});
-                table2340.AddRow(new string[] {
+                table2359.AddRow(new string[] {
                             "Project Tasks: UserEvergr"});
-                table2340.AddRow(new string[] {
+                table2359.AddRow(new string[] {
                             "Project Stages:UserEvergr"});
 #line 281
- testRunner.And("Category is not displayed in the Filter panel", ((string)(null)), table2340, "And ");
+ testRunner.And("Category is not displayed in the Filter panel", ((string)(null)), table2359, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1306,44 +1306,44 @@ this.FeatureBackground();
 #line 295
  testRunner.And("User enters \"ring\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2341 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2360 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category",
                             "Number"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Evergreen",
                             "1"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Project Rings: 2004",
                             "1"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Project Rings: ComputerSc",
                             "1"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Project Rings: DeviceSche",
                             "1"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Project Rings: Havoc(BigD",
                             "1"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Project Rings: prK",
                             "1"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Project Rings: Windows101",
                             "1"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Project Rings: Windows102",
                             "1"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Project Rings: Windows10T",
                             "1"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Project Rings: Windows10U",
                             "1"});
-                table2341.AddRow(new string[] {
+                table2360.AddRow(new string[] {
                             "Project Rings: Windows7Mi",
                             "1"});
 #line 296
- testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2341, "Then ");
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2360, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1406,26 +1406,26 @@ this.FeatureBackground();
 #line 315
  testRunner.And("User enters \"ring\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2342 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2361 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category",
                             "Number"});
-                table2342.AddRow(new string[] {
+                table2361.AddRow(new string[] {
                             "Evergreen",
                             "1"});
-                table2342.AddRow(new string[] {
+                table2361.AddRow(new string[] {
                             "Project Rings: Barry\'sUse",
                             "1"});
-                table2342.AddRow(new string[] {
+                table2361.AddRow(new string[] {
                             "Project Rings: UserEvergr",
                             "1"});
-                table2342.AddRow(new string[] {
+                table2361.AddRow(new string[] {
                             "Project Rings: UserSched2",
                             "1"});
-                table2342.AddRow(new string[] {
+                table2361.AddRow(new string[] {
                             "Project Rings: UserSchedu",
                             "1"});
 #line 316
- testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2342, "Then ");
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2361, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1488,20 +1488,20 @@ this.FeatureBackground();
 #line 329
  testRunner.And("User enters \"ring\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2343 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2362 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category",
                             "Number"});
-                table2343.AddRow(new string[] {
+                table2362.AddRow(new string[] {
                             "Evergreen",
                             "1"});
-                table2343.AddRow(new string[] {
+                table2362.AddRow(new string[] {
                             "Project Rings: EmailMigra",
                             "1"});
-                table2343.AddRow(new string[] {
+                table2362.AddRow(new string[] {
                             "Project Rings: MailboxEve",
                             "1"});
 #line 330
- testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2343, "Then ");
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2362, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1564,11 +1564,11 @@ this.FeatureBackground();
 #line 341
  testRunner.And("User enters \"ring\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2344 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2363 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category",
                             "Number"});
 #line 342
- testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2344, "Then ");
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2363, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1620,11 +1620,11 @@ this.FeatureBackground();
 #line 349
  testRunner.And("User enters \"Windows7Mi: Name\" text in Search field at Columns Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2345 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2364 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category",
                             "Number"});
 #line 350
- testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table2345, "Then ");
+ testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table2364, "Then ");
 #line hidden
 #line 353
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1635,11 +1635,11 @@ this.FeatureBackground();
 #line 355
  testRunner.And("User enters \"Windows7Mi: Name\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2346 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2365 = new TechTalk.SpecFlow.Table(new string[] {
                             "Category",
                             "Number"});
 #line 356
- testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2346, "Then ");
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table2365, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

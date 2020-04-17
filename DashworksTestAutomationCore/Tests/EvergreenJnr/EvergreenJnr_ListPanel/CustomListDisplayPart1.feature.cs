@@ -142,13 +142,13 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3331 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3350 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3331.AddRow(new string[] {
+                table3350.AddRow(new string[] {
                             "Empty"});
 #line 14
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
-                        "n and following checkboxes:", ((string)(null)), table3331, "When ");
+                        "n and following checkboxes:", ((string)(null)), table3350, "When ");
 #line hidden
 #line 17
  testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -223,13 +223,13 @@ this.FeatureBackground();
 #line 26
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3332 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3351 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3332.AddRow(new string[] {
+                table3351.AddRow(new string[] {
                             "Empty"});
 #line 27
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
-                        "n and following checkboxes:", ((string)(null)), table3332, "When ");
+                        "n and following checkboxes:", ((string)(null)), table3351, "When ");
 #line hidden
 #line 30
  testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -307,13 +307,13 @@ this.FeatureBackground();
 #line 39
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3333 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3352 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3333.AddRow(new string[] {
+                table3352.AddRow(new string[] {
                             "Empty"});
 #line 40
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
-                        "n and following checkboxes:", ((string)(null)), table3333, "When ");
+                        "n and following checkboxes:", ((string)(null)), table3352, "When ");
 #line hidden
 #line 43
  testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -330,13 +330,13 @@ this.FeatureBackground();
 #line 47
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3334 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3353 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3334.AddRow(new string[] {
+                table3353.AddRow(new string[] {
                             "Generic"});
 #line 48
  testRunner.When("User add \"Directory Type\" filter where type is \"Equals\" without added column and " +
-                        "following checkboxes:", ((string)(null)), table3334, "When ");
+                        "following checkboxes:", ((string)(null)), table3353, "When ");
 #line hidden
 #line 51
  testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -420,13 +420,13 @@ this.FeatureBackground();
 #line 62
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3335 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3354 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3335.AddRow(new string[] {
+                table3354.AddRow(new string[] {
                             "Empty"});
 #line 63
  testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
-                        "n and following checkboxes:", ((string)(null)), table3335, "When ");
+                        "n and following checkboxes:", ((string)(null)), table3354, "When ");
 #line hidden
 #line 66
  testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -443,13 +443,13 @@ this.FeatureBackground();
 #line 70
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3336 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3355 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3336.AddRow(new string[] {
+                table3355.AddRow(new string[] {
                             "Generic"});
 #line 71
  testRunner.When("User add \"Directory Type\" filter where type is \"Equals\" without added column and " +
-                        "following checkboxes:", ((string)(null)), table3336, "When ");
+                        "following checkboxes:", ((string)(null)), table3355, "When ");
 #line hidden
 #line 74
  testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
