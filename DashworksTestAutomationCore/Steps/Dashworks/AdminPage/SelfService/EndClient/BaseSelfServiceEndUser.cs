@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
 
         //TO DO: Remove this step as soon as DAS-20451 will be implemented
         [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier, '(.*)' scope list and '(.*)' project name")]
-        public void WhenUserNavigatesToFirsEndUserPageWithSelfServiceIdentifierrr(string selfServiceIdentifier, string scopeList, string projectName)
+        public void WhenUserNavigatesToEndUserLandingPageWithSelfServiceIdentifierScopeListAndProjectName(string selfServiceIdentifier, string scopeList, string projectName)
         {
             int listId = Int32.Parse(DatabaseHelper.GetProjectListIdScope(scopeList)) + 1;
             var projectId = DatabaseHelper.GetProjectId(projectName);
