@@ -260,12 +260,12 @@ this.FeatureBackground();
 #line 36
  testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3379 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3353 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3379.AddRow(new string[] {
+                table3353.AddRow(new string[] {
                             string.Format("{0}", itemName)});
 #line 37
- testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", listName1, listType), ((string)(null)), table3379, "When ");
+ testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", listName1, listType), ((string)(null)), table3353, "When ");
 #line hidden
 #line 40
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -466,32 +466,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3380 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3354 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table3380.AddRow(new string[] {
+                table3354.AddRow(new string[] {
                             "DAS13129",
                             "Value",
                             "FN13129",
                             "m!gration",
                             "Project Administrator"});
 #line 73
- testRunner.When("User create new User via API", ((string)(null)), table3380, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table3354, "When ");
 #line hidden
 #line 76
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3381 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3355 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3381.AddRow(new string[] {
+                table3355.AddRow(new string[] {
                             "DAS13129",
                             "m!gration"});
 #line 77
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3381, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3355, "When ");
 #line hidden
 #line 80
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -546,38 +546,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3382 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3356 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table3382.AddRow(new string[] {
+                table3356.AddRow(new string[] {
                             "DAS13136_1",
                             "Value",
                             "FN_13136_1",
                             "m!gration",
                             "Project Administrator"});
-                table3382.AddRow(new string[] {
+                table3356.AddRow(new string[] {
                             "DAS13136_2",
                             "Value",
                             "FN_13136_2",
                             "m!gration",
                             "Project Administrator"});
 #line 85
- testRunner.When("User create new User via API", ((string)(null)), table3382, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table3356, "When ");
 #line hidden
 #line 89
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3383 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3357 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3383.AddRow(new string[] {
+                table3357.AddRow(new string[] {
                             "DAS13136_1",
                             "m!gration"});
 #line 90
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3383, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3357, "When ");
 #line hidden
 #line 93
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -600,14 +600,14 @@ this.FeatureBackground();
 #line 99
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3384 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3358 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3384.AddRow(new string[] {
+                table3358.AddRow(new string[] {
                             "DAS13136_2",
                             "m!gration"});
 #line 100
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3384, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3358, "When ");
 #line hidden
 #line 103
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -618,14 +618,14 @@ this.FeatureBackground();
 #line 105
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3385 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3359 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3385.AddRow(new string[] {
+                table3359.AddRow(new string[] {
                             "DAS13136_1",
                             "m!gration"});
 #line 106
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3385, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3359, "When ");
 #line hidden
 #line 109
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -639,14 +639,14 @@ this.FeatureBackground();
 #line 112
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3386 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3360 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3386.AddRow(new string[] {
+                table3360.AddRow(new string[] {
                             "DAS13136_2",
                             "m!gration"});
 #line 113
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3386, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3360, "When ");
 #line hidden
 #line 116
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -38,3 +38,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTabRedirectionIsWorkedCorrectly
 	Then 'Projects' left menu item is collapsed
 	Then 'Application' left submenu item is active
 	Then There are no errors in the browser console
+
+#AnnI 4/16/20: This functionality is implemented only for 'X-Ray'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @DistributionTab @DAS20888 @X_Ray
+Scenario: EvergreenJnr_ApplicationsList_CheckThatDistributionSubmenuItemIsActiveInProjectMode
+	When User navigates to the 'Application' details page for the item with '493' ID
+	When User navigates to the 'Distribution' left menu item
+	When User navigates to the 'Users' left submenu item
+	Then 'Distribution' left menu item is expanded
+	Then 'Users' left submenu item is active
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
+	Then 'Distribution' left menu item is expanded
+	Then 'Users' left submenu item is active

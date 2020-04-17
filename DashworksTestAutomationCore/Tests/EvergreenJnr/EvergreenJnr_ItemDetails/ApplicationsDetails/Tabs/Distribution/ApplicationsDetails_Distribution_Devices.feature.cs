@@ -211,13 +211,13 @@ this.FeatureBackground();
 #line 23
  testRunner.When("User navigates to the \'Users\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2802 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2776 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2802.AddRow(new string[] {
+                table2776.AddRow(new string[] {
                             "False"});
 #line 24
  testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Used\' colum" +
-                        "n:", ((string)(null)), table2802, "When ");
+                        "n:", ((string)(null)), table2776, "When ");
 #line hidden
 #line 27
  testRunner.And("User opens \'User\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -234,13 +234,13 @@ this.FeatureBackground();
 #line 31
  testRunner.When("User navigates to the \'Devices\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2803 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2777 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2803.AddRow(new string[] {
+                table2777.AddRow(new string[] {
                             "False"});
 #line 32
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Used\' col" +
-                        "umn:", ((string)(null)), table2803, "When ");
+                        "umn:", ((string)(null)), table2777, "When ");
 #line hidden
 #line 35
  testRunner.And("User opens \'Device\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

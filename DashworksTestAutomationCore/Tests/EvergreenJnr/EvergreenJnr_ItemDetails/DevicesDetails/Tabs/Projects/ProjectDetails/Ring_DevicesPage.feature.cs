@@ -132,23 +132,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2979 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2953 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table2979.AddRow(new string[] {
+                table2953.AddRow(new string[] {
                             "RingDAS17144_1",
                             "DAS17144",
                             "false",
                             "2004 Rollout"});
-                table2979.AddRow(new string[] {
+                table2953.AddRow(new string[] {
                             "RingDAS17144_2",
                             "DAS17144",
                             "false",
                             "2004 Rollout"});
 #line 10
- testRunner.When("User creates new Ring via api", ((string)(null)), table2979, "When ");
+ testRunner.When("User creates new Ring via api", ((string)(null)), table2953, "When ");
 #line hidden
 #line 14
  testRunner.When("User navigates to the \'Device\' details page for \'CDBR7TV3Y9T2ITS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -172,24 +172,24 @@ this.FeatureBackground();
  testRunner.Then("\'Device successfully moved to RingDAS17144_1\' text is displayed on inline success" +
                         " banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2980 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2954 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2980.AddRow(new string[] {
+                table2954.AddRow(new string[] {
                             "Ring",
                             "RingDAS17144_1"});
 #line 21
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2980, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2954, "Then ");
 #line hidden
 #line 24
  testRunner.When("User navigates to \'evergreen/#/admin/project/63/rings\' URL in a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2981 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2955 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table2981.AddRow(new string[] {
+                table2955.AddRow(new string[] {
                             "RingDAS17144_2"});
 #line 25
- testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table2981, "When ");
+ testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table2955, "When ");
 #line hidden
 #line 28
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -264,32 +264,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2982 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2956 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2982.AddRow(new string[] {
+                table2956.AddRow(new string[] {
                             "UserDAS17144",
                             "Value",
                             "DAS17144",
                             "m!gration",
                             "Project Computer Object Editor"});
 #line 38
- testRunner.When("User create new User via API", ((string)(null)), table2982, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2956, "When ");
 #line hidden
 #line 41
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2983 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2957 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2983.AddRow(new string[] {
+                table2957.AddRow(new string[] {
                             "UserDAS17144",
                             "m!gration"});
 #line 42
-  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2983, "When ");
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2957, "When ");
 #line hidden
 #line 45
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -376,26 +376,26 @@ this.FeatureBackground();
 #line 59
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2984 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2958 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table2984.AddRow(new string[] {
+                table2958.AddRow(new string[] {
                             "Unassigned"});
-                table2984.AddRow(new string[] {
+                table2958.AddRow(new string[] {
                             "Pilot"});
-                table2984.AddRow(new string[] {
+                table2958.AddRow(new string[] {
                             "Early Adopters"});
-                table2984.AddRow(new string[] {
+                table2958.AddRow(new string[] {
                             "IT Users"});
-                table2984.AddRow(new string[] {
+                table2958.AddRow(new string[] {
                             "Business Wave 1"});
-                table2984.AddRow(new string[] {
+                table2958.AddRow(new string[] {
                             "Business Wave 2"});
-                table2984.AddRow(new string[] {
+                table2958.AddRow(new string[] {
                             "Business Wave 3"});
-                table2984.AddRow(new string[] {
+                table2958.AddRow(new string[] {
                             "Critical Systems"});
 #line 60
- testRunner.Then("following Values are displayed in the dropdown for the \'Ring\' field:", ((string)(null)), table2984, "Then ");
+ testRunner.Then("following Values are displayed in the dropdown for the \'Ring\' field:", ((string)(null)), table2958, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -462,14 +462,14 @@ this.FeatureBackground();
 #line 77
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2985 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2959 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2985.AddRow(new string[] {
+                table2959.AddRow(new string[] {
                             "Ring",
                             "Unassigned"});
 #line 78
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2985, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2959, "Then ");
 #line hidden
 #line 81
  testRunner.When("User selects \'USE ME FOR AUTOMATION(USR SCHDLD)\' in the \'Item Details Project\' dr" +

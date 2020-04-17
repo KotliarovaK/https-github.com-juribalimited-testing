@@ -158,17 +158,17 @@ this.FeatureBackground();
 #line 15
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3224 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3198 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table3224.AddRow(new string[] {
+                table3198.AddRow(new string[] {
                             "Name",
                             "01A921EFD05545818AA@bclabs.local"});
-                table3224.AddRow(new string[] {
+                table3198.AddRow(new string[] {
                             "Mailbox Owner",
                             "Leon, Nacoma"});
 #line 16
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3224, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3198, "Then ");
 #line hidden
 #line 20
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -212,17 +212,17 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'04D158C83A0142F3B79@bclabs.local\' item is displayed to the user" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3225 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3199 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table3225.AddRow(new string[] {
+                table3199.AddRow(new string[] {
                             "Name",
                             "01A921EFD05545818AA@bclabs.local"});
-                table3225.AddRow(new string[] {
+                table3199.AddRow(new string[] {
                             "Mailbox Owner",
                             "Leon, Nacoma"});
 #line 34
- testRunner.And("User verifies data in the fields on details page", ((string)(null)), table3225, "And ");
+ testRunner.And("User verifies data in the fields on details page", ((string)(null)), table3199, "And ");
 #line hidden
 #line 38
  testRunner.When("User clicks \'RESYNC\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -238,17 +238,17 @@ this.FeatureBackground();
 #line 42
  testRunner.When("User waits for \'3\' seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3226 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3200 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table3226.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Name",
                             "04D158C83A0142F3B79@bclabs.local"});
-                table3226.AddRow(new string[] {
+                table3200.AddRow(new string[] {
                             "Mailbox Owner",
                             "Jin, Jh"});
 #line 43
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3226, "Then ");
+ testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3200, "Then ");
 #line hidden
 #line 47
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

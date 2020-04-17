@@ -126,6 +126,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ItemDetailsDisplay.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\ToolTips_UsersDetails.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ToolTips_UsersDetails.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -189,6 +194,10 @@
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsDisplay.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\ToolTips_UsersDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ToolTips_UsersDetails.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
   </ItemGroup>
 

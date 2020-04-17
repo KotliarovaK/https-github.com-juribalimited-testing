@@ -153,14 +153,14 @@ this.FeatureBackground();
 #line 15
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3285 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3259 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3285.AddRow(new string[] {
+                table3259.AddRow(new string[] {
                             "Name",
                             "ZZR457072"});
 #line 16
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3285, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3259, "Then ");
 #line hidden
 #line 19
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -203,14 +203,14 @@ this.FeatureBackground();
 #line 32
  testRunner.Then("Details page for \'DSF4350513\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3286 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3260 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3286.AddRow(new string[] {
+                table3260.AddRow(new string[] {
                             "Name",
                             "ZZR457072"});
 #line 33
- testRunner.And("following content is displayed on the Details Page", ((string)(null)), table3286, "And ");
+ testRunner.And("following content is displayed on the Details Page", ((string)(null)), table3260, "And ");
 #line hidden
 #line 36
  testRunner.When("User clicks \'RESYNC\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -224,14 +224,14 @@ this.FeatureBackground();
 #line 40
  testRunner.When("User waits for \'3\' seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3287 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3261 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3287.AddRow(new string[] {
+                table3261.AddRow(new string[] {
                             "Name",
                             "DSF4350513"});
 #line 41
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3287, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3261, "Then ");
 #line hidden
 #line 44
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
