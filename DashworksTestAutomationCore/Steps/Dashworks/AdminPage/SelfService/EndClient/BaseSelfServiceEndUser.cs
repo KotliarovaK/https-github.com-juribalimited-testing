@@ -49,6 +49,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             _driver.NavigateToUrl(navigationUrl);
         }
 
+        //TO DO: Remove this step as soon as DAS-20451 will be implemented
+        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier, '(.*)' scope list and '(.*)' project name")]
+        public void WhenUserNavigatesToEndUserLandingPageWithSelfServiceIdentifierScopeListAndProjectName(string selfServiceIdentifier, string scopeList, string projectName)
+        {
+            int listId = Int32.Parse(DatabaseHelper.GetProjectListIdScope(scopeList)) + 1;
+            var projectId = DatabaseHelper.GetProjectId(projectName);
+
+            string ssGuid = DatabaseHelper.TempGetSelfServiceObjectGuid(listId.ToString(), projectId);
+            string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{selfServiceIdentifier}?ObjectId={ssGuid}";
+
+            _driver.NavigateToUrl(navigationUrl);
+        }
+
         [Then(@"Self Service Tools Panel displayed for end client")]
         public void ThenSelfServiceToolsPanelDisplayedForEndClient()
         {
