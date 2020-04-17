@@ -143,13 +143,13 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3311 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3340 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3311.AddRow(new string[] {
+                table3340.AddRow(new string[] {
                             ""});
 #line 14
  testRunner.When("User add \"Dashworks First Seen\" filter where type is \"Empty\" with added column an" +
-                        "d following value:", ((string)(null)), table3311, "When ");
+                        "d following value:", ((string)(null)), table3340, "When ");
 #line hidden
 #line 17
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -270,13 +270,13 @@ this.FeatureBackground();
 #line 41
  testRunner.Then("current user is selected in \'Owner\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3312 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3341 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3312.AddRow(new string[] {
+                table3341.AddRow(new string[] {
                             ""});
 #line 42
  testRunner.When("User create static list with \"StaticList7844AT\" name on \"Applications\" page with " +
-                        "following items", ((string)(null)), table3312, "When ");
+                        "following items", ((string)(null)), table3341, "When ");
 #line hidden
 #line 45
  testRunner.Then("\"StaticList7844AT\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

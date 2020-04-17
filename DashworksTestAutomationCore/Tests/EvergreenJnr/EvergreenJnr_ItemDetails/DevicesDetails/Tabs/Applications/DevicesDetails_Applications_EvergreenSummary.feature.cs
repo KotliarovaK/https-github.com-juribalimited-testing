@@ -140,14 +140,14 @@ this.FeatureBackground();
 #line 13
  testRunner.And("User navigates to the \'Evergreen Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2876 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2905 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table2876.AddRow(new string[] {
+                table2905.AddRow(new string[] {
                             "Vendor",
                             "true"});
 #line 14
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2876, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2905, "When ");
 #line hidden
 #line 17
  testRunner.Then("\'Adobe\' row in the groped grid does not contains \'UNKNOWN\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
