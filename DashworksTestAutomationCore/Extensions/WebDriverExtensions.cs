@@ -14,6 +14,7 @@ using System.Reflection;
 using System.Threading;
 using AutomationUtils.Utils;
 using AutomationUtils.Extensions;
+using NUnit.Framework;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -531,21 +532,26 @@ namespace DashworksTestAutomation.Extensions
             ex.ExecuteScript($"arguments[0].scrollTo(0,{scrollHeight});", gridElement);
         }
 
-        public static void ScrollHorizontalyTo(this RemoteWebDriver driver, string direction, IWebElement element)
+        public enum Direction
+        {
+            Right,
+            Left
+        }
+        public static void ScrollHorizontalyTo(this RemoteWebDriver driver, Direction direction, IWebElement element)
         {
             IJavaScriptExecutor ex = driver;
             var clientWidth = int.Parse(ex.ExecuteScript("return arguments[0].clientWidth", element).ToString());
-            if (direction.Equals("right"))
+            if (direction == Direction.Right)
             {
                 ex.ExecuteScript($"arguments[0].scrollBy({clientWidth}, 0)", element);
             }
-            else if (direction.Equals("left"))
+            else if (direction == Direction.Left)
             {
                 ex.ExecuteScript($"arguments[0].scrollBy(-{clientWidth}, 0)", element);
             }
             else
             {
-                throw new Exception("Direction in not correct. Use 'right' or 'left' direction.");
+                throw new Exception("There is no such 'Direction'. Use Direction.Right or Direction.Left");
             }
         }
 
