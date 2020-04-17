@@ -388,15 +388,15 @@ this.FeatureBackground();
 #line 54
  testRunner.Then("\"DynamicList4557\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3309 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3337 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3309.AddRow(new string[] {
+                table3337.AddRow(new string[] {
                             "000F977AC8824FE39B8@bclabs.local"});
-                table3309.AddRow(new string[] {
+                table3337.AddRow(new string[] {
                             "002B5DC7D4D34D5C895@bclabs.local"});
 #line 55
  testRunner.When("User create static list with \"StaticList2845\" name on \"Mailboxes\" page with follo" +
-                        "wing items", ((string)(null)), table3309, "When ");
+                        "wing items", ((string)(null)), table3337, "When ");
 #line hidden
 #line 59
  testRunner.Then("\"StaticList2845\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -509,12 +509,12 @@ this.FeatureBackground();
 #line 84
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3310 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3338 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3310.AddRow(new string[] {
+                table3338.AddRow(new string[] {
                             string.Format("{0}", addColumn)});
 #line 85
- testRunner.And("User adds columns to the list", ((string)(null)), table3310, "And ");
+ testRunner.And("User adds columns to the list", ((string)(null)), table3338, "And ");
 #line hidden
 #line 88
  testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
