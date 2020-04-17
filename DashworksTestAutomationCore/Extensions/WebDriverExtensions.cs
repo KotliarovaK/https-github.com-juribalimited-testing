@@ -531,6 +531,18 @@ namespace DashworksTestAutomation.Extensions
             ex.ExecuteScript($"arguments[0].scrollTo(0,{scrollHeight});", gridElement);
         }
 
+        public static void ScrollRight(this RemoteWebDriver driver, IWebElement element)
+        {
+            string script = "arguments[0].scrollBy(100, 0)";
+            driver.ExecuteScript(script, element);
+        }
+
+        public static void ScrollLeft(this RemoteWebDriver driver, IWebElement element)
+        {
+            string script = "arguments[0].scrollBy(-100, 0)";
+            driver.ExecuteScript(script, element);
+        }
+
         public static List<string> GetElementAttributes(this RemoteWebDriver driver, IWebElement element)
         {
             IJavaScriptExecutor ex = driver;
