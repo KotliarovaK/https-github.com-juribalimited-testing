@@ -129,33 +129,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2867 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2886 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Computer"});
-                table2867.AddRow(new string[] {
+                table2886.AddRow(new string[] {
                             "CfDAS16489_1",
                             "FlDAS16489_1",
                             "true",
                             "true",
                             "true"});
 #line 10
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table2867, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table2886, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2868 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2887 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value"});
-                table2868.AddRow(new string[] {
+                table2887.AddRow(new string[] {
                             "device",
                             "17266",
                             "CfDAS16489_1",
                             "ValueDAS16489_1"});
 #line 13
- testRunner.And("User creates Custom Field via API", ((string)(null)), table2868, "And ");
+ testRunner.And("User creates Custom Field via API", ((string)(null)), table2887, "And ");
 #line hidden
 #line 17
  testRunner.And("User navigates to the \'Device\' details page for \'WIN-KTJC6PMV2P5\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -263,38 +263,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2869 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2888 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "Mailbox"});
-                table2869.AddRow(new string[] {
+                table2888.AddRow(new string[] {
                             "CfDAS17695_1",
                             "FlDAS17695_1",
                             "true",
                             "true",
                             "true"});
 #line 38
- testRunner.When("User creates new Custom Field via API", ((string)(null)), table2869, "When ");
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table2888, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2870 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2889 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value"});
-                table2870.AddRow(new string[] {
+                table2889.AddRow(new string[] {
                             "mailbox",
                             "48731",
                             "CfDAS17695_1",
                             "ValueDAS17695_1A"});
-                table2870.AddRow(new string[] {
+                table2889.AddRow(new string[] {
                             "mailbox",
                             "48731",
                             "CfDAS17695_1",
                             "ValueDAS17695_1B"});
 #line 41
- testRunner.And("User creates Custom Field via API", ((string)(null)), table2870, "And ");
+ testRunner.And("User creates Custom Field via API", ((string)(null)), table2889, "And ");
 #line hidden
 #line 45
  testRunner.And("User navigates to the \'Mailbox\' details page for \'gregoja@bclabs.local\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -305,14 +305,14 @@ this.FeatureBackground();
 #line 47
  testRunner.When("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2871 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2890 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table2871.AddRow(new string[] {
+                table2890.AddRow(new string[] {
                             "Value",
                             "true"});
 #line 48
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2871, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2890, "When ");
 #line hidden
 #line 51
  testRunner.Then("Cog menu is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

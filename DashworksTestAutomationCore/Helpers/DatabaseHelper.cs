@@ -747,6 +747,14 @@ namespace DashworksTestAutomation.Helpers
             return guid;
         }
 
+        public static string TempGetSelfServiceObjectGuid(string listId, string projectId)
+        {
+            //replace '@ComponentId int = 3' to '@ComponentId int = {componentId}' when compoment ID will be working with GetSelfServiceObjectGuid query 
+            string query = $"select EO.ObjectGuid from DesktopBI.dbo.EvergreenObjects EO join [PM].[API].[ApplicationListItems_Get]({listId}, DEFAULT) LI on LI.ApplicationKey = EO.ObjectKey and EO.ObjectTypeID = 3 join[PM].[dbo].[ProjectObjects] PO on PO.ObjectKey = EO.ObjectKey and PO.ObjectTypeID = EO.ObjectTypeID and PO.ProjectId = {projectId} and PO.OwnerObjectID is not null where EO.ObjectTypeId = 3";
+            var guid = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return guid;
+        }
+
         #region Builder
 
         public static int GetSelfServicePageId(SelfServicePageDto page)
