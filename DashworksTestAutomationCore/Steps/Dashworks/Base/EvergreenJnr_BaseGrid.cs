@@ -813,8 +813,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             for (int i = 0; i < 50; i++)
             {
                 _driver.ScrollRight(page.HorizontalScroll);
-                if (page.IsColumnPresent(columnName)) break;
+                if (page.IsColumnPresent(columnName))
+                {
+                    break;
+                }
             }
+            //To be sure that column will be displayed
             _driver.ScrollRight(page.HorizontalScroll);
         }
 
