@@ -260,7 +260,7 @@ this.FeatureBackground();
 #line hidden
 #line 53
  testRunner.When("User navigates to End User landing page with \'DAS_20330_SS_1\' Self Service Identi" +
-                        "fier, \'DAS_20330_forComponent_1\' scope list and \'DAS_20330_Proj_1\' project name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "fier, \'20330_1_SI \' scope list and \'DAS_20330_Proj_1\' project name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 54
  testRunner.Then("\'Undo all changes I made on this page\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -281,7 +281,7 @@ this.FeatureBackground();
 #line hidden
 #line 59
  testRunner.When("User navigates to End User landing page with \'DAS_20330_SS_1\' Self Service Identi" +
-                        "fier, \'DAS_20330_forComponent_1\' scope list and \'DAS_20330_Proj_1\' project name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "fier, \'20330_1_SI \' scope list and \'DAS_20330_Proj_1\' project name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 60
  testRunner.Then("\'Undo all changes I made on this screen\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
