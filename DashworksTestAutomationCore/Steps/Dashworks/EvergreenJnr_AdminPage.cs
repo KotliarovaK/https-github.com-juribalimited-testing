@@ -1085,6 +1085,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             List<String> list = page.OptionsListInFilterDropdown.Select(x => x.Text).ToList();
             list.Remove("Select All"); //Remove 'Select All' checkbox that can be present on some filters (ALWAYS IN THE TOP)
+            list.Remove("Evergreen"); //Remove 'Evergreen' checkbox that can be present on some filters (ALWAYS IN THE TOP
 
             page.BodyContainer.Click();
             Verify.AreEqual(list.OrderBy(s => s), list, $"Values in '{columnName}'column are not in alphabetical order");
