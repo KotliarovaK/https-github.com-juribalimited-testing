@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckApplicationSelfServiceColumns
 	| Content                |
 	| Page not viewed        |
 	| Page not viewed        |
-	When User scroll right to the '20791_SI: Link' column
+	When User scroll 'right' to the '20791_SI: Link' column
 	When User clicks on '20791_SI: Thank You Page Status Date' column header
 	Then '20791_SI: Thank You Page Status Date' column contains following content
 	| Content |

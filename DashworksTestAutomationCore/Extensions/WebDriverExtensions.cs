@@ -531,18 +531,22 @@ namespace DashworksTestAutomation.Extensions
             ex.ExecuteScript($"arguments[0].scrollTo(0,{scrollHeight});", gridElement);
         }
 
-        public static void ScrollRight(this RemoteWebDriver driver, IWebElement element)
+        public static void ScrollHorizontalyTo(this RemoteWebDriver driver, string direction, IWebElement element)
         {
             IJavaScriptExecutor ex = driver;
             var clientWidth = int.Parse(ex.ExecuteScript("return arguments[0].clientWidth", element).ToString());
-            ex.ExecuteScript($"arguments[0].scrollBy({clientWidth}, 0)", element);
-        }
-
-        public static void ScrollLeft(this RemoteWebDriver driver, IWebElement element)
-        {
-            IJavaScriptExecutor ex = driver;
-            var clientWidth = int.Parse(ex.ExecuteScript("return arguments[0].clientWidth", element).ToString());
-            ex.ExecuteScript($"arguments[0].scrollBy(-{clientWidth}, 0)", element);
+            if (direction.Equals("right"))
+            {
+                ex.ExecuteScript($"arguments[0].scrollBy({clientWidth}, 0)", element);
+            }
+            else if (direction.Equals("left"))
+            {
+                ex.ExecuteScript($"arguments[0].scrollBy(-{clientWidth}, 0)", element);
+            }
+            else
+            {
+                throw new Exception("Direction in not correct. Use 'right' or 'left' direction.");
+            }
         }
 
         public static List<string> GetElementAttributes(this RemoteWebDriver driver, IWebElement element)
