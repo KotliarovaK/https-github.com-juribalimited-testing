@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User clicks content from "Action" column
 	Then "15427_NewName" content is displayed in "Action Name" field
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17428 @DAS17600 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17428 @DAS17600 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjectStageTask
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -49,7 +49,6 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User enters 'Update Migrated devices to Started' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '<Project>' option from 'Project' autocomplete
-	When User selects '<Stage>' option from 'Stage' autocomplete
 	When User selects '<Task>' option from 'Task' autocomplete
 	Then 'CREATE' button is disabled
 	When User selects 'Not Started' in the 'Value' dropdown
@@ -58,18 +57,17 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	Then "Update Migrated devices to Started" content is displayed in "Action Name" field
 	And 'Update task value' content is displayed in 'Action Type' dropdown
 	And '<Project>' content is displayed in 'Project' textbox
-	And '<Stage>' content is displayed in 'Stage' textbox
 	And '<Task>' content is displayed in 'Task' textbox
 	Then 'Not Started' content is displayed in 'Value' dropdown
 
 Examples:
-	| AutomationName                | Scope            | Project                              | Stage   | Task                   |
-	| 17428_Automation_Devices      | All Devices      | USE ME FOR AUTOMATION(DEVICE SCHDLD) | Stage A | Workflow task          |
-	| 17428_Automation_Users        | All Users        | USE ME FOR AUTOMATION(USR SCHDLD)    | Stage 1 | Test A                 |
-	| 17428_Automation_Applications | All Applications | User Scheduled Test (Jo)             | One     | Radio Rag only Rag App |
-	| 17428_Automation_Mailboxes    | All Mailboxes    | USE ME FOR AUTOMATION(MAIL SCHDLD)   | Stage 1 | Test A                 |
+	| AutomationName                | Scope            | Project                              | Task                                                   |
+	| 17428_Automation_Devices      | All Devices      | USE ME FOR AUTOMATION(DEVICE SCHDLD) | Stage A \ Workflow task                                |
+	| 17428_Automation_Users        | All Users        | USE ME FOR AUTOMATION(USR SCHDLD)    | Stage 1 \ Radiobutton Readiness Date Owner Task (User) |
+	| 17428_Automation_Applications | All Applications | User Scheduled Test (Jo)             | One \ Radio Rag only Rag App                           |
+	| 17428_Automation_Mailboxes    | All Mailboxes    | zMailbox Sch for Automations Feature | Stage 3 \ Radio Date Owner                             |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17691 @DAS17625 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17691 @DAS17625 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayedForActions
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
@@ -105,20 +103,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	When User navigate to Evergreen link
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User creates new Automation via API
+	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
 	| 17691_Automation | DAS17691    | true     | false              | All Users | Manual |
-	When User navigates to the 'Automations' left menu item
-	Then Page with 'Automations' header is displayed to user
-	When User enters "17691_Automation" text in the Search field for "Automation" column
-	And User clicks content from "Automation" column
-	And User navigates to the 'Actions' left menu item
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
 	When User enters '17691_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
-	When User selects 'DAS17691_Project' option from 'Project' autocomplete
-	Then 'Stage' dropdown is not displayed
+	Then 'DAS17691_Project' content is not displayed in 'Project' autocomplete after search
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction

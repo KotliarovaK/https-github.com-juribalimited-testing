@@ -83,7 +83,6 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks 'RUN' button 
 	Then 'Are you sure you wish to run 1 automation?' text is displayed on inline tip banner
 	When User clicks 'RUN' button on inline tip banner
-	Then '1 automation started' text is displayed on inline success banner
 	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then 'TRUE' content is displayed in the 'Running' column
 	When User clicks Cog-menu for 'DELAY_2' item in the 'Automation' column and sees following cog-menu options
@@ -98,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
 	When User clicks 'DELETE' button on inline tip banner
-	Then 'Cannot delete a running automation' text is displayed on inline tip banner
+	Then 'This automation is currently running' text is displayed on inline tip banner
 	When User moves "Applications_Scope" automation to "DELAY_8" automation
 	Then numeric data in table is sorted by 'Processing Order' column in ascending order by default
 
@@ -623,7 +622,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS_17003" User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15949 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15949 @Cleanup @Do_Not_Run_With_Automations
 Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomation
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
