@@ -334,23 +334,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectColumnChangedAfterUpdatingActio
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18716 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
 	When User creates new Automation via API and open it
-	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
-	| 18716_Automation | 18716       | true     | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 18716_Automation | 18716       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
 	And User enters '18705_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
-	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Stage C \ Date Only with Capacity' option from 'Task' autocomplete
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 3 \ Date Only with Capacity User' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
-	When User enters '1 Sep 2019' text to 'Date' datepicker
-	When User selects 'DAS-17846 Slot Device' in the 'Capacity Slot' dropdown
+	When User enters '2 Sep 2019' text to 'Date' datepicker
+	When User selects 'DAS-17846 Slot User' in the 'Capacity Slot' dropdown
 	When User clicks 'CREATE' button
 	#Create Action
 	When User clicks 'Administration' header breadcrumb
-	When User enters "zDevice Sch for Automations Feature" text in the Search field for "Project" column
+	When User enters "zUser Sch for Automations Feature" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User navigates to the 'Capacity' left menu item
 	When User checks 'Enable Capacity' checkbox
@@ -363,13 +363,11 @@ Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	#delete refresh
-	When User clicks refresh button in the browser
-	#delete refresh
 	Then 'This action has parameters which are not shown and no longer applicable to the task type, update the action to remove these' text is displayed on inline error banner
 	#Revert default Capacity position
 	When User clicks 'Administration' header breadcrumb
-	When User enters "zDevice Sch for Automations Feature" text in the Search field for "Project" column
+	When User clicks 'YES' button on popup
+	When User enters "zUser Sch for Automations Feature" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User navigates to the 'Capacity' left menu item
 	When User checks 'Enable Capacity' checkbox

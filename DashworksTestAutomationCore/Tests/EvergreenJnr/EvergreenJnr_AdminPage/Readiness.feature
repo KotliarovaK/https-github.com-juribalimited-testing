@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	Then 'Default' checkbox is checked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckThatIgnoreReadinessCanBePartiallyEdited
+Scenario: EvergreenJnr_AdminPage_CheckThatIgnoreReadinessCanNotBePartiallyEdited
 	When Project created via API and opened
 	| ProjectName       | Scope       | ProjectTemplate | Mode               |
 	| ReadinessDAS14938 | All Devices | None            | Standalone Project |
@@ -204,16 +204,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatIgnoreReadinessCanBePartiallyEdited
 	Then 'Readiness' textbox is disabled
 	When User enters 'tooltip14938_1' text to 'Tooltip' textbox
 	When User selects state 'true' for 'Ready' checkbox
-	When User selects state 'true' for 'Default' checkbox
-	And User clicks Colour Template field on Edit Readiness
+	Then 'Default for applications' checkbox is disabled
+	When User clicks Colour Template field on Edit Readiness
 	Then List of available colours is not displayed to user on Edit Readiness
 	When User clicks 'UPDATE' button 
 	And User enters "Ignore" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
-	Then 'IGNORE' content is displayed in 'Readiness' textbox
+	Then 'Ignore' content is displayed in 'Readiness' textbox
 	Then 'tooltip14938_1' content is displayed in 'Tooltip' textbox
 	Then 'Ready' checkbox is checked
-	Then 'Default' checkbox is checked
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938
 Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPressedOnEditReadiness

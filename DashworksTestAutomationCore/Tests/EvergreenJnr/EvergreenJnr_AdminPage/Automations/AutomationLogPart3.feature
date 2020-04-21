@@ -179,6 +179,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	When User clicks 'Automations' header breadcrumb
 	And User enters "17830_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17830_Automation' item from 'Automation' column
+	When '17830_Automation' automation '17830_Action' action run has finished
 	And User navigates to the 'Automation Log' left menu item
 	And User enters "17830_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
