@@ -406,25 +406,19 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying", new string[] {
                 "Evergreen",
-                "ProfileDetails",
-                "EvergreenJnr_ProfileDetails",
-                "UserProfile",
+                "Associations",
                 "DAS18234",
                 "Remove_Profile_Changes"}, SourceLine=64)]
         public virtual void EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
-                    "ProfileDetails",
-                    "EvergreenJnr_ProfileDetails",
-                    "UserProfile",
+                    "Associations",
                     "DAS18234",
                     "Remove_Profile_Changes"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying", null, new string[] {
                         "Evergreen",
-                        "ProfileDetails",
-                        "EvergreenJnr_ProfileDetails",
-                        "UserProfile",
+                        "Associations",
                         "DAS18234",
                         "Remove_Profile_Changes"});
 #line 65

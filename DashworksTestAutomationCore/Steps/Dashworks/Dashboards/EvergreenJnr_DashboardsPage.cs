@@ -913,6 +913,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
         }
 
+        [Then(@"'(.*)' value displayed without color in table '(.*)' widget")]
+        public void ThenNextColorDisplayedForValueInWidget(string value, string widget)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            Verify.That(page.IsComplianceValueHasColorPoint(widget, value), Is.False, $"Color point is displayed for {value}");
+        }
+
         [Then(@"User sees color code '(.*)' on the '(.*)' widget")]
         public void ThenNextColorDisplayedForWidget(string colorCode, string widget)
         {

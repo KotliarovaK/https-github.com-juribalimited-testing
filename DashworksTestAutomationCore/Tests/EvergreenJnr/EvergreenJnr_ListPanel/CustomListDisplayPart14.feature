@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_Devices_CheckDefaultListIsResetIfItWasNoLongerAvalaibleAn
 	When User clicks 'Devices' on the left-hand menu
 	Then 'DAS13184forShare' list should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS19901 @Cleanup
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS19901 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThaProjectCanBeCreatedBasedOnDynamicListWithInScopeColumn
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName     |
@@ -69,3 +69,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThaProjectCanBeCreatedBasedOnDynamicList
 	When User clicks 'CREATE' button
 	Then 'The project has been created' text is displayed on inline success banner
 	Then There are no errors in the browser console
+
+@Evergreen @Mailboxes @EvergreenJnr_ListPanel @CustomListDisplay @DAS20597 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckDuplicatedListDisplayedInListPanel
+	When User clicks 'Mailboxes' on the left-hand menu
+	And User clicks the Filters button
+	When User clicks on 'Email Address' column header
+	And User create dynamic list with "TestList" name on "Mailboxes" page
+	Then "TestList" list is displayed to user
+	When User clicks 'Duplicate' option in cogmenu for 'TestList' list
+	Then "TestList2" list is displayed to user
+	When User navigates to the "TestList2" list
+	Then 'TestList2' list should be displayed to the user

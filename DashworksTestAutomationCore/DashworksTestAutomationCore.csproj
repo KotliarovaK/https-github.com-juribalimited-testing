@@ -5,6 +5,10 @@
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\**" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\**" />

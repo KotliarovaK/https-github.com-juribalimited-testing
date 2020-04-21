@@ -520,9 +520,7 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_DevicesLists_CheckThatPivotManagerIsNotOpenedByDefault", new string[] {
                 "Evergreen",
-                "DevicesLists",
-                "EvergreenJnr_Pivot",
-                "Pivot",
+                "Associations",
                 "DAS19937",
                 "DAS19887",
                 "Cleanup"}, SourceLine=104)]
@@ -530,17 +528,13 @@ this.FeatureBackground();
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
-                    "DevicesLists",
-                    "EvergreenJnr_Pivot",
-                    "Pivot",
+                    "Associations",
                     "DAS19937",
                     "DAS19887",
                     "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_CheckThatPivotManagerIsNotOpenedByDefault", null, new string[] {
                         "Evergreen",
-                        "DevicesLists",
-                        "EvergreenJnr_Pivot",
-                        "Pivot",
+                        "Associations",
                         "DAS19937",
                         "DAS19887",
                         "Cleanup"});

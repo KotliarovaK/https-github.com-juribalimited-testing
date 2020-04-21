@@ -1616,6 +1616,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectAssociation(placeholder, option);
         }
 
+        [Then(@"User sees options in '(.*)' autocomplete of Associations panel")]
+        public void ThenUserSeesOptionsInAutocompleteOnAssociaton(string placeholder, Table table)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.GetAssociationDropdownItemsByPlaceholder(placeholder).Select(x => x.Text).ToList();
+
+            Verify.That(actualList, Is.EqualTo(expectedList), "Wrong items displayed");
+        }
+
         [Then(@"Remove icon displayed in '(.*)' state for '(.*)' association")]
         public void ThenRemoveIconDisplayedInStateForAssociation(string state, string association)
         {
