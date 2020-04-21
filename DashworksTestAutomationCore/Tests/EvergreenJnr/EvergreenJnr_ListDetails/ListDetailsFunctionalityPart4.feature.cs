@@ -171,15 +171,15 @@ this.FeatureBackground();
 #line 22
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3327 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3322 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3327.AddRow(new string[] {
+                table3322.AddRow(new string[] {
                             "Application1",
                             "Entitled to device"});
 #line 23
  testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                        "Value and following Association:", ((string)(null)), table3327, "When ");
+                        "Value and following Association:", ((string)(null)), table3322, "When ");
 #line hidden
 #line 26
  testRunner.Then("\"Any Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -196,19 +196,19 @@ this.FeatureBackground();
 #line 30
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3328 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3323 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3328.AddRow(new string[] {
+                table3323.AddRow(new string[] {
                             "Build Date"});
 #line 31
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3328, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3323, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3329 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3324 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3329.AddRow(new string[] {
+                table3324.AddRow(new string[] {
                             "Build Date"});
 #line 34
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table3329, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table3324, "Then ");
 #line hidden
 #line 37
  testRunner.When("User selects \'SAVE AS NEW DYNAMIC LIST\' option from Save menu and creates \'NewDev" +
@@ -330,13 +330,13 @@ this.FeatureBackground();
 #line 59
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3330 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3325 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3330.AddRow(new string[] {
+                table3325.AddRow(new string[] {
                             "Adobe"});
 #line 60
  testRunner.When("User add \"Vendor\" filter where type is \"Contains\" with added column and following" +
-                        " value:", ((string)(null)), table3330, "When ");
+                        " value:", ((string)(null)), table3325, "When ");
 #line hidden
 #line 63
  testRunner.Then("\"Vendor\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -371,15 +371,15 @@ this.FeatureBackground();
 #line 73
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3331 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3326 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3331.AddRow(new string[] {
+                table3326.AddRow(new string[] {
                             "Adobe Apps",
                             "Entitled to device"});
 #line 74
  testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                        "Value and following Association:", ((string)(null)), table3331, "When ");
+                        "Value and following Association:", ((string)(null)), table3326, "When ");
 #line hidden
 #line 77
  testRunner.Then("\"Any Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -512,15 +512,15 @@ this.FeatureBackground();
 #line 103
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3332 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3327 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3332.AddRow(new string[] {
+                table3327.AddRow(new string[] {
                             "A1",
                             "Entitled to device"});
 #line 104
  testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                        "Value and following Association:", ((string)(null)), table3332, "When ");
+                        "Value and following Association:", ((string)(null)), table3327, "When ");
 #line hidden
 #line 107
  testRunner.Then("\"Any Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -635,15 +635,15 @@ this.FeatureBackground();
 #line 131
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3333 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3328 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table3333.AddRow(new string[] {
+                table3328.AddRow(new string[] {
                             string.Format("{0}", listName1),
                             string.Format("{0}", association)});
 #line 132
  testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                        "Value and following Association:", ((string)(null)), table3333, "When ");
+                        "Value and following Association:", ((string)(null)), table3328, "When ");
 #line hidden
 #line 135
  testRunner.When(string.Format("User create dynamic list with \"{0}\" name on \"Devices\" page", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

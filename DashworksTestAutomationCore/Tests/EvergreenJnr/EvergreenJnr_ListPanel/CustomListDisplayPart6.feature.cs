@@ -229,13 +229,13 @@ this.FeatureBackground();
 #line 29
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3435 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3430 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table3435.AddRow(new string[] {
+                table3430.AddRow(new string[] {
                             ""});
 #line 30
  testRunner.When(string.Format("User add \"Owner Display Name\" filter where type is \"{0}\" with added column and fo" +
-                            "llowing value:", operatorValues), ((string)(null)), table3435, "When ");
+                            "llowing value:", operatorValues), ((string)(null)), table3430, "When ");
 #line hidden
 #line 33
  testRunner.Then("\"Owner Display Name\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -258,18 +258,18 @@ this.FeatureBackground();
 #line 39
  testRunner.Then("\"TestList274E0A\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3436 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3431 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3436.AddRow(new string[] {
+                table3431.AddRow(new string[] {
                             "Hostname"});
-                table3436.AddRow(new string[] {
+                table3431.AddRow(new string[] {
                             "Device Type"});
-                table3436.AddRow(new string[] {
+                table3431.AddRow(new string[] {
                             "Operating System"});
-                table3436.AddRow(new string[] {
+                table3431.AddRow(new string[] {
                             "Owner Display Name"});
 #line 40
- testRunner.And("grid headers are displayed in the following order", ((string)(null)), table3436, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table3431, "And ");
 #line hidden
 #line 46
  testRunner.And(string.Format("URL contains \'{0}\'", uRL), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

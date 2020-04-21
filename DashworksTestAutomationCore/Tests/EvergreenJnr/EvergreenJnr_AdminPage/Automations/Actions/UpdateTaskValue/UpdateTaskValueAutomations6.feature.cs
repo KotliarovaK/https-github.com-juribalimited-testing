@@ -841,6 +841,7 @@ this.FeatureBackground();
                 "EvergreenJnr_AdminPage",
                 "Automations",
                 "DAS20363",
+                "DAS20835",
                 "Cleanup"}, SourceLine=198)]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingAction()
         {
@@ -849,12 +850,14 @@ this.FeatureBackground();
                     "EvergreenJnr_AdminPage",
                     "Automations",
                     "DAS20363",
+                    "DAS20835",
                     "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingAction", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS20363",
+                        "DAS20835",
                         "Cleanup"});
 #line 199
 this.ScenarioInitialize(scenarioInfo);
@@ -941,18 +944,31 @@ this.FeatureBackground();
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 218
- testRunner.When("User selects \'Update\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'days before task value\' in the \'DateUnit\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 219
- testRunner.Then("\'\' content is displayed in \'Date\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 220
- testRunner.When("User enters \'2 Mar 2020\' text to \'Date\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 221
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 220
+ testRunner.Then("\'The automation action has been updated\' text is displayed on inline success bann" +
+                        "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 221
+ testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 222
+ testRunner.When("User selects \'Update\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 223
+ testRunner.Then("\'\' content is displayed in \'Date\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 224
+ testRunner.When("User enters \'2 Mar 2020\' text to \'Date\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 225
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 226
  testRunner.Then("\'The automation action has been updated\' text is displayed on inline success bann" +
                         "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

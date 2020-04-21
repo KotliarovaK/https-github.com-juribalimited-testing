@@ -778,7 +778,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpeci
 	| Options         |
 	| Read only tasks |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Not_Ready @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	When User creates new Automation via API and open it
 	| Name    | Description | IsActive | StopOnFailedAction | Scope       | Run    |
@@ -790,8 +790,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	When User enters '17778 None' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
-	When User selects 'Stage 1' option from 'Stage' autocomplete
-	When User selects 'Scheduled Date' option from 'Task' autocomplete
+	When User selects 'Stage 1 \ Scheduled Date' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '15 Aug 2019' text to 'Date' datepicker
 	When User selects 'None' in the 'Capacity Slot' dropdown
@@ -801,8 +800,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	And User enters '17778 Slot' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
-	And User selects 'Stage 1' option from 'Stage' autocomplete
-	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects 'Stage 1 \ Scheduled Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '2 Jun 2019' text to 'Date' datepicker
 	And User selects 'Scheduled Slot' in the 'Capacity Slot' dropdown

@@ -142,13 +142,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3762 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3757 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3762.AddRow(new string[] {
+                table3757.AddRow(new string[] {
                             ""});
 #line 11
  testRunner.When("User create static list with \"Static List TestName23\" name on \"Users\" page with f" +
-                        "ollowing items", ((string)(null)), table3762, "When ");
+                        "ollowing items", ((string)(null)), table3757, "When ");
 #line hidden
 #line 14
  testRunner.Then("\"Static List TestName23\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -171,19 +171,19 @@ this.FeatureBackground();
 #line 20
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3763 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3758 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3763.AddRow(new string[] {
+                table3758.AddRow(new string[] {
                             "Last Logon Date"});
 #line 21
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3763, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3758, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3764 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3759 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3764.AddRow(new string[] {
+                table3759.AddRow(new string[] {
                             "Last Logon Date"});
 #line 24
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table3764, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table3759, "Then ");
 #line hidden
 #line 27
  testRunner.Then("Update list option is NOT available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -258,34 +258,34 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3765 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3760 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table3765.AddRow(new string[] {
+                table3760.AddRow(new string[] {
                             "DAS12602",
                             "Value",
                             "Test DAS12602",
                             "m!gration",
                             "Project Administrator"});
 #line 32
- testRunner.When("User create new User via API", ((string)(null)), table3765, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table3760, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3766 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3761 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3766.AddRow(new string[] {
+                table3761.AddRow(new string[] {
                             "001BAQXT6JWFPI"});
-                table3766.AddRow(new string[] {
+                table3761.AddRow(new string[] {
                             "00HA7MKAVVFDAV"});
-                table3766.AddRow(new string[] {
+                table3761.AddRow(new string[] {
                             "2ML5YDWPRLFWW55"});
-                table3766.AddRow(new string[] {
+                table3761.AddRow(new string[] {
                             "700ZHPQ6661CV1N"});
 #line 35
  testRunner.When("User create static list with \"OwnerPrivate\" name on \"Devices\" page with following" +
-                        " items", ((string)(null)), table3766, "When ");
+                        " items", ((string)(null)), table3761, "When ");
 #line hidden
 #line 41
  testRunner.Then("\"OwnerPrivate\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -296,19 +296,19 @@ this.FeatureBackground();
 #line 43
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3767 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3762 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3767.AddRow(new string[] {
+                table3762.AddRow(new string[] {
                             "ZZHYOLP1V7STML"});
-                table3767.AddRow(new string[] {
+                table3762.AddRow(new string[] {
                             "VMI480Z5UKTLLK"});
-                table3767.AddRow(new string[] {
+                table3762.AddRow(new string[] {
                             "6B512UPQFLSOVF"});
-                table3767.AddRow(new string[] {
+                table3762.AddRow(new string[] {
                             "CLUSTERSSAS"});
 #line 44
  testRunner.When("User create static list with \"NotOwnerSpecifiedAdmin\" name on \"Devices\" page with" +
-                        " following items", ((string)(null)), table3767, "When ");
+                        " following items", ((string)(null)), table3762, "When ");
 #line hidden
 #line 50
  testRunner.Then("\"NotOwnerSpecifiedAdmin\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -343,19 +343,19 @@ this.FeatureBackground();
 #line 60
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3768 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3763 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3768.AddRow(new string[] {
+                table3763.AddRow(new string[] {
                             "07PZNEOU91VWVH"});
-                table3768.AddRow(new string[] {
+                table3763.AddRow(new string[] {
                             "0A88YQHT6IMTTZ"});
-                table3768.AddRow(new string[] {
+                table3763.AddRow(new string[] {
                             "0CFTD5FV5F7FDF"});
-                table3768.AddRow(new string[] {
+                table3763.AddRow(new string[] {
                             "0E9XQC02MAZUR2"});
 #line 61
  testRunner.When("User create static list with \"NotOwnerSpecifiedEdit\" name on \"Devices\" page with " +
-                        "following items", ((string)(null)), table3768, "When ");
+                        "following items", ((string)(null)), table3763, "When ");
 #line hidden
 #line 67
  testRunner.Then("\"NotOwnerSpecifiedEdit\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -390,19 +390,19 @@ this.FeatureBackground();
 #line 77
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3769 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3764 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3769.AddRow(new string[] {
+                table3764.AddRow(new string[] {
                             "VMI480Z5UKTLLK"});
-                table3769.AddRow(new string[] {
+                table3764.AddRow(new string[] {
                             "6B512UPQFLSOVF"});
-                table3769.AddRow(new string[] {
+                table3764.AddRow(new string[] {
                             "0CFTD5FV5F7FDF"});
-                table3769.AddRow(new string[] {
+                table3764.AddRow(new string[] {
                             "0E9XQC02MAZUR2"});
 #line 78
  testRunner.When("User create static list with \"NotOwnerSpecifiedRead\" name on \"Devices\" page with " +
-                        "following items", ((string)(null)), table3769, "When ");
+                        "following items", ((string)(null)), table3764, "When ");
 #line hidden
 #line 84
  testRunner.Then("\"NotOwnerSpecifiedRead\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -437,19 +437,19 @@ this.FeatureBackground();
 #line 94
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3770 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3765 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3770.AddRow(new string[] {
+                table3765.AddRow(new string[] {
                             "TVGU1Y24UU9QBQ"});
-                table3770.AddRow(new string[] {
+                table3765.AddRow(new string[] {
                             "O0DOUNEKCY7HXK"});
-                table3770.AddRow(new string[] {
+                table3765.AddRow(new string[] {
                             "5PH0YQ5TNBLFZBM"});
-                table3770.AddRow(new string[] {
+                table3765.AddRow(new string[] {
                             "SANOFI2-POC"});
 #line 95
  testRunner.When("User create static list with \"NotOwnerEveryoneCanEdit\" name on \"Devices\" page wit" +
-                        "h following items", ((string)(null)), table3770, "When ");
+                        "h following items", ((string)(null)), table3765, "When ");
 #line hidden
 #line 101
  testRunner.Then("\"NotOwnerEveryoneCanEdit\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -472,19 +472,19 @@ this.FeatureBackground();
 #line 107
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3771 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3766 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3771.AddRow(new string[] {
+                table3766.AddRow(new string[] {
                             "9K9Y2LGOD3Z1KW"});
-                table3771.AddRow(new string[] {
+                table3766.AddRow(new string[] {
                             "HW9RNYX1SNE3BN"});
-                table3771.AddRow(new string[] {
+                table3766.AddRow(new string[] {
                             "CAS"});
-                table3771.AddRow(new string[] {
+                table3766.AddRow(new string[] {
                             "WIN8RETAILPRO"});
 #line 108
  testRunner.When("User create static list with \"NotOwnerEveryoneCanSee\" name on \"Devices\" page with" +
-                        " following items", ((string)(null)), table3771, "When ");
+                        " following items", ((string)(null)), table3766, "When ");
 #line hidden
 #line 114
  testRunner.Then("\"NotOwnerEveryoneCanSee\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -519,18 +519,18 @@ this.FeatureBackground();
 #line 124
  testRunner.When("User selects \'Add to static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3772 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3767 = new TechTalk.SpecFlow.Table(new string[] {
                             "Listnames"});
-                table3772.AddRow(new string[] {
+                table3767.AddRow(new string[] {
                             "NotOwnerEveryoneCanEdit"});
-                table3772.AddRow(new string[] {
+                table3767.AddRow(new string[] {
                             "NotOwnerSpecifiedAdmin"});
-                table3772.AddRow(new string[] {
+                table3767.AddRow(new string[] {
                             "NotOwnerSpecifiedEdit"});
-                table3772.AddRow(new string[] {
+                table3767.AddRow(new string[] {
                             "OwnerPrivate"});
 #line 125
- testRunner.Then("following Values are displayed in the \'Choose static list\' dropdown:", ((string)(null)), table3772, "Then ");
+ testRunner.Then("following Values are displayed in the \'Choose static list\' dropdown:", ((string)(null)), table3767, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

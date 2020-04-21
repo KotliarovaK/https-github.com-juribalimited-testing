@@ -257,28 +257,28 @@ this.FeatureBackground();
 #line 27
  testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2881 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2876 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnSettings"});
-                table2881.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Pin left"});
-                table2881.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Pin right"});
-                table2881.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "No pin"});
-                table2881.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Autosize this column"});
-                table2881.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Autosize all columns"});
-                table2881.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Group by Custom Field"});
-                table2881.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Sort ascending"});
-                table2881.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "Sort descending"});
-                table2881.AddRow(new string[] {
+                table2876.AddRow(new string[] {
                             "No sort"});
 #line 28
- testRunner.Then("User sees following options for \'Custom Field\' column settings", ((string)(null)), table2881, "Then ");
+ testRunner.Then("User sees following options for \'Custom Field\' column settings", ((string)(null)), table2876, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -402,28 +402,28 @@ this.FeatureBackground();
 #line 51
  testRunner.When("User navigates to the \'Benutzerdefinierte Felder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2882 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2877 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnSettings"});
-                table2882.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "Links fixieren"});
-                table2882.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "Rechts fixieren"});
-                table2882.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "Nicht fixiert"});
-                table2882.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "Größe dieser Spalte automatisch festlegen"});
-                table2882.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "Größe aller Spalten automatisch festlegen"});
-                table2882.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "Gruppieren nach Benutzerdefiniertes Feld"});
-                table2882.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "Aufsteigend sortieren"});
-                table2882.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "Absteigend sortieren"});
-                table2882.AddRow(new string[] {
+                table2877.AddRow(new string[] {
                             "Nicht sortieren"});
 #line 52
- testRunner.Then("User sees following options for \'Benutzerdefiniertes Feld\' column settings", ((string)(null)), table2882, "Then ");
+ testRunner.Then("User sees following options for \'Benutzerdefiniertes Feld\' column settings", ((string)(null)), table2877, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -495,12 +495,12 @@ this.FeatureBackground();
 #line 71
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2883 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2878 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2883.AddRow(new string[] {
+                table2878.AddRow(new string[] {
                             "Custom Field"});
 #line 72
- testRunner.Then("following Group By values ​​are displayed for User on menu panel", ((string)(null)), table2883, "Then ");
+ testRunner.Then("following Group By values ​​are displayed for User on menu panel", ((string)(null)), table2878, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -572,26 +572,26 @@ this.FeatureBackground();
 #line 85
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2884 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2879 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2884.AddRow(new string[] {
+                table2879.AddRow(new string[] {
                             ""});
 #line 86
- testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2884, "Then ");
+ testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2879, "Then ");
 #line hidden
 #line 89
  testRunner.When("User clicks button with \'reload\' aria label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2885 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2880 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2885.AddRow(new string[] {
+                table2880.AddRow(new string[] {
                             "Custom Field"});
-                table2885.AddRow(new string[] {
+                table2880.AddRow(new string[] {
                             ""});
-                table2885.AddRow(new string[] {
+                table2880.AddRow(new string[] {
                             "Value"});
 #line 90
- testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2885, "Then ");
+ testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2880, "Then ");
 #line hidden
 #line 95
  testRunner.Then("data in table is sorted by \'Custom Field\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -744,14 +744,14 @@ this.FeatureBackground();
 #line 114
  testRunner.Then("\'Custom Field\' column is \'Left\' Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2886 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2881 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table2886.AddRow(new string[] {
+                table2881.AddRow(new string[] {
                             "Custom Field",
                             "true"});
 #line 115
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2886, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2881, "When ");
 #line hidden
 #line 118
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -815,48 +815,48 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2887 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2882 = new TechTalk.SpecFlow.Table(new string[] {
                             "ObjectType",
                             "ObjectId",
                             "FieldName",
                             "Value",
                             "FieldIndex"});
-                table2887.AddRow(new string[] {
+                table2882.AddRow(new string[] {
                             "device",
                             "5539",
                             "ComputerWarranty",
                             "bbb",
                             "0"});
-                table2887.AddRow(new string[] {
+                table2882.AddRow(new string[] {
                             "device",
                             "5539",
                             "ComputerWarranty",
                             "001",
                             "0"});
-                table2887.AddRow(new string[] {
+                table2882.AddRow(new string[] {
                             "device",
                             "5539",
                             "ComputerWarranty",
                             "aaa",
                             "0"});
-                table2887.AddRow(new string[] {
+                table2882.AddRow(new string[] {
                             "device",
                             "5539",
                             "ComputerWarranty",
                             "002",
                             "0"});
 #line 125
- testRunner.When("User creates Custom Field via API", ((string)(null)), table2887, "When ");
+ testRunner.When("User creates Custom Field via API", ((string)(null)), table2882, "When ");
 #line hidden
 #line 131
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2888 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2883 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2888.AddRow(new string[] {
+                table2883.AddRow(new string[] {
                             "Computer Warranty"});
 #line 132
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2888, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2883, "When ");
 #line hidden
 #line 135
  testRunner.When("User perform search by \"Z75ievru6r751l\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -950,16 +950,16 @@ this.FeatureBackground();
 #line 147
  testRunner.Then("data in table is sorted by \'Custom Field\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2889 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2884 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2889.AddRow(new string[] {
+                table2884.AddRow(new string[] {
                             "Custom Field"});
-                table2889.AddRow(new string[] {
+                table2884.AddRow(new string[] {
                             ""});
-                table2889.AddRow(new string[] {
+                table2884.AddRow(new string[] {
                             "Value"});
 #line 148
- testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2889, "Then ");
+ testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table2884, "Then ");
 #line hidden
 #line 153
  testRunner.Then("User sees \"2\" rows in grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -991,14 +991,14 @@ this.FeatureBackground();
 #line 162
  testRunner.Then("\'ResetFilters\' button with aria label is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2890 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2885 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table2890.AddRow(new string[] {
+                table2885.AddRow(new string[] {
                             "Value",
                             "true"});
 #line 163
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2890, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2885, "When ");
 #line hidden
 #line 166
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1064,22 +1064,22 @@ this.FeatureBackground();
 #line 173
  testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2891 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2886 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2891.AddRow(new string[] {
+                table2886.AddRow(new string[] {
                             "Value"});
 #line 174
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Custom Field" +
-                        "\' column:", ((string)(null)), table2891, "When ");
+                        "\' column:", ((string)(null)), table2886, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2892 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2887 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table2892.AddRow(new string[] {
+                table2887.AddRow(new string[] {
                             "Custom Field",
                             "true"});
 #line 177
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2892, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table2887, "When ");
 #line hidden
 #line 180
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

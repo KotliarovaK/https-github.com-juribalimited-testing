@@ -129,42 +129,42 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1686 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1687 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1686.AddRow(new string[] {
+                table1687.AddRow(new string[] {
                             "VSCmdShell"});
 #line 10
  testRunner.When("User create static list with \"DAS_20791\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1686, "When ");
+                        "ng items", ((string)(null)), table1687, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1687 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1688 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1687.AddRow(new string[] {
+                table1688.AddRow(new string[] {
                             "DAS_20791_SS",
                             "20791_SI",
                             "true",
                             "true",
                             "DAS_20791"});
 #line 17
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1687, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1688, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1688 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1689 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ProjectName",
                             "OwnerPermission",
                             "ShowInSelfService"});
-                table1688.AddRow(new string[] {
+                table1689.AddRow(new string[] {
                             "AOC Name",
                             "2004 Rollout",
                             "Do not allow owner to be changed",
                             "true"});
 #line 20
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                        "via API", ((string)(null)), table1688, "When ");
+                        "via API", ((string)(null)), table1689, "When ");
 #line hidden
 #line 24
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -178,54 +178,54 @@ this.FeatureBackground();
 #line 27
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1689 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1690 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1689.AddRow(new string[] {
+                table1690.AddRow(new string[] {
                             "20791_SI: Welcome Page Status"});
-                table1689.AddRow(new string[] {
+                table1690.AddRow(new string[] {
                             "20791_SI: Welcome Page Status Date"});
-                table1689.AddRow(new string[] {
+                table1690.AddRow(new string[] {
                             "20791_SI: Thank You Page Status"});
-                table1689.AddRow(new string[] {
+                table1690.AddRow(new string[] {
                             "20791_SI: Thank You Page Status Date"});
-                table1689.AddRow(new string[] {
+                table1690.AddRow(new string[] {
                             "20791_SI: Link"});
 #line 28
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1689, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1690, "When ");
 #line hidden
 #line 35
  testRunner.When("User clicks on \'20791_SI: Welcome Page Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1690 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1691 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table1690.AddRow(new string[] {
+                table1691.AddRow(new string[] {
                             "Page not viewed"});
-                table1690.AddRow(new string[] {
+                table1691.AddRow(new string[] {
                             "Page not viewed"});
 #line 36
- testRunner.Then("\'20791_SI: Welcome Page Status\' column contains following content", ((string)(null)), table1690, "Then ");
+ testRunner.Then("\'20791_SI: Welcome Page Status\' column contains following content", ((string)(null)), table1691, "Then ");
 #line hidden
 #line 40
  testRunner.When("User clicks on \'20791_SI: Welcome Page Status Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1691 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1692 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table1691.AddRow(new string[] {
+                table1692.AddRow(new string[] {
                             ""});
 #line 41
- testRunner.Then("\'20791_SI: Welcome Page Status Date\' column contains following content", ((string)(null)), table1691, "Then ");
+ testRunner.Then("\'20791_SI: Welcome Page Status Date\' column contains following content", ((string)(null)), table1692, "Then ");
 #line hidden
 #line 44
  testRunner.When("User clicks on \'20791_SI: Thank You Page Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1692 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1693 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table1692.AddRow(new string[] {
+                table1693.AddRow(new string[] {
                             "Page not viewed"});
-                table1692.AddRow(new string[] {
+                table1693.AddRow(new string[] {
                             "Page not viewed"});
 #line 45
- testRunner.Then("\'20791_SI: Thank You Page Status\' column contains following content", ((string)(null)), table1692, "Then ");
+ testRunner.Then("\'20791_SI: Thank You Page Status\' column contains following content", ((string)(null)), table1693, "Then ");
 #line hidden
 #line 49
  testRunner.When("User scroll right to the \'20791_SI: Link\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -233,24 +233,24 @@ this.FeatureBackground();
 #line 50
  testRunner.When("User clicks on \'20791_SI: Thank You Page Status Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1693 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1694 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table1693.AddRow(new string[] {
+                table1694.AddRow(new string[] {
                             ""});
 #line 51
- testRunner.Then("\'20791_SI: Thank You Page Status Date\' column contains following content", ((string)(null)), table1693, "Then ");
+ testRunner.Then("\'20791_SI: Thank You Page Status Date\' column contains following content", ((string)(null)), table1694, "Then ");
 #line hidden
 #line 54
  testRunner.When("User clicks on \'20791_SI: Link\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1694 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1695 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table1694.AddRow(new string[] {
+                table1695.AddRow(new string[] {
                             "/20791_SI?ObjectId=0007AD15-8C65-4E6A-841E-F45E3CD99C49"});
-                table1694.AddRow(new string[] {
+                table1695.AddRow(new string[] {
                             "/20791_SI?ObjectId=00445C1C-05F0-4738-A2B0-AA53E7E7CAF9"});
 #line 55
- testRunner.Then("\'20791_SI: Link\' column contains following content", ((string)(null)), table1694, "Then ");
+ testRunner.Then("\'20791_SI: Link\' column contains following content", ((string)(null)), table1695, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
