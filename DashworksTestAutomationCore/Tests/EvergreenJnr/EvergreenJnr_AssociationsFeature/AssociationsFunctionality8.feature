@@ -20,3 +20,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithFilterAppli
 	Then table content is present
 	When User creates 'AssociationList19810Filter' dynamic list
 	Then "AssociationList19810Filter" list is displayed to user
+
+@Evergreen @Associations @DAS20852
+Scenario: EvergreenJnr_ApplicationsList_CheckAssociationValuesAreNotDuplicatedAfterUsingSameProject
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects 'Current' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add New button on the Filter panel
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects 'Target' option in 'Search associations' autocomplete of Associations panel
+	When User clicks 'RUN LIST' button
+	Then table content is present
+	When User clicks Add New button on the Filter panel
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
+	Then User sees options in 'Search associations' autocomplete of Associations panel
+	| Associations |
+	| Current      |
+	| Target       |

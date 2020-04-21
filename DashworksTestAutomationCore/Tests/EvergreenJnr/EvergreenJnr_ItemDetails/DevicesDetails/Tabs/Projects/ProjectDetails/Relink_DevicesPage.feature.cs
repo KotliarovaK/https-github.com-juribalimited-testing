@@ -158,17 +158,17 @@ this.FeatureBackground();
 #line 14
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2951 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2984 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2951.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Name",
                             "06RIV0KXJMHJ1K"});
-                table2951.AddRow(new string[] {
+                table2984.AddRow(new string[] {
                             "Device Owner",
                             "Tonia T. Mason"});
 #line 15
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2951, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2984, "Then ");
 #line hidden
 #line 19
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -208,17 +208,17 @@ this.FeatureBackground();
 #line 30
  testRunner.Then("Details page for \'QSFCLB19N5524S\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2952 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2985 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2952.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Name",
                             "QSFCLB19N5524S"});
-                table2952.AddRow(new string[] {
+                table2985.AddRow(new string[] {
                             "Device Owner",
                             "Gerard C. Kelly"});
 #line 31
- testRunner.And("following content is displayed on the Details Page", ((string)(null)), table2952, "And ");
+ testRunner.And("following content is displayed on the Details Page", ((string)(null)), table2985, "And ");
 #line hidden
 #line 35
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -158,14 +158,14 @@ this.FeatureBackground();
 #line 14
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2818 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2851 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2818.AddRow(new string[] {
+                table2851.AddRow(new string[] {
                             "Name",
                             "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
 #line 15
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2818, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2851, "Then ");
 #line hidden
 #line 18
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -193,14 +193,14 @@ this.FeatureBackground();
 #line 25
  testRunner.Then("Details page for \'Microsoft SQL Server 2012\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2819 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2852 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2819.AddRow(new string[] {
+                table2852.AddRow(new string[] {
                             "Name",
                             "Microsoft SQL Server 2012"});
 #line 26
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2819, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2852, "Then ");
 #line hidden
 #line 29
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -407,14 +407,14 @@ this.FeatureBackground();
 #line 62
  testRunner.Then("\'Application successfully relinked\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2820 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2853 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2820.AddRow(new string[] {
+                table2853.AddRow(new string[] {
                             "App Owner",
                             ""});
 #line 63
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2820, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2853, "Then ");
 #line hidden
 #line 67
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

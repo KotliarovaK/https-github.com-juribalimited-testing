@@ -593,12 +593,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void SelectAssociation(string placeholder, string option)
         {
+            GetAssociationDropdownItemsByPlaceholder(placeholder).First(x=>x.Text.Equals(option)).Click();
+        }
+
+        public IList<IWebElement> GetAssociationDropdownItemsByPlaceholder(string placeholder)
+        {
             var optionSelector =
-                $".//input[@placeholder='{placeholder}']/ancestor::div[contains(@class, 'searchPanel input-wrapper')]/following-sibling::div//div[contains(text(), '{option}')]";
+                $".//input[@placeholder='{placeholder}']/ancestor::div[contains(@class, 'searchPanel input-wrapper')]/following-sibling::div[@class='sub-categories-associations']//div[contains(@class, 'sub-categories-item')]";
 
-            Driver.WaitForDataLoading();
-
-            Driver.FindElementByXPath(optionSelector).Click();
+            return Driver.FindElementsByXPath(optionSelector);
         }
 
         public IWebElement RemoveIconForAssociation(string association) => Driver.FindElementByXPath($".//span[@class='filter-label-name' and text()=' {association.ToLower()}']/ancestor::div[@class='filter-group no-border-bottom']//i[contains(@class, 'mat-item_delete')]/ancestor::button");

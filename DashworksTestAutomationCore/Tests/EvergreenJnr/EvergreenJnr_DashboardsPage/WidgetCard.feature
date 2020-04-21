@@ -652,3 +652,28 @@ Scenario: EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetC
 	And There are no errors in the browser console
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20837 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetPreviewDisplayedIfListContainsSortedCompliance
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| Owner Compliance |
+	When User clicks on 'Owner Compliance' column header
+	Then color data is sorted by 'Owner Compliance' column in ascending order
+	When User move 'Owner Compliance' column to 'Hostname' column
+	When User move 'Hostname' column to 'Operating System' column
+	When User clicks Save button on the list panel
+	When User create dynamic list with "Devices_List_DAS20837" name on "Devices" page
+	Then "Devices_List_DAS20837" list is displayed to user
+	When Dashboard with 'Dashboard_DAS20837' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title             | List                  | Type       |
+	| Card       | WidgetForDAS20837 | Devices_List_DAS20837 | First Cell |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	When User clicks 'CREATE' button
+	Then 'WidgetForDAS20837' Widget is displayed to the user
