@@ -170,20 +170,20 @@ this.FeatureBackground();
 #line 17
  testRunner.When("User enters \'15309\' text to \'Description\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table661 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table662 = new TechTalk.SpecFlow.Table(new string[] {
                             "ListName"});
-                table661.AddRow(new string[] {
+                table662.AddRow(new string[] {
                             "All Devices"});
-                table661.AddRow(new string[] {
+                table662.AddRow(new string[] {
                             "All Device Types"});
-                table661.AddRow(new string[] {
+                table662.AddRow(new string[] {
                             "All Users"});
-                table661.AddRow(new string[] {
+                table662.AddRow(new string[] {
                             "All Applications"});
-                table661.AddRow(new string[] {
+                table662.AddRow(new string[] {
                             "All Mailboxes"});
 #line 18
- testRunner.Then("Main lists are displayed correctly in the Scope dropdown", ((string)(null)), table661, "Then ");
+ testRunner.Then("Main lists are displayed correctly in the Scope dropdown", ((string)(null)), table662, "Then ");
 #line hidden
 #line 25
  testRunner.When("User selects \'All Devices\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -294,16 +294,16 @@ this.FeatureBackground();
 #line 42
  testRunner.Then("\'Create Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table662 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table663 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table662.AddRow(new string[] {
+                table663.AddRow(new string[] {
                             "Manual"});
-                table662.AddRow(new string[] {
+                table663.AddRow(new string[] {
                             "After Transform"});
-                table662.AddRow(new string[] {
+                table663.AddRow(new string[] {
                             "Scheduled: Dashworks Daily"});
 #line 43
- testRunner.Then("following Values are displayed in the \'Run\' dropdown:", ((string)(null)), table662, "Then ");
+ testRunner.Then("following Values are displayed in the \'Run\' dropdown:", ((string)(null)), table663, "Then ");
 #line hidden
 #line 48
  testRunner.When("User enters \'DAS16801_Automation\' text to \'Automation Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

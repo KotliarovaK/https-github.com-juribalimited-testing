@@ -129,7 +129,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1216 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1217 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -142,7 +142,7 @@ this.FeatureBackground();
                             "AllowAnonymousUsers",
                             "ScopeId",
                             "scopeName"});
-                table1216.AddRow(new string[] {
+                table1217.AddRow(new string[] {
                             "1",
                             "SsTest_DAS19061_1",
                             "id1906113",
@@ -156,35 +156,35 @@ this.FeatureBackground();
                             "2",
                             "bob"});
 #line 9
- testRunner.When("User creates Self Service via API", ((string)(null)), table1216, "When ");
+ testRunner.When("User creates Self Service via API", ((string)(null)), table1217, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1217 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1218 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "ObjectTypeId",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1217.AddRow(new string[] {
+                table1218.AddRow(new string[] {
                             "id1906113",
                             "TestPageSs",
                             "3",
                             "TestPageSsDisplay",
                             "true"});
 #line 12
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1217, "When ");
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1218, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1218 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1219 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1218.AddRow(new string[] {
+                table1219.AddRow(new string[] {
                             "id1906113",
                             "TestPageSs",
                             "TestPageSsDisplay",
                             "true"});
 #line 15
- testRunner.Then("Self Service Page with below data is created", ((string)(null)), table1218, "Then ");
+ testRunner.Then("Self Service Page with below data is created", ((string)(null)), table1219, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -239,7 +239,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1219 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1220 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -252,7 +252,7 @@ this.FeatureBackground();
                             "AllowAnonymousUsers",
                             "ScopeId",
                             "scopeName"});
-                table1219.AddRow(new string[] {
+                table1220.AddRow(new string[] {
                             "1",
                             "SsTest_DAS19061_2",
                             "id1906114",
@@ -266,35 +266,35 @@ this.FeatureBackground();
                             "2",
                             "bob"});
 #line 21
- testRunner.When("User creates Self Service via API", ((string)(null)), table1219, "When ");
+ testRunner.When("User creates Self Service via API", ((string)(null)), table1220, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1220 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1221 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "ObjectTypeId",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1220.AddRow(new string[] {
+                table1221.AddRow(new string[] {
                             "id1906114",
                             "TestPageSs2",
                             "3",
                             "TestPageSsDisplay",
                             "false"});
 #line 24
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1220, "When ");
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1221, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1221 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1222 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1221.AddRow(new string[] {
+                table1222.AddRow(new string[] {
                             "id1906114",
                             "TestPageSs2",
                             "TestPageSsDisplay",
                             "false"});
 #line 27
- testRunner.Then("Self Service Page with below data is created", ((string)(null)), table1221, "Then ");
+ testRunner.Then("Self Service Page with below data is created", ((string)(null)), table1222, "Then ");
 #line hidden
 #line 30
  testRunner.When("User deletes \'TestPageSs2\' Self Service Page with \'id1906114\' identifier via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -129,41 +129,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1537 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1538 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1537.AddRow(new string[] {
+                table1538.AddRow(new string[] {
                             ""});
 #line 10
  testRunner.When("User create static list with \"DAS_19979_11\" name on \"Users\" page with following i" +
-                        "tems", ((string)(null)), table1537, "When ");
+                        "tems", ((string)(null)), table1538, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1538 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1539 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1538.AddRow(new string[] {
+                table1539.AddRow(new string[] {
                             "DAS_19979_SS_1",
                             "19979_1_SI",
                             "true",
                             "true",
                             "DAS_19979_11"});
 #line 13
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1538, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1539, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1539 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1540 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1539.AddRow(new string[] {
+                table1540.AddRow(new string[] {
                             "19979_1_SI",
                             "TestPageSs2",
                             "DAS_19979_Page",
                             "true"});
 #line 16
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1539, "When ");
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1540, "When ");
 #line hidden
 #line 19
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -267,52 +267,52 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1540 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1541 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1540.AddRow(new string[] {
+                table1541.AddRow(new string[] {
                             ""});
 #line 38
  testRunner.When("User create static list with \"DAS_19979_22\" name on \"Users\" page with following i" +
-                        "tems", ((string)(null)), table1540, "When ");
+                        "tems", ((string)(null)), table1541, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1541 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1542 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1541.AddRow(new string[] {
+                table1542.AddRow(new string[] {
                             "DAS_19979_SS_2",
                             "19979_2_SI",
                             "true",
                             "true",
                             "DAS_19979_22"});
 #line 41
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1541, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1542, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1542 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1543 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1542.AddRow(new string[] {
+                table1543.AddRow(new string[] {
                             "19979_2_SI",
                             "TestPageSs3",
                             "DAS_19979_Page_2",
                             "true"});
 #line 44
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1542, "When ");
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1543, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1543 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1544 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ExtraPropertiesText",
                             "ShowInSelfService"});
-                table1543.AddRow(new string[] {
+                table1544.AddRow(new string[] {
                             "Text_Component_Name",
                             "<p>Some_Content</p>",
                             "true"});
 #line 47
- testRunner.When("User creates new text component for \'TestPageSs3\' Self Service page via API", ((string)(null)), table1543, "When ");
+ testRunner.When("User creates new text component for \'TestPageSs3\' Self Service page via API", ((string)(null)), table1544, "When ");
 #line hidden
 #line 50
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -336,12 +336,12 @@ this.FeatureBackground();
 #line 56
  testRunner.Then("text editor is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1544 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1545 = new TechTalk.SpecFlow.Table(new string[] {
                             "text"});
-                table1544.AddRow(new string[] {
+                table1545.AddRow(new string[] {
                             "Some_Content"});
 #line 57
- testRunner.Then("text editor contains text", ((string)(null)), table1544, "Then ");
+ testRunner.Then("text editor contains text", ((string)(null)), table1545, "Then ");
 #line hidden
 #line 60
  testRunner.Then("\'Show this component\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -427,12 +427,12 @@ this.FeatureBackground();
 #line 90
  testRunner.Then("\'Updated Name\' content is displayed in \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1545 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1546 = new TechTalk.SpecFlow.Table(new string[] {
                             "text"});
-                table1545.AddRow(new string[] {
+                table1546.AddRow(new string[] {
                             "Some_Content_Additional_Text"});
 #line 91
- testRunner.Then("text editor contains text", ((string)(null)), table1545, "Then ");
+ testRunner.Then("text editor contains text", ((string)(null)), table1546, "Then ");
 #line hidden
 #line 94
  testRunner.Then("\'Show this component\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -487,52 +487,52 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1546 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1547 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1546.AddRow(new string[] {
+                table1547.AddRow(new string[] {
                             ""});
 #line 98
  testRunner.When("User create static list with \"DAS_20049_33\" name on \"Users\" page with following i" +
-                        "tems", ((string)(null)), table1546, "When ");
+                        "tems", ((string)(null)), table1547, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1547 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1548 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1547.AddRow(new string[] {
+                table1548.AddRow(new string[] {
                             "DAS_20049_SS_3",
                             "20049_3_SI",
                             "true",
                             "true",
                             "DAS_20049_33"});
 #line 101
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1547, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1548, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1548 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1549 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceIdentifier",
                             "Name",
                             "DisplayName",
                             "ShowInSelfService"});
-                table1548.AddRow(new string[] {
+                table1549.AddRow(new string[] {
                             "20049_3_SI",
                             "TestPageSs4",
                             "DAS_20049_Page_2",
                             "true"});
 #line 104
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1548, "When ");
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table1549, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1549 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1550 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ExtraPropertiesText",
                             "ShowInSelfService"});
-                table1549.AddRow(new string[] {
+                table1550.AddRow(new string[] {
                             "Text_Component_Name",
                             "<p>Some_Content</p>",
                             "true"});
 #line 107
- testRunner.When("User creates new text component for \'TestPageSs4\' Self Service page via API", ((string)(null)), table1549, "When ");
+ testRunner.When("User creates new text component for \'TestPageSs4\' Self Service page via API", ((string)(null)), table1550, "When ");
 #line hidden
 #line 110
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -567,12 +567,12 @@ this.FeatureBackground();
 #line 120
  testRunner.Then("\'Show this component\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1550 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1551 = new TechTalk.SpecFlow.Table(new string[] {
                             "text"});
-                table1550.AddRow(new string[] {
+                table1551.AddRow(new string[] {
                             "Additional Text"});
 #line 121
- testRunner.Then("text editor does not contains text", ((string)(null)), table1550, "Then ");
+ testRunner.Then("text editor does not contains text", ((string)(null)), table1551, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -624,39 +624,39 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1551 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1552 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1551.AddRow(new string[] {
+                table1552.AddRow(new string[] {
                             "VSCmdShell"});
 #line 127
  testRunner.When("User create static list with \"DAS_20160\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1551, "When ");
+                        "ng items", ((string)(null)), table1552, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1552 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1553 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1552.AddRow(new string[] {
+                table1553.AddRow(new string[] {
                             "DAS_20160_SS_3",
                             "20160_3_SI",
                             "true",
                             "true",
                             "DAS_20160"});
 #line 130
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1552, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1553, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1553 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1554 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ExtraPropertiesText",
                             "ShowInSelfService"});
-                table1553.AddRow(new string[] {
+                table1554.AddRow(new string[] {
                             "Text_Component_Name",
                             "<p>Some_Content</p>",
                             "true"});
 #line 133
- testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table1553, "When ");
+ testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table1554, "When ");
 #line hidden
 #line 136
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -668,22 +668,22 @@ this.FeatureBackground();
 #line 138
  testRunner.Then("formatting options are displayed on the text component", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1554 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1555 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table1554.AddRow(new string[] {
+                table1555.AddRow(new string[] {
                             "Heading 1"});
-                table1554.AddRow(new string[] {
+                table1555.AddRow(new string[] {
                             "Heading 2"});
-                table1554.AddRow(new string[] {
+                table1555.AddRow(new string[] {
                             "Heading 3"});
-                table1554.AddRow(new string[] {
+                table1555.AddRow(new string[] {
                             "Heading 4"});
-                table1554.AddRow(new string[] {
+                table1555.AddRow(new string[] {
                             "Heading 5"});
-                table1554.AddRow(new string[] {
+                table1555.AddRow(new string[] {
                             "Normal"});
 #line 139
- testRunner.Then("header format options are displayed on the text component", ((string)(null)), table1554, "Then ");
+ testRunner.Then("header format options are displayed on the text component", ((string)(null)), table1555, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

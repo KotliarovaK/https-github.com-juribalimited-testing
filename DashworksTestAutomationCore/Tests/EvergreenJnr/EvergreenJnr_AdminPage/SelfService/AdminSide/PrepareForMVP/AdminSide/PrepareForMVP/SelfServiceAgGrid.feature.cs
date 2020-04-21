@@ -129,7 +129,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1408 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1409 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -142,7 +142,7 @@ this.FeatureBackground();
                             "AllowAnonymousUsers",
                             "ScopeId",
                             "scopeName"});
-                table1408.AddRow(new string[] {
+                table1409.AddRow(new string[] {
                             "1",
                             "ATestSelfService_name1",
                             "id193851",
@@ -155,7 +155,7 @@ this.FeatureBackground();
                             "true",
                             "2",
                             "bob"});
-                table1408.AddRow(new string[] {
+                table1409.AddRow(new string[] {
                             "2",
                             "BTestSelfService_name2",
                             "id193852",
@@ -168,7 +168,7 @@ this.FeatureBackground();
                             "true",
                             "2",
                             "bob"});
-                table1408.AddRow(new string[] {
+                table1409.AddRow(new string[] {
                             "3",
                             "CTestSelfService_name3",
                             "id193853",
@@ -181,7 +181,7 @@ this.FeatureBackground();
                             "true",
                             "2",
                             "bob"});
-                table1408.AddRow(new string[] {
+                table1409.AddRow(new string[] {
                             "4",
                             "DTestSelfService_name4",
                             "id193854",
@@ -194,7 +194,7 @@ this.FeatureBackground();
                             "true",
                             "2",
                             "bob"});
-                table1408.AddRow(new string[] {
+                table1409.AddRow(new string[] {
                             "5",
                             "FTestSelfService_name5",
                             "id193855",
@@ -208,7 +208,7 @@ this.FeatureBackground();
                             "2",
                             "bob"});
 #line 10
-    testRunner.When("User creates Self Service via API", ((string)(null)), table1408, "When ");
+    testRunner.When("User creates Self Service via API", ((string)(null)), table1409, "When ");
 #line hidden
 #line 17
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -216,26 +216,26 @@ this.FeatureBackground();
 #line 18
  testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1409 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1410 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1409.AddRow(new string[] {
+                table1410.AddRow(new string[] {
                             "Self Service Name"});
-                table1409.AddRow(new string[] {
+                table1410.AddRow(new string[] {
                             ""});
-                table1409.AddRow(new string[] {
+                table1410.AddRow(new string[] {
                             "Enabled"});
-                table1409.AddRow(new string[] {
+                table1410.AddRow(new string[] {
                             "Scope"});
-                table1409.AddRow(new string[] {
+                table1410.AddRow(new string[] {
                             "Primary Object Type"});
-                table1409.AddRow(new string[] {
+                table1410.AddRow(new string[] {
                             "Self Service URL"});
-                table1409.AddRow(new string[] {
+                table1410.AddRow(new string[] {
                             "Created By"});
-                table1409.AddRow(new string[] {
+                table1410.AddRow(new string[] {
                             "Created Date"});
 #line 19
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1409, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1410, "Then ");
 #line hidden
 #line 29
  testRunner.When("User clicks on \'Self Service Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -293,7 +293,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1410 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1411 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -306,7 +306,7 @@ this.FeatureBackground();
                             "AllowAnonymousUsers",
                             "ScopeId",
                             "scopeName"});
-                table1410.AddRow(new string[] {
+                table1411.AddRow(new string[] {
                             "1",
                             "A_TestSelection_name1",
                             "id193851",
@@ -319,7 +319,7 @@ this.FeatureBackground();
                             "true",
                             "2",
                             "bob"});
-                table1410.AddRow(new string[] {
+                table1411.AddRow(new string[] {
                             "2",
                             "B_TestSelection_name2",
                             "id193852",
@@ -332,7 +332,7 @@ this.FeatureBackground();
                             "true",
                             "2",
                             "bob"});
-                table1410.AddRow(new string[] {
+                table1411.AddRow(new string[] {
                             "3",
                             "C_TestSelection_name3",
                             "id193853",
@@ -345,7 +345,7 @@ this.FeatureBackground();
                             "true",
                             "2",
                             "bob"});
-                table1410.AddRow(new string[] {
+                table1411.AddRow(new string[] {
                             "4",
                             "D_TestSelection_name4",
                             "id193854",
@@ -358,7 +358,7 @@ this.FeatureBackground();
                             "true",
                             "2",
                             "bob"});
-                table1410.AddRow(new string[] {
+                table1411.AddRow(new string[] {
                             "5",
                             "F_TestSelection_name5",
                             "id193855",
@@ -372,7 +372,7 @@ this.FeatureBackground();
                             "2",
                             "bob"});
 #line 34
-    testRunner.When("User creates Self Service via API", ((string)(null)), table1410, "When ");
+    testRunner.When("User creates Self Service via API", ((string)(null)), table1411, "When ");
 #line hidden
 #line 41
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -455,7 +455,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1411 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1412 = new TechTalk.SpecFlow.Table(new string[] {
                             "ServiceId",
                             "Name",
                             "ServiceIdentifier",
@@ -468,7 +468,7 @@ this.FeatureBackground();
                             "AllowAnonymousUsers",
                             "ScopeId",
                             "scopeName"});
-                table1411.AddRow(new string[] {
+                table1412.AddRow(new string[] {
                             "1",
                             "TestSelfServiceCogMenu_name1",
                             "id193851",
@@ -481,7 +481,7 @@ this.FeatureBackground();
                             "true",
                             "2",
                             "bob"});
-                table1411.AddRow(new string[] {
+                table1412.AddRow(new string[] {
                             "5",
                             "TestSelfServiceCogMenu_name5",
                             "id193855",
@@ -495,7 +495,7 @@ this.FeatureBackground();
                             "2",
                             "bob"});
 #line 54
-    testRunner.When("User creates Self Service via API", ((string)(null)), table1411, "When ");
+    testRunner.When("User creates Self Service via API", ((string)(null)), table1412, "When ");
 #line hidden
 #line 58
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -503,29 +503,29 @@ this.FeatureBackground();
 #line 59
  testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1412 = new TechTalk.SpecFlow.Table(new string[] {
-                            "options"});
-                table1412.AddRow(new string[] {
-                            "Edit"});
-                table1412.AddRow(new string[] {
-                            "Enable"});
-                table1412.AddRow(new string[] {
-                            "Delete"});
-#line 60
- testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name1\' item in the \'Self Service" +
-                        " Name\' column and sees following cog-menu options", ((string)(null)), table1412, "When ");
-#line hidden
                 TechTalk.SpecFlow.Table table1413 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
                 table1413.AddRow(new string[] {
                             "Edit"});
                 table1413.AddRow(new string[] {
-                            "Disable"});
+                            "Enable"});
                 table1413.AddRow(new string[] {
+                            "Delete"});
+#line 60
+ testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name1\' item in the \'Self Service" +
+                        " Name\' column and sees following cog-menu options", ((string)(null)), table1413, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table1414 = new TechTalk.SpecFlow.Table(new string[] {
+                            "options"});
+                table1414.AddRow(new string[] {
+                            "Edit"});
+                table1414.AddRow(new string[] {
+                            "Disable"});
+                table1414.AddRow(new string[] {
                             "Delete"});
 #line 65
  testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name5\' item in the \'Self Service" +
-                        " Name\' column and sees following cog-menu options", ((string)(null)), table1413, "When ");
+                        " Name\' column and sees following cog-menu options", ((string)(null)), table1414, "When ");
 #line hidden
             }
             this.ScenarioCleanup();

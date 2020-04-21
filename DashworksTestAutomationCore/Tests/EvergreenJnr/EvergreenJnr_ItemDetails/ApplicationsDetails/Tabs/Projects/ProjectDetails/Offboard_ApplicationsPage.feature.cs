@@ -140,18 +140,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2845 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2846 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table2845.AddRow(new string[] {
+                table2846.AddRow(new string[] {
                             "Project17919",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 12
- testRunner.When("Project created via API and opened", ((string)(null)), table2845, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table2846, "When ");
 #line hidden
 #line 16
  testRunner.When("User navigates to the \'Application\' details page for \'Technical Information Sampl" +

@@ -134,16 +134,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table665 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table666 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "TeamName",
                             "IsDefault"});
-                table665.AddRow(new string[] {
+                table666.AddRow(new string[] {
                             "TestBucket4",
                             "Team 1045",
                             "false"});
 #line 10
- testRunner.When("User creates new Bucket via api", ((string)(null)), table665, "When ");
+ testRunner.When("User creates new Bucket via api", ((string)(null)), table666, "When ");
 #line hidden
 #line 13
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -297,12 +297,12 @@ this.FeatureBackground();
 #line 48
  testRunner.Then("Page with \'Buckets\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table666 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table667 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table666.AddRow(new string[] {
+                table667.AddRow(new string[] {
                             "Evergreen Bucket 3"});
 #line 49
- testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table666, "When ");
+ testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table667, "When ");
 #line hidden
 #line 52
  testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -314,12 +314,12 @@ this.FeatureBackground();
  testRunner.Then("\'This bucket will be permanently deleted and any objects within it reassigned to " +
                         "the default bucket\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table667 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table668 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table667.AddRow(new string[] {
+                table668.AddRow(new string[] {
                             "Evergreen Bucket 4"});
 #line 55
- testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table667, "When ");
+ testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table668, "When ");
 #line hidden
 #line 58
  testRunner.And("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -494,20 +494,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table668 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table669 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "TeamName",
                             "IsDefault"});
-                table668.AddRow(new string[] {
+                table669.AddRow(new string[] {
                             "1Bucket12331",
                             "K-Team",
                             "false"});
-                table668.AddRow(new string[] {
+                table669.AddRow(new string[] {
                             "2Bucket12331",
                             "K-Team",
                             "false"});
 #line 83
- testRunner.When("User creates new Bucket via api", ((string)(null)), table668, "When ");
+ testRunner.When("User creates new Bucket via api", ((string)(null)), table669, "When ");
 #line hidden
 #line 87
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -521,12 +521,12 @@ this.FeatureBackground();
 #line 90
  testRunner.Then("Page with \'Buckets\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table669 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table670 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table669.AddRow(new string[] {
+                table670.AddRow(new string[] {
                             "1Bucket12331"});
 #line 91
- testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table669, "When ");
+ testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table670, "When ");
 #line hidden
 #line 94
  testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -538,23 +538,23 @@ this.FeatureBackground();
  testRunner.Then("\'This bucket will be permanently deleted and any objects within it reassigned to " +
                         "the default bucket\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table670 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table671 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table670.AddRow(new string[] {
+                table671.AddRow(new string[] {
                             "1Bucket12331"});
 #line 97
- testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table670, "When ");
+ testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table671, "When ");
 #line hidden
 #line 100
  testRunner.Then("\'This bucket will be permanently deleted and any objects within it reassigned to " +
                         "the default bucket\' text is not displayed on warning inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table671 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table672 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table671.AddRow(new string[] {
+                table672.AddRow(new string[] {
                             "2Bucket12331"});
 #line 101
- testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table671, "When ");
+ testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table672, "When ");
 #line hidden
 #line 104
  testRunner.Then("\'This bucket will be permanently deleted and any objects within it reassigned to " +

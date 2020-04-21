@@ -140,28 +140,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1115 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1116 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1115.AddRow(new string[] {
+                table1116.AddRow(new string[] {
                             "000F977AC8824FE39B8"});
-                table1115.AddRow(new string[] {
+                table1116.AddRow(new string[] {
                             "002B5DC7D4D34D5C895"});
 #line 10
  testRunner.When("User create static list with \"StaticList6529\" name on \"Users\" page with following" +
-                        " items", ((string)(null)), table1115, "When ");
+                        " items", ((string)(null)), table1116, "When ");
 #line hidden
 #line 14
  testRunner.Then("\"StaticList6529\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1116 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1117 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1116.AddRow(new string[] {
+                table1117.AddRow(new string[] {
                             "02642091E2484C9C989"});
-                table1116.AddRow(new string[] {
+                table1117.AddRow(new string[] {
                             "02769746B44A414593E"});
 #line 15
  testRunner.When("User create static list with \"StaticList6530\" name on \"Users\" page with following" +
-                        " items", ((string)(null)), table1116, "When ");
+                        " items", ((string)(null)), table1117, "When ");
 #line hidden
 #line 19
  testRunner.Then("\"StaticList6530\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -213,14 +213,14 @@ this.FeatureBackground();
  testRunner.Then("\"Users to add (0 of 2 selected)\" is displayed to the user in the Project Scope Ch" +
                         "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1117 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1118 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1117.AddRow(new string[] {
+                table1118.AddRow(new string[] {
                             "000F977AC8824FE39B8 (Spruill, Shea)"});
-                table1117.AddRow(new string[] {
+                table1118.AddRow(new string[] {
                             "002B5DC7D4D34D5C895 (Collor, Christopher)"});
 #line 35
- testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table1117, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table1118, "When ");
 #line hidden
 #line 39
  testRunner.Then("\"Users to add (2 of 2 selected)\" is displayed to the user in the Project Scope Ch" +
@@ -334,12 +334,12 @@ this.FeatureBackground();
 #line 63
  testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1118 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1119 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1118.AddRow(new string[] {
+                table1119.AddRow(new string[] {
                             string.Format("{0}", item)});
 #line 64
- testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, listName), ((string)(null)), table1118, "When ");
+ testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, listName), ((string)(null)), table1119, "When ");
 #line hidden
 #line 67
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -565,13 +565,13 @@ this.FeatureBackground();
 #line 115
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1119 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1120 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1119.AddRow(new string[] {
+                table1120.AddRow(new string[] {
                             "000F977AC8824FE39B8@bclabs.local"});
 #line 116
  testRunner.When("User create static list with \"StaticList5846\" name on \"Mailboxes\" page with follo" +
-                        "wing items", ((string)(null)), table1119, "When ");
+                        "wing items", ((string)(null)), table1120, "When ");
 #line hidden
 #line 119
  testRunner.Then("\"StaticList5846\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -761,12 +761,12 @@ this.FeatureBackground();
 #line 169
  testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1120 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1121 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1120.AddRow(new string[] {
+                table1121.AddRow(new string[] {
                             string.Format("{0}", item)});
 #line 170
- testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table1120, "When ");
+ testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table1121, "When ");
 #line hidden
 #line 173
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

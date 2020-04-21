@@ -161,12 +161,12 @@ this.FeatureBackground();
 #line 22
  testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1121 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1122 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1121.AddRow(new string[] {
+                table1122.AddRow(new string[] {
                             string.Format("{0}", item)});
 #line 23
- testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table1121, "When ");
+ testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table1122, "When ");
 #line hidden
 #line 26
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -355,12 +355,12 @@ this.FeatureBackground();
 #line 69
  testRunner.And(string.Format("User navigates to the \'{0}\' tab on Project Scope Changes page", tabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1122 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1123 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1122.AddRow(new string[] {
+                table1123.AddRow(new string[] {
                             string.Format("{0}", objectsToAdd)});
 #line 70
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table1122, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table1123, "And ");
 #line hidden
 #line 73
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

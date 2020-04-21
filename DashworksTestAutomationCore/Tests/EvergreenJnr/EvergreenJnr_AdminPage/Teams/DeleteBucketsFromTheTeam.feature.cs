@@ -163,22 +163,22 @@ this.FeatureBackground();
 #line 16
  testRunner.When("User clicks the filter type dropdown on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1708 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1709 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1708.AddRow(new string[] {
+                table1709.AddRow(new string[] {
                             "Equals"});
-                table1708.AddRow(new string[] {
+                table1709.AddRow(new string[] {
                             "Not Equal"});
-                table1708.AddRow(new string[] {
+                table1709.AddRow(new string[] {
                             "Less than or equal"});
-                table1708.AddRow(new string[] {
+                table1709.AddRow(new string[] {
                             "Less than"});
-                table1708.AddRow(new string[] {
+                table1709.AddRow(new string[] {
                             "Greater than"});
-                table1708.AddRow(new string[] {
+                table1709.AddRow(new string[] {
                             "Greater than or equal"});
 #line 17
- testRunner.Then("following Values are displayed in the filter type dropdown", ((string)(null)), table1708, "Then ");
+ testRunner.Then("following Values are displayed in the filter type dropdown", ((string)(null)), table1709, "Then ");
 #line hidden
 #line 25
  testRunner.When("User enters \"IB Team\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -146,18 +146,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table827 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table828 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table827.AddRow(new string[] {
+                table828.AddRow(new string[] {
                             "ProjectForCapacity13720",
                             "All Users",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table827, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table828, "When ");
 #line hidden
 #line 13
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -187,26 +187,26 @@ this.FeatureBackground();
  testRunner.Then("\'The capacity unit details have been updated\' text is displayed on inline success" +
                         " banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table828 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table829 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table828.AddRow(new string[] {
+                table829.AddRow(new string[] {
                             "Capacity Unit"});
-                table828.AddRow(new string[] {
+                table829.AddRow(new string[] {
                             ""});
-                table828.AddRow(new string[] {
+                table829.AddRow(new string[] {
                             "Description"});
-                table828.AddRow(new string[] {
+                table829.AddRow(new string[] {
                             "Default"});
-                table828.AddRow(new string[] {
+                table829.AddRow(new string[] {
                             "Slots"});
-                table828.AddRow(new string[] {
+                table829.AddRow(new string[] {
                             "Devices"});
-                table828.AddRow(new string[] {
+                table829.AddRow(new string[] {
                             "Users"});
-                table828.AddRow(new string[] {
+                table829.AddRow(new string[] {
                             "Applications"});
 #line 22
- testRunner.And("grid headers are displayed in the following order", ((string)(null)), table828, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table829, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -261,18 +261,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table829 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table830 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table829.AddRow(new string[] {
+                table830.AddRow(new string[] {
                             "13431DevicesProject",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 35
- testRunner.When("Project created via API and opened", ((string)(null)), table829, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table830, "When ");
 #line hidden
 #line 38
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -280,26 +280,26 @@ this.FeatureBackground();
 #line 39
  testRunner.And("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table830 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table831 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table830.AddRow(new string[] {
+                table831.AddRow(new string[] {
                             "Capacity Unit"});
-                table830.AddRow(new string[] {
+                table831.AddRow(new string[] {
                             ""});
-                table830.AddRow(new string[] {
+                table831.AddRow(new string[] {
                             "Description"});
-                table830.AddRow(new string[] {
+                table831.AddRow(new string[] {
                             "Default"});
-                table830.AddRow(new string[] {
+                table831.AddRow(new string[] {
                             "Slots"});
-                table830.AddRow(new string[] {
+                table831.AddRow(new string[] {
                             "Devices"});
-                table830.AddRow(new string[] {
+                table831.AddRow(new string[] {
                             "Users"});
-                table830.AddRow(new string[] {
+                table831.AddRow(new string[] {
                             "Applications"});
 #line 40
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table830, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table831, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -354,18 +354,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table831 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table832 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table831.AddRow(new string[] {
+                table832.AddRow(new string[] {
                             "13431MailboxesProject",
                             "All Mailboxes",
                             "None",
                             "Standalone Project"});
 #line 53
- testRunner.When("Project created via API and opened", ((string)(null)), table831, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table832, "When ");
 #line hidden
 #line 56
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -373,26 +373,26 @@ this.FeatureBackground();
 #line 57
  testRunner.And("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table832 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table833 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table832.AddRow(new string[] {
+                table833.AddRow(new string[] {
                             "Capacity Unit"});
-                table832.AddRow(new string[] {
+                table833.AddRow(new string[] {
                             ""});
-                table832.AddRow(new string[] {
+                table833.AddRow(new string[] {
                             "Description"});
-                table832.AddRow(new string[] {
+                table833.AddRow(new string[] {
                             "Default"});
-                table832.AddRow(new string[] {
+                table833.AddRow(new string[] {
                             "Slots"});
-                table832.AddRow(new string[] {
+                table833.AddRow(new string[] {
                             "Users"});
-                table832.AddRow(new string[] {
+                table833.AddRow(new string[] {
                             "Mailboxes"});
-                table832.AddRow(new string[] {
+                table833.AddRow(new string[] {
                             "Applications"});
 #line 58
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table832, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table833, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -453,18 +453,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table833 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table834 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table833.AddRow(new string[] {
+                table834.AddRow(new string[] {
                             "ProjectForCapacity13723",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 71
- testRunner.When("Project created via API and opened", ((string)(null)), table833, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table834, "When ");
 #line hidden
 #line 74
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

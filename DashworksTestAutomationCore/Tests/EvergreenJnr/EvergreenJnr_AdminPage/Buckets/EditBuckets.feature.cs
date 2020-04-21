@@ -139,16 +139,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table672 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table673 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "TeamName",
                             "IsDefault"});
-                table672.AddRow(new string[] {
+                table673.AddRow(new string[] {
                             "TestBucket2",
                             "Team 1045",
                             "false"});
 #line 10
- testRunner.When("User creates new Bucket via api", ((string)(null)), table672, "When ");
+ testRunner.When("User creates new Bucket via api", ((string)(null)), table673, "When ");
 #line hidden
 #line 13
  testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
