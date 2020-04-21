@@ -10,6 +10,7 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -113,8 +114,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                       ResourceFilesNamesProvider.IncorrectFile;
+            var file = FileSystemHelper.GeneratePathToEmbeddedResource(ResourceFilesNamesProvider.IncorrectFile,
+                FileSystemHelper.DataFolder.Resources);
             page.UploadButton.SendKeys(file);
         }
 
@@ -124,8 +125,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                       ResourceFilesNamesProvider.CorrectFile;
+            var file = FileSystemHelper.GeneratePathToEmbeddedResource(ResourceFilesNamesProvider.CorrectFile,
+                FileSystemHelper.DataFolder.Resources);
             page.UploadButton.SendKeys(file);
             _driver.WaitForDataLoading();
         }

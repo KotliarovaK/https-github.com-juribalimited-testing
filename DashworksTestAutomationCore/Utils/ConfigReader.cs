@@ -10,7 +10,6 @@ namespace DashworksTestAutomationCore.Utils
 {
     public static class ConfigReader
     {
-        //private static string ConfigFilePath = $"{Environment.CurrentDirectory}\\appsettings.json";
         private static string ConfigFilePath = $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\appsettings.json";
 
         public static string ByKey(string key)

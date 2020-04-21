@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Reflection;
+using AutomationUtils.Extensions;
 using DashworksTestAutomationCore.Utils;
 
 namespace DashworksTestAutomation.Utils
@@ -30,13 +32,19 @@ namespace DashworksTestAutomation.Utils
             return ConfigReader.ByKey("screenshotsFolder");
         }
 
-        public static string GeneratePathToEmbeddedResource(string pathPart)
+        public enum DataFolder
+        {
+            TestData,
+            Resources
+        }
+
+        public static string GeneratePathToEmbeddedResource(string pathPart, DataFolder dataFolder)
         {
             if (string.IsNullOrEmpty(pathPart))
                 throw new Exception("Path not set");
 
             string executingAssemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var pathParts = new List<string>() { executingAssemblyFolder, "TestData" };
+            var pathParts = new List<string>() { executingAssemblyFolder, dataFolder.GetValue() };
             pathParts.AddRange(pathPart.Split('\\'));
             var fullPath = Path.Combine(pathParts.ToArray());
 
@@ -45,7 +53,7 @@ namespace DashworksTestAutomation.Utils
 
         public static IList<T> ReadJsonListFromSystem<T>(string pathToJson)
         {
-            var fullPath = FileSystemHelper.GeneratePathToEmbeddedResource(pathToJson);
+            var fullPath = FileSystemHelper.GeneratePathToEmbeddedResource(pathToJson, DataFolder.TestData);
             var reader = new StreamReader(fullPath);
             string myJson = reader.ReadToEnd();
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<T>>(myJson);
@@ -53,7 +61,7 @@ namespace DashworksTestAutomation.Utils
 
         public static object ReadJsonFromSystem<T>(string pathToJson)
         {
-            var fullPath = FileSystemHelper.GeneratePathToEmbeddedResource(pathToJson);
+            var fullPath = FileSystemHelper.GeneratePathToEmbeddedResource(pathToJson, DataFolder.TestData);
             var reader = new StreamReader(fullPath);
             string myJson = reader.ReadToEnd();
             return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(myJson);
