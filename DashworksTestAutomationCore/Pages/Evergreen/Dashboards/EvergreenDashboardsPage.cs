@@ -389,6 +389,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             var coloredPart = By.XPath($".//*[text()='{widgetName}']//ancestor :: div[@class='widget-whole']//*[@fill='{colorCode}']");
             return Driver.IsElementDisplayed(coloredPart);
         }
+        public bool IsComplianceValueHasColorPoint(string widgetName, string compliance)
+        {
+           var parent = By.XPath($".//*[text()='{widgetName}']/ancestor :: div[@class='widget-whole']//div[contains(@class, 'table-widget-value icon-and-text')]/div");
+           var cell = Driver.FindElements(parent).First(x => x.Text.Contains(compliance));
+           var colorPoint = ".//div[contains(@class,'status status')]";
+
+           try
+           {
+               cell.FindElement(By.XPath(colorPoint));
+               return true;
+           }
+           catch (Exception)
+           {
+               return false;
+           }
+        }
 
         #endregion
 

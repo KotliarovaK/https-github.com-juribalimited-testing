@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasR
 	Then 'RUN PIVOT' button is disabled
 	Then 'RUN PIVOT' button has tooltip with 'Use association panel to create a list' text
 
-@Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS19937 @DAS19887 @Cleanup
+@Evergreen @Associations @DAS19937 @DAS19887 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckThatPivotManagerIsNotOpenedByDefault
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user

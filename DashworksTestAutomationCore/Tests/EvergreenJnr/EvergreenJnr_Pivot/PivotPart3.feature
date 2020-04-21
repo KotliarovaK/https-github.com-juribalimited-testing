@@ -169,7 +169,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableF
 	| Manufacturer |
 	And User selects the following Values on Pivot:
 	| Values          |
-	| 1803: Readiness |
+	| 2004: Readiness |
 	When User selects aggregate function "Severity" on Pivot
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed

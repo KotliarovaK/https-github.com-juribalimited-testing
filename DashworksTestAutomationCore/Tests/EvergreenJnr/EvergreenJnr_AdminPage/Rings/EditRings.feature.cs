@@ -130,18 +130,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1161 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1162 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1161.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "ProjectForDAS14839",
                             "All Devices",
                             "None",
                             "Clone from Evergreen to Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table1161, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1162, "When ");
 #line hidden
 #line 13
  testRunner.And("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

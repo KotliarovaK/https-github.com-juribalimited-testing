@@ -332,23 +332,44 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessValuesAreShownWithTheCor
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceValuesAreShownWithTheCorrectColours
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
-	And User add "Owner Compliance" filter where type is "Equals" with added column and following checkboxes:
+	When User clicks the Filters button
+	When User add "Owner Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Green              |
-	And User clicks Save button on the list panel
-	And User create dynamic list with "Devices_List_DAS15852" name on "Devices" page
+	When User clicks Save button on the list panel
+	When User create dynamic list with "Devices_List_DAS15852" name on "Devices" page
 	Then "Devices_List_DAS15852" list is displayed to user
 	When Dashboard with 'DAS15852_Dashboard' name created via API and opened
 	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title           | List                  | SplitBy     | AggregateFunction | AggregateBy      | OrderBy              |
 	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | Owner Compliance | Owner Compliance ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button
 	Then 'DAS16275_Widget' Widget is displayed to the user
 	Then 'Green' color displayed for 'GREEN' value in table 'DAS16275_Widget' widget
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20689 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatEmptyComplianceCorrectlyDisplayedOnPreview
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| Owner Compliance |
+	When User clicks Save button on the list panel
+	When User create dynamic list with "Devices_List_DAS20689" name on "Devices" page
+	Then "Devices_List_DAS20689" list is displayed to user
+	When Dashboard with 'DAS15852_Dashboard' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title           | List                  | SplitBy          | AggregateFunction | AggregateBy      | OrderBy              |
+	| Table      | DAS20689_Widget | Devices_List_DAS20689 | Owner Compliance | Severity          | Owner Compliance | Owner Compliance ASC |
+	Then Widget Preview is displayed to the user
+	When User clicks 'CREATE' button
+	Then 'DAS20689_Widget' Widget is displayed to the user
+	Then 'Empty' value displayed without color in table 'DAS20689_Widget' widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFuncAreNotAvailableForColumnsThatDoNotHaveComplianceOrReadiness

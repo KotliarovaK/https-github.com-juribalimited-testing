@@ -146,16 +146,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table693 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table694 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault"});
-                table693.AddRow(new string[] {
+                table694.AddRow(new string[] {
                             "Capacity Unit Settings",
                             "",
                             ""});
 #line 10
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table693, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table694, "When ");
 #line hidden
 #line 13
  testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

@@ -143,33 +143,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table719 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table720 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table719.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "ProjectDAS13779",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table719, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table720, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table720 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table721 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
                             "SlotAvailableFrom",
                             "SlotAvailableTo"});
-                table720.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "ProjectDAS13779",
                             "SlotDAS13779",
                             "13779",
                             "29 Oct 2018",
                             "29 Oct 2018"});
 #line 13
- testRunner.And("User creates new Slot via Api", ((string)(null)), table720, "And ");
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table721, "And ");
 #line hidden
 #line 16
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -324,29 +324,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table721 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table722 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table721.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "ProjectDAS13442",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 46
- testRunner.When("Project created via API and opened", ((string)(null)), table721, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table722, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table722 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table723 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName"});
-                table722.AddRow(new string[] {
+                table723.AddRow(new string[] {
                             "ProjectDAS13442",
                             "Slot13442",
                             "13442"});
 #line 49
- testRunner.And("User creates new Slot via Api", ((string)(null)), table722, "And ");
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table723, "And ");
 #line hidden
 #line 52
  testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -413,12 +413,12 @@ this.FeatureBackground();
 #line 72
  testRunner.When("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table723 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table724 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table723.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "Slot13442"});
 #line 73
- testRunner.When("User select \"Capacity Slot\" rows in the grid", ((string)(null)), table723, "When ");
+ testRunner.When("User select \"Capacity Slot\" rows in the grid", ((string)(null)), table724, "When ");
 #line hidden
 #line 76
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -582,27 +582,27 @@ this.FeatureBackground();
 #line 100
  testRunner.When("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table724 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table725 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table724.AddRow(new string[] {
+                table725.AddRow(new string[] {
                             "Pre-Migration \\ Scheduled date"});
 #line 101
- testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table724, "Then ");
+ testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table725, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table725 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table726 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table725.AddRow(new string[] {
+                table726.AddRow(new string[] {
                             "Personal Mailbox"});
-                table725.AddRow(new string[] {
+                table726.AddRow(new string[] {
                             "Public Folder"});
-                table725.AddRow(new string[] {
+                table726.AddRow(new string[] {
                             "Shared Mailbox"});
-                table725.AddRow(new string[] {
+                table726.AddRow(new string[] {
                             "Personal Mailbox - VIP"});
-                table725.AddRow(new string[] {
+                table726.AddRow(new string[] {
                             "Personal Mailbox - EA"});
 #line 104
- testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table725, "Then ");
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table726, "Then ");
 #line hidden
 #line 111
  testRunner.When("User selects \'User\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -610,14 +610,14 @@ this.FeatureBackground();
 #line 112
  testRunner.Then("\"\" content is displayed in \"Tasks\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table726 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table727 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table726.AddRow(new string[] {
+                table727.AddRow(new string[] {
                             "Standard User"});
-                table726.AddRow(new string[] {
+                table727.AddRow(new string[] {
                             "VIP User"});
 #line 113
- testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table726, "Then ");
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table727, "Then ");
 #line hidden
 #line 117
  testRunner.When("User selects \'Application\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -625,14 +625,14 @@ this.FeatureBackground();
 #line 118
  testRunner.Then("\"\" content is displayed in \"Tasks\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table727 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table728 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table727.AddRow(new string[] {
+                table728.AddRow(new string[] {
                             "Public Folder"});
-                table727.AddRow(new string[] {
+                table728.AddRow(new string[] {
                             "Sharepoint Application"});
 #line 119
- testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table727, "Then ");
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table728, "Then ");
 #line hidden
 #line 123
  testRunner.When("User clicks \'Projects\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -653,27 +653,27 @@ this.FeatureBackground();
 #line 128
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table728 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table729 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table728.AddRow(new string[] {
+                table729.AddRow(new string[] {
                             "Pre-Migration \\ Scheduled Date"});
 #line 129
- testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table728, "Then ");
+ testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table729, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table729 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table730 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table729.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "[This is the Default Request Type for Computer)]"});
-                table729.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "Computer: PC Rebuild"});
-                table729.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "Computer: Workstation Replacement"});
-                table729.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "Computer: Laptop Replacement"});
-                table729.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "Computer: Virtual Machine"});
 #line 132
- testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table729, "Then ");
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table730, "Then ");
 #line hidden
 #line 139
  testRunner.When("User selects \'User\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -681,18 +681,18 @@ this.FeatureBackground();
 #line 140
  testRunner.Then("\"\" content is displayed in \"Tasks\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table730 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table731 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table730.AddRow(new string[] {
+                table731.AddRow(new string[] {
                             "[Default (User)]"});
-                table730.AddRow(new string[] {
+                table731.AddRow(new string[] {
                             "User: No Agent"});
-                table730.AddRow(new string[] {
+                table731.AddRow(new string[] {
                             "User: VIP"});
-                table730.AddRow(new string[] {
+                table731.AddRow(new string[] {
                             "User; Maternity"});
 #line 141
- testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table730, "Then ");
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table731, "Then ");
 #line hidden
 #line 147
  testRunner.When("User selects \'Application\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -700,16 +700,16 @@ this.FeatureBackground();
 #line 148
  testRunner.Then("\"\" content is displayed in \"Tasks\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table731 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table732 = new TechTalk.SpecFlow.Table(new string[] {
                             "Items"});
-                table731.AddRow(new string[] {
+                table732.AddRow(new string[] {
                             "[Default (Application)]"});
-                table731.AddRow(new string[] {
+                table732.AddRow(new string[] {
                             "Application: Request Type A"});
-                table731.AddRow(new string[] {
+                table732.AddRow(new string[] {
                             "Application: Request Type B"});
 #line 149
- testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table731, "Then ");
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table732, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
