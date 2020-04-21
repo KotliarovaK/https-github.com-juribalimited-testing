@@ -49,14 +49,12 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUndoAllChangesI
 	When User creates new text component for 'Welcome' Self Service page via API
 	| ComponentName         | ExtraPropertiesText | ShowInSelfService |
 	| Text_Component_Name_1 | <p>normal</p>       | true              |
-	#TO DO: Replace the step below as soon as DAS-20451 will be implemented
-	When User navigates to End User landing page with '20330_1_SI' Self Service Identifier, 'DAS_20330_1 ' scope list and 'DAS_20330_Proj_1' project name
+	When User navigates to End User landing page with '20330_1_SI' Self Service Identifier
 	Then 'Undo all changes I made on this page' button is not displayed for End User
 	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName      | OwnerPermission                  | UserScope                |
 	| AOC Name      | DAS_20330_Proj_1 | Do not allow owner to be changed | DAS_20330_forComponent_1 |
-	#TO DO: Replace the step below as soon as DAS-20451 will be implemented
-	When User navigates to End User landing page with '20330_1_SI' Self Service Identifier, 'DAS_20330_1 ' scope list and 'DAS_20330_Proj_1' project name
+	When User navigates to End User landing page with '20330_1_SI' Self Service Identifier
 	Then 'Undo all changes I made on this screen' button is not displayed for End User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20330 @Cleanup @SelfService
