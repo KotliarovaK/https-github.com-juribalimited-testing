@@ -14,6 +14,7 @@ using System.Reflection;
 using System.Threading;
 using AutomationUtils.Utils;
 using AutomationUtils.Extensions;
+using NUnit.Framework;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -529,6 +530,29 @@ namespace DashworksTestAutomation.Extensions
             }
             //Final scroll to get to the grid bottom
             ex.ExecuteScript($"arguments[0].scrollTo(0,{scrollHeight});", gridElement);
+        }
+
+        public enum Direction
+        {
+            Right,
+            Left
+        }
+        public static void ScrollHorizontalyTo(this RemoteWebDriver driver, Direction direction, IWebElement element)
+        {
+            IJavaScriptExecutor ex = driver;
+            var clientWidth = int.Parse(ex.ExecuteScript("return arguments[0].clientWidth", element).ToString());
+            if (direction == Direction.Right)
+            {
+                ex.ExecuteScript($"arguments[0].scrollBy({clientWidth}, 0)", element);
+            }
+            else if (direction == Direction.Left)
+            {
+                ex.ExecuteScript($"arguments[0].scrollBy(-{clientWidth}, 0)", element);
+            }
+            else
+            {
+                throw new Exception("There is no such 'Direction'. Use Direction.Right or Direction.Left");
+            }
         }
 
         public static List<string> GetElementAttributes(this RemoteWebDriver driver, IWebElement element)

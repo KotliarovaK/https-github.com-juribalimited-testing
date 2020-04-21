@@ -804,6 +804,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.ScrollGridToTheEnd(page.TableBody);
         }
 
+        [When(@"User scroll right to the '(.*)' column")]
+        public void WhenUserScrollsGridToTheRight(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementsToBeDisplayed(By.XPath(page.AllCellsInTheGrid));
+
+            for (int i = 0; i < 50; i++)
+            {
+                _driver.ScrollHorizontalyTo(WebDriverExtensions.Direction.Right, page.HorizontalScroll);
+                if (page.IsColumnPresent(columnName))
+                {
+                    break;
+                }
+            }
+            //To be sure that column will be displayed
+            _driver.ScrollHorizontalyTo(WebDriverExtensions.Direction.Right, page.HorizontalScroll);
+        }
+
         #endregion
 
         #region DataInColumn
