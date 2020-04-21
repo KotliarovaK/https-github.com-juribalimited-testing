@@ -465,26 +465,26 @@ this.FeatureBackground();
 #line 84
  testRunner.Then("No pivot generated message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1690 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1718 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table1690.AddRow(new string[] {
+                table1718.AddRow(new string[] {
                             "App Vendor"});
 #line 85
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1690, "When ");
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1718, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1691 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1719 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table1691.AddRow(new string[] {
+                table1719.AddRow(new string[] {
                             "App Version"});
 #line 88
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1691, "When ");
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1719, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1692 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1720 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1692.AddRow(new string[] {
+                table1720.AddRow(new string[] {
                             "Hostname"});
 #line 91
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1692, "When ");
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1720, "When ");
 #line hidden
 #line 94
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -598,26 +598,26 @@ this.FeatureBackground();
 #line 115
  testRunner.Then("\"Pivot\" panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1693 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1721 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table1693.AddRow(new string[] {
+                table1721.AddRow(new string[] {
                             "App Vendor"});
 #line 116
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1693, "When ");
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1721, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1694 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1722 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table1694.AddRow(new string[] {
+                table1722.AddRow(new string[] {
                             "App Version"});
 #line 119
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1694, "When ");
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1722, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1695 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1723 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1695.AddRow(new string[] {
+                table1723.AddRow(new string[] {
                             "Hostname"});
 #line 122
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1695, "When ");
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1723, "When ");
 #line hidden
 #line 125
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

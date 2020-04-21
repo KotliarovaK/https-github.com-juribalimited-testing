@@ -132,23 +132,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3269 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3290 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table3269.AddRow(new string[] {
+                table3290.AddRow(new string[] {
                             "RingDAS17144_1",
                             "DAS17144",
                             "false",
                             "USE ME FOR AUTOMATION(USR SCHDLD)"});
-                table3269.AddRow(new string[] {
+                table3290.AddRow(new string[] {
                             "RingDAS17144_2",
                             "DAS17144",
                             "false",
                             "USE ME FOR AUTOMATION(USR SCHDLD)"});
 #line 10
- testRunner.When("User creates new Ring via api", ((string)(null)), table3269, "When ");
+ testRunner.When("User creates new Ring via api", ((string)(null)), table3290, "When ");
 #line hidden
 #line 14
  testRunner.When("User navigates to the \'User\' details page for \'0088FC8A50DD4344B92\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -173,24 +173,24 @@ this.FeatureBackground();
  testRunner.Then("\'User successfully moved to RingDAS17144_1\' text is displayed on inline success b" +
                         "anner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3270 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3291 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3270.AddRow(new string[] {
+                table3291.AddRow(new string[] {
                             "Ring",
                             "RingDAS17144_1"});
 #line 21
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3270, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3291, "Then ");
 #line hidden
 #line 24
  testRunner.When("User navigates to \'evergreen/#/admin/project/72/rings\' URL in a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3271 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3292 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3271.AddRow(new string[] {
+                table3292.AddRow(new string[] {
                             "RingDAS17144_2"});
 #line 25
- testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table3271, "When ");
+ testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table3292, "When ");
 #line hidden
 #line 28
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -278,14 +278,14 @@ this.FeatureBackground();
 #line 42
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3272 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3293 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3272.AddRow(new string[] {
+                table3293.AddRow(new string[] {
                             "Ring",
                             "Unassigned3"});
 #line 43
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3272, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3293, "Then ");
 #line hidden
 #line 46
  testRunner.When("User selects \'*Project K-Computer Scheduled Project\' in the \'Item Details Project" +

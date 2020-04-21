@@ -135,18 +135,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3247 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3268 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table3247.AddRow(new string[] {
+                table3268.AddRow(new string[] {
                             "cu_DAS19538_2",
                             "DAS19538",
                             "false",
                             "User Evergreen Capacity Project"});
 #line 10
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table3247, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table3268, "When ");
 #line hidden
 #line 13
  testRunner.When("User navigates to the \'User\' details page for \'0088FC8A50DD4344B92\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -183,14 +183,14 @@ this.FeatureBackground();
  testRunner.Then("\'User successfully moved to cu_DAS19538_2\' text is displayed on inline success ba" +
                         "nner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3248 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3269 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table3248.AddRow(new string[] {
+                table3269.AddRow(new string[] {
                             "Capacity Unit",
                             "cu_DAS19538_2"});
 #line 24
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3248, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3269, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -277,22 +277,22 @@ this.FeatureBackground();
 #line 40
  testRunner.Then("select all rows checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3249 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3270 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3249.AddRow(new string[] {
+                table3270.AddRow(new string[] {
                             "01BQIYGGUW5PRP6"});
 #line 41
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3249, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3270, "When ");
 #line hidden
 #line 44
  testRunner.Then("select all rows checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3250 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3271 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table3250.AddRow(new string[] {
+                table3271.AddRow(new string[] {
                             "01BQIYGGUW5PRP6"});
 #line 45
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3250, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3271, "When ");
 #line hidden
 #line 48
  testRunner.Then("select all rows checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -358,18 +358,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3251 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3272 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table3251.AddRow(new string[] {
+                table3272.AddRow(new string[] {
                             "zen_DAS19846_1",
                             "DAS19846",
                             "false",
                             "User Evergreen Capacity Project"});
 #line 52
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table3251, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table3272, "When ");
 #line hidden
 #line 55
  testRunner.When("User navigates to the \'User\' details page for the item with \'17815\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -478,26 +478,26 @@ this.FeatureBackground();
 #line 75
  testRunner.When("User clicks on edit button for \'Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3252 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3273 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table3252.AddRow(new string[] {
+                table3273.AddRow(new string[] {
                             "Owner Display Name"});
 #line 76
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owned\' colum" +
-                        "n:", ((string)(null)), table3252, "When ");
+                        "n:", ((string)(null)), table3273, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3253 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3274 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3253.AddRow(new string[] {
+                table3274.AddRow(new string[] {
                             "Email Address"});
-                table3253.AddRow(new string[] {
+                table3274.AddRow(new string[] {
                             "Owned"});
-                table3253.AddRow(new string[] {
+                table3274.AddRow(new string[] {
                             "Capacity Unit"});
-                table3253.AddRow(new string[] {
+                table3274.AddRow(new string[] {
                             "Bucket"});
 #line 79
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3253, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3274, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

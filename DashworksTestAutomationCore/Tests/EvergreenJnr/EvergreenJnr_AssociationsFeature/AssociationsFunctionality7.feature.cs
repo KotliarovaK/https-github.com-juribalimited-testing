@@ -565,12 +565,12 @@ this.FeatureBackground();
 #line 90
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1714 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1742 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1714.AddRow(new string[] {
+                table1742.AddRow(new string[] {
                             "App Phoenix Field"});
 #line 91
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1714, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1742, "When ");
 #line hidden
 #line 94
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

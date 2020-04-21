@@ -106,20 +106,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
         }
 
-        public void CloseAllSections()
-        {
-            var closeButtons =
-                Driver.FindElements(By.XPath(".//button[@aria-describedby='cdk-describedby-message-25']"));
-
-            if (!closeButtons.Any()) return;
-            foreach (var button in closeButtons)
-            {
-                Driver.MouseHover(button);
-                button.Click();
-                Driver.WaitForDataLoading();
-            }
-        }
-
         public List<KeyValuePair<string, string>> GetFieldsWithContent(string categoryName)
         {
             //Hover on header to be able to see all table with all values
@@ -143,29 +129,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var allFieldsContent = Driver.FindElements(By.XPath(".//tbody/tr/td[2]"));
 
             foreach (var element in allFieldsContent) Verify.IsFalse(string.IsNullOrEmpty(element.Text), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        public int GetColumnNumberByName(string columnName)
-        {
-            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
-            var allHeaders = Driver.FindElements(allHeadersSelector);
-            if (!allHeaders.Any())
-                throw new Exception("Table does not contains any columns");
-            var columnNumber =
-                allHeaders.IndexOf(allHeaders.First(x =>
-                    x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
-
-            return columnNumber;
-        }
-
-        public IWebElement GetIconByName(string detailsIconName)
-        {
-            var byControl =
-                By.XPath($".//i[@class='{detailsIconName}']");
-            Driver.WaitForElementToBeDisplayed(byControl);
-            return Driver.FindElement(byControl);
         }
 
         public string GetHrefByColumnName(string columnName)
@@ -245,7 +208,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public string GetFildWithEmptyValueByName(string title)
+        public string GetFieldWithEmptyValueByName(string title)
         {
             var selector = By.XPath($".//span[text()='{title}']//ancestor::tr/td[contains(@class, 'column-value')]");
             Driver.WaitForElementToBeDisplayed(selector);

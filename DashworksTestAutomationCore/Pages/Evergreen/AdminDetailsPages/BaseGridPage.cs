@@ -145,6 +145,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
         public IWebElement TableBody { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-horizontal-scroll-viewport']")]
+        public IWebElement HorizontalScroll { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-option[contains(@class, 'mat-option-multiple')]")]
         public IList<IWebElement> OptionsListInFilterDropdown { get; set; }
 

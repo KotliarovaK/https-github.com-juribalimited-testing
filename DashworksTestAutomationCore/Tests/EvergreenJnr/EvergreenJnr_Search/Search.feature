@@ -353,14 +353,14 @@ Scenario: EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTh
 	Then "2,223" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Hide from End Users" filter where type is "Equals" with added column and following checkboxes:
+	When User add "Windows7Mi: Hide From End Users" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| FALSE              |
 	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values                             |
 	| DirectX SDK (Version 8.1) (3663.0) |
 	Then "1,067" rows are displayed in the agGrid
-	Then "(Windows7Mi: Hide from End Users = false) OR (Application = DirectX SDK (Version 8.1) (3663.0))" text is displayed in filter container
+	Then "(Windows7Mi: Hide From End Users = false) OR (Application = DirectX SDK (Version 8.1) (3663.0))" text is displayed in filter container
 	When User perform search by "microsoft"
 	Then "395" rows are displayed in the agGrid
 	When User closes Tools panel
@@ -390,8 +390,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDi
 	| Unassigned         |
 	| Ring 1             |
 	And User clicks on 'Windows7Mi: Ring' column header
-	Then Content in the 'Windows7Mi: Ring' column is equal to
-	| values     |
+	Then 'Windows7Mi: Ring' column contains following content
+	| Content    |
 	| Ring 2     |
 	| Ring 1     |
 	| Unassigned |

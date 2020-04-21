@@ -192,3 +192,19 @@ Scenario: EvergreenJnr_AdminPage_CheckFoundObjectsForRenamedAutomation
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	When User clicks content from "Objects" column
 	Then "TestBulkUpdate" content is displayed for "zDeviceAut: Path" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckDateAndTimeInAutomationLogGrid
+	When User creates new Automation via API
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 36412_Automation | 36412       | true     | false              | All Users | Manual |
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User enters "36412_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '36412_Automation' item from 'Automation' column
+	When '36412_Automation' automation run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When User enters "36412_Automation" text in the Search field for "Automation" column
+	Then current date and time are displayed for '36412_Automation' automation

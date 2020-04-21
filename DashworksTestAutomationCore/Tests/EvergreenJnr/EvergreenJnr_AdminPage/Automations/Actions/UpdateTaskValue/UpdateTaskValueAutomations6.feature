@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOwnerDropdownDisplayingAfterSelectingEmpty
 	When User selects 'Unassigned' option from 'Owner' autocomplete
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20363 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20363 @DAS20835 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingAction
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
@@ -214,6 +214,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingActio
 	When User enters '0' text to 'Value' textbox
 	When User selects 'weekdays after task value' in the 'DateUnit' dropdown
 	When User clicks 'CREATE' button
+	When User clicks content from "Action" column
+	When User selects 'days before task value' in the 'DateUnit' dropdown
+	When User clicks 'UPDATE' button
+	Then 'The automation action has been updated' text is displayed on inline success banner
 	When User clicks content from "Action" column
 	When User selects 'Update' in the 'Update Date' dropdown
 	Then '' content is displayed in 'Date' textbox

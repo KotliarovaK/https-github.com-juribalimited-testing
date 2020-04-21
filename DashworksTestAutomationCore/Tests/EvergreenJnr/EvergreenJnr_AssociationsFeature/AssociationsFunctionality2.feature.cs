@@ -238,13 +238,13 @@ this.FeatureBackground();
 #line 34
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1696 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1724 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1696.AddRow(new string[] {
+                table1724.AddRow(new string[] {
                             "sss"});
 #line 35
  testRunner.When("User add \"App Version\" filter where type is \"Equals\" with added column and follow" +
-                        "ing value:", ((string)(null)), table1696, "When ");
+                        "ing value:", ((string)(null)), table1724, "When ");
 #line hidden
 #line 38
  testRunner.When("User clicks the Associations button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -315,13 +315,13 @@ this.FeatureBackground();
 #line 48
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1697 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1725 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedValues"});
-                table1697.AddRow(new string[] {
+                table1725.AddRow(new string[] {
                             "Mobile"});
 #line 49
  testRunner.When("User add \"Device Type\" filter where type is \"Equals\" with added column and Lookup" +
-                        " option", ((string)(null)), table1697, "When ");
+                        " option", ((string)(null)), table1725, "When ");
 #line hidden
 #line 52
  testRunner.When("User create dynamic list with \"ADevicesList18531\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
