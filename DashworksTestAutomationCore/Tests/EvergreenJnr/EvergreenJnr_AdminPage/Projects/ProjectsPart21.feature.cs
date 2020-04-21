@@ -145,18 +145,18 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1050 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1051 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "ShortName",
                             "Description",
                             "Type"});
-                table1050.AddRow(new string[] {
+                table1051.AddRow(new string[] {
                             "SnrProject13498",
                             "13498Pr",
                             "",
                             ""});
 #line 14
- testRunner.When("User creates new Project on Senior", ((string)(null)), table1050, "When ");
+ testRunner.When("User creates new Project on Senior", ((string)(null)), table1051, "When ");
 #line hidden
 #line 17
  testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -318,18 +318,18 @@ this.FeatureBackground();
 #line 53
  testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1051 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1052 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "ShortName",
                             "Description",
                             "Type"});
-                table1051.AddRow(new string[] {
+                table1052.AddRow(new string[] {
                             "ProjectDAS13501",
                             "13501",
                             "",
                             ""});
 #line 54
- testRunner.When("User creates new Project on Senior", ((string)(null)), table1051, "When ");
+ testRunner.When("User creates new Project on Senior", ((string)(null)), table1052, "When ");
 #line hidden
 #line 57
  testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

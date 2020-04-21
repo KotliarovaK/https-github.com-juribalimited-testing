@@ -141,12 +141,12 @@ this.FeatureBackground();
 #line 15
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1727 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1728 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1727.AddRow(new string[] {
+                table1728.AddRow(new string[] {
                             "Compliance"});
 #line 16
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1727, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1728, "When ");
 #line hidden
 #line 19
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -228,13 +228,13 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1728 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1729 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1728.AddRow(new string[] {
+                table1729.AddRow(new string[] {
                             "0"});
 #line 33
  testRunner.When("User add \"Network Card Count\" filter where type is \"Greater than\" with added colu" +
-                        "mn and following value:", ((string)(null)), table1728, "When ");
+                        "mn and following value:", ((string)(null)), table1729, "When ");
 #line hidden
 #line 36
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -322,13 +322,13 @@ this.FeatureBackground();
 #line 51
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1729 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1730 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedValues"});
-                table1729.AddRow(new string[] {
+                table1730.AddRow(new string[] {
                             "Other"});
 #line 52
  testRunner.When("User add \"Device Operating System\" filter where type is \"Does not equal\" with add" +
-                        "ed column and Lookup option", ((string)(null)), table1729, "When ");
+                        "ed column and Lookup option", ((string)(null)), table1730, "When ");
 #line hidden
 #line 55
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -401,11 +401,11 @@ this.FeatureBackground();
 #line 67
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1730 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1731 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedValues"});
 #line 68
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Not empty\" with added column and Lookup opti" +
-                            "on", filter), ((string)(null)), table1730, "When ");
+                            "on", filter), ((string)(null)), table1731, "When ");
 #line hidden
 #line 70
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

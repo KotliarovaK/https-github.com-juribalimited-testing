@@ -131,18 +131,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table868 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table869 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table868.AddRow(new string[] {
+                table869.AddRow(new string[] {
                             "15266_TestProject",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table868, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table869, "When ");
 #line hidden
 #line 13
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -391,14 +391,14 @@ this.FeatureBackground();
 #line 66
  testRunner.When("User clicks on \'Capacity Slot\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table869 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table870 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table869.AddRow(new string[] {
+                table870.AddRow(new string[] {
                             "Birmingham Afternoon"});
-                table869.AddRow(new string[] {
+                table870.AddRow(new string[] {
                             "Birmingham Morning"});
 #line 67
- testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table869, "Then ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table870, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

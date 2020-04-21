@@ -131,18 +131,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1175 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1176 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1175.AddRow(new string[] {
+                table1176.AddRow(new string[] {
                             "ProjectForDAS14780",
                             "All Devices",
                             "None",
                             "Clone from Evergreen to Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table1175, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1176, "When ");
 #line hidden
 #line 13
  testRunner.Then("Page with \'ProjectForDAS14780\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -201,12 +201,12 @@ this.FeatureBackground();
  testRunner.And("User selects \"ProjectForDAS14780\" checkbox from String Filter with item list on t" +
                         "he Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1176 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1177 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table1176.AddRow(new string[] {
+                table1177.AddRow(new string[] {
                             "Unassigned"});
 #line 31
- testRunner.Then("Content in the \'Bucket\' column is equal to", ((string)(null)), table1176, "Then ");
+ testRunner.Then("Content in the \'Bucket\' column is equal to", ((string)(null)), table1177, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -276,18 +276,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1177 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1178 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1177.AddRow(new string[] {
+                table1178.AddRow(new string[] {
                             "14690_Project",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 37
- testRunner.When("Project created via API and opened", ((string)(null)), table1177, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1178, "When ");
 #line hidden
 #line 40
  testRunner.When("User navigates to the \'Rings\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -334,12 +334,12 @@ this.FeatureBackground();
 #line 54
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1178 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1179 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1178.AddRow(new string[] {
+                table1179.AddRow(new string[] {
                             "Maps to Evergreen"});
 #line 55
- testRunner.Then("Content is empty in the column", ((string)(null)), table1178, "Then ");
+ testRunner.Then("Content is empty in the column", ((string)(null)), table1179, "Then ");
 #line hidden
 #line 58
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -464,14 +464,14 @@ this.FeatureBackground();
 #line 84
  testRunner.Then("Page with \'Rings\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1179 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1180 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table1179.AddRow(new string[] {
+                table1180.AddRow(new string[] {
                             "Ring",
                             "true"});
 #line 85
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table1179, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table1180, "When ");
 #line hidden
 #line 88
  testRunner.Then("Cog menu is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

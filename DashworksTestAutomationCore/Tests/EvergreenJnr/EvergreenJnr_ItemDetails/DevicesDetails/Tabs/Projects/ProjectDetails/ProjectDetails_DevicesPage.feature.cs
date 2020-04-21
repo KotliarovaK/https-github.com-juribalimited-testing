@@ -261,14 +261,14 @@ this.FeatureBackground();
  testRunner.Then("\'Device Owner successfully updated to Austin O. Ball\' text is displayed on inline" +
                         " success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2964 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2965 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2964.AddRow(new string[] {
+                table2965.AddRow(new string[] {
                             "Device Owner",
                             "Austin O. Ball"});
 #line 39
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2964, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2965, "Then ");
 #line hidden
 #line 42
  testRunner.When("User clicks on edit button for \'Device Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -283,14 +283,14 @@ this.FeatureBackground();
 #line 45
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2965 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2966 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2965.AddRow(new string[] {
+                table2966.AddRow(new string[] {
                             "Device Owner",
                             "Felicienne Vadnais"});
 #line 46
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2965, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2966, "Then ");
 #line hidden
 #line 49
  testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -406,14 +406,14 @@ this.FeatureBackground();
  testRunner.Then("\'Device Owner successfully updated to James N. Snow\' text is displayed on inline " +
                         "success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2966 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2967 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2966.AddRow(new string[] {
+                table2967.AddRow(new string[] {
                             "Device Owner",
                             "James N. Snow"});
 #line 72
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2966, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2967, "Then ");
 #line hidden
 #line 75
  testRunner.When("User clicks on edit button for \'Device Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -431,14 +431,14 @@ this.FeatureBackground();
 #line 79
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2967 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2968 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2967.AddRow(new string[] {
+                table2968.AddRow(new string[] {
                             "Device Owner",
                             "Nicolas O. Mc Millan"});
 #line 80
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2967, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2968, "Then ");
 #line hidden
 #line 83
  testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -508,20 +508,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2968 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2969 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2968.AddRow(new string[] {
+                table2969.AddRow(new string[] {
                             "UserDAS20214_1",
                             "Value",
                             "DAS20214",
                             "m!gration",
                             "Project Computer Object Editor"});
 #line 91
- testRunner.When("User create new User via API", ((string)(null)), table2968, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2969, "When ");
 #line hidden
 #line 94
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -544,12 +544,12 @@ this.FeatureBackground();
 #line 100
  testRunner.When("User clicks \'ADD MEMBERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2969 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2970 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table2969.AddRow(new string[] {
+                table2970.AddRow(new string[] {
                             "UserDAS20214_1"});
 #line 101
- testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table2969, "When ");
+ testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table2970, "When ");
 #line hidden
 #line 104
  testRunner.And("User clicks \'ADD USERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -557,14 +557,14 @@ this.FeatureBackground();
 #line 105
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2970 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2971 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2970.AddRow(new string[] {
+                table2971.AddRow(new string[] {
                             "UserDAS20214_1",
                             "m!gration"});
 #line 106
-  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2970, "When ");
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2971, "When ");
 #line hidden
 #line 109
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -683,20 +683,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2971 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2972 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2971.AddRow(new string[] {
+                table2972.AddRow(new string[] {
                             "UserDAS20214_2",
                             "Value",
                             "DAS20214",
                             "m!gration",
                             "Project Mailbox Object Editor"});
 #line 135
- testRunner.When("User create new User via API", ((string)(null)), table2971, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2972, "When ");
 #line hidden
 #line 138
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -719,12 +719,12 @@ this.FeatureBackground();
 #line 144
  testRunner.When("User clicks \'ADD MEMBERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2972 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2973 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table2972.AddRow(new string[] {
+                table2973.AddRow(new string[] {
                             "UserDAS20214_2"});
 #line 145
- testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table2972, "When ");
+ testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table2973, "When ");
 #line hidden
 #line 148
  testRunner.And("User clicks \'ADD USERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -732,14 +732,14 @@ this.FeatureBackground();
 #line 149
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2973 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2974 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2973.AddRow(new string[] {
+                table2974.AddRow(new string[] {
                             "UserDAS20214_2",
                             "m!gration"});
 #line 150
-  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2973, "When ");
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2974, "When ");
 #line hidden
 #line 153
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -858,20 +858,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2974 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2975 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table2974.AddRow(new string[] {
+                table2975.AddRow(new string[] {
                             "UserDAS20214_3",
                             "Value",
                             "DAS20214",
                             "m!gration",
                             "Project Application Object Editor"});
 #line 179
- testRunner.When("User create new User via API", ((string)(null)), table2974, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table2975, "When ");
 #line hidden
 #line 182
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -894,12 +894,12 @@ this.FeatureBackground();
 #line 188
  testRunner.When("User clicks \'ADD MEMBERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2975 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2976 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table2975.AddRow(new string[] {
+                table2976.AddRow(new string[] {
                             "UserDAS20214_3"});
 #line 189
- testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table2975, "When ");
+ testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table2976, "When ");
 #line hidden
 #line 192
  testRunner.And("User clicks \'ADD USERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -907,14 +907,14 @@ this.FeatureBackground();
 #line 193
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2976 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2977 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2976.AddRow(new string[] {
+                table2977.AddRow(new string[] {
                             "UserDAS20214_3",
                             "m!gration"});
 #line 194
-  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2976, "When ");
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2977, "When ");
 #line hidden
 #line 197
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1062,14 +1062,14 @@ this.FeatureBackground();
 #line 231
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2977 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2978 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2977.AddRow(new string[] {
+                table2978.AddRow(new string[] {
                             "Device Owner",
                             "Jones, Tina"});
 #line 232
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2977, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2978, "Then ");
 #line hidden
 #line 235
  testRunner.When("User clicks on edit button for \'Device Owner\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1091,14 +1091,14 @@ this.FeatureBackground();
  testRunner.Then("\'Device Owner successfully updated to Unknown\' text is displayed on inline succes" +
                         "s banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2978 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2979 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2978.AddRow(new string[] {
+                table2979.AddRow(new string[] {
                             "Device Owner",
                             "Empty"});
 #line 241
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2978, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2979, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

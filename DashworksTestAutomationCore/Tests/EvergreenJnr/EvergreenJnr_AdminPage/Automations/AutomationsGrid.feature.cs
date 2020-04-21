@@ -198,14 +198,14 @@ this.FeatureBackground();
 #line 31
  testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table660 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table661 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table660.AddRow(new string[] {
+                table661.AddRow(new string[] {
                             "Active",
                             "true"});
 #line 32
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table660, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table661, "When ");
 #line hidden
 #line 35
  testRunner.Then("Cog menu is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

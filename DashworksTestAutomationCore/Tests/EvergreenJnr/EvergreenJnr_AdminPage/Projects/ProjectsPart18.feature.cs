@@ -208,18 +208,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table995 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table996 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table995.AddRow(new string[] {
+                table996.AddRow(new string[] {
                             string.Format("{0}", projectName),
                             string.Format("{0}", scopeList),
                             "None",
                             "Standalone Project"});
 #line 22
- testRunner.When("Project created via API and opened", ((string)(null)), table995, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table996, "When ");
 #line hidden
 #line 25
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -249,12 +249,12 @@ this.FeatureBackground();
 #line 33
  testRunner.Then(string.Format("\'{0}\' content is not displayed in the \'Project\' column", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table996 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table997 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table996.AddRow(new string[] {
+                table997.AddRow(new string[] {
                             string.Format("{0}", item)});
 #line 34
- testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table996, "When ");
+ testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table997, "When ");
 #line hidden
 #line 37
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -535,15 +535,15 @@ this.FeatureBackground();
  testRunner.Then("\'A project already exists with this name\' text is displayed on inline error banne" +
                         "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table997 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table998 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table997.AddRow(new string[] {
+                table998.AddRow(new string[] {
                             "0AN6PG99INA7R2"});
-                table997.AddRow(new string[] {
+                table998.AddRow(new string[] {
                             "0B4UHHUZQBRXKE"});
 #line 94
  testRunner.When("User create static list with \"StaticList4581\" name on \"Devices\" page with followi" +
-                        "ng items", ((string)(null)), table997, "When ");
+                        "ng items", ((string)(null)), table998, "When ");
 #line hidden
 #line 98
  testRunner.Then("\"StaticList4581\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -743,12 +743,12 @@ this.FeatureBackground();
 #line 146
  testRunner.When("User enters \'TestProjectDAS13733\' text to \'Project Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table998 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table999 = new TechTalk.SpecFlow.Table(new string[] {
                             "CheckboxesToBeClicked"});
-                table998.AddRow(new string[] {
+                table999.AddRow(new string[] {
                             "Import Readiness"});
 #line 147
- testRunner.And("User checks following checkboxes:", ((string)(null)), table998, "And ");
+ testRunner.And("User checks following checkboxes:", ((string)(null)), table999, "And ");
 #line hidden
 #line 150
  testRunner.And("User clicks \'IMPORT PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

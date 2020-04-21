@@ -139,18 +139,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1107 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1108 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1107.AddRow(new string[] {
+                table1108.AddRow(new string[] {
                             "TestName12336",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table1107, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1108, "When ");
 #line hidden
 #line 13
  testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -188,14 +188,14 @@ this.FeatureBackground();
 #line 23
  testRunner.When("User cancels the selection objects in the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1108 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1109 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1108.AddRow(new string[] {
+                table1109.AddRow(new string[] {
                             "CWOFD11103CVDP"});
-                table1108.AddRow(new string[] {
+                table1109.AddRow(new string[] {
                             "111OPUSGKFG5GT"});
 #line 24
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table1108, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table1109, "And ");
 #line hidden
 #line 28
  testRunner.Then("\"Devices to add (2 of 17279 selected)\" is displayed to the user in the Project Sc" +
@@ -281,18 +281,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1109 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1110 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1109.AddRow(new string[] {
+                table1110.AddRow(new string[] {
                             "TestName12891",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 38
- testRunner.When("Project created via API and opened", ((string)(null)), table1109, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1110, "When ");
 #line hidden
 #line 41
  testRunner.And("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -374,18 +374,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1110 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1111 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1110.AddRow(new string[] {
+                table1111.AddRow(new string[] {
                             "TESTNAME_capital letters",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 53
- testRunner.When("Project created via API and opened", ((string)(null)), table1110, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1111, "When ");
 #line hidden
 #line 56
  testRunner.And("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -397,18 +397,18 @@ this.FeatureBackground();
 #line 58
  testRunner.Then("\'TESTNAME_capital letters\' content is displayed in the \'Project\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1111 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1112 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1111.AddRow(new string[] {
+                table1112.AddRow(new string[] {
                             "testname_small letters",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 59
- testRunner.When("Project created via API and opened", ((string)(null)), table1111, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1112, "When ");
 #line hidden
 #line 62
  testRunner.And("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -497,28 +497,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1112 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1113 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1112.AddRow(new string[] {
+                table1113.AddRow(new string[] {
                             "00BDM1JUR8IF419"});
-                table1112.AddRow(new string[] {
+                table1113.AddRow(new string[] {
                             "011PLA470S0B9DJ"});
 #line 71
  testRunner.When("User create static list with \"StaticList6527\" name on \"Devices\" page with followi" +
-                        "ng items", ((string)(null)), table1112, "When ");
+                        "ng items", ((string)(null)), table1113, "When ");
 #line hidden
 #line 75
  testRunner.Then("\"StaticList6527\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1113 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1114 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1113.AddRow(new string[] {
+                table1114.AddRow(new string[] {
                             "041V8ZALQ4XPL9"});
-                table1113.AddRow(new string[] {
+                table1114.AddRow(new string[] {
                             "04WJ5P9DN0VEEW"});
 #line 76
  testRunner.When("User create static list with \"StaticList6528\" name on \"Devices\" page with followi" +
-                        "ng items", ((string)(null)), table1113, "When ");
+                        "ng items", ((string)(null)), table1114, "When ");
 #line hidden
 #line 80
  testRunner.Then("\"StaticList6528\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -569,14 +569,14 @@ this.FeatureBackground();
 #line 95
  testRunner.When("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1114 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1115 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1114.AddRow(new string[] {
+                table1115.AddRow(new string[] {
                             "00BDM1JUR8IF419"});
-                table1114.AddRow(new string[] {
+                table1115.AddRow(new string[] {
                             "011PLA470S0B9DJ"});
 #line 96
- testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table1114, "When ");
+ testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table1115, "When ");
 #line hidden
 #line 100
  testRunner.Then("\"Devices to add (2 of 2 selected)\" is displayed to the user in the Project Scope " +

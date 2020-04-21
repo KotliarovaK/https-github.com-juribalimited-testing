@@ -275,14 +275,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table663 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table664 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table663.AddRow(new string[] {
+                table664.AddRow(new string[] {
                             "20798_Automation",
                             "20798",
                             "true",
@@ -290,7 +290,7 @@ this.FeatureBackground();
                             "All Users",
                             "Manual"});
 #line 47
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table663, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table664, "When ");
 #line hidden
 #line 50
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

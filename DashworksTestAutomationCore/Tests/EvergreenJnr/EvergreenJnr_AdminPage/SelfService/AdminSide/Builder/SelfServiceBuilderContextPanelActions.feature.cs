@@ -134,80 +134,64 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1180 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1181 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1180.AddRow(new string[] {
+                table1181.AddRow(new string[] {
                             "VSCmdShell"});
 #line 10
  testRunner.When("User create static list with \"DAS_20407\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1180, "When ");
+                        "ng items", ((string)(null)), table1181, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1181 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1182 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1181.AddRow(new string[] {
+                table1182.AddRow(new string[] {
                             "DAS_20407_SS_1",
                             "20407_1_SI",
                             "true",
                             "true",
                             "DAS_20407"});
 #line 13
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1181, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1182, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1182 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1183 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ExtraPropertiesText",
                             "ShowInSelfService"});
-                table1182.AddRow(new string[] {
+                table1183.AddRow(new string[] {
                             "Text_Component_Name_1",
                             "<p>Sunt haud pauci homĭnes,</p>",
                             "true"});
-                table1182.AddRow(new string[] {
+                table1183.AddRow(new string[] {
                             "Text_Component_Name_2",
                             "<p>Sunt haud pauci homĭnes,</p>",
                             "true"});
-                table1182.AddRow(new string[] {
+                table1183.AddRow(new string[] {
                             "Text_Component_Name_3",
                             "<p>Sunt haud pauci homĭnes,</p>",
                             "true"});
 #line 16
- testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table1182, "When ");
+ testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table1183, "When ");
 #line hidden
 #line 21
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table1183 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Options"});
-                table1183.AddRow(new string[] {
-                            "Edit"});
-                table1183.AddRow(new string[] {
-                            "Move to bottom"});
-                table1183.AddRow(new string[] {
-                            "Move to position"});
-                table1183.AddRow(new string[] {
-                            "Delete"});
-#line 22
- testRunner.Then("User clicks on cogmenu button for item with \'Text\' type and \'Text_Component_Name_" +
-                        "1\' name on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1183, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1184 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
                 table1184.AddRow(new string[] {
                             "Edit"});
                 table1184.AddRow(new string[] {
-                            "Move to top"});
-                table1184.AddRow(new string[] {
                             "Move to bottom"});
                 table1184.AddRow(new string[] {
                             "Move to position"});
                 table1184.AddRow(new string[] {
                             "Delete"});
-#line 28
+#line 22
  testRunner.Then("User clicks on cogmenu button for item with \'Text\' type and \'Text_Component_Name_" +
-                        "2\' name on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1184, "Then ");
+                        "1\' name on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1184, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1185 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
@@ -216,12 +200,28 @@ this.FeatureBackground();
                 table1185.AddRow(new string[] {
                             "Move to top"});
                 table1185.AddRow(new string[] {
+                            "Move to bottom"});
+                table1185.AddRow(new string[] {
                             "Move to position"});
                 table1185.AddRow(new string[] {
                             "Delete"});
+#line 28
+ testRunner.Then("User clicks on cogmenu button for item with \'Text\' type and \'Text_Component_Name_" +
+                        "2\' name on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1185, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table1186 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Options"});
+                table1186.AddRow(new string[] {
+                            "Edit"});
+                table1186.AddRow(new string[] {
+                            "Move to top"});
+                table1186.AddRow(new string[] {
+                            "Move to position"});
+                table1186.AddRow(new string[] {
+                            "Delete"});
 #line 35
  testRunner.Then("User clicks on cogmenu button for item with \'Text\' type and \'Text_Component_Name_" +
-                        "3\' name on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1185, "Then ");
+                        "3\' name on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table1186, "Then ");
 #line hidden
 #line 41
  testRunner.When("User selects \'Move to bottom\' cogmenu option for \'Text\' item type with \'Text_Comp" +
@@ -235,24 +235,24 @@ this.FeatureBackground();
  testRunner.When("User moves item with type \'Text\' and \'Text_Component_Name_1\' name to \'3\' position" +
                         " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1186 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1187 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentType",
                             "ComponentName",
                             "ComponentPosition"});
-                table1186.AddRow(new string[] {
+                table1187.AddRow(new string[] {
                             "Text",
                             "Text_Component_Name_1",
                             "3"});
-                table1186.AddRow(new string[] {
+                table1187.AddRow(new string[] {
                             "Text",
                             "Text_Component_Name_2",
                             "2"});
-                table1186.AddRow(new string[] {
+                table1187.AddRow(new string[] {
                             "Text",
                             "Text_Component_Name_3",
                             "1"});
 #line 44
- testRunner.Then("User sees component on position in \'Welcome\' page of Self Service Builder Panel", ((string)(null)), table1186, "Then ");
+ testRunner.Then("User sees component on position in \'Welcome\' page of Self Service Builder Panel", ((string)(null)), table1187, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -309,39 +309,39 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1187 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1188 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1187.AddRow(new string[] {
+                table1188.AddRow(new string[] {
                             "VSCmdShell"});
 #line 52
  testRunner.When("User create static list with \"DAS_20407\" name on \"Applications\" page with followi" +
-                        "ng items", ((string)(null)), table1187, "When ");
+                        "ng items", ((string)(null)), table1188, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1188 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1189 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "ServiceIdentifier",
                             "Enabled",
                             "AllowAnonymousUsers",
                             "Scope"});
-                table1188.AddRow(new string[] {
+                table1189.AddRow(new string[] {
                             "DAS_20407_SS_2",
                             "20407_2_SI",
                             "true",
                             "true",
                             "DAS_20407"});
 #line 55
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1188, "When ");
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table1189, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1189 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1190 = new TechTalk.SpecFlow.Table(new string[] {
                             "ComponentName",
                             "ExtraPropertiesText",
                             "ShowInSelfService"});
-                table1189.AddRow(new string[] {
+                table1190.AddRow(new string[] {
                             "Text_Component_Name_Original",
                             "<p>Sunt haud pauci homĭnes,</p>",
                             "true"});
 #line 58
- testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table1189, "When ");
+ testRunner.When("User creates new text component for \'Welcome\' Self Service page via API", ((string)(null)), table1190, "When ");
 #line hidden
 #line 61
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
