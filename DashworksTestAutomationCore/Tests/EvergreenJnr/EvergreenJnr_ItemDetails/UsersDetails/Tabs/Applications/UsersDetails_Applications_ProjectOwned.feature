@@ -19,21 +19,22 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	Then "1" rows found label displays on Details Page
-	When User clicks following checkboxes from Column Settings panel for the 'Current App' column:
-	| checkboxes           |
-	| Current App          |
-	| Target App           |
-	| Target App Readiness |
-	Then following columns are displayed on the Item details page:
-	| ColumnName                     |
+	When User clicks following checkboxes from Column Settings panel for the 'Target App' column:
+	| checkboxes                     |
 	| Vendor                         |
 	| Version                        |
-	| Criticality                    |
+	| Application                    |
+	| Hide From End Users            |
 	| Rationalisation                |
 	| Target App                     |
-	| Target App Criticality         |
 	| Target App Hide From End Users |
 	| Target App Readiness           |
+	Then following columns are displayed on the Item details page:
+	| ColumnName                     |
+	| Criticality                    |
+	| Hide From End Users            |
+	| Target App Criticality         |
+	| Target App Hide From End Users |
 	| Path                           |
 	| Category                       |
 	| Workflow                       |

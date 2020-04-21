@@ -179,33 +179,35 @@ this.FeatureBackground();
                 TechTalk.SpecFlow.Table table3243 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
                 table3243.AddRow(new string[] {
-                            "Current App"});
+                            "Vendor"});
+                table3243.AddRow(new string[] {
+                            "Version"});
+                table3243.AddRow(new string[] {
+                            "Application"});
+                table3243.AddRow(new string[] {
+                            "Hide From End Users"});
+                table3243.AddRow(new string[] {
+                            "Rationalisation"});
                 table3243.AddRow(new string[] {
                             "Target App"});
                 table3243.AddRow(new string[] {
+                            "Target App Hide From End Users"});
+                table3243.AddRow(new string[] {
                             "Target App Readiness"});
 #line 22
- testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Current App\'" +
-                        " column:", ((string)(null)), table3243, "When ");
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Target App\' " +
+                        "column:", ((string)(null)), table3243, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table3244 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
                 table3244.AddRow(new string[] {
-                            "Vendor"});
-                table3244.AddRow(new string[] {
-                            "Version"});
-                table3244.AddRow(new string[] {
                             "Criticality"});
                 table3244.AddRow(new string[] {
-                            "Rationalisation"});
-                table3244.AddRow(new string[] {
-                            "Target App"});
+                            "Hide From End Users"});
                 table3244.AddRow(new string[] {
                             "Target App Criticality"});
                 table3244.AddRow(new string[] {
                             "Target App Hide From End Users"});
-                table3244.AddRow(new string[] {
-                            "Target App Readiness"});
                 table3244.AddRow(new string[] {
                             "Path"});
                 table3244.AddRow(new string[] {
@@ -216,7 +218,7 @@ this.FeatureBackground();
                             "Date"});
                 table3244.AddRow(new string[] {
                             "Stage 3"});
-#line 27
+#line 32
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3244, "Then ");
 #line hidden
             }
@@ -230,7 +232,7 @@ this.FeatureBackground();
                 "EvergreenJnr_ItemDetails",
                 "UsersDetails",
                 "ApplicationsTab",
-                "DAS18700"}, SourceLine=43)]
+                "DAS18700"}, SourceLine=44)]
         public virtual void EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrectlyOnProjectOwnedTab()
         {
             string[] tagsOfScenario = new string[] {
@@ -248,7 +250,7 @@ this.FeatureBackground();
                         "UsersDetails",
                         "ApplicationsTab",
                         "DAS18700"});
-#line 44
+#line 45
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -271,41 +273,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 45
+#line 46
  testRunner.When("User navigates to the \'User\' details page for \'LYZ6880619\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 46
+#line 47
  testRunner.Then("Details page for \'LYZ6880619\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 47
+#line 48
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                         "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 48
+#line 49
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 49
+#line 50
  testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 50
+#line 51
  testRunner.Then("\"Rationalisation\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table3245 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
                 table3245.AddRow(new string[] {
                             "UNCATEGORISED"});
-#line 51
+#line 52
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Rationali" +
                         "sation\' column:", ((string)(null)), table3245, "Then ");
 #line hidden
-#line 54
+#line 55
  testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table3246 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
                 table3246.AddRow(new string[] {
                             "UNCATEGORISED"});
-#line 55
+#line 56
  testRunner.Then("\'Rationalisation\' column contains following content", ((string)(null)), table3246, "Then ");
 #line hidden
             }
@@ -318,7 +320,7 @@ this.FeatureBackground();
                 "EvergreenJnr_ItemDetails",
                 "UsersDetails",
                 "ApplicationsTab",
-                "DAS18743"}, SourceLine=59)]
+                "DAS18743"}, SourceLine=60)]
         public virtual void EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -335,7 +337,7 @@ this.FeatureBackground();
                         "UsersDetails",
                         "ApplicationsTab",
                         "DAS18743"});
-#line 60
+#line 61
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -358,32 +360,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 61
+#line 62
  testRunner.When("User navigates to the \'User\' details page for \'LYZ6880619\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 62
+#line 63
  testRunner.Then("Details page for \'LYZ6880619\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 63
+#line 64
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                         "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 64
+#line 65
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 65
+#line 66
  testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 66
+#line 67
  testRunner.When("User clicks \"Quartus II 2.0 Web Edition Full\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 67
+#line 68
  testRunner.Then("Details page for \'Quartus II 2.0 Web Edition Full\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 68
+#line 69
  testRunner.Then("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 69
+#line 70
  testRunner.And("Details page for \'LYZ6880619\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -397,7 +399,7 @@ this.FeatureBackground();
                 "EvergreenJnr_ItemDetails",
                 "UsersDetails",
                 "ApplicationsTab",
-                "DAS19321"}, SourceLine=71)]
+                "DAS19321"}, SourceLine=72)]
         public virtual void EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject()
         {
             string[] tagsOfScenario = new string[] {
@@ -415,7 +417,7 @@ this.FeatureBackground();
                         "UsersDetails",
                         "ApplicationsTab",
                         "DAS19321"});
-#line 72
+#line 73
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -438,30 +440,30 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 73
+#line 74
  testRunner.When("User navigates to the \'User\' details page for the item with \'29342\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 74
+#line 75
  testRunner.Then("Details page for \'SNL594136\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 75
+#line 76
  testRunner.When("User selects \'Barry\'s User Project\' in the \'Item Details Project\' dropdown with w" +
                         "ait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 76
+#line 77
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 77
+#line 78
  testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 78
+#line 79
  testRunner.Then("\'VideoLAN VLC media player 0.8.2-test2 (A01)\' content is displayed in the \'Curren" +
                         "t App\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 79
+#line 80
  testRunner.When("User selects \'Havoc (Big Data)\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 80
+#line 81
  testRunner.Then("\'Vertigo Managed Smart Documents Wrapper (SMS_GEN)\' content is displayed in the \'" +
                         "Current App\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -479,7 +481,7 @@ this.FeatureBackground();
                 "DAS20047",
                 "DAS20088",
                 "DAS20186",
-                "Not_Ready"}, SourceLine=83)]
+                "Not_Ready"}, SourceLine=84)]
         public virtual void EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnProjectOwnedTab()
         {
             string[] tagsOfScenario = new string[] {
@@ -503,7 +505,7 @@ this.FeatureBackground();
                         "DAS20088",
                         "DAS20186",
                         "Not_Ready"});
-#line 84
+#line 85
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -526,33 +528,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 85
+#line 86
  testRunner.When("User navigates to the \'User\' details page for the item with \'537\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 86
+#line 87
  testRunner.Then("Details page for \'CVS3269200\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 87
+#line 88
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                         "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 88
+#line 89
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 89
+#line 90
  testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 90
+#line 91
  testRunner.Then("\'Empty\' content is displayed in the \'Current App\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 91
+#line 92
  testRunner.When("User clicks \"Empty\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 92
+#line 93
  testRunner.Then("\'User Evergreen Capacity Project\' content is displayed in \'Item Details Project\' " +
                         "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 93
+#line 94
  testRunner.Then("\'Details\' left menu item is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
