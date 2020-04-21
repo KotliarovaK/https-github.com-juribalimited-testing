@@ -222,14 +222,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3426 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3432 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3426.AddRow(new string[] {
+                table3432.AddRow(new string[] {
                             "Compliance"});
-                table3426.AddRow(new string[] {
+                table3432.AddRow(new string[] {
                             "Device Key"});
 #line 24
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3426, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3432, "When ");
 #line hidden
 #line 28
  testRunner.When("User create dynamic list with \"ATestListAA0888\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -288,19 +288,19 @@ this.FeatureBackground();
 #line 46
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3427 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3433 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3427.AddRow(new string[] {
+                table3433.AddRow(new string[] {
                             "Import"});
 #line 47
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3427, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3433, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3428 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3434 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3428.AddRow(new string[] {
+                table3434.AddRow(new string[] {
                             "Import"});
 #line 50
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table3428, "Then ");
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table3434, "Then ");
 #line hidden
 #line 53
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -353,16 +353,16 @@ this.FeatureBackground();
 #line 69
  testRunner.Then("\"ATestListAA0888\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3429 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3435 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table3429.AddRow(new string[] {
+                table3435.AddRow(new string[] {
                             "Compliance"});
-                table3429.AddRow(new string[] {
+                table3435.AddRow(new string[] {
                             "Device Key"});
-                table3429.AddRow(new string[] {
+                table3435.AddRow(new string[] {
                             "Import"});
 #line 70
- testRunner.And("ColumnName is added to the list", ((string)(null)), table3429, "And ");
+ testRunner.And("ColumnName is added to the list", ((string)(null)), table3435, "And ");
 #line hidden
 #line 75
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -449,15 +449,15 @@ this.FeatureBackground();
 #line 88
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3430 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3436 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table3430.AddRow(new string[] {
+                table3436.AddRow(new string[] {
                             "Red"});
-                table3430.AddRow(new string[] {
+                table3436.AddRow(new string[] {
                             "Amber"});
 #line 89
  testRunner.When("User add \"Compliance\" filter where type is \"Equals\" with added column and followi" +
-                        "ng checkboxes:", ((string)(null)), table3430, "When ");
+                        "ng checkboxes:", ((string)(null)), table3436, "When ");
 #line hidden
 #line 93
  testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

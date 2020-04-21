@@ -301,20 +301,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table3306 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3312 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Email",
                             "FullName",
                             "Password",
                             "Roles"});
-                table3306.AddRow(new string[] {
+                table3312.AddRow(new string[] {
                             "OwnerForDAS10880",
                             "Value",
                             "OwnerForDAS10880",
                             "m!gration",
                             "Project Administrator"});
 #line 41
- testRunner.When("User create new User via API", ((string)(null)), table3306, "When ");
+ testRunner.When("User create new User via API", ((string)(null)), table3312, "When ");
 #line hidden
 #line 44
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -322,13 +322,13 @@ this.FeatureBackground();
 #line 45
  testRunner.Then(string.Format("\'All {0}\' list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table3307 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3313 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table3307.AddRow(new string[] {
+                table3313.AddRow(new string[] {
                             string.Format("{0}", itemName)});
 #line 46
  testRunner.When(string.Format("User create static list with \"STATICListDAS10880\" name on \"{0}\" page with followi" +
-                            "ng items", pageName), ((string)(null)), table3307, "When ");
+                            "ng items", pageName), ((string)(null)), table3313, "When ");
 #line hidden
 #line 49
  testRunner.Then("\"STATICListDAS10880\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -375,14 +375,14 @@ this.FeatureBackground();
 #line 63
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3308 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3314 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table3308.AddRow(new string[] {
+                table3314.AddRow(new string[] {
                             "OwnerForDAS10880",
                             "m!gration"});
 #line 64
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3308, "When ");
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3314, "When ");
 #line hidden
 #line 67
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

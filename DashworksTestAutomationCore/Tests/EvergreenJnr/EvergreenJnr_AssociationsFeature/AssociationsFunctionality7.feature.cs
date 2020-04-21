@@ -406,25 +406,19 @@ this.FeatureBackground();
         
         [TechTalk.SpecRun.ScenarioAttribute("EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying", new string[] {
                 "Evergreen",
-                "ProfileDetails",
-                "EvergreenJnr_ProfileDetails",
-                "UserProfile",
+                "Associations",
                 "DAS18234",
                 "Remove_Profile_Changes"}, SourceLine=64)]
         public virtual void EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
-                    "ProfileDetails",
-                    "EvergreenJnr_ProfileDetails",
-                    "UserProfile",
+                    "Associations",
                     "DAS18234",
                     "Remove_Profile_Changes"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying", null, new string[] {
                         "Evergreen",
-                        "ProfileDetails",
-                        "EvergreenJnr_ProfileDetails",
-                        "UserProfile",
+                        "Associations",
                         "DAS18234",
                         "Remove_Profile_Changes"});
 #line 65
@@ -565,12 +559,12 @@ this.FeatureBackground();
 #line 90
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1742 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1743 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1742.AddRow(new string[] {
+                table1743.AddRow(new string[] {
                             "App Phoenix Field"});
 #line 91
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1742, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1743, "When ");
 #line hidden
 #line 94
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

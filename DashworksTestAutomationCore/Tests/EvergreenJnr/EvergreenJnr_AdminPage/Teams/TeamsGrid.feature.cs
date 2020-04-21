@@ -140,16 +140,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1709 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1710 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1709.AddRow(new string[] {
+                table1710.AddRow(new string[] {
                             "NewTeam_Test",
                             "12894587454",
                             "false"});
 #line 10
- testRunner.When("User creates new Team via api", ((string)(null)), table1709, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1710, "When ");
 #line hidden
 #line 13
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -263,16 +263,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1710 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1711 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1710.AddRow(new string[] {
+                table1711.AddRow(new string[] {
                             "das13000test_default",
                             "test_team",
                             "true"});
 #line 27
- testRunner.When("User creates new Team via api", ((string)(null)), table1710, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1711, "When ");
 #line hidden
 #line 30
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -292,16 +292,16 @@ this.FeatureBackground();
 #line 35
  testRunner.Then("\'TRUE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1711 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1712 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1711.AddRow(new string[] {
+                table1712.AddRow(new string[] {
                             "das15000test_default2",
                             "12894587454",
                             "true"});
 #line 36
- testRunner.When("User creates new Team via api", ((string)(null)), table1711, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1712, "When ");
 #line hidden
 #line 39
  testRunner.When("User clicks Refresh button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

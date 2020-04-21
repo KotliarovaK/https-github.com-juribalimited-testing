@@ -155,38 +155,38 @@ this.FeatureBackground();
 #line 11
  testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2906 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2912 = new TechTalk.SpecFlow.Table(new string[] {
                             "TabName"});
-                table2906.AddRow(new string[] {
+                table2912.AddRow(new string[] {
                             "Details"});
-                table2906.AddRow(new string[] {
+                table2912.AddRow(new string[] {
                             "Projects"});
-                table2906.AddRow(new string[] {
+                table2912.AddRow(new string[] {
                             "Specification"});
-                table2906.AddRow(new string[] {
+                table2912.AddRow(new string[] {
                             "Active Directory"});
-                table2906.AddRow(new string[] {
+                table2912.AddRow(new string[] {
                             "Applications"});
-                table2906.AddRow(new string[] {
+                table2912.AddRow(new string[] {
                             "Compliance"});
 #line 12
- testRunner.And("User sees following parent left menu items", ((string)(null)), table2906, "And ");
+ testRunner.And("User sees following parent left menu items", ((string)(null)), table2912, "And ");
 #line hidden
 #line 20
  testRunner.And("\'Users\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2907 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2913 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2907.AddRow(new string[] {
+                table2913.AddRow(new string[] {
                             "Device"});
-                table2907.AddRow(new string[] {
+                table2913.AddRow(new string[] {
                             "Device Owner"});
-                table2907.AddRow(new string[] {
+                table2913.AddRow(new string[] {
                             "Department and Location"});
-                table2907.AddRow(new string[] {
+                table2913.AddRow(new string[] {
                             "Custom Fields"});
 #line 22
- testRunner.And("\'Details\' left menu have following submenu items:", ((string)(null)), table2907, "And ");
+ testRunner.And("\'Details\' left menu have following submenu items:", ((string)(null)), table2913, "And ");
 #line hidden
 #line 29
  testRunner.And("\'Custom Fields\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -203,18 +203,18 @@ this.FeatureBackground();
 #line 34
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2908 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2914 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2908.AddRow(new string[] {
+                table2914.AddRow(new string[] {
                             "Evergreen Details"});
-                table2908.AddRow(new string[] {
+                table2914.AddRow(new string[] {
                             "Project Details"});
-                table2908.AddRow(new string[] {
+                table2914.AddRow(new string[] {
                             "Projects Summary"});
-                table2908.AddRow(new string[] {
+                table2914.AddRow(new string[] {
                             "Owner Projects Summary"});
 #line 35
- testRunner.Then("\'Projects\' left menu have following submenu items:", ((string)(null)), table2908, "Then ");
+ testRunner.Then("\'Projects\' left menu have following submenu items:", ((string)(null)), table2914, "Then ");
 #line hidden
 #line 42
  testRunner.And("\'Projects Summary\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -231,22 +231,22 @@ this.FeatureBackground();
 #line 47
  testRunner.When("User navigates to the \'Specification\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2909 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2915 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2909.AddRow(new string[] {
+                table2915.AddRow(new string[] {
                             "Specification"});
-                table2909.AddRow(new string[] {
+                table2915.AddRow(new string[] {
                             "Network Cards"});
-                table2909.AddRow(new string[] {
+                table2915.AddRow(new string[] {
                             "CPUS"});
-                table2909.AddRow(new string[] {
+                table2915.AddRow(new string[] {
                             "Video Cards"});
-                table2909.AddRow(new string[] {
+                table2915.AddRow(new string[] {
                             "Monitors"});
-                table2909.AddRow(new string[] {
+                table2915.AddRow(new string[] {
                             "Sound Cards"});
 #line 48
- testRunner.Then("\'Specification\' left menu have following submenu items:", ((string)(null)), table2909, "Then ");
+ testRunner.Then("\'Specification\' left menu have following submenu items:", ((string)(null)), table2915, "Then ");
 #line hidden
 #line 57
  testRunner.And("\'Network Cards\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -269,16 +269,16 @@ this.FeatureBackground();
 #line 64
  testRunner.When("User navigates to the \'Active Directory\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2910 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2916 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2910.AddRow(new string[] {
+                table2916.AddRow(new string[] {
                             "Active Directory"});
-                table2910.AddRow(new string[] {
+                table2916.AddRow(new string[] {
                             "Groups"});
-                table2910.AddRow(new string[] {
+                table2916.AddRow(new string[] {
                             "LDAP"});
 #line 65
- testRunner.Then("\'Active Directory\' left menu have following submenu items:", ((string)(null)), table2910, "Then ");
+ testRunner.Then("\'Active Directory\' left menu have following submenu items:", ((string)(null)), table2916, "Then ");
 #line hidden
 #line 71
  testRunner.And("\'Groups\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -292,18 +292,18 @@ this.FeatureBackground();
 #line 75
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2911 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2917 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2911.AddRow(new string[] {
+                table2917.AddRow(new string[] {
                             "Evergreen Summary"});
-                table2911.AddRow(new string[] {
+                table2917.AddRow(new string[] {
                             "Evergreen Detail"});
-                table2911.AddRow(new string[] {
+                table2917.AddRow(new string[] {
                             "Advertisements"});
-                table2911.AddRow(new string[] {
+                table2917.AddRow(new string[] {
                             "Collections"});
 #line 76
- testRunner.Then("\'Applications\' left menu have following submenu items:", ((string)(null)), table2911, "Then ");
+ testRunner.Then("\'Applications\' left menu have following submenu items:", ((string)(null)), table2917, "Then ");
 #line hidden
 #line 83
  testRunner.And("\'Evergreen Summary\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -320,20 +320,20 @@ this.FeatureBackground();
 #line 88
  testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2912 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2918 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2912.AddRow(new string[] {
+                table2918.AddRow(new string[] {
                             "Overview"});
-                table2912.AddRow(new string[] {
+                table2918.AddRow(new string[] {
                             "Hardware Summary"});
-                table2912.AddRow(new string[] {
+                table2918.AddRow(new string[] {
                             "Hardware Rules"});
-                table2912.AddRow(new string[] {
+                table2918.AddRow(new string[] {
                             "Application Summary"});
-                table2912.AddRow(new string[] {
+                table2918.AddRow(new string[] {
                             "Application Issues"});
 #line 89
- testRunner.Then("\'Compliance\' left menu have following submenu items:", ((string)(null)), table2912, "Then ");
+ testRunner.Then("\'Compliance\' left menu have following submenu items:", ((string)(null)), table2918, "Then ");
 #line hidden
 #line 97
  testRunner.And("\'Application Issues\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -414,22 +414,22 @@ this.FeatureBackground();
 #line 107
  testRunner.When("User selects \'Havoc (Big Data)\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2913 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2919 = new TechTalk.SpecFlow.Table(new string[] {
                             "TabName"});
-                table2913.AddRow(new string[] {
+                table2919.AddRow(new string[] {
                             "Details"});
-                table2913.AddRow(new string[] {
+                table2919.AddRow(new string[] {
                             "Projects"});
-                table2913.AddRow(new string[] {
+                table2919.AddRow(new string[] {
                             "Specification"});
-                table2913.AddRow(new string[] {
+                table2919.AddRow(new string[] {
                             "Active Directory"});
-                table2913.AddRow(new string[] {
+                table2919.AddRow(new string[] {
                             "Applications"});
-                table2913.AddRow(new string[] {
+                table2919.AddRow(new string[] {
                             "Compliance"});
 #line 108
- testRunner.Then("User sees following parent left menu items", ((string)(null)), table2913, "Then ");
+ testRunner.Then("User sees following parent left menu items", ((string)(null)), table2919, "Then ");
 #line hidden
 #line 116
  testRunner.And("\'Users\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -437,18 +437,18 @@ this.FeatureBackground();
 #line 117
  testRunner.And("\'Related\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2914 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2920 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2914.AddRow(new string[] {
+                table2920.AddRow(new string[] {
                             "Device"});
-                table2914.AddRow(new string[] {
+                table2920.AddRow(new string[] {
                             "Device Owner"});
-                table2914.AddRow(new string[] {
+                table2920.AddRow(new string[] {
                             "Department and Location"});
-                table2914.AddRow(new string[] {
+                table2920.AddRow(new string[] {
                             "Custom Fields"});
 #line 119
- testRunner.And("\'Details\' left menu have following submenu items:", ((string)(null)), table2914, "And ");
+ testRunner.And("\'Details\' left menu have following submenu items:", ((string)(null)), table2920, "And ");
 #line hidden
 #line 126
  testRunner.And("\'Custom Fields\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -465,18 +465,18 @@ this.FeatureBackground();
 #line 131
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2915 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2921 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2915.AddRow(new string[] {
+                table2921.AddRow(new string[] {
                             "Evergreen Details"});
-                table2915.AddRow(new string[] {
+                table2921.AddRow(new string[] {
                             "Project Details"});
-                table2915.AddRow(new string[] {
+                table2921.AddRow(new string[] {
                             "Projects Summary"});
-                table2915.AddRow(new string[] {
+                table2921.AddRow(new string[] {
                             "Owner Projects Summary"});
 #line 132
- testRunner.Then("\'Projects\' left menu have following submenu items:", ((string)(null)), table2915, "Then ");
+ testRunner.Then("\'Projects\' left menu have following submenu items:", ((string)(null)), table2921, "Then ");
 #line hidden
 #line 139
  testRunner.And("\'Projects Summary\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -493,22 +493,22 @@ this.FeatureBackground();
 #line 144
  testRunner.When("User navigates to the \'Specification\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2916 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2922 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2916.AddRow(new string[] {
+                table2922.AddRow(new string[] {
                             "Specification"});
-                table2916.AddRow(new string[] {
+                table2922.AddRow(new string[] {
                             "Network Cards"});
-                table2916.AddRow(new string[] {
+                table2922.AddRow(new string[] {
                             "CPUS"});
-                table2916.AddRow(new string[] {
+                table2922.AddRow(new string[] {
                             "Video Cards"});
-                table2916.AddRow(new string[] {
+                table2922.AddRow(new string[] {
                             "Monitors"});
-                table2916.AddRow(new string[] {
+                table2922.AddRow(new string[] {
                             "Sound Cards"});
 #line 145
- testRunner.Then("\'Specification\' left menu have following submenu items:", ((string)(null)), table2916, "Then ");
+ testRunner.Then("\'Specification\' left menu have following submenu items:", ((string)(null)), table2922, "Then ");
 #line hidden
 #line 154
  testRunner.And("\'Network Cards\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -531,16 +531,16 @@ this.FeatureBackground();
 #line 161
  testRunner.When("User navigates to the \'Active Directory\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2917 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2923 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2917.AddRow(new string[] {
+                table2923.AddRow(new string[] {
                             "Active Directory"});
-                table2917.AddRow(new string[] {
+                table2923.AddRow(new string[] {
                             "Groups"});
-                table2917.AddRow(new string[] {
+                table2923.AddRow(new string[] {
                             "LDAP"});
 #line 162
- testRunner.Then("\'Active Directory\' left menu have following submenu items:", ((string)(null)), table2917, "Then ");
+ testRunner.Then("\'Active Directory\' left menu have following submenu items:", ((string)(null)), table2923, "Then ");
 #line hidden
 #line 168
  testRunner.And("\'Groups\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -554,18 +554,18 @@ this.FeatureBackground();
 #line 172
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2918 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2924 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2918.AddRow(new string[] {
+                table2924.AddRow(new string[] {
                             "Evergreen Summary"});
-                table2918.AddRow(new string[] {
+                table2924.AddRow(new string[] {
                             "Evergreen Detail"});
-                table2918.AddRow(new string[] {
+                table2924.AddRow(new string[] {
                             "Advertisements"});
-                table2918.AddRow(new string[] {
+                table2924.AddRow(new string[] {
                             "Collections"});
 #line 173
- testRunner.Then("\'Applications\' left menu have following submenu items:", ((string)(null)), table2918, "Then ");
+ testRunner.Then("\'Applications\' left menu have following submenu items:", ((string)(null)), table2924, "Then ");
 #line hidden
 #line 180
  testRunner.And("\'Evergreen Summary\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -582,20 +582,20 @@ this.FeatureBackground();
 #line 185
  testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2919 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2925 = new TechTalk.SpecFlow.Table(new string[] {
                             "SubTabName"});
-                table2919.AddRow(new string[] {
+                table2925.AddRow(new string[] {
                             "Overview"});
-                table2919.AddRow(new string[] {
+                table2925.AddRow(new string[] {
                             "Hardware Summary"});
-                table2919.AddRow(new string[] {
+                table2925.AddRow(new string[] {
                             "Hardware Rules"});
-                table2919.AddRow(new string[] {
+                table2925.AddRow(new string[] {
                             "Application Summary"});
-                table2919.AddRow(new string[] {
+                table2925.AddRow(new string[] {
                             "Application Issues"});
 #line 186
- testRunner.Then("\'Compliance\' left menu have following submenu items:", ((string)(null)), table2919, "Then ");
+ testRunner.Then("\'Compliance\' left menu have following submenu items:", ((string)(null)), table2925, "Then ");
 #line hidden
 #line 194
  testRunner.And("\'Application Issues\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
