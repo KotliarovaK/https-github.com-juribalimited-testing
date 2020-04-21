@@ -220,36 +220,36 @@ this.FeatureBackground();
 #line 30
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1727 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1736 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table1727.AddRow(new string[] {
+                table1736.AddRow(new string[] {
                             "Device Country"});
-                table1727.AddRow(new string[] {
+                table1736.AddRow(new string[] {
                             "Device Building"});
-                table1727.AddRow(new string[] {
+                table1736.AddRow(new string[] {
                             "Device City"});
-                table1727.AddRow(new string[] {
+                table1736.AddRow(new string[] {
                             "Device Floor"});
 #line 31
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1727, "When ");
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1736, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1728 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1737 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table1728.AddRow(new string[] {
+                table1737.AddRow(new string[] {
                             "Device Location Name"});
-                table1728.AddRow(new string[] {
+                table1737.AddRow(new string[] {
                             "Device Postal Code"});
 #line 37
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1728, "When ");
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1737, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1729 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1738 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1729.AddRow(new string[] {
+                table1738.AddRow(new string[] {
                             "Device Region"});
-                table1729.AddRow(new string[] {
+                table1738.AddRow(new string[] {
                             "Device State County"});
 #line 41
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1729, "When ");
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1738, "When ");
 #line hidden
 #line 45
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -346,32 +346,32 @@ this.FeatureBackground();
 #line 64
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1730 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1739 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table1730.AddRow(new string[] {
+                table1739.AddRow(new string[] {
                             "Device OS Branch"});
-                table1730.AddRow(new string[] {
+                table1739.AddRow(new string[] {
                             "Device OS Architecture"});
-                table1730.AddRow(new string[] {
+                table1739.AddRow(new string[] {
                             "Device OS Full Name"});
 #line 65
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1730, "When ");
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1739, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1731 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1740 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table1731.AddRow(new string[] {
+                table1740.AddRow(new string[] {
                             "Device OS Servicing State"});
-                table1731.AddRow(new string[] {
+                table1740.AddRow(new string[] {
                             "Device Operating System"});
 #line 70
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1731, "When ");
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table1740, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1732 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1741 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1732.AddRow(new string[] {
+                table1741.AddRow(new string[] {
                             "Device Service Pack or Build"});
 #line 74
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1732, "When ");
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table1741, "When ");
 #line hidden
 #line 77
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
