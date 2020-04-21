@@ -9,6 +9,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
+using DashworksTestAutomation.Utils;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -38,8 +39,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             try
             {
-                var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                           ResourceFilesNamesProvider.ResourcesFolderRoot + $"{fileName}";
+                var file = FileSystemHelper.GeneratePathToEmbeddedResource(fileName,
+                    FileSystemHelper.DataFolder.Resources);
                 dashboardPage.ChooseFile.SendKeys(file);
             }
             catch (Exception e)

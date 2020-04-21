@@ -45,6 +45,8 @@ Scenario: EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed
 	When User enters 'automation2@juriba.com' text to 'Email' textbox
 	When User Upload correct avatar to Account Details
 	Then 'Image changed' text is displayed on inline success banner
+	#Wait for green banner to disappear
+	When User waits for '6' seconds
 	Then User picture is changed to uploaded photo
 	When User clicks 'REMOVE' button
 	Then 'Image removed' text is displayed on inline success banner

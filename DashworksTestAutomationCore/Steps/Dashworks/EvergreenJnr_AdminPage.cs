@@ -344,8 +344,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             try
             {
-                var file = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory))) +
-                           ResourceFilesNamesProvider.ResourcesFolderRoot + $"{fileNameAndExtension}";
+                var file = FileSystemHelper.GeneratePathToEmbeddedResource(fileNameAndExtension,
+                    FileSystemHelper.DataFolder.Resources);
                 page.ButtonChooseFile.SendKeys(file);
             }
             catch (Exception e)

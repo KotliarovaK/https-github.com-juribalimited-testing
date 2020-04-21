@@ -148,6 +148,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	Then User sees number of Sections increased by '-1' on Dashboards page
 	Then User sees number of Widgets increased by '-1' on Dashboards page
 
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS20827 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCollapsedSectionCanBeDeleted
+	When Dashboard with 'Dashboard to delete' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 1_Widget | All Devices | 5       | 5          |
+	Then '1_Widget' Widget is displayed to the user
+	When User clicks 'Edit' menu option for section with '1_Widget' widget
+	When User enters 'SectionName' text to 'Title' textbox
+	When User clicks 'UPDATE' button
+	When User clicks 'ADD SECTION' button 
+	When User remembers number of Sections and Widgets on Dashboards page
+	When User sets expand status to 'false' for 'SectionName' section
+	When User clicks 'Delete' menu option for section with '1_Widget' widget
+	When User confirms item deleting on Dashboards page
+	Then User sees number of Sections increased by '-1' on Dashboards page	
+
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14472 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeHiddenAndShown
 	When Dashboard with 'Dashboard for HiddenSection' name created via API and opened

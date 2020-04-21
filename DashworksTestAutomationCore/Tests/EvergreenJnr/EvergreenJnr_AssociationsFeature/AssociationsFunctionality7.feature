@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatParticularFilterWorkWithAssocia
 	Then table content is present
 	Then URL contains 'deviceapplications?$filter=(chassisCategory%20EQUALS%20('Desktop'%2C'Laptop'))&$association=(project_1_current%20AND%20nuod%20AND%20netd%20AND%20iod%20AND%20netdo%20AND%20nubdo)'
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS18234 @Remove_Profile_Changes
+@Evergreen @Associations @DAS18234 @Remove_Profile_Changes
 Scenario: EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
