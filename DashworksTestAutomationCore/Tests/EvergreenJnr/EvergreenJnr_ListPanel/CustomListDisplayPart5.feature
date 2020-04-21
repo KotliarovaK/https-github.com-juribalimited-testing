@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "ATestList0A788F" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "(Compliance = Red or Amber) OR (City = London)" text is displayed in filter container
+	And "(Compliance = Amber or Red) OR (City = London)" text is displayed in filter container
 	And "Compliance is Red or Amber" is displayed in added filter info
 	And "City is London" is displayed in added filter info
 	When User navigates to the "All Devices" list
