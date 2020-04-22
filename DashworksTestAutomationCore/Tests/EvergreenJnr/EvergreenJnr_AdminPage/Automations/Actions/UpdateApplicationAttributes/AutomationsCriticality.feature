@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunN
 	Then 'KEEP' content is displayed in the 'UseMeForAu: Rationalisation' column
 	Then 'TRUE' content is displayed in the 'UseMeForAu: Hide From End Users' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19312 @DAS19566 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19312 @DAS19566 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNowForEvergreen
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
@@ -275,6 +275,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunN
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	When User clicks content from "Objects" column
+	Then 'All Applications' list should be displayed to the user
 	Then 'Core' content is displayed in the 'Criticality' column
 	Then 'RED' content is displayed in the 'Sticky Compliance' column
 	Then 'KEEP' content is displayed in the 'Evergreen Rationalisation' column

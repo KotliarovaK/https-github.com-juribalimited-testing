@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogCreateEditPageD
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19542 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19542 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogRunNow
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
