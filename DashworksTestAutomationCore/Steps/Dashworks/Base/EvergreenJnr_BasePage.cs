@@ -779,6 +779,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
 
+            //If a Project was just created we need to wait before it appears in dropdown
             if (page.GetDropdown(dropdownName).Text.Equals("Evergreen"))
             {
                 try
@@ -794,7 +795,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     page.SelectDropdown(value, dropdownName);
                     return;
                 }
-            } else
+            } 
+            else
             {
                 page.SelectDropdown(value, dropdownName);
             }
