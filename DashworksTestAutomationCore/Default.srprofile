@@ -6,6 +6,7 @@
       collected statistics, set testSchedulingMode="Adaptive" attribute on the <Execution> element.
     <Server serverUrl="http://specrunserver:6365" publishResults="true" />
   -->
+  <VSTest testRetryResults="Unified" passRateRelative="50%"/>
   <TestAssemblyPaths>
     <TestAssemblyPath>DashworksTestAutomationCore.dll</TestAssemblyPath>
   </TestAssemblyPaths>
