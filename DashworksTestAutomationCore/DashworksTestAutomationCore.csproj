@@ -45,7 +45,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ApprovalTests" Version="5.0.0" />
     <PackageReference Include="AutomationUtils" Version="1.0.10" />
     <PackageReference Include="BoDi" Version="1.4.1" />
     <PackageReference Include="CompareNETObjects" Version="4.66.0" />
@@ -166,6 +165,30 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Resources\IncorrectFile.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\Columns\Applications.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\Columns\Devices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\Columns\Mailboxes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\Columns\Users.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\Filters\Applications.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\Filters\Devices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\Filters\Mailboxes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\Filters\Users.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Tests\TestFeature.feature">
