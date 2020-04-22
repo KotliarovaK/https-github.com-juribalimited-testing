@@ -451,9 +451,14 @@ namespace DashworksTestAutomation.Helpers
             //string userId =
             //    DatabaseHelper.ExecuteReader(
             //        $"SELECT [aspnetdb].[dbo].[aspnet_Users].[UserId] FROM[aspnetdb].[dbo].[aspnet_Users] where UserName = '{_user.UserName}'", 0).LastOrDefault();
+     
+            if (listName.Equals("All Applications")) 
+            {
+                return "-1";
+            }
 
             return DatabaseHelper.ExecuteReader(
-                $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
+               $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
         }
 
         #endregion

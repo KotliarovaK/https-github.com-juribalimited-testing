@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
 {
     public class SelfServiceEndClientBasePage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//das-self-service-header/div")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ssw-header')]")]
         public IWebElement Header { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//das-self-service-footer/div")]

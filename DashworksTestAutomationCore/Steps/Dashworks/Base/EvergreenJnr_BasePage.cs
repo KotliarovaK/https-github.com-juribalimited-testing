@@ -778,7 +778,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.SelectDropdown(value, dropdownName);
+
+            if (page.GetDropdown(dropdownName).Text.Equals("Evergreen"))
+            {
+                try
+                {
+                    Thread.Sleep(5000);
+                    _driver.Navigate().Refresh();
+                    page.SelectDropdown(value, dropdownName);
+                }
+                catch
+                {
+                    Thread.Sleep(10000);
+                    _driver.Navigate().Refresh();
+                    page.SelectDropdown(value, dropdownName);
+                    return;
+                }
+            } else
+            {
+                page.SelectDropdown(value, dropdownName);
+            }
         }
 
         [When(@"User selects '(.*)' in the '(.*)' dropdown with wait")]
