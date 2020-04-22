@@ -1088,7 +1088,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             list.Remove("Evergreen"); //Remove 'Evergreen' checkbox that can be present on some filters (ALWAYS IN THE TOP)
 
             page.BodyContainer.Click();
-            Verify.AreEqual(list.OrderBy(s => s), list, $"Values in '{columnName}'column are not in alphabetical order");
+            Verify.AreEqual(list.OrderBy(s => s, StringComparer.OrdinalIgnoreCase), list, $"Values in '{columnName}'column are not in alphabetical order");
         }
 
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
