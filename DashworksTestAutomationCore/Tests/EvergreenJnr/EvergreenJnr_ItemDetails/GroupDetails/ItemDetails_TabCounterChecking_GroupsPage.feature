@@ -36,3 +36,20 @@ Scenario: EvergreenJnr_GroupsList_CheckThatNewPatternOfTheVerticalMenuIsDisplaye
 	And 'User Members' left submenu item with some count is displayed
 	And 'Device Members' left submenu item with some count is displayed
 	And 'Member Of' left submenu item with some count is displayed
+
+@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20677
+Scenario: EvergreenJnr_GroupsList_CheckThatNewStyleForSelectAllCheckboxInTheSelectFilterOfTheAgridIsDisplayedCorrectly
+	#When User type "Domain Computers" in Global Search Field
+	#Then User clicks on "Domain Computers" search result
+	When User navigates to the 'Group' details page for the item with '61654' ID
+	Then Details page for 'Domain Computers' item is displayed to the user
+	When User navigates to the 'Members' left menu item
+	When User navigates to the 'Device Members' left submenu item
+	When User clicks String Filter button for "Operating System" column
+	Then Select All checkbox have full checked state
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
+	Then select all rows checkbox is unchecked
+	When User selects "Device" checkbox from String Filter on the Admin page
+	Then Select All checkbox have indeterminate checked state
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
+	Then Select All checkbox have full checked state
