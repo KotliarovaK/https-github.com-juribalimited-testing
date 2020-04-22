@@ -32,6 +32,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
+	When User navigate to the bottom of the Action panel
 	And User selects '<NewValue>' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	When User focus on 'Update Owner' dropdown
@@ -60,8 +61,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects '<DefaultValue>' in the 'Value' dropdown
+	And User selects '<DefaultValue>' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	When User focus on 'Update Owner' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
