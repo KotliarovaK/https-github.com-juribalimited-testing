@@ -62,6 +62,8 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeOwnerWorksPro
     | VSCmdShell |
     When User clicks 'UPDATE ALL CHANGES' button
     When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
 	When User create static list with "DAS_20421_forComponent" name on "Users" page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
@@ -101,22 +103,48 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeOwnerWorksPro
 	| Title     | Value      |
 	| App Owner | Jones Tina |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20239 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
-	When User create static list with "DAS_20421" name on "Applications" page with following items
+	When Project created via API and opened
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
+	| DAS_20421_Proj_1 | All Users | None            | Standalone Project |
+	#User onboarding
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Users' tab on Project Scope Changes page
+	When User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
+	| Objects                              |
+	| 024213574157421A9CD (Reyes, Natasha) |
+	| 03C54BC1198843A4A03 (Jones, Tina)    |
+	When User clicks 'UPDATE ALL CHANGES' button
+	When User clicks 'UPDATE PROJECT' button
+	#Application onboarding
+    When User navigates to the 'Applications' tab on Project Scope Changes page
+    When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+    | Objects    |
+    | VSCmdShell |
+    When User clicks 'UPDATE ALL CHANGES' button
+    When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
+	When User create static list with "DAS_20421_AppList_1" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
-	#Use the step blow as soon as it will be possible instead of gold data
-	#When Project created via API
-	#| ProjectName    | Scope     | ProjectTemplate | Mode               |
-	#| DAS_20325_Proj | All Users | None            | Standalone Project |
 	When User creates Self Service via API and open it
-	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
-	| DAS_20421_SS_1 | 20421_1_SI        | true    | true                | DAS_20421 |
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope               |
+	| DAS_20421_SS_1 | 20421_1_SI        | true    | true                | DAS_20421_AppList_1 |
 	When User creates new application ownership component for 'Welcome' Self Service page via API
-	| ComponentName | ProjectName  | OwnerPermission                                  |
-	| AOC Name      | 2004 Rollout | Allow owner to be removed or set to another user |
+	| ComponentName | ProjectName      | OwnerPermission                                  | OwnerScope |
+	| AOC Name      | DAS_20421_Proj_1 | Allow owner to be removed or set to another user | All Users  |
 	When User navigates to End User landing page with '20421_1_SI' Self Service Identifier
+	When User clicks on 'Change Owner' button on end user Self Service page
+	When User enters 'Jones' in the 'Owner' autocomplete field and selects '03C54BC1198843A4A03 (Jones, Tina)' value
+	When User clicks 'Change Owner' button on popup
+	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
+	| FirstColumn  | SecondColumn        |
+	| Username     | 03C54BC1198843A4A03 |
+	| Domain       | BCLABS              |
+	| Display Name | Jones, Tina         |
 	When User clicks on 'Change Owner' button on end user Self Service page
 	Then popup with 'Change Owner' title is displayed
 	Then 'Remove owner' radio button is enabled

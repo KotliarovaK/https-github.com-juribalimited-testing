@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Compon
             set
             {
                 _userScope = value;
-                ExtraProperties.UserListId = int.Parse(DatabaseHelper.GetProjectListIdScope(value));
+                ExtraProperties.UserListId = int.Parse(DatabaseHelper.GetListId(value));
             }
         }
 

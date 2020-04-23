@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateCapacityUnit
 	Then 'All linked devices' content is displayed in 'Also Move Devices' dropdown
 	Then 'Owned mailboxes only' content is displayed in 'Also Move Mailboxes' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20409 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20409 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergreenAllLinkedDevicesAndAllLinkedMailboxes
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -152,7 +152,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergree
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'Evergreen Capacity Unit' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20409 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20409 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects
 	#Create list
 	When User clicks 'Devices' on the left-hand menu
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'NewProject: Capacity Unit' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20409 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20409 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedCapacityUnit
 	#Create Capacity Unit
 	When User clicks 'Admin' on the left-hand menu
@@ -282,12 +282,12 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedC
 	When User clicks content from "Action" column
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
 	Then '[Capacity unit not found]' content is displayed in 'Capacity Unit' autocomplete
-	Then 'The selected Capacity Unit cannot be found' error message is displayed for 'Capacity Unit' field
+	Then 'The selected capacity unit cannot be found' error message is displayed for 'Capacity Unit' field
 	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
 	Then No error message is displayed for 'Capacity Unit' field
 	Then 'UPDATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20409 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20409 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedProject
 	#Create list
 	When User clicks 'Mailboxes' on the left-hand menu
