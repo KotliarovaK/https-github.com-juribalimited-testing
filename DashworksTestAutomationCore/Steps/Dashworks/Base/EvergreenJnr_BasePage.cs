@@ -779,7 +779,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
 
-            //If a project was just created and onboarded on the project we need to wait before it appears in the 'Item Details Project' dropdown
+            //If a project was just created and application just onboarded on the project we need to wait before it appears in the 'Item Details Project' dropdown
             if (page.GetDropdown(dropdownName).Text.Equals("Evergreen") && dropdownName.Equals("Item Details Project"))
             {
                 try
