@@ -778,28 +778,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-
-            //If a project was just created and application just onboarded on the project we need to wait before it appears in the 'Item Details Project' dropdown
-            if (page.GetDropdown(dropdownName).Text.Equals("Evergreen") && dropdownName.Equals("Item Details Project"))
-            {
-                try
-                {
-                    Thread.Sleep(5000);
-                    _driver.Navigate().Refresh();
-                    page.SelectDropdown(value, dropdownName);
-                }
-                catch
-                {
-                    Thread.Sleep(10000);
-                    _driver.Navigate().Refresh();
-                    page.SelectDropdown(value, dropdownName);
-                    return;
-                }
-            } 
-            else
-            {
-                page.SelectDropdown(value, dropdownName);
-            }
+            page.SelectDropdown(value, dropdownName);
         }
 
         [When(@"User selects '(.*)' in the '(.*)' dropdown with wait")]

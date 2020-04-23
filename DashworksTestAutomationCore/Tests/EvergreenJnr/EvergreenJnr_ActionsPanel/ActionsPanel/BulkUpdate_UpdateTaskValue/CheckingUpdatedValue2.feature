@@ -89,6 +89,14 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatDateWithTimeDisplayedAfterUpdateTas
 	When User clicks 'UPDATE ALL CHANGES' button 
 	Then '2 devices will be added' text is displayed on inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
+	
+	
+	
+	
+	
+	
+	
+	
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
 	When User clicks 'Devices' on the left-hand menu

@@ -62,6 +62,8 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeOwnerWorksPro
     | VSCmdShell |
     When User clicks 'UPDATE ALL CHANGES' button
     When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
 	When User create static list with "DAS_20421_forComponent" name on "Users" page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
@@ -123,6 +125,8 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeAndRemoveOwne
     | VSCmdShell |
     When User clicks 'UPDATE ALL CHANGES' button
     When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
 	When User create static list with "DAS_20421_AppList_1" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
