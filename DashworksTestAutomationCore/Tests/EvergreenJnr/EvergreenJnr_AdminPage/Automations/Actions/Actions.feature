@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| Name                     | Description | IsActive | StopOnFailedAction | Scope       | Run    |
-	| Test_Automation_DAS15938 | DAS15938    | true     | false              | All Devices | Manual |
+	| Test_Automation_DAS15938 | 15DAS15938  | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item

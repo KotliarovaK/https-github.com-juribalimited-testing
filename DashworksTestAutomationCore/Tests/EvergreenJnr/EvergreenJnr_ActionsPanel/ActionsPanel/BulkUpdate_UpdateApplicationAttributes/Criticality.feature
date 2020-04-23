@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18845 @Universe
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18845
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUpdateCriticalityIsVisible
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUpdateCriticalityIsVisible
 	| Not Important |
 	| Uncategorised |
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19225 @Universe
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19225
 Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCriticalityWhenUpdateButtonClicked
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button
