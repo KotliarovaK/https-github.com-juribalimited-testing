@@ -64,3 +64,31 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEditingAndChangingO
 	When User clicks 'UPDATE' button
 	When User navigates to End User landing page with '20050_2_SI' Self Service Identifier
 	Then User sees 'Text component 0' text styled as 'Normal' in the Text Component 'Text_Component_Name_2' that moved to '1' position on 'Welcome' End User page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20626 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
+	When User create static list with "DAS_20626" name on "Applications" page with following items
+	| ItemName   |
+	| VSCmdShell |
+	#Use the step blow as soon as it will be possible instead of gold data
+	#When Project created via API
+	#| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	#| DAS_20626_Proj | All Users | None            | Standalone Project |
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
+	| DAS_20626_SS_1 | 20626_1_SI        | true    | true                | DAS_20626 |
+	When User creates new text component for 'Welcome' Self Service page via API
+	| ComponentName       | ExtraPropertiesText | ShowInSelfService |
+	| Text_Component_Name | <p>normal</p>       | true              |
+	When User creates new application ownership component for 'Welcome' Self Service page via API
+	| ComponentName | ProjectName  | OwnerPermission                  |
+	| AOC Name      | 2004 Rollout | Do not allow owner to be changed |
+	When User navigates to End User landing page with '20626_1_SI' Self Service Identifier
+	And User navigates to the 'Builder' left menu item
+	And User selects 'Edit' cogmenu option for 'Text' item type with 'Text_Component_Name' name on Self Service Builder Panel
+	And User clears text editor
+	And User enters 'Text component 0' text to the text editor
+	And User clicks on item with 'Page' type and 'Welcome' name on Self Service Builder Panel
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
+	Then "YES" button is displayed in the warning message
+	Then "NO" button is displayed in the warning message
