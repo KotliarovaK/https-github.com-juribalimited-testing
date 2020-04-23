@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
             set
             {
                 AutomationListName = value;
-                ListId = int.Parse(GetAutomationListId(value));
+                ListId = int.Parse(DatabaseHelper.GetListId(value));
             }
         }
 
@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
         {
             try
             {
-                if (GetAutomationListId(AutomationListName).Equals("-1"))
+                if (DatabaseHelper.GetListId(AutomationListName).Equals("-1"))
                 {
                     return DatabaseHelper.ExecuteReader(
                             $"select[ObjectTypeID] from[PM].[dbo].[ObjectTypes] where [ObjectType] = '{GetProjectObjectTypeScope(this.AutomationListName)}'",
@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
 
                 return DatabaseHelper
                     .ExecuteReader(
-                        $"select[ObjectTypeId] from[DesktopBI].[dbo].[EvergreenList] where[ListId] = '{this.ListId}'",
+                        $"select[ObjectTypeId] from[DesktopBI].[dbo].[EvergreenList] where [ListId] = '{this.ListId}'",
                         0).LastOrDefault();
             }
             catch (Exception e)
@@ -131,19 +131,6 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
                     return 3;
                 default:
                     throw new Exception($"'{runType}' is not defined Run Type");
-            }
-        }
-
-        private string GetAutomationListId(string listName)
-        {
-            if (new string[] { "All Devices", "All Users", "All Mailboxes", "All Applications" }.Contains(listName))
-            {
-                return "-1";
-            }
-            else
-            {
-                return DatabaseHelper.ExecuteReader(
-                    $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
             }
         }
     }
