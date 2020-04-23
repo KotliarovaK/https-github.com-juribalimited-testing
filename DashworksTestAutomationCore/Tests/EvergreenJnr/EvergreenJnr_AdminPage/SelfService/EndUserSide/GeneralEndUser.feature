@@ -27,6 +27,8 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUndoAllChangesI
     | VSCmdShell |
     When User clicks 'UPDATE ALL CHANGES' button
     When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
 	When User create static list with "DAS_20330_forComponent_1" name on "Users" page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
@@ -79,6 +81,8 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUndoAllChangesI
     | VSCmdShell |
     When User clicks 'UPDATE ALL CHANGES' button
     When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
 	When User create static list with "DAS_20330_forComponent_2" name on "Users" page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
