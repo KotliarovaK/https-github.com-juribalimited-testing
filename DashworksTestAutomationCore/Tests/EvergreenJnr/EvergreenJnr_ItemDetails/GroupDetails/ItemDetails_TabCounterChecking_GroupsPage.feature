@@ -48,13 +48,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatNewStyleForSelectAllCheckboxInTheSele
 	| Other      |
 	When User clicks String Filter button for "Operating System" column
 	Then Select All checkbox have indeterminate checked state
-	When User checks following checkboxes in the filter dropdown menu for the 'Operating System' column:
-	| checkboxes |
-	| Select All |
-	When User clicks String Filter button for "Operating System" column
+	When User selects all rows on the grid
 	Then Select All checkbox have full checked state
-	When User unchecks following checkboxes in the filter dropdown menu for the 'Operating System' column:
-	| checkboxes |
-	| Select All |
-	When User clicks String Filter button for "Operating System" column
-	Then select all rows checkbox is unchecked
+	When User deselect all rows on the grid
+	Then Select All checkbox have unchecked state
