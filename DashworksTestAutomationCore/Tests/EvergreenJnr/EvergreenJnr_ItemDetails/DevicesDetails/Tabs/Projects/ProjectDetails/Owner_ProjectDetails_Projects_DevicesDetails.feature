@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 #AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @X_Ray
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @X_Ray
 Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectly
 	When User navigates to the 'Device' details page for '00CWZRC4UK6W20' item
 	Then Details page for '00CWZRC4UK6W20' item is displayed to the user
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjec
 	Then 'Felicienne Vadnais' content is displayed in the 'Display Name' column
 
 #AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @X_Ray
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @X_Ray
 Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectlyWithSelectedCheckbox
 	When User navigates to the 'Device' details page for '01N3Y2GUS6XTK7' item
 	Then Details page for '01N3Y2GUS6XTK7' item is displayed to the user
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjec
 	Then 'Nicolas O. Mc Millan' content is displayed in the 'Display Name' column
 
 #AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @Cleanup @X_Ray
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @Cleanup @X_Ray
 Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObjectEditorRoleIsWorkingCorrectlyForTheOwnerField
 	When User create new User via API
 	| Username       | Email | FullName | Password  | Roles                          |
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObje
 	Then button for editing the 'Mailbox Owner' field is not displayed
 
 #AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @Cleanup @X_Ray
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @Cleanup @X_Ray
 Scenario: EvergreenJnr_MailboxesList_ChecksthatThePermissionForProjectMailboxObjectEditorRoleIsWorkingCorrectlyForTheOwnerField
 	When User create new User via API
 	| Username       | Email | FullName | Password  | Roles                         |
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksthatThePermissionForProjectMailboxObj
 	When User clicks on edit button for 'Mailbox Owner' field
 
 #AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @Cleanup @X_Ray
 Scenario: EvergreenJnr_ApplicationList_ChecksthatThePermissionForProjectApplicationObjectEditorRoleIsWorkingCorrectlyForTheOwnerField
 	When User create new User via API
 	| Username       | Email | FullName | Password  | Roles                             |
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_ApplicationList_ChecksthatThePermissionForProjectApplicat
 	Then button for editing the 'Mailbox Owner' field is not displayed
 
 #AnnI 4/15/20: DAS20672 will be fixed only for 'X_Ray'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @DAS20839 @X_Ray
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @DAS20839 @X_Ray
 Scenario: EvergreenJnr_DevicesList_ChecksThatEmptyOwnerFieldOnProjectDetailsTabIsDisplayedCorrectly
 	When User navigates to the 'Device' details page for the item with '14' ID
 	Then Details page for '0405FHJHVG45U71' item is displayed to the user
