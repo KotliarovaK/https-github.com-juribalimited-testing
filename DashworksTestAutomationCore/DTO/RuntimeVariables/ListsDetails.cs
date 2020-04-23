@@ -43,9 +43,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
 
                 if (string.IsNullOrEmpty(listId))
                 {
-                    listId = DatabaseHelper.ExecuteReader(
-                        $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName] = '{listName}'",
-                        0)[0];
+                    listId = DatabaseHelper.GetListId(listName);
                     SetListId(listName, listId);
                 }
 

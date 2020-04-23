@@ -75,7 +75,6 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateBucket
 	Then 'Unassigned, All linked devices, Owned mailboxes only' content is displayed in the 'Value' column
 	#Check Edit Action Page
 	When User clicks 'Administration' header breadcrumb
-	#When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Automations' left menu item
 	When User enters "17339_Automation_Bucket" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
