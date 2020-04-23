@@ -81,3 +81,27 @@ Scenario: EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnApp
 	| Checkboxes | State |
 	| Key        | true  |
 	Then Grid is grouped
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20866 @Zion_NewGrid @X_Ray
+Scenario: EvergreenJnr_DevicesList_ChecksThatCheckboxIsNotDisappearsInTheGroupByDdlAfterRefreshingThePageInCaseTtheCheckboxRelatesToHiddenColumnByDefault
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User navigates to the 'Users' left menu item
+	When User clicks following checkboxes from Column Settings panel for the 'Username' column:
+	| checkboxes |
+	| Key        |
+	Then following Group By values ​​are displayed for User on menu panel
+	| Values             |
+	| Key                |
+	| Username           |
+	| Domain             |
+	| Display Name       |
+	| Distinguished Name |
+	When User refreshes agGrid
+	Then following Group By values ​​are displayed for User on menu panel
+	| Values             |
+	| Key                |
+	| Username           |
+	| Domain             |
+	| Display Name       |
+	| Distinguished Name |
