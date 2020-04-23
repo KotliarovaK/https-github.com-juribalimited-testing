@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
 
         public IList<string> GetAutomationsContent()
         {
-            var by = By.XPath(".//div[@col-id='automationName' and @role='gridcell']");
+            var by = By.XPath(".//div[@col-id='name' and @role='gridcell']");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 

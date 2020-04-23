@@ -231,6 +231,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	#wait for the process to complete
 	When User waits for '3' seconds
 	When User refreshes agGrid
+	When User closes Actions panel
 	Then 'Havoc(BigD: Stage DAS12864_0 \ Task DAS12864_0' column contains following content
 	| Content |
 	| STARTED |
@@ -268,8 +269,7 @@ Scenario: EvergreenJnr_UsersList_CheckRelativeUpdatesToTaskValues
 	When User refreshes agGrid
 	Then "+5 days from current" content is displayed for "zDeviceAut: Relative BU \ DT BU App" column
 
-#AnnI 3/13/20 GD is only ready on 'Wormhole'
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19656 @Wormhole
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19656
 Scenario: EvergreenJnr_UsersList_CheckUnitsDropDownUpdateTaskValueForBulkUpdate
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -292,8 +292,7 @@ Scenario: EvergreenJnr_UsersList_CheckUnitsDropDownUpdateTaskValueForBulkUpdate
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '5' text to 'Value' textbox
-	When User selects 'Week days' in the 'Units' dropdown
-	When User selects 'Before current value' in the 'Before or After' dropdown
+	When User selects 'weekdays before current value' in the 'Units' dropdown
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -306,14 +305,19 @@ Scenario: EvergreenJnr_UsersList_CheckUnitsDropDownUpdateTaskValueForBulkUpdate
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '17 Feb 2020' text to 'Date' datepicker
+	And User clicks datepicker icon 
+	And User selects '18' day in the Datepicker
+	#Added wait as we need some time fo datepicker to be updated
+	And User waits for '3' seconds
+	And User clicks datepicker icon
+	And User selects '17' day in the Datepicker
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "17 Feb 2020" content is displayed for "zDeviceAut: Stage A \ Weekdays BU Task" column
 
-#AnnI 3/13/20 GD is only ready on 'Wormhole'
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @Wormhole
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274
 Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToNowValueForBulkUpdate
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -336,7 +340,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToNowValueForBulkUpdate
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	When User selects 'Before now' in the 'Before or After' dropdown
+	When User selects 'days before now' in the 'Units' dropdown
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
@@ -349,6 +353,12 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToNowValueForBulkUpdate
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '10 Feb 2020' text to 'Date' datepicker
+	And User clicks datepicker icon 
+	And User selects '11' day in the Datepicker
+	#Added wait as we need some time fo datepicker to be updated
+	And User waits for '3' seconds
+	And User clicks datepicker icon
+	And User selects '10' day in the Datepicker
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel

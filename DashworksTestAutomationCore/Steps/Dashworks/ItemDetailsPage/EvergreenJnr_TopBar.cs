@@ -63,8 +63,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Verify.IsEmpty(actualList, "Compliance items in Top bar on the Item details page is incorrect!");
         }
 
-        [Then(@"User sees '(.*)' tooltip for '(.*)' value in the top bar")]
-        public void ThenUserSeesTooltipForValueInTheTopBar(string tooltip, string value)
+        [Then(@"User sees '(.*)' tooltip for value with '(.*)' title in the top bar")]
+        public void ThenUserSeesTooltipForValueWithTitleInTheTopBar(string tooltip, string value)
         {
             var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
             _driver.MouseHover(topBar.GetTobBarItemTextElement(value));

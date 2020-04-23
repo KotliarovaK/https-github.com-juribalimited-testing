@@ -446,14 +446,17 @@ namespace DashworksTestAutomation.Helpers
             return projectName;
         }
 
-        public static string GetProjectListIdScope(string listName)
+        public static string GetListId(string listName)
         {
-            //string userId =
-            //    DatabaseHelper.ExecuteReader(
-            //        $"SELECT [aspnetdb].[dbo].[aspnet_Users].[UserId] FROM[aspnetdb].[dbo].[aspnet_Users] where UserName = '{_user.UserName}'", 0).LastOrDefault();
-     
-            return DatabaseHelper.ExecuteReader(
-               $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
+            if (new string[] { "All Devices", "All Users", "All Mailboxes", "All Applications" }.Contains(listName))
+            {
+                return "-1";
+            }
+            else
+            {
+                return DatabaseHelper.ExecuteReader(
+                    $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
+            }
         }
 
         #endregion

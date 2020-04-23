@@ -113,7 +113,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
 
         private string GetObjectType(string scope)
         {
-            return new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(scope) ? GetProjectObjectTypeScope(scope) : DatabaseHelper.GetProjectListIdScope(scope);
+            return new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(scope) ? GetProjectObjectTypeScope(scope) : DatabaseHelper.GetListId(scope);
         }
 
         private string GetProjectObjectTypeScope(string scope)

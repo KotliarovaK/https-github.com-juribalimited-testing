@@ -72,7 +72,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
             }
             set
             {
-                ScopeId = int.Parse(DatabaseHelper.GetProjectListIdScope(value));
+                ScopeId = int.Parse(DatabaseHelper.GetListId(value));
                 _scope = value;
             }
         }

@@ -220,7 +220,7 @@ Scenario: EvergreenJnr_ApplicationList_ChecksthatThePermissionForProjectApplicat
 #AnnI 4/15/20: DAS20672 will be fixed only for 'X_Ray'
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20214 @DAS20839 @X_Ray
 Scenario: EvergreenJnr_DevicesList_ChecksThatEmptyOwnerFieldOnProjectDetailsTabIsDisplayedCorrectly
-	When User navigates to the 'Mailbox' details page for the item with '14' ID
+	When User navigates to the 'Device' details page for the item with '14' ID
 	Then Details page for '0405FHJHVG45U71' item is displayed to the user
 	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
