@@ -205,11 +205,13 @@ Scenario: EvergreenJnr_UserProfile_CheckUpdateButtonStateWhenSwitchingBetweenTab
 	When User navigates to the 'Account Details' left menu item
 	Then 'UPDATE' button is disabled
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS19271
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS19271 @DAS17091
 Scenario: EvergreenJnr_UserProfile_CheckThatNoValidationErrorDisplayedAfterReselectingTimeZoneOption
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User navigates to the 'Preferences' left menu item
+	When User expands 'Time Zone' autocomplete
+	Then "50" of all shown label displays in the Filter panel
 	Then 'Time Zone' autocomplete contains following options:
 	| Options                                  |
 	| (UTC-12:00) International Date Line West |
