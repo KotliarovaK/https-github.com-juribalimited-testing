@@ -6,7 +6,8 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 #AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @X_Ray
+#AnnI 4/24/20: need cleanup;
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @X_Ray @Not_Ready
 Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectly
 	When User navigates to the 'Device' details page for '00CWZRC4UK6W20' item
 	Then Details page for '00CWZRC4UK6W20' item is displayed to the user
@@ -39,7 +40,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjec
 	Then 'Felicienne Vadnais' content is displayed in the 'Display Name' column
 
 #AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @X_Ray
+#AnnI 4/24/20: need cleanup;
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @X_Ray @Not_Ready
 Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectlyWithSelectedCheckbox
 	When User navigates to the 'Device' details page for '01N3Y2GUS6XTK7' item
 	Then Details page for '01N3Y2GUS6XTK7' item is displayed to the user
