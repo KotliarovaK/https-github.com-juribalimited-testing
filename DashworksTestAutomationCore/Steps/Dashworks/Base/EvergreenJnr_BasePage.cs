@@ -904,6 +904,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
         }
 
+        [Then(@"following items have star icon in the '(.*)' dropdown:")]
+        public void ThenFollowingItemsHaveStarIconInTheDropdown(string dropdown, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropdown).Click();
+            var expectedStarIconsValue = table.Rows.SelectMany(row => row.Values).ToList();
+
+            foreach (var row in table.Rows)
+            {
+                page.GetStarIconsOfDropdownOptionsByName(row["Items"]);
+            }
+            page.BodyContainer.Click();
+        }
+
         [Then(@"All icon items in the '(.*)' dropdown have any of tooltip")]
         public void ThenUserSeesAllListsIconDisplayedWithTooltipInDropdown(string dropdown, Table table)
         {
@@ -1595,6 +1609,41 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             icon.GetIcon(iconTextInDom).Click();
         }
 
+        #endregion
+
+        #region Star button
+
+        [When(@"User clicks Star button")]
+        public void WhenUserClicksStarButton()
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            button.StarMatIcon.Click();
+        }
+
+        [Then(@"Star button is disabled")]
+        public void ThenStarButtonIsDisabled()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(true, Convert.ToBoolean(page.StarMatIcon.GetAttribute("disabled")),
+                $"Star button is enabled");
+        }
+
+        [Then(@"Star button is not disabled")]
+        public void ThenStarButtonIsNotDisabled()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(false, Convert.ToBoolean(page.StarMatIcon.GetAttribute("disabled")),
+                $"Star button is disabled");
+        }
+
+        [Then(@"Star button has tooltip with '(.*)' text")]
+        public void ThenStarButtonHasTooltipWithText(string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.MouseHover(page.StarMatIcon);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(text, toolTipText, "Star button's tooltip is incorrect");
+        }
         #endregion
     }
 }

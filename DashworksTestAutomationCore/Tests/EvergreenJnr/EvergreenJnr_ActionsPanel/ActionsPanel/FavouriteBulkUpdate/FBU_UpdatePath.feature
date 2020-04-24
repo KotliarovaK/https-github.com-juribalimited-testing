@@ -1,0 +1,232 @@
+﻿Feature: FBU_UpdatePath
+	Runs Favourite Bulk Update Update path related tests
+
+Background: Pre-Conditions
+	Given User is logged in to the Evergreen
+	Then Evergreen Dashboards page should be displayed to the user
+
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20771 @X_Ray
+Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateUpdatePathForAllListsType
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "<ColumnHeader>" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	Then Star button is disabled
+	Then Star button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	When User selects '<ProjectName>' option from 'Project' autocomplete
+	Then 'UPDATE' button is disabled
+	Then Star button is not disabled
+	Then Star button has tooltip with 'Save as Favourite Bulk Update Type' text
+	When User selects '<PathName>' option from 'Path' autocomplete
+	Then 'UPDATE' button is not disabled
+	Then Star button has tooltip with 'Save as Favourite Bulk Update Type' text
+
+	Examples: 
+	| PageName     | ColumnHeader  | RowName                          | ProjectName     | PathName                |
+	| Devices      | Hostname      | 00BDM1JUR8IF419                  | 2004 Rollout    | Zero Touch              |
+	| Users        | Username      | 002B5DC7D4D34D5C895              | 2004 Rollout    | VIP User                |
+	| Applications | Application   | 20040610sqlserverck              | 2004 Rollout    | [Default (Application)] |
+	| Mailboxes    | Email Address | 002B5DC7D4D34D5C895@bclabs.local | Email Migration | Public Folder           |
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20772 @X_Ray
+Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow 
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path ' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User selects 'VIP User' option from 'Path' autocomplete
+	When User clicks Star button
+	Then popup with 'Create Favourite Bulk Update' title is displayed
+	Then 'This favourite bulk update will be created with the following parameters:' text is displayed on popup
+	#Add table; sorting by defaul
+	Then User verifies data in the fields on details page
+	| Field            | Data         |
+	| Bulk Update Type | Update path  |
+	| Project          | 2004 Rollout |
+	| Path             | VIP User     |
+	Then following fields are displayed in the open section:
+	| Fields           |
+	| Bulk Update Type |
+	| Project          |
+	| Path             |
+	Then 'CANCEL' button is not disabled
+	Then 'CREATE' button is disabled
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	When User enters '' text to 'Favourite Bulk Update Name' textbox
+	Then 'Favourite bulk update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
+	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 0088FC8A50DD4344B92 |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User selects 'VIP User' option from 'Path' autocomplete
+	When User clicks Star button
+	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	Then 'Favourite Bulk Update Name should be unique' error message is displayed for 'Favourite Bulk Update Name' field
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20773 @X_Ray
+Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItems
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User selects 'VIP User' option from 'Path' autocomplete
+	When User clicks Star button
+	When User enters '20773_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User enters 'TestFBU_20773' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User enters 'testFBU_207731' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User enters 'abc_20773' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks refresh button in the browser
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	Then following items have star icon in the 'Bulk Update Type' dropdown:
+	| Items          |
+	| 20773_TestFBU  |
+	| TestFBU_20773  |
+	| testFBU_207731 |
+	| abc_20773      |
+	Then Favourite Bulk Update items are displayed in ascending order
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20774 @X_Ray
+Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdatePathType
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User selects 'Desktop Upgrade' option from 'Path' autocomplete
+	When User clicks Star button
+	When User enters '20774_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks refresh button in the browser
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects '20774_TestFBU' in the 'Bulk Update Type' dropdown
+	Then '2004 Rollout' content is displayed in 'Project' autocomplete
+	Then 'Desktop Upgrade' content is displayed in 'Path' autocomplete
+	Then 'UPDATE' button is not disabled
+	Then 'CANCEL' button is not disabled
+	Then Star button is not disabled
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20774 @X_Ray
+Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateWithoutPath
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User clicks Star button
+	When User enters '20774_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks refresh button in the browser
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects '20774_TestFBU' in the 'Bulk Update Type' dropdown
+	Then '2004 Rollout' content is displayed in 'Project' autocomplete
+	Then '' content is displayed in 'Path' autocomplete
+	Then 'UPDATE' button is disabled
+	Then 'CANCEL' button is not disabled
+	Then Star button is not disabled
+
+#Add specific User with broken  FBU to check Error message when Path was deleted
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20774 @X_Ray
+Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdate
+	When User is logged in to the Evergreen as
+ 	| Username  | Password  |
+ 	| ********* | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	#Update FBU name
+	When User selects 'specific FBU' in the 'Bulk Update Type' dropdown
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
+	Then 'This favourite bulk update is invalid' text is displayed on inline error banner
+	Then 'UPDATE' button is disabled
+	Then Star button is not disabled
+	#Add value [Path not found] in Manage Favourite
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20774 @X_Ray
+Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateForDeletedProject
+	When Project created via API and opened
+	| ProjectName   | Scope         | ProjectTemplate | Mode               |
+	| 20774_Project | All Mailboxes | None            | Standalone Project |
+	Then Page with '20774_Project' header is displayed to user
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
+	When User expands multiselect to add objects
+	When User expands multiselect and selects following Objects
+	| Objects             |
+	| 000F977AC8824FE39B8 |
+	When User clicks 'UPDATE ALL CHANGES' button 
+	When User clicks 'UPDATE PROJECT' button 
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects '20774_Project' option from 'Project' autocomplete
+	When User selects '[Default (Mailbox)]' option from 'Path' autocomplete
+	When User clicks Star button
+	When User enters '20774_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	#Add FBU is not displayed in Manage Favourite

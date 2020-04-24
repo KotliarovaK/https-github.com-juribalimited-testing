@@ -10,6 +10,7 @@ using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
+using DashworksTestAutomation.Helpers;
 
 namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 {
@@ -214,6 +215,16 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 
             var listElement = _driver.NowAt<ActionsElement>();
             listElement.ListNameTextBox.SendKeys(listName);
+        }
+
+        [Then(@"Favourite Bulk Update items are displayed in ascending order")]
+        public void ThenFavouriteBulkUpdateItemsAreDisplayedInAscendingOrder()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown("Bulk Update Type").Click();
+            var actionElement = _driver.NowAt<ActionsElement>();
+            var fbuList = actionElement.FavouriteBulkUpdateList.Select(x => x.Text).ToList();
+            SortingHelper.IsListSorted(fbuList);
         }
     }
 }

@@ -98,6 +98,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button//i[@class='material-icons mat-star']")]
+        public IWebElement StarMatIcon { get; set; }
+
         #region All Lists dropdown
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownActionsLists')]")]
@@ -872,6 +875,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             Driver.WaitForElementsToBeDisplayed(By.XPath(DropdownOptionsSelector(withoutSelected)));
             return Driver.FindElements(By.XPath($"{DropdownOptionsSelector(withoutSelected)}/preceding-sibling::i[contains(@class, 'material-icons')]"));
+        }
+
+        public IWebElement GetStarIconsOfDropdownOptionsByName(string value)
+        {
+            Driver.WaitForElementToBeDisplayed(GetDropdownValueByName(value));
+            var star = GetDropdownValueByName(value).FindElement(By.XPath(".//preceding-sibling::mat-icon[contains(@class, 'favourite-icon')]"));
+            return star;
         }
 
         public bool IsIconDisplayedFromDropdownOptions(string iconName, bool withoutSelected = false)
