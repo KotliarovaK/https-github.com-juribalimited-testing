@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20330 @Cleanup @SelfService
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonIsntPresent
+Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonIsntPresent
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_20330_Proj_1 | All Users | None            | Standalone Project |
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUndoAllChangesI
 	| ComponentName         | ExtraPropertiesText | ShowInSelfService |
 	| Text_Component_Name_1 | <p>normal</p>       | true              |
 	When User navigates to End User landing page with '20330_1_SI' Self Service Identifier
-	Then 'Undo all changes I made on this page' button is not displayed for End User
+	Then 'Undo all changes I made on this screen' button is not displayed for End User
 	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName      | OwnerPermission                  | UserScope                |
 	| AOC Name      | DAS_20330_Proj_1 | Do not allow owner to be changed | DAS_20330_forComponent_1 |
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUndoAllChangesI
 	Then 'Undo all changes I made on this screen' button is not displayed for End User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20330 @Cleanup @SelfService
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonWorksCorrectly
+Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonWorksCorrectly
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_20330_Proj_2 | All Users | None            | Standalone Project |
@@ -100,12 +100,12 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUndoAllChangesI
 	| ComponentName | ProjectName      | OwnerPermission                                  | UserScope                |
 	| AOC Name      | DAS_20330_Proj_2 | Allow owner to be removed or set to another user | DAS_20330_forComponent_2 |
 	When User navigates to End User landing page with '20330_2_SI' Self Service Identifier
-	Then 'Undo all changes I made on this page' button is disabled for End User
-	Then 'Undo all changes I made on this page' button has tooltip with 'You have not made any changes yet' text on end user Self Service page
+	Then 'Undo all changes I made on this screen' button is disabled for End User
+	Then 'Undo all changes I made on this screen' button has tooltip with 'You have not made any changes yet' text on end user Self Service page
 	When User clicks on 'Change Owner' button on end user Self Service page
 	When User checks 'Remove owner' radio button
 	When User clicks 'Change Owner' button on popup
-	When User clicks on 'Undo all changes I made on this page' button on end user Self Service page
+	When User clicks on 'Undo all changes I made on this screen' button on end user Self Service page
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn   |
 	| Username     | VGZ6407126     |
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUndoAllChangesI
 	| Username     | 03C54BC1198843A4A03 |
 	| Domain       | BCLABS              |
 	| Display Name | Jones, Tina         |
-	When User clicks on 'Undo all changes I made on this page' button on end user Self Service page
+	When User clicks on 'Undo all changes I made on this screen' button on end user Self Service page
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn   |
 	| Username     | VGZ6407126     |

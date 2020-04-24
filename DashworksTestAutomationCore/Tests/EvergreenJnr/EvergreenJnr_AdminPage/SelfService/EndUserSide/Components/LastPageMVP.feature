@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20325 @DAS20430 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEndUserLastPage
+Scenario: EvergreenJnr_AdminPage_CheckEndUserLastPage
 	When User create static list with "DAS_20325" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEndUserLastPage
 	Then Header is displayed on End User page
 	And Subject Title 'Application: VSCmdShell' is displayed on End User page
 	And 'Continue' button is not displayed for End User
-	And 'Undo all changes I made on this page' button is not displayed for End User
+	And 'Undo all changes I made on this screen' button is not displayed for End User
 	And 'Back' button displayed for End User
 	And User sees 'Thank You' text component 'Thank You' on end user page
 	And User sees 'You have completed the self service.' text styled as 'Normal' in 'Thank You' Text Component of 'Thank You' on end user page
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEndUserLastPage
 	And 'Continue' button is enabled for End User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20291 @Cleanup
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
+Scenario: EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
 	When User create static list with "DAS_20291" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |

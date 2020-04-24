@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20322 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
+Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
 	Given User resync 'Application' objects for '2004 Rollout' project
     | values     |
     | VSCmdShell |
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksPro
 	| App Owner |       |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20426 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
+Scenario: EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_20421_Proj | All Users | None            | Standalone Project |
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeOwnerWorksPro
 	| App Owner | Jones Tina |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20239 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
+Scenario: EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_20421_Proj_1 | All Users | None            | Standalone Project |
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeAndRemoveOwne
 	Then 'Cancel' button is not disabled on popup
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20647 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatOwnerDropdownShowOnlyUsersThatHaveBeenOnboardedIntoProject
+Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownShowOnlyUsersThatHaveBeenOnboardedIntoProject
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_20647_Proj | All Users | None            | Standalone Project |
@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatOwnerDropdownSh
 	Then 'Owner' autocomplete is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20425 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
+Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_20425_Proj | All Users | None            | Standalone Project |
