@@ -280,3 +280,53 @@ Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	Then following content is displayed on the Details Page
 	| Title     | Value |
 	| App Owner |       |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20427 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_RemoveOwnerAndRadioBattonValidationOnEndUserPage
+	When Project created via API and opened
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
+	| DAS_20427_Proj_1 | All Users | None            | Standalone Project |
+	#User onboarding
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Users' tab on Project Scope Changes page
+	When User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
+	| Objects                              |
+	| 024213574157421A9CD (Reyes, Natasha) |
+	| 03C54BC1198843A4A03 (Jones, Tina)    |
+	When User clicks 'UPDATE ALL CHANGES' button
+	When User clicks 'UPDATE PROJECT' button
+	#Application onboarding
+    When User navigates to the 'Applications' tab on Project Scope Changes page
+    When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+    | Objects    |
+    | VSCmdShell |
+    When User clicks 'UPDATE ALL CHANGES' button
+    When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
+	When User create static list with "DAS_20427_forComponent_1" name on "Users" page with following items
+	| ItemName            |
+	| 03C54BC1198843A4A03 |
+	| 024213574157421A9CD |
+	When User create static list with "DAS_20427_1" name on "Applications" page with following items
+	| ItemName   |
+	| VSCmdShell |
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
+	| DAS_20427_SS_1 | 20427_1_SI        | true    | true                | DAS_20427_1 |
+	When User creates new application ownership component for 'Welcome' Self Service page via API
+	| ComponentName | ProjectName      | OwnerPermission                | UserScope                |
+	| AOC Name      | DAS_20427_Proj_1 | Allow owner to be removed only | DAS_20427_forComponent_1 |
+	When User navigates to End User landing page with '20427_1_SI' Self Service Identifier
+	Then 'Remove Owner' button is disabled for End User
+	Then 'Remove Owner' button has tooltip with 'This application to do not have an owner to be removed' text on end user Self Service page
+	When User opens 'DAS_20427_SS_1' Self Service
+	When User navigates to the 'Builder' left menu item
+	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
+	When User checks 'Allow owner to be removed or set to another user' radio button
+	When User selects 'DAS_20427_forComponent_1' option from 'Owner Scope' autocomplete without search
+	When User clicks 'UPDATE' button
+	When User navigates to End User landing page with '20427_1_SI' Self Service Identifier
+	When User clicks on 'Change Owner' button on end user Self Service page
+	Then 'Remove owner' radio button is disabled
