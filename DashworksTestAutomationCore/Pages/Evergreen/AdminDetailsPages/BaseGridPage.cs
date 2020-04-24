@@ -31,7 +31,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         private string GridCellByColumnName = ".//div[@col-id='{0}' and @role='gridcell']";
 
-        private static string NamedLinkSelector = ".//a[@href]//span[text()='{0}']";
+        private static string NamedLinkSelector = ".//a[@href]//span[text()='{0}'] | .//a[@href][text()='{0}']";
 
         //TODO I think there should be some duplicated webElement simillar to this one
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-menu')]")]
