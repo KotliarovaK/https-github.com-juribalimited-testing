@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20325 @DAS20430 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEndUserLastPage
+Scenario: EvergreenJnr_AdminPage_CheckEndUserLastPage
 	When User create static list with "DAS_20325" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEndUserLastPage
 	And 'Continue' button is enabled for End User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20291 @Cleanup
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
+Scenario: EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
 	When User create static list with "DAS_20291" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |

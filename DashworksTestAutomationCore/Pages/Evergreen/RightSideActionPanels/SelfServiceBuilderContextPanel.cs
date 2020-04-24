@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
 
         public IWebElement ContextPanelPageCogMenuButton(string contextPanelType, string contextPanelName)
         {
-            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-sublevels-wrap')]//div[contains(@class, 'menu-wrapper')]";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/following-sibling::div[@class='page-level-icon']/div[contains(@class, 'menu-wrapper')]";
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
 
             if (!Driver.IsElementDisplayed(By.XPath(selector), WebDriverExtensions.WaitTime.Short))
