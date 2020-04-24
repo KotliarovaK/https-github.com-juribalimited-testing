@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEndUserLastPage
 	Then Header is displayed on End User page
 	And Subject Title 'Application: VSCmdShell' is displayed on End User page
 	And 'Continue' button is not displayed for End User
-	And 'Undo all changes I made on this screen' button is not displayed for End User
+	And 'Undo all changes I made on this page' button is not displayed for End User
 	And 'Back' button displayed for End User
 	And User sees 'Thank You' text component 'Thank You' on end user page
 	And User sees 'You have completed the self service.' text styled as 'Normal' in 'Thank You' Text Component of 'Thank You' on end user page
