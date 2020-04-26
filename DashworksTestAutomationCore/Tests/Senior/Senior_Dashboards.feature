@@ -80,7 +80,8 @@ Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	Then "Edit Task" page is displayed to the user
 	And There are no errors in the browser console
 
-@Senior @Projects_Dashboards @Senior_Projects @DAS14171 
+#4/24/20 AnnI: upd this test!!! You cannot delete a project!
+@Senior @Projects_Dashboards @Senior_Projects @DAS14171 @Not_Ready
 Scenario: Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
