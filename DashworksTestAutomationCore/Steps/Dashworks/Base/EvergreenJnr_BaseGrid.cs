@@ -180,7 +180,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-
+            _driver.WaitForElementToBeDisplayed(page.ArchivedDevicesIcon);
             if (Convert.ToBoolean(state))
             {
                 if (_driver.IsElementExists(page.ArchivedDevicesNotIncludedTooltip))
