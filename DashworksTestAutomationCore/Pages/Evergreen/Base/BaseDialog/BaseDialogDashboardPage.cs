@@ -1,25 +1,23 @@
 ﻿using System.Collections.Generic;
+using AutomationUtils.Extensions;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using AutomationUtils.Extensions;
 
-namespace DashworksTestAutomation.Pages.Evergreen
+namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
 {
-    public class BaseDialogPage : BaseDashboardPage
+    public class BaseDialogDashboardPage : BaseDashboardPage
     {
-        private const string PopupSelector = ".//mat-dialog-container[contains(@class, 'dialogContainer')]";
-
-        [FindsBy(How = How.XPath, Using = PopupSelector)]
-        public IWebElement PopupElement { get; set; }
-
-        [FindsBy(How = How.XPath, Using = PopupSelector + "//div[@mat-dialog-title]")]
+        [FindsBy(How = How.XPath, Using = BaseDialogPageSelectors.PopupSelector + "//div[@mat-dialog-title]")]
         public IWebElement PopupTitle { get; set; }
+
+        [FindsBy(How = How.XPath, Using = BaseDialogPageSelectors.PopupSelector)]
+        public IWebElement PopupElement { get; set; }
 
         public IWebElement ComponentOfDialogPage(string componentName)
         {
-            var selector = $"{PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{componentName}']";
+            var selector = $"{BaseDialogPageSelectors.PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{componentName}']";
 
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
@@ -30,7 +28,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             try
             {
-                var selector = $"{PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{itemName}']";
+                var selector = $"{BaseDialogPageSelectors.PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{itemName}']";
 
                 return Driver.FindElement(By.XPath(selector)).Displayed();
             }
@@ -50,7 +48,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool IsComponentOfDialogPageDisabled(string componentName)
         {
             var componentState = ComponentOfDialogPage(componentName).FindElement(By.XPath("ancestor::button[contains(@class, mat-list-item)]")).IsAttributePresent("disabled");
-            
+
             return componentState;
         }
 

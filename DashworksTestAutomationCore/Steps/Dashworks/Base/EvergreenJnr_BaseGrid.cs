@@ -17,6 +17,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
+using DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -42,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.WaitForDataLoading();
             _rowCountValue.Value = page.GetFoundRowsCount();
         }
-     
+
         #endregion
 
         #region Headers
@@ -50,7 +51,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"grid headers are displayed in the following order")]
         public void ThenGridHeadersAreDisplayedInTheFollowingOrder(Table table)
         {
-            var page = _driver.NowAt<BaseGridPage>();
+            GridHeadersAreDisplayedInTheFollowingOrderOnPopup(table, false);
+        }
+
+        [Then(@"grid headers are displayed in the following order on popup")]
+        public void ThenGridHeadersAreDisplayedInTheFollowingOrderOnPopup(Table table)
+        {
+            GridHeadersAreDisplayedInTheFollowingOrderOnPopup(table, true);
+        }
+
+        private void GridHeadersAreDisplayedInTheFollowingOrderOnPopup(Table table, bool onPopup = false)
+        {
+            var page = onPopup ? _driver.NowAt<BaseDialogGridPage>() : _driver.NowAt<BaseGridPage>();
             var allHeaders = page.GetAllHeadersText();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Verify.AreEqual(expectedList, allHeaders, "Columns order is incorrect");
@@ -168,7 +180,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-
+            _driver.WaitForElementToBeDisplayed(page.ArchivedDevicesIcon);
             if (Convert.ToBoolean(state))
             {
                 if (_driver.IsElementExists(page.ArchivedDevicesNotIncludedTooltip))

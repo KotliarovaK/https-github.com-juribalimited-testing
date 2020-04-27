@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBe
 	Then User sees number of Sections increased by '1' on Dashboards page
 	Then User sees number of Widgets increased by '1' on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14728 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14728 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection
 	When Dashboard with 'Dashboard for DAS14728' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 	When User clicks 'Duplicate' menu option for section with 'WidgetForDAS14728' widget
 	Then User sees '2' Widgets with Legend on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15721 @DAS15937 @DAS18911 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS15721 @DAS15937 @DAS18911 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
 	When Dashboard with 'Dashboard for DAS15721' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	Then User sees number of Sections increased by '1' on Dashboards page
 	
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14618 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14618 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When Dashboard with 'Dashboard_DAS14618' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When User clicks 'MOVE' button
 	Then 'WidgetForDAS14618' Widget is displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	When Dashboard with 'Dashboard for DAS12974SECTION' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCollapsedSectionCanBeDeleted
 	When User confirms item deleting on Dashboards page
 	Then User sees number of Sections increased by '-1' on Dashboards page	
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS14472 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14472 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeHiddenAndShown
 	When Dashboard with 'Dashboard for HiddenSection' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeHiddenAndShown
 	When User clicks refresh button in the browser
 	Then 'SectionDisplaying' Widget is displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS14472 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14472 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanMovedUpAndDown
 	When Dashboard with 'Dashboard for MovedSection' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanMovedUpAndDown
 	When User unchecks 'Edit mode' slide toggle
 	Then User sees 'SectionMoving' widget placed in '2' section
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS14472 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14472 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCantBeDuplicatedWhenWidgetLimitIsReached
 	When Dashboard with 'Dashboard for Duplicating' name created via API and opened
 	When User checks 'Edit mode' slide toggle
