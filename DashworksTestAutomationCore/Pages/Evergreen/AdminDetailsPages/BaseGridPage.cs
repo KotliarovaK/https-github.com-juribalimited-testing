@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
     {
         public string ColumnFilterDropdownOverlay = ".//div[contains(@class,'overlay-pane')][contains(@id,'overlay')]";
 
-        public const string AllHeadersSelector = ".//div[@class='ag-header-container']/div[1]/div"; //.//span[@role='columnheader']
+        public const string AllHeadersSelector = "//div[@class='ag-header-container']/div[1]/div";
 
         public const string AllHeadersTextSelector = ".//span[@class='ag-header-cell-text']";
 
@@ -759,9 +759,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             }
         }
 
-        public IList<IWebElement> GetAllHeaders()
+        public IList<IWebElement> GetAllHeaders(string parentElementSelector = "")
         {
-            var allHeadersSelector = By.XPath(AllHeadersSelector);
+            var allHeadersSelector = By.XPath($"{parentElementSelector}{AllHeadersSelector}");
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(allHeadersSelector);
             var allHeaders = Driver.FindElements(allHeadersSelector);
@@ -770,7 +770,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public List<string> GetAllHeadersText()
         {
-            var allHeaders = GetAllHeaders()/*.Where(x => x.FindElements(By.XPath(AllHeadersTextSelector)).Count > 0)*/.Select(x => x.Text).ToList();
+            var allHeaders = GetAllHeaders().Select(x => x.Text).ToList();
             return allHeaders;
         }
 
