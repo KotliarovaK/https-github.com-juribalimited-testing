@@ -95,10 +95,13 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItems
 	When User clicks Star button
 	When User enters '20773_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
+	When User clicks Star button
 	When User enters 'TestFBU_20773' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
+	When User clicks Star button
 	When User enters 'testFBU_207731' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
+	When User clicks Star button
 	When User enters 'abc_20773' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -199,7 +202,7 @@ Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdate
 	Then Star button is not disabled
 	#Add value [Path not found] in Manage Favourite
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20774 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20774 @X_Ray @Cleanup
 Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateForDeletedProject
 	When Project created via API and opened
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
@@ -220,13 +223,114 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateF
 	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select "Hostname" rows in the grid
-	| SelectedRowsName |
-	| 00K4CEEQ737BA4L  |
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 000F977AC8824FE39B8@bclabs.local |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '20774_Project' option from 'Project' autocomplete
 	When User selects '[Default (Mailbox)]' option from 'Path' autocomplete
 	When User clicks Star button
 	When User enters '20774_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	#Delete Project
+	When User clicks 'Admin' on the left-hand menu
+	When User enters "20774_Project" text in the Search field for "Project" column
+	When User selects all rows on the grid
+	When User removes selected item
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 000F977AC8824FE39B8@bclabs.local |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	Then following Values are not displayed in the 'Bulk Update Type' dropdown:
+	| Options       |
+	| 20774_TestFBU |
 	#Add FBU is not displayed in Manage Favourite
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20774 @X_Ray
+Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopup
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User clicks Star button
+	When User enters '207741_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 000F977AC8824FE39B8@bclabs.local |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects 'Email Migration' option from 'Project' autocomplete
+	When User clicks Star button
+	When User enters '207742_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks refresh button in the browser
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 000F977AC8824FE39B8@bclabs.local |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects '207742_TestFBU' in the 'Bulk Update Type' dropdown
+	When User selects 'Manage favourites' in the 'Bulk Update Type' dropdown
+	Then popup with 'FavouriteBulkUpdates' title is displayed
+	Then 'star207742_TestFBU' content is displayed in 'Bulk Update Type' dropdown
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes  | State |
+	| Object Type | true  |
+	Then Cog menu is not displayed on the Admin page
+	And Grid is grouped
+	When User expands 'Devices' row in the groped grid
+	Then "207741_TestFBU" content is displayed for "Name" column
+	#When User enters "207742_TestFBU" text in the Search field for "Name" column
+	#Then User sees "2" rows in grid
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20774 @X_Ray
+Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupColumns
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User clicks Star button
+	When User enters '207743_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks refresh button in the browser
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Manage favourites' in the 'Bulk Update Type' dropdown
+	Then popup with 'FavouriteBulkUpdates' title is displayed
+	Then grid headers are displayed in the following order
+	| ColumnName           |
+	| Name                 |
+	|                      |
+	| Object Type          |
+	| Type                 |
+	| Project or Evergreen |
+	| Task or Field        |
+	| Update Type          |
+	| Values               |
