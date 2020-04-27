@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20762 @DAS20784
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20762 @DAS20784 @DAS20113
 Scenario: EvergreenJnr_UsersList_CheckThatTooltipIsDisplayedCorrectlyForReadinessValueOnTheDetailsPage
 	When User navigates to the 'User' details page for the item with '85167' ID
 	Then Details page for '0072B088173449E3A93' item is displayed to the user

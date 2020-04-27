@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing.Text;
 using System.Linq;
 using System.Net;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.Evergreen.Admin;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -83,6 +84,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
             _driver.Navigate()
                 .GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{id}");
             _driver.WaitForDataLoading(60);
+        }
+
+        [Then(@"URL contains '(.*)' dashboard Id")]
+        public void ThenURLContainsDashboardId(string dashboard)
+        {
+            var id = _dashboard.Value.Any(x => x.DashboardName.Equals(dashboard))
+                ? _dashboard.Value.First(x => x.DashboardName.Equals(dashboard)).DashboardId
+                : DatabaseHelper.GetDashboardId(dashboard, _user.Id);
+            Verify.Contains(id, _driver.Url, $"URL is not contains '{id}'");
         }
     }
 }
