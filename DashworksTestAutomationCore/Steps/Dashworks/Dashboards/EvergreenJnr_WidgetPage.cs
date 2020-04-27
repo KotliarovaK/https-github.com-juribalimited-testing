@@ -180,8 +180,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForElementToBeDisplayed(createWidgetElement.GetDropdownOptions().First());
 
-            if (Convert.ToInt32(index) <= createWidgetElement.GetDropdownOptions().Count)
+            try
             {
+                createWidgetElement.ClickColorSchemeByIndex(Convert.ToInt32(index));
+            }
+            catch (StaleElementReferenceException)
+            {
+                Thread.Sleep(TimeSpan.FromSeconds(2));
                 createWidgetElement.ClickColorSchemeByIndex(Convert.ToInt32(index));
             }
         }
