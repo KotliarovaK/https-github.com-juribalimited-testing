@@ -206,6 +206,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplaye
 	Then following fields are displayed in the open section:
 	| Fields                  |
 	| Project Count           |
+	| Evergreen Team          |
 	| Evergreen Bucket        |
 	| Evergreen Capacity Unit |
 	| Evergreen Ring          |
@@ -214,22 +215,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplaye
 Examples:
 	| ListName | ItemName                         |
 	| Device   | 00HA7MKAVVFDAV                   |
+	| User     | 0072B088173449E3A93              |
 	| Mailbox  | 000F977AC8824FE39B8@bclabs.local |
-
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923 @DAS17093 @DAS17093 @DAS17236 @DAS20806
-Scenario: EvergreenJnr_UsersList_CheckThatProjectSummarySectionIsDisplayedSuccessfully
-	When User navigates to the 'User' details page for '0072B088173449E3A93' item
-	Then Details page for '0072B088173449E3A93' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	And User navigates to the 'Evergreen Details' left submenu item
-	Then following fields are displayed in the open section:
-	| Fields                  |
-	| Project Count           |
-	| Evergreen Team          |
-	| Evergreen Bucket        |
-	| Evergreen Capacity Unit |
-	| Evergreen Ring          |
-	And There are no errors in the browser console
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18423
 Scenario: EvergreenJnr_DevicesList_CheckThatSpecificationTabForDevicesWithDeviceTypeOtherIsDisplayedCorrectly

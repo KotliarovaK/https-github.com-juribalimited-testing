@@ -156,11 +156,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User create new User via API
 	| Username   | Email | FullName | Password  | Roles                 |
-	| DAS13281_2 | Value | Test     | m!gration | Project Administrator |
+	| <Username> | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username   | Password  |
-	| DAS13281_2 | m!gration |
+	| <Username> | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -235,12 +235,12 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	And User removes "DAS13281_2" User
+	And User removes "<Username>" User
 
 Examples:
-	| RowName        | MessageText                                                   |
-	| 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
-	| 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
+	| Username   | RowName        | MessageText                                                   |
+	| DAS13281_1 | 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
+	| DAS13281_2 | 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
 
 	#AnnI. 2/21/20 Will be checked on Monday with Marina.
 	#It looks like access has changed. Need to update the test.
