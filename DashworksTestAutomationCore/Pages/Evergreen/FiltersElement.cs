@@ -415,7 +415,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 $".//li//span[text()='{booleanValue}']/ancestor::span[@class='boolean-icon text-container ng-star-inserted']/img";
             return Driver.FindElement(By.XPath(imgSelector));
         }
-
+        public IList<IWebElement> GetCheckboxLabelsOfFilterOptions()
+        {
+            var checkboxSelector = $".//div[contains(@class, 'filterAddPanel')]//ul[contains(@class, 'dropdown-select-result')]//li";
+            return Driver.FindElements(By.XPath(checkboxSelector));
+        }
         public IWebElement GetFilterCheckboxByName(string checkboxName)
         {
             var checkboxSelector = $".//div[contains(@class, 'filterAddPanel')]//span[contains(text(), '{checkboxName}')]";

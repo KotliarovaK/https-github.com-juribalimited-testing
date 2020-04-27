@@ -9,9 +9,9 @@ Background: Pre-Conditions
 @Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20323 @DAS20382 @Cleanup @Wormhole
 Scenario: EvergreenJnr_UsersList_CheckThatErrorMessageIsDisplayedOnTheObjectDetailsPageIfEvergreenBucketChangedByAdminUser
 	When User clicks the Logout button
- 	When User is logged in to the Evergreen as
- 	| Username           | Password |
- 	| TestAnalysisEditor | qa111111 |
+	When User is logged in to the Evergreen as
+	| Username           | Password |
+	| TestAnalysisEditor | qa111111 |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User navigates to the 'User' details page for '00BDBAEA57334C7C8F4' item
 	Then Details page for '00BDBAEA57334C7C8F4' item is displayed to the user

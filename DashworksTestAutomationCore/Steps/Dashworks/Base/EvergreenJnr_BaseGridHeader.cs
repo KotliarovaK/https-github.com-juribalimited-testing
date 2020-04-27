@@ -47,6 +47,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualList = page.GetAllOptionsFromMenuPanel().Select(x => x.Key).ToList();
 
             Verify.AreEqual(expectedList, actualList, "Group By values are not displayed correctly");
+
+            page.BodyContainer.Click();
         }
     }
 }

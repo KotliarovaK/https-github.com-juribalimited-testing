@@ -80,10 +80,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 	When User creates new text component for 'Welcome' Self Service page via API
 	| ComponentName       | ExtraPropertiesText | ShowInSelfService |
 	| Text_Component_Name | <p>normal</p>       | true              |
-	When User creates new application ownership component for 'Welcome' Self Service page via API
-	| ComponentName | ProjectName  | OwnerPermission                  |
-	| AOC Name      | 2004 Rollout | Do not allow owner to be changed |
-	When User navigates to End User landing page with '20626_1_SI' Self Service Identifier
 	And User navigates to the 'Builder' left menu item
 	And User selects 'Edit' cogmenu option for 'Text' item type with 'Text_Component_Name' name on Self Service Builder Panel
 	And User clears text editor
