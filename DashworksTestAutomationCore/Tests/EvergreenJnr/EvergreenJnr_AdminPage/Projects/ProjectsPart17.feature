@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	| TestProjectDAS11977 | All Devices | None            | Standalone Project |
 	Then Page with 'TestProjectDAS11977' header is displayed to user
 	When User navigates to the 'Details' left menu item
-	And User changes Project Name to "NewProjectName"
+	And User changes Project Name to "NewProjectNameDAS11977"
 	And User changes Project Short Name to "NewShort4875"
 	And User changes Project Description to "45978DescriptionText"
 	And User clicks 'ADD LANGUAGE' button 
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User cancels the selection of all rows on the Projects page
 	Then 'Actions' dropdown is disabled
 	Then 'DELETE' button is not displayed
-	When User enters "NewProjectName" text in the Search field for "Project" column
+	When User enters "NewProjectNameDAS11977" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User navigates to the 'Users' tab on Project Scope Changes page 
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
 	When User click on Back button
-	And User enters "NewProjectName" text in the Search field for "Project" column
+	And User enters "NewProjectNameDAS11977" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 	When Project created via API and opened
@@ -167,12 +167,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	| TestProjectDAS11977 | All Devices | None            | Standalone Project |
 	Then Page with 'TestProjectDAS11977' header is displayed to user
 	When User navigates to the 'Details' left menu item
-	And User changes Project Name to "NewProjectName"
+	And User changes Project Name to "NewProjectNameDAS11977"
 	And User changes Project Short Name to "NewShort4875"
 #"UPDATE" Action button has been removed
 	#And User clicks 'UPDATE' button 
 	#Then 'The project details have been updated' text is displayed on inline success banner
 	When User click on Back button
-	And User enters "NewProjectName" text in the Search field for "Project" column
+	And User enters "NewProjectNameDAS11977" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
