@@ -192,3 +192,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenning
 	When User tries to open same page with non existing item id
 	Then User sees 'This dashboard does not exist or you do not have access to it' text in warning message on Dashboards submenu pane
 	Then There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS20754 @Cleanup
+Scenario: EvergreenJnr_Dashboard_CheckThatCorrectUrlDisplayedForJustCreatedDashboard
+	When User clicks 'Dashboards' on the left-hand menu
+	When User clicks 'CREATE DASHBOARD' button
+	When User creates new Dashboard with '20754_Id_Test_1' name
+	Then URL contains '20754_Id_Test_1' dashboard Id
+	When User clicks 'Dashboards' on the left-hand menu
+	When User clicks 'CREATE DASHBOARD' button
+	When User creates new Dashboard with '20754_Id_Test_2' name
+	Then URL contains '20754_Id_Test_2' dashboard Id

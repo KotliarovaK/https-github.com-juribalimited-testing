@@ -83,9 +83,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnProjectsSummar
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Status" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	Then string filter is displayed for 'Readiness' column
-	When User clicks String Filter button for "Readiness" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	#4/24/20: The 'Readiness' filter is disabled. Ask Lana for more details.
+	#Then string filter is displayed for 'Readiness' column
+	#When User clicks String Filter button for "Readiness" column
+	#Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @DAS16565 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnOwnerProjectsSummaryTabAreDisplayedCorrectly
@@ -114,9 +115,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnOwnerProjectsS
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Status" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	Then string filter is displayed for 'Readiness' column
-	When User clicks String Filter button for "Readiness" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	#4/24/20: The 'Readiness' filter is disabled. Ask Lana for more details.
+	#Then string filter is displayed for 'Readiness' column
+	#When User clicks String Filter button for "Readiness" column
+	#Then Dropdown List is displayed correctly in the Filter on the Details Page
 	
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections

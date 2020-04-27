@@ -355,6 +355,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetAssociationCheckbox(checkboxName);
         }
 
+        [Then(@"filter date checkboxes are sorted by desc")]
+        public void ThenFilterDateCheckboxesAreSortedByDesc()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var originalList = filterElement.GetCheckboxLabelsOfFilterOptions().Select(x=>x.Text).Where(x => (!x.Equals("")&&!x.Equals("Empty"))).ToList();
+                SortingHelper.IsListSortedByDate(originalList, false);
+        }
+
         [When(@"User selects current date checkbox from Filter panel")]
         public void WhenUserSelectsCurrentDateCheckboxFromFilterPanel()
         {

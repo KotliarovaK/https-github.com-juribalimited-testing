@@ -636,38 +636,53 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	When User navigates to the 'Actions' left menu item
 	#create action #1
 	When User clicks 'CREATE ACTION' button
-	And User enters '15949_Action_1' text to 'Action Name' textbox
-	And User selects 'Update path' in the 'Action Type' dropdown
-	And User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	And User selects '[Default (Computer)]' option from 'Path' autocomplete
-	And User clicks 'CREATE' button 
+	When User enters '15949_Action_1' text to 'Action Name' textbox
+	When User selects 'Update path' in the 'Action Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects '[Default (Computer)]' option from 'Path' autocomplete
+	When User clicks 'CREATE' button 
 	#create action #2
-	And User clicks 'CREATE ACTION' button 
-	And User enters '15949_Action_2' text to 'Action Name' textbox
-	And User selects 'Update path' in the 'Action Type' dropdown
-	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	And User selects '[Default (Computer)]' option from 'Path' autocomplete
-	And User clicks 'CREATE' button
+	When User clicks 'CREATE ACTION' button 
+	When User enters '15949_Action_2' text to 'Action Name' textbox
+	When User selects 'Update path' in the 'Action Type' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects '[Default (Computer)]' option from 'Path' autocomplete
+	When User clicks 'CREATE' button
 	#run automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "15949_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '15949_Automation' item from 'Automation' column
+	When '15949_Automation' automation '15949_Action_1' action run has finished
+	When '15949_Automation' automation '15949_Action_2' action run has finished
+	#NEED TO GENERATE DIFFERENT TIMESTAMPS
+	When User waits for '10' seconds
+	When User waits for '10' seconds
+	When User waits for '10' seconds
+	When User waits for '10' seconds
+	When User waits for '10' seconds
+	When User waits for '10' seconds
+	When User clicks refresh button in the browser
+	When User navigates to the 'Automations' left menu item
+	When User enters "15949_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '15949_Automation' item from 'Automation' column
+	When '15949_Automation' automation '15949_Action_1' action run has finished
 	When '15949_Automation' automation '15949_Action_2' action run has finished
 	#check filters
-	And User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
-	And User clicks Add New button on the Filter panel
-	And User enters "15949_Automation" text in Search field at Filters Panel
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User enters "15949_Automation" text in Search field at Filters Panel
 	Then the following Filters subcategories are presented for open category:
 	| Subcategories                     |
 	| 15949_Automation \ 15949_Action_1 |
 	| 15949_Automation \ 15949_Action_2 |
 	When User clears search textbox in Filters panel
-	And user select "15949_Automation \ 15949_Action_1" filter
-	And User select "Equals" Operator value
+	When user select "15949_Automation \ 15949_Action_1" filter
+	When User select "Equals" Operator value
+	Then filter date checkboxes are sorted by desc
 	When User selects current date checkbox from Filter panel
 	When User adds column for the selected filter
-	And User clicks Save filter button
+	When User clicks Save filter button
 	Then "51" rows are displayed in the agGrid
 	When User click on "15949_Automation \ 15949_Action_1" column header on the Admin page
 	Then date in table is sorted by '15949_Automation \ 15949_Action_1' column in descending order
