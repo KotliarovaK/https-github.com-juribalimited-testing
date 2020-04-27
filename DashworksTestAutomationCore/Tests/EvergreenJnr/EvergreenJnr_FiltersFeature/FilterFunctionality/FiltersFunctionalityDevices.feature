@@ -794,7 +794,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewGroupsFilterIsDisplayedCorrectly
 		| Group Type         |
 		| Group Username     |
 	When user select "Group" filter
-	Then "50 of 4510 shown" results are displayed in the Filter panel
+	Then '50 of 4510 shown' label is displayed in expanded autocomplete
 	When User enters "AU\GAPP-A0121127" text in Search field at selected Lookup Filter
 	When User clicks checkbox at selected Lookup Filter
 	When User enters "AU\GAPP-A012116D" text in Search field at selected Lookup Filter

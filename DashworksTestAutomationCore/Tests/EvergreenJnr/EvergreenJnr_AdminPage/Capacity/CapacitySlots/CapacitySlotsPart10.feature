@@ -68,6 +68,6 @@ Scenario: EvergreenJnr_AdminPage_CheckPaginationDisplayingForCapacityUnitAutocom
 	When User navigates to the 'Slots' left menu item
 	When User clicks 'CREATE SLOT' button 
 	When User expands 'Capacity Units' autocomplete
-	Then "50" of all shown label displays in the Filter panel
+	Then '50' of all shown label is displayed in expanded autocomplete
 
 	

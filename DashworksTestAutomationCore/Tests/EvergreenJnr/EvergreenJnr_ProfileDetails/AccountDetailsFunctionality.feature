@@ -211,7 +211,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatNoValidationErrorDisplayedAfterResel
 	Then Profile page is displayed to user
 	When User navigates to the 'Preferences' left menu item
 	When User expands 'Time Zone' autocomplete
-	Then "50" of all shown label displays in the Filter panel
+	Then '50' of all shown label is displayed in expanded autocomplete
 	Then 'Time Zone' autocomplete contains following options:
 	| Options                                  |
 	| (UTC-12:00) International Date Line West |
