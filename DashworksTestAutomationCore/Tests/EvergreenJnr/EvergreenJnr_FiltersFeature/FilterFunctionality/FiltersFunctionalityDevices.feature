@@ -921,3 +921,56 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersCanBeDe
 	Then 'All Devices' list should be displayed to the user
 	Then There are no errors in the browser console
 	Then table content is present
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS18829 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatOnboardedItemsAreDisplayedInTheGridAfterApplyingOwnerSavedListFilter
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User Add And "Device Type" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Mobile         |
+	When User clicks Save button on the list panel
+	When User create dynamic list with "ProjList_DAS18829" name on "Devices" page
+	Then "ProjList_DAS18829" list is displayed to user
+	When Project created via API
+	| ProjectName         | Scope             | ProjectTemplate | Mode               |
+	| MyTestProj_DAS18829 | ProjList_DAS18829 | None            | Standalone Project |
+	When User navigates to "MyTestProj_DAS18829" project details
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Devices' tab on Project Scope Changes page
+	When User expands multiselect and selects following Objects
+	| Objects          |
+	| 3V2EKGQAV6KTCCUW |
+	| 9AW0JAIC0GZNQY   |
+	| E3YAGUCAPTXGFZSS |
+	When User navigates to the 'Users' tab on Project Scope Changes page
+	When User expands multiselect and selects following Objects
+	| Objects           |
+	| Monique Robillard |
+	| Tammi C. Francis  |
+	When User clicks 'UPDATE ALL CHANGES' button 
+	When User clicks 'UPDATE PROJECT' button 
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
+	When User clicks 'Users' on the left-hand menu
+	When  User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User perform search by "YIO4827996"
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| YIO4827996       |
+	When User perform search by "KSQ903966"
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| KSQ903966       |
+	When User selects 'Create static list' in the 'Action' dropdown
+	When User create static list with "StaticList_DAS18829" name
+	Then "StaticList_DAS18829" list is displayed to user
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "MyTestProj: Owner (Saved List)" filter where type is "In list" without added column and following checkboxes:
+	| SelectedCheckboxes  |
+	| StaticList_DAS18829 |
+	Then "2" rows are displayed in the agGrid
