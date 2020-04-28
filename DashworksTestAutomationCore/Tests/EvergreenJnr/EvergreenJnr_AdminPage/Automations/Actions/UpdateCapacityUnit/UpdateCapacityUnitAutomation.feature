@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergree
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '20409_Action' text to 'Action Name' textbox
+	And User enters '20409_Action1' text to 'Action Name' textbox
 	When User selects 'Update capacity unit' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'London - City' option from 'Capacity Unit' autocomplete
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergree
 	When User clicks 'Automations' header breadcrumb
 	When User enters "20409_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '20409_Automation' item from 'Automation' column
-	When '20409_Automation' automation '20409_Action' action run has finished
+	When '20409_Automation' automation '20409_Action1' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "20409_Automation" text in the Search field for "Automation" column
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergree
 	When User clicks 'Automations' header breadcrumb
 	When User enters "20409_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '20409_Automation' item from 'Automation' column
-	When '20409_Automation' automation '20409_Action' action run has finished
+	When '20409_Automation' automation '20409_Action1' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "20409_Automation" text in the Search field for "Automation" column
@@ -183,25 +183,25 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects
 	When User waits until Queue disappears
 	#Create Automation
 	When User creates new Automation via API and open it
-	| Name             | Description | IsActive | StopOnFailedAction | Scope             | Run    |
-	| 20409_Automation | 20409       | true     | false              | AutoTestList20409 | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope             | Run    |
+	| 20409_Automation1 | 20409       | true     | false              | AutoTestList20409 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '20409_Action' text to 'Action Name' textbox
+	And User enters '20409_Action2' text to 'Action Name' textbox
 	When User selects 'Update capacity unit' in the 'Action Type' dropdown
 	When User selects 'NewProject20409' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
 	When User clicks 'CREATE' button 
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
-	When User enters "20409_Automation" text in the Search field for "Automation" column
-	When User clicks 'Run now' option in Cog-menu for '20409_Automation' item from 'Automation' column
-	When '20409_Automation' automation '20409_Action' action run has finished
+	When User enters "20409_Automation1" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '20409_Automation1' item from 'Automation' column
+	When '20409_Automation1' automation '20409_Action2' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
-	When User enters "20409_Automation" text in the Search field for "Automation" column
+	When User enters "20409_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedC
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '20409_Action' text to 'Action Name' textbox
+	And User enters '20409_Action3' text to 'Action Name' textbox
 	When User selects 'Update capacity unit' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'TestCapacityUnit20409' option from 'Capacity Unit' autocomplete
@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedC
 	When User clicks 'Automations' header breadcrumb
 	When User enters "20409_2_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '20409_2_Automation' item from 'Automation' column
-	When '20409_2_Automation' automation '20409_Action' action run has finished
+	When '20409_2_Automation' automation '20409_Action3' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "20409_2_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -267,7 +267,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedC
 	When User navigates to the 'Automations' left menu item
 	When User enters "20409_2_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '20409_2_Automation' item from 'Automation' column
-	When '20409_2_Automation' automation '20409_Action' action run has finished
+	When '20409_2_Automation' automation '20409_Action3' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "20409_2_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
@@ -324,7 +324,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedP
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '20409_Action' text to 'Action Name' textbox
+	And User enters '20409_Action4' text to 'Action Name' textbox
 	When User selects 'Update capacity unit' in the 'Action Type' dropdown
 	When User selects '120409_Project' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
@@ -333,7 +333,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedP
 	When User clicks 'Automations' header breadcrumb
 	When User enters "20409_3_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '20409_3_Automation' item from 'Automation' column
-	When '20409_3_Automation' automation '20409_Action' action run has finished
+	When '20409_3_Automation' automation '20409_Action4' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "20409_3_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -349,7 +349,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedP
 	When User navigates to the 'Automations' left menu item
 	When User enters "20409_3_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '20409_3_Automation' item from 'Automation' column
-	When '20409_3_Automation' automation '20409_Action' action run has finished
+	When '20409_3_Automation' automation '20409_Action4' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "20409_3_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column

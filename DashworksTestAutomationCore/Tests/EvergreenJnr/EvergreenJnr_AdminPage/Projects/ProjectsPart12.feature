@@ -15,17 +15,17 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	| Values |
 	| Adobe  |
 	Then "39" rows are displayed in the agGrid
-	When User create dynamic list with "DynamicList87" name on "Applications" page
-	Then "DynamicList87" list is displayed to user
-	When User create static list with "StaticList1529" name on "Applications" page with following items
+	When User create dynamic list with "<FirstListName>" name on "Applications" page
+	Then "<FirstListName>" list is displayed to user
+	When User create static list with "<SecondListName>" name on "Applications" page with following items
 	| ItemName             |
 	| WMI Tools            |
 	| Windows Live Toolbar |
-	Then "StaticList1529" list is displayed to user
+	Then "<SecondListName>" list is displayed to user
 	Then "2" rows are displayed in the agGrid
 	When Project created via API and opened
-	| ProjectName     | Scope         | ProjectTemplate | Mode               |
-	| MailboxProject2 | All Mailboxes | None            | Standalone Project |
+	| ProjectName   | Scope         | ProjectTemplate | Mode               |
+	| <ProjectName> | All Mailboxes | None            | Standalone Project |
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
@@ -47,9 +47,9 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	Then There are no errors in the browser console
 
 Examples:
-	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                          | ObjectsToAdd2                         |
-	| All Applications | StaticList1529  | Applications to add (0 of 37 selected) | Applications to add (0 of 0 selected) |
-	| StaticList1529   | DynamicList87   | Applications to add (0 of 0 selected)  | Applications to add (0 of 0 selected) |
+	| FirstListName    | SecondListName    | ChangingToList1   | ChangingToList2   | ProjectName    | ObjectsToAdd1                          | ObjectsToAdd2                         |
+	| FirstList12999_1 | SecondList12999_1 | All Applications  | SecondList12999_1 | Project12999_1 | Applications to add (0 of 37 selected) | Applications to add (0 of 0 selected) |
+	| FirstList12999_2 | SecondList12999_2 | SecondList12999_2 | FirstList12999_2  | Project12999_2 | Applications to add (0 of 0 selected)  | Applications to add (0 of 0 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS18369 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject

@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '19311_Action' text to 'Action Name' textbox
+	And User enters '19311_Action1' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'RED' in the 'Sticky Compliance' dropdown
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
-	Then '19311_Action' content is displayed in 'Action Name' textbox
+	Then '19311_Action1' content is displayed in 'Action Name' textbox
 	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'RED' content is displayed in 'Sticky Compliance' dropdown
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
-	Then '19311_Action' content is displayed in 'Action Name' textbox
+	Then '19311_Action1' content is displayed in 'Action Name' textbox
 	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'GREEN' content is displayed in 'Sticky Compliance' dropdown
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '19311_Action' text to 'Action Name' textbox
+	And User enters '19311_Action2' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project or Evergreen' autocomplete
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
-	Then '19311_Action' content is displayed in 'Action Name' textbox
+	Then '19311_Action2' content is displayed in 'Action Name' textbox
 	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
 	Then 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'KEEP' content is displayed in 'Rationalisation' dropdown
@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
-	Then '19311_Action' content is displayed in 'Action Name' textbox
+	Then '19311_Action2' content is displayed in 'Action Name' textbox
 	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
 	Then 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'UNCATEGORISED' content is displayed in 'Rationalisation' dropdown

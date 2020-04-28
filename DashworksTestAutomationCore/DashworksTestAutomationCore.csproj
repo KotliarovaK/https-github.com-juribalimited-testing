@@ -49,6 +49,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart9 - Copy.feature.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutomationUtils" Version="1.0.10" />
     <PackageReference Include="BoDi" Version="1.4.1" />
     <PackageReference Include="CompareNETObjects" Version="4.66.0" />
@@ -68,6 +72,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart10.feature.cs">
+      <DependentUpon>CapacitySlotsPart10.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\CerateSelfServicePageViaApi.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -204,6 +212,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart10.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacitySlotsPart10.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\CerateSelfServicePageViaApi.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CerateSelfServicePageViaApi.feature.cs</LastGenOutput>

@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Action Task or Field |
 	| Action Value ID      |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764 @DAS16728 @DAS17222
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764 @DAS16728 @DAS17222 @Do_Not_Run_With_Automations
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -622,7 +622,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS_17003" User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15949 @Cleanup @Do_Not_Run_With_Automations
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15949 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomation
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
@@ -683,7 +683,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	When User selects current date checkbox from Filter panel
 	When User adds column for the selected filter
 	When User clicks Save filter button
-	Then "51" rows are displayed in the agGrid
 	When User click on "15949_Automation \ 15949_Action_1" column header on the Admin page
 	Then date in table is sorted by '15949_Automation \ 15949_Action_1' column in descending order
 	When User click on "15949_Automation \ 15949_Action_1" column header on the Admin page
@@ -697,7 +696,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects "Select All" checkbox from String Filter with item list on the Admin page
 	And User clicks String Filter button for "Action" column on the Admin page
 	And User selects "15949_Action_1" checkbox from String Filter with item list on the Admin page
-	Then '51' content is displayed in the 'Objects' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation

@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 	When User navigates to the 'Users' left menu item
 	Then '00A5B910A1004CF5AC4' content is displayed in the 'Username' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @DAS20974 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnDevicesPageGoingToSenior
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user

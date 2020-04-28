@@ -31,23 +31,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User clicks 'CREATE' button 
 	Then 'DAS16278_Widget' Widget is displayed to the user
 	Then Line X labels of 'DAS16278_Widget' column widget is displayed in following order:
-	| ColumnName    |
-	| Onboarded     |
-	| Targeted      |
-	| Scheduled     |
-	| Migrated      |
-	| Complete      |
+	| ColumnName |
+	| Onboarded  |
+	| Forecast   |
+	| Targeted   |
+	| Scheduled  |
+	| Migrated   |
+	| Complete   |
 	When User clicks 'Edit' menu option for 'DAS16278_Widget' widget
 	When User selects 'Windows7Mi: Status DESC' in the 'OrderBy' dropdown
 	When User clicks 'UPDATE' button 
 	Then 'DAS16278_Widget' Widget is displayed to the user
 	Then Line X labels of 'DAS16278_Widget' column widget is displayed in following order:
-	| ColumnName    |
-	| Complete      |
-	| Migrated      |
-	| Scheduled     |
-	| Targeted      |
-	| Onboarded     |
+	| ColumnName |
+	| Complete   |
+	| Migrated   |
+	| Scheduled  |
+	| Targeted   |
+	| Forecast   |
+	| Onboarded  |
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15780 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverityOrdering

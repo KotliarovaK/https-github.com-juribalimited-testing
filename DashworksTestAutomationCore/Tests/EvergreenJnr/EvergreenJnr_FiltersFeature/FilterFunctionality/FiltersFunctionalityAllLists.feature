@@ -244,7 +244,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcluded
 	Then Filters panel is displayed to the user
 	When user select "Application" filter
 	And User clicks in search field for selected Association filter
-	Then "50 of 2223 shown" results are displayed in the Filter panel
+	Then '50 of 2223 shown' label is displayed in expanded autocomplete
 	And the following values are displayed for "Application" filter on "<PageName>" page:
 	| Value                               |
 	| Acrobat Reader 6.0.1 (500)          |
