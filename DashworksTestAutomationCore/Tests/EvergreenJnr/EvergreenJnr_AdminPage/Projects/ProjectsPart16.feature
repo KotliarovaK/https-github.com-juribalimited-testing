@@ -283,13 +283,13 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters 'TestProject7894' text to 'Project Name' textbox
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CANCEL' button 
 	Then Page with 'Projects' header is displayed to user
 
 Examples:
-	| ListName  | ColumnName    | DynamicListName |
-	| Devices   | Hostname      | TestList6589    |
-	| Users     | Username      | TestList6588    |
-	| Mailboxes | Email Address | TestList6587    |
+	| ProjectName     | ListName  | ColumnName    | DynamicListName |
+	| TestProject6589 | Devices   | Hostname      | TestList6589    |
+	| TestProject6588 | Users     | Username      | TestList6588    |
+	| TestProject6587 | Mailboxes | Email Address | TestList6587    |

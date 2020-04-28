@@ -444,9 +444,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetColumnCheckbox(checkboxName).Click();
         }
 
-        //TODO:  change check logic for checkboxes
-        [Then(@"Checkboxes are checked on the Column Settings panel for ""(.*)"" Column Settings panel:")]
-        public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanelForColumnSettingsPanel(string columnName,
+        [Then(@"Checkboxes are not checked on the Column Settings panel for ""(.*)"" Column Settings panel:")]
+        public void ThenCheckboxesAreNotCheckedOnTheColumnSettingsPanelForColumnSettingsPanel(string columnName,
             Table table)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
@@ -455,7 +454,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-                Verify.IsTrue(page.GetColumnCheckbox(row["Checkbox"]).Selected(), $"'{row["Checkbox"]}' checkboxes are not checked on the Column Settings panel for '{columnName}' column");
+                Verify.IsFalse(page.GetColumnCheckbox(row["Checkbox"]).Selected(), $"'{row["Checkbox"]}' checkboxes are not checked on the Column Settings panel for '{columnName}' column");
             }
         }
 

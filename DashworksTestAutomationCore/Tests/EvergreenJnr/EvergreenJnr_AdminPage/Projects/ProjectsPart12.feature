@@ -47,9 +47,9 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	Then There are no errors in the browser console
 
 Examples:
-	| FirstListName    | SecondListName    | ChangingToList1   | ChangingToList2   | ProjectName    | ObjectsToAdd1                          | ObjectsToAdd2                         |
-	| FirstList12999_1 | SecondList12999_1 | All Applications  | SecondList12999_1 | Project12999_1 | Applications to add (0 of 37 selected) | Applications to add (0 of 0 selected) |
-	| FirstList12999_2 | SecondList12999_2 | SecondList12999_2 | FirstList12999_2  | Project12999_2 | Applications to add (0 of 0 selected)  | Applications to add (0 of 0 selected) |
+	| FirstListName    | SecondListName    | ProjectName    | ChangingToList1   | ChangingToList2   | ObjectsToAdd1                          | ObjectsToAdd2                         |
+	| FirstList12999_1 | SecondList12999_1 | Project12999_1 | All Applications  | SecondList12999_1 | Applications to add (0 of 37 selected) | Applications to add (0 of 0 selected) |
+	| FirstList12999_2 | SecondList12999_2 | Project12999_2 | SecondList12999_2 | FirstList12999_2  | Applications to add (0 of 0 selected)  | Applications to add (0 of 0 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS18369 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject

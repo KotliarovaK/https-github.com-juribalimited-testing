@@ -56,13 +56,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	Then 'Device successfully relinked' text is displayed on inline success banner
 	When User navigates to the 'Projects Summary' left submenu item
 	Then inline success banner is not displayed
-	When User navigates to the 'Project Details' left submenu item
+	When User navigates to the 'Device' details page for 'L1IWSS0WKQG8IU' item
+	Then Details page for 'L1IWSS0WKQG8IU' item is displayed to the user
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
+	And User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
 	And User enters '00K4CEEQ737BA4L' in the 'Device' autocomplete field and selects '00K4CEEQ737BA4L' value
 	And User clicks 'RELINK' button on popup
-	And User clicks 'RELINK' button on popup
+	When User clicks 'RELINK' button on popup
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19335
 Scenario: EvergreenJnr_DevicesList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed

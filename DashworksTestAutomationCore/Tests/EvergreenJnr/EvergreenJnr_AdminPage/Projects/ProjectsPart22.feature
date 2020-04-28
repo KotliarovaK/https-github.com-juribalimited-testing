@@ -13,7 +13,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters '12768Project' text to 'Project Name' textbox
+	When User enters '<ProjectName>' text to 'Project Name' textbox
 	And User selects '<ScopeList>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
@@ -23,10 +23,10 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	Then 'Match to Evergreen Bucket' content is displayed in 'Bucket' dropdown
 
 Examples:
-	| ScopeList     |
-	| All Devices   |
-	| All Users     |
-	| All Mailboxes |
+	| ProjectName    | ScopeList     |
+	| 12768Project_1 | All Devices   |
+	| 12768Project_2 | All Users     |
+	| 12768Project_3 | All Mailboxes |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13499 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotDeletedAfterChangingProjectName

@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	Then Details page for '01WNOSNMP5QLXC' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Projects Summary' left submenu item
-	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	When User clicks following checkboxes from Column Settings panel for the 'Project' column:
 	| checkboxes   |
 	| Project      |
 	| Project Type |
@@ -173,15 +173,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Date       |
 	| Slot       |
 	| Readiness  |
-	And Checkboxes are checked on the Column Settings panel for "Key" Column Settings panel:
-	| Checkbox  |
-	| Key       |
-	| Object ID |
-	| Bucket    |
-	| Ring      |
-	| Path      |
-	| Workflow  |
-	| Status    |
-	| Date      |
-	| Slot      |
-	| Readiness |
+	And Checkboxes are not checked on the Column Settings panel for "Key" Column Settings panel:
+	| Checkbox     |
+	| Bucket ID    |
+	| Ring ID      |
+	| ExternalURL  |
+	| Project      |
+	| Project Type |
+	| Category     |

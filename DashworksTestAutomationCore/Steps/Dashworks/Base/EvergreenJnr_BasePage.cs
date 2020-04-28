@@ -688,7 +688,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             Verify.AreEqual(successMessage, page.GetTextboxSuccessMessageElement(placeholder).Text,
                 $"Incorrect message is displayed in the '{placeholder}' field");
-            var t = page.GetTextboxSuccessMessageElement(placeholder).GetCssValue("color");
             Verify.AreEqual("rgba(126, 189, 56, 1)", page.GetTextboxSuccessMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect success message color for '{placeholder}' field");
         }
