@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyFo
 	When User clicks 'RESYNC' button on popup
 	Then 'Application successfully resynced' text is displayed on inline success banner
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @X_Ray
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfAppIsAleadyOnboardedAndNotKeep
 	When User navigates to the 'Application' details page for the item with '228' ID
 	Then Details page for 'Hotfix for Windows Media Player 10 (KB903157)' item is displayed to the user
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | Uncategorised |
 	| Target App          |               |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @X_Ray
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfAppIsAleadyOnboardedAndIsKeep
 	When User navigates to the 'Application' details page for the item with '4166' ID
 	Then Details page for 'EC2ConfigService' item is displayed to the user
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | Forward Path   |
 	| Target App          | Adobe Reader 5 |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @X_Ray
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfAppIsNotOnboarded
 	When User navigates to the 'Application' details page for the item with '4346' ID
 	Then Details page for 'Dolby Voice 2.7.0' item is displayed to the user
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | Uncategorised |
 	| Target App          |               |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @X_Ray
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfAppIsNotOnboardedAndEvergreenForwardPathedToIt
 	When User navigates to the 'Application' details page for the item with '1' ID
 	Then Details page for 'Python 2.2a4' item is displayed to the user
