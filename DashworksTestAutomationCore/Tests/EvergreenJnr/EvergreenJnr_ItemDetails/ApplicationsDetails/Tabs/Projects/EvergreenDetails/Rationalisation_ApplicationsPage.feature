@@ -1,5 +1,5 @@
 ﻿Feature: Rationalisation_ApplicationsPage
-	Runs related tests for Rationalisation field
+	Runs related tests for Rationalisation field in Evergreen mode
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
@@ -44,8 +44,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationDropdownIsDis
 	| RETIRE        |
 	| UNCATEGORISED |
 
-#AnnI 3/27/20: This bug is fixed only for 'Wormhole'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Cleanup @Wormhole
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppliedSuccessfully
 	When User navigates to the 'Application' details page for the item with '675' ID
 	Then Details page for 'Music Visualizer Library 1.0' item is displayed to the user
