@@ -61,39 +61,38 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	Then "2004: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
 	Then "Any Device in list 2004 Rollout" is displayed in added filter info
 
-#serhii: testing purposes 11/28/2019
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @Cleanup @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User clicks 'Applications' on the left-hand menu
-	And User clicks the Filters button
-	And User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	When User clicks the Filters button
+	When User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               | 
-	And User Add And "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	When User Add And "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Red                |
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
 	| Compliance |
-	And User move 'Compliance' column to 'Application' column
-	And User move 'Application' column to 'Vendor' column
-	And User clicks on 'Compliance' column header
-	And User creates '2004 App Compliance' dynamic list
+	When User move 'Compliance' column to 'Application' column
+	When User move 'Application' column to 'Vendor' column
+	When User clicks on 'Compliance' column header
+	When User creates '2004 App Compliance' dynamic list
 	Then "2004 App Compliance" list is displayed to user
 	When Dashboard with 'Dashboard for DAS16069_2' name created via API and opened
 	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title               | List                | Type      | AggregateFunction | Drilldown |
 	| Card       | WidgetForDAS16069_2 | 2004 App Compliance | Aggregate | Count             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16069_2' Widget is displayed to the user	
 	When User checks 'Edit mode' slide toggle
-	And User clicks data in card 'WidgetForDAS16069_2' widget
+	When User clicks data in card 'WidgetForDAS16069_2' widget
 	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
-	And "43" rows are displayed in the agGrid
+	Then "44" rows are displayed in the agGrid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplayedInWidget

@@ -85,9 +85,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfter
 	When User add "EmailMigra: Team" filter where type is "Equals" without added column and following value:
 		| Values |
 		| 55     |
-	Then "50 of 55 shown" results are displayed in the Filter panel
+	Then '50 of 55 shown' label is displayed in expanded autocomplete
 	When User deletes one character from the Search field
-	Then "50" of all shown label displays in the Filter panel
+	Then '50' of all shown label is displayed in expanded autocomplete
 
 @Evergreen @Evergreen_FiltersFeature @Filter_MailboxesList @DAS12940
 Scenario: EvergreenJnr_MailboxesList_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter

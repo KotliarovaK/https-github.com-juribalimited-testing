@@ -45,6 +45,8 @@ Scenario: EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed
 	When User enters 'automation2@juriba.com' text to 'Email' textbox
 	When User Upload correct avatar to Account Details
 	Then 'Image changed' text is displayed on inline success banner
+	#Wait for green banner to disappear
+	When User waits for '6' seconds
 	Then User picture is changed to uploaded photo
 	When User clicks 'REMOVE' button
 	Then 'Image removed' text is displayed on inline success banner
@@ -203,11 +205,13 @@ Scenario: EvergreenJnr_UserProfile_CheckUpdateButtonStateWhenSwitchingBetweenTab
 	When User navigates to the 'Account Details' left menu item
 	Then 'UPDATE' button is disabled
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS19271
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS19271 @DAS17091
 Scenario: EvergreenJnr_UserProfile_CheckThatNoValidationErrorDisplayedAfterReselectingTimeZoneOption
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User navigates to the 'Preferences' left menu item
+	When User expands 'Time Zone' autocomplete
+	Then '50' of all shown label is displayed in expanded autocomplete
 	Then 'Time Zone' autocomplete contains following options:
 	| Options                                  |
 	| (UTC-12:00) International Date Line West |

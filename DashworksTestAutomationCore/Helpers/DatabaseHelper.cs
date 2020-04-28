@@ -446,14 +446,17 @@ namespace DashworksTestAutomation.Helpers
             return projectName;
         }
 
-        public static string GetProjectListIdScope(string listName)
+        public static string GetListId(string listName)
         {
-            //string userId =
-            //    DatabaseHelper.ExecuteReader(
-            //        $"SELECT [aspnetdb].[dbo].[aspnet_Users].[UserId] FROM[aspnetdb].[dbo].[aspnet_Users] where UserName = '{_user.UserName}'", 0).LastOrDefault();
-
-            return DatabaseHelper.ExecuteReader(
-                $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
+            if (new string[] { "All Devices", "All Users", "All Mailboxes", "All Applications" }.Contains(listName))
+            {
+                return "-1";
+            }
+            else
+            {
+                return DatabaseHelper.ExecuteReader(
+                    $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
+            }
         }
 
         #endregion
@@ -737,24 +740,11 @@ namespace DashworksTestAutomation.Helpers
             return selfServiceId;
         }
 
-        //ListID - Id of the list used in Scope for created Self Service
-        public static string GetSelfServiceObjectGuid(string selfServiceIdentifier, int componentId)
+        public static string GetSelfServiceObjectGuid(string selfServiceIdentifier)
         {
-            //replace '@ComponentId int = 3' to '@ComponentId int = {componentId}' when compoment ID will be working with GetSelfServiceObjectGuid query 
-            string query = $"declare @SelfServiceIdentifier nvarchar(100) = '{selfServiceIdentifier}' declare @ComponentId int = 3 declare @ProjectId int declare @ListId int select @ProjectId = ProjectId from[PM].[SS].[OwnershipComponent] where ComponentId = @ComponentId select @ListId = ListId from[PM].[SS].[SelfService] where SelfServiceIdentifier = @SelfServiceIdentifier select EO.ObjectGuid from DesktopBI.dbo.EvergreenObjects EO join[PM].[API].[ApplicationListItems_Get](@ListId, DEFAULT) LI on LI.ApplicationKey = EO.ObjectKey and EO.ObjectTypeID = 3 join[PM].[dbo].[ProjectObjects] PO on PO.ObjectKey = EO.ObjectKey and PO.ObjectTypeID = EO.ObjectTypeID and PO.ProjectId = @ProjectId where EO.ObjectTypeId = 3";
-            
+            string query = $"declare @SelfServiceIdentifier nvarchar(100) = '{selfServiceIdentifier}' declare @ListId int select @ListId = ListId from [PM].[SS].[SelfService] where SelfServiceIdentifier = @SelfServiceIdentifier select EO.ObjectGuid from DesktopBI.dbo.EvergreenObjects EO join [PM].[API].[ApplicationListItems_Get](@ListId, DEFAULT) LI on LI.ApplicationKey = EO.ObjectKey and EO.ObjectTypeID = 3 where EO.ObjectTypeId = 3";
             var guid = DatabaseHelper.ExecuteReader(query, 0)[0];
             return guid;
-        }
-
-        //# TO DO: Remove the step below as soon as DAS-20451 will be implemented
-        public static string TempGetSelfServiceObjectGuid(string listId, string projectId)
-        {
-            //replace '@ComponentId int = 3' to '@ComponentId int = {componentId}' when compoment ID will be working with GetSelfServiceObjectGuid query 
-            //string query = $"select EO.ObjectGuid from DesktopBI.dbo.EvergreenObjects EO join [PM].[API].[ApplicationListItems_Get]({listId}, DEFAULT) LI on LI.ApplicationKey = EO.ObjectKey and EO.ObjectTypeID = 3 join[PM].[dbo].[ProjectObjects] PO on PO.ObjectKey = EO.ObjectKey and PO.ObjectTypeID = EO.ObjectTypeID and PO.ProjectId = {projectId} and PO.OwnerObjectID is not null where EO.ObjectTypeId = 3";
-            //var guid = DatabaseHelper.ExecuteReader(query, 0)[0];
-            //return guid;
-            return "4E6AEA42-ED2F-4017-B7AD-4DDE477E68D6";
         }
 
         #region Builder

@@ -355,6 +355,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetAssociationCheckbox(checkboxName);
         }
 
+        [Then(@"filter date checkboxes are sorted by desc")]
+        public void ThenFilterDateCheckboxesAreSortedByDesc()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var originalList = filterElement.GetCheckboxLabelsOfFilterOptions().Select(x=>x.Text).Where(x => (!x.Equals("")&&!x.Equals("Empty"))).ToList();
+                SortingHelper.IsListSortedByDate(originalList, false);
+        }
+
         [When(@"User selects current date checkbox from Filter panel")]
         public void WhenUserSelectsCurrentDateCheckboxFromFilterPanel()
         {
@@ -1217,22 +1225,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"""(.*)"" results are displayed in the Filter panel")]
+        [Then(@"'(.*)' label is displayed in expanded autocomplete")]
         public void ThenResultsAreDisplayedInTheFilterPanel(string showedResultsCount)
         {
             var filtersPanel = _driver.NowAt<FiltersElement>();
             _driver.WaitForDataLoading();
             Verify.AreEqual(showedResultsCount, filtersPanel.GetShowedResultsCount(),
                 $"Number of rows is not {showedResultsCount}");
-        }
-
-        [Then(@"""(.*)"" of all shown label displays in the Filter panel")]
-        public void ThenOfAllShownLabelDisplaysInTheFilterPanel(int showedResultsCount)
-        {
-            var filtersPanel = _driver.NowAt<FiltersElement>();
-            _driver.WaitForDataLoading();
-            Verify.That(filtersPanel.GetShowedResultsCount(), Does.Contain($"{showedResultsCount.ToString()} of "),
-                $"Shown label doesn't contain {showedResultsCount} found rows");
         }
 
         #region Filter URL

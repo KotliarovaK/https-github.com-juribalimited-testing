@@ -40,23 +40,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier")]
         public void WhenUserNavigatesToFirsEndUserPageWithSelfServiceIdentifier(string selfServiceIdentifier)
         {
-            SelfServicePageDto page = _selfServicePages.Value.First(x => x.Name.Equals("Welcome"));
-            SelfServiceApplicationOwnershipComponent appOwnershipComponent = (SelfServiceApplicationOwnershipComponent)page.Components.First(x => x.ComponentType.Equals("Application Ownership"));
-            int appOwnershipcomponentId = appOwnershipComponent.ComponentId;
-            string ssGuid = DatabaseHelper.GetSelfServiceObjectGuid(selfServiceIdentifier, appOwnershipcomponentId);
-            string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{selfServiceIdentifier}?ObjectId={ssGuid}";
-
-            _driver.NavigateToUrl(navigationUrl);
-        }
-
-        //TO DO: Remove this step as soon as DAS-20451 will be implemented
-        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier, '(.*)' scope list and '(.*)' project name")]
-        public void WhenUserNavigatesToEndUserLandingPageWithSelfServiceIdentifierScopeListAndProjectName(string selfServiceIdentifier, string scopeList, string projectName)
-        {
-            int listId = Int32.Parse(DatabaseHelper.GetProjectListIdScope(scopeList)) + 1;
-            var projectId = DatabaseHelper.GetProjectId(projectName);
-
-            string ssGuid = DatabaseHelper.TempGetSelfServiceObjectGuid(listId.ToString(), projectId);
+            string ssGuid = DatabaseHelper.GetSelfServiceObjectGuid(selfServiceIdentifier);
             string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{selfServiceIdentifier}?ObjectId={ssGuid}";
 
             _driver.NavigateToUrl(navigationUrl);

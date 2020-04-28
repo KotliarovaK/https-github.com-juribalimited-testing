@@ -473,6 +473,27 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(page.IsIconDisplayedFromDropdownOptions(icon), $"'{icon}' is not displayed for '{optionName}'");
         }
 
+        [Then(@"'(.*)' of all shown label is displayed in expanded autocomplete")]
+        public void ThenOfAllShownLabelDisplaysInTheFilterPanel(int showedResultsCount)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            Verify.That(page.AutocompletePagination.Text, Does.Contain($"{showedResultsCount.ToString()} of "),
+                $"Shown label doesn't contain {showedResultsCount} found rows");
+        }
+
+        [Then(@"shown items label is not displayed for '(.*)' autocomplete")]
+        public void ThenShowItemsLabelIsNotShownForAutocomplete(string autocompelte)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            page.GetTextbox(autocompelte).Click();
+            _driver.WaitForDataLoading();
+            Verify.IsFalse(_driver.IsElementDisplayed(page.AutocompletePagination), $"X of Y items label is displayed for {autocompelte}");
+
+            page.BodyContainer.Click();
+        }
+
         #endregion
 
         #region Textbox

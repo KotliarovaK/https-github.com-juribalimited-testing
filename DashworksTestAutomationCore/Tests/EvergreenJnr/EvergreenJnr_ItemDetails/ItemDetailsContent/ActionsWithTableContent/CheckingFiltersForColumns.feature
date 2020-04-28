@@ -83,9 +83,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnProjectsSummar
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Status" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	Then string filter is displayed for 'Readiness' column
-	When User clicks String Filter button for "Readiness" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	#4/24/20: The 'Readiness' filter is disabled. Ask Lana for more details.
+	#Then string filter is displayed for 'Readiness' column
+	#When User clicks String Filter button for "Readiness" column
+	#Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @DAS16565 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnOwnerProjectsSummaryTabAreDisplayedCorrectly
@@ -114,9 +115,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnOwnerProjectsS
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Status" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	Then string filter is displayed for 'Readiness' column
-	When User clicks String Filter button for "Readiness" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	#4/24/20: The 'Readiness' filter is disabled. Ask Lana for more details.
+	#Then string filter is displayed for 'Readiness' column
+	#When User clicks String Filter button for "Readiness" column
+	#Then Dropdown List is displayed correctly in the Filter on the Details Page
 	
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
@@ -176,20 +178,6 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDoma
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	Then string filter is displayed for 'Domain' column
 
-#Ann.Ilchenko 3/24/20: this functionality is broken.
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
-Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
-	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
-	Then Details page for '001PSUMZYOW581' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	When User navigates to the 'Projects Summary' left submenu item
-	And User opens 'Date' column settings
-	And User clicks Filter button on the Column Settings panel
-	And User select In Range value with following date:
-	| DateFrom    | DateTo      |
-	| 22 May 2014 | 22 May 2018 |
-	Then Rows counter contains "2" found row of all rows
-
 @Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab
 	When User clicks 'Applications' on the left-hand menu
@@ -238,30 +226,34 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenu
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726 @DAS20761 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevicesPage
-	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User navigates to the 'Device' details page for 'TPEBAIXY5Z6822' item
+	Then Details page for 'TPEBAIXY5Z6822' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Projects Summary' left submenu item
 	Then following checkboxes are contained in the filter dropdown menu for the 'Workflow' column:
 	| Values         |
 	| Empty          |
+	| Not Applicable |
 	Then following checkboxes are contained in the filter dropdown menu for the 'Category' column:
 	| Values            |
 	| Empty             |
 	Then following checkboxes are contained in the filter dropdown menu for the 'Status' column:
-	| Values |
-	| None   |
+	| Values    |
+	| None      |
+	| Onboarded |
 	When User closes Checkbox filter
 	When User navigates to the 'Owner Projects Summary' left submenu item
 	Then following checkboxes are contained in the filter dropdown menu for the 'Workflow' column:
 	| Values         |
 	| Empty          |
 	Then following checkboxes are contained in the filter dropdown menu for the 'Category' column:
-	| Values            |
-	| Empty             |
+	| Values        |
+	| Empty         |
+	| Category User |
 	Then following checkboxes are contained in the filter dropdown menu for the 'Status' column:
-	| Values |
-	| None   |
+	| Values    |
+	| None      |
+	| Onboarded |
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersPage

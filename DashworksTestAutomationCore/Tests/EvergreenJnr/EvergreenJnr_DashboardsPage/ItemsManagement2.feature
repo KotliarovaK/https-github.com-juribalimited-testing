@@ -10,13 +10,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
-	When User creates new Widget
+	When User adds new Widget
 	| WidgetType | Title               | List                                 | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS16326 | Mailbox List (Complex) - BROKEN LIST | 10      | 10         |
-	Then 'Widget_For_DAS16326' Widget is displayed to the user
-	Then User sees 'This widget refers to list Mailbox List (Complex) - BROKEN LIST which has errors' text in warning message of 'Widget_For_DAS16326' widget on Dashboards page
-	Then 'Mailbox List (Complex) - BROKEN LIST' link is displayed in warning message on Dashboards page
-	Then There are no errors in the browser console
+	Then 'This widget refers to a list which has errors' message is displayed for 'List' field
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17551 @DAS17150 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList
@@ -37,11 +34,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	When User waits for '3' seconds
 	When User create dynamic list with "AApplicationsList17551" name on "Applications" page
 	Then "AApplicationsList17551" list is displayed to user
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks 'Delete' option in cogmenu for 'ADevicesList17551' list
-	When User confirms list removing
-	Then list with "ADevicesList17551" name is removed
 	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
@@ -49,6 +41,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	| WidgetType | Title               | List                   | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS17551 | AApplicationsList17551 | 10      | 10         |
 	Then 'Widget_For_DAS17551' Widget is displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks 'Delete' option in cogmenu for 'ADevicesList17551' list
+	When User confirms list removing
+	Then list with "ADevicesList17551" name is removed
+	When Dashboard with 'Dashboard_DAS16326' name is opened via API
+	When User checks 'Edit mode' slide toggle
 	Then User sees 'This widget refers to list AApplicationsList17551 which has errors' text in warning message of 'Widget_For_DAS17551' widget on Dashboards page
 	Then 'AApplicationsList17551' link is displayed in warning message on Dashboards page
 	Then There are no errors in the browser console

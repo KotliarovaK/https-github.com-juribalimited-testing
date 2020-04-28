@@ -136,17 +136,17 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserP
 	| Values            |
 	| 97.1.0.0918(1031) |
 	Then "1,741" rows are displayed in the agGrid
-	When User create dynamic list with "DynamicList17" name on "Applications" page
-	Then "DynamicList17" list is displayed to user
-	When User create static list with "StaticList6429" name on "Applications" page with following items
+	When User create dynamic list with "<FirstListName>" name on "Applications" page
+	Then "<FirstListName>" list is displayed to user
+	When User create static list with "<SecondListName>" name on "Applications" page with following items
 	| ItemName             |
 	| WMI Tools            |
 	| Windows Live Toolbar |
-	Then "StaticList6429" list is displayed to user
+	Then "<SecondListName>" list is displayed to user
 	Then "2" rows are displayed in the agGrid
 	When Project created via API and opened
-	| ProjectName     | Scope     | ProjectTemplate | Mode               |
-	| DevicesProject9 | All Users | None            | Standalone Project |
+	| ProjectName   | Scope     | ProjectTemplate | Mode               |
+	| <ProjectName> | All Users | None            | Standalone Project |
 	And User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left submenu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
@@ -166,6 +166,6 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserP
 	Then There are no errors in the browser console
 
 Examples:
-	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                            | ObjectsToAdd2                            |
-	| All Applications | StaticList6429  | Applications to add (0 of 2081 selected) | Applications to add (0 of 2 selected)    |
-	| StaticList6429   | DynamicList17   | Applications to add (0 of 2 selected)    | Applications to add (0 of 1612 selected) |
+	| FirstListName    | SecondListName    | ChangingToList1   | ChangingToList2   | ProjectName    | ObjectsToAdd1                            | ObjectsToAdd2                            |
+	| FirstList13297_1 | SecondList13297_1 | All Applications  | SecondList13297_1 | Project13297_1 | Applications to add (0 of 2081 selected) | Applications to add (0 of 2 selected)    |
+	| FirstList13297_2 | SecondList13297_2 | SecondList13297_2 | FirstList13297_2  | Project13297_2 | Applications to add (0 of 2 selected)    | Applications to add (0 of 1612 selected) |

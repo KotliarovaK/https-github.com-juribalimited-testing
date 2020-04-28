@@ -137,9 +137,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	| 018UQ6KL9TF4YF   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
-	And User selects 'One \ Radio Rag Only Comp' option from 'Task' autocomplete
-	When User selects 'Started' in the 'Value' dropdown
+	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Stage 1 \ Dropdown Readiness Date (Computer)' option from 'Task' autocomplete
+	When User selects 'Started' in the 'Update Value' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	Then 'Value' dropdown is not displayed
 	When User clicks the Logout button
@@ -152,16 +152,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13280" User
 
-	#AnnI 3/18/20 Fixed and updated for 'Wormhole'
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup @Wormhole
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User create new User via API
 	| Username   | Email | FullName | Password  | Roles                 |
-	| DAS13281_2 | Value | Test     | m!gration | Project Administrator |
+	| <Username> | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username   | Password  |
-	| DAS13281_2 | m!gration |
+	| <Username> | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -173,7 +172,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service' option from 'Task' autocomplete
+	When User enters 'Computer Read Only Task in Self Service' in the 'Task' autocomplete field and selects 'Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service' value
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options        |
 	| No change      |
@@ -196,13 +195,14 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	| Update                |
 	| Remove owner          |
 	| Remove owner and team |
-	When User selects 'Computer Information ---- Text fill; Text fill; \ Workstation Text Task' option from 'Task' autocomplete
+	When User enters 'Workstation Text Task' in the 'Task' autocomplete field and selects 'Computer Information ---- Text fill; Text fill; \ Workstation Text Task' value
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options   |
 	| Update    |
 	| Remove    |
-	When User selects 'Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service' option from 'Task' autocomplete
+	When User enters 'Computer Read Only Task in Self Service' in the 'Task' autocomplete field and selects 'Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service' value
 	Then following Values are displayed in the 'Update Value' dropdown:
+	| Options        |
 	| No change      |
 	| Not Applicable |
 	| Not Started    |
@@ -211,15 +211,16 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	| Complete       |
 	When User selects 'Started' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
-	And User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
-	And User clicks 'UPDATE' button 
+	And User navigate to the bottom of the Action panel
+	And User clicks 'UPDATE' button
 	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'CANCEL' button
 	Then inline tip banner is not displayed
-	When User clicks 'UPDATE' button 
+	When User navigate to the bottom of the Action panel
+	When User clicks 'UPDATE' button
 	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
@@ -234,12 +235,12 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	And User removes "DAS13281_2" User
+	And User removes "<Username>" User
 
 Examples:
-	| RowName        | MessageText                                                   |
-	| 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
-	| 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
+	| Username   | RowName        | MessageText                                                   |
+	| DAS13281_1 | 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
+	| DAS13281_2 | 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
 
 	#AnnI. 2/21/20 Will be checked on Monday with Marina.
 	#It looks like access has changed. Need to update the test.

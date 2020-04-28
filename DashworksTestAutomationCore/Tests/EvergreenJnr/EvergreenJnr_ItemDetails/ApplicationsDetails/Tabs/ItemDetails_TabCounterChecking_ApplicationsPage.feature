@@ -78,7 +78,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| Projects     |
 	| MSI          |
 	| Distribution |
-	Then 'Distribution' left menu item is disabled
 	#================ checks sub-menu for main Details tab ================#
 	And 'Details' left menu have following submenu items:
 	| SubTabName        |

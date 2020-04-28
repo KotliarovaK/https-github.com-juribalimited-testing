@@ -4,6 +4,7 @@ using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -37,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
                 page.AutocompleteSelect("Custom Field", customField.FieldName, true);
                 page.PopulateTextbox("Value", customField.Value);
 
-                var dialogContainer = _driver.NowAt<BaseDialogPage>();
+                var dialogContainer = _driver.NowAt<BaseDialogDashboardPage>();
                 dialogContainer.GetButton("ADD").Click();
                 //Sleep to wait for counter to be updated by JS
                 Thread.Sleep(1500);

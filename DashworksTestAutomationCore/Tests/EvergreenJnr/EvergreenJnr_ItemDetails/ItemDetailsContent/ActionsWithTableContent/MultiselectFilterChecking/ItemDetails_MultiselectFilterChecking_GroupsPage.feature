@@ -66,13 +66,16 @@ Scenario: EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplication
 	| Values          |
 	| DC1 SMS (DEV50) |
 
-@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20489 @Zion_NewGrid
+#4/27/20 AnnI: need to discuss with 'Zion' team
+@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20489 @Zion_NewGrid @Not_Ready
 Scenario: EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabApplicationsSubTabForGroupPage
-	When User type "GSMS-ReportViewer" in Global Search Field
-	Then User clicks on "GSMS-ReportViewer" search result
-	And Details page for 'GSMS-ReportViewer' item is displayed to the user
+	When User navigates to the 'Group' details page for the item with '30999' ID
+	Then Details page for 'GSMS-ReportViewer' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Applications' left submenu item
+	When User clicks following checkboxes from Column Settings panel for the 'Manufacturer' column:
+	| checkboxes    |
+	| Advertisement |
 	Then ColumnName is displayed in following order on the Details page:
 	| ColumnName    |
 	| Application   |
@@ -80,20 +83,18 @@ Scenario: EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplication
 	| Manufacturer  |
 	| Compliance    |
 	| Site          |
-	| Advertisement |
 	| Collection    |
 	| Program       |
 	Then 'Microsoft Report Viewer Redistributable 2005 (8.0.50727.42)' content is displayed in the 'Application' column
 	Then '8.0.50727.42' content is displayed in the 'Version' column
 	Then 'Microsoft Corporation' content is displayed in the 'Manufacturer' column
-	Then 'UNKNOWN' content is displayed in the 'Compliance' column
+	#Then 'Unknown' content is displayed in the 'Compliance' column
 	Then 'JuribaDEV50' content is displayed in the 'Site' column
-	Then '' content is displayed in the 'Advertisement' column
 	Then 'ReportViewer' content is displayed in the 'Collection' column
 	Then 'Per-system unattended' content is displayed in the 'Program' column
-	Then following checkboxes are displayed in the filter dropdown menu for the 'Compliance' column:
-	| Values  |
-	| UNKNOWN |
+	#Then following checkboxes are displayed in the filter dropdown menu for the 'Compliance' column:
+	#| Values  |
+	#| Unknown |
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Site' column:
 	| Values      |
 	| JuribaDEV50 |

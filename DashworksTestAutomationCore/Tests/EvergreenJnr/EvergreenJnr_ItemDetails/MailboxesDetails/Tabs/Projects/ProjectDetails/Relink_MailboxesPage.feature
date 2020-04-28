@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 	#need to add cleanup
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS18284 @Cleanup @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS18284 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '01A921EFD05545818AA@bclabs.local' item
 	Then Details page for '01A921EFD05545818AA@bclabs.local' item is displayed to the user
