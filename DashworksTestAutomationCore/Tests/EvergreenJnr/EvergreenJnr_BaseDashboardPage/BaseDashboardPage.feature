@@ -109,18 +109,18 @@ Scenario: EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyN
 	Then 'All Mailboxes' list should be displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS13766 @DAS14183 Not_Run
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS13766 @DAS14183
 Scenario Outline: EvergreenJnr_AllList_CheckPositionOfContextMenuInGrid
 	When User clicks '<ListName>' on the left-hand menu
 	When User right clicks on '<CellText>' cell from '<ColumnName>' column
 	#TODO update the next step in the same way as the step above.
-	Then User sees context menu placed near "<CellText>" cell in the grid
+	Then User sees context menu placed near '<CellText>' cell in the '<ColumnName>' column
 
 Examples: 
 	| ListName     | CellText                         | ColumnName    |
 	| Devices      | 001PSUMZYOW581                   | Hostname      |
-	| Users        | Spruill, Shea                    | Username      |
-	| Applications | 11.2.5388.0                      | Application   |
+	| Users        | Spruill, Shea                    | Display Name  |
+	| Applications | 11.2.5388.0                      | Version       |
 	| Mailboxes    | 002B5DC7D4D34D5C895@bclabs.local | Email Address |
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174

@@ -1326,25 +1326,25 @@ Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForDynamicListAft
 	When User add following columns using URL to the "Applications" page:
 		| ColumnName      |
 		| Application Key |
-	When User create dynamic list with "TestList5E021D" name on "Applications" page
-	Then "TestList5E021D" list is displayed to user
+	When User create dynamic list with "DAS11468List_1" name on "Applications" page
+	Then "DAS11468List_1" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 		| SelectedList   | Association        |
-		| TestList5E021D | Not used on device |
-	Then "Any Application in list TestList5E021D not used on device" is displayed in added filter info
-	When User create dynamic list with "TestList5E021D" name on "Devices" page
-	Then "TestList5E021D" list is displayed to user
+		| DAS11468List_1 | Not used on device |
+	Then "Any Application in list DAS11468List_1 not used on device" is displayed in added filter info
+	When User create dynamic list with "DAS11468List_2" name on "Devices" page
+	Then "DAS11468List_2" list is displayed to user
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
-	Then User remove list with "TestList5E021D" name on "Applications" page
+	Then User remove list with "DAS11468List_1" name on "Applications" page
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to the "TestList5E021D" list
-	Then "TestList5E021D" list is displayed to user
+	When User navigates to the "DAS11468List_2" list
+	Then "DAS11468List_2" list is displayed to user
 
 @Evergreen @Evergreen_FiltersFeature @FiltersDisplay @DAS18065
 Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPanel

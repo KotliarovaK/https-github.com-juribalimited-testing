@@ -234,15 +234,15 @@ Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCa
 	And User clicks Add New button on the Filter panel
 	Then Category with counter is displayed on Filter panel
 	| Category                   | Number |
-	| Project: Windows7Mi        | 11     |
-	| Project Tasks: Windows7Mi  | 79     |
-	| Project Stages: Windows7Mi | 6      |
-	| Project: UserEvergr        | 12     |
-	| Project Tasks: UserEvergr  | 26     |
-	| Project Stages: UserEvergr | 2      |
-	| Project: EmailMigra        | 11     |
+	| Project: EmailMigra        | 14     |
 	| Project Tasks: EmailMigra  | 9      |
 	| Project Stages: EmailMigra | 3      |
+	| Project: UserEvergr        | 14     |
+	| Project Tasks: UserEvergr  | 21     |
+	| Project Stages: UserEvergr | 2      |
+	| Project: Windows7Mi        | 14     |
+	| Project Tasks: Windows7Mi  | 70     |
+	| Project Stages: Windows7Mi | 6      |
 
 @Evergreen @Applicatios @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS14969 @archived
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
