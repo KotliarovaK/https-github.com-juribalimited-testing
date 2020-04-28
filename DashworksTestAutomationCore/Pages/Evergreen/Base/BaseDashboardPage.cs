@@ -243,6 +243,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = AutocompleteSelectDropdownSelector)]
         public IWebElement AutocompleteSelectDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'pagination-label')]")]
+        public IWebElement AutocompletePagination { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
