@@ -265,6 +265,12 @@ Scenario: EvergreenJnr_AllLists_CheckPaginationDisplayingForBucketAutocomplete
 	| AutoTestBucket_DAS_17091_42 | Admin IT | FALSE     |
 	| AutoTestBucket_DAS_17091_43 | Admin IT | FALSE     |
 	| AutoTestBucket_DAS_17091_44 | Admin IT | FALSE     |
+	| AutoTestBucket_DAS_17091_45 | Admin IT | FALSE     |
+	| AutoTestBucket_DAS_17091_46 | Admin IT | FALSE     |
+	| AutoTestBucket_DAS_17091_47 | Admin IT | FALSE     |
+	| AutoTestBucket_DAS_17091_48 | Admin IT | FALSE     |
+	| AutoTestBucket_DAS_17091_49 | Admin IT | FALSE     |
+	| AutoTestBucket_DAS_17091_50 | Admin IT | FALSE     |
 
 	#DEVICE
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
@@ -336,6 +342,12 @@ Scenario: EvergreenJnr_AllLists_CheckPaginationDisplayingForCapacityAutocomplete
 	| CapacityUnit17091_42 | 17091_42    | FALSE     |
 	| CapacityUnit17091_43 | 17091_43    | FALSE     |
 	| CapacityUnit17091_44 | 17091_44    | FALSE     |
+	| CapacityUnit17091_45 | 17091_45    | FALSE     |
+	| CapacityUnit17091_46 | 17091_46    | FALSE     |
+	| CapacityUnit17091_47 | 17091_47    | FALSE     |
+	| CapacityUnit17091_48 | 17091_48    | FALSE     |
+	| CapacityUnit17091_49 | 17091_49    | FALSE     |
+	| CapacityUnit17091_50 | 17091_50    | FALSE     |
 
 	#DEVICE
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
@@ -415,6 +427,12 @@ Scenario: EvergreenJnr_AllLists_CheckPaginationDisplayingForRingsAutocomplete
 	| Ring17091_42 | 17091_42    | FALSE     |
 	| Ring17091_43 | 17091_43    | FALSE     |
 	| Ring17091_44 | 17091_44    | FALSE     |
+	| Ring17091_45 | 17091_45    | FALSE     |
+	| Ring17091_46 | 17091_46    | FALSE     |
+	| Ring17091_47 | 17091_47    | FALSE     |
+	| Ring17091_48 | 17091_48    | FALSE     |
+	| Ring17091_49 | 17091_49    | FALSE     |
+	| Ring17091_50 | 17091_50    | FALSE     |
 
 	#DEVICE
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item

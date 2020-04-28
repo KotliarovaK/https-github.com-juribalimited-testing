@@ -15,17 +15,17 @@ Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxPr
 	| SelectedCheckboxes |
 	| Exchange 2003      |
 	Then "6" rows are displayed in the agGrid
-	When User create dynamic list with "DynamicList77" name on "Mailboxes" page
-	Then "DynamicList77" list is displayed to user
-	When User create static list with "StaticList1429" name on "Mailboxes" page with following items
+	When User create dynamic list with "<FirstListName>" name on "Mailboxes" page
+	Then "<FirstListName>" list is displayed to user
+	When User create static list with "<SecondListName>" name on "Mailboxes" page with following items
 	| ItemName                |
 	| ZVF5144799@bclabs.local |
 	| zunigamn@bclabs.local   |
-	Then "StaticList1429" list is displayed to user
+	Then "<SecondListName>" list is displayed to user
 	Then "2" rows are displayed in the agGrid
 	When Project created via API and opened
-	| ProjectName       | Scope         | ProjectTemplate | Mode               |
-	| MailboxesProject3 | All Mailboxes | None            | Standalone Project |
+	| ProjectName   | Scope         | ProjectTemplate | Mode               |
+	| <ProjectName> | All Mailboxes | None            | Standalone Project |
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
 	Then "Mailboxes to add (0 of 14884 selected)" is displayed to the user in the Project Scope Changes section
@@ -40,9 +40,9 @@ Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxPr
 	#Then There are no errors in the browser console
 
 Examples:
-	| ChangingToList1 | ChangingToList2 | ObjectsToAdd1                          | ObjectsToAdd2                      |
-	| All Mailboxes   | StaticList1429  | Mailboxes to add (0 of 14884 selected) | Mailboxes to add (0 of 2 selected) |
-	| StaticList1429  | DynamicList77   | Mailboxes to add (0 of 2 selected)     | Mailboxes to add (0 of 6 selected) |
+	| FirstListName     | SecondListName     | ProjectName     | ChangingToList1    | ChangingToList2    | ObjectsToAdd1                          | ObjectsToAdd2                      |
+	| FirstList12999_11 | SecondList12999_11 | Project12999_11 | All Mailboxes      | SecondList12999_11 | Mailboxes to add (0 of 14884 selected) | Mailboxes to add (0 of 2 selected) |
+	| FirstList12999_22 | SecondList12999_22 | Project12999_22 | SecondList12999_22 | FirstList12999_22  | Mailboxes to add (0 of 2 selected)     | Mailboxes to add (0 of 6 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
