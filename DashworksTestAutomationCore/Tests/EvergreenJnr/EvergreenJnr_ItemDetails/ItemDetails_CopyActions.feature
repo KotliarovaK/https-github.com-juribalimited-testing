@@ -80,3 +80,21 @@ Examples:
 	| Device   | 05PFM2OWVCSCZ1                   | Device     | Hostname        | 05PFM2OWVCSCZ1      |
 	| User     | 03714167684E45F7A8F              | User       | Domain          | BCLABS              |
 	| Mailbox  | 06D7AE4F161F4A3AA7F@bclabs.local | Mailbox    | Alias           | 06D7AE4F161F4A3AA7F |
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetails_CopyActions @DAS20657 @Cleanup @X_Ray
+Scenario: EvergreenJnr_ApplicationsList_CheckThatValuesInCellsAreCopiedAndPastedInLanguageWhichTheyAreDisplayedInUi
+	When User navigates to the 'Application' details page for the item with '839' ID
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Projects' left submenu item
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Domain' column:
+	| checkboxes   |
+	| Project      |
+	| Project Type |
+	When User language is changed to "Deutsch" via API
+	When User clicks refresh button in the browser
+	When User right clicks on 'IGNORIEREN' cell from 'Bereitschaft' column
+	And User selects 'Zelle kopieren' option in context menu
+	Then Next data 'Ignorieren' is copied
+	When User right clicks on '8. Feb. 2019' cell from 'Lieferdatum' column
+	And User selects 'Zelle kopieren' option in context menu
+	Then Next data '8. Feb. 2019' is copied

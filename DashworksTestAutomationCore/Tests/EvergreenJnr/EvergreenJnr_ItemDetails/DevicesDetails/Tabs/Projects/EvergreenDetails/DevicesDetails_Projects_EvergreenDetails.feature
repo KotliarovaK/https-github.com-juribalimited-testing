@@ -115,7 +115,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16360 @DAS20433 @Cleanup
+	#AnnI 4/28/20 fixed for 'X_Ray'
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16360 @DAS20433 @DAS20173 @Cleanup @X_Ray
 Scenario: EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCorrectly
 	When User creates new Bucket via api
 	| Name             | TeamName | IsDefault |
@@ -140,7 +141,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsD
 	When User clicks 'MOVE' button on popup
 	Then 'The selected objects successfully moved to BucketDAS16360_1' text is displayed on inline success banner
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS16360 @Cleanup
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS16360 @DAS20173 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuccessfully
 	When User creates new Bucket via api
 	| Name               | TeamName | IsDefault |
@@ -172,7 +173,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuc
 	When User clicks 'MOVE' button on popup
 	Then 'The selected bucket has been deleted' text is displayed on inline tip banner
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS16360 @Cleanup
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS16360 @DAS20173 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheEvergreenBucket
 	When User create new User via API
 	| Username     | Email | FullName | Password  | Roles                          |
