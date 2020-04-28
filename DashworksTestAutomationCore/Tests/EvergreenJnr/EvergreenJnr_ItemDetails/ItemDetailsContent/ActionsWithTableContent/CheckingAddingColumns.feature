@@ -144,21 +144,19 @@ Examples:
 	| Distribution | Devices    | Collection Key    |
 	| Distribution | Devices    | Program Key       |
 
-	#Ann.Ilchenko 7/10/19: need to update logic for this test
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765 @DAS13657 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765 @DAS13657
 Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPage
 	When User navigates to the 'Device' details page for '01WNOSNMP5QLXC' item
 	Then Details page for '01WNOSNMP5QLXC' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Projects Summary' left submenu item
-	And User opens 'Project Type' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Project" checkbox on the Column Settings panel
-	And User select "Project Type" checkbox on the Column Settings panel
-	And User select "Category" checkbox on the Column Settings panel
-	And User select "Key" checkbox on the Column Settings panel
-	And User select "Object ID" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes   |
+	| Project      |
+	| Project Type |
+	| Category     |
+	| Key          |
+	| Object ID    |
 	Then following columns added to the table:
 	| ColumnName |
 	| Key        |

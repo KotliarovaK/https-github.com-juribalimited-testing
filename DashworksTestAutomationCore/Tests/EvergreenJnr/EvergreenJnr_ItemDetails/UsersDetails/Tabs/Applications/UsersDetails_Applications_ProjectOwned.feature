@@ -76,19 +76,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfter
 	When User selects 'Barry's User Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
-	Then 'VideoLAN VLC media player 0.8.2-test2 (A01)' content is displayed in the 'Current App' column
+	Then 'VideoLAN VLC media player 0.8.2-test2 (A01)' content is displayed in the 'Application' column
 	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
-	Then 'Vertigo Managed Smart Documents Wrapper (SMS_GEN)' content is displayed in the 'Current App' column
+	Then 'Vertigo Managed Smart Documents Wrapper (SMS_GEN)' content is displayed in the 'Application' column
 
-#AnnI 3/11/20 need gold data. will be ready by next week.
-@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS20047 @DAS20088 @DAS20186 @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS20047 @DAS20088 @DAS20186
 Scenario: EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnProjectOwnedTab
 	When User navigates to the 'User' details page for the item with '537' ID
 	Then Details page for 'CVS3269200' item is displayed to the user
 	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
-	Then 'Empty' content is displayed in the 'Current App' column
-	When User clicks "Empty" link on the Details Page
+	Then 'Empty' content is displayed in the 'Application' column
+	When User click content from "Application" column
 	Then 'User Evergreen Capacity Project' content is displayed in 'Item Details Project' dropdown
 	Then 'Details' left menu item is expanded
