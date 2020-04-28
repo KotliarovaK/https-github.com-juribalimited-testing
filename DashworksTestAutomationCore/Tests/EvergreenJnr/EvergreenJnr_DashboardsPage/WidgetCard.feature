@@ -63,6 +63,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @Cleanup @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
+	When User navigates to "2004 Rollout" project details
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left menu item
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	When User selects 'All Applications' in the 'Application Scope' dropdown
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
 	When User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
@@ -91,7 +96,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	Then 'WidgetForDAS16069_2' Widget is displayed to the user	
 	When User checks 'Edit mode' slide toggle
 	When User clicks data in card 'WidgetForDAS16069_2' widget
-	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
 	Then "44" rows are displayed in the agGrid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup
