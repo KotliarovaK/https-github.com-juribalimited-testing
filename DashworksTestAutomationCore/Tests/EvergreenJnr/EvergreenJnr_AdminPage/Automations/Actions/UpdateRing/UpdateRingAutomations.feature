@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateRing
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '17556_Action' text to 'Action Name' textbox
+	When User enters '17556_Action1' text to 'Action Name' textbox
 	When User selects 'Update ring' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete

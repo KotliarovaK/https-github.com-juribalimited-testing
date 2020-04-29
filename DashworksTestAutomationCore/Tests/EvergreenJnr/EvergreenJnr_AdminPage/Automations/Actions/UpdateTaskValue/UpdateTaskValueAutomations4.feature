@@ -226,7 +226,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '17564_Action' text to 'Action Name' textbox
+	When User enters '17564_Action1' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17566_Project' option from 'Project' autocomplete
 	When User selects '17566_Stage' option from 'Stage' autocomplete
@@ -397,7 +397,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForReadOnlyInAuto
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '18669_Action' text to 'Action Name' textbox
+	When User enters '18669_Action2' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '18669_Project1' option from 'Project' autocomplete
 	When User selects '18669_Stage \ 18669_Task' option from 'Task' autocomplete

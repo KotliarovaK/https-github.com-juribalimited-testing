@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasDueDate
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '17481_Action' text to 'Action Name' textbox
+	When User enters '17481_Action1' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17482_Project' option from 'Project' autocomplete
 	When User selects '17482_Stage \ 17482_Task' option from 'Task' autocomplete
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasNotDueDate
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '17481_Action' text to 'Action Name' textbox
+	When User enters '17481_Action2' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17483_Project' option from 'Project' autocomplete
 	When User selects '17483_Stage \ 17483_Task' option from 'Task' autocomplete
@@ -240,7 +240,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasNotOwner
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '17481_Action' text to 'Action Name' textbox
+	When User enters '17481_Action3' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17484_Project' option from 'Project' autocomplete
 	When User selects '17484_Stage \ 17484_Task' option from 'Task' autocomplete

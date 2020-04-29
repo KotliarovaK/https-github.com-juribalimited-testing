@@ -9,13 +9,13 @@ Background: Pre-Conditions
 Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateBucket
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
-	| 17339_Automation | 17339       | true     | false              | <ListName> | Manual |
+	| <AutomationName> | 17339       | true     | false              | <ListName> | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '17339_Action' text to 'Action Name' textbox
+	When User enters '<ActionName>' text to 'Action Name' textbox
 	When User selects 'Update bucket' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Bucket' autocomplete
@@ -24,9 +24,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdat
 	Then 'CREATE' button is not disabled
 
 Examples:
-	| ListName      |
-	| All Devices   |
-	| All Mailboxes |
+	| AutomationName    | ActionName    | ListName      |
+	| 17339_Automation1 | 17339_Action1 | All Devices   |
+	| 17339_Automation2 | 17339_Action2 | All Mailboxes |
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17339 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityForUpdateBucket
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityFo
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '17339_Action' text to 'Action Name' textbox
+	When User enters '17339_Action3' text to 'Action Name' textbox
 	When User selects 'Update bucket' in the 'Action Type' dropdown
 	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
 	When User selects 'Barry's Pilot Group 1' option from 'Bucket' autocomplete
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateBucket
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '17339_Action' text to 'Action Name' textbox
+	When User enters '17339_Action4' text to 'Action Name' textbox
 	When User selects 'Update bucket' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Bucket' autocomplete
