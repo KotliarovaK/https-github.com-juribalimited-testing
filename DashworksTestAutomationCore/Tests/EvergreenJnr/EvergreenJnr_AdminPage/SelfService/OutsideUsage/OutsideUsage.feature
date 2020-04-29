@@ -57,4 +57,4 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckApplicationSelfServiceColumns
 	| https://master.corp.juriba.com/evergreen/#/selfservice/20791_SI?ObjectId=0007AD15-8C65-4E6A-841E-F45E3CD99C49 |
 	| https://master.corp.juriba.com/evergreen/#/selfservice/20791_SI?ObjectId=00445C1C-05F0-4738-A2B0-AA53E7E7CAF9 |
 	When User create dynamic list with "20791List" name on "Applications" page
-	Then There are only 'Page not found' errors in console
+	Then There are no errors in the browser console

@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18248_Action' text to 'Action Name' textbox
+	And User enters '18248_Action1' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Date Computer' option from 'Task' autocomplete
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	#Check created Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
-	Then "18248_Action" content is displayed in "Action Name" field
+	Then "18248_Action1" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' textbox
 	Then 'One \ Date Computer' content is displayed in 'Task' textbox
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18248_Action' text to 'Action Name' textbox
+	And User enters '18248_Action2' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Radio Rag Date Owner App' option from 'Task' autocomplete
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	#Check created Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
-	Then "18248_Action" content is displayed in "Action Name" field
+	Then "18248_Action2" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' textbox
 	Then 'One \ Radio Rag Date Owner App' content is displayed in 'Task' textbox
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18248_Action' text to 'Action Name' textbox
+	And User enters '18248_Action3' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
 	When User selects '1 \ Completed' option from 'Task' autocomplete
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	#Check created Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
-	Then "18248_Action" content is displayed in "Action Name" field
+	Then "18248_Action3" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Mailbox Evergreen Capacity Project' content is displayed in 'Project' textbox
 	Then '1 \ Completed' content is displayed in 'Task' textbox
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18248_Action' text to 'Action Name' textbox
+	And User enters '18248_Action4' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Project Dates \ Forecast Date' option from 'Task' autocomplete
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	#Check created Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
-	Then "18248_Action" content is displayed in "Action Name" field
+	Then "18248_Action4" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Barry's User Project' content is displayed in 'Project' textbox
 	Then 'Project Dates \ Forecast Date' content is displayed in 'Task' textbox

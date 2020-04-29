@@ -167,9 +167,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects
 	Then "AutoTestList20409" list is displayed to user
 	#Create Project
 	When Project created via API and opened
-	| ProjectName     | Scope       | ProjectTemplate | Mode               |
-	| NewProject20409 | All Devices | None            | Standalone Project |
-	Then Page with 'NewProject20409' header is displayed to user
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| Project20409 | All Devices | None            | Standalone Project |
+	Then Page with 'Project20409' header is displayed to user
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
 	When User expands multiselect to add objects
@@ -191,7 +191,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects
 	When User clicks 'CREATE ACTION' button 
 	And User enters '20409_Action2' text to 'Action Name' textbox
 	When User selects 'Update capacity unit' in the 'Action Type' dropdown
-	When User selects 'NewProject20409' option from 'Project or Evergreen' autocomplete
+	When User selects 'Project20409' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
 	When User clicks 'CREATE' button 
 	#Run Automation
@@ -207,7 +207,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
-	Then 'Unassigned' content is displayed in the 'NewProject: Capacity Unit' column
+	Then 'All Devices' list should be displayed to the user
+	Then 'Unassigned' content is displayed in the 'Project204: Capacity Unit' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS20409 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedCapacityUnit
