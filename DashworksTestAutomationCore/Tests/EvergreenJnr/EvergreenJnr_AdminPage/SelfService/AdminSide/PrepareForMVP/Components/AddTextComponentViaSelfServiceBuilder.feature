@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserSeesProperTootltipForAddItemButton
+Scenario: EvergreenJnr_EvergreenJnr_AdminPage_CheckThatUserSeesProperTootltipForAddItemButton
 	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -16,12 +16,11 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserSeesProperT
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName       | ShowInSelfService |
 	| Test_ID_1         | TestPageSs1 | TestPageSsDisplay | false             |
-	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
     Then User sees 'Add Component' tootltip text of Add Item button for item with 'Page' type and 'TestPageSs1' name on Self Service Builder Panel
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAfterClickOnComponentItWillBeHighlightedAndAddButtonEnabled
+Scenario: EvergreenJnr_EvergreenJnr_AdminPage_CheckThatAfterClickOnComponentItWillBeHighlightedAndAddButtonEnabled
 	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -31,7 +30,6 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAfterClickOnCom
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName       | ShowInSelfService |
 	| Test_ID_3         | TestPageSs3 | TestPageSsDisplay | false             |
-	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
     When User clicks on Add Item button for item with 'Page' type and 'TestPageSs3' name on Self Service Builder Panel
 	Then 'ADD' button is disabled on popup
@@ -42,8 +40,8 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAfterClickOnCom
 	Then 'ADD' button is not disabled on popup
 	Then 'Text' component on dialog is highlighted
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenUserClickedOnAddButtonThePopupWillBeRemovedAndBuildeDesignSurfaceShowsCorrecComponentConfigurationPage
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @DAS20765 @Cleanup
+Scenario: EvergreenJnr_EvergreenJnr_AdminPage_CheckThatWhenUserClickedOnAddButtonThePopupWillBeRemovedAndBuildeDesignSurfaceShowsCorrecComponentConfigurationPage
 	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -53,7 +51,6 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenUserClicked
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName       | ShowInSelfService |
 	| Test_ID_4         | TestPageSs4 | TestPageSsDisplay | false             |
-	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
     When User clicks on Add Item button for item with 'Page' type and 'TestPageSs4' name on Self Service Builder Panel
     When User clicks on 'Text' component on dialog
@@ -64,5 +61,6 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenUserClicked
 	Then 'CREATE' button is disabled
 	Then 'CANCEL' button is displayed
 	Then 'CANCEL' button is not disabled
-	Then 'Show this component' checkbox is unchecked
+	Then 'Show this component' checkbox is checked
+	Then 'Show this component' checkbox is disabled
 	Then Page with 'Create Text Component' subheader is displayed to user
