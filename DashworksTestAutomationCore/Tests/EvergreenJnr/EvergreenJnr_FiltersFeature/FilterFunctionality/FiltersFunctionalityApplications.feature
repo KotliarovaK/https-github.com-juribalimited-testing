@@ -1211,7 +1211,7 @@ Examples:
 	| Windows7Mi: Application Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Application Readiness is Red   | 27        |
 	| Barry'sUse: Application Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Application Readiness is Empty | 1,145     |
 	| ComputerSc: Application Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Application Readiness is Green | 911       |
-	| Havoc(BigD: Application Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Application Readiness is Empty | 1,155     |
+	| Havoc(BigD: Application Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Application Readiness is Empty | 1,153     |
 	| UserSchedu: Application Readiness | Equals, Does not equal, Not empty | Empty        | UserSchedu: Application Readiness is Empty | 1,242     |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10512 @DAS11509 @DAS11507 @DAS11509 @DAS12026
@@ -1300,7 +1300,7 @@ Examples:
 	| Pr000: Hide From End Users      | Equals, Does not equal, Not empty | Empty        | Pr000: Hide From End Users is Empty      | 1,096     |
 	| Barry'sUse: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide From End Users is False | 1,078     |
 	| ComputerSc: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Hide From End Users is False | 1,043     |
-	| Havoc(BigD: Hide From End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide From End Users is Empty | 1,155     |
+	| Havoc(BigD: Hide From End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide From End Users is Empty | 1,153     |
 	| DeviceSche: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | DeviceSche: Hide From End Users is False | 100       |
 	| UserSchedu: Hide From End Users | Equals, Does not equal, Not empty | Empty        | UserSchedu: Hide From End Users is Empty | 1,242     |
 
