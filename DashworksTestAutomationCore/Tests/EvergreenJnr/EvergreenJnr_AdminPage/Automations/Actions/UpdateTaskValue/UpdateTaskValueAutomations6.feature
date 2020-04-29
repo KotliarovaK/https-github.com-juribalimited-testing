@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionUpdateRelativeToCurre
 	When User selects 'Remove owner' in the 'Update Owner' dropdown
 	Then 'UPDATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20961 @Cleanup 
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20961 @Cleanup @X_Ray
 Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateFromNoChangeToUpdateRelativeToNow
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |

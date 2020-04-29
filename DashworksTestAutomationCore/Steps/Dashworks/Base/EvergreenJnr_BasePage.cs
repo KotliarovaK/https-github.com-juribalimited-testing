@@ -1637,14 +1637,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserClicksStarButton()
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            button.StarMatIcon.Click();
+            button.StarButton.Click();
         }
 
         [Then(@"Star button is disabled")]
         public void ThenStarButtonIsDisabled()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.AreEqual(true, Convert.ToBoolean(page.StarMatIcon.GetAttribute("disabled")),
+            Verify.AreEqual(true, Convert.ToBoolean(page.StarButton.GetAttribute("disabled")),
                 $"Star button is enabled");
         }
 
@@ -1652,7 +1652,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenStarButtonIsNotDisabled()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.AreEqual(false, Convert.ToBoolean(page.StarMatIcon.GetAttribute("disabled")),
+            Verify.AreEqual(false, Convert.ToBoolean(page.StarButton.GetAttribute("disabled")),
                 $"Star button is disabled");
         }
 
@@ -1660,7 +1660,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenStarButtonHasTooltipWithText(string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.MouseHover(page.StarMatIcon);
+            _driver.MouseHover(page.StarButton);
             var toolTipText = _driver.GetTooltipText();
             Verify.AreEqual(text, toolTipText, "Star button's tooltip is incorrect");
         }

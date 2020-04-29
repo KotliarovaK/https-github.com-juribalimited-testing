@@ -288,7 +288,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopup
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects '207742_TestFBU' in the 'Bulk Update Type' dropdown
 	When User selects 'Manage favourites' in the 'Bulk Update Type' dropdown
-	Then popup with 'FavouriteBulkUpdates' title is displayed
+	Then popup with 'Favourite Bulk Updates' title is displayed
 	Then 'star207742_TestFBU' content is displayed in 'Bulk Update Type' dropdown
 	When User clicks Group By button and set checkboxes state
 	| Checkboxes  | State |
@@ -309,22 +309,22 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupColumns
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
-	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update path' in the 'Bulk Update Type' dropdown
-	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User clicks Star button
-	When User enters '207743_TestFBU' text to 'Favourite Bulk Update Name' textbox
-	When User clicks 'CREATE' button
-	When User clicks refresh button in the browser
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Hostname" rows in the grid
-	| SelectedRowsName |
-	| 00K4CEEQ737BA4L  |
+	#When User selects 'Bulk update' in the 'Action' dropdown
+	#When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	#When User selects '2004 Rollout' option from 'Project' autocomplete
+	#When User clicks Star button
+	#When User enters '207743_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	#When User clicks 'CREATE' button
+	#When User clicks refresh button in the browser
+	#When User clicks the Actions button
+	#Then Actions panel is displayed to the user
+	#When User select "Hostname" rows in the grid
+	#| SelectedRowsName |
+	#| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Manage favourites' in the 'Bulk Update Type' dropdown
-	Then popup with 'FavouriteBulkUpdates' title is displayed
-	Then grid headers are displayed in the following order
+	Then popup with 'Favourite Bulk Updates' title is displayed
+	Then grid headers are displayed in the following order on popup
 	| ColumnName           |
 	| Name                 |
 	|                      |

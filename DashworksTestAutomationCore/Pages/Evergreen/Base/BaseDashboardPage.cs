@@ -99,7 +99,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement UpdateButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button//i[@class='material-icons mat-star']")]
-        public IWebElement StarMatIcon { get; set; }
+        public IWebElement StarButton { get; set; }
 
         #region All Lists dropdown
 
