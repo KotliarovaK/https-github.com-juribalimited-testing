@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17684 @DAS19117 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17684 @DAS19117 @Cleanup 
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17684
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	| Pr00: Planning \ Get technical information |
 	Then 'Started' content is displayed in the 'Pr00: Planning \ Get technical information' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17642 @DAS20360 @Cleanup @Wormhole
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17642 @DAS20360 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -160,17 +160,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	| USEMEFORA2: Stage 1 \ Text Task (App) |
 	Then 'New Text value' content is displayed in the 'USEMEFORA2: Stage 1 \ Text Task (App)' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17799 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17799 @Cleanup 
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScopedAutomation
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
-	When User creates new Automation via API
+	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
 	| 17799_Automation | 17799       | true     | false              | New York - Devices | Manual |
-	When User navigates to the 'Automations' left menu item
-	Then Page with 'Automations' header is displayed to user
-	When User enters "17799_Automation" text in the Search field for "Automation" column
-	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -351,15 +345,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17682 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevicesScopedAutomation
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
-	When User creates new Automation via API
+	When User creates new Automation via API and open it
 	| Name               | Description | IsActive | StopOnFailedAction | Scope              | Run    |
 	| 17682_Automation_2 | 17682       | true     | false              | New York - Devices | Manual |
-	When User navigates to the 'Automations' left menu item
-	Then Page with 'Automations' header is displayed to user
-	When User enters "17682_Automation_2" text in the Search field for "Automation" column
-	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

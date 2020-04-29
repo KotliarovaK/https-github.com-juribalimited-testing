@@ -268,4 +268,27 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionUpdateRelativeToCurre
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
 	When User selects 'Remove owner' in the 'Update Owner' dropdown
-	Then 'UPDATE' button is not disabled 
+	Then 'UPDATE' button is not disabled
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20961 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateFromNoChangeToUpdateRelativeToNow
+	When User creates new Automation via API and open it
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 20961_Automation | 20961       | true     | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '20961_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 1 \ Original Auto Task' option from 'Task' autocomplete
+	When User selects 'Started' in the 'Update Value' dropdown
+	When User selects 'No change' in the 'Update Date' dropdown
+	When User clicks 'CREATE' button
+	Then 'The automation action has been created' text is displayed on inline success banner
+	When User clicks content from "Action" column
+	When User selects 'Update relative to now' in the 'Update Date' dropdown
+	Then 'days before now' content is displayed in 'Units' dropdown
+	Then '' content is displayed in 'Value' textbox
+	Then 'UPDATE' button is disabled
