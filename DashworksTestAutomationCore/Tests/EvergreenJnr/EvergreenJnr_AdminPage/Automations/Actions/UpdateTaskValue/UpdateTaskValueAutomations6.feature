@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionUpdateRelativeToCurre
 	When User selects 'Remove owner' in the 'Update Owner' dropdown
 	Then 'UPDATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20961 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20961 @Cleanup 
 Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateFromNoChangeToUpdateRelativeToNow
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
@@ -291,4 +291,12 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateFromNoChangeToUpdateRelat
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	Then 'days before now' content is displayed in 'Units' dropdown
 	Then '' content is displayed in 'Value' textbox
+	Then 'UPDATE' button is disabled
+	When User enters '2' text to 'Value' textbox
+	When User clicks 'UPDATE' button
+	Then 'The automation action has been updated' text is displayed on inline success banner
+	When User clicks content from "Action" column
+	Then 'Update relative to now' content is displayed in 'Update Date' dropdown
+	Then 'days before now' content is displayed in 'Units' dropdown
+	Then '2' content is displayed in 'Value' textbox
 	Then 'UPDATE' button is disabled
