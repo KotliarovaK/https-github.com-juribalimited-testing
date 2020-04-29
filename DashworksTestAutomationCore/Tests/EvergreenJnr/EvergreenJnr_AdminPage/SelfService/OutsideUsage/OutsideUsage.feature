@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20791 @DAS20918 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20791 @DAS20918 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckApplicationSelfServiceColumns
 	When User create static list with "DAS_20791" name on "Applications" page with following items
 	| ItemName   |
