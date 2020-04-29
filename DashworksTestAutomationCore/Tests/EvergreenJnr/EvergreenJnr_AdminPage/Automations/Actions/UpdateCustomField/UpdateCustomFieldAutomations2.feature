@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18187_Action' text to 'Action Name' textbox
+	And User enters '18187_Action1' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Add to existing values' in the 'Update Values' dropdown
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18187_Automation' item from 'Automation' column
-	When '18187_Automation' automation '18187_Action' action run has finished
+	When '18187_Automation' automation '18187_Action1' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation" text in the Search field for "Automation" column
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18187_Automation' item from 'Automation' column
-	When '18187_Automation' automation '18187_Action' action run has finished
+	When '18187_Automation' automation '18187_Action1' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation" text in the Search field for "Automation" column
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18187_Action' text to 'Action Name' textbox
+	And User enters '18187_Action2' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace single value' in the 'Update Values' dropdown
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18187_Action' text to 'Action Name' textbox
+	And User enters '18187_Action3' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Remove all values' in the 'Update Values' dropdown
@@ -192,7 +192,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18187_Action' text to 'Action Name' textbox
+	And User enters '18187_Action4' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace all values' in the 'Update Values' dropdown

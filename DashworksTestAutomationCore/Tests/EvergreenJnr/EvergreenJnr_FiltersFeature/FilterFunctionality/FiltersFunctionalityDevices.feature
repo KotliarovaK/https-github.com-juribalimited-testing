@@ -85,6 +85,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContain
 	When User add "Windows7Mi: Category" filter where type is "Does not equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Empty              |
+	When User clicks on 'Windows7Mi: Category' column header
 	Then Content is present in the newly added column
 	| ColumnName           |
 	| Windows7Mi: Category |
