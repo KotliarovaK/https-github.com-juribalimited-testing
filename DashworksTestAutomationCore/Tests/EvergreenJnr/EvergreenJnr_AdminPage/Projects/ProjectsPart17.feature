@@ -146,7 +146,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
-	When User selects "Include device owners" checkbox on the Project details page
+	And User selects "Include device owners" checkbox on the Project details page
 	Then Scope List dropdown is active
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then All Associations are available
@@ -157,6 +157,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User enters "NewProjectNameDAS11977" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+	Then 'The selected project has been deleted' text is displayed on inline success banner
 	When Project created via API and opened
 	| ProjectName         | Scope       | ProjectTemplate | Mode               |
 	| TestProjectDAS11977 | All Devices | None            | Standalone Project |
@@ -164,10 +165,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User navigates to the 'Details' left menu item
 	And User changes Project Name to "NewProjectNameDAS11977"
 	And User changes Project Short Name to "NewShort4875"
-#"UPDATE" Action button has been removed
-	#And User clicks 'UPDATE' button 
-	#Then 'The project details have been updated' text is displayed on inline success banner
-	When User click on Back button
+	And User click on Back button
 	And User enters "NewProjectNameDAS11977" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+	Then 'The selected project has been deleted' text is displayed on inline success banner
