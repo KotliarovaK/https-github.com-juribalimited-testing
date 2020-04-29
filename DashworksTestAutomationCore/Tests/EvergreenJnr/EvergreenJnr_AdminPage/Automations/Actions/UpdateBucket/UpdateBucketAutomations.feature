@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForEvergreenAllLi
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18397_Action' text to 'Action Name' textbox
+	And User enters '18397_Action1' text to 'Action Name' textbox
 	When User selects 'Update bucket' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'BucketforAuto' option from 'Bucket' autocomplete
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForEvergreenAllLi
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18397_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18397_Automation' item from 'Automation' column
-	When '18397_Automation' automation '18397_Action' action run has finished
+	When '18397_Automation' automation '18397_Action1' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18397_Automation" text in the Search field for "Automation" column
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForEvergreenAllLi
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18397_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18397_Automation' item from 'Automation' column
-	When '18397_Automation' automation '18397_Action' action run has finished
+	When '18397_Automation' automation '18397_Action1' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18397_Automation" text in the Search field for "Automation" column
@@ -171,7 +171,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForProjects
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18397_Action' text to 'Action Name' textbox
+	And User enters '18397_Action2' text to 'Action Name' textbox
 	When User selects 'Update bucket' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project or Evergreen' autocomplete
 	When User selects 'TestGroup' option from 'Bucket' autocomplete
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForProjects
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18397_Automation1" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18397_Automation1' item from 'Automation' column
-	When '18397_Automation1' automation '18397_Action' action run has finished
+	When '18397_Automation1' automation '18397_Action2' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18397_Automation1" text in the Search field for "Automation" column
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18397_Action' text to 'Action Name' textbox
+	And User enters '18397_Action3' text to 'Action Name' textbox
 	When User selects 'Update bucket' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '18397_TestBucket' option from 'Bucket' autocomplete
@@ -227,7 +227,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18397_2_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18397_2_Automation' item from 'Automation' column
-	When '18397_2_Automation' automation '18397_Action' action run has finished
+	When '18397_2_Automation' automation '18397_Action3' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "18397_2_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -252,7 +252,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket
 	When User navigates to the 'Automations' left menu item
 	When User enters "18397_2_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18397_2_Automation' item from 'Automation' column
-	When '18397_2_Automation' automation '18397_Action' action run has finished
+	When '18397_2_Automation' automation '18397_Action3' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "18397_2_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
@@ -309,7 +309,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedProject
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18397_Action' text to 'Action Name' textbox
+	And User enters '18397_Action4' text to 'Action Name' textbox
 	When User selects 'Update bucket' in the 'Action Type' dropdown
 	When User selects '18397_Project' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Bucket' autocomplete
@@ -318,7 +318,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedProject
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18397_3_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18397_3_Automation' item from 'Automation' column
-	When '18397_3_Automation' automation '18397_Action' action run has finished
+	When '18397_3_Automation' automation '18397_Action4' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "18397_3_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -334,7 +334,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedProject
 	When User navigates to the 'Automations' left menu item
 	When User enters "18397_3_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18397_3_Automation' item from 'Automation' column
-	When '18397_3_Automation' automation '18397_Action' action run has finished
+	When '18397_3_Automation' automation '18397_Action4' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "18397_3_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column

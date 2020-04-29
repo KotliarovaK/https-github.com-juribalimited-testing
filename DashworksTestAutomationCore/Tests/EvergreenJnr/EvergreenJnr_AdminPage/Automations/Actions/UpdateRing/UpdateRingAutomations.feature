@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @DAS17288 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType
 	When User creates new Automation via API and open it
-	| Name                  | Description | IsActive | StopOnFailedAction | Scope      | Run    |
-	| Test_Automation_17556 | 17556       | true     | false              | <ListName> | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| <AutomationName> | 17556       | true     | false              | <ListName> | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
@@ -26,10 +26,10 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainLis
 	| Update task value    |
 		 
 Examples:
-	| ListName      |
-	| All Devices   |
-	| All Users     |
-	| All Mailboxes |
+	| AutomationName             | ListName      |
+	| Automation_Devices175561   | All Devices   |
+	| Automation_Users175561     | All Users     |
+	| Automation_Mailboxes175561 | All Mailboxes |
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLists
