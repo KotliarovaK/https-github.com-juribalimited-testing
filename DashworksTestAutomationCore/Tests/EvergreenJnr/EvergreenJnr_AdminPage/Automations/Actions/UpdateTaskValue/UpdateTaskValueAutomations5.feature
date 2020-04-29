@@ -317,7 +317,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectColumnChangedAfterUpdatingActio
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18705_Action' text to 'Action Name' textbox
+	And User enters '18705_Action1' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Pre-Migration \ Device Priority' option from 'Task' autocomplete
@@ -340,7 +340,7 @@ Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18705_Action' text to 'Action Name' textbox
+	And User enters '18705_Action2' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 3 \ Date Only with Capacity User' option from 'Task' autocomplete

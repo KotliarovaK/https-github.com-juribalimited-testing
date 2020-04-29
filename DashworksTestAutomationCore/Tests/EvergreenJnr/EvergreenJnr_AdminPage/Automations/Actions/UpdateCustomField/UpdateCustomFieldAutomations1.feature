@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValu
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '17881_Action' text to 'Action Name' textbox
+	And User enters '17881_Action1' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace all values' in the 'Update Values' dropdown
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingV
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '17881_Action' text to 'Action Name' textbox
+	And User enters '17881_Action2' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Add to existing values' in the 'Update Values' dropdown
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '17881_Action' text to 'Action Name' textbox
+	And User enters '17881_Action3' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	Then following Values are displayed in the 'Update Values' dropdown:
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	Then 'Remove all values' content is displayed in 'Update Values' dropdown
-	Then "17881_Action" content is displayed in "Action Name" field
+	Then "17881_Action3" content is displayed in "Action Name" field
 	Then 'Update custom field' content is displayed in 'Action Type' dropdown
 	Then 'Phoenix Field' content is displayed in 'Custom Field' textbox
 	When User enters 'New_Action' text to 'Action Name' textbox
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecific
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '17881_Action1' text to 'Action Name' textbox
+	And User enters '17881_Action4' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Remove specific values' in the 'Update Values' dropdown
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleV
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '17881_Action' text to 'Action Name' textbox
+	And User enters '17881_Action5' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace single value' in the 'Update Values' dropdown
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleV
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	Then 'Replace single value' content is displayed in 'Update Values' dropdown
-	Then "17881_Action" content is displayed in "Action Name" field
+	Then "17881_Action5" content is displayed in "Action Name" field
 	Then 'Update custom field' content is displayed in 'Action Type' dropdown
 	Then 'Phoenix Field' content is displayed in 'Custom Field' textbox
 	Then 'first value' content is displayed in 'Find Value' textbox

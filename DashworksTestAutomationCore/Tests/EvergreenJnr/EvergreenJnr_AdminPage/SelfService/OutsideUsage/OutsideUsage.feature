@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20791 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20791 @DAS20918 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckApplicationSelfServiceColumns
 	When User create static list with "DAS_20791" name on "Applications" page with following items
 	| ItemName   |
@@ -31,28 +31,30 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckApplicationSelfServiceColumns
 	| 20791_SI: Welcome Page Status Date   |
 	| 20791_SI: Thank You Page Status      |
 	| 20791_SI: Thank You Page Status Date |
-	| 20791_SI: Link                       |
+	| 20791_SI: Self Service Link          |
 	When User clicks on '20791_SI: Welcome Page Status' column header
 	Then '20791_SI: Welcome Page Status' column contains following content
-	| Content                |
-	| Page not viewed        |
-	| Page not viewed        |
+	| Content    |
+	| Not viewed |
+	| Not viewed |
 	When User clicks on '20791_SI: Welcome Page Status Date' column header
 	Then '20791_SI: Welcome Page Status Date' column contains following content
 	| Content |
 	|         |
 	When User clicks on '20791_SI: Thank You Page Status' column header
 	Then '20791_SI: Thank You Page Status' column contains following content
-	| Content                |
-	| Page not viewed        |
-	| Page not viewed        |
-	When User scroll right to the '20791_SI: Link' column
+	| Content    |
+	| Not viewed |
+	| Not viewed |
+	When User scroll right to the '20791_SI: Self Service Link' column
 	When User clicks on '20791_SI: Thank You Page Status Date' column header
 	Then '20791_SI: Thank You Page Status Date' column contains following content
 	| Content |
 	|         |
-	When User clicks on '20791_SI: Link' column header
-	Then '20791_SI: Link' column contains following content
-	| Content                                                 |
-	| /20791_SI?ObjectId=0007AD15-8C65-4E6A-841E-F45E3CD99C49 |
-	| /20791_SI?ObjectId=00445C1C-05F0-4738-A2B0-AA53E7E7CAF9 |
+	When User clicks on '20791_SI: Self Service Link' column header
+	Then '20791_SI: Self Service Link' column contains following content
+	| Content                                                                                                       |
+	| https://master.corp.juriba.com/evergreen/#/selfservice/20791_SI?ObjectId=0007AD15-8C65-4E6A-841E-F45E3CD99C49 |
+	| https://master.corp.juriba.com/evergreen/#/selfservice/20791_SI?ObjectId=00445C1C-05F0-4738-A2B0-AA53E7E7CAF9 |
+	When User create dynamic list with "20791List" name on "Applications" page
+	Then There are no errors in the browser console

@@ -146,8 +146,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLink
 	And User create static list with "TestList19083" name
 	Then "TestList19083" list is displayed to user
 	When User creates new Automation via API and open it
-	| Name             | Description | IsActive | StopOnFailedAction | Scope         | Run    |
-	| 19083_Automation | 19083       | true     | false              | TestList19083 | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope         | Run    |
+	| 19083_Automation1 | 19083       | true     | false              | TestList19083 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -161,12 +161,12 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLink
 	When User clicks 'CREATE' button 
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
-	When User enters "19083_Automation" text in the Search field for "Automation" column
-	When User clicks 'Run now' option in Cog-menu for '19083_Automation' item from 'Automation' column
-	When '19083_Automation' automation '19083_Action1' action run has finished
+	When User enters "19083_Automation1" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '19083_Automation1' item from 'Automation' column
+	When '19083_Automation1' automation '19083_Action1' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
-	When User enters "19083_Automation" text in the Search field for "Automation" column
+	When User enters "19083_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
@@ -177,19 +177,19 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLink
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	When User enters "19083_Automation" text in the Search field for "Automation" column
+	When User enters "19083_Automation1" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	When User clicks 'UPDATE' button 
 	When User clicks 'Automations' header breadcrumb
-	When User enters "19083_Automation" text in the Search field for "Automation" column
-	When User clicks 'Run now' option in Cog-menu for '19083_Automation' item from 'Automation' column
-	When '19083_Automation' automation '19083_Action1' action run has finished
+	When User enters "19083_Automation1" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '19083_Automation1' item from 'Automation' column
+	When '19083_Automation1' automation '19083_Action1' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
-	When User enters "19083_Automation" text in the Search field for "Automation" column
+	When User enters "19083_Automation1" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then '1' content is displayed in the 'Objects' column
@@ -227,8 +227,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects
 	When User waits until Queue disappears
 	#Create Automation
 	When User creates new Automation via API and open it
-	| Name             | Description | IsActive | StopOnFailedAction | Scope             | Run    |
-	| 19083_Automation | 19083       | true     | false              | AutoTestList19083 | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope             | Run    |
+	| 19083_Automation2 | 19083       | true     | false              | AutoTestList19083 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -240,12 +240,12 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects
 	When User clicks 'CREATE' button 
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
-	When User enters "19083_Automation" text in the Search field for "Automation" column
-	When User clicks 'Run now' option in Cog-menu for '19083_Automation' item from 'Automation' column
-	When '19083_Automation' automation '19083_Action2' action run has finished
+	When User enters "19083_Automation2" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '19083_Automation2' item from 'Automation' column
+	When '19083_Automation2' automation '19083_Action2' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
-	When User enters "19083_Automation" text in the Search field for "Automation" column
+	When User enters "19083_Automation2" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
