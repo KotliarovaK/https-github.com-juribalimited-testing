@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| 1507                   |
 	| 1607                   |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15462
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15462 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCount
 	When User clicks 'Dashboards' on the left-hand menu
 	When User checks 'Edit mode' slide toggle
