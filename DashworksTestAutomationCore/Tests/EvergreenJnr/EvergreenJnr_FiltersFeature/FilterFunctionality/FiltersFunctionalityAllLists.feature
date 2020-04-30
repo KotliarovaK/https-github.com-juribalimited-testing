@@ -475,3 +475,20 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedFor
 		| Users        | Barry'sUse: Project Dates \ Scheduled Date                                     |
 		| Applications | UserSchedu: Three \ Date App Req A                                             |
 		| Mailboxes    | Created Date                                                                   |
+
+#sz: at moment of test creation thre is a bug and in this case 100 items were returned
+@Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS20917 @Not_Ready
+Scenario Outline: EvergreenJnr_UsersList_CheckThatSpecificGroupFiltersWorks
+	When User clicks '<List>' on the left-hand menu
+	When User clicks the Filters button
+	When user select "<Filter>" filter
+	When User select "Equals" Operator value
+	When User enters "<Term>" text in Search field at selected Filter
+	When User clicks 'ADD' button
+	Then message 'No users found' is displayed to the user
+
+Examples:
+		| List    | Filter               | Term               |
+		| Users   | Mailbox GUID         | abrakadabra        |
+		| Devices | Group Display Name   | ApplicationAccount |
+		| Users   | Mailbox Display Name | ApplicationAccount |
