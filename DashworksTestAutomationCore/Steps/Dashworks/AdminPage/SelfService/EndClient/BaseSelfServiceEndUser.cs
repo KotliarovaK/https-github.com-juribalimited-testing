@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         public void WhenUserNavigatesToFirsEndUserPageWithSelfServiceIdentifier(string selfServiceIdentifier)
         {
             string ssGuid = DatabaseHelper.GetSelfServiceObjectGuid(selfServiceIdentifier);
-            string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{selfServiceIdentifier}?ObjectId={ssGuid}";
+            string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{selfServiceIdentifier}/{ssGuid}";
 
             _driver.NavigateToUrl(navigationUrl);
         }
