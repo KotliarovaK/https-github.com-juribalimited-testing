@@ -62,7 +62,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         private void GridHeadersAreDisplayedInTheFollowingOrderOnPopup(Table table, bool onPopup = false)
         {
-            var page = onPopup ? _driver.NowAt<BaseDialogGridPage>() : _driver.NowAt<BaseGridPage>();
+            var page = _driver.NowAt<BaseGridPage>();
+            if (onPopup)
+            {
+                page = (BaseDialogGridPage)page;
+            }
             var allHeaders = page.GetAllHeadersText();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Verify.AreEqual(expectedList, allHeaders, "Columns order is incorrect");

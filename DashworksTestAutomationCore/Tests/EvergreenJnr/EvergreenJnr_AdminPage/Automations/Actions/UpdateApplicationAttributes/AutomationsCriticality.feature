@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityForA
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '18727_Action' text to 'Action Name' textbox
+	And User enters '18727_Action1' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Core' in the 'Criticality' dropdown
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityForA
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
-	Then '18727_Action' content is displayed in 'Action Name' textbox
+	Then '18727_Action1' content is displayed in 'Action Name' textbox
 	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'Core' content is displayed in 'Criticality' dropdown

@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18292_Action' text to 'Action Name' textbox
+	And User enters '18292_Action1' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU \ DT Auto App' option from 'Task' autocomplete
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18292_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18292_Automation' item from 'Automation' column
-	When '18292_Automation' automation '18292_Action' action run has finished
+	When '18292_Automation' automation '18292_Action1' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "18292_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18292_Action' text to 'Action Name' textbox
+	And User enters '18292_Action2' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU \ DT Auto Mail' option from 'Task' autocomplete
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks 'Automations' header breadcrumb
 	When User enters "Test18292Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for 'Test18292Automation' item from 'Automation' column
-	When 'Test18292Automation' automation '18292_Action' action run has finished
+	When 'Test18292Automation' automation '18292_Action2' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "Test18292Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks 'Automations' header breadcrumb
 	When User enters "Test18292Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for 'Test18292Automation' item from 'Automation' column
-	When 'Test18292Automation' automation '18292_Action' action run has finished
+	When 'Test18292Automation' automation '18292_Action2' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "Test18292Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInDevicesAu
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters '18292_Action' text to 'Action Name' textbox
+	And User enters '18292_Action3' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU \ DT Auto Device' option from 'Task' autocomplete

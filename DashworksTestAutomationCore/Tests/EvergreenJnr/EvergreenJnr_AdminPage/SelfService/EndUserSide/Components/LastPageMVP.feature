@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEndUserLastPage
 	And 'Continue' button displayed for End User
 	And 'Continue' button is enabled for End User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20291 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20291 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
 	When User create static list with "DAS_20291" name on "Applications" page with following items
 	| ItemName   |
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
 	Then 'Back' button displayed for End User
 	Then 'Back' button is disabled for End User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20342 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20342 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPage
 	When User create static list with "DAS_20342" name on "Applications" page with following items
 	| ItemName   |

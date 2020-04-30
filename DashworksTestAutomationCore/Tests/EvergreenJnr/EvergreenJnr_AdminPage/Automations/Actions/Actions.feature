@@ -422,7 +422,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	And User add "City" filter where type is "Equals" with added column and "Edinburgh" Lookup option
 	And User create dynamic list with "EdinburghDevices_17234" name on "Devices" page
 	When Project created via API and opened
-	| ProjectName                 | Scope                  | ProjectTemplate | Mode               |
+	| ProjectName       | Scope                  | ProjectTemplate | Mode               |
 	| Test16992_Project | EdinburghDevices_17234 | None            | Standalone Project |
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -505,18 +505,18 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPa
 	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	#Create Action
-	When User enters '17544_Action' text to 'Action Name' textbox
+	When User enters '<ActionName>' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '<Project1>' option from 'Project' autocomplete
 	When User selects '<Project2>' option from 'Project' autocomplete
 	When User selects '<Project3>' option from 'Project' autocomplete
 
 Examples:
-	| AutomationName     | Scope            | Project1                 | Project2                           | Project3                           |
-	| 17544_Automation   | All Devices      | User Scheduled Test (Jo) | 2004 Rollout                       | Barry's User Project               |
-	| 17544_Automation_1 | All Users        | User Scheduled Test (Jo) | 2004 Rollout                       | Email Migration                    |
-	| 17544_Automation_2 | All Applications | User Scheduled Test (Jo) | 2004 Rollout                       | Email Migration                    |
-	| 17544_Automation-3 | All Mailboxes    | Email Migration          | Mailbox Evergreen Capacity Project | USE ME FOR AUTOMATION(MAIL SCHDLD) |
+	| AutomationName     | Scope            | ActionName    | Project1                 | Project2                           | Project3                           |
+	| 17544_Automation   | All Devices      | 17544_Action1 | User Scheduled Test (Jo) | 2004 Rollout                       | Barry's User Project               |
+	| 17544_Automation_1 | All Users        | 17544_Action2 | User Scheduled Test (Jo) | 2004 Rollout                       | Email Migration                    |
+	| 17544_Automation_2 | All Applications | 17544_Action3 | User Scheduled Test (Jo) | 2004 Rollout                       | Email Migration                    |
+	| 17544_Automation-3 | All Mailboxes    | 17544_Action4 | Email Migration          | Mailbox Evergreen Capacity Project | USE ME FOR AUTOMATION(MAIL SCHDLD) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17542 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsLog
