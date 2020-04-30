@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorForRunAutomationBasedOnNotValidList
 	When User enters "20248_Automation" text in the Search field for "Automation" column
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20394 @DAS16318 @DAS20473 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20394 @DAS16318 @DAS20473 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckRenamedListDisplayingInAutomationLog
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button

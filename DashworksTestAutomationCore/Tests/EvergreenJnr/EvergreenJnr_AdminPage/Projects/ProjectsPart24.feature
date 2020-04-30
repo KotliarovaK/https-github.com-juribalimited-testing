@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListI
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
-	| SelectedList                             | Association        |
+	| SelectedList         | Association        |
 	| Broken list DAS17122 | Entitled to device |
 	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	When User clicks 'Admin' on the left-hand menu

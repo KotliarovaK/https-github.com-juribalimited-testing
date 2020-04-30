@@ -46,7 +46,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User checks 'Active' checkbox
 	When User selects 'Manual' in the 'Run' dropdown
 	When User clicks 'CREATE' button 
-	When User enters 'Update Migrated devices to Started' text to 'Action Name' textbox
+	When User enters '<ActionName>' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '<Project>' option from 'Project' autocomplete
 	When User selects '<Task>' option from 'Task' autocomplete
@@ -61,11 +61,11 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	Then 'Not Started' content is displayed in 'Value' dropdown
 
 Examples:
-	| AutomationName                | Scope            | Project                              | Task                                                   |
-	| 17428_Automation_Devices      | All Devices      | USE ME FOR AUTOMATION(DEVICE SCHDLD) | Stage A \ Workflow task                                |
-	| 17428_Automation_Users        | All Users        | USE ME FOR AUTOMATION(USR SCHDLD)    | Stage 1 \ Radiobutton Readiness Date Owner Task (User) |
-	| 17428_Automation_Applications | All Applications | User Scheduled Test (Jo)             | One \ Radio Rag only Rag App                           |
-	| 17428_Automation_Mailboxes    | All Mailboxes    | zMailbox Sch for Automations Feature | Stage 3 \ Radio Date Owner                             |
+	| AutomationName                | ActionName       | Scope            | Project                              | Task                                                   |
+	| 17428_Automation_Devices      | DAS17428_Action1 | All Devices      | USE ME FOR AUTOMATION(DEVICE SCHDLD) | Stage A \ Workflow task                                |
+	| 17428_Automation_Users        | DAS17428_Action2 | All Users        | USE ME FOR AUTOMATION(USR SCHDLD)    | Stage 1 \ Radiobutton Readiness Date Owner Task (User) |
+	| 17428_Automation_Applications | DAS17428_Action3 | All Applications | User Scheduled Test (Jo)             | One \ Radio Rag only Rag App                           |
+	| 17428_Automation_Mailboxes    | DAS17428_Action4 | All Mailboxes    | zMailbox Sch for Automations Feature | Stage 3 \ Radio Date Owner                             |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17691 @DAS17625 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayedForActions

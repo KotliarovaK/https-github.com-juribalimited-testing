@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19979 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19979 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCreatePage
 	When User create static list with "DAS_19979_11" name on "Users" page with following items
 	| ItemName |
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCreatePage
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19979 @DAS20049 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19979 @DAS20049 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForUpdatePage
 	When User create static list with "DAS_19979_22" name on "Users" page with following items
 	| ItemName |
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForUpdatePage
 	| Some_Content_Additional_Text |
 	Then 'Show this component' checkbox is unchecked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20049 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20049 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCancelUpdateFunctionality
 	When User create static list with "DAS_20049_33" name on "Users" page with following items
 	| ItemName |
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCancelUpdateFunctionalit
 	| text            |
 	| Additional Text |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20160 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20160 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatTextEditorOptionsIsAvailableForTextComponent
 	When User create static list with "DAS_20160" name on "Applications" page with following items
 	| ItemName   |

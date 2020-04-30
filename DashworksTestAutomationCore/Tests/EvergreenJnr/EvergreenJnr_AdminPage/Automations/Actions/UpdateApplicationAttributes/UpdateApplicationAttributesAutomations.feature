@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	When User enters '18966_Action' text to 'Action Name' textbox
+	When User enters '18966_Action1' text to 'Action Name' textbox
 	When User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'RETIRE' in the 'Rationalisation' dropdown
@@ -178,7 +178,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	When User enters '18966_Action' text to 'Action Name' textbox
+	When User enters '18966_Action2' text to 'Action Name' textbox
 	When User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
@@ -193,7 +193,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	When User enters '18966_Action' text to 'Action Name' textbox
+	When User enters '18966_Action3' text to 'Action Name' textbox
 	When User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
