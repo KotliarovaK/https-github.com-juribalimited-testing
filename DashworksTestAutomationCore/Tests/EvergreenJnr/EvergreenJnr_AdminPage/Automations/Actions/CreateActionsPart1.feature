@@ -54,7 +54,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckUpdateTaskValueEditPageLoadsProjec
 	When User selects 'Not Started' in the 'Value' dropdown
 	When User clicks 'CREATE' button 
 	When User clicks content from "Action" column
-	Then "Update Migrated devices to Started" content is displayed in "Action Name" field
+	Then "<ActionName>" content is displayed in "Action Name" field
 	And 'Update task value' content is displayed in 'Action Type' dropdown
 	And '<Project>' content is displayed in 'Project' textbox
 	And '<Task>' content is displayed in 'Task' textbox
