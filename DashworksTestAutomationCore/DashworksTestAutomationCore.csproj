@@ -73,6 +73,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\FavouriteBulkUpdate\FBU_UpdateCustomField.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart10.feature.cs">
       <DependentUpon>CapacitySlotsPart10.feature</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -217,6 +220,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\FavouriteBulkUpdate\FBU_UpdateCustomField.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FBU_UpdateCustomField.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart10.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
