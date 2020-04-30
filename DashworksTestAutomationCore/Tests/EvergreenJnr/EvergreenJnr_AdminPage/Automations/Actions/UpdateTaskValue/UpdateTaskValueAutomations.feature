@@ -92,8 +92,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| Name    | Description | IsActive | StopOnFailedAction | Scope       | Run    |
-	| 17429_Automation1 | 16890       | true   | false              | All Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17429_Automation1 | 16890       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Actions content check
-	Then "17429_Action" content is displayed in "Action Name" field
+	Then "17429_Action1" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '17429Project1' content is displayed in 'Project' textbox
 	Then '[Stage not found]' content is displayed in 'Stage' textbox

@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '17881_Action' text to 'Action Name' textbox
+	And User enters '17881_Action1' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects '17847' option from 'Custom Field' autocomplete
 	And User selects 'Replace all values' in the 'Update Values' dropdown
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	When User navigates to the 'Actions' left menu item
 	Then "[Custom field not found]" content is displayed for "Task or Field" column
 	When User clicks content from "Action" column
-	Then "17881_Action" content is displayed in "Action Name" field
+	Then "17881_Action1" content is displayed in "Action Name" field
 	Then 'Update custom field' content is displayed in 'Action Type' dropdown
 	Then 'The selected custom field cannot be found' error message is displayed for 'Custom Field' field
 	Then '[Custom field not found]' content is displayed in 'Custom Field' textbox
@@ -53,13 +53,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
-	| 18166_Automation | 18166       | true     | false              | All Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18166_Automation1 | 18166       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '17881_Action' text to 'Action Name' textbox
+	And User enters '17881_Action2' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	Then 'CustomField_18166' content is not displayed in 'Custom Field' autocomplete after search
 
@@ -72,13 +72,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
-	| 18166_Automation | 18166       | true     | false              | All Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18166_Automation2 | 18166       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '17881_Action' text to 'Action Name' textbox
+	And User enters '17881_Action3' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Add to existing values' in the 'Update Values' dropdown

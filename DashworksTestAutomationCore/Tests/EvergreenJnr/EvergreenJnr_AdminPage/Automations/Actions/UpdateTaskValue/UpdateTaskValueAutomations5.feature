@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '18712_Action' text to 'Action Name' textbox
+	When User enters '18712_Action2' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '18712_Project1' option from 'Project' autocomplete
 	When User selects '18712_Stage' option from 'Stage' autocomplete
@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '18712_Action' text to 'Action Name' textbox
+	When User enters '18712_Action3' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '18712_Project2' option from 'Project' autocomplete
 	When User selects '18712_Stage' option from 'Stage' autocomplete
@@ -274,7 +274,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateAfterTaskChangingToTaskWi
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '18712_Action' text to 'Action Name' textbox
+	When User enters '18712_Action4' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '18712_Project3' option from 'Project' autocomplete
 	When User selects '18712_Stage' option from 'Stage' autocomplete
