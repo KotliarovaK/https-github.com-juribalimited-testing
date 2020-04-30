@@ -81,3 +81,27 @@ Scenario: EvergreenJnr_DevicesList_CheckDuplicatedListDisplayedInListPanel
 	Then "TestList2" list is displayed to user
 	When User navigates to the "TestList2" list
 	Then 'TestList2' list should be displayed to the user
+
+@Evergreen @Applications @EvergreenJnr_ListPanel @CustomListDisplay @DAS20817 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatPinInformationIsNotRememberedAfterSwitchingBetweenLists
+	When User clicks 'Applications' on the left-hand menu
+	When User opens 'Version' column settings
+	When User selects 'Pin right' option from column settings
+	Then 'Version' column is 'Right' Pinned
+	When User navigates to the "2004 Apps" list
+	Then URL is 'evergreen/#/applications?$listid=37'
+	When User navigates to the "App Readiness Columns & Filters" list
+	Then URL is 'evergreen/#/applications?$listid=59'
+	When User navigates to the "All Applications" list
+	Then URL is 'evergreen/#/applications'
+
+@Evergreen @Applications @EvergreenJnr_ListPanel @CustomListDisplay @DAS20817 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatPinInformationIsNotRememberedAfterSwitchingBetweenSavedLists
+	When User clicks 'Applications' on the left-hand menu
+	When User opens 'Version' column settings
+	When User selects 'Pin right' option from column settings
+	Then 'Version' column is 'Right' Pinned
+	When User create dynamic list with "List_DAS20817" name on "Applications" page
+	Then "List_DAS20817" list is displayed to user
+	When User navigates to the "All Applications" list
+	Then URL is 'evergreen/#/applications'
