@@ -116,3 +116,27 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| Title               | Value |
 	| App Rationalisation | Keep  |
 	| Target App          |       |
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @X_Ray
+Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfAppIsOnboardedButNotForwardPathedToAnotherApp
+	When User navigates to the 'Application' details page for the item with '630' ID
+	Then Details page for 'ATI Multimedia Center' item is displayed to the user
+	When User navigates to the 'Projects' parent left menu item
+	And User navigates to the 'Evergreen Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title           | Value |
+	| Rationalisation | KEEP  |
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Project Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title               | Value |
+	| App Rationalisation | Keep  |
+	| Target App          |       |
+	When User clicks 'RESYNC' button
+	When User unchecks 'Resync owner' checkbox
+	When User unchecks 'Resync name' checkbox
+	When User clicks 'RESYNC' button
+	Then following content is displayed on the Details Page
+	| Title               | Value |
+	| App Rationalisation | Keep  |
+	| Target App          |       |
