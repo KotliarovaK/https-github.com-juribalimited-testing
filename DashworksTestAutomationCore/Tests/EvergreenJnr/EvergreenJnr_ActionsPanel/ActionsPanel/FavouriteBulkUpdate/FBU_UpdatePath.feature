@@ -44,23 +44,22 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update path ' in the 'Bulk Update Type' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'VIP User' option from 'Path' autocomplete
 	When User clicks Star button
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This favourite bulk update will be created with the following parameters:' text is displayed on popup
-	#Add table; sorting by defaul
-	Then User verifies data in the fields on details page
-	| Field            | Data         |
-	| Bulk Update Type | Update path  |
-	| Project          | 2004 Rollout |
-	| Path             | VIP User     |
-	Then following fields are displayed in the open section:
+	Then following fields are displayed in the popup:
 	| Fields           |
 	| Bulk Update Type |
 	| Project          |
 	| Path             |
+	Then User compares data in the fields in the popup:
+	| Field            | Data         |
+	| Bulk Update Type | Update path  |
+	| Project          | 2004 Rollout |
+	| Path             | VIP User     |
 	Then 'CANCEL' button is not disabled
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
@@ -194,7 +193,6 @@ Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdate
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	#Update FBU name
 	When User selects 'specific FBU' in the 'Bulk Update Type' dropdown
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	Then 'This favourite bulk update is invalid' text is displayed on inline error banner
@@ -309,18 +307,18 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupColumns
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
-	#When User selects 'Bulk update' in the 'Action' dropdown
-	#When User selects 'Update path' in the 'Bulk Update Type' dropdown
-	#When User selects '2004 Rollout' option from 'Project' autocomplete
-	#When User clicks Star button
-	#When User enters '207743_TestFBU' text to 'Favourite Bulk Update Name' textbox
-	#When User clicks 'CREATE' button
-	#When User clicks refresh button in the browser
-	#When User clicks the Actions button
-	#Then Actions panel is displayed to the user
-	#When User select "Hostname" rows in the grid
-	#| SelectedRowsName |
-	#| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User clicks Star button
+	When User enters '207743_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks refresh button in the browser
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Manage favourites' in the 'Bulk Update Type' dropdown
 	Then popup with 'Favourite Bulk Updates' title is displayed
@@ -334,3 +332,41 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupColumns
 	| Task or Field        |
 	| Update Type          |
 	| Values               |
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20777 @X_Ray
+Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupDeletingAndEditing
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 000F977AC8824FE39B8@bclabs.local |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects 'Email Migration' option from 'Project' autocomplete
+	When User clicks Star button
+	When User enters '20777_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks Star button
+	When User enters '20777_TestFBU1' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks refresh button in the browser
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 000F977AC8824FE39B8@bclabs.local |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Manage favourites' in the 'Bulk Update Type' dropdown
+	Then popup with 'Favourite Bulk Updates' title is displayed
+	When User enters "20777_TestFBU1" text in the Search field for "Name" column
+	When User clicks 'Rename' option in Cog-menu for '20777_TestFBU1' item from 'Name' column
+	#Add step to rename fbu
+	When User clicks 'Delete' option in Cog-menu for '20777_TestFBU1' item from 'Name' column
+	Then 'This Favourite Bulk Update will be permanently deleted' text is displayed on inline tip banner
+	When User clicks 'CANCEL' button on inline tip banner
+	When User clicks 'Delete' option in Cog-menu for '20777_TestFBU1' item from 'Name' column
+	Then 'This Favourite Bulk Update will be permanently deleted' text is displayed on inline tip banner
+	When User clicks 'DELETE' button on inline tip banner
+	Then 'The Favourite Bulk Update has been deleted' text is displayed on inline success banner

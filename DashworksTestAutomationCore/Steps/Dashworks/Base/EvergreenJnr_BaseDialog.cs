@@ -6,6 +6,7 @@ using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
 using DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog;
+using System.Linq;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -147,6 +148,33 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         #region Grid
 
         #region Column Header
+
+        #endregion
+
+        #region Fields
+
+        [Then(@"following fields are displayed in the popup:")]
+        public void ThenFollowingFieldsAreDisplayedInThePopup(Table table)
+        {
+            var fields = _driver.NowAt<BaseDialogDashboardPage>();
+
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = fields.TableRowsName.Select(value => value.Text).ToList();
+            Verify.AreEqual(expectedList, actualList, "Fields in the pop up are different");
+        }
+
+        [Then(@"User compares data in the fields in the popup:")]
+        public void ThenUserComparesDataInTheFieldsInThePopup(Table table)
+        {
+            var page = _driver.NowAt<BaseDialogDashboardPage>();
+            foreach (TableRow row in table.Rows)
+            {
+                var field = row["Field"];
+                var value = row["Data"];
+                Verify.AreEqual(page.CompareFieldContent(field), value,
+                    $"Incorrect data in the '{field}' field");
+            }
+        }
 
         #endregion
 
