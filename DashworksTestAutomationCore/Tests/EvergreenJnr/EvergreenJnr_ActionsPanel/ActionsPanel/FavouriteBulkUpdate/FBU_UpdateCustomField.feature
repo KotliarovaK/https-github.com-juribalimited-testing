@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20848 @X_Ray
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20848 @X_Ray
 Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdateUpdateCustomFieldForAllListsType
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
@@ -32,7 +32,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdat
 	| Applications | Application   | 20040610sqlserverck              |
 	| Mailboxes    | Email Address | 002B5DC7D4D34D5C895@bclabs.local |
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20850 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20850 @X_Ray
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoadingAndRestoringValues
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	When User enters '20853_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'Favourite Bulk Update Name should be unique' error message is displayed for 'Favourite Bulk Update Name' field
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20853 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @X_Ray
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForUpdateCustomFieldFavouriteBulkUpdateItems
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForUpdateCustomFieldFavouriteB
 	| abc_22085         |
 	Then Favourite Bulk Update items are displayed in ascending order
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20853 @X_Ray 
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @X_Ray 
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateCustomFieldType
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdat
 	Then 'CANCEL' button is not disabled
 	Then Star button is not disabled
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20853 @Cleanup @X_Ray
+@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Cleanup @X_Ray
 Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkUpdateWithoutCustomField
 	When User creates new Custom Field via API
 	| FieldName | FieldLabel | AllowExternalUpdate | Enabled | Application |
@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkU
 	Then Star button is disabled
 	#Add value [Path not found] in Manage Favourite
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20853 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @X_Ray
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupForUpdateCustomFieldType
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
