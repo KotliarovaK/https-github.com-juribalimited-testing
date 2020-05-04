@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18214 @DAS19364 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18214 @DAS19364 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpenedOneAndUserIsAbleToEditIt
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpened
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutName
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
@@ -46,11 +46,11 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_12' item from 'Self Service Name' column
 	When User clears 'Self Service Name' textbox with backspaces
-	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
+	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete without search
 	When User enters 'Test_ID_12' text to 'Self Service Identifier' textbox
 	Then 'UPDATE' button is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutChanges
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
@@ -61,13 +61,13 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_4' item from 'Self Service Name' column
-	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
+	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete without search
 	When User enters 'TestProj_4' text to 'Self Service Name' textbox
 	When User enters 'Test_ID_3' text to 'Self Service Identifier' textbox
 	When User clicks Body container
 	Then 'UPDATE' button is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutSelectedScope
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 	When User navigates to the 'Self Services' left menu item
     When User clicks 'Edit' option in Cog-menu for 'TestProj_6' item from 'Self Service Name' column
 	When User enters 'TestProj_66' text to 'Self Service Name' textbox
-	When User selects 'Application List (Complex) - BROKEN LIST' option from 'Self Service Scope' autocomplete
+	When User selects 'Application List (Complex) - BROKEN LIST' option from 'Self Service Scope' autocomplete without search
 	When User enters 'Test_ID_66' text to 'Self Service Identifier' textbox
 	Then 'This list has errors' error message is displayed for 'Self Service Scope' dropdown
 	Then 'UPDATE' button is disabled
@@ -113,7 +113,7 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCan
 	When User navigates to the 'Self Services' left menu item
     When User clicks 'Edit' option in Cog-menu for 'TestProj_7' item from 'Self Service Name' column
 	When User enters 'TestProj_77' text to 'Self Service Name' textbox
-	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
+	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete without search
 	When User enters '<Self Service Identifier>' text to 'Self Service Identifier' textbox
 	Then 'The allowable characters are letters, numbers, underscore and hyphen' error message is displayed for 'Self Service Identifier' field
 	Then 'UPDATE' button is disabled
@@ -136,7 +136,7 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCan
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_8' item from 'Self Service Name' column
 	When User enters 'TestProj_88' text to 'Self Service Name' textbox
-	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
+	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete without search
 	When User enters '<Self Service Identifier>' text to 'Self Service Identifier' textbox
 	Then 'UPDATE' button is not disabled
 	Then '<Self Service Identifier after cut>' content is displayed in 'Self Service Identifier' textbox
