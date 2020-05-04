@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	And User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19274 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19274 @DAS21043 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User creates new Automation via API and open it
 	| Name              | Description | IsActive | StopOnFailedAction | Scope                   | Run    |
@@ -300,3 +300,42 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateFromNoChangeToUpdateRelat
 	Then 'days before now' content is displayed in 'Units' dropdown
 	Then '2' content is displayed in 'Value' textbox
 	Then 'UPDATE' button is disabled
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS21043 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckDateColumnForRunningAutomationWithRadiobuttonOrDateTask
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00YWR8TJU4ZF8V   |
+	And User selects 'Create static list' in the 'Action' dropdown
+	And User create static list with "AutoTestList21043" name
+	Then "AutoTestList21043" list is displayed to user
+	When User creates new Automation via API and open it
+	| Name             | Description | IsActive | StopOnFailedAction | Scope             | Run    |
+	| 21043_Automation | 21043       | true     | false              | AutoTestList21043 | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '21043_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage C \ Radio Date Slot Device' option from 'Task' autocomplete
+	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User enters '0' text to 'Value' textbox
+	When User clicks 'CREATE' button
+	#Run Automation
+	When User clicks 'Automations' header breadcrumb
+	When User enters "21043_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '21043_Automation' item from 'Automation' column
+	When '21043_Automation' automation '21043_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When User enters "21043_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	Then '10 Sep 2019' content is displayed in the 'zDeviceAut: Stage C \ Radio Date Slot Device (Date)' column
