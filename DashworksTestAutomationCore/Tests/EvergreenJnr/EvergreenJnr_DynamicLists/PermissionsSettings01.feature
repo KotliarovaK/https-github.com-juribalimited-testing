@@ -1,5 +1,5 @@
 ﻿@retry:1
-Feature: PermissionsSettings
+Feature: PermissionsSettings01
 	Runs Dynamic List permissions setting related tests
 
 Background: Pre-Conditions
