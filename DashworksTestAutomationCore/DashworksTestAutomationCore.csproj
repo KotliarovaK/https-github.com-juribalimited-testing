@@ -116,7 +116,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EditSelfService.feature</DependentUpon>
     </Compile>
-    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\SelfServiceAgGrid.feature.cs">
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\SelfServiceAgGrid.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>SelfServiceAgGrid.feature</DependentUpon>
@@ -257,7 +257,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EditSelfService.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\SelfServiceAgGrid.feature">
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\SelfServiceAgGrid.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SelfServiceAgGrid.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
