@@ -5,17 +5,17 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17288 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17288 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
-	| 17288_Automation | 17288       | true     | false              | <ListName> | Manual |
+	| <AutomationName> | 17288       | true     | false              | <ListName> | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '17288_Action' text to 'Action Name' textbox
+	When User enters '<ActionName>' text to 'Action Name' textbox
 	When User selects 'Update capacity unit' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
@@ -24,9 +24,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdat
 	Then 'CREATE' button is not disabled
 
 Examples:
-	| ListName         |
-	| All Devices      |
-	| All Mailboxes    |
+	| AutomationName    | ActionName    | ListName      |
+	| 17288_Automation1 | 17288_Action1 | All Devices   |
+	| 17288_Automation2 | 17288_Action2 | All Mailboxes |
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17288 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUpdateCapacityUnit
