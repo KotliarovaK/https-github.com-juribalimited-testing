@@ -37,6 +37,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User creates new Slot via Api
 	| Project              | SlotName  | DisplayName | CapacityType   | Tasks                      | CapacityUnits |
 	| ProjectForDAS13152_2 | Slot13152 | 13152       | Capacity Units | Stage13152_2 \ Task13152_2 | Unassigned    |
+	And User navigates to the 'Capacity' left menu item
+	And User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
 	Then only below options are selected in the 'Tasks' autocomplete
 	| Options                    |
