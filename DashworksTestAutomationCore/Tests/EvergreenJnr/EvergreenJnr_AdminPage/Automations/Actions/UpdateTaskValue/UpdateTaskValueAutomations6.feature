@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19656 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19656 @Cleanup @Do_Not_Run_With_Capacity
 Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope                   | Run    |
