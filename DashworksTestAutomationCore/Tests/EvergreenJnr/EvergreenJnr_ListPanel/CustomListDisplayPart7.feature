@@ -110,44 +110,44 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfter
 	Then '<ListLabel>' list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
-	When User create dynamic list with "DynamicList2" name on "<ListName>" page
+	When User create dynamic list with "<DymamicList>" name on "<ListName>" page
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| <Search>       | <Rows>       |
 	Then Edit List menu is not displayed
-	Then "DynamicList2" list is displayed to user
+	Then "<DymamicList>" list is displayed to user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Mary           | <NewRows>    |
 	Then Edit List menu is not displayed
-	Then "DynamicList2" list is displayed to user
+	Then "<DymamicList>" list is displayed to user
 	And Clearing the agGrid Search Box
 	Then Edit List menu is not displayed
-	Then "DynamicList2" list is displayed to user
+	Then "<DymamicList>" list is displayed to user
 	When User clicks '<ListName>' on the left-hand menu
 	Then '<ListLabel>' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	And User selects 'Create static list' in the 'Action' dropdown
-	When User create static list with "StaticList2" name
+	When User create static list with "<StaticList>" name
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| <Search>       | <Rows>       |
 	Then Edit List menu is not displayed
-	And "StaticList2" list is displayed to user
+	And "<StaticList>" list is displayed to user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Mary           | <NewRows>    |
 	Then Edit List menu is not displayed
-	And "StaticList2" list is displayed to user
+	And "<StaticList>" list is displayed to user
 	And Clearing the agGrid Search Box
 	Then Edit List menu is not displayed
-	And "StaticList2" list is displayed to user
+	And "<StaticList>" list is displayed to user
 
 Examples:
-	| ListName     | ListLabel        | ColumnName    | Search    | Rows  | NewRows |
-	| Devices      | All Devices      | Hostname      | Centre    | 3,283 | 18      |
-	| Users        | All Users        | Username      | Barland   | 3     | 142     |
-	| Applications | All Applications | Application   | Adobe     | 40    | 1       |
-	| Mailboxes    | All Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
+	| DymamicList    | StaticList    | ListName     | ListLabel        | ColumnName    | Search    | Rows  | NewRows |
+	| Dynamic10988_1 | Static10988_1 | Devices      | All Devices      | Hostname      | Centre    | 3,283 | 18      |
+	| Dynamic10988_2 | Static10988_2 | Users        | All Users        | Username      | Barland   | 3     | 142     |
+	| Dynamic10988_3 | Static10988_3 | Applications | All Applications | Application   | Adobe     | 40    | 1       |
+	| Dynamic10988_4 | Static10988_4 | Mailboxes    | All Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
