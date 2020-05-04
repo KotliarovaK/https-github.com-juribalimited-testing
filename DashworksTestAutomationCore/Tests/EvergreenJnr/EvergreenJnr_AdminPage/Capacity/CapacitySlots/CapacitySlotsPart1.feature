@@ -130,3 +130,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	When User clicks content from "Capacity Slot" column
 	Then '' content is displayed in 'Slot Available From' textbox
 	Then '' content is displayed in 'Slot Available To' textbox
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS19328 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeValidated
+	When Project created via API and opened
+	| ProjectName                | Scope       | ProjectTemplate | Mode               |
+	| ProjectForCapacityDAS19328 | All Devices | None            | Standalone Project |
+	When User navigates to the 'Capacity' left menu item
+	When User navigates to the 'Slots' left menu item
+	When User clicks 'CREATE SLOT' button 
+	When User enters 'Slot19328' text to 'Slot Name' textbox
+	When User enters 'NewSlotName' text to 'Display Name' textbox
+	When User enters 'Dec 31, 1899' text to 'Slot Available From' textbox
+	Then 'Please enter a valid date' error message is displayed for 'Slot Available From' field
+	When User enters 'Jun 7, 2079' text to 'Slot Available To' textbox
+	Then 'Please enter a valid date' error message is displayed for 'Slot Available To' field
+	When User enters 'Jan 1, 1900' text to 'Slot Available From' textbox
+	When User enters 'Jun 6, 2079' text to 'Slot Available To' textbox
+	When User clicks 'CREATE' button 
+	Then 'Your capacity slot has been created' text is displayed on inline success banner

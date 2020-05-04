@@ -285,6 +285,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	| 2            |
 	| 4            |
 	| 6            |
+	| 8            |
+	| 260          |
 	When User clicks 'CREATE' button
 	Then 'WidgetForDAS18168' Widget is displayed to the user
 	Then There are no errors in the browser console
@@ -296,6 +298,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	| 2            |
 	| 4            |
 	| 6            |
+	| 8            |
+	| 260          |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAnyCharacters

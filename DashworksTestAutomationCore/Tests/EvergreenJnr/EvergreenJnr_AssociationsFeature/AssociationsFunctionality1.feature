@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Associations @DAS18425 @DAS18458 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	Then Associations panel is displayed to the user
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasR
 	Then 'RUN PIVOT' button has tooltip with 'Use association panel to create a list' text
 
 @Evergreen @Associations @DAS19937 @DAS19887 @Cleanup
-Scenario: EvergreenJnr_DevicesLists_CheckThatPivotManagerIsNotOpenedByDefault
+Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotManagerIsNotOpenedByDefault
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list

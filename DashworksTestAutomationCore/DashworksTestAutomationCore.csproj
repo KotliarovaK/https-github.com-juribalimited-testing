@@ -51,6 +51,7 @@
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart9 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart26 - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality1 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\PermissionsSettings - Copy.feature.cs" />
   </ItemGroup>
 
@@ -136,6 +137,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>GeneralEndUser.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality9.feature.cs">
+      <DependentUpon>AssociationsFunctionality9.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\PermissionsSettings02.feature.cs">
       <DependentUpon>PermissionsSettings02.feature</DependentUpon>
@@ -277,6 +282,12 @@
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\GeneralEndUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GeneralEndUser.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality9.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AssociationsFunctionality9.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\PermissionsSettings02.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
