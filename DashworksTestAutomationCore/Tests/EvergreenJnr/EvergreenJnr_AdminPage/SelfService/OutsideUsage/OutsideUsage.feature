@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20791 @DAS20918 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckApplicationSelfServiceColumns
+Scenario: EvergreenJnr_AdminPage_CheckApplicationSelfServiceColumns
 	When User create static list with "DAS_20791" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckApplicationSelfServiceColumns
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20073 @Cleanup
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckApplicationSelfServiceFilters
+Scenario: EvergreenJnr_AdminPage_CheckApplicationSelfServiceFilters
 	When User creates Self Service via API and open it
 	| Name         | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope            |
 	| DAS_20073_SS | 20073_SI          | true    | true                | All Applications |
