@@ -1,11 +1,11 @@
-﻿Feature: SelfServiceGrid
+﻿Feature: SelfServiceAgGrid
 	Self Service
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckGeneralViewOfSelfServiceAgGrid
     When User creates Self Service via API
 	| ServiceId | Name                   | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelection
 	When User selects all rows on the grid
 	Then Select All checkbox have indeterminate checked state
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceCogMenuDisplaysProperly
     When User creates Self Service via API
 	| ServiceId | Name                         | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
@@ -66,4 +66,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceCogMenuDisplaysProperly
 	| options          |
 	| Edit             |
 	| Disable          | 
-	| Delete           |
+	| Delete           |	

@@ -291,12 +291,45 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User checks 'Modus bearbeiten' slide toggle
 	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in warning message of 'Widget_For_DAS17592' widget on Dashboards page
 
-	#Sergiy: DAS14263 create test and recomment issue
-	#When User clicks Dashboards Details icon on Dashboards page
-	#Then Permission panel is displayed to the user
-	#When User changes sharing type from "Private" to "Specific users / teams"
-	#When User clicks 'ADD TEAM' button 
-	#When User selects 'Team 1061' option from 'Team' autocomplete
-	#And User select "Admin" in Select Access dropdown
-	#When User clicks the "CANCEL" button on Dashboard Details
-	#Then Team/User section in not displayed on Dashboard Details
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18880 @Cleanup
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatTaskOwnerValuesFiltersCanBeUsedInSharedWidgets
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password |
+	| User(Me) | 111111   |
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "<FilterName>" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| <FilterValue>  |
+	Then table content is present
+	When User create dynamic list with "<ListName>" name on "Devices" page
+	Then "<ListName>" list is displayed to user
+	When Dashboard with 'Dashboard#18880' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title     | List       | SplitBy      | AggregateFunction | OrderBy          | MaxValues |
+	| Table      | DAS-18880 | <ListName> | <FilterName> | Count             | <FilterName> ASC | 10        |
+	Then 'DAS-18880' Widget is displayed to the user
+	Then '<NumberOfValues>' count is displayed for '<ColumnName>' in the table Widget
+	When User clicks the Dashboard Permissions button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	Then Review Widget List Permissions is displayed to the User
+	When User selects 'Everyone can edit' permission for '<ListName>' list on Permissions Pop-up
+	When User clicks 'UPDATE & SHARE' button 
+	When User adds user to list of shared person
+	| User      | Permission |
+	| User(Me)2 | Admin      |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username  | Password |
+	| User(Me)2 | 111111   |
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User navigates to the "Dashboard#18880" list
+	Then 'This list does not contain any rows' message is displayed in 'DAS-18880' widget
+
+Examples: 
+| FilterName                        | FilterValue | ListName                   | NumberOfValues | ColumnName  |
+| s.Me/MyPr: Stg1 \ S.task1 (Owner) | Me          | aMyDeviceListForDAS18880   | 5              | User(Me)    |
+| s.Me/MyPr: Stg1 \ S.task1 (Team)  | My Team     | aTeamDeviceListForDAS18880 | 8              | s.TeamMe/My |
