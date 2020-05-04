@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToDifferentTaskValue
 	When User selects 'Stage C \ Radio Date Slot Device' option from 'Relative Task' autocomplete
 	When User navigate to the bottom of the Action panel
 	When User enters '5' text to 'Value' textbox
-	When User selects 'days before task value' in the 'dateUnit' dropdown
+	When User selects 'days before task value' in the 'DateUnit' dropdown
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button
 	And User navigate to the top of the Action panel
