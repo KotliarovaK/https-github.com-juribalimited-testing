@@ -1,5 +1,5 @@
 ﻿Feature: CreateSelfServiceViaApi
-	Self Service
+	Various scenarios to create Self Service via API only
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen via API
