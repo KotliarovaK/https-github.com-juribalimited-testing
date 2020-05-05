@@ -255,17 +255,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing
-	#Create list
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Hostname" rows in the grid
-	| SelectedRowsName |
-	| 00SH8162NAS524   |
-	And User selects 'Create static list' in the 'Action' dropdown
-	And User create static list with "190831_TestList" name
-	Then "190831_TestList" list is displayed to user
 	#Create Project
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -289,6 +278,17 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing
 	When User enters 'TestRing19083' text to 'Ring name' textbox
 	When User clicks 'CREATE' button
 	Then 'The ring has been created' text is displayed on inline success banner
+	#Create list
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00SH8162NAS524   |
+	And User selects 'Create static list' in the 'Action' dropdown
+	And User create static list with "190831_TestList" name
+	Then "190831_TestList" list is displayed to user
 	#Create Automation
 	When User creates new Automation via API and open it
 	| Name               | Description | IsActive | StopOnFailedAction | Scope           | Run    |
