@@ -1516,3 +1516,43 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatThereIsNoEmptyOptionInI
 		| Device (Saved List)       |
 		| Device Owner (Saved List) |
 		| User (Saved List)         |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS19721 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityFilterWorks
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When user select "Windows7Mi: Criticality" filter
+	When User clicks in search field in the Filter block
+	Then Tasks are displayed in the following order on Action panel:
+	| items         |
+	| Empty         |
+	| Core          |
+	| Critical      |
+	| Important     |
+	| Not Important |
+	| Uncategorised |
+	When User clicks Body container
+	When User deletes filter and agGrid does not reload
+	When User add "Windows7Mi: Criticality" filter where type is "Does not equal" with added column and Lookup option
+	| SelectedValues |
+	| Empty          |
+	Then table content is present
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Windows7Mi: Criticality |
+	Then Content is not empty in the column
+	| ColumnName                  |
+	| Windows7Mi: Criticality |
+	When User have removed "Windows7Mi: Criticality" filter
+	When User add "Windows7Mi: Criticality" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Core           |
+	Then 'Core' content is displayed in the 'Windows7Mi: Criticality' column
+	When User clicks Add New button on the Filter panel
+	When User add "Windows7Mi: Criticality" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Empty          |
+	Then table data is filtered correctly
+	When User creates 'DAS19721_List' dynamic list
+	Then "DAS19721_List" list is displayed to user

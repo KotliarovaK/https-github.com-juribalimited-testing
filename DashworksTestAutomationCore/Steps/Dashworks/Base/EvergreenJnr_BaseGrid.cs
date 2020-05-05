@@ -633,6 +633,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
+        [Then(@"Content is not empty in the column")]
+        public void ThenContentIsNotEmptyInTheColumn(Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+
+            foreach (var row in table.Rows)
+            {
+                var content = page.GetColumnContentByColumnName(row["ColumnName"]);
+                Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is not empty");
+            }
+        }
+
         [When(@"User clicks on '(.*)' column header")]
         public void WhenUserClicksOnColumnHeader(string columnName)
         {

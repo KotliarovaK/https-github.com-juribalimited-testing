@@ -53,6 +53,7 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart26 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality1 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\PermissionsSettings - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Trend.feature.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -158,6 +159,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ItemDetailsDisplay.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Users.feature.cs">
+      <DependentUpon>MailboxesDetails_Users.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\ToolTips_UsersDetails.feature.cs">
       <DesignTime>True</DesignTime>
@@ -306,6 +311,12 @@
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsDisplay.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Users.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MailboxesDetails_Users.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\ToolTips_UsersDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
