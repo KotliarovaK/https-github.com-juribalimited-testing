@@ -476,7 +476,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedFor
 		| Applications | UserSchedu: Three \ Date App Req A                                             |
 		| Mailboxes    | Created Date                                                                   |
 
-#sz: at moment of test creation thre is a bug and in this case 100 items were returned
+#sz: at moment of test creation thre is a bug and in this case 100 items were returned #DAS20915
 @Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS20917 @Not_Ready
 Scenario Outline: EvergreenJnr_UsersList_CheckThatSpecificGroupFiltersWorks
 	When User clicks '<List>' on the left-hand menu
