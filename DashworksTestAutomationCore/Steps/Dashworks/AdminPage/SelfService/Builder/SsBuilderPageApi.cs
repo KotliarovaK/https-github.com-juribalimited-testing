@@ -157,7 +157,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
             Verify.AreEqual("[]", content, $"Self Service shouldn't contain any pages, but it contains the following: {content}");
         }
 
-        [Then(@"'(.*)' Self Service does not contains '(.*)' page")]
+        [Then(@"'(.*)' Self Service does not contain '(.*)' page")]
         public void ThenSelfServiceDoesNotContainsPage(string serviceIdentifier, string pageName)
         {
             var ss = new SelfServiceDto() { ServiceIdentifier = serviceIdentifier };
