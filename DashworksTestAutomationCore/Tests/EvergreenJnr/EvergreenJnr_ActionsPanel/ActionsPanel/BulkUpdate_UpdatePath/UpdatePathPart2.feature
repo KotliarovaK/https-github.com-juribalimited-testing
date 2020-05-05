@@ -235,3 +235,35 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdatePathInBulkUpdateTypeTeamToGroupSe
 	When User refreshes agGrid
 	And User perform search by "Z11REX196H34MG"
 	Then '[Default (Computer)]' content is displayed in the 'zDeviceAut: Path' column
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS21036 @X_Ray
+Scenario: EvergreenJnr_DevicesList_CheckThatWarningBannerDisappearsAfterClosingActionPanel
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00KLL9S8NRF0X6   |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects 'Barry's User Project' option from 'Project' autocomplete
+	When User selects 'Desktop Replacement' option from 'Path' autocomplete
+	When User clicks 'UPDATE' button 
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
+	When User clicks the Actions button
+	Then inline tip banner is not displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00KLL9S8NRF0X6   |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects 'Barry's User Project' option from 'Project' autocomplete
+	When User selects 'Desktop Replacement' option from 'Path' autocomplete
+	When User clicks 'UPDATE' button 
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00KLL9S8NRF0X6   |
+	#Then inline tip banner is not displayed

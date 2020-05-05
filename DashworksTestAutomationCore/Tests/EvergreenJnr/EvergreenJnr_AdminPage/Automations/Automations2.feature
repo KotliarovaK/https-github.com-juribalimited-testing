@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidingForScopeLists
 	When User navigates to the 'Actions' left menu item
 	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS21048 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS21048 @Cleanup @X_Ray
 Scenario: EvergreenJnr_AdminPage_CheckValidationMessagesForScopeDropdownWhenListDeleted
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -53,5 +53,11 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationMessagesForScopeDropdownWhenList
 	Then '[List not found]' content is displayed in 'Scope' textbox
 	When User selects 'All Devices' option from 'Scope' autocomplete
 	Then 'List validated' success message for 'Scope' field
+	When User clicks 'Automations' header breadcrumb
+	When User clicks 'YES' button on popup
+	When User enters "21048_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then 'The selected list cannot be found' error message is displayed for 'Scope' field
+	Then '[List not found]' content is displayed in 'Scope' textbox
 	When User selects 'All Mailboxes' option from 'Scope' autocomplete
 	Then 'List validated' success message for 'Scope' field
