@@ -28,4 +28,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsderIsAbleToDeleteSelfServicePageViaA
 	| ServiceIdentifier | Name        | DisplayName       | ShowInSelfService |
 	| id1906114         | TestPageSs2 | TestPageSsDisplay | false             |
 	When User deletes 'TestPageSs2' Self Service Page with 'id1906114' identifier via API
-	Then 'id1906114' Self Service does not contains 'TestPageSs2' page
+	Then 'id1906114' Self Service does not contain 'TestPageSs2' page
