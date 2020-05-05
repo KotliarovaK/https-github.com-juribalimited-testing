@@ -177,7 +177,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
             var settings = new JsonSerializerSettings();
             settings.Converters.Add(new SelfServiceComponentConverter());
 
-            bool isThePageExist = JsonConvert.DeserializeObject<List<SelfServicePageDto>>(content, settings).Any(x => x.Name.Equals(pageName));
+            bool isThePageExists = JsonConvert.DeserializeObject<List<SelfServicePageDto>>(content, settings).Any(x => x.Name.Equals(pageName));
 
             Verify.IsFalse(isThePageExist, $"Self Service '{serviceIdentifier}' shouldn't contain '{pageName}' page");
         }
