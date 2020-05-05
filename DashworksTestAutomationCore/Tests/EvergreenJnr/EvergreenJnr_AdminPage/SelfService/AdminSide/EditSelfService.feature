@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpened
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutName
+Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutName
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 	Then 'UPDATE' button is disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutChanges
+Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutChanges
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -83,9 +83,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutSelect
 	When User enters 'SS_ID_9' text to 'Self Service Identifier' textbox
 	Then 'UPDATE' button is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @Not_Ready
-#Need to add REALY broken list to the step or make the existing as broken
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithBrokenScopeList
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithBrokenScopeList
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -102,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 	Then 'UPDATE' button is disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
-Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -125,7 +124,7 @@ Examples:
 	| My**&                   |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
-Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -148,7 +147,7 @@ Examples:
 	| 1234567890WIEOEOEPEP1111212123424334324234234 | 1234567890                        |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatDisabledSelfServiceChangesTheCheckboxStateInEditAfterEnableInCogMenu
+Scenario: EvergreenJnr_AdminPage_CheckThatDisabledSelfServiceChangesTheCheckboxStateInEditAfterEnableInCogMenu
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -162,7 +161,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatDisabledSelfSer
 	Then 'Enable self service portal' checkbox is checked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @DAS19692 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEnabledSelfServiceChangesTheCheckboxStateInEditAfterDisableInCogMenu
+Scenario: EvergreenJnr_AdminPage_CheckThatEnabledSelfServiceChangesTheCheckboxStateInEditAfterDisableInCogMenu
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -176,7 +175,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEnabledSelfServ
 	Then 'Enable self service portal' checkbox is unchecked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @DAS19692 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedWhenEnableDisableSelfService
+Scenario: EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedWhenEnableDisableSelfService
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -191,7 +190,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 	Then 'The self service has been disabled' text is displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationAndButtonsOnItWillBeDisplayedWhenUserIsAboutToDeleteSelfService
+Scenario: EvergreenJnr_AdminPage_CheckThatProperNitificationAndButtonsOnItWillBeDisplayedWhenUserIsAboutToDeleteSelfService
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -206,7 +205,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 	Then 'CANCEL' button is displayed on inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedAfterTheSelfServiceWasDeletedAndItDoesntDisaplysAnymoreInTheGrid
+Scenario: EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedAfterTheSelfServiceWasDeletedAndItDoesntDisaplysAnymoreInTheGrid
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -224,7 +223,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 	Then 'TestProj_13' content is not displayed in the 'Self Service Name' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19289 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserUpadatesSelfService
+Scenario: EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserUpadatesSelfService
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -243,7 +242,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificat
 	Then Page with 'TestProj_55' header is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19864 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdatedSelfServiceUrlPreviewConstructedProperly
+Scenario: EvergreenJnr_AdminPage_CheckThatUpdatedSelfServiceUrlPreviewConstructedProperly
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -265,7 +264,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdatedSelfServ
 	Then Self Service URL preview that contains 'https://api.test.corp.juriba.com' base URL and 'Test_ID_66' Self Service identifier displays
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19922 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceScopeDropdownWhileUpdate
+Scenario: EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceScopeDropdownWhileUpdate
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
