@@ -176,9 +176,9 @@ Scenario: EvergreenJnr_AdminPage_CheckFoundObjectsForRenamedAutomation
 	When User clicks 'Run now' option in Cog-menu for '20065_Automation' item from 'Automation' column
 	When '20065_Automation' automation '20065_Action' action run has finished
 	#Rename Automation
+	When User refreshes agGrid
 	When User enters "20065_Automation" text in the Search field for "Automation" column
-	Then 'TRUE' content is displayed in the 'Active' column
-	When User clicks content from "Automation" column
+	When User clicks 'Edit' option in Cog-menu for '20065_Automation' item from 'Automation' column
 	Then Automation page is displayed correctly
 	When User enters 'New_Test_Automation' text to 'Automation Name' textbox
 	When User clicks 'UPDATE' button
