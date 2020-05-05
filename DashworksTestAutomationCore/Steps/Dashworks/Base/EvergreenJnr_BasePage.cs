@@ -494,18 +494,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
         }
 
-        [Then(@"'(.*)' error message is displayed for '(.*)' autocomplete")]
-        public void ThenErrorMessageIsDisplayedForAutocomplete(string autocompelte)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-
-            page.GetTextbox(autocompelte).Click();
-            _driver.WaitForDataLoading();
-            Verify.IsFalse(_driver.IsElementDisplayed(page.AutocompletePagination), $"X of Y items label is displayed for {autocompelte}");
-
-            page.BodyContainer.Click();
-        }
-
         #endregion
 
         #region Textbox
