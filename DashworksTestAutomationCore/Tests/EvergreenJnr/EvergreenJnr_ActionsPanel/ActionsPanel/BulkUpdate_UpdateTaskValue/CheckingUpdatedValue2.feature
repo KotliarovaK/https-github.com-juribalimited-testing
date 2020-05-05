@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#AnnI 3/13/20 GD is only ready on 'Wormhole'
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19273 @Wormhole
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19273
 Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToDifferentTaskValue
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -30,28 +29,36 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToDifferentTaskValue
 	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
 	#Waiting for renamed Relative Project dropdown
 	#When User selects 'zUser Sch for Automations Feature' option from 'Relative Project' autocomplete
-	When User selects 'Stage 2 \ Relative Task' option from 'Relative Task' autocomplete
+	When User selects 'Stage C \ Radio Date Slot Device' option from 'Relative Task' autocomplete
+	When User navigate to the bottom of the Action panel
 	When User enters '5' text to 'Value' textbox
-	When User selects 'Days' in the 'Units' dropdown
-	When User selects 'Before now' in the 'Before or After' dropdown
+	When User selects 'days before task value' in the 'DateUnit' dropdown
+	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button
+	And User navigate to the top of the Action panel
 	Then 'UPDATE' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "15 Feb 2020" content is displayed for "zDeviceAut: Stage B \ Original Task" column
+	Then "5 Sep 2019" content is displayed for "zDeviceAut: Stage B \ Original Task" column
 	#Return value
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage B \ Original Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
-	When User enters '20 Feb 2020' text to 'Date' datepicker
+	When User enters '10 Sep 2019' text to 'Date' datepicker
+	And User clicks datepicker icon 
+	And User selects '11' day in the Datepicker
+	#Added wait as we need some time fo datepicker to be updated
+	And User waits for '3' seconds
+	And User clicks datepicker icon
+	And User selects '10' day in the Datepicker
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "20 Feb 2020" content is displayed for "zDeviceAut: Stage B \ Original Task" column
+	Then "10 Sep 2019" content is displayed for "zDeviceAut: Stage B \ Original Task" column
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18025 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatDateWithTimeDisplayedAfterUpdateTaskValueForRadiobuttonTask

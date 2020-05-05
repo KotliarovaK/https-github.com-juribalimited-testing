@@ -85,6 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18187_Automation_1' item from 'Automation' column
+	When '18187_Automation_1' automation '18187_Action2' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
@@ -112,6 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18187_Automation_1' item from 'Automation' column
+	When '18187_Automation_1' automation '18187_Action2' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
