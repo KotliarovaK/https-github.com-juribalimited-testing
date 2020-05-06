@@ -32,6 +32,7 @@
     <Compile Remove="Extensions\EnumExtensions.cs" />
     <Compile Remove="Extensions\ExtensionMethods.cs" />
     <Compile Remove="Extensions\ReflectionExtensions.cs" />
+    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Class1.cs" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\CustomFieldsCheck.feature.cs" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\DeleteCustomFields.feature.cs" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\EditClickableValueField.feature.cs" />

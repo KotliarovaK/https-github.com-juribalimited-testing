@@ -1556,7 +1556,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<FiltersElement>();
 
-            var VisibleLabels = page.FilterCategoryLabels.Select(x => x.Text).ToList();
+            var VisibleLabels = page.FilterCategoryLabels.Select(x => x.GetAttribute("innerText")).ToList();
 
             var getFirstProjectItem = VisibleLabels.Select((Value, Index) => new { Value, Index })
                .FirstOrDefault(p => p.Value.StartsWith("Project"));
