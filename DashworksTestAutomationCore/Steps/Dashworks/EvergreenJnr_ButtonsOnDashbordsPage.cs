@@ -88,9 +88,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheFiltersButton()
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
+            //TODO remove this. Just to check ports issue
+            Thread.Sleep(1300);
             _driver.WaitForDataLoadingInActionsPanel();
+            //TODO remove this. Just to check ports issue
+            Thread.Sleep(1300);
             _driver.WaitForElementToBeDisplayed(menu.FilterButton);
+            //TODO remove this. Just to check ports issue
+            Thread.Sleep(1300);
             menu.FilterButton.Click();
+            //TODO remove this. Just to check ports issue
+            Thread.Sleep(1300);
             _driver.WaitForDataLoading();
         }
         

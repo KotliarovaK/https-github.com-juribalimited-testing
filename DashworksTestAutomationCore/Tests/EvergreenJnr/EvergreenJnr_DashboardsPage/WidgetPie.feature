@@ -622,7 +622,5 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatWidgetCreationBasedOnListWithCr
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS19721' Widget is displayed to the user
 	When User clicks on 'Core' data label of 'WidgetForDAS19721' widget
-	When User clicks on 'Core' category of 'WidgetForDAS19721' widget
 	Then table content is present
 	Then 'Core' content is displayed in the 'Windows7Mi: Criticality' column
-
