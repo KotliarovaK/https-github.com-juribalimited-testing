@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrl
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	When User navigates to the 'Self Service Settings' left submenu item
-	Then Page with 'Self Services' header is displayed to user
+	Then Page with 'Self Service Settings' header is displayed to user
 	Then Page with 'Self Service Settings' subheader is displayed to user
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
@@ -37,28 +37,20 @@ Scenario: EvergreenJnr_AdminPage_CheckBaseUrlValidationMessages
 	When User enters '' text to 'Base URL' textbox
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
-	Then 'Ensure the Base URL is in the format: http(s)://www.address.com' error message is displayed for 'Base URL' field
+	Then 'Ensure the Base URL is in the format: http(s)://dashworks.mycorp.com' error message is displayed for 'Base URL' field
 	#
 	When User enters 'https://' text to 'Base URL' textbox
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
-	Then 'Ensure the Base URL is in the format: http(s)://www.address.com' error message is displayed for 'Base URL' field
-	#
-	When User enters 'https://test' text to 'Base URL' textbox
-	Then 'UPDATE' button is disabled
-	Then 'Ensure the Base URL is in the format: http(s)://www.address.com' error message is displayed for 'Base URL' field
-	#
-	When User enters 'https://test.c' text to 'Base URL' textbox
-	Then 'UPDATE' button is disabled
-	Then 'Ensure the Base URL is in the format: http(s)://www.address.com' error message is displayed for 'Base URL' field
+	Then 'Ensure the Base URL is in the format: http(s)://dashworks.mycorp.com' error message is displayed for 'Base URL' field
 	#
 	When User enters 'https://te†st.com' text to 'Base URL' textbox
 	Then 'UPDATE' button is disabled
-	Then 'Ensure the Base URL is in the format: http(s)://www.address.com' error message is displayed for 'Base URL' field
+	Then 'Ensure the Base URL is in the format: http(s)://dashworks.mycorp.com' error message is displayed for 'Base URL' field
 	#
 	When User enters '//test.com' text to 'Base URL' textbox
 	Then 'UPDATE' button is disabled
-	Then 'Ensure the Base URL is in the format: http(s)://www.address.com' error message is displayed for 'Base URL' field
+	Then 'Ensure the Base URL is in the format: http(s)://dashworks.mycorp.com' error message is displayed for 'Base URL' field
 	#
 	When User enters 'http://okurl.com/' text to 'Base URL' textbox
 	Then 'UPDATE' button is not disabled
