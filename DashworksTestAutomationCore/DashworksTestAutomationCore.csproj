@@ -85,7 +85,7 @@
       <DependentUpon>ProjectsPart27.feature</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\CerateSelfServicePageViaApi.feature.cs">
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\CerateSelfServicePageViaApi.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>CerateSelfServicePageViaApi.feature</DependentUpon>
@@ -240,7 +240,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectsPart27.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\CerateSelfServicePageViaApi.feature">
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\CerateSelfServicePageViaApi.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CerateSelfServicePageViaApi.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
