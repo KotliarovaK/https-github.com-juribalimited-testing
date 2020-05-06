@@ -931,6 +931,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(page.IsChartHasSpecifiedColor(widget, ColorsConvertor.ConvertToHex(colorCode)), Is.True, "Color is missing");
         }
 
+        [When(@"User clicks on '(.*)' data label of '(.*)' widget")]
+        public void ThenUserClicksOnDataLabelOfWidget(string label, string widget)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetDataLabel(widget, label).Click();
+        }
+
         #endregion
 
         #region Permission popup

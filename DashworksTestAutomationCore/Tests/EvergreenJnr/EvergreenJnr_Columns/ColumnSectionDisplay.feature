@@ -1068,3 +1068,22 @@ Scenario: EvergreenJnr_MailboxesList_CheckSubcategoriesForOwnerCategoryColumn
 	| Owner SID                       |
 	| Owner Surname                   |
 	| Owner Username                  |
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS19721
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityColumnWorks
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName              |
+	| Windows7Mi: Criticality |
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Windows7Mi: Criticality |
+	When User clicks on 'Windows7Mi: Criticality' column header
+	When User clicks on 'Windows7Mi: Criticality' column header
+	Then data in table is sorted by 'Windows7Mi: Criticality' column in descending order
+	When User clicks the Columns button
+	When User removes "Windows7Mi: Criticality" column by Column panel
+	Then ColumnName is removed from the list
+	| ColumnName              |
+	| Windows7Mi: Criticality |
