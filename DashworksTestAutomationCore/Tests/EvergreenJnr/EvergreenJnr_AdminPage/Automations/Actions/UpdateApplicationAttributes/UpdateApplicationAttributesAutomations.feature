@@ -123,6 +123,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18834_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18834_Automation' item from 'Automation' column
+	When '18834_Automation' automation '18834_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18834_Automation" text in the Search field for "Automation" column
