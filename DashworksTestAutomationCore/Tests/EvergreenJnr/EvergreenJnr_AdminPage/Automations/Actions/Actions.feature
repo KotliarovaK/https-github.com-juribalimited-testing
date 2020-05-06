@@ -778,7 +778,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpeci
 	| Options         |
 	| Read only tasks |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Do_Not_Run_With_Capacity @Cleanup 
 Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	When User creates new Automation via API and open it
 	| Name    | Description | IsActive | StopOnFailedAction | Scope       | Run    |
