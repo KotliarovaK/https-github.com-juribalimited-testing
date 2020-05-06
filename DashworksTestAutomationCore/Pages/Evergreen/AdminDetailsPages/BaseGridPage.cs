@@ -768,9 +768,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return allHeaders;
         }
 
-        public List<string> GetAllHeadersText()
+        public List<string> GetAllHeadersText(string parentElementSelector = "")
         {
-            var allHeaders = GetAllHeaders().Select(x => x.Text).ToList();
+            var allHeaders = GetAllHeaders(parentElementSelector).Select(x => x.Text).ToList();
             return allHeaders;
         }
 
