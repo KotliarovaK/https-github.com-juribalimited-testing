@@ -124,11 +124,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>BaseUrl.feature</DependentUpon>
     </Compile>
-    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Settings\BaseUrlApi.feature.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>BaseUrlApi.feature</DependentUpon>
-    </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\GeneralEndUser.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -270,10 +265,6 @@
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Settings\BaseUrl.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BaseUrl.feature.cs</LastGenOutput>
-    </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Settings\BaseUrlApi.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BaseUrlApi.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\GeneralEndUser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
