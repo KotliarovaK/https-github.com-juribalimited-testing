@@ -43,16 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"following checkboxes are checked in the Scope section")]
-        public void ThenFollowingCheckboxesAreCheckedInTheScopeSection(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            foreach (var row in table.Rows)
-                Verify.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]),
-                    $"'{row["Checkboxes"]}' are not displayed");
-        }
-
         [Then(@"following associations are disabled:")]
         public void ThenFollowingAssociationsAreDisabled(Table table)
         {
