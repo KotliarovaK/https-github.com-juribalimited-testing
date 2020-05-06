@@ -40,7 +40,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             Verify.IsTrue(filterElement.FiltersPanel.Displayed(), "Actions panel was not displayed");
-            Logger.Write("Actions Panel panel is visible");
         }
 
         [Then(@"Filters panel is not displayed to the user")]
@@ -48,7 +47,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             Verify.IsFalse(filterElement.FiltersPanel.Displayed(), "Filters panel was displayed");
-            Logger.Write("Actions Panel panel is hidden");
         }
 
         [Then(@"Add New button on Filter panel has tooltip with '(.*)' text")]
@@ -66,7 +64,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var menu = _driver.NowAt<FiltersElement>();
             _driver.WaitForElementToBeDisplayed(menu.AddNewFilterButton);
             menu.AddNewFilterButton.Click();
-            Logger.Write("Add New button was clicked");
         }
 
         [When(@"User clicks Add And button on the Filter panel")]
@@ -75,7 +72,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var menu = _driver.NowAt<FiltersElement>();
             _driver.WaitForElementToBeDisplayed(menu.AddAndFilterButton);
             menu.AddAndFilterButton.Click();
-            Logger.Write("Add And button was clicked");
         }
 
         [Then(@"Add And button is displayed on the Filter panel")]
@@ -1560,7 +1556,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<FiltersElement>();
 
-            var VisibleLabels = page.FilterCategoryLabels.Select(x => x.Text).ToList();
+            var VisibleLabels = page.FilterCategoryLabels.Select(x => x.GetAttribute("innerText")).ToList();
 
             var getFirstProjectItem = VisibleLabels.Select((Value, Index) => new { Value, Index })
                .FirstOrDefault(p => p.Value.StartsWith("Project"));

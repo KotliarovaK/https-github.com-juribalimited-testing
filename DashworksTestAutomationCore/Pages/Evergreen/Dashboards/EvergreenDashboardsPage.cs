@@ -519,9 +519,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         public IWebElement GetDataLabel(string widget, string label)
         {
-            var el = By.XPath($".//*[text()='{widget}']/ancestor :: div[@class='widget-top']/following-sibling::div//*[text()='{label}']");
-            Driver.WaitForElementToBeDisplayed(el);
-            return Driver.FindElement(el);
+            var FullWidgetElement = By.XPath($".//*[text()='{widget}']/ancestor :: div[@class='widget-whole']");
+            var data_label = By.XPath($".//*[@class='highcharts-text-outline' and text() = '{label}']/following-sibling::*[@dx][2]");
+
+            var WidgetBlock = Driver.FindElement(FullWidgetElement);
+            return WidgetBlock.FindElement(data_label);
         }
 
         #endregion
