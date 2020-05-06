@@ -292,31 +292,31 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in warning message of 'Widget_For_DAS17592' widget on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18880 @Cleanup
-Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatTaskOwnerValuesFiltersCanBeUsedInSharedWidgets
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTaskMeOwnerValuesFiltersCanBeUsedInSharedWidgets
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password |
 	| User(Me) | 111111   |
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
-	When User add "<FilterName>" filter where type is "Equals" with added column and Lookup option
+	When User add "s.Me/MyPr: Stg1 \ S.task1 (Owner)" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
-	| <FilterValue>  |
+	| Me             |
 	Then table content is present
-	When User create dynamic list with "<ListName>" name on "Devices" page
-	Then "<ListName>" list is displayed to user
-	When Dashboard with 'Dashboard#18880' name created via API and opened
+	When User create dynamic list with "aMyDeviceListForDAS18880" name on "Devices" page
+	Then "aMyDeviceListForDAS18880" list is displayed to user
+	When Dashboard with 'Dashboard#18880My' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
-	| WidgetType | Title     | List       | SplitBy      | AggregateFunction | OrderBy          | MaxValues |
-	| Table      | DAS-18880 | <ListName> | <FilterName> | Count             | <FilterName> ASC | 10        |
+	| WidgetType | Title     | List                     | SplitBy                           | AggregateFunction | OrderBy                               | MaxValues |
+	| Table      | DAS-18880 | aMyDeviceListForDAS18880 | s.Me/MyPr: Stg1 \ S.task1 (Owner) | Count             | s.Me/MyPr: Stg1 \ S.task1 (Owner) ASC | 10        |
 	Then 'DAS-18880' Widget is displayed to the user
-	Then '<NumberOfValues>' count is displayed for '<ColumnName>' in the table Widget
+	Then '5' count is displayed for 'User(Me)' in the table Widget
 	When User clicks the Dashboard Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	Then Review Widget List Permissions is displayed to the User
-	When User selects 'Everyone can edit' permission for '<ListName>' list on Permissions Pop-up
+	When User selects 'Everyone can edit' permission for 'aMyDeviceListForDAS18880' list on Permissions Pop-up
 	When User clicks 'UPDATE & SHARE' button 
 	When User adds user to list of shared person
 	| User      | Permission |
@@ -326,10 +326,43 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatTaskOwnerValuesFiltersCan
 	| Username  | Password |
 	| User(Me)2 | 111111   |
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User navigates to the "Dashboard#18880" list
+	When User navigates to the "Dashboard#18880My" list
 	Then 'This list does not contain any rows' message is displayed in 'DAS-18880' widget
 
-Examples: 
-| FilterName                        | FilterValue | ListName                   | NumberOfValues | ColumnName  |
-| s.Me/MyPr: Stg1 \ S.task1 (Owner) | Me          | aMyDeviceListForDAS18880   | 5              | User(Me)    |
-| s.Me/MyPr: Stg1 \ S.task1 (Team)  | My Team     | aTeamDeviceListForDAS18880 | 8              | s.TeamMe/My |
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18880 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTaskTeamOwnerValuesFiltersCanBeUsedInSharedWidgets
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password |
+	| User(Me) | 111111   |
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "s.Me/MyPr: Stg1 \ S.task1 (Team)" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| My Team        |
+	Then table content is present
+	When User create dynamic list with "aTeamDeviceListForDAS18880" name on "Devices" page
+	Then "aTeamDeviceListForDAS18880" list is displayed to user
+	When Dashboard with 'Dashboard#18880Team' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title     | List                       | SplitBy                          | AggregateFunction | OrderBy                              | MaxValues |
+	| Table      | DAS-18880 | aTeamDeviceListForDAS18880 | s.Me/MyPr: Stg1 \ S.task1 (Team) | Count             | s.Me/MyPr: Stg1 \ S.task1 (Team) ASC | 10        |
+	Then 'DAS-18880' Widget is displayed to the user
+	Then '8' count is displayed for 's.TeamMe/My' in the table Widget
+	When User clicks the Dashboard Permissions button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	Then Review Widget List Permissions is displayed to the User
+	When User selects 'Everyone can edit' permission for 'aTeamDeviceListForDAS18880' list on Permissions Pop-up
+	When User clicks 'UPDATE & SHARE' button 
+	When User adds user to list of shared person
+	| User      | Permission |
+	| User(Me)2 | Admin      |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username  | Password |
+	| User(Me)2 | 111111   |
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User navigates to the "Dashboard#18880Team" list
+	Then 'This list does not contain any rows' message is displayed in 'DAS-18880' widget
