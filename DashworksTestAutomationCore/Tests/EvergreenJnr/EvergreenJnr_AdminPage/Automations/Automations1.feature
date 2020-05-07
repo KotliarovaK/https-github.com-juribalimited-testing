@@ -469,6 +469,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks 'CANCEL' button
 	When User enters "15423_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '15423_Automation' item from 'Automation' column
+	When '15423_Automation' automation run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "15423_Automation" text in the Search field for "Automation" column
 	Then "LIST NOT FOUND" content is displayed for "Outcome" column

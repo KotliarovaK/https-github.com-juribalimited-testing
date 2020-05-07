@@ -54,6 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18292_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18292_Automation' item from 'Automation' column
+	When '18292_Automation' automation '18292_Action1' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18292_Automation" text in the Search field for "Automation" column
@@ -145,6 +146,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInDevicesAu
 	When User clicks 'Automations' header breadcrumb
 	When User enters "182922_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '182922_Automation' item from 'Automation' column
+	When '182922_Automation' automation '18292_Action3' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "182922_Automation" text in the Search field for "Automation" column
