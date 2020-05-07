@@ -93,7 +93,7 @@ namespace DashworksTestAutomation.Utils
             {
                 case "chrome":
                     var chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArguments("headless", "--window-size=1920,1080", "--safebrowsing-disable-download-protection");
+                    chromeOptions.AddArguments("headless", "--window-size=1920,1080", "--safebrowsing-disable-download-protection", "--remote-debugging-port");
                     chromeOptions.AddUserProfilePreference("download.prompt_for_download", false);
                     chromeOptions.AddUserProfilePreference("download.directory_upgrade", true);
                     chromeOptions.AddUserProfilePreference("safebrowsing.enabled", true);
