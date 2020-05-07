@@ -43,18 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"following associations are disabled:")]
-        public void ThenFollowingAssociationsAreDisabled(Table table)
-        {
-            var associations = _driver.NowAt<ProjectsPage>();
-            foreach (var row in table.Rows)
-            {
-                _driver.WaitForDataLoading();
-                Verify.IsTrue(associations.GetDisabledAssociationName(row["AssociationName"]),
-                    $"Following '{row["AssociationName"]}' are active");
-            }
-        }
-
         [Then(@"All Associations are available")]
         public void ThenAllAssociationsAreAvailable()
         {
