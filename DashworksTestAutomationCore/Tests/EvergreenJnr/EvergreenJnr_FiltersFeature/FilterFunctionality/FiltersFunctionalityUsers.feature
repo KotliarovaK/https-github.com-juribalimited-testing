@@ -463,3 +463,15 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFi
 		| List                     |
 		| User (Saved List)        |
 		| Application (Saved List) |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS21015 @Cleanup
+Scenario Outline: EvergreenJnr_UsersList_ChecksThatMailboxFiltersWorksAndCanBeSavedAsPartOfList
+	When User clicks 'Users' on the left-hand menu
+	When User clicks the Filters button
+	When user select "Mailbox Database" filter
+	When User select "Does not equal" Operator value
+	When User enters "Text" text in Search field at selected Filter
+	When User clicks 'ADD' button
+	Then There are no errors in the browser console
+	When User create dynamic list with "UsersList_21015" name on "Users" page
+	Then "UsersList_21015" list is displayed to user
