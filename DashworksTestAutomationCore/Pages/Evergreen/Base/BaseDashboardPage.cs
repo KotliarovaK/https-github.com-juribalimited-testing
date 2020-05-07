@@ -98,6 +98,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-star']//ancestor::button")]
+        public IWebElement StarButton { get; set; }
+
         #region All Lists dropdown
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownActionsLists')]")]
@@ -1344,6 +1347,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetIcon(string iconTextInDom)
         {
             return Driver.FindElement(By.XPath($".//i[@class='material-icons'][text()='{iconTextInDom}']"));
+        }
+
+        public IWebElement GetStarIconsOfDropdownOptionsByName(string value)
+        {
+            Driver.WaitForElementToBeDisplayed(GetDropdownValueByName(value));
+            var star = GetDropdownValueByName(value).FindElement(By.XPath(".//preceding-sibling::mat-icon[contains(@class, 'favourite-icon')]"));
+            return star;
         }
 
         #endregion

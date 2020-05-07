@@ -191,3 +191,20 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue
 	When User enters '0' text to 'Value' textbox
 	Then User sees '0 to 100,000' hint below 'Value' field
 	Then '0' content is displayed in 'Value' autocomplete
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS20953
+Scenario: EvergreenJnr_UsersList_CheckRelativeTaskDdlForGroupTypeTasks
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User searches and selects following rows in the grid on Details page:
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	Then 'Group Stage \ Group User Date' content is not displayed in 'Task' autocomplete after search
+	When User selects 'One \ Radio Date Owner User' option from 'Task' autocomplete
+	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
+	When User selects 'Group Stage \ Group User Date' option from 'Relative Task' autocomplete

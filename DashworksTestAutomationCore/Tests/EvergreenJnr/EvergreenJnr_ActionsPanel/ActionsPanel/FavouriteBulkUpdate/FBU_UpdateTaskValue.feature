@@ -120,3 +120,33 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpd
 	| testFBU_209501 |
 	| abc_20950      |
 	Then Favourite Bulk Update items are displayed in ascending order
+
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @X_Ray
+Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateTaskValueType
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User selects 'Desktop Upgrade' option from 'Path' autocomplete
+	When User clicks Star button
+	When User enters '20774_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks refresh button in the browser
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects '20774_TestFBU' in the 'Bulk Update Type' dropdown
+	Then '2004 Rollout' content is displayed in 'Project' autocomplete
+	Then 'Desktop Upgrade' content is displayed in 'Path' autocomplete
+	Then 'UPDATE' button is not disabled
+	Then 'CANCEL' button is not disabled
+	Then Star button is not disabled

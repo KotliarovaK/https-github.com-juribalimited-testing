@@ -27,8 +27,6 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToDifferentTaskValue
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage B \ Original Task' option from 'Task' autocomplete
 	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
-	#Waiting for renamed Relative Project dropdown
-	#When User selects 'zUser Sch for Automations Feature' option from 'Relative Project' autocomplete
 	When User selects 'Stage C \ Radio Date Slot Device' option from 'Relative Task' autocomplete
 	When User navigate to the bottom of the Action panel
 	When User enters '5' text to 'Value' textbox
