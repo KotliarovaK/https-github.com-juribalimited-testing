@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup 
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForDevicesAutomation
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
-	When User checks '17564_Stage \ 17564_Task' option after search from 'Tasks' autocomplete
+	When User unchecks '17564_Stage \ 17564_Task' option after search from 'Tasks' autocomplete
 	When User clicks 'UPDATE' button
 	#Check Action content
 	When User clicks 'Admin' on the left-hand menu
@@ -244,7 +244,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
-	When User checks '17566_Stage \ 17566_Task' option after search from 'Tasks' autocomplete
+	When User unchecks '17566_Stage \ 17566_Task' option after search from 'Tasks' autocomplete
 	When User clicks 'UPDATE' button
 	#Check Action content
 	When User clicks 'Admin' on the left-hand menu
