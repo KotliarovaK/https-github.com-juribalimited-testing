@@ -530,7 +530,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public List<string> GetColumnContentByColumnName(string columnName)
         {
-            return GetColumnElementsByColumnName(columnName).Select(x => x.Text).ToList();
+            List<string> result = new List<string>();
+            foreach (IWebElement tableElement in GetColumnElementsByColumnName(columnName))
+            {
+                result.Add(tableElement.Text);
+                Thread.Sleep(100);
+            }
+            //return GetColumnElementsByColumnName(columnName).Select(x => x.Text).ToList();
+            return result;
         }
 
         #region Get Specific cell content
