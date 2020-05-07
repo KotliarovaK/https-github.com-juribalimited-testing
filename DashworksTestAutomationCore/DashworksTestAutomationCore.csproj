@@ -92,12 +92,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CreatePageViaBuilder.feature</DependentUpon>
     </Compile>
-    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\UpdatePageViaBuilder.feature.cs">
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\UpdatePageViaBuilder.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>UpdatePageViaBuilder.feature</DependentUpon>
     </Compile>
-    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\UpdateSelfServiceViaBuilderApi.feature.cs">
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\UpdateSelfServiceViaBuilderApi.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>UpdateSelfServiceViaBuilderApi.feature</DependentUpon>
@@ -237,11 +237,11 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreatePageViaBuilder.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\UpdatePageViaBuilder.feature">
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\UpdatePageViaBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdatePageViaBuilder.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\UpdateSelfServiceViaBuilderApi.feature">
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\UpdateSelfServiceViaBuilderApi.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateSelfServiceViaBuilderApi.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
