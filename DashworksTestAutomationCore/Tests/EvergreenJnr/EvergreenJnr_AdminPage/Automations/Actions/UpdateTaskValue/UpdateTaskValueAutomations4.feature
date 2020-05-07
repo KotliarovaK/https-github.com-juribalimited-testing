@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
-	When User checks '17564_Stage \ 17564_Task' option after search from 'Tasks' autocomplete
+	When User unchecks '17564_Stage \ 17564_Task' option after search from 'Tasks' autocomplete
 	When User clicks 'UPDATE' button
 	#Check Action content
 	When User clicks 'Admin' on the left-hand menu
@@ -84,6 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17564_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17564_Automation' item from 'Automation' column
+	When '17564_Automation' automation '17564_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17564_Automation" text in the Search field for "Automation" column
@@ -171,6 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForU
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17565_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17565_Automation' item from 'Automation' column
+	When '17565_Automation' automation '17565_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17565_Automation" text in the Search field for "Automation" column
@@ -242,7 +244,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
-	When User checks '17566_Stage \ 17566_Task' option after search from 'Tasks' autocomplete
+	When User unchecks '17566_Stage \ 17566_Task' option after search from 'Tasks' autocomplete
 	When User clicks 'UPDATE' button
 	#Check Action content
 	When User clicks 'Admin' on the left-hand menu
@@ -257,6 +259,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17566_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17566_Automation' item from 'Automation' column
+	When '17566_Automation' automation '17566_Project' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17566_Automation" text in the Search field for "Automation" column

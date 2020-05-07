@@ -492,3 +492,4 @@ Examples:
 		| Users   | Mailbox GUID         | abrakadabra        |
 		| Devices | Group Display Name   | ApplicationAccount |
 		| Users   | Mailbox Display Name | ApplicationAccount |
+		| Users   | Exchange Online      | ApplicationAccount |

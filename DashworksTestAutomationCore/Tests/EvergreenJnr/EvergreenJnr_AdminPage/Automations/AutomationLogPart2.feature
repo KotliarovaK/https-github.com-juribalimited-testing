@@ -68,6 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17636_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17636_Automation' item from 'Automation' column
+	When '17636_Automation' automation '17636_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17636_Automation" text in the Search field for "Automation" column
@@ -146,6 +147,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17643_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17643_Automation' item from 'Automation' column
+	When '17643_Automation' automation '17643_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17643_Automation" text in the Search field for "Automation" column
@@ -232,6 +234,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17678_Automation' item from 'Automation' column
+	When '17678_Automation' automation '17678_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17678_Automation" text in the Search field for "Automation" column
@@ -267,6 +270,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17678_Automation' item from 'Automation' column
+	When '17678_Automation' automation '17678_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17678_Automation" text in the Search field for "Automation" column
@@ -320,6 +324,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17682_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17682_Automation' item from 'Automation' column
+	When '17682_Automation' automation '17682_Action2' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17682_Automation" text in the Search field for "Automation" column
@@ -365,6 +370,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	And User clicks 'Automations' header breadcrumb
 	And User enters "17682_Automation_2" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17682_Automation_2' item from 'Automation' column
+	When '17682_Automation_2' automation '17682_Action3' action run has finished
 	And User navigates to the 'Automation Log' left menu item
 	And User clicks refresh button in the browser
 	And User enters "17682_Automation_2" text in the Search field for "Automation" column
@@ -417,6 +423,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17678_Automation_1' item from 'Automation' column
+	When '17678_Automation_1' automation '17678_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column

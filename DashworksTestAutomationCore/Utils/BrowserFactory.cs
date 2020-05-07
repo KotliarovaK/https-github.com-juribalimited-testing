@@ -28,6 +28,12 @@ namespace DashworksTestAutomation.Utils
             {
                 return CreateDriverInstance();
             }
+            //Retry for below error
+            //A exception with a null response was thrown sending an HTTP request to the remote WebDriver server for URL http://autohub.corp.juriba.com:4444/wd/hub/session. The status of the exception was UnknownError, and the message was: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+            catch (WebDriverException)
+            {
+                return CreateDriverInstance();
+            }
         }
 
         private static RemoteWebDriver CreateDriverInstance()

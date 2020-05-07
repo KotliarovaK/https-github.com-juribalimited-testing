@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
         public IWebElement ResultsOnPageCount { get; set; }
 
-        [FindsBy(How = How.XPath,Using = ".//button[contains(@class, 'addNewContainer')]//span[contains(text(), 'ADD AND')]")] // old locator => .//button[contains(@class, 'addNewContainer')]
+        [FindsBy(How = How.XPath,Using = ".//button[contains(@class, 'addNewContainer')]//span[contains(text(), 'ADD AND')]")]
         public IWebElement AddAndFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = SearchTextBoxSelector)]
@@ -565,7 +565,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath($".//input[@placeholder='Search']/preceding::div[@class='dropdown-select input-wrapper']//ul//mat-checkbox");
             return Driver.IsElementDisplayed(selector);
         }
-
+       
         public IWebElement GetCloseChipButtonByName(string chipName)
         {
             var selector = By.XPath($".//li//span[text()='{chipName}']/ancestor::li/button");

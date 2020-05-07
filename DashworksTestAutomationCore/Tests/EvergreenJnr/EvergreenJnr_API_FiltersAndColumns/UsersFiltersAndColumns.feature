@@ -22,3 +22,16 @@ Examples:
 	| FilterCategory | FilterName                            | QueryString                                                                                                                                   |
 	| Application    | App Count (Installed on Owned Device) | users?$filter=(installedApplications%20%3D%201)&$select=username,directoryName,displayName,fullyDistinguishedObjectName,installedApplications |
 	| Suggested      | Display Name                          | users?$filter=(displayName%20EQUALS%20('Jeremiah%20S.%20O''Connor'))                                                                          |
+
+@Evergreen @Users @API @FiltersAndColumns @DAS21009
+Scenario: EvergreenJnr_UsersList_CheckCountryFilterDisplaying
+	Then 'Country' filter options of 'Users' are displayed in the following order:
+	| items            |
+	| Empty            |
+	| Australia        |
+	| Canada           |
+	| England          |
+	| Northern Ireland |
+	| Scotland         |
+	| USA              |
+	| Wales            |

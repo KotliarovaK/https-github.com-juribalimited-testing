@@ -170,12 +170,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(button);
         }
 
-        public bool CheckboxesDisplay(string checkboxes)
-        {
-            return Driver.IsElementDisplayed(By.XPath(
-                $".//mat-checkbox[contains(@class, 'checkbox-checked')]/label/span[contains(text(), '{checkboxes}')]"));
-        }
-
         public bool SelectedItemInProjectScopeChangesSection(string text)
         {
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='title'][contains(text(), '{text}')]"));
@@ -245,12 +239,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             if (!Driver.IsElementDisplayed(By.XPath(categorySelector), WebDriverExtensions.WaitTime.Medium))
                 throw new Exception($"'{categoryName}' category was not displayed in the selectbox");
             return Driver.FindElement(By.XPath(categorySelector));
-        }
-
-        public bool GetDisabledAssociationName(string associationName)
-        {
-            return Driver.IsElementDisplayed(
-                By.XPath($".//mat-checkbox[contains(@class, 'disabled')]/label/span[text()='{associationName}']"));
         }
 
         public bool GetCheckboxByName(string checkboxName)
