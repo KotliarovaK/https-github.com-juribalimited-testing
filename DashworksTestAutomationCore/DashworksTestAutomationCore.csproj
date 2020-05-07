@@ -32,6 +32,7 @@
     <Compile Remove="Extensions\EnumExtensions.cs" />
     <Compile Remove="Extensions\ExtensionMethods.cs" />
     <Compile Remove="Extensions\ReflectionExtensions.cs" />
+    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Class1.cs" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\CustomFieldsCheck.feature.cs" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\DeleteCustomFields.feature.cs" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\EditClickableValueField.feature.cs" />
@@ -51,7 +52,9 @@
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart9 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart26 - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality1 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\PermissionsSettings - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Trend.feature.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,11 +64,11 @@
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.23" />
     <PackageReference Include="Microsoft.Build" Version="16.5.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
     <PackageReference Include="RestSharp" Version="106.10.1" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="81.0.4044.6900" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="81.0.4044.13800" />
     <PackageReference Include="SpecFlow" Version="3.1.97" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.1.97" />
     <PackageReference Include="SpecRun.Runner" Version="3.2.22" />
@@ -132,6 +135,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>GeneralEndUser.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality9.feature.cs">
+      <DependentUpon>AssociationsFunctionality9.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\PermissionsSettings02.feature.cs">
       <DependentUpon>PermissionsSettings02.feature</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -148,6 +155,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ItemDetailsDisplay.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Users.feature.cs">
+      <DependentUpon>MailboxesDetails_Users.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\ToolTips_UsersDetails.feature.cs">
       <DesignTime>True</DesignTime>
@@ -269,6 +280,12 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GeneralEndUser.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality9.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AssociationsFunctionality9.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\PermissionsSettings02.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
@@ -286,6 +303,12 @@
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsDisplay.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Users.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MailboxesDetails_Users.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\ToolTips_UsersDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

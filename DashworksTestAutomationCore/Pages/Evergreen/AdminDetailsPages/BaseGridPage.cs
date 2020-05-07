@@ -523,20 +523,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             }
             Driver.WaitForDataLoading();
             IList<IWebElement> elements = new List<IWebElement>();
-            if (!Driver.FindElements(selector).Any())
-            {
-                elements = Driver.FindElements(By.XPath(firstPartSelector));
-            }
-            else
-            {
-                elements = Driver.FindElements(selector);
-            }
+            elements = Driver.FindElements(Driver.FindElements(selector).Any() ?
+                selector : By.XPath(firstPartSelector));
             return elements;
         }
 
         public List<string> GetColumnContentByColumnName(string columnName)
         {
-            return GetColumnElementsByColumnName(columnName).Select(x => x.Text).ToList();
+            List<string> result = new List<string>();
+            foreach (IWebElement tableElement in GetColumnElementsByColumnName(columnName))
+            {
+                result.Add(tableElement.Text);
+                Thread.Sleep(100);
+            }
+            //return GetColumnElementsByColumnName(columnName).Select(x => x.Text).ToList();
+            return result;
         }
 
         #region Get Specific cell content
@@ -768,9 +769,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return allHeaders;
         }
 
-        public List<string> GetAllHeadersText()
+        public List<string> GetAllHeadersText(string parentElementSelector = "")
         {
-            var allHeaders = GetAllHeaders().Select(x => x.Text).ToList();
+            var allHeaders = GetAllHeaders(parentElementSelector).Select(x => x.Text).ToList();
             return allHeaders;
         }
 

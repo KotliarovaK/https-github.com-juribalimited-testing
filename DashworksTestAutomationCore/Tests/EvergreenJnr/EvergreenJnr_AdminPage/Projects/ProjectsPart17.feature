@@ -58,11 +58,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	And User selects "Do not include owned devices" checkbox on the Project details page
 	Then Scope List dropdown is disabled
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	Then following associations are disabled:
-	| AssociationName                         |
-	| Entitled to a device owned by the user  |
-	| Installed on a device owned by the user |
-	| Used on an owned device by any user     |
+	Then 'Entitled to a device owned by the user' checkbox is displayed
+	Then 'Installed on a device owned by the user' checkbox is displayed
+	Then 'Used on an owned device by any user' checkbox is displayed
 	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
@@ -140,10 +138,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User selects "Do not include app owners" checkbox on the Project details page
 	Then Scope List dropdown is disabled
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	Then following associations are disabled:
-	| AssociationName                        |
-	| Entitled to the device owner           |
-	| Used by the device owner on any device |
+	Then 'Entitled to the device owner' checkbox is displayed
+	Then 'Used by the device owner on any device' checkbox is displayed
 	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Users' tab on Project Scope Changes page 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section

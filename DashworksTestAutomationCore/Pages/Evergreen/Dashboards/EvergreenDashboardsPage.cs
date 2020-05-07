@@ -517,6 +517,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             throw new Exception($"Chart category '{chartCategory}' wasn't found");
         }
 
+        public IWebElement GetDataLabel(string widget, string label)
+        {
+            var FullWidgetElement = By.XPath($".//*[text()='{widget}']/ancestor :: div[@class='widget-whole']");
+            var data_label = By.XPath($".//*[@class='highcharts-text-outline' and text() = '{label}']/following-sibling::*[@dx][2]");
+
+            var WidgetBlock = Driver.FindElement(FullWidgetElement);
+            return WidgetBlock.FindElement(data_label);
+        }
+
         #endregion
     }
 }

@@ -62,12 +62,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         private void GridHeadersAreDisplayedInTheFollowingOrderOnPopup(Table table, bool onPopup = false)
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            if (onPopup)
-            {
-                page = (BaseDialogGridPage)page;
-            }
-            var allHeaders = page.GetAllHeadersText();
+            var allHeaders = onPopup ?
+                _driver.NowAt<BaseDialogGridPage>().GetAllHeadersText() :
+                _driver.NowAt<BaseGridPage>().GetAllHeadersText();
+
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Verify.AreEqual(expectedList, allHeaders, "Columns order is incorrect");
         }
@@ -630,6 +628,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             {
                 var content = page.GetColumnContentByColumnName(row["ColumnName"]);
                 Verify.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is empty");
+            }
+        }
+
+        [Then(@"Content is not empty in the column")]
+        public void ThenContentIsNotEmptyInTheColumn(Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+
+            foreach (var row in table.Rows)
+            {
+                var content = page.GetColumnContentByColumnName(row["ColumnName"]);
+                Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is not empty");
             }
         }
 

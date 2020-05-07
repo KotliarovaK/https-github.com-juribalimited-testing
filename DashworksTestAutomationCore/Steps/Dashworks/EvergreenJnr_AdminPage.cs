@@ -43,28 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"following checkboxes are checked in the Scope section")]
-        public void ThenFollowingCheckboxesAreCheckedInTheScopeSection(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            foreach (var row in table.Rows)
-                Verify.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]),
-                    $"'{row["Checkboxes"]}' are not displayed");
-        }
-
-        [Then(@"following associations are disabled:")]
-        public void ThenFollowingAssociationsAreDisabled(Table table)
-        {
-            var associations = _driver.NowAt<ProjectsPage>();
-            foreach (var row in table.Rows)
-            {
-                _driver.WaitForDataLoading();
-                Verify.IsTrue(associations.GetDisabledAssociationName(row["AssociationName"]),
-                    $"Following '{row["AssociationName"]}' are active");
-            }
-        }
-
         [Then(@"All Associations are available")]
         public void ThenAllAssociationsAreAvailable()
         {
@@ -719,7 +697,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
-            createProjectElement.ScopeProjectField.SendKeys("All");
+            createProjectElement.ScopeProjectField.SendKeys("All ");
             var listNames = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
             var expectedlistName = table.Rows.SelectMany(row => row.Values).ToList();
             Verify.AreEqual(listNames, expectedlistName, "Main lists are not displayed correctly");

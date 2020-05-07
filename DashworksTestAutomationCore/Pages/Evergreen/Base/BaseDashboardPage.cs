@@ -1087,7 +1087,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void SetCheckboxState(string ariaLabel, bool expectedCondition, string parentElementSelector = "")
         {
-            if (!GetCheckbox(ariaLabel, parentElementSelector).Equals(expectedCondition))
+            if (!GetCheckbox(ariaLabel, parentElementSelector).Selected().Equals(expectedCondition))
             {
                 //We must click by text to check or uncheck element
                 Driver.ClickElementLeftCenter(GetCheckbox(ariaLabel));

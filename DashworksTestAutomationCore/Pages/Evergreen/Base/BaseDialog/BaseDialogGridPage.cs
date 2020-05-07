@@ -25,6 +25,11 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
             return GetAllHeaders(this.GetStringByFor(() => this.PopupElement));
         }
 
+        public List<string> GetAllHeadersText()
+        {
+            return GetAllHeadersText(this.GetStringByFor(() => this.PopupElement));
+        }
+
         #endregion
     }
 }

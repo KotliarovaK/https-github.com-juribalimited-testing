@@ -21,3 +21,11 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData
 Examples: 
 	| FilterCategory | FilterName         | QueryString                                                         |
 	| Organization   | Department Level 1 | mailboxes?$filter=(departmentLevelFieldId_1%20EQUALS%20('2'%2C'9')) |
+
+@Evergreen @Mailboxes @API @FiltersAndColumns @DAS21009
+Scenario: EvergreenJnr_MailboxesList_CheckCountryFilterDisplaying
+	Then 'Country' filter options of 'Mailboxes' are displayed in the following order:
+	| items            |
+	| Empty            |
+	| Australia        |
+	| England          |
