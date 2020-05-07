@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup 
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForDevicesAutomation
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
