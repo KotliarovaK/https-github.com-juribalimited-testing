@@ -697,7 +697,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
-            createProjectElement.ScopeProjectField.SendKeys("All");
+            createProjectElement.ScopeProjectField.SendKeys("All ");
             var listNames = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
             var expectedlistName = table.Rows.SelectMany(row => row.Values).ToList();
             Verify.AreEqual(listNames, expectedlistName, "Main lists are not displayed correctly");
