@@ -263,10 +263,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabelAreDisplayed
     When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks the Columns button
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| CPU Count  |
+	When User clicks the Filters button
+	When User add "CPU Count" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 0      |
+	When User clicks Save button on the list panel
 	When User create dynamic list with "DAS18168_List" name on "Devices" page
 	Then "DAS18168_List" list is displayed to user
 	When Dashboard with 'DAS18168_Dashboard' name created via API and opened
@@ -281,12 +282,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	Then Data Legends values are displayed on the Add Widget page
 	| LegendsValue |
 	| 0            |
-	| 1            |
-	| 2            |
-	| 4            |
-	| 6            |
-	| 8            |
-	| 260          |
 	When User clicks 'CREATE' button
 	Then 'WidgetForDAS18168' Widget is displayed to the user
 	Then There are no errors in the browser console
@@ -294,12 +289,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	Then Data Legends values are displayed in 'WidgetForDAS18168' widget on the Dashboard page
 	| LegendsValue |
 	| 0            |
-	| 1            |
-	| 2            |
-	| 4            |
-	| 6            |
-	| 8            |
-	| 260          |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAnyCharacters

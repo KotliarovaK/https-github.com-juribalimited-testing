@@ -10,6 +10,9 @@ namespace DashworksTestAutomation.Pages.Senior
         [FindsBy(How = How.XPath, Using = ".//a[text()='Actions']")]
         public IWebElement ActionsTab { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//a[text()='Onboarding']")]
+        public IWebElement OnboardingTab { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement AdministrationTab { get; set; }
 
