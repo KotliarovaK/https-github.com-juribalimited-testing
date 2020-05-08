@@ -1,82 +1,85 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using AutomationUtils.Utils;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
+using TechTalk.SpecRun.Common.Helper;
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin.Onboarding
 {
     public class OnboardingDto
     {
-        [JsonProperty("applicationBucketId")]
-        public string ApplicationBucketId { get; set; }
+        [JsonProperty("applicationBucketId")] public string ApplicationBucketId = "955";
 
-        [JsonProperty("applicationCategoryId")]
-        public int ApplicationCategoryId { get; set; }
+        [JsonProperty("applicationCategoryId")] public int ApplicationCategoryId = -1;
 
-        [JsonProperty("applicationRequestTypeId")]
-        public string ApplicationRequestTypeId { get; set; }
+        [JsonProperty("applicationRequestTypeId")] public string ApplicationRequestTypeId = "725";
 
-        [JsonProperty("applicationsList")]
-        public string ApplicationsList { get; set; }
+        [JsonProperty("applicationsList")] public string ApplicationsList = string.Empty;
+        public string ApplicationObject
+        {
+            set => ApplicationsList = GetApplicationId(value);
+        }
 
-        [JsonProperty("deviceBucketId")]
-        public string DeviceBucketId { get; set; }
+        [JsonProperty("deviceBucketId")] public string DeviceBucketId = "955";
 
-        [JsonProperty("deviceCategoryId")]
-        public int DeviceCategoryId { get; set; }
+        [JsonProperty("deviceCategoryId")] public int DeviceCategoryId = -1;
 
-        [JsonProperty("deviceRequestTypeId")]
-        public string DeviceRequestTypeId { get; set; }
+        [JsonProperty("deviceRequestTypeId")] public string DeviceRequestTypeId = "724";
 
         [JsonProperty("devicesList")]
-        public string DevicesList { get; set; }
+        public string DevicesList = string.Empty;
+        public string DeviceObject
+        {
+            set => DevicesList = GetDeviceId(value);
+        }
 
-        [JsonProperty("mailboxBucketId")]
-        public string MailboxBucketId { get; set; }
+        [JsonProperty("mailboxBucketId")] public string MailboxBucketId = "955";
 
-        [JsonProperty("mailboxCategoryId")]
-        public int MailboxCategoryId { get; set; }
+        [JsonProperty("mailboxCategoryId")] public int MailboxCategoryId = -1;
 
-        [JsonProperty("mailboxRequestTypeId")]
-        public string MailboxRequestTypeId { get; set; }
+        [JsonProperty("mailboxRequestTypeId")] public string MailboxRequestTypeId = "0";
 
-        [JsonProperty("mailboxesList")]
-        public string MailboxesList { get; set; }
+        [JsonProperty("mailboxesList")] public string MailboxesList = "0";
 
-        [JsonProperty("removeApplications")]
-        public List<object> RemoveApplications { get; set; }
+        [JsonProperty("removeApplications")] public List<object> RemoveApplications = new List<object>();
 
-        [JsonProperty("removeDevices")]
-        public List<object> RemoveDevices { get; set; }
+        [JsonProperty("removeDevices")] public List<object> RemoveDevices = new List<object>();
 
-        [JsonProperty("removeMailboxes")]
-        public List<object> RemoveMailboxes { get; set; }
+        [JsonProperty("removeMailboxes")] public List<object> RemoveMailboxes = new List<object>();
 
-        [JsonProperty("removeObjectsList")]
-        public string RemoveObjectsList { get; set; }
+        [JsonProperty("removeObjectsList")] public string RemoveObjectsList = string.Empty;
 
-        [JsonProperty("removeUsers")]
-        public List<object> RemoveUsers { get; set; }
+        [JsonProperty("removeUsers")] public List<object> RemoveUsers = new List<object>();
 
-        [JsonProperty("ringId")]
-        public string RingId { get; set; }
+        [JsonProperty("ringId")] public string RingId = "145";
 
-        [JsonProperty("type")]
-        public string Type { get; set; }
+        [JsonProperty("type")] public string Type = "All";
 
-        [JsonProperty("userBucketId")]
-        public string UserBucketId { get; set; }
+        [JsonProperty("userBucketId")] public string UserBucketId = "955";
 
-        [JsonProperty("userCategoryId")]
-        public int UserCategoryId { get; set; }
+        [JsonProperty("userCategoryId")] public int UserCategoryId = -1;
 
-        [JsonProperty("userRequestTypeId")]
-        public string UserRequestTypeId { get; set; }
+        [JsonProperty("userRequestTypeId")] public string UserRequestTypeId = "723";
 
         [JsonProperty("usersList")]
-        public string UsersList { get; set; }
+        public string UsersList = string.Empty;
+        public string UserObject
+        {
+            set => UsersList = GetUsersId(value);
+        }
+
+        private string GetDeviceId(string name)
+        {
+            return name.IsNotNullOrEmpty() ? DatabaseHelper.GetDeviceDetailsIdByName(name) : string.Empty;
+        }
+
+        private string GetUsersId(string name)
+        {
+            return name.IsNotNullOrEmpty() ? DatabaseHelper.GetUserDetailsIdByName(name) : string.Empty;
+        }
+
+        private string GetApplicationId(string name)
+        {
+            return name.IsNotNullOrEmpty() ? DatabaseHelper.GetApplicationDetailsIdByName(name) : string.Empty;
+        }
     }
 }

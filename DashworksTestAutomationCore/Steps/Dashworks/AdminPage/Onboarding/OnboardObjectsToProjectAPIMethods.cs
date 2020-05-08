@@ -25,13 +25,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
 
         }
 
-        public enum ObjectType
-        {
-            Devices,
-            Users,
-            Applications
-        }
-        public OnboardedObjects OnboardObjectsToProjectAPI(ObjectType objectType, string projectName, Table table, out string exception)
+        public OnboardedObjects OnboardObjectsToProjectAPI(string projectName, Table table, out string exception)
         {
             exception = string.Empty;
 
@@ -47,14 +41,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
                 {
                     var request = requestUri.GenerateRequest();
 
-                    Object.DevicesList = objectType == ObjectType.Devices ? DatabaseHelper.GetDeviceDetailsIdByName(Object.DevicesList) : "";
-                    
-                    Object.UsersList = objectType == ObjectType.Users ? DatabaseHelper.GetUserId(Object.UsersList) : "";
-
-                    Object.ApplicationsList = objectType == ObjectType.Applications ? DatabaseHelper.GetApplicationDetailsIdByName(Object.ApplicationsList) : "";
-
                     request.AddJsonBody(Object);
-                    var response = _client.Evergreen.Post(request);
+                    var response = _client.Evergreen.Put(request);
 
                     if (!response.StatusCode.Equals(HttpStatusCode.OK))
                     {
@@ -65,31 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
                     var content = response.Content;
                     var onboardObjResponse = JsonConvert.DeserializeObject<OnboardingDto>(content);
 
-                    Object.ApplicationBucketId = onboardObjResponse.ApplicationBucketId;
-                    Object.ApplicationCategoryId = onboardObjResponse.ApplicationCategoryId;
-                    Object.ApplicationRequestTypeId = onboardObjResponse.ApplicationRequestTypeId;
-                    Object.ApplicationsList = onboardObjResponse.ApplicationsList;
-                    Object.DeviceBucketId = onboardObjResponse.DeviceBucketId;
-                    Object.DeviceCategoryId = onboardObjResponse.DeviceCategoryId;
-                    Object.DeviceRequestTypeId = onboardObjResponse.DeviceRequestTypeId;
-                    Object.DevicesList = onboardObjResponse.DevicesList;
-                    Object.MailboxBucketId = onboardObjResponse.MailboxBucketId;
-                    Object.MailboxCategoryId = onboardObjResponse.MailboxCategoryId;
-                    Object.MailboxRequestTypeId = onboardObjResponse.MailboxRequestTypeId;
-                    Object.MailboxesList = onboardObjResponse.MailboxesList;
-                    Object.RemoveApplications = onboardObjResponse.RemoveApplications;
-                    Object.RemoveDevices = onboardObjResponse.RemoveDevices;
-                    Object.RemoveMailboxes = onboardObjResponse.RemoveMailboxes;
-                    Object.RemoveObjectsList = onboardObjResponse.RemoveObjectsList;
-                    Object.RemoveUsers = onboardObjResponse.RemoveUsers;
-                    Object.RingId = onboardObjResponse.RingId;
-                    Object.Type = onboardObjResponse.Type;
-                    Object.UserBucketId = onboardObjResponse.UserBucketId;
-                    Object.UserCategoryId = onboardObjResponse.UserCategoryId;
-                    Object.UserRequestTypeId = onboardObjResponse.UserRequestTypeId;
-                    Object.UsersList = onboardObjResponse.UsersList;
-
-                    onboardedObjects.Value.Add(Object);
+                    onboardedObjects.Value.Add(onboardObjResponse);
                 }
 
                 return onboardedObjects;

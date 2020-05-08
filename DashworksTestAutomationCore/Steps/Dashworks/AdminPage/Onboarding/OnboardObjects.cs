@@ -1,33 +1,51 @@
-﻿using TechTalk.SpecFlow;
+﻿using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.DTO.RuntimeVariables.Onboarding;
+using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
 {
-    class OnboardObjects
+    [Binding]
+    class OnboardObjects : SpecFlowContext
     {
+        private readonly OnboardedObjects _onboardedObjects;
         private readonly OnboardObjectsToProjectAPIMethods _onboardObjectsToProjectApiMethods;
 
-        //| Device names |
-        [When(@"User onboards devices to '(.*)' project")]
-        public void WhenUserOnboardsDevicesToTheProject(string projectName, Table table)
+        public OnboardObjects(OnboardedObjects onboardedObjects, RestWebClient client)
         {
-            _onboardObjectsToProjectApiMethods
-                .OnboardObjectsToProjectAPI(OnboardObjectsToProjectAPIMethods.ObjectType.Devices, projectName, table, out var exception);
+            _onboardedObjects = onboardedObjects;
+            _onboardObjectsToProjectApiMethods = new OnboardObjectsToProjectAPIMethods(client, onboardedObjects);
         }
 
-        //| Users names |
-        [When(@"User onboards devices to '(.*)' project")]
-        public void WhenUserOnboardsUsersToTheProject(string projectName, Table table)
-        {
-            _onboardObjectsToProjectApiMethods
-                .OnboardObjectsToProjectAPI(OnboardObjectsToProjectAPIMethods.ObjectType.Users, projectName, table, out var exception);
-        }
-
-        //| Applications names |
-        [When(@"User onboards devices to '(.*)' project")]
+        //| DeviceObjects | OR | UserObjects | OR | ApplicationObjects |
+        [When(@"User onboards objects to '(.*)' project")]
         public void WhenUserOnboardsApplicationsToTheProject(string projectName, Table table)
         {
             _onboardObjectsToProjectApiMethods
-                .OnboardObjectsToProjectAPI(OnboardObjectsToProjectAPIMethods.ObjectType.Applications, projectName, table, out var exception);
+                .OnboardObjectsToProjectAPI(projectName, table, out var exception);
         }
+
+        /*        //| DeviceObjects |
+                [When(@"User onboards devices to '(.*)' project")]
+                public void WhenUserOnboardsDevicesToTheProject(string projectName, Table table)
+                {
+                    _onboardObjectsToProjectApiMethods
+                        .OnboardObjectsToProjectAPI(projectName, table, out var exception);
+                }
+
+                //| UserObjects |
+                [When(@"User onboards users to '(.*)' project")]
+                public void WhenUserOnboardsUsersToTheProject(string projectName, Table table)
+                {
+                    _onboardObjectsToProjectApiMethods
+                        .OnboardObjectsToProjectAPI(projectName, table, out var exception);
+                }
+
+                //| ApplicationObjects |
+                [When(@"User onboards applications to '(.*)' project")]
+                public void WhenUserOnboardsApplicationsToTheProject(string projectName, Table table)
+                {
+                    _onboardObjectsToProjectApiMethods
+                        .OnboardObjectsToProjectAPI(projectName, table, out var exception);
+                }*/
     }
 }
