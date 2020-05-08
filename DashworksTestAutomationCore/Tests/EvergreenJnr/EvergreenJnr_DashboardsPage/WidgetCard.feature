@@ -680,3 +680,48 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetPreviewDisplayedIfListConta
 	Then There are no errors in the browser console
 	When User clicks 'CREATE' button
 	Then 'WidgetForDAS20837' Widget is displayed to the user
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20368 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleOnCardWidgetAfterChangingRadiobuttonTaskToDropDownList
+	When User clicks 'Projects' on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "R.testProject" Project
+	When User navigate to "Tasks" tab
+	When User navigate to "R.NewBrandTasks1" Task
+	When User selects 'Radiobutton' as Task Value Type on Details page
+	When User clicks "Update" button
+	When User navigate to Evergreen link
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                  |
+	| R.testProj: R.testStage1 \ R.NewBrandTasks1 |
+	When User clicks Save button on the list panel
+	When User create dynamic list with "DevicesList_20368" name on "Devices" page
+	Then "DevicesList_20368" list is displayed to user
+	When Dashboard with 'Dashboard_20368' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title            | List              | Type      | AggregateFunction | AggregateBy                                 |
+	| Card       | CardWidget_20368 | DevicesList_20368 | Aggregate | Severity          | R.testProj: R.testStage1 \ R.NewBrandTasks1 |
+	Then 'CardWidget_20368' Widget is displayed to the user
+	When User clicks 'Projects' on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "R.testProject" Project
+	When User navigate to "Tasks" tab
+	When User navigate to "R.NewBrandTasks1" Task
+	When User selects 'DropDownList' as Task Value Type on Details page
+	When User clicks "Update" button
+	When User navigate to Evergreen link
+	When User clicks 'Devices' on the left-hand menu
+	When User navigates to the "DevicesList_20368" list
+	When User clicks the Columns button
+	When User removes "[Missing Column]" column by Column panel
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                  |
+	| R.testProj: R.testStage1 \ R.NewBrandTasks1 |
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
+	When Dashboard with 'Dashboard_20368' name is opened via API
+	When User checks 'Edit mode' slide toggle
+	Then User sees 'This widget refers to a column which is not in the list' text in warning message of 'CardWidget_20368' widget on Dashboards page
