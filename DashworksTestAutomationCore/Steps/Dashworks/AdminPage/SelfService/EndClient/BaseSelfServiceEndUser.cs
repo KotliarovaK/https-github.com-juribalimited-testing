@@ -46,6 +46,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             _driver.NavigateToUrl(navigationUrl);
         }
 
+        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier and inccorect GUID '(.*)'")]
+        public void WhenUserNavigatesToFirsEndUserPageWithSelfServiceIdentifierAndInccorectGuid(string selfServiceIdentifier, string incorrectGuid)
+        {
+            string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{selfServiceIdentifier}/{incorrectGuid}";
+
+            _driver.NavigateToUrl(navigationUrl);
+        }
+
+        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier with inccorect SSID in URL '(.*)'")]
+        public void WhenUserNavigatesToFirsEndUserPageWithSelfServiceIdentifierWithInccorectSsidInUrl(string selfServiceIdentifier, string incorrectSsid)
+        {
+            string ssGuid = DatabaseHelper.GetSelfServiceObjectGuid(selfServiceIdentifier);
+            string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{incorrectSsid}/{ssGuid}";
+
+            _driver.NavigateToUrl(navigationUrl);
+        }
+
         [Then(@"Self Service Tools Panel displayed for end client")]
         public void ThenSelfServiceToolsPanelDisplayedForEndClient()
         {
