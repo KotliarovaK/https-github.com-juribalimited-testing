@@ -121,21 +121,42 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpd
 	| abc_20950      |
 	Then Favourite Bulk Update items are displayed in ascending order
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @X_Ray
-Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateTaskValueType
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
+@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @X_Ray
+Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateTaskValueType
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select "Hostname" rows in the grid
-	| SelectedRowsName |
-	| 00K4CEEQ737BA4L  |
+	When User select "Application" rows in the grid
+	| SelectedRowsName                         |
+	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update path' in the 'Bulk Update Type' dropdown
-	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User selects 'Desktop Upgrade' option from 'Path' autocomplete
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 2 \ Radio Date Slot App' option from 'Task' autocomplete
+	When User selects 'Started' in the 'Update Value' dropdown
+	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
+	When User selects 'Stage 1 \ Radiobutton Date App Task' option from 'Relative Task' autocomplete
+	When User enters '5' text to 'Value' textbox
+	When User selects 'weekdays after task value' in the 'DateUnit' dropdown
 	When User clicks Star button
-	When User enters '20774_TestFBU' text to 'Favourite Bulk Update Name' textbox
+
+	Then following fields are displayed in the popup:
+	| Fields           |
+	| Bulk Update Type |
+	| Project          |
+	| Task             |
+	| Update Value     |
+	| Update Date      |
+	| Relative Project |
+	| Relative Task    |
+	| Value            |
+	Then User compares data in the fields in the popup:
+	| Field            | Data                              |
+	| Bulk Update Type | Update task value                 |
+	| Project          | zUser Sch for Automations Feature |
+	| Task             | Stage 2 \ Weekdays Task           |
+	When User enters 'DAS20940_FBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
 	When User clicks the Actions button
