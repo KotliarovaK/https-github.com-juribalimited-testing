@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19909 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19909 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	When Project created via API
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19909_2_SI        | TestPageSs1 | DAS_19909_Page_1 | true              |
 	| 19909_2_SI        | TestPageSs2 | DAS_19909_Page_2 | true              |
-	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
+	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName    | OwnerPermission                  |
 	| AOC Name      | DAS_19909_Proj | Do not allow owner to be changed |
 	When User navigates to the 'Builder' left submenu item
@@ -95,11 +95,12 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	When User waits for info message disappears under 'Owner Scope' field
 	Then Page with 'Edit App Ownership Component' subheader is displayed to user
-	Then 'TestPageSs1' label with self service parent page name is displayed
+	Then 'Welcome' label with self service parent page name is displayed
 	Then 'AOC Name' content is displayed in 'Component Name' textbox
 	Then 'DAS_19909_Proj' content is displayed in 'Project' autocomplete
 	Then 'Do not allow owner to be changed' radio button is checked
-	Then 'Show this component' checkbox is unchecked
+	#Return the step below to "unchecked" as soon as AOC component pass MVP stage
+	Then 'Show this component' checkbox is checked
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#Update information
 	When User enters 'AOC_Updated Name' text to 'Component Name' textbox
@@ -107,19 +108,20 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	When User checks 'Allow owner to be set to another user only' radio button
 	When User selects 'DAS_19909_3' option from 'Owner Scope' autocomplete
 	When User waits for info message disappears under 'Owner Scope' field
-	When User checks 'Show this component' checkbox
+	#The step below was disabled because of MVP changes, enable it when AOC component pass MVP stage
+	#When User checks 'Show this component' checkbox
 	When User clicks 'UPDATE' button
 	#Check updated data
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC_Updated Name' name on Self Service Builder Panel
 	Then Page with 'Edit App Ownership Component' subheader is displayed to user
-	Then 'TestPageSs1' label with self service parent page name is displayed
+	Then 'Welcome' label with self service parent page name is displayed
 	Then 'AOC_Updated Name' content is displayed in 'Component Name' textbox
 	Then 'DAS_19909_Proj_Up' content is displayed in 'Project' autocomplete
 	Then 'Allow owner to be set to another user only' radio button is checked
 	Then 'DAS_19909_3' content is displayed in 'Owner Scope' autocomplete
 	Then 'Show this component' checkbox is checked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19909 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19909 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	When Project created via API
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
@@ -147,7 +149,8 @@ Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	When User checks 'Allow owner to be set to another user only' radio button
 	When User selects 'DAS_19909_3' option from 'Owner Scope' autocomplete
 	When User waits for info message disappears under 'Owner Scope' field
-	When User checks 'Show this component' checkbox
+	#The step below was disabled because of MVP changes, enable it when AOC component pass MVP stage
+	#When User checks 'Show this component' checkbox
 	When User clicks 'CANCEL' button
 	#Check that data is not updated
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
@@ -158,4 +161,5 @@ Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	Then 'Owner Scope' autocomplete is not displayed
 	When User checks 'Allow owner to be set to another user only' radio button
 	Then '' content is displayed in 'Owner Scope' autocomplete
-	Then 'Show this component' checkbox is unchecked
+	#The step below was disabled because of MVP changes, enable it when AOC component pass MVP stage
+	#Then 'Show this component' checkbox is unchecked
