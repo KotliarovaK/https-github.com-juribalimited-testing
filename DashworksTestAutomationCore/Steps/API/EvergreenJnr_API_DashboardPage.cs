@@ -70,7 +70,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
             };
             _dashboard.Value.Add(newDashboard);
 
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{newDashboard.DashboardId}");
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/dashboards/{newDashboard.DashboardId}");
             var dash =_driver.NowAt<EvergreenDashboardsPage>();
         }
 
