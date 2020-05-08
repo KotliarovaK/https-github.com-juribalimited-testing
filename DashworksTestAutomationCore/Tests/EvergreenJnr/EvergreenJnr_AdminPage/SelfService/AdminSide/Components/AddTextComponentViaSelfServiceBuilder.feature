@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_EvergreenJnr_AdminPage_CheckThatUserSeesProperTootltipForAddItemButton
+Scenario: EvergreenJnr_AdminPage_CheckThatUserSeesProperTootltipForAddItemButton
 	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_EvergreenJnr_AdminPage_CheckThatUserSeesProperTootltipFor
     Then User sees 'Add Component' tootltip text of Add Item button for item with 'Page' type and 'TestPageSs1' name on Self Service Builder Panel
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_EvergreenJnr_AdminPage_CheckThatAfterClickOnComponentItWillBeHighlightedAndAddButtonEnabled
+Scenario: EvergreenJnr_AdminPage_CheckThatAfterClickOnComponentItWillBeHighlightedAndAddButtonEnabled
 	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_EvergreenJnr_AdminPage_CheckThatAfterClickOnComponentItWi
 	Then 'Text' component on dialog is highlighted
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @DAS20765 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_EvergreenJnr_AdminPage_CheckThatWhenUserClickedOnAddButtonThePopupWillBeRemovedAndBuildeDesignSurfaceShowsCorrecComponentConfigurationPage
+Scenario: EvergreenJnr_AdminPage_CheckThatWhenUserClickedOnAddButtonThePopupWillBeRemovedAndBuildeDesignSurfaceShowsCorrecComponentConfigurationPage
 	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
 	| ItemName |
 	|          |

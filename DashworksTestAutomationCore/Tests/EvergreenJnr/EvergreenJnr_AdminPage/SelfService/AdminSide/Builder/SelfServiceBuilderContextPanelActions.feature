@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20407 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperCogMenuOptionsArePresentAndMoveToOptionsWorksProperly
+Scenario: EvergreenJnr_AdminPage_CheckThatProperCogMenuOptionsArePresentAndMoveToOptionsWorksProperly
 	When User create static list with "DAS_20407" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |

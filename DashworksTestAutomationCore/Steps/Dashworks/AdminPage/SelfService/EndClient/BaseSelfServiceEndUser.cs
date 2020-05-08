@@ -43,6 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             string ssGuid = DatabaseHelper.GetSelfServiceObjectGuid(selfServiceIdentifier);
             string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{selfServiceIdentifier}/{ssGuid}";
 
+            _driver.WaitForDataLoading();
             _driver.NavigateToUrl(navigationUrl);
         }
 
@@ -51,15 +52,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         {
             string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{selfServiceIdentifier}/{incorrectGuid}";
 
+            _driver.WaitForDataLoading();
             _driver.NavigateToUrl(navigationUrl);
         }
 
-        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier with inccorect SSID in URL '(.*)'")]
+        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier and inccorect SSID in URL '(.*)'")]
         public void WhenUserNavigatesToFirsEndUserPageWithSelfServiceIdentifierWithInccorectSsidInUrl(string selfServiceIdentifier, string incorrectSsid)
         {
             string ssGuid = DatabaseHelper.GetSelfServiceObjectGuid(selfServiceIdentifier);
             string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{incorrectSsid}/{ssGuid}";
 
+            _driver.WaitForDataLoading();
             _driver.NavigateToUrl(navigationUrl);
         }
 

@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationShownWhenUserEditPage
+Scenario: EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationShownWhenUserEditPage
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelectedPageCon
 	Then 'Show page in self service' checkbox is checked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnabledIfUserDidDidntChangesAndProperToolTipsAreDisplays
+Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnabledIfUserDidDidntChangesAndProperToolTipsAreDisplays
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdateButtonIsD
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWillBeSavedWithProperNotificationAndHighlightedOnContextPanel
+Scenario: EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWillBeSavedWithProperNotificationAndHighlightedOnContextPanel
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatChangesOfTheUpd
 	Then 'Show page in self service' checkbox is checked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
-Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation
+Scenario Outline: EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -131,7 +131,7 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisp
 	| 39_S"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^k                      | 256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedThePagePreviewIsShownOnTheDesignSurface
+Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedThePagePreviewIsShownOnTheDesignSurface
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -152,7 +152,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheCancelBu
 	Then 'TestPageDisplayName_5' page subheader is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheUserLeavesThePageConfigurationWithoutSavingChangesTheySeeTheStandardWarningModalWindowPopup
+Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheUserLeavesThePageConfigurationWithoutSavingChangesTheySeeTheStandardWarningModalWindowPopup
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          |

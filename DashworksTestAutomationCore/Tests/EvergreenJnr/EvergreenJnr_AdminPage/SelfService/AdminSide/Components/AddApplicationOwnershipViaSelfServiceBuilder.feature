@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneApplicationOwnershipInToFirstPage
+Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneApplicationOwnershipInToFirstPage
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_19982_Proj_1 | All Users | None            | Standalone Project |
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAdd
 	Then User does not see 'Application Ownership' item on dialog
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatLastPageDoesNotAllowAnyInteractiveComponentToBeAdded 
+Scenario: EvergreenJnr_AdminPage_CheckThatLastPageDoesNotAllowAnyInteractiveComponentToBeAdded 
 	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatLastPageDoesNot
 	Then User does not see 'Application Ownership' item on dialog
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20243 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserUnableToCreateTwoApplicationOwnershipComponents
+Scenario: EvergreenJnr_AdminPage_CheckThatUserUnableToCreateTwoApplicationOwnershipComponents
     When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          | 

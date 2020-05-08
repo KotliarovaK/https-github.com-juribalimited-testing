@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageWhenSelfServiceIsNotAvailable
 	When User creates Self Service via API and open it
 	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
 	| DAS_18972_SS_1 | 19653_1_SI        | true    | true                | DAS_18972_1 |
-	When User navigates to End User landing page with '19653_1_SI' Self Service Identifier with inccorect SSID in URL '19653_1_X'
+	When User navigates to End User landing page with '19653_1_SI' Self Service Identifier and inccorect SSID in URL '19653_1_X'
 	Then self service error page with 'This is not a valid self service' text is displayed for end client
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19885 @DAS19653 @Cleanup

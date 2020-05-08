@@ -1,5 +1,5 @@
-﻿Feature: UpdateSelfServiceViaBuilderApi
-	Self Service
+﻿Feature: UpdateSelfServicePageViaApi
+	API scenarios to test Self Service page update
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen via API

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18941 @DAS19821 @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @SelfService_BaseURL @Do_Not_Run_With_SelfService_BaseURL @DAS18941 @DAS19821 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrl
 	When User sets self service base url as 'https://default.corp.juriba.com'
 	When User clicks 'Admin' on the left-hand menu
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrl
 	Then 'UPDATE' button is not disabled
 	Then self service base url is equals to 'https://autotest.corp.juriba.com'
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18941 @DAS19821 @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @SelfService_BaseURL @Do_Not_Run_With_SelfService_BaseURL @DAS18941 @DAS19821 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckBaseUrlValidationMessages
 	When User sets self service base url as 'https://errormessagevalidation.corp.juriba.com'
 	When User clicks 'Admin' on the left-hand menu
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBaseUrlValidationMessages
 	Then 'Self service settings have been updated' text is displayed on inline success banner
 	Then self service base url is equals to 'http://okurl.com'
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19821 @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @SelfService_BaseURL @Do_Not_Run_With_SelfService_BaseURL @DAS19821 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditing
 	When User sets self service base url as 'https://cancelediting.corp.juriba.com'
 	When User clicks 'Admin' on the left-hand menu
