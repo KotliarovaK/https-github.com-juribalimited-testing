@@ -136,7 +136,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
             }
         }
 
-        public void SetBaseUrl(string url = "some base url")
+        public void SetBaseUrl(string url = "https://master.corp.juriba.com")
         {
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservicesettings/baseurl";
             var request = requestUri.GenerateRequest();

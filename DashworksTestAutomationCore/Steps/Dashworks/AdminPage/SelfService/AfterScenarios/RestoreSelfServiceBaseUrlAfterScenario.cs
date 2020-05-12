@@ -15,6 +15,7 @@ using DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenari
 
 namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.AfterScenarios
 {
+    [Binding]
     class RestoreSelfServiceBaseUrlAfterScenario
     {
         private SelfServiceApiMethods _SelfServiceApiMethods;
