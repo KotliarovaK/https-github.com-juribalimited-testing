@@ -973,6 +973,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect error message for '{dropdown}' dropdown is displayed");
         }
 
+        [Then(@"'(.*)' success message for '(.*)' dropdown")]
+        public void ThenSuccessMessageForDropdown(string successMessage, string dropdown)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            Verify.AreEqual(successMessage, page.GetDropdownSuccessMessage(dropdown),
+                $"Incorrect succcess message for '{dropdown}' dropdown is displayed");
+        }
+
         private void VerifyTooltipOfDropdownIcons(BaseDashboardPage page, List<string> tooltips)
         {
             var icons = page.GetIconsOfDropdownOptions();
