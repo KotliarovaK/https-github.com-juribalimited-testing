@@ -15,7 +15,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
-using DashworksTestAutomationCore.Utils;
+using DashworksTestAutomationCore.Providers;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios
 {
@@ -154,7 +154,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
 
         public void SetDefaultBaseUrl()
         {
-            SetBaseUrl(ConfigReader.ByKey("selfServiceDefaultBaseUrl"));
+            SetBaseUrl(SelfServiceProvider.sSDefaultBaseUrl);
         }
     }
 }
