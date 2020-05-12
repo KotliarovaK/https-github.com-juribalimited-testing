@@ -285,7 +285,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	When User clicks "Create Task" button
 	When User creates Task
 	| Name          | Help     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
-	| DAS20951_Task | DAS20951 | Stage_DAS17691   | Normal         | Radiobutton     | Computer         |                          | false              |
+	| DAS20951_Task | DAS20951 | Stage_DAS17691   | Normal         | Radiobutton     | Computer         | false                    |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
