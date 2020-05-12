@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using DashworksTestAutomationCore.Utils;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios
 {
@@ -136,7 +137,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
             }
         }
 
-        public void SetBaseUrl(string url = "https://master.corp.juriba.com")
+        public void SetBaseUrl(string url)
         {
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservicesettings/baseurl";
             var request = requestUri.GenerateRequest();
@@ -149,6 +150,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
             {
                 throw new Exception($"Unable to set Self Service Base URL: {response.StatusCode}, {response.ErrorMessage}");
             }
+        }
+
+        public void SetBaseUrl()
+        {
+            SetBaseUrl(ConfigReader.ByKey("selfServiceBaseUrl"));
         }
     }
 }
