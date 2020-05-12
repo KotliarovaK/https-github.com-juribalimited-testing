@@ -165,8 +165,8 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	|          |
 	Then "StaticList13179" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
-	| QueryType                                             | QueryStringURL                                                                                                   |
-	| Application (Saved List) - Static - All rows selected | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('285')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo)) |
+	| QueryType                                             | QueryStringURL                                                                                                         | ListName        |
+	| Application (Saved List) - Static - All rows selected | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('ListName')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo)) | StaticList13179 |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Application" filter
@@ -190,8 +190,8 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And User create dynamic list with "Dynamic13179" name on "Applications" page
 	Then "Dynamic13179" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
-	| QueryType                                            | QueryStringURL                                                                                                         |
-	| Application (Saved List) - Dynamic - All data sorted | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('290')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod)) |
+	| QueryType                                            | QueryStringURL                                                                                                              | ListName     |
+	| Application (Saved List) - Dynamic - All data sorted | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('ListName')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod)) | Dynamic13179 |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Application" filter
@@ -219,8 +219,8 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	When User create static list with "StaticList12911" name
 	Then "StaticList12911" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
-	| QueryType                                                                                        | QueryStringURL                                                                          |
-	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('295')%20WHERE%20(niod)) |
+	| QueryType                                                                                        | QueryStringURL                                                                                | ListName        |
+	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('ListName')%20WHERE%20(niod)) | StaticList12911 |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Application" filter
@@ -244,8 +244,8 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	And User create dynamic list with "Dynamic13579" name on "Applications" page
 	Then "Dynamic13579" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
-	| QueryType                                                                                        | QueryStringURL                                                                         |
-	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('37')%20WHERE%20(uod)) |
+	| QueryType                                                                                        | QueryStringURL                                                                               | ListName     |
+	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('ListName')%20WHERE%20(uod)) | Dynamic13579 |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Application" filter
