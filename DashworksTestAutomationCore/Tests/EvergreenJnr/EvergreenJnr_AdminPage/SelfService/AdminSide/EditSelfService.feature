@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedAfter
 	Then '1 self service has been deleted' text is displayed on inline success banner
 	Then 'TestProj_13' content is not displayed in the 'Self Service Name' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19289 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19289 @DAS21093 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserUpadatesSelfService
 	When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
@@ -237,8 +237,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDispla
 	When User enters 'Test_ID_55' text to 'Self Service Identifier' textbox
 	When User clicks 'UPDATE' button
 	Then 'The self service has been updated' text is displayed on inline success banner
-	Then 'click here to view the TestProj_55 self service' link is displayed on inline success banner
-	Then User clicks on 'click here to view the TestProj_55 self service' link on inline success banner
+	When User navigates to the 'Details' left menu item
 	Then Page with 'TestProj_55' header is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19864 @Cleanup @SelfServiceMVP
