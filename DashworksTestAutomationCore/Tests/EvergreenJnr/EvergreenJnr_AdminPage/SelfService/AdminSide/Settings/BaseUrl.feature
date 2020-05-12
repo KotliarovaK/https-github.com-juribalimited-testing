@@ -70,3 +70,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditing
 	Then 'Self Services' left submenu item is active
 	Then 'Self Service Settings' left submenu item is not active
 	Then self service base url is equals to 'https://cancelediting.corp.juriba.com'
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21053 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceUrlGenerateCorretly
+	When User creates Self Service via API and open it
+	| Name         | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope            |
+	| DAS_21053_SS | 21053_SI          | true    | true                | All Applications |
+	When User sets self service base url as 'https://new.com'
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	When User opens 'DAS_21053_SS' Self Service
+	Then Self Service URL preview that contains 'https://new.com' base URL and '21053_SI' Self Service identifier displays
