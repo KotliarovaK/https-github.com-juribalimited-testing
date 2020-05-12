@@ -28,7 +28,7 @@ namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.Afte
         [AfterScenario("Cleanup", Order = 10)]
         public void RestoreSelfServiceBaseUrlToDefault()
         {
-            _SelfServiceApiMethods.SetBaseUrl();
+            _SelfServiceApiMethods.SetDefaultBaseUrl();
         }
     }
 }

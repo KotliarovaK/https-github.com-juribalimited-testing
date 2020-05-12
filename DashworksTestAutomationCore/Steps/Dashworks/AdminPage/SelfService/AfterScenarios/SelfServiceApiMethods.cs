@@ -152,9 +152,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
             }
         }
 
-        public void SetBaseUrl()
+        public void SetDefaultBaseUrl()
         {
-            SetBaseUrl(ConfigReader.ByKey("selfServiceBaseUrl"));
+            SetBaseUrl(ConfigReader.ByKey("selfServiceDefaultBaseUrl"));
         }
     }
 }
