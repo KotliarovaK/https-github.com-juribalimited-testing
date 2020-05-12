@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	| hours after now     |
 	When User selects 'weekdays before now' in the 'Units' dropdown
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @Void
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

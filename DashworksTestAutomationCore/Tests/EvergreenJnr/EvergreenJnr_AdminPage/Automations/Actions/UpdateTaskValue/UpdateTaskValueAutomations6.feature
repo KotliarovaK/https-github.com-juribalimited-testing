@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	And User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19274 @DAS21043 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19274 @DAS21043 @DAS20889 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User creates new Automation via API and open it
 	| Name              | Description | IsActive | StopOnFailedAction | Scope                   | Run    |
@@ -73,8 +73,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	When User selects 'days before now' in the 'Units' dropdown
+	#When User selects 'days before now' in the 'Units' dropdown
 	When User clicks 'CREATE' button
+	#Check Action grid
+	Then '0 day after now' content is displayed in the 'Value' column
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "192741_Automation" text in the Search field for "Automation" column
@@ -96,6 +98,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
+	Then '0' content is displayed in 'Value' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '10 Feb 2020' text to 'Date' datepicker
 	When User clicks 'UPDATE' button

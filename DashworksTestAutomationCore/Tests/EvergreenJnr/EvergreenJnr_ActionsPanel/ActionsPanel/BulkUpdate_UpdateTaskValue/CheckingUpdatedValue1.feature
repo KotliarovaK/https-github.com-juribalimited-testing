@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18245
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18245 @DAS20889
 Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdateDate
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

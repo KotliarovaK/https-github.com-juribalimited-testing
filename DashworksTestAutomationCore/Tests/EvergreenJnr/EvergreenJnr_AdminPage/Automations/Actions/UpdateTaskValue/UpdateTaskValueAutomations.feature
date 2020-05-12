@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User selects '17429_Task2' option from 'Task' autocomplete
 	When User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
-	#Delete Stage
+	#Delete Task
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "17429Project2" Project
