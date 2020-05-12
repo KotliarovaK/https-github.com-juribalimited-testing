@@ -51,5 +51,6 @@ namespace DashworksTestAutomation.Providers
 
         public static string EvergreenUrl => $"{BaseUrl}/{ConfigReader.ByKey("appURLEvergreen")}/";
         public static string ProjectsUrl => $"{BaseUrl}/{ConfigReader.ByKey("projectsUrl")}";
+        public static string SelfServiceDefaultBaseUrl => ConfigReader.ByKey("selfServiceDefaultBaseUrl");
     }
 }

@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20050 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckDisplayAndFormatingOfTextComponentOnEndUserSelfService
+Scenario: EvergreenJnr_AdminPage_CheckDisplayAndFormatingOfTextComponentOnEndUserSelfService
 	When User create static list with "DAS_20050" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckDisplayAndFormating
 	Then User sees 'Thank You' text component 'Thank You' on end user page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20050 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEditingAndChangingOrder
+Scenario: EvergreenJnr_AdminPage_CheckEditingAndChangingOrder
 	When User create static list with "DAS_20050_2" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |

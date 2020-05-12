@@ -130,11 +130,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
             var settings = new JsonSerializerSettings();
             settings.Converters.Add(new SelfServiceComponentConverter());
 
-            var createdSsPage = JsonConvert.DeserializeObject<List<SelfServicePageDto>>(content, settings).Last();
+            var createdSsPage = JsonConvert.DeserializeObject<List<SelfServicePageDto>>(content, settings).First(x => x.Name.Equals(ssPage.Name));
 
-            Verify.AreEqual(ssPage.Name, createdSsPage.Name, $"Self Service name should be {ssPage.Name} but it is {createdSsPage.Name}");
-            Verify.AreEqual(ssPage.DisplayName, createdSsPage.DisplayName, $"Self Service display name should be {ssPage.DisplayName} but it is {createdSsPage.DisplayName}");
-            Verify.AreEqual(ssPage.ShowInSelfService, createdSsPage.ShowInSelfService, $"Self Service checkbox's state should be {ssPage.ShowInSelfService} but it is {createdSsPage.ShowInSelfService}");
+            Verify.AreEqual(ssPage.Name, createdSsPage.Name, $"Self Service name should be '{ssPage.Name}' but it is '{createdSsPage.Name}'");
+            Verify.AreEqual(ssPage.DisplayName, createdSsPage.DisplayName, $"Self Service display name should be '{ssPage.DisplayName}' but it is '{createdSsPage.DisplayName}'");
+            Verify.AreEqual(ssPage.ShowInSelfService, createdSsPage.ShowInSelfService, $"Self Service checkbox's state should be '{ssPage.ShowInSelfService}' but it is '{createdSsPage.ShowInSelfService}'");
         }
 
         [Then(@"'(.*)' Self Service does not contains any pages")]

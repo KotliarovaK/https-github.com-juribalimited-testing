@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using TechTalk.SpecFlow;
+using DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Settings
 {
@@ -21,10 +22,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Settings
     class SettingsApi : SpecFlowContext
     {
         private readonly RestWebClient _client;
+        private SelfServiceApiMethods _SelfServiceApiMethods;
 
-        public SettingsApi(RestWebClient client)
+        public SettingsApi(RestWebClient client, SelfServiceApiMethods ssApiMethods)
         {
             _client = client;
+            _SelfServiceApiMethods = ssApiMethods;
         }
 
         [Then(@"self service base url is equals to '(.*)'")]
@@ -46,21 +49,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Settings
             Verify.AreEqual(url, ssBaseUrl, "Self Service Base URL is incorrect");
         }
 
-
         [When(@"User sets self service base url as '(.*)'")]
         public void WhenUserSetsSelfServiceBaseUrlAs(string url)
         {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservicesettings/baseurl";
-            var request = requestUri.GenerateRequest();
-
-            request.AddObject(new { settingId = 1, settingName = "BaseUrl", settingValue = url });
-
-            var response = _client.Evergreen.Put(request);
-
-            if (!response.StatusCode.Equals(HttpStatusCode.OK))
-            {
-                throw new Exception($"Unable to set Self Service Base URL: {response.StatusCode}, {response.ErrorMessage}");
-            }
+            _SelfServiceApiMethods.SetBaseUrl(url);
         }
     }
 }
