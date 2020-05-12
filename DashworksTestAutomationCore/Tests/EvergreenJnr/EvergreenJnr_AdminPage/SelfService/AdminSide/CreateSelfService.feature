@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTwoPagesWillBeCreatedByDefaultWhenNewS
 	Then 'Welcome' page subheader is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19950 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToEditTheNamesInEditMode
+Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToEditTheNamesInEditMode
     When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
 	|          | 
