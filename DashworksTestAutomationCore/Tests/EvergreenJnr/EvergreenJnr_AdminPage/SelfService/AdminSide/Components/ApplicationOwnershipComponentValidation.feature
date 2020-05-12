@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @DAS20469 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CreateApplicationOwnershipPageValidation
 	When Project created via API
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CreateApplicationOwnershipPageValidation
 	| 19910_1_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
 	| 19910_1_SI        | TestPageSs2 | DAS_19910_Page_2 | true              |
 	When User navigates to the 'Builder' left submenu item
-	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs1' name on Self Service Builder Panel
+	When User clicks on Add Item button for item with 'Page' type and 'Welcome' name on Self Service Builder Panel
 	When User clicks on 'Application Ownership' component on dialog
 	When User clicks 'ADD' button on popup
 	#Create is disabled by default
@@ -45,13 +45,13 @@ Scenario: EvergreenJnr_AdminPage_CreateApplicationOwnershipPageValidation
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#AOC can be created when correct data is entered
-	When User selects 'DAS_19910_11' option from 'User Scope' autocomplete
-	When User waits for info message disappears under 'User Scope' field
+	When User selects 'DAS_19910_11' option from 'Owner Scope' autocomplete
+	When User waits for info message disappears under 'Owner Scope' field
 	Then 'CREATE' button is not disabled
 	When User clicks 'CREATE' button
 	Then 'The component has been created' text is displayed on inline success banner
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @DAS20469 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenUserScopeDeleted
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenUserScope
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19910_2_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
 	| 19910_2_SI        | TestPageSs2 | DAS_19910_Page_2 | true              |
-	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
+	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName      | OwnerPermission                            | UserScope    | ShowInSelfService |
 	| AOC Name      | DAS_19910_Proj_2 | Allow owner to be set to another user only | DAS_19910_22 | true              |
 	When User navigates to the 'Builder' left submenu item
@@ -77,12 +77,12 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenUserScope
 	When User lists were removed by API
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	Then 'DAS_19910_Proj_2' content is displayed in 'Project' autocomplete
-	Then '[List not found]' content is displayed in 'User Scope' autocomplete
-	Then 'The selected list cannot be found' error message is displayed for 'User Scope' field
+	Then '[List not found]' content is displayed in 'Owner Scope' autocomplete
+	Then 'The selected list cannot be found' error message is displayed for 'Owner Scope' field
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @DAS20469 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenListIsSelectedInUserScope
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	| 19910_3_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
 	| 19910_3_SI        | TestPageSs2 | DAS_19910_Page_2 | true              |
 	When User navigates to the 'Builder' left submenu item
-	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs1' name on Self Service Builder Panel
+	When User clicks on Add Item button for item with 'Page' type and 'Welcome' name on Self Service Builder Panel
 	When User clicks on 'Application Ownership' component on dialog
 	When User clicks 'ADD' button on popup
 	#Create AOC
@@ -111,39 +111,39 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	When User selects 'DAS_19910_Proj_3' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
 	#Check that use is not able to create AOC with broken list
-	When User selects 'Broken_DAS_19910_33' option from 'User Scope' autocomplete
-	When User waits for info message disappears under 'User Scope' field
-	Then 'The selected list has errors' error message is displayed for 'User Scope' field
+	When User selects 'Broken_DAS_19910_33' option from 'Owner Scope' autocomplete
+	When User waits for info message disappears under 'Owner Scope' field
+	Then 'The selected list has errors' error message is displayed for 'Owner Scope' field
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check that use is not able to create AOC with list with missed columns
-	When User selects 'MissedClolumn_DAS_19910_33' option from 'User Scope' autocomplete
-	When User waits for info message disappears under 'User Scope' field
-	Then 'The selected list has errors' error message is displayed for 'User Scope' field
+	When User selects 'MissedClolumn_DAS_19910_33' option from 'Owner Scope' autocomplete
+	When User waits for info message disappears under 'Owner Scope' field
+	Then 'The selected list has errors' error message is displayed for 'Owner Scope' field
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check Broken list column validation
-	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
-	When User waits for info message disappears under 'User Scope' field
+	When User selects 'DAS_19910_33' option from 'Owner Scope' autocomplete
+	When User waits for info message disappears under 'Owner Scope' field
 	When User clicks 'CREATE' button
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
-	When User selects 'Broken_DAS_19910_33' option from 'User Scope' autocomplete
-	When User waits for info message disappears under 'User Scope' field
-	Then 'The selected list has errors' error message is displayed for 'User Scope' field
+	When User selects 'Broken_DAS_19910_33' option from 'Owner Scope' autocomplete
+	When User waits for info message disappears under 'Owner Scope' field
+	Then 'The selected list has errors' error message is displayed for 'Owner Scope' field
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check list with missed column validation
-	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
-	When User waits for info message disappears under 'User Scope' field
-	When User selects 'MissedClolumn_DAS_19910_33' option from 'User Scope' autocomplete
-	When User waits for info message disappears under 'User Scope' field
-	Then 'The selected list has errors' error message is displayed for 'User Scope' field
+	When User selects 'DAS_19910_33' option from 'Owner Scope' autocomplete
+	When User waits for info message disappears under 'Owner Scope' field
+	When User selects 'MissedClolumn_DAS_19910_33' option from 'Owner Scope' autocomplete
+	When User waits for info message disappears under 'Owner Scope' field
+	Then 'The selected list has errors' error message is displayed for 'Owner Scope' field
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @DAS20469 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19910_3_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
 	| 19910_3_SI        | TestPageSs2 | DAS_19910_Page_2 | true              |
-	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
+	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName      | OwnerPermission                            | UserScope    | ShowInSelfService |
 	| AOC Name      | DAS_19910_Proj_4 | Allow owner to be set to another user only | DAS_19910_33 | true              |
 	When User opens 'DAS_19910_SS_3' Self Service
@@ -196,32 +196,33 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#Scope selection should be dropped
-	Then '' content is displayed in 'User Scope' autocomplete
-	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
-	When User waits for info message disappears under 'User Scope' field
+	Then '' content is displayed in 'Owner Scope' autocomplete
+	When User selects 'DAS_19910_33' option from 'Owner Scope' autocomplete
+	When User waits for info message disappears under 'Owner Scope' field
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
+	#The steps below was disabled because of MVP changes, enable it when AOC component pass MVP stage
 	#UPDATE button is still disabled when user change 'Show this component' selection to the same one
-	When User unchecks 'Show this component' checkbox
-	Then 'UPDATE' button is not disabled
-	When User checks 'Show this component' checkbox
-	Then 'UPDATE' button is disabled
-	Then 'UPDATE' button has tooltip with 'No changes made' text
-	#UPDATE User Scope
+	#When User unchecks 'Show this component' checkbox
+	#Then 'UPDATE' button is not disabled
+	#When User checks 'Show this component' checkbox
+	#Then 'UPDATE' button is disabled
+	#Then 'UPDATE' button has tooltip with 'No changes made' text
+	#UPDATE Owner Scope
 	When User checks 'Allow owner to be removed or set to another user' radio button
 	When User clicks 'UPDATE' button
-	Then 'The AOC Name component has been updated' text is displayed on inline success banner
+	Then 'The application ownership component has been updated' text is displayed on inline success banner
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
-	When User waits for info message disappears under 'User Scope' field
-	When User selects 'DAS_19910_test_33' option from 'User Scope' autocomplete
-	When User waits for info message disappears under 'User Scope' field
+	When User waits for info message disappears under 'Owner Scope' field
+	When User selects 'DAS_19910_test_33' option from 'Owner Scope' autocomplete
+	When User waits for info message disappears under 'Owner Scope' field
 	Then 'UPDATE' button is not disabled
-	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
-	When User waits for info message disappears under 'User Scope' field
+	When User selects 'DAS_19910_33' option from 'Owner Scope' autocomplete
+	When User waits for info message disappears under 'Owner Scope' field
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWasRemoved
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
@@ -236,7 +237,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWa
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19910_5_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
 	| 19910_5_SI        | TestPageSs2 | DAS_19910_Page_2 | true              |
-	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
+	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName      | OwnerPermission                | ShowInSelfService |
 	| AOC Name      | DAS_19910_Proj_5 | Allow owner to be removed only | true              |
 	When User navigates to the 'Builder' left submenu item

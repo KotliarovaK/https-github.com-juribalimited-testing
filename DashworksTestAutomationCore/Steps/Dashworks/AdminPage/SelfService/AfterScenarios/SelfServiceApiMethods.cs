@@ -135,5 +135,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
                 Logger.Write($"Unable to delete Self Service via API: {e}");
             }
         }
+
+        public void SetBaseUrl(string url)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservicesettings/baseurl";
+            var request = requestUri.GenerateRequest();
+
+            request.AddObject(new { settingId = 1, settingName = "BaseUrl", settingValue = url });
+
+            var response = _client.Evergreen.Put(request);
+
+            if (!response.StatusCode.Equals(HttpStatusCode.OK))
+            {
+                throw new Exception($"Unable to set Self Service Base URL: {response.StatusCode}, {response.ErrorMessage}");
+            }
+        }
+
+        public void SetDefaultBaseUrl()
+        {
+            SetBaseUrl(UrlProvider.SelfServiceDefaultBaseUrl);
+        }
     }
 }
