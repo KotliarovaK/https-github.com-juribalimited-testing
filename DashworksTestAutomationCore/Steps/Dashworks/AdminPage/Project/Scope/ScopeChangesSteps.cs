@@ -75,6 +75,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             }
         }
 
+        //TODO DELETE THIS METHOD
         [When(@"User waits and expands the ""(.*)"" panel to remove")]
         public void WhenUserWaitsAndExpandsThePanelToRemove(string tabName)
         {

@@ -867,6 +867,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var error = GetDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[not (@class)]"));
             return error.Text;
         }
+        public string GetDropdownSuccessMessage(string placeholder)
+        {
+            var error = GetDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[@class='success-text']"));
+            return error.Text;
+        }
 
         public IWebElement GetDropdownErrorMessageExclamationIcon(string placeholder)
         {

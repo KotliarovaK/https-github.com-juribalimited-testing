@@ -353,7 +353,7 @@ Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
 	When User enters "zUser Sch for Automations Feature" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User navigates to the 'Capacity' left menu item
-	When User selects state 'false' for 'Enable Capacity' checkbox
+	When User selects state 'false' for 'Enable capacity' checkbox
 	When User clicks 'UPDATE' button
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -370,7 +370,7 @@ Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
 	When User enters "zUser Sch for Automations Feature" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User navigates to the 'Capacity' left menu item
-	When User selects state 'true' for 'Enable Capacity' checkbox
+	When User selects state 'true' for 'Enable capacity' checkbox
 	When User clicks 'UPDATE' button
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS20013 @Cleanup

@@ -37,8 +37,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	| UNCATEGORISED |
 	Then 'CREATE' button is disabled
 	Then 'SAVE & CREATE ANOTHER' button is disabled
-	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
-	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
+	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Select at least one value to change' text
 	When User selects 'RED' in the 'Sticky Compliance' dropdown
 	Then 'CREATE' button is not disabled
 	Then 'SAVE & CREATE ANOTHER' button is not disabled
