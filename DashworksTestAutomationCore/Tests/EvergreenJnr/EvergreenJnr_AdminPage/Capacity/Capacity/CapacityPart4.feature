@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Devices' tab on Project Scope Changes page
-	Then open tab in the Project Scope Changes section is active
+	Then 'Devices' tab is opened on Project Scope Changes page
 	When User expands multiselect and selects following Objects
 	| Objects        |
 	| 001BAQXT6JWFPI |

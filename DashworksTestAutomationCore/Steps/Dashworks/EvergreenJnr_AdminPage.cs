@@ -43,14 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"open tab in the Project Scope Changes section is active")]
-        public void ThenOpenTabInTheProjectScopeChangesSectionIsActive()
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            var tabState = projectTabs.ActiveTabOnScopeChangesSection.GetAttribute("aria-selected");
-            Verify.AreEqual("true", tabState, "Tab state is incorrect");
-        }
-
         [Then(@"User sees next Units on the Capacity Units page:")]
         public void ThenUserSeesNextUnitsOnTheCapacityUnitsPage(Table slots)
         {

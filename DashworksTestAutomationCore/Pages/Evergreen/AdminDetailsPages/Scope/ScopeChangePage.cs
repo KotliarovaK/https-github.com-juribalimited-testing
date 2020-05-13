@@ -10,7 +10,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Scope
 {
     public class ScopeChangePage : SeleniumBasePage
     {
-        public static string TabSelector = ".//div[contains(@class,'mat-tab-label')][@role='tab']//span[contains(text(),'{0}')]";
+        //TODO remove old selector if new one will work for all tests
+        //public static string TabSelector = ".//div[contains(@class,'mat-tab-label')][@role='tab']//span[contains(text(),'{0}')]";
+        public static string TabSelector = ".//span[contains(text(),'{0}')]//ancestor::div[contains(@class,'mat-tab-label')][@role='tab']";
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'scope-block-tabs')]")]
         public IWebElement ScopeBlockTabs { get; set; }
@@ -43,6 +45,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Scope
             try
             {
                 return GetTabByName(tabName).Displayed();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool IsTabSelected(string tabName)
+        {
+            try
+            {
+                return bool.Parse(GetTabByName(tabName).GetAttribute("aria-selected"));
             }
             catch (Exception)
             {
