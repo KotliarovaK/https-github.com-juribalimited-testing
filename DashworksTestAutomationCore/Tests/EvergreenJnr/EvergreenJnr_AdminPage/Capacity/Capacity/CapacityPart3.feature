@@ -32,8 +32,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	And User enters '13945' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	Then 'The capacity unit has been created' text is displayed on inline success banner
-	And User sees next Units on the Capacity Units page:
-	| units      |
+	Then Content in the 'Capacity Unit' column is equal to
+	| Content    |
 	| Unassigned |
 	| test1      |
 	When User navigates to the 'Units' left menu item
@@ -42,8 +42,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	And User enters '13945_2' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	Then 'A capacity unit already exists with this name' text is displayed on inline error banner
-	And User sees next Units on the Capacity Units page:
-	| units      |
+	Then Content in the 'Capacity Unit' column is equal to
+	| Content    |
 	| Unassigned |
 	| test1      |
 

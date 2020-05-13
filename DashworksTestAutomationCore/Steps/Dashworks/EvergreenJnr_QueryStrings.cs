@@ -3,15 +3,14 @@ using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
+using DashworksTestAutomation.Helpers;
 
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -97,9 +96,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 _url.Value = UrlProvider.Url;
-                var combinedURL = _url.Value + row["QueryStringURL"];
+                var combinedUrl = _url.Value + row["QueryStringURL"];
+
+                if (table.ContainsColumn("ListName"))
+                {
+                    var listId = DatabaseHelper.GetListId(row["ListName"]);
+                    combinedUrl = combinedUrl.Replace("ListName", listId);
+                }
+
                 _driver.NowAt<BaseHeaderElement>();
-                _driver.NavigateToUrl(combinedURL);
+                _driver.NavigateToUrl(combinedUrl);
 
                 var page = _driver.NowAt<BaseDashboardPage>();
 

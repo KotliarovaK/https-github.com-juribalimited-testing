@@ -11,26 +11,26 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 	| ProjectName       | Scope       | ProjectTemplate | Mode               |
 	| 15266_TestProject | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	Then 'Enable Capacity' checkbox is unchecked
+	Then 'Enable capacity' checkbox is unchecked
 	Then 'Enforce capacity on self service pages' checkbox is disabled
 	Then 'Enforce capacity on project object page' checkbox is disabled
-	When User checks 'Enable Capacity' checkbox
-	Then 'Enable Capacity' checkbox is checked
+	When User checks 'Enable capacity' checkbox
+	Then 'Enable capacity' checkbox is checked
 	Then 'Enforce capacity on self service pages' checkbox is unchecked
 	Then 'Enforce capacity on project object page' checkbox is unchecked
 	When User checks 'Enforce capacity on self service pages' checkbox
 	Then 'Enforce capacity on self service pages' checkbox is checked
-	When User unchecks 'Enable Capacity' checkbox
-	Then 'Enable Capacity' checkbox is unchecked
+	When User unchecks 'Enable capacity' checkbox
+	Then 'Enable capacity' checkbox is unchecked
 	Then 'Enforce capacity on self service pages' checkbox is disabled
 	Then 'Enforce capacity on project object page' checkbox is disabled
-	When User checks 'Enable Capacity' checkbox
+	When User checks 'Enable capacity' checkbox
 	When User checks 'Enforce capacity on project object page' checkbox
-	When User unchecks 'Enable Capacity' checkbox
-	Then 'Enable Capacity' checkbox is unchecked
+	When User unchecks 'Enable capacity' checkbox
+	Then 'Enable capacity' checkbox is unchecked
 	Then 'Enforce capacity on self service pages' checkbox is disabled
 	Then 'Enforce capacity on project object page' checkbox is disabled
-	When User checks 'Enable Capacity' checkbox
+	When User checks 'Enable capacity' checkbox
 	When User checks 'Enforce capacity on project object page' checkbox
 	When User checks 'Enforce capacity on self service pages' checkbox
 	When User clicks 'UPDATE' button 
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
 	When User navigates to "2004 Rollout" project details
 	And User navigates to the 'Capacity' left menu item
-	And User unchecks 'Enable Capacity' checkbox
+	And User unchecks 'Enable capacity' checkbox
 	And User navigates to the 'Units' left menu item
 	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
 	Then "YES" button is displayed in the warning message
