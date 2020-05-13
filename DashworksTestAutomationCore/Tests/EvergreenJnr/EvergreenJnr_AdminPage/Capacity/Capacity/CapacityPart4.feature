@@ -33,7 +33,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 	Then Following items displayed in the History table
 	| Items               |
 	| 1A701E05916148A6A3F |
-	When User enters "1A701E05916148A6A3F" text in the Search field for "Item" column
 	When User clicks on '1A701E05916148A6A3F' cell from 'Item' column
 	Then There are no errors in the browser console
 
