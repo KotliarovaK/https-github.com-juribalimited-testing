@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if (table.ContainsColumn("ListName"))
                 {
                     var listId = DatabaseHelper.GetListId(row["ListName"]);
-                    combinedUrl.Replace("ListName", listId);
+                    combinedUrl = combinedUrl.Replace("ListName", listId);
                 }
 
                 _driver.NowAt<BaseHeaderElement>();
