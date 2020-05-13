@@ -19,9 +19,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'wrapper-disabled')]")]
         public IWebElement DisabledAllAssociations { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'mat-checkbox-disabled')]")]
-        public IWebElement DisabledAssociation { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted']/div[@class='wrapper-outer']")]
         public IWebElement UserScopeCheckboxes { get; set; }
 
@@ -75,9 +72,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Category']")]
         public IWebElement CategoryDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'mat-tab-label-active')]")]
-        public IWebElement ActiveTabOnScopeChangesSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='error-status-box']//span[contains(text(),'404')]")]
         public IWebElement DetailsPageWasNotFound { get; set; }

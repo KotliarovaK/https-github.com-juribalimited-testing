@@ -43,58 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"All Associations are available")]
-        public void ThenAllAssociationsAreAvailable()
-        {
-            var associations = _driver.NowAt<ProjectsPage>();
-            Verify.IsFalse(associations.DisabledAssociation.Displayed(), "Some Associations are disabled");
-        }
-
-        [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
-        public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-            ProjectsPage page;
-            try
-            {
-                page = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    page = _driver.NowAt<ProjectsPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    page = _driver.NowAt<ProjectsPage>();
-                }
-            }
-
-            Verify.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
-                $"{tabName} is not displayed in the Project Scope Changes section");
-        }
-
-        [Then(@"open tab in the Project Scope Changes section is active")]
-        public void ThenOpenTabInTheProjectScopeChangesSectionIsActive()
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            var tabState = projectTabs.ActiveTabOnScopeChangesSection.GetAttribute("aria-selected");
-            Verify.AreEqual("true", tabState, "Tab state is incorrect");
-        }
-
-        [Then(@"User sees next Units on the Capacity Units page:")]
-        public void ThenUserSeesNextUnitsOnTheCapacityUnitsPage(Table slots)
-        {
-            var page = _driver.NowAt<Capacity_UnitsPage>();
-            _driver.WaitForDataLoading();
-
-            for (var i = 0; i < slots.RowCount; i++)
-                Verify.That(page.GridUnitsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
-                    "Units are not the same");
-        }
-
         [Then(@"field for Date column is empty")]
         public void ThenFieldForDateColumnIsEmpty()
         {

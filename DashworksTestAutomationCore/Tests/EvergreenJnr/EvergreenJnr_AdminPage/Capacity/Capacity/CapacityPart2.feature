@@ -48,9 +48,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	| ProjectForCapacity12672 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
-	Then User sees next Units on the Capacity Units page:
-	| units             |
-	| Unassigned        |
+	Then Content in the 'Capacity Unit' column is equal to
+	| Content    |
+	| Unassigned |
 	And 'TRUE' content is displayed in the 'Default' column
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName |
@@ -112,8 +112,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	And User clicks content from "Project" column
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
-	Then User sees next Units on the Capacity Units page:
-	| units             |
+	Then Content in the 'Capacity Unit' column is equal to
+	| Content           |
 	| Unassigned        |
 	| CapacityUnit14240 |
 	When User enters "CapacityUnit14240" text in the Search field for "Capacity Unit" column
@@ -121,8 +121,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	When User enters 'CapacityUnit14240NameUpdated' text to 'Capacity Unit Name' textbox
 	And User clicks 'UPDATE' button 
 	Then 'The capacity unit details have been updated' text is displayed on inline success banner
-	And User sees next Units on the Capacity Units page:
-	| units                        |
+	Then Content in the 'Capacity Unit' column is equal to
+	| Content                      |
 	| Unassigned                   |
 	| CapacityUnit14240NameUpdated |
 	When User select "Capacity Unit" rows in the grid

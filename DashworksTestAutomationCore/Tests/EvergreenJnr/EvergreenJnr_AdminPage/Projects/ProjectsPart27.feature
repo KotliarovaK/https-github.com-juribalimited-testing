@@ -86,3 +86,63 @@ Examples:
 	| Devices   | 001BAQXT6JWFPI                   | aaProjStList_DAS18878 | aProjDAS18878 |
 	| Users     | AHU5323923                       | bbProjStList_DAS18878 | bProjDAS18878 |
 	| Mailboxes | 040698EE82354C17B60@bclabs.local | ccProjStList_DAS18878 | bProjDAS18878 |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS19737 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckPrivateListMessageDisplayingForProjectDetails
+	When User create new User via API
+	| Username   | Email | FullName        | Password  | Roles                 |
+	| DAS19737_1 | Value | FullName19737_1 | m!gration | Project Administrator |
+	| DAS19737_2 | Value | FullName19737_2 | m!gration | Project Administrator |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS19737_1 | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks on 'Hostname' column header
+	When User create dynamic list with "DeviceList_19737" name on "Devices" page
+	Then "DeviceList_19737" list is displayed to user
+	When Project created via API and opened
+	| ProjectName   | Scope            | ProjectTemplate | Mode               |
+	| Project_19737 | DeviceList_19737 | None            | Standalone Project |
+	When User navigates to "Project_19737" project details
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left submenu item
+	Then 'This is a private list owned by you, others will not be able to onboard into this project' error message is displayed for 'Scope' dropdown
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS19737_2 | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+	When User navigates to "Project_19737" project details
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left submenu item
+	Then 'This is a private list owned by FullName19737_1' error message is displayed for 'Scope' dropdown
+	When User navigates to the 'Scope Changes' left submenu item
+	Then 'The scope for this project refers to a private list that you do not have access to, you cannot make changes' text is displayed on inline tip banner
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS19737_1 | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	When User navigates to the "DeviceList_19737" list
+	When User clicks the Permissions button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User adds user to list of shared person
+	| User            | Permission |
+	| FullName19737_2 | Admin      |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS19737_2 | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+	When User navigates to "Project_19737" project details
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left submenu item
+	Then 'List validated' success message for 'Scope' dropdown
+	When User navigates to the 'Scope Changes' left submenu item
+	When User expands multiselect and selects following Objects
+	| Objects        |
+	| 00KLL9S8NRF0X6 |
+	| 00KWQ4J3WKQM0G |

@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoPopupDisplayedWhenUserNavigatesFromS
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Devices' tab on Project Scope Changes page
-	Then open tab in the Project Scope Changes section is active
+	Then 'Devices' tab is opened on Project Scope Changes page
 	When User expands multiselect and selects following Objects
 	| Objects        |
 	| 001PSUMZYOW581 |
