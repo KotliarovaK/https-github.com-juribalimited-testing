@@ -43,39 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"All Associations are available")]
-        public void ThenAllAssociationsAreAvailable()
-        {
-            var associations = _driver.NowAt<ProjectsPage>();
-            Verify.IsFalse(associations.DisabledAssociation.Displayed(), "Some Associations are disabled");
-        }
-
-        [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
-        public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-            ProjectsPage page;
-            try
-            {
-                page = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    page = _driver.NowAt<ProjectsPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    page = _driver.NowAt<ProjectsPage>();
-                }
-            }
-
-            Verify.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
-                $"{tabName} is not displayed in the Project Scope Changes section");
-        }
-
         [Then(@"open tab in the Project Scope Changes section is active")]
         public void ThenOpenTabInTheProjectScopeChangesSectionIsActive()
         {

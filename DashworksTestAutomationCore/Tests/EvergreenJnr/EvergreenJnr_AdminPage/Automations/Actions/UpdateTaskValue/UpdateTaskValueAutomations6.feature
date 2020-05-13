@@ -73,7 +73,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	When User selects 'days before now' in the 'Units' dropdown
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -212,9 +211,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingActio
 	When User selects 'Complete' in the 'Update Value' dropdown
 	When User selects 'Stage 2 \ Relative Task' option from 'Relative Task' autocomplete
 	When User enters '0' text to 'Value' textbox
-	When User selects 'weekdays after task value' in the 'DateUnit' dropdown
 	When User clicks 'CREATE' button
 	When User clicks content from "Action" column
+	When User enters '5' text to 'Value' textbox
 	When User selects 'days before task value' in the 'DateUnit' dropdown
 	When User clicks 'UPDATE' button
 	Then 'The automation action has been updated' text is displayed on inline success banner

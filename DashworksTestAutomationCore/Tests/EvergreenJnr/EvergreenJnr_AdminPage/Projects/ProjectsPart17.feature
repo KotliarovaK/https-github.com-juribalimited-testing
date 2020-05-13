@@ -148,7 +148,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects "Include device owners" checkbox on the Project details page
 	Then Scope List dropdown is active
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	Then All Associations are available
+	Then 'Entitled to the device owner' checkbox is disabled
+	Then 'Entitled to the device' checkbox is disabled
+	Then 'Installed on the device' checkbox is disabled
+	Then 'Used by the device owner on any device' checkbox is disabled
+	Then 'Used on the device by the device owner' checkbox is disabled
+	Then 'Used on the device by any user' checkbox is disabled
 	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Users' tab on Project Scope Changes page 
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section

@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	Then 'Mailbox Evergreen Capacity Project' content is displayed in 'Project' textbox
 	Then '1 \ Completed' content is displayed in 'Task' textbox
 	Then '3' content is displayed in 'Value' textbox
-	Then 'days before current value' value is displayed in the 'Units' dropdown
+	Then 'days after current value' value is displayed in the 'Units' dropdown
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @DAS19274 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentValue
@@ -169,15 +169,15 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	When User enters '0' text to 'Value' textbox
 	Then User sees '0 to 100,000' hint below 'Value' field
 	Then '0' content is displayed in 'Value' autocomplete
+	When User enters '4' text to 'Value' textbox
 	Then following Values are displayed in the 'Units' dropdown:
 	| Options             |
-	| days before now     |
 	| days after now      |
-	| weekdays before now |
+	| days before now     |
 	| weekdays after now  |
-	| hours before now    |
+	| weekdays before now |
 	| hours after now     |
-	When User enters '4' text to 'Value' textbox
+	| hours before now    |
 	When User selects 'hours before now' in the 'Units' dropdown
 	And User clicks 'CREATE' button
 	#Check created Action
