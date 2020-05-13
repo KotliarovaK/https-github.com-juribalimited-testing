@@ -212,7 +212,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         private string ActionElementSelector(string columnName)
         {
             var results =
-                $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')]";
+                $".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')]";
             return results;
         }
 
@@ -336,7 +336,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetCheckedFilterByCheckboxName(string filterName)
         {
-            var selector = By.XPath($"//mat-option[contains(@class, 'mat-active')]//div/span[text()='{filterName}']");
+            var selector = By.XPath($"//mat-option[contains(@class, 'mat-active')]//span[text()='{filterName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -361,7 +361,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var byControl =
                 By.XPath(
-                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]");
+                    $".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')]");
+                    //$".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]");
             Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
         }

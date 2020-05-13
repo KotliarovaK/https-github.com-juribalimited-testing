@@ -235,10 +235,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	| Display Name       |
 	| Distinguished Name |
 	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
-	Then following columns are displayed on the Item details page:
-	| ColumnName            |
+	When User clicks following checkboxes from Column Settings panel for the 'Username' column:
+	| checkboxes            |
 	| Username              |
 	| Display Name          |
+	Then following columns are displayed on the Item details page:
+	| ColumnName            |
 	| Readiness             |
 	| Owner                 |
 	| Domain                |
