@@ -369,4 +369,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperWarningMessageDisplaysIfAOCScope
 	When User navigates to End User landing page with '20825_1_SI' Self Service Identifier
 	When User clicks on 'Change Owner' button on end user Self Service page
 	Then 'There are no valid users' error message is displayed under 'Owner' field on Self Service EndUser dialog
-	Then 'There are no valid users' error message is displayed for 'Owner' field
