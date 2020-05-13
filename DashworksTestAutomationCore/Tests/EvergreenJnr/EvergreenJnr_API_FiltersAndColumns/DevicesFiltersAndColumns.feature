@@ -21,3 +21,15 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData
 Examples: 
 	| FilterCategory | FilterName           | QueryString                                                                                                                                                                     |
 	| Suggested      | Windows7Mi: Category | devices?$filter=(project_1_subCategoryId%20EQUALS%20('NULL'%2C'76'))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_1_subCategoryId,project_1_subCategory |
+
+@Evergreen @Devices @API @FiltersAndColumns @DAS21009
+Scenario: EvergreenJnr_DevicesList_CheckCountryFilterDisplaying
+	Then 'Country' filter options of 'Devices' are displayed in the following order:
+	| items            |
+	| Empty            |
+	| Australia        |
+	| England          |
+	| Northern Ireland |
+	| Scotland         |
+	| USA              |
+	| Wales            |

@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
 {
@@ -125,11 +126,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
             }
 
             var content = response.Content;
-            var createdSsPage = JsonConvert.DeserializeObject<List<SelfServicePageDto>>(content).First();
 
-            Verify.AreEqual(ssPage.Name, createdSsPage.Name, $"Self Service name should be {ssPage.Name} but it is {createdSsPage.Name}");
-            Verify.AreEqual(ssPage.DisplayName, createdSsPage.DisplayName, $"Self Service display name should be {ssPage.DisplayName} but it is {createdSsPage.DisplayName}");
-            Verify.AreEqual(ssPage.ShowInSelfService, createdSsPage.ShowInSelfService, $"Self Service checkbox's state should be {ssPage.ShowInSelfService} but it is {createdSsPage.ShowInSelfService}");
+            var settings = new JsonSerializerSettings();
+            settings.Converters.Add(new SelfServiceComponentConverter());
+
+            var createdSsPage = JsonConvert.DeserializeObject<List<SelfServicePageDto>>(content, settings).First(x => x.Name.Equals(ssPage.Name));
+
+            Verify.AreEqual(ssPage.Name, createdSsPage.Name, $"Self Service name should be '{ssPage.Name}' but it is '{createdSsPage.Name}'");
+            Verify.AreEqual(ssPage.DisplayName, createdSsPage.DisplayName, $"Self Service display name should be '{ssPage.DisplayName}' but it is '{createdSsPage.DisplayName}'");
+            Verify.AreEqual(ssPage.ShowInSelfService, createdSsPage.ShowInSelfService, $"Self Service checkbox's state should be '{ssPage.ShowInSelfService}' but it is '{createdSsPage.ShowInSelfService}'");
         }
 
         [Then(@"'(.*)' Self Service does not contains any pages")]
@@ -150,6 +155,31 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
             var content = response.Content;
 
             Verify.AreEqual("[]", content, $"Self Service shouldn't contain any pages, but it contains the following: {content}");
+        }
+
+        [Then(@"'(.*)' Self Service does not contain '(.*)' page")]
+        public void ThenSelfServiceDoesNotContainsPage(string serviceIdentifier, string pageName)
+        {
+            var ss = new SelfServiceDto() { ServiceIdentifier = serviceIdentifier };
+
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/{ss.ServiceId}/pages";
+            var request = requestUri.GenerateRequest();
+
+            var response = _client.Evergreen.Get(request);
+
+            if (!response.StatusCode.Equals(HttpStatusCode.OK))
+            {
+                throw new Exception($"Unable to get the Self Service pages: {response.StatusCode}, {response.ErrorMessage}");
+            }
+
+            var content = response.Content;
+
+            var settings = new JsonSerializerSettings();
+            settings.Converters.Add(new SelfServiceComponentConverter());
+
+            bool doesThePageExist = JsonConvert.DeserializeObject<List<SelfServicePageDto>>(content, settings).Any(x => x.Name.Equals(pageName));
+
+            Verify.IsFalse(doesThePageExist, $"Self Service '{serviceIdentifier}' shouldn't contain '{pageName}' page");
         }
     }
 }

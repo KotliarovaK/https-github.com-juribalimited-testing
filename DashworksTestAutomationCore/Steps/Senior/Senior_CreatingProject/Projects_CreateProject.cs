@@ -559,6 +559,14 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             page.GetTaskByName(taskName).Click();
         }
 
+        [When(@"User selects '(.*)' as Task Value Type on Details page")]
+        public void WhenUserSetsTaskValueTypeOnSenior(string valueType)
+        {
+            var page = _driver.NowAt<TaskProperties_DetailsPage>();
+            if (!string.IsNullOrEmpty(valueType))
+                page.ValueType.SelectboxSelect(valueType);
+        }
+
         [Then(@"Task name displayed as '(.*)' on Task details page")]
         public void ThenTaskNameDisplayedAsExpectedOnTaskDetailsPage(string name)
         {
@@ -987,5 +995,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             {
             }
         }
+
+       
     }
 }

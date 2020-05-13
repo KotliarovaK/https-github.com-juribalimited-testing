@@ -43,61 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"following checkboxes are checked in the Scope section")]
-        public void ThenFollowingCheckboxesAreCheckedInTheScopeSection(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            foreach (var row in table.Rows)
-                Verify.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]),
-                    $"'{row["Checkboxes"]}' are not displayed");
-        }
-
-        [Then(@"following associations are disabled:")]
-        public void ThenFollowingAssociationsAreDisabled(Table table)
-        {
-            var associations = _driver.NowAt<ProjectsPage>();
-            foreach (var row in table.Rows)
-            {
-                _driver.WaitForDataLoading();
-                Verify.IsTrue(associations.GetDisabledAssociationName(row["AssociationName"]),
-                    $"Following '{row["AssociationName"]}' are active");
-            }
-        }
-
-        [Then(@"All Associations are available")]
-        public void ThenAllAssociationsAreAvailable()
-        {
-            var associations = _driver.NowAt<ProjectsPage>();
-            Verify.IsFalse(associations.DisabledAssociation.Displayed(), "Some Associations are disabled");
-        }
-
-        [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
-        public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-            ProjectsPage page;
-            try
-            {
-                page = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    page = _driver.NowAt<ProjectsPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    page = _driver.NowAt<ProjectsPage>();
-                }
-            }
-
-            Verify.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
-                $"{tabName} is not displayed in the Project Scope Changes section");
-        }
-
         [Then(@"open tab in the Project Scope Changes section is active")]
         public void ThenOpenTabInTheProjectScopeChangesSectionIsActive()
         {
@@ -719,7 +664,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
-            createProjectElement.ScopeProjectField.SendKeys("All");
+            createProjectElement.ScopeProjectField.SendKeys("All ");
             var listNames = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
             var expectedlistName = table.Rows.SelectMany(row => row.Values).ToList();
             Verify.AreEqual(listNames, expectedlistName, "Main lists are not displayed correctly");

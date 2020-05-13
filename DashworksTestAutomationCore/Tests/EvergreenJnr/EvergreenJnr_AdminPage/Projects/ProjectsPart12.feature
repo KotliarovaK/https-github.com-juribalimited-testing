@@ -85,10 +85,8 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| Chips            |
 	| Author           |
 	| AvailabilityOnly |
-	And following checkboxes are checked in the Scope section
-	| Checkboxes          |
-	| Owned mailboxes     |
-	| Delegated mailboxes |
+	Then 'Owned mailboxes' checkbox is checked
+	Then 'Delegated mailboxes' checkbox is checked
 	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 14767 selected)" is displayed to the user in the Project Scope Changes section

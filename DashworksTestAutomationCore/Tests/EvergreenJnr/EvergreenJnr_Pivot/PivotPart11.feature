@@ -23,3 +23,23 @@ Scenario: EvergreenJnr_Mailboxes_CheckThatRecipientTypeColumnCanBeUsedInPivot
 	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then data in the table is sorted by "Recipient Type" column in ascending order by default for the Pivot
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS19348
+Scenario: EvergreenJnr_Devices_CheckThatNoConsoleErrorDisplayedAfterRunninfPivotFromObjectOwnerFilter
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Owner" filter where type is "Equal" without added column and "AU\AAO798996 (Darren J. Walter)" Lookup option
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups      |
+	| Device Type |
+	When User selects the following Columns on Pivot:
+	| Columns          |
+	|Hostname |
+	When User selects the following Values on Pivot:
+	| Values        |
+	| Operating System |
+	When User selects aggregate function "Count" on Pivot
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	Then There are no errors in the browser console

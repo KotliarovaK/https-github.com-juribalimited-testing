@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using SeleniumExtras.PageObjects;
-using OpenQA.Selenium.Remote;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService
 {
@@ -15,8 +9,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService
     {
         public IWebElement SelfServiceUrlPreview(string baseSelfServiceUrl, string selfServiceIdentifier)
         {
-            string validUrl = $"{baseSelfServiceUrl}/{selfServiceIdentifier}";
-            var selector = By.XPath($".//span[@class='ng-star-inserted']//self::*[contains(text(),'{validUrl}')]");
+            string validUrl = $"{baseSelfServiceUrl}/evergreen/#/selfservice/{selfServiceIdentifier}";
+            var selector = By.XPath($".//div[@class='ng-star-inserted']/div[@class='action-container']/self::*[contains(text(),'{validUrl}')]");
             return Driver.FindElement(selector);
         }
 

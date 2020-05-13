@@ -39,6 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17683_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17683_Automation' item from 'Automation' column
+	When '17683_Automation' automation '17683_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17683_Automation" text in the Search field for "Automation" column
@@ -68,6 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17683_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17683_Automation' item from 'Automation' column
+	When '17683_Automation' automation '17683_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17683_Automation" text in the Search field for "Automation" column
@@ -109,6 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 	When User clicks 'Automations' header breadcrumb
 	And User enters "DAS17859_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for 'DAS17859_Automation' item from 'Automation' column
+	When 'DAS17859_Automation' automation 'DAS17859_Action' action run has finished
 	And User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	And User enters "DAS17859_Automation" text in the Search field for "Automation" column
@@ -142,7 +145,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	And User enters 'DAS17859_Action' text to 'Action Name' textbox
+	And User enters 'DAS17859_Action1' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage C' option from 'Stage' autocomplete
@@ -155,6 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	When User clicks 'Automations' header breadcrumb
 	And User enters "DAS17859_Aut_Test" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for 'DAS17859_Aut_Test' item from 'Automation' column
+	When 'DAS17859_Aut_Test' automation 'DAS17859_Action1' action run has finished
 	And User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	And User enters "DAS17859_Aut_Test" text in the Search field for "Automation" column

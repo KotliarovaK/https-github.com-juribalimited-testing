@@ -47,6 +47,16 @@ namespace DashworksTestAutomation.Steps.API
 
             return response;
         }
+        private IRestResponse GetFilterOptionsByListName(string list, string filter)
+        {
+            var url = $"{UrlProvider.RestClientBaseUrl}{list.ToLower()}/filters/options/{filter.ToLower().Replace(" ","")}";
+            var response = _client.Evergreen.Get(url.GenerateRequest());
+
+            if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                throw new Exception($"Unable to get filters for '{list}' list: {response.ErrorMessage}");
+
+            return response;
+        }
 
         [Then(@"All columns with correct data are returned from the API for '(.*)' list")]
         public void ThenAllColumnsWithCorrectDataAreReturnedFromTheAPIForList(string list)
@@ -109,5 +119,46 @@ namespace DashworksTestAutomation.Steps.API
                 Verify.IsTrue(resultsCount > 0, $"Results Count is zero fo '{row.Values.ToArray()[1]}/{row.Values.ToArray()[0]}' filter");
             }
         }
+
+        [Then(@"'(.*)' filter options of '(.*)' are displayed in the following order:")]
+        public void ThenLookupOptionsAreDisplayedInTheFollowingOrder(string filter, string list, Table table)
+        {
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+
+            var response = GetFilterOptionsByListName(list, filter);
+            var actualList = JsonConvert.DeserializeObject<List<FilterOptionsDto>>(response.Content).Select(x => x.Text)
+                .ToList();
+
+            Verify.That(actualList, Is.EqualTo(expectedList), "Options are different");
+        }
+    }
+
+
+
+    public class FilterOptionsDto
+    {
+        [JsonProperty("text")]
+        public string Text { get; set; }
+
+        [JsonProperty("translatedText")]
+        public object TranslatedText { get; set; }
+
+        [JsonProperty("value")]
+        public string Value { get; set; }
+
+        [JsonProperty("disabled")]
+        public bool Disabled { get; set; }
+
+        [JsonProperty("selected")]
+        public bool Selected { get; set; }
+
+        [JsonProperty("props")]
+        public object Props { get; set; }
+
+        [JsonProperty("sortOrder")]
+        public long SortOrder { get; set; }
+
+        [JsonProperty("severity")]
+        public object Severity { get; set; }
     }
 }

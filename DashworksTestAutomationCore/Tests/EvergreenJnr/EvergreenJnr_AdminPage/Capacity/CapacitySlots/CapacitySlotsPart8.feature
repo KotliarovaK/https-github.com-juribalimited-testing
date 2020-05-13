@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	Then "Create Project" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName          | ShortName | Description | Type |
-	| ProjectForDAS13152_2 | 13152     |             |      |
+	| ProjectForDAS13152_2 | 13152_2   |             |      |
 	And User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
@@ -25,8 +25,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
 	And User creates Task
-	| Name        | Help  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
-	| Task13152_2 | 13152 | Stage13152_2     | Normal         | Date            | Computer         |                          |
+	| Name        | Help    | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| Task13152_2 | 13152_2 | Stage13152_2     | Normal         | Date            | Computer         |                          |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
@@ -35,8 +35,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User clicks 'Admin' on the left-hand menu
 	And User navigates to "ProjectForDAS13152_2" project details
 	And User creates new Slot via Api
-	| Project              | SlotName  | DisplayName | CapacityType   | Tasks                      | CapacityUnits |
-	| ProjectForDAS13152_2 | Slot13152 | 13152       | Capacity Units | Stage13152_2 \ Task13152_2 | Unassigned    |
+	| Project              | SlotName    | DisplayName   | CapacityType   | Tasks                      | CapacityUnits |
+	| ProjectForDAS13152_2 | Slot13152_2 | 13152_2       | Capacity Units | Stage13152_2 \ Task13152_2 | Unassigned    |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	Then "Create Project" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName          | ShortName | Description | Type |
-	| ProjectForDAS13152_1 | 13152     |             |      |
+	| ProjectForDAS13152_1 | 13152_1   |             |      |
 	And User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
@@ -76,8 +76,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
 	And User creates Task
-	| Name        | Help       | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| Task13152_1 | 13152 Date | Stage13152_1     | Normal         | Date            | Computer         |                          | true               |
+	| Name        | Help         | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| Task13152_1 | 13152_1 Date | Stage13152_1     | Normal         | Date            | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
@@ -88,8 +88,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	And User clicks 'CREATE SLOT' button 
-	And User enters 'Slot13152' text to 'Slot Name' textbox
-	And User enters '13152' text to 'Display Name' textbox
+	And User enters 'Slot13152_1' text to 'Slot Name' textbox
+	And User enters '13152_1' text to 'Display Name' textbox
 	And User selects 'Teams and Paths' in the 'Capacity Type' dropdown
 	When User checks 'Stage13152_1 \ Task13152_1' option after search from 'Tasks' autocomplete
 	And User checks 'Admin IT' option after search from 'Teams' autocomplete

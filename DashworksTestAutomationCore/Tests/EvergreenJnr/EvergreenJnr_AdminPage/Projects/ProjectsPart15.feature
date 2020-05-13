@@ -123,13 +123,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	| DAS11981    | All Devices | None            | Standalone Project |
 	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
-	And User checks following checkboxes:
-	| CheckboxesToBeClicked                  |
-	| Entitled to the device                 |
-	| Installed on the device                |
-	| Used by the device owner on any device |
-	| Used on the device by the device owner |
-	| Used on the device by any user         |
+	And User unchecks 'Entitled to the device' checkbox
+	And User unchecks 'Installed on the device' checkbox
+	And User unchecks 'Used by the device owner on any device' checkbox
+	And User unchecks 'Used on the device by the device owner' checkbox
+	And User unchecks 'Used on the device by any user' checkbox
 	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 212 selected)" is displayed to the user in the Project Scope Changes section

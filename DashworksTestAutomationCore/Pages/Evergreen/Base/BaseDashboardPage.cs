@@ -864,6 +864,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var error = GetDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[not (@class)]"));
             return error.Text;
         }
+        public string GetDropdownSuccessMessage(string placeholder)
+        {
+            var error = GetDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[@class='success-text']"));
+            return error.Text;
+        }
 
         public IWebElement GetDropdownErrorMessageExclamationIcon(string placeholder)
         {
@@ -1087,7 +1092,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void SetCheckboxState(string ariaLabel, bool expectedCondition, string parentElementSelector = "")
         {
-            if (!GetCheckbox(ariaLabel, parentElementSelector).Equals(expectedCondition))
+            if (!GetCheckbox(ariaLabel, parentElementSelector).Selected().Equals(expectedCondition))
             {
                 //We must click by text to check or uncheck element
                 Driver.ClickElementLeftCenter(GetCheckbox(ariaLabel));
