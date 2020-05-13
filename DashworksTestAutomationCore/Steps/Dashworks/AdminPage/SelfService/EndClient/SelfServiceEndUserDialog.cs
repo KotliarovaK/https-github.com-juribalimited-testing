@@ -21,8 +21,6 @@ namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.EndC
             _driver = driver;
         }
 
-        private static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'] | .//input[@automation='{0}'])";
-
         [Then(@"'(.*)' message is displayed under '(.*)' field on Self Service EndUser dialog")]
         public void ThenMessageIsDisplayedUnderFieldOnSelfServiceEndUserDialog(string message, string placeholder)
         {
