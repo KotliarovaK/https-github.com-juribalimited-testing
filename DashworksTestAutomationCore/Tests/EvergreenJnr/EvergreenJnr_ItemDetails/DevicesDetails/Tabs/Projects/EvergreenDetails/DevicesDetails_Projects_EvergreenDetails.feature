@@ -115,8 +115,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 
-	#AnnI 4/28/20 fixed for 'X_Ray'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16360 @DAS20433 @DAS20173 @Cleanup @X_Ray
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16360 @DAS20433 @DAS20173 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCorrectly
 	When User creates new Bucket via api
 	| Name             | TeamName | IsDefault |
@@ -127,13 +126,12 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsD
 	When User clicks on edit button for 'Evergreen Bucket' field
 	Then 'MOVE' button is disabled on popup
 	Then following columns are displayed on the Item details page:
-	| ColumnName         |
-	| Key                |
-	| Directory Type     |
-	| Username           |
-	| Common Name        |
-	| Distinguished Name |
-	| Display Name       |
+	| ColumnName   |
+	| Username     |
+	| Display Name |
+	| Domain       |
+	| Owner        |
+	| Bucket       |
 	Then 'Move all' checkbox is not displayed
 	When User selects 'BucketDAS16360_1' option from 'Move Bucket' autocomplete
 	When User clicks 'MOVE' button on popup
