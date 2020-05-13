@@ -166,8 +166,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
 	Then date in table is sorted by 'Build Date' column in descending order
 
-#This is fixed for 'void'.
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @DAS12351 @Void
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
