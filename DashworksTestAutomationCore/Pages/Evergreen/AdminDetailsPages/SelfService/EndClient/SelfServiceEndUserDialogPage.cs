@@ -11,18 +11,19 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.AdminDetailsPages.SelfServ
 {
     class SelfServiceEndUserDialogPage : SeleniumBasePage
     {
+        private static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'] | .//input[@automation='{0}'])";
 
         public IWebElement GetSSEndUserPageTextbox(string placeholder, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Medium)
         {
-            var by = By.XPath(".//xpathToTextbox");
+            var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
             if (!Driver.IsElementDisplayed(by, wait))
             {
-                throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
+                throw new Exception($"Textbox with '{placeholder}' placeholder was not displayed");
             }
             return Driver.FindElement(by);
         }
 
-        public IWebElement GetTextboxInlineMessageElement(string placeholder)
+        public IWebElement GetSSTextboxInlineMessageElement(string placeholder)
         {
             var namedTextbox = GetSSEndUserPageTextbox(placeholder);
 
