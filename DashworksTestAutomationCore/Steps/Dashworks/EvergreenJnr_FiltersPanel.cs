@@ -1316,6 +1316,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.Contains(text, filterLabels, $"Filter with {text} not found in the list");
         }
 
+        [Then(@"Filter info is displayed in error block")]
+        public void ThenFilterInfoDisplayedInsideError()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Verify.That(filterElement.FilterInfoErrorBlock.Displayed, Is.True, $"Filter info displayed without error");
+        }
+
         [Then(@"Filter name is colored in the added filter info")]
         public void ThenFilterNameIsColoredInTheAddedFilterInfo()
         {

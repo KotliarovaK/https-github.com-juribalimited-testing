@@ -1207,6 +1207,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             header.CheckPageHeader(projectName);
         }
 
+        [When(@"User navigates to '(.*)' automation details")]
+        public void WhenUserNavigatesToAutomationDetails(string automation)
+        {
+            _driver.NowAt<BaseHeaderElement>();
+
+            var automationId = DatabaseHelper.GetAutomationId(automation);
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/automation/{automationId}/details");
+
+            var header = _driver.NowAt<BaseHeaderElement>();
+            header.CheckPageHeader(automation);
+        }
+
         [When(@"User hides side panel in project details page")]
         public void WhenUserHidesSidePanelInProjectDetails()
         {
