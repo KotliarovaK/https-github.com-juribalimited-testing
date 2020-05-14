@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20937 @X_Ray
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20937 @Yellow_Dwarf
 Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateUpdateTaskValueTypeValidations
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
@@ -34,7 +34,7 @@ Examples:
 	| Applications | Application   | 20040610sqlserverck              | 2004 Rollout    | Pre-Migration \ App Workflow          |
 	| Mailboxes    | Email Address | 002B5DC7D4D34D5C895@bclabs.local | Email Migration | Mobile Devices \ Mobile Device Status |
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidationsFotUsersList
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	When User enters '20940_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'Favourite Bulk Update Name should be unique' error message is displayed for 'Favourite Bulk Update Name' field
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @X_Ray
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpdateTaskValueType
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpd
 	| abc_20950      |
 	Then Favourite Bulk Update items are displayed in ascending order
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @X_Ray
+@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateTaskValueType
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	Then 'CANCEL' button is not disabled
 	Then Star button is not disabled
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @X_Ray @Cleanup
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDeletedProject
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -256,7 +256,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	| DAS20950_TestFBU |
 	#Add FBU is not displayed in Manage Favourite
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @X_Ray @Cleanup
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDeletedTask
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |

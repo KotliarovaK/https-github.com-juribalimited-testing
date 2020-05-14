@@ -136,3 +136,17 @@ Scenario: EvergreenJnr_AdminPage_CheckScopeClickableLinkOnTheAutomationsGrid
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User clicks content from "Scope" column
 	Then 'All Devices' list should be displayed to the user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS21033 @Yellow_Dwarf
+Scenario: EvergreenJnr_AdminPage_CheckGroupAutomationsByScope
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Scope      | true  |
+	Then Cog menu is not displayed on the Admin page
+	Then Grid is grouped
+	When User expands 'All Users' row in the groped grid
+	Then "DAS-15949 - all users scope" content is displayed for "Automation" column

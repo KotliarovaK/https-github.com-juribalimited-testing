@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User selects "Include applications" checkbox on the Project details page
 	Then All Associations are selected by default
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14283 @DAS17167 @Cleanup @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14283 @DAS17167 @DAS20240 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

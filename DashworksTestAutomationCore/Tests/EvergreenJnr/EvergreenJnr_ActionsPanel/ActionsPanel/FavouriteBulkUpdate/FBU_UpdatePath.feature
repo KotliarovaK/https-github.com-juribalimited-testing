@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20771 @X_Ray
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20771 @Yellow_Dwarf
 Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateUpdatePathForAllListsType
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
@@ -34,7 +34,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateUpdatePathForAll
 	| Applications | Application   | 20040610sqlserverck              | 2004 Rollout    | [Default (Application)] |
 	| Mailboxes    | Email Address | 002B5DC7D4D34D5C895@bclabs.local | Email Migration | Public Folder           |
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20772 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20772 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow 
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'Favourite Bulk Update Name should be unique' error message is displayed for 'Favourite Bulk Update Name' field
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20773 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20773 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItems
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItems
 	| abc_20773      |
 	Then Favourite Bulk Update items are displayed in ascending order
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @X_Ray
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdatePathType
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateP
 	Then 'CANCEL' button is not disabled
 	Then Star button is not disabled
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateWithoutPath
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateW
 	Then Star button is not disabled
 
 #Add specific User with broken  FBU to check Error message when Path was deleted
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdate
 	When User is logged in to the Evergreen as
  	| Username  | Password  |
@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdate
 	Then Star button is not disabled
 	#Add value [Path not found] in Manage Favourite
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @X_Ray @Cleanup
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateForDeletedProject
 	When Project created via API and opened
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
@@ -252,7 +252,7 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateF
 	| 20774_TestFBU |
 	#Add FBU is not displayed in Manage Favourite
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @DAS20955 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @DAS20955 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopup
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -301,7 +301,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopup
 	#When User enters "207742_TestFBU" text in the Search field for "Name" column
 	#Then User sees "2" rows in grid
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @DAS20955 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @DAS20955 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupColumns
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -336,7 +336,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupColumns
 	| Update Type          |
 	| Values               |
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20777 @DAS20955 @X_Ray
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20777 @DAS20955 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupDeletingAndEditing
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
