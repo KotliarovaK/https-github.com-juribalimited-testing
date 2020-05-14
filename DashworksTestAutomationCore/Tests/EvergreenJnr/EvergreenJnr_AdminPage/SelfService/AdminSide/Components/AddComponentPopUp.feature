@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @DAS20069 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatTheAddComponentPopUpHasAListOfAvailableComponents
 	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
 	| ItemName |
@@ -16,9 +16,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheAddComponentPopUpHasAListOfAvailabl
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName       | ShowInSelfService |
 	| Test_ID_2         | TestPageSs2 | TestPageSsDisplay | false             |
-	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
     When User clicks on Add Item button for item with 'Page' type and 'Welcome' name on Self Service Builder Panel
 	Then popup with 'Add Component' title is displayed
-	Then User sees 'Text' item on dialog
-	Then User sees 'Application Ownership' item on dialog
+	Then User sees 'Text' item with 'Add text with rich formatting and pre-defined styles' description on dialog
+	Then User sees 'Application Ownership' item with 'View and change app owner' description on dialog
