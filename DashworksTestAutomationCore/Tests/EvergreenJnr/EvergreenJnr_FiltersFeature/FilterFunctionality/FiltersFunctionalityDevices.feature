@@ -260,7 +260,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| Manchester Morning         |
 	| Birmingham Morning         |
 
-@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS16394 @Cleanup
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS16394 @Cleanup @archived
 Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickingEditFilterForTheListBasedOnSavedListWithErrors
 	When User creates broken list with 'Broken list DAS16394' name on 'Devices' page
 	When User clicks 'Devices' on the left-hand menu
@@ -627,7 +627,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Windows7Mi: Migration \ Values but no RAG is One or Three" is displayed in added filter info
-	Then "UserSchedu: One \ Radio Rag Date Comp is Complete, Failed, Not Applicable or Started" is displayed in added filter info
+	Then "UserSchedu: One \ Radio Rag Date Comp is Not Applicable, Started, Failed or Complete" is displayed in added filter info
 	When User click Edit button for "Windows7Mi: Migration \ Values but no RAG" filter
 	When User change selected checkboxes:
 	| Option | State |

@@ -156,6 +156,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-label')]")]
         public IList<IWebElement> AddedFilterLabels { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filter-label']/ancestor::div[contains(@class, 'filter-error')]")]
+        public IWebElement FilterInfoErrorBlock { get; set; }
+
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
         public IList<IWebElement> GroupTitle { get; set; }
 

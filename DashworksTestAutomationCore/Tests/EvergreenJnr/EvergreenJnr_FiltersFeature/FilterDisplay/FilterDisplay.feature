@@ -1125,7 +1125,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	Then "Application" filter is added to the list
 	Then "11" rows are displayed in the agGrid
 	Then "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
-	Then "Application 7zip (2015) entitled to device" is displayed in added filter info
+	Then "Application is 7zip (2015) entitled to device" is displayed in added filter info
 	When User create dynamic list with "TestList44C8B6" name on "Devices" page
 	Then "TestList44C8B6" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -1135,7 +1135,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
-	And "Application 7zip (2015) entitled to device" is displayed in added filter info
+	And "Application is 7zip (2015) entitled to device" is displayed in added filter info
 
 @Evergreen @Evergreen_FiltersFeature @FiltersDisplay @DAS18833
 Scenario: EvergreenJnr_DevicesList_CheckDisplayingListAfterAppliyingFilter
@@ -1404,3 +1404,26 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterCleari
 	Then Minimize buttons are displayed for all category in Filters panel
 	When User clears search textbox in Filters panel
 	Then Maximize buttons are displayed for all category in Filters panel
+
+@Evergreen @Evergreen_FiltersFeature @FiltersDisplay @DAS20969 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterInfoDisplayedInWithErrorIfThereIsMissingList
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks on 'Hostname' column header
+	When User create dynamic list with "DeviceList_20969" name on "Devices" page
+	Then "DeviceList_20969" list is displayed to user
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Device (Saved List)" filter where type is "In list" with following Lookup Value and Association:
+    | SelectedValues   | Association    |
+    | DeviceList_20969 | Used on device |
+    | 2004 Rollout     |                |
+	When User creates 'ApplicationsList_20969' dynamic list
+	Then "ApplicationsList_20969" list is displayed to user
+	When User clicks 'Devices' on the left-hand menu
+	Then User remove list with "DeviceList_20969" name on "Devices" page
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "ApplicationsList_20969" list
+	When User clicks the Filters button
+	Then "Any Device in list 2004 Rollout or [List not found] used on device" is displayed in added filter info
+	Then Filter info is displayed in error block
+ 
