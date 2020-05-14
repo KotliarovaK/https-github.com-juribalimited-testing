@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 	Then '00A5B910A1004CF5AC4' content is displayed in the 'Username' column
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @DAS20974 @Zion_NewGrid
-Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnDevicesPageGoingToSenior
+Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheObjectIdColumnOnProjectsTabForDevicesPageGoingToSenior
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
-Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnUsersPageGoingToSenior
+Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheObjectIdColumnOnUsersPageGoingToSenior
 	When User navigates to the 'User' details page for '000F977AC8824FE39B8' item
 	Then Details page for '000F977AC8824FE39B8' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
@@ -152,7 +152,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
-Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnApplicationsPageGoingToSenior
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheObjectIdColumnOnProjectTabForApplicationsPageGoingToSenior
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDevi
 	And PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
 	
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
-Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnMailboxesPageGoingToSenior
+Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheObjectIdColumnOnProjectsTabForMailboxesPageGoingToSenior
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
@@ -235,10 +235,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	| Display Name       |
 	| Distinguished Name |
 	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
-	Then following columns are displayed on the Item details page:
-	| ColumnName            |
+	When User clicks following checkboxes from Column Settings panel for the 'Username' column:
+	| checkboxes            |
 	| Username              |
 	| Display Name          |
+	Then following columns are displayed on the Item details page:
+	| ColumnName            |
 	| Readiness             |
 	| Owner                 |
 	| Domain                |

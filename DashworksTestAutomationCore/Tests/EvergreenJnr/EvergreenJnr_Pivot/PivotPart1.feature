@@ -32,9 +32,9 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	Then "<PivotName>" list is not displayed for Saved List filter
 
 Examples:
-	| PageNameForPivot | PageLabelForPivot | RowGroups  | Columns         | Values               | PivotName                     | PageNameForFilter | PageLabelForFilter | FilterName               |
-	| Applications     | All Applications  | Compliance | Application Key | Vendor               | Pivot_Applications_List_14224 | Devices           | All Devices        | Application (Saved List) |
-	| Users            | All Users         | Enabled    | Cost Centre     | Department Full Path | Pivot_User_List_14224         | Applications      | All Applications   | User (Saved List)        |
+	| PageNameForPivot | PageLabelForPivot | RowGroups  | Columns        | Values               | PivotName                     | PageNameForFilter | PageLabelForFilter | FilterName               |
+	| Applications     | All Applications  | Compliance | 2004: Category | Vendor               | Pivot_Applications_List_14224 | Devices           | All Devices        | Application (Saved List) |
+	| Users            | All Users         | Enabled    | Cost Centre    | Department Full Path | Pivot_User_List_14224         | Applications      | All Applications   | User (Saved List)        |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14325
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories

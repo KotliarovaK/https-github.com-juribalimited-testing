@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Devices' tab on Project Scope Changes page
-	Then open tab in the Project Scope Changes section is active
+	Then 'Devices' tab is opened on Project Scope Changes page
 	When User expands multiselect and selects following Objects
 	| Objects         |
 	| N7GXB25TPJY73EH |
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	Then open tab in the Project Scope Changes section is active
+	Then 'Users' tab is opened on Project Scope Changes page
 	When User expands multiselect and selects following Objects
 	| Objects             |
 	| B569F47FE6B1491CAEC |
@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
-	Then open tab in the Project Scope Changes section is active
+	Then 'Applications' tab is opened on Project Scope Changes page
 	When User expands multiselect and selects following Objects
 	| Objects                              |
 	| Windows Live Messenger (8.1.0178.00) |

@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And 'Device' content is displayed in 'Object Type' dropdown
 	When User selects 'Application' in the 'Object Type' dropdown
 	And User checks 'Unassigned' option after search from 'Capacity Units' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	Then 'The capacity slot details have been updated' text is displayed on inline success banner
 	When User clicks content from "Capacity Slot" column
 	Then "" content is displayed in "Tasks" field

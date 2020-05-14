@@ -52,6 +52,7 @@
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart9 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart26 - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart27 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality1 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\PermissionsSettings - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Trend.feature.cs" />
@@ -86,6 +87,9 @@
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart10.feature.cs">
       <DependentUpon>CapacitySlotsPart10.feature</DependentUpon>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart28.feature.cs">
+      <DependentUpon>ProjectsPart28.feature</DependentUpon>
     </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart27.feature.cs">
       <DependentUpon>ProjectsPart27.feature</DependentUpon>
@@ -247,6 +251,12 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CapacitySlotsPart10.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart28.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>ProjectsPart27.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart27.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>

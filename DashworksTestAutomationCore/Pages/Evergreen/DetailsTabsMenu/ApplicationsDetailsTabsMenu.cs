@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public IWebElement GetColumnCheckbox(string checkboxName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
         {
-            var checkboxSettingsSelector = By.XPath($".//div[contains(@class,'list-panel')]//span[text()='{checkboxName}']");
+            var checkboxSettingsSelector = By.XPath($".//div[contains(@class,'column-select')]//span[text()='{checkboxName}']");
             if (!Driver.IsElementDisplayed(checkboxSettingsSelector, wait))
             {
                 throw new Exception($"'{checkboxName}' checkbox was not displayed");
