@@ -21,6 +21,7 @@ namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.EndC
             _driver = driver;
         }
 
+        //Temporary steps!!! Remove it when common autocomplete on EndUser will be implemented
         [Then(@"'(.*)' message is displayed under '(.*)' field on Self Service EndUser dialog")]
         public void ThenMessageIsDisplayedUnderFieldOnSelfServiceEndUserDialog(string message, string placeholder)
         {
@@ -30,6 +31,7 @@ namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.EndC
                 $"Incorrect message is displayed in the '{placeholder}' field");
         }
 
+        //Temporary steps!!! Remove it when common autocomplete on EndUser will be implemented
         [Then(@"'(.*)' error message is displayed under '(.*)' field on Self Service EndUser dialog")]
         public void ThenErrorMessageIsDisplayedUnderFieldOnSelfServiceEndUserDialog(string errorMessage, string placeholder)
         {
