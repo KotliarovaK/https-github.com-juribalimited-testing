@@ -196,3 +196,27 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheOffbo
 	Then 'FQT1418241' content is displayed in the 'Username' column
 	When User checks 'Show only selected items' slide toggle
 	Then 'FQT1418241' content is not displayed in the 'Username' column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS21045
+Scenario: EvergreenJnr_DevicesList_CheckThatThereIsThePossibilityToOffboradTheAssociatedObjectsViaTheDetailsPageOfMainObject
+	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
+	Then Details page for '001PSUMZYOW581' item is displayed to the user
+	When User selects 'Computer Scheduled Test (Jo)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'OFFBOARD' button
+	When User clicks 'OFFBOARD' button on popup
+	Then 'The selected objects will be offboarded, this cannot be undone' text is displayed on inline tip banner
+	When User clicks 'OFFBOARD' button on popup
+	Then 'The selected objects were successfully queued for offboarding from Computer Scheduled Test (Jo)' text is displayed on inline success banner
+	#going to check the object state
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then Page with 'Projects' header is displayed to user
+	When User enters "Computer Scheduled Test (Jo)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User navigates to the 'Scope' left menu item
+	And User navigates to the 'History' left menu item
+	Then '001PSUMZYOW581' content is displayed in the 'Item' column
+	And 'LFA418191' content is displayed in the 'Item' column
