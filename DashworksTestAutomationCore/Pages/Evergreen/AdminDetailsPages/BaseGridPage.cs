@@ -212,7 +212,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         private string ActionElementSelector(string columnName)
         {
             var results =
-                $".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')]";
+                $".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')] | .//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]";
             return results;
         }
 
