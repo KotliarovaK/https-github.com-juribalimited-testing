@@ -79,3 +79,18 @@ Scenario: EvergreenJnr_MailboxList_CheckThatObjectsAreDisplayedInSearchResultAft
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button
 	Then only options having search term '993' are displayed in 'Mailbox' autocomplete
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS21175 @Yellow_Dwarf
+Scenario: EvergreenJnr_MailboxList_CheckTheMailboxDataInProjectModeIsUpdatedAccordingToTheEvergreenDataAfterRelinkingResyncingTheMailboxToAnotherOne
+	When User navigates to the 'Mailbox' details page for '02171CE96D0244BBB80@bclabs.local' item
+	Then Details page for '02171CE96D0244BBB80@bclabs.local' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'RELINK' button
+	When User enters '40153' in the 'Mailbox' autocomplete field and selects 'alex.melnychuk@juriba.com (40153) - Alex Melnychuk' value
+	When User clicks 'RELINK' button on popup
+	Then 'Mailbox successfully relinked' text is displayed on inline success banner
+	When User navigates to the 'Details' left menu item
+	When User navigates to the 'Mailbox Owner' left submenu item
+	Then 'No mailbox owner found for this mailbox' message is displayed on empty greed
