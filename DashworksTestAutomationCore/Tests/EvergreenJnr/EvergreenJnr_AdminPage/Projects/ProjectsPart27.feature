@@ -41,7 +41,7 @@ Examples:
 	| Users     | Domain           | AU            | bProjList_DAS18878 | 18878_ProjectB | 2004: In Scope       | TRUE          | User Scope    | Users        |
 	| Mailboxes | Mailbox Platform | Exchange 2003 | cProjList_DAS18878 | 18878_ProjectC | EmailMigra: In Scope | TRUE          | Mailbox Scope | Applications |
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS18878 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS18878 @DAS20115 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatInScopeFilteredListCantBeUsedForProjectCreation
 	When User clicks '<List>' on the left-hand menu
 	When User clicks the Filters button

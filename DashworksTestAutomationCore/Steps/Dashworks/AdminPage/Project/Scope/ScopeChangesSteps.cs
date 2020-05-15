@@ -35,7 +35,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
         public void ThenTabIsDisplayedOnProjectScopeChangesPage(string tabName)
         {
             var page = _driver.NowAt<ScopeChangePage>();
-            Verify.IsTrue(page.IsTabDisplayed(tabName),$"'{tabName}' tab was not displayed");
+            Verify.IsTrue(page.IsTabDisplayed(tabName), $"'{tabName}' tab was not displayed");
+        }
+
+        [Then(@"'(.*)' tab is opened on Project Scope Changes page")]
+        public void ThenTabIsOpenedOnProjectScopeChangesPage(string tabName)
+        {
+            var page = _driver.NowAt<ScopeChangePage>();
+            Verify.IsTrue(page.IsTabSelected(tabName), $"'{tabName}' tab was not opened");
         }
 
         [Then(@"following objects were not found")]
@@ -127,9 +134,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
                 catch
                 {
                     Thread.Sleep(2000);
-                   _driver.Navigate().Refresh();
-                   _driver.WaitForDataLoading();
-                   WhenUserNavigatesToTheTabOnProjectScopeChangesPage(tabName);
+                    _driver.Navigate().Refresh();
+                    _driver.WaitForDataLoading();
+                    WhenUserNavigatesToTheTabOnProjectScopeChangesPage(tabName);
                 }
             }
 

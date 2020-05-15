@@ -8,7 +8,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_ApplicationsList_CheckAllColumns
 	Then All columns with correct data are returned from the API for 'Applications' list
 
-@Evergreen @Applications @API @FiltersAndColumns
+@Evergreen @Applications @API @FiltersAndColumns @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckAllFilters 
 	Then All filters with correct data are returned from the API for 'Applications' list
 

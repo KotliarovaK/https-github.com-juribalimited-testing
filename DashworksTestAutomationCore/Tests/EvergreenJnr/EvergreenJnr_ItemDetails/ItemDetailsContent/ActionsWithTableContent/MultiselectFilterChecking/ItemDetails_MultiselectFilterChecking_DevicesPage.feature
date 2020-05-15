@@ -182,6 +182,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Projects Summary' left submenu item
+	When User clicks following checkboxes from Column Settings panel for the 'Project' column:
+	| checkboxes |
+	| Project    |
 	When User unchecks following checkboxes in the filter dropdown menu for the 'Workflow' column:
 	| checkboxes |
 	| Empty      |
