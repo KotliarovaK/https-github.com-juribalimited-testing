@@ -81,11 +81,18 @@ Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	And There are no errors in the browser console
 
 #4/24/20 AnnI: upd this test!!! You cannot delete a project!
-@Senior @Projects_Dashboards @Senior_Projects @DAS14171 @Not_Ready
+@Senior @Projects_Dashboards @Senior_Projects @DAS14171 @Cleanup
 Scenario: Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError
+	When User creates new Project on Senior
+	| ProjectName      | ShortName | Description | Type |
+	| Project_DAS14171 | DAS14171  |             |      |
+	When User creates new Capacity Unit via api
+	| Name          | Description | IsDefault | Project          |
+	| DAS14171_CU_1 | DAS14171    | false     | Project_DAS14171 |
+	| DAS14171_CU_2 | DAS14171    | false     | Project_DAS14171 |
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
-	When User navigate to "User Scheduled Test (Jo)" Project
+	When User navigate to "Project_DAS14171" Project
 	And User removes the Project
 	Then Error message is not displayed
 	And There are no errors in the browser console
