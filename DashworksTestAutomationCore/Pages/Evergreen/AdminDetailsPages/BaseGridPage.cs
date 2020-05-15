@@ -230,9 +230,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void PopulateSearchFieldByColumnName(string columnName, string text)
         {
             var input = GetSearchFieldTextByColumnName(columnName);
-            //input.Click();
-            //input.Clear();
-            //input.Click();
+            input.Click();
+            input.Clear();
             input.SendKeys(text);
             BodyContainer.Click();
         }
