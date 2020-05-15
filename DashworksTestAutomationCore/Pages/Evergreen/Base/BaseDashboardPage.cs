@@ -849,14 +849,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetDropdownErrorMessageElement(string placeholder)
         {
             var namedTextbox = GetDropdown(placeholder);
-            var elementAttributes = Driver.GetElementAttributes(namedTextbox);
-            if (!elementAttributes.Any(x => x.Contains("_ngcontent")))
-                throw new Exception($"'{placeholder}' doesn't have _ngcontent attribute");
-            var attribute = elementAttributes.First(x => x.Contains("_ngcontent"));
-            var errorSelector = By.XPath($".//mat-error[@{attribute}]");
-            if (!Driver.IsElementDisplayed(errorSelector, WebDriverExtensions.WaitTime.Medium))
-                throw new Exception($"Error message was not displayed for '{placeholder}' textbox");
-            return Driver.FindElement(errorSelector);
+
+            //Vitaliy in current implementation there is no sense to use _ngcontent
+
+            //var elementAttributes = Driver.GetElementAttributes(namedTextbox);
+            //if (!elementAttributes.Any(x => x.Contains("_ngcontent")))
+            //    throw new Exception($"'{placeholder}' doesn't have _ngcontent attribute");
+            //var attribute = elementAttributes.First(x => x.Contains("_ngcontent"));
+
+            var errorSelector = By.XPath($".//ancestor::div[@dropdownstyle]//mat-error");
+            
+            if (!Driver.IsElementDisplayed(namedTextbox.FindElement(errorSelector), WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"Error message was not displayed for '{placeholder}' dropdown");
+            
+            return namedTextbox.FindElement(errorSelector);
         }
 
         public string GetDropdownErrorMessage(string placeholder)
