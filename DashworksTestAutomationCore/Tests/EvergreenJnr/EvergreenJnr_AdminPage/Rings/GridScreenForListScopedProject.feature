@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	When User navigates to "Email Migration" project details
 	Then Page with 'Email Migration' header is displayed to user
 	When User navigates to the 'Rings' left menu item
-	Then '729' content is displayed in the 'Mailboxes' column
+	Then '730' content is displayed in the 'Mailboxes' column
 	Then grid headers are displayed in the following order
 	| ColumnName |
 	| Ring       |
