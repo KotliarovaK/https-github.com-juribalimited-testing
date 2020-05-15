@@ -40,19 +40,6 @@ Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
 	| Title     | Value |
 	| App Owner |       |
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20426 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_ChSSSSSSSSSSSSSSSSSSSSSSSss
-	When Project created via API and opened
-	| ProjectName    | Scope     | ProjectTemplate | Mode               |
-	| DAS_204444_Proj | All Users | None            | Standalone Project |
-	#User onboarding
-	When User onboards objects to 'DAS_204444_Proj' project
-	| ApplicationObject    |
-	| 7zip                 |
-	| Access               |
-	| Acrobat Reader 4     |
-	| Acrobat Reader 6.0.1 |
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20426 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
 	When Project created via API and opened
@@ -225,9 +212,6 @@ Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_20425_Proj | All Users | None            | Standalone Project |
-	When user onboards devices to '' project
-         | Object |
-         |        |
 	#Change onbording to API step when DAS-20820 will be done
 	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
