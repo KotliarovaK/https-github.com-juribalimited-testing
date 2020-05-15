@@ -125,4 +125,79 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonWor
 	| FirstColumn  | SecondColumn   |
 	| Username     | VGZ6407126     |
 	| Domain       | FR             |
-	| Display Name | Arlette Sicard |  
+	| Display Name | Arlette Sicard |
+		
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21191 @Cleanup @SelfService @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponentIfProjectNotFound
+	When Project created via API and opened
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
+	| DAS_21191_Proj_1 | All Users | None            | Standalone Project |
+	#User onboarding
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Users' tab on Project Scope Changes page
+	When User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
+	| Objects                              |
+	| 024213574157421A9CD (Reyes, Natasha) |
+	| 03C54BC1198843A4A03 (Jones, Tina)    |
+	When User clicks 'UPDATE ALL CHANGES' button
+	When User clicks 'UPDATE PROJECT' button
+	#Application onboarding
+    When User navigates to the 'Applications' tab on Project Scope Changes page
+    When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+    | Objects    |
+    | VSCmdShell |
+    When User clicks 'UPDATE ALL CHANGES' button
+    When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
+	When User create static list with "DAS_21191_UserStatList_1" name on "Users" page with following items
+	| ItemName            |
+	| 03C54BC1198843A4A03 |
+	| 024213574157421A9CD |
+	When User create static list with "DAS_21191_AppStatList_1" name on "Applications" page with following items
+	| ItemName   |
+	| VSCmdShell |
+	#Add an onboarded owner to the App
+	When User navigates to the 'Application' details page for 'VSCmdShell' item
+	When User selects 'DAS_21191_Proj_1' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'App Owner' field
+	When User enters 'Natasha' in the 'User' autocomplete field and selects 'BCLABS\024213574157421A9CD (79951) - Reyes, Natasha' value
+	When User clicks 'UPDATE' button on popup
+	When User clicks 'UPDATE' button on popup
+	When User creates Self Service via API and open it
+	| Name             | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope                   |
+	| DAS_21191_Proj_1 | 21191_SI_1        | true    | true                | DAS_21191_AppStatList_1 |
+	When User creates new application ownership component for 'Welcome' Self Service page via API
+	| ComponentName | ProjectName      | OwnerPermission                  | UserScope                |
+	| AOC Name      | DAS_20330_Proj_1 | Do not allow owner to be changed | DAS_21191_UserStatList_1 |
+	When Projects created by User are removed via API
+	When User navigates to End User landing page with '21191_SI_1' Self Service Identifier
+	When User clicks 'UPDATE' button on popup
+	Then User sees error message '(.*)' for '(.*)' component
+
+
+
+
+
+
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21191 @Cleanup @SelfService @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponentIfUserScopeNotFound
+	When Project created via API and opened
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
+	| DAS_21191_Proj_1 | All Users | None            | Standalone Project |
+
+	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21191 @Cleanup @SelfService @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponentIfUserScopeIsBroken
+	When Project created via API and opened
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
+	| DAS_21191_Proj_1 | All Users | None            | Standalone Project |
+
+		@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21191 @Cleanup @SelfService @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponentIfApplicationNotOnboarded
+	When Project created via API and opened
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
+	| DAS_21191_Proj_1 | All Users | None            | Standalone Project |

@@ -44,5 +44,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             Verify.AreEqual(expectedFirstColumnsList, actualFirstColumnList, $"Incorrect column items for '{сomponentName}' application ownership component on '{pageName}' end user page");
             Verify.AreEqual(expectedSecondColumnList, actualSecondColumnList, $"Incorrect values items for '{сomponentName}' application ownership component on '{pageName}' end user page");
         }
+
+        [Then(@"User sees error message '(.*)' for '(.*)' component")]
+        public void ThenUserSeesComponentErrorMessageWithReason(string expectedErrorMessage, string componentName)
+        {
+            var page = _driver.NowAt<SelfServiceEndClientBasePage>();
+
+            Verify.AreEqual(expectedErrorMessage, page.GetComponenErrorMessageOnEndUserPage(componentName), $"Component '{componentName}' error message mismatch");
+        }
     }
 }

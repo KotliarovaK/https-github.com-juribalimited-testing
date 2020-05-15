@@ -23,6 +23,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
         [FindsBy(How = How.XPath, Using = ".//div[@class='ssw-tools']")]
         public IWebElement SelfServiceToolsPanel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='component-error']")]
+        public IWebElement componentError { get; set; }
+
+        public string GetComponenErrorMessageOnEndUserPage(string componentName)
+        {
+            try
+            {
+                return componentError.FindElement(By.XPath($".//span[contains(text(), '{componentName}')]")).Text;
+            }
+            catch
+            {
+                throw new Exception($"Component with '{componentName}' name was not found");
+            }      
+        }
+
         public IWebElement GetComponentItemOnEndUserPage(SelfServicePageDto page, string textComponentName)
         {
             var order = page.Components.First(x => x.ComponentName.Equals(textComponentName)).Order;
