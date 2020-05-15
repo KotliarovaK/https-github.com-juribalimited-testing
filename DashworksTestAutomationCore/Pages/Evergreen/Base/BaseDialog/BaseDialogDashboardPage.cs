@@ -23,21 +23,6 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
             return Driver.FindElement(By.XPath(selector));
         }
 
-        //Currently are using only for Self Service Dialog Page
-        public bool IsItemInListOfDialogPageDisplayed(string itemName)
-        {
-            try
-            {
-                var selector = $"{BaseDialogPageSelectors.PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{itemName}']";
-
-                return Driver.FindElement(By.XPath(selector)).Displayed();
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         public bool IsComponentOfDialogPageHighlighted(string componentName)
         {
             var bgColor = ComponentOfDialogPage(componentName).FindElement(By.XPath(".//ancestor::button[contains(@class, mat-list-item)]")).GetCssValue("background");
@@ -67,6 +52,25 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
         public IWebElement GetButton(string button)
         {
             return GetButton(button, this.GetStringByFor(() => this.PopupElement));
+        }
+
+        #endregion
+
+        #region Textbox
+
+        public IWebElement GetTextbox(string placeholder, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Medium)
+        {
+            return GetTextbox(placeholder, wait, this.GetStringByFor(() => this.PopupElement));
+        }
+
+        #endregion
+
+        #region SsTextboxInlineMessageElement
+
+        //Self Service EndUser page
+        public IWebElement GetSSTextboxInlineMessageElement(string placeholder)
+        {
+            return GetSSTextboxInlineMessageElement(placeholder, this.GetStringByFor(() => this.PopupElement));
         }
 
         #endregion

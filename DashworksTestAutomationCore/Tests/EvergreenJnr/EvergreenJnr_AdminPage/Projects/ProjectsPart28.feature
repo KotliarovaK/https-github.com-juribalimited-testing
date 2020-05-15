@@ -87,3 +87,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectTooltipIsDisplayedForProjectDet
 	Then 'This list uses, or refers to a list that uses, a value of "My Team" which is not valid as a project scope' error message is displayed for 'Scope' dropdown
 	When User navigates to the 'Scope Changes' left submenu item
 	Then 'This list uses, or refers to a list that uses, a value of 'Me' or 'My Team' which is not valid as a project scope, this must be updated before proceeding' text is displayed on inline tip banner
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS20928 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatValidationErrorAppearsAfterUsingBrokenListForApplicationScope
+	When User creates broken list with 'UsersBroken_20928' name on 'Users' page
+	When Project created via API and opened
+	| ProjectName  | Scope     | ProjectTemplate | Mode               |
+	| Projec_20928 | All Users | None            | Standalone Project |
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left submenu item
+	Then 'List validated' success message for 'App Owner Scope' dropdown
+	When User selects 'UsersBroken_20928' in the 'App Owner Scope' dropdown
+	Then 'This list has errors' error message is displayed for 'App Owner Scope' dropdown
