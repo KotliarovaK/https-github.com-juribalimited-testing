@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	When Projects created by User are removed via API
 	When User navigates to End User landing page with '21191_SI_1' Self Service Identifier
 	When User clicks 'UPDATE' button on popup
-	Then User sees error message '(.*)' for '(.*)' component
+	Then User sees error message 'The component AOC Name could not be shown, Project not found' for 'AOC Name' component
 
 
 
