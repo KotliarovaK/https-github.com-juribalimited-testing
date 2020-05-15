@@ -7,7 +7,6 @@ using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
 using DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomationCore.Pages.Evergreen.AdminDetailsPages.SelfService.EndClient;
 
 namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.EndClient
 {
@@ -37,7 +36,7 @@ namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.EndC
 
         private void CheckErrorMessage(string errorMessage, string placeholder, string color)
         {
-            var page = _driver.NowAt<SelfServiceEndUserDialogPage>();
+            var page = _driver.NowAt<BaseDialogDashboardPage>();
 
             Verify.AreEqual(errorMessage, page.GetSSTextboxInlineMessageElement(placeholder),
                 $"Incorrect message is displayed in the '{placeholder}' field");

@@ -55,5 +55,24 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
         }
 
         #endregion
+
+        #region Textbox
+
+        public IWebElement GetTextbox(string placeholder, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Medium)
+        {
+            return GetTextbox(placeholder, wait, this.GetStringByFor(() => this.PopupElement));
+        }
+
+        #endregion
+
+        #region SsTextboxInlineMessageElement
+
+        //Self Service EndUser page
+        public IWebElement GetSSTextboxInlineMessageElement(string placeholder)
+        {
+            return GetSSTextboxInlineMessageElement(placeholder, this.GetStringByFor(() => this.PopupElement));
+        }
+
+        #endregion
     }
 }

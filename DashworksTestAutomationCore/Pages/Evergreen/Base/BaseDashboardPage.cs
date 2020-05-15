@@ -229,7 +229,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         #endregion TableColumns
 
         public static string NamedTextboxSelector =
-            "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'] | .//input[@automation='{0}'])";
+            "({0}//textarea[@placeholder='{1}'] | {0}//input[@placeholder='{1}'] | {0}//input[@automation='{1}'])";
 
         //For cases when more than 4 items are selected they are collapsed to '1 more'
         public string ExpandNamedTextboxSelector = "//preceding-sibling::button[contains(@class,'chips-expand')]";
@@ -503,9 +503,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         #region Textbox
 
         public IWebElement GetTextbox(string placeholder,
-            WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Medium)
+            WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Medium, string parentElementSelector = "")
         {
-            var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
+            var by = By.XPath(string.Format(NamedTextboxSelector, parentElementSelector, placeholder));
             if (!Driver.IsElementDisplayed(by, wait))
             {
                 throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
@@ -1410,7 +1410,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion
 
-        #region Dialog items - Currently are using only for Self Service Dialog Page
+        #region Dialog item Buttons - Currently are using only for Self Service Dialog Page
 
         public IWebElement ListItemButton(string itemName, string parentElementSelector = "")
         {
@@ -1450,6 +1450,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             {
                 return false;
             }
+        }
+
+        #endregion
+
+        #region SsTextboxInlineMessageElement
+
+        //Self Service EndUser page
+        public IWebElement GetSSTextboxInlineMessageElement(string placeholder, string parentElementSelector = "")
+        {
+            var sSErrorSelector = By.XPath($".//ancestor::das-selfservice-autocomplete/following-sibling::div");
+
+            return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Medium, parentElementSelector).FindElement(sSErrorSelector);
         }
 
         #endregion
