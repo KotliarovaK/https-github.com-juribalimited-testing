@@ -5,6 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
+	#AnnI 5/15/20 Need GD!
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS21182 @Yellow_Dwarf
 Scenario: EvergreenJnr_ApplicationsList_CheckThatSearchForSelfServiceLinkColumnIsWorkingCorrectly
 	When User navigates to the 'Application' details page for the item with '2015' ID
