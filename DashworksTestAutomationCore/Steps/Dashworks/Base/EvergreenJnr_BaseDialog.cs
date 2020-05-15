@@ -108,21 +108,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenUserSeesItemOnDialog(string componentName)
         {
             var dialogContainer = _driver.NowAt<BaseDialogDashboardPage>();
-            Verify.IsTrue(dialogContainer.IsItemInListOfDialogPageDisplayed(componentName), $"'{componentName}' wasn't displayed");
+            Verify.IsTrue(dialogContainer.IsListItemButtonDisplayed(componentName), $"'{componentName}' wasn't displayed");
         }
 
         [Then(@"User sees '(.*)' item with '(.*)' description on dialog")]
         public void ThenUserSeesItemWithDescriptionOnDialog(string componentName, string componentDescription)
         {
             var dialogContainer = _driver.NowAt<BaseDialogDashboardPage>();
-            Verify.IsTrue(dialogContainer.IsItemInListOfDialogPageHasDescription(componentName, componentDescription), $"'{componentName}' component with {componentDescription} wasn't displayed on dialog");
+            Verify.IsTrue(dialogContainer.IsListItemButtonHaveDescription(componentName, componentDescription), $"'{componentName}' component with {componentDescription} wasn't displayed on dialog");
         }
 
         [Then(@"User does not see '(.*)' item on dialog")]
-        public void ThenUserDoesNotseeItemOnDialog(string componentName)
+        public void ThenUserDoesNotSeeItemOnDialog(string componentName)
         {
             var dialogContainer = _driver.NowAt<BaseDialogDashboardPage>();
-            Verify.IsFalse(dialogContainer.IsItemInListOfDialogPageDisplayed(componentName), $"'{componentName}' was displayed");
+            Verify.IsFalse(dialogContainer.IsListItemButtonDisplayed(componentName), $"'{componentName}' was displayed");
         }
 
         [When(@"User clicks on '(.*)' component on dialog")]
