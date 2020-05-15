@@ -94,3 +94,43 @@ Scenario: EvergreenJnr_MailboxList_CheckTheMailboxDataInProjectModeIsUpdatedAcco
 	When User navigates to the 'Details' left menu item
 	When User navigates to the 'Mailbox Owner' left submenu item
 	Then 'No mailbox owner found for this mailbox' message is displayed on empty greed
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS21160 @Yellow_Dwarf
+Scenario: EvergreenJnr_MailboxList_CheckThatAllDataIsUpdatedAccordingToTheSelectedCheckboxesOnTheMailboxDetailsPageAfterRelinkingTheSameMailboxesAFewTimes
+	When User navigates to the 'Mailbox' details page for the item with '45822' ID
+	Then Details page for '01D9682B16E140FBAB6@bclabs.local' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	Then User verifies data in the fields on details page
+	| Field         | Data       |
+	| Mailbox Owner | Woods, Tim |
+	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' left submenu item
+	Then "Woods, Tim" content is displayed for "Display Name" column
+	#relink1
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'RELINK' button
+	When User enters '111' in the 'Mailbox' autocomplete field and selects '83C9C51111B44B329CE@bclabs.local (45740) - Rhoden, Jaana' value
+	When User clicks 'RELINK' button on popup
+	When User clicks 'RELINK' button on popup
+	Then User verifies data in the fields on details page
+	| Field         | Data          |
+	| Mailbox Owner | Rhoden, Jaana |
+	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' left submenu item
+	Then "Rhoden, Jaana" content is displayed for "Display Name" column
+	#relink2
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'RELINK' button
+	When User enters '01D9682B16E140FBAB6@bclabs.local' in the 'Mailbox' autocomplete field and selects '01D9682B16E140FBAB6@bclabs.local (45822) - Woods, Tim' value
+	When User clicks 'RELINK' button on popup
+	When User clicks 'RELINK' button on popup
+	Then User verifies data in the fields on details page
+	| Field         | Data       |
+	| Mailbox Owner | Woods, Tim |
+	When User navigates to the 'Users' left menu item
+	When User navigates to the 'Users' left submenu item
+	Then "Woods, Tim" content is displayed for "Display Name" column
