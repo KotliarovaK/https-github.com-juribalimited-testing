@@ -81,7 +81,7 @@ Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	And There are no errors in the browser console
 
 #4/24/20 AnnI: upd this test!!! You cannot delete a project!
-@Senior @Projects_Dashboards @Senior_Projects @DAS14171 @Cleanup
+@Senior @Projects_Dashboards @Senior_Projects @DAS14171 @Cleanup @Not_Ready
 Scenario: Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError
 	When User creates new Project on Senior
 	| ProjectName      | ShortName | Description | Type |
