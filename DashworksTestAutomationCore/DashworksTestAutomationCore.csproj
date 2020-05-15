@@ -87,6 +87,12 @@
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\FavouriteBulkUpdate\FBU_UpdateBucket.feature.cs">
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\FavouriteBulkUpdate\FBU_UpdateCapacityUnit.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\FavouriteBulkUpdate\SpecFlowFeature1.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart10.feature.cs">
       <DependentUpon>CapacitySlotsPart10.feature</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -252,6 +258,14 @@
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\FavouriteBulkUpdate\FBU_UpdateBucket.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FBU_UpdateBucket.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\FavouriteBulkUpdate\FBU_UpdateCapacityUnit.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FBU_UpdateCapacityUnit.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\FavouriteBulkUpdate\SpecFlowFeature1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart10.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
