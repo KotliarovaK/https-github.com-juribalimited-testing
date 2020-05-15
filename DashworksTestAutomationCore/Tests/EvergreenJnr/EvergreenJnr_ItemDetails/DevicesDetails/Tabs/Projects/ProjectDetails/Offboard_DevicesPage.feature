@@ -197,7 +197,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheOffbo
 	When User checks 'Show only selected items' slide toggle
 	Then 'FQT1418241' content is not displayed in the 'Username' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS21045
+#AnnI 5/15/20: need to add Cleanup for OFFBOARD (DAS-18070)
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS21045 @Yellow_Dwarf @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatThereIsThePossibilityToOffboradTheAssociatedObjectsViaTheDetailsPageOfMainObject
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
 	Then Details page for '001PSUMZYOW581' item is displayed to the user
