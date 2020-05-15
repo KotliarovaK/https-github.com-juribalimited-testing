@@ -21,7 +21,7 @@ namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.EndC
             _driver = driver;
         }
 
-        //Temporary steps!!! Remove it when common autocomplete on EndUser will be implemented
+        //Temporary step!!! Remove it when common autocomplete on EndUser will be implemented
         [Then(@"'(.*)' message is displayed under '(.*)' field on Self Service EndUser dialog")]
         public void ThenMessageIsDisplayedUnderFieldOnSelfServiceEndUserDialog(string message, string placeholder)
         {
@@ -29,15 +29,19 @@ namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.EndC
 
             Verify.AreEqual(message, page.GetSSTextboxInlineMessageElement(placeholder),
                 $"Incorrect message is displayed in the '{placeholder}' field");
+
+            Verify.AreEqual("rgba(0, 0, 0, .87)", page.GetSSTextboxInlineMessageElement(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field");
         }
 
-        //Temporary steps!!! Remove it when common autocomplete on EndUser will be implemented
+        //Temporary step!!! Remove it when common autocomplete on EndUser will be implemented
         [Then(@"'(.*)' error message is displayed under '(.*)' field on Self Service EndUser dialog")]
         public void ThenErrorMessageIsDisplayedUnderFieldOnSelfServiceEndUserDialog(string errorMessage, string placeholder)
         {
-            ThenMessageIsDisplayedUnderFieldOnSelfServiceEndUserDialog(errorMessage, placeholder);
-            
             var page = _driver.NowAt<SelfServiceEndUserDialogPage>();
+
+            Verify.AreEqual(errorMessage, page.GetSSTextboxInlineMessageElement(placeholder),
+                $"Incorrect message is displayed in the '{placeholder}' field");
 
             Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetSSTextboxInlineMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");

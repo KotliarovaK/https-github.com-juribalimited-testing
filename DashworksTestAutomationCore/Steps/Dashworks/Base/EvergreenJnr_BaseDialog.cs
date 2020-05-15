@@ -115,7 +115,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenUserSeesItemWithDescriptionOnDialog(string componentName, string componentDescription)
         {
             var dialogContainer = _driver.NowAt<BaseDialogDashboardPage>();
-            Verify.IsTrue(dialogContainer.IsItemInListOfDialogPageHasDescription(componentName, componentDescription), $"'{componentName}' wasn't displayed");
+            Verify.IsTrue(dialogContainer.IsItemInListOfDialogPageHasDescription(componentName, componentDescription), $"'{componentName}' component with {componentDescription} wasn't displayed on dialog");
         }
 
         [Then(@"User does not see '(.*)' item on dialog")]

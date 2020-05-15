@@ -6,6 +6,7 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using AutomationUtils.Extensions;
+using DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog;
 
 namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
@@ -217,7 +218,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion TableColumns
 
-        private static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'] | .//input[@automation='{0}'])";
+        public static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'] | .//input[@automation='{0}'])";
 
         //For cases when more than 4 items are selected they are collapsed to '1 more'
         public string ExpandNamedTextboxSelector = "//preceding-sibling::button[contains(@class,'chips-expand')]";
@@ -1349,6 +1350,40 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetIcon(string iconTextInDom)
         {
             return Driver.FindElement(By.XPath($".//i[@class='material-icons'][text()='{iconTextInDom}']"));
+        }
+
+        #endregion
+
+        #region Dialog items
+
+        //Currently are using only for Self Service Dialog Page
+        public bool IsItemInListOfDialogPageDisplayed(string itemName)
+        {
+            try
+            {
+                var selector = $"{BaseDialogPageSelectors.PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{itemName}']";
+
+                return Driver.FindElement(By.XPath(selector)).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //Currently are using only for Self Service Dialog Page
+        public bool IsItemInListOfDialogPageHasDescription(string itemName, string itemDiscription)
+        {
+            try
+            {
+                var selector = $"{BaseDialogPageSelectors.PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{itemName}']//span[text()='{itemDiscription}']";
+
+                return Driver.FindElement(By.XPath(selector)).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         #endregion

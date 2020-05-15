@@ -6,16 +6,15 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using AutomationUtils.Extensions;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 
 namespace DashworksTestAutomationCore.Pages.Evergreen.AdminDetailsPages.SelfService.EndClient
 {
-    class SelfServiceEndUserDialogPage : SeleniumBasePage
+    class SelfServiceEndUserDialogPage : BaseDashboardPage
     {
-        private static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'] | .//input[@automation='{0}'])";
-
         public IWebElement GetSSEndUserPageTextbox(string placeholder, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Medium)
         {
-            var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
+            var by = By.XPath(string.Format(BaseDashboardPage.NamedTextboxSelector, placeholder));
             if (!Driver.IsElementDisplayed(by, wait))
             {
                 throw new Exception($"Textbox with '{placeholder}' placeholder was not displayed");
@@ -34,10 +33,8 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.AdminDetailsPages.SelfServ
             {
                 return namedTextbox.FindElement(sSErrorSelector);
             }
-            else
-            {
-                throw new Exception($"Error message was not displayed for '{placeholder}' textbox");
-            }
+            
+            throw new Exception($"Error message was not displayed for '{placeholder}' textbox");
         }
     }
 }

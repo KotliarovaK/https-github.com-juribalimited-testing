@@ -23,36 +23,6 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
             return Driver.FindElement(By.XPath(selector));
         }
 
-        //Currently are using only for Self Service Dialog Page
-        public bool IsItemInListOfDialogPageDisplayed(string itemName)
-        {
-            try
-            {
-                var selector = $"{BaseDialogPageSelectors.PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{itemName}']";
-
-                return Driver.FindElement(By.XPath(selector)).Displayed();
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        //Currently are using only for Self Service Dialog Page
-        public bool IsItemInListOfDialogPageHasDescription(string itemName, string itemDiscription)
-        {
-            try
-            {
-                var selector = $"{BaseDialogPageSelectors.PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{itemName}']//span[text()='{itemDiscription}']";
-
-                return Driver.FindElement(By.XPath(selector)).Displayed();
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         public bool IsComponentOfDialogPageHighlighted(string componentName)
         {
             var bgColor = ComponentOfDialogPage(componentName).FindElement(By.XPath(".//ancestor::button[contains(@class, mat-list-item)]")).GetCssValue("background");
