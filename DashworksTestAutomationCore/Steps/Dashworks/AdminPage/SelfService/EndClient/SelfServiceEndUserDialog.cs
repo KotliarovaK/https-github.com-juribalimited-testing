@@ -38,7 +38,7 @@ namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.EndC
         {
             var page = _driver.NowAt<BaseDialogDashboardPage>();
 
-            Verify.AreEqual(errorMessage, page.GetSSTextboxInlineMessageElement(placeholder),
+            Verify.AreEqual(errorMessage, page.GetSSTextboxInlineMessageElement(placeholder).Text,
                 $"Incorrect message is displayed in the '{placeholder}' field");
 
             Verify.AreEqual(color, page.GetSSTextboxInlineMessageElement(placeholder).GetCssValue("color"),
