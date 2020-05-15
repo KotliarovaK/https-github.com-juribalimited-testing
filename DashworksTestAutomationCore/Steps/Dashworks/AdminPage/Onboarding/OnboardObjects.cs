@@ -20,8 +20,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
         [When(@"User onboards objects to '(.*)' project")]
         public void WhenUserOnboardsApplicationsToTheProject(string projectName, Table table)
         {
-            _onboardObjectsToProjectApiMethods
-                .OnboardObjectsToProjectAPI(projectName, table, out var exception);
+            _onboardObjectsToProjectApiMethods.OnboardObjectsToProjectAPI(projectName, table);
         }
     }
 }
