@@ -23,29 +23,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
             _onboardObjectsToProjectApiMethods
                 .OnboardObjectsToProjectAPI(projectName, table, out var exception);
         }
-
-        /*        //| DeviceObjects |
-                [When(@"User onboards devices to '(.*)' project")]
-                public void WhenUserOnboardsDevicesToTheProject(string projectName, Table table)
-                {
-                    _onboardObjectsToProjectApiMethods
-                        .OnboardObjectsToProjectAPI(projectName, table, out var exception);
-                }
-
-                //| UserObjects |
-                [When(@"User onboards users to '(.*)' project")]
-                public void WhenUserOnboardsUsersToTheProject(string projectName, Table table)
-                {
-                    _onboardObjectsToProjectApiMethods
-                        .OnboardObjectsToProjectAPI(projectName, table, out var exception);
-                }
-
-                //| ApplicationObjects |
-                [When(@"User onboards applications to '(.*)' project")]
-                public void WhenUserOnboardsApplicationsToTheProject(string projectName, Table table)
-                {
-                    _onboardObjectsToProjectApiMethods
-                        .OnboardObjectsToProjectAPI(projectName, table, out var exception);
-                }*/
     }
 }

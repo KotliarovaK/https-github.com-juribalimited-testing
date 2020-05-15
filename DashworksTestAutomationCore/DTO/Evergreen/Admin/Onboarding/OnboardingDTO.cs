@@ -7,38 +7,37 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Onboarding
 {
     public class OnboardingDto
     {
-        [JsonProperty("applicationBucketId")] public string ApplicationBucketId = "955";
+        [JsonProperty("applicationBucketId")] public string ApplicationBucketId = string.Empty;
 
         [JsonProperty("applicationCategoryId")] public int ApplicationCategoryId = -1;
 
-        [JsonProperty("applicationRequestTypeId")] public string ApplicationRequestTypeId = "725";
+        [JsonProperty("applicationRequestTypeId")] public string ApplicationRequestTypeId = string.Empty;
 
         [JsonProperty("applicationsList")] public string ApplicationsList = string.Empty;
-        public string ApplicationObject
+        public string ApplicationObjects
         {
-            set => ApplicationsList = GetApplicationId(value);
+            set => ApplicationsList = value.IsNotNullOrEmpty() ? DatabaseHelper.GetApplicationDetailsIdByName(value) : string.Empty;
         }
 
-        [JsonProperty("deviceBucketId")] public string DeviceBucketId = "955";
+        [JsonProperty("deviceBucketId")] public string DeviceBucketId = string.Empty;
 
         [JsonProperty("deviceCategoryId")] public int DeviceCategoryId = -1;
 
-        [JsonProperty("deviceRequestTypeId")] public string DeviceRequestTypeId = "724";
+        [JsonProperty("deviceRequestTypeId")] public string DeviceRequestTypeId = string.Empty;
 
-        [JsonProperty("devicesList")]
-        public string DevicesList = string.Empty;
-        public string DeviceObject
+        [JsonProperty("devicesList")] public string DevicesList = string.Empty;
+        public string DeviceObjects
         {
-            set => DevicesList = GetDeviceId(value);
+            set => DevicesList = value.IsNotNullOrEmpty() ? DatabaseHelper.GetDeviceDetailsIdByName(value) : string.Empty;
         }
 
-        [JsonProperty("mailboxBucketId")] public string MailboxBucketId = "955";
+        [JsonProperty("mailboxBucketId")] public string MailboxBucketId = string.Empty;
 
         [JsonProperty("mailboxCategoryId")] public int MailboxCategoryId = -1;
 
         [JsonProperty("mailboxRequestTypeId")] public string MailboxRequestTypeId = "0";
 
-        [JsonProperty("mailboxesList")] public string MailboxesList = "0";
+        [JsonProperty("mailboxesList")] public string MailboxesList = string.Empty;
 
         [JsonProperty("removeApplications")] public List<object> RemoveApplications = new List<object>();
 
@@ -50,36 +49,21 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Onboarding
 
         [JsonProperty("removeUsers")] public List<object> RemoveUsers = new List<object>();
 
-        [JsonProperty("ringId")] public string RingId = "145";
+        [JsonProperty("ringId")] public string RingId;
 
         [JsonProperty("type")] public string Type = "All";
 
-        [JsonProperty("userBucketId")] public string UserBucketId = "955";
+        [JsonProperty("userBucketId")] public string UserBucketId = string.Empty;
 
         [JsonProperty("userCategoryId")] public int UserCategoryId = -1;
 
-        [JsonProperty("userRequestTypeId")] public string UserRequestTypeId = "723";
+        [JsonProperty("userRequestTypeId")] public string UserRequestTypeId = string.Empty;
 
         [JsonProperty("usersList")]
         public string UsersList = string.Empty;
-        public string UserObject
+        public string UserObjects
         {
-            set => UsersList = GetUsersId(value);
-        }
-
-        private string GetDeviceId(string name)
-        {
-            return name.IsNotNullOrEmpty() ? DatabaseHelper.GetDeviceDetailsIdByName(name) : string.Empty;
-        }
-
-        private string GetUsersId(string name)
-        {
-            return name.IsNotNullOrEmpty() ? DatabaseHelper.GetUserDetailsIdByName(name) : string.Empty;
-        }
-
-        private string GetApplicationId(string name)
-        {
-            return name.IsNotNullOrEmpty() ? DatabaseHelper.GetApplicationDetailsIdByName(name) : string.Empty;
+            set => UsersList = value.IsNotNullOrEmpty() ? DatabaseHelper.GetUserDetailsIdByName(value) : string.Empty;
         }
     }
 }
