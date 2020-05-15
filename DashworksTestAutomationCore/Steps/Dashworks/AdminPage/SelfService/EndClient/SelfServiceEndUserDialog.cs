@@ -25,25 +25,24 @@ namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.EndC
         [Then(@"'(.*)' message is displayed under '(.*)' field on Self Service EndUser dialog")]
         public void ThenMessageIsDisplayedUnderFieldOnSelfServiceEndUserDialog(string message, string placeholder)
         {
-            var page = _driver.NowAt<SelfServiceEndUserDialogPage>();
-
-            Verify.AreEqual(message, page.GetSSTextboxInlineMessageElement(placeholder),
-                $"Incorrect message is displayed in the '{placeholder}' field");
-
-            Verify.AreEqual("rgba(0, 0, 0, .87)", page.GetSSTextboxInlineMessageElement(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field");
+            CheckErrorMessage(message, placeholder, "rgba(0, 0, 0, .87)");
         }
 
         //Temporary step!!! Remove it when common autocomplete on EndUser will be implemented
         [Then(@"'(.*)' error message is displayed under '(.*)' field on Self Service EndUser dialog")]
         public void ThenErrorMessageIsDisplayedUnderFieldOnSelfServiceEndUserDialog(string errorMessage, string placeholder)
         {
+            CheckErrorMessage(errorMessage, placeholder, "rgba(242, 88, 49, 1)");
+        }
+
+        private void CheckErrorMessage(string errorMessage, string placeholder, string color)
+        {
             var page = _driver.NowAt<SelfServiceEndUserDialogPage>();
 
             Verify.AreEqual(errorMessage, page.GetSSTextboxInlineMessageElement(placeholder),
                 $"Incorrect message is displayed in the '{placeholder}' field");
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetSSTextboxInlineMessageElement(placeholder).GetCssValue("color"),
+            Verify.AreEqual(color, page.GetSSTextboxInlineMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");
         }
     }
