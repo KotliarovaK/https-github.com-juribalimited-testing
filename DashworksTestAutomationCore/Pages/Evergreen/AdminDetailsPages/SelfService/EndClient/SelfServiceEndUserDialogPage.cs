@@ -7,6 +7,7 @@ using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using AutomationUtils.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog;
 
 namespace DashworksTestAutomationCore.Pages.Evergreen.AdminDetailsPages.SelfService.EndClient
 {
@@ -14,7 +15,7 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.AdminDetailsPages.SelfServ
     {
         public IWebElement GetSSEndUserPageTextbox(string placeholder, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Medium)
         {
-            var by = By.XPath(string.Format(BaseDashboardPage.NamedTextboxSelector, placeholder));
+            var by = By.XPath($"{BaseDialogPageSelectors.PopupSelector}{string.Format(BaseDashboardPage.NamedTextboxSelector, placeholder)}");
             if (!Driver.IsElementDisplayed(by, wait))
             {
                 throw new Exception($"Textbox with '{placeholder}' placeholder was not displayed");
