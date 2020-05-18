@@ -102,8 +102,8 @@ Scenario: EvergreenJnr_MailboxList_CheckThatAllDataIsUpdatedAccordingToTheSelect
 	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
-	Then User verifies data in the fields on details page
-	| Field         | Data       |
+	Then following content is displayed on the Details Page
+	| Title         | Value      |
 	| Mailbox Owner | Woods, Tim |
 	When User navigates to the 'Users' left menu item
 	When User navigates to the 'Users' left submenu item
@@ -115,8 +115,8 @@ Scenario: EvergreenJnr_MailboxList_CheckThatAllDataIsUpdatedAccordingToTheSelect
 	When User enters '111' in the 'Mailbox' autocomplete field and selects '83C9C51111B44B329CE@bclabs.local (45740) - Rhoden, Jaana' value
 	When User clicks 'RELINK' button on popup
 	When User clicks 'RELINK' button on popup
-	Then User verifies data in the fields on details page
-	| Field         | Data          |
+	Then following content is displayed on the Details Page
+	| Title         | Value         |
 	| Mailbox Owner | Rhoden, Jaana |
 	When User navigates to the 'Users' left menu item
 	When User navigates to the 'Users' left submenu item
@@ -128,8 +128,8 @@ Scenario: EvergreenJnr_MailboxList_CheckThatAllDataIsUpdatedAccordingToTheSelect
 	When User enters '01D9682B16E140FBAB6@bclabs.local' in the 'Mailbox' autocomplete field and selects '01D9682B16E140FBAB6@bclabs.local (45822) - Woods, Tim' value
 	When User clicks 'RELINK' button on popup
 	When User clicks 'RELINK' button on popup
-	Then User verifies data in the fields on details page
-	| Field         | Data       |
+	Then following content is displayed on the Details Page
+	| Title         | Value      |
 	| Mailbox Owner | Woods, Tim |
 	When User navigates to the 'Users' left menu item
 	When User navigates to the 'Users' left submenu item
