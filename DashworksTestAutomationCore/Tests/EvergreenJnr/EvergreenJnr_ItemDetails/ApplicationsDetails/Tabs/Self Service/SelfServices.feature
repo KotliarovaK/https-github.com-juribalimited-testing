@@ -13,5 +13,5 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSearchForSelfServiceLinkColumnI
 	When User navigates to the 'Self Service' parent left menu item
 	And User navigates to the 'Self Services' left submenu item
 	#AnnI 5/15/20: Loks like we will need to update this (Self Service) link.
-	When User enters "https://master.corp.juriba.com/evergreen/#/selfservice/zUScopeDel/1812b656-b505-4e74-85f9-d8de84e212be" text in the Search field for "Self Service Link" column
+	When User enters "https://autorelease.corp.juriba.com/evergreen/#/selfservice/zUScopeDel/1812b656-b505-4e74-85f9-d8de84e212be" text in the Search field for "Self Service Link" column
 	Then "1" rows are displayed in the agGrid
