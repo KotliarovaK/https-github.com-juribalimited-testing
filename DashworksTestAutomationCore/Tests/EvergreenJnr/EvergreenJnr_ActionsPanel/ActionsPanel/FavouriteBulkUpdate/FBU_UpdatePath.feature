@@ -67,16 +67,6 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	Then 'Favourite bulk update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks refresh button in the browser
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Username" rows in the grid
-	| SelectedRowsName    |
-	| 0088FC8A50DD4344B92 |
-	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update path' in the 'Bulk Update Type' dropdown
-	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User selects 'VIP User' option from 'Path' autocomplete
 	When User clicks Star button
 	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'Favourite Bulk Update Name should be unique' error message is displayed for 'Favourite Bulk Update Name' field
