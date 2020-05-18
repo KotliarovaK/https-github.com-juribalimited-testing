@@ -406,12 +406,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"data in table is sorted by '(.*)' column in ascending order")]
         public void ThenDataInTableIsSortedByColumnInAscendingOrder(string columnName)
         {
-            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var page = _driver.NowAt<BaseGridPage>();
 
-            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = page.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Values in table for '{columnName}' column in not sorted in ascending order");
+            Verify.IsTrue(page.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Values in table for '{columnName}' column in not sorted in ascending order");
         }
 
         [Then(@"data in table is sorted by '(.*)' column in ascending order by default")]
