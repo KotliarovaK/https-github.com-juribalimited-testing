@@ -118,6 +118,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| Update custom field           |
 	| Update path                   |
 	| Update task value             |
+	| Manage favourites             |
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS197462 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckActionPanelAfterAddingObjectsToStaticListViaListPanel
