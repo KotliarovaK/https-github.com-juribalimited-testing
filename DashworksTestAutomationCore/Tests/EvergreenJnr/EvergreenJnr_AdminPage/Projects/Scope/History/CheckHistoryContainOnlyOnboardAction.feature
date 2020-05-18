@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigr
 	When User navigates to "Email Migration" project details
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'History' left menu item
-	Then Counter shows "1,527" found rows
+	Then Counter shows "1,529" found rows
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Action' column:
 	| Values                     |
 	| Onboard Application Object |
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigr
 	When User unchecks following checkboxes in the filter dropdown menu for the 'Action' column:
 	| checkboxes                 |
 	| Onboard User Object        |
-	Then Rows counter shows "807" of "1,527" rows
+	Then Rows counter shows "808" of "1,529" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects
 Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEvergreenCapacityProject
