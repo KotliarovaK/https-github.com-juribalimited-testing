@@ -595,5 +595,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
+        [When(@"User clicks value from '(.*)' row and '(.*)' column")]
+        public void WhenUserClicksValueFromRowAndColumn(string row, string column)
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+            
+            var leftColumn = columnElement.GetLeftPinnedColumnContentOnPivot().Select(column => column.Text).ToList();
+            var columnContentList = columnElement.GetColumnContentOnPivotByName(column);
+            columnContentList[leftColumn.IndexOf(row)].FindElement(By.XPath(".//a")).Click();
+        }
     }
 }
