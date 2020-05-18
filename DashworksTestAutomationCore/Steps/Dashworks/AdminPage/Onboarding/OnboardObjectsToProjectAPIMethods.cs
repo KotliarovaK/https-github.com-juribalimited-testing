@@ -92,8 +92,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
 
         private string GetBucketId(string projectId)
         {
-            var requestTypes = $"{UrlProvider.RestClientBaseUrl}admin/projects/{projectId}/buckets".GenerateRequest();
-            var response = _client.Evergreen.Get(requestTypes);
+            var buckets = $"{UrlProvider.RestClientBaseUrl}admin/projects/{projectId}/buckets".GenerateRequest();
+            var response = _client.Evergreen.Get(buckets);
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
             {
