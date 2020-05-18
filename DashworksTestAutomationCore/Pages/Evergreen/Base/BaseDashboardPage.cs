@@ -104,6 +104,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-star']//ancestor::button")]
+        public IWebElement StarButton { get; set; }
+
         #region All Lists dropdown
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownActionsLists')]")]
@@ -935,6 +938,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var selector =
                 By.XPath($"{DropdownOptionsSelector(withoutSelected)}/parent::div//i[contains(@class, '{iconName}')]");
             return Driver.IsElementDisplayed(selector);
+        }
+
+        public IWebElement GetStarIconsOfDropdownOptionsByName(string value)
+        {
+            Driver.WaitForElementToBeDisplayed(GetDropdownValueByName(value));
+            var star = GetDropdownValueByName(value).FindElement(By.XPath(".//preceding-sibling::mat-icon[contains(@class, 'favourite-icon')]"));
+            return star;
         }
 
         public bool IsDropdownOpened(bool withoutSelected = false)
