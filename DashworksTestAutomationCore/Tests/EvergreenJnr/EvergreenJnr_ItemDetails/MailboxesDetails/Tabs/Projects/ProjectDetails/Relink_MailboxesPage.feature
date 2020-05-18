@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_MailboxList_CheckThatObjectsAreDisplayedInSearchResultAft
 	When User clicks 'RELINK' button
 	Then only options having search term '993' are displayed in 'Mailbox' autocomplete
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS21175 @Yellow_Dwarf
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS21175 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_MailboxList_CheckTheMailboxDataInProjectModeIsUpdatedAccordingToTheEvergreenDataAfterRelinkingResyncingTheMailboxToAnotherOne
 	When User navigates to the 'Mailbox' details page for '02171CE96D0244BBB80@bclabs.local' item
 	Then Details page for '02171CE96D0244BBB80@bclabs.local' item is displayed to the user
@@ -89,6 +89,7 @@ Scenario: EvergreenJnr_MailboxList_CheckTheMailboxDataInProjectModeIsUpdatedAcco
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button
 	When User enters '40153' in the 'Mailbox' autocomplete field and selects 'alex.melnychuk@juriba.com (40153) - Alex Melnychuk' value
+	When User clicks 'RELINK' button on popup
 	When User clicks 'RELINK' button on popup
 	Then 'Mailbox successfully relinked' text is displayed on inline success banner
 	When User navigates to the 'Details' left menu item
