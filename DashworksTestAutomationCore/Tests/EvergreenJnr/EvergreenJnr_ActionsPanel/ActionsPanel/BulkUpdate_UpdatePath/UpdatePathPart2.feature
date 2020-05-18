@@ -25,6 +25,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| Update path          |
 	| Update ring          |
 	| Update task value    |
+	| Manage favourites    |
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Request Type:Device' option from 'Path' autocomplete
@@ -112,6 +113,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	| Update path          |
 	| Update ring          |
 	| Update task value    |
+	| Manage favourites    |
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
 	And User selects 'User Request Type 2' option from 'Path' autocomplete
@@ -155,6 +157,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	| Update path          |
 	| Update ring          |
 	| Update task value    |
+	| Manage favourites    |
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
 	And User selects 'Personal Mailbox - VIP' option from 'Path' autocomplete

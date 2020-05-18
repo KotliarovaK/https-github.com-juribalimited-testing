@@ -81,9 +81,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	When User enters "birmingham" text in the Search field for "Bucket" column
 	Then Rows counter contains "3" found row of all rows
 	#DAS16389
-	When User enters "143" text in the Search field for "Users" column
+	When User enters "144" text in the Search field for "Users" column
 	When User clicks content from "Users" column
-	Then "143" rows are displayed in the agGrid
+	Then "144" rows are displayed in the agGrid
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
