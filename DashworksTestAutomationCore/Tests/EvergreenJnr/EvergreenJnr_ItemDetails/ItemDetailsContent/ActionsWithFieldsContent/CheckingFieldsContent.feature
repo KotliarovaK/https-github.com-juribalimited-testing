@@ -40,8 +40,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	| Title    | Value   |
 	| Language | English |
 
-#upd AnnI 4/28/20: archived to 'X_Ray'. in development, will be redesigned.
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Cleanup @X_Ray
+#upd AnnI 5/18/20: archived to 'Yellow_Dwarf'? in development, will be redesigned.
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly
 	When User creates new Capacity Unit via api
 	| Name              | Description | IsDefault |

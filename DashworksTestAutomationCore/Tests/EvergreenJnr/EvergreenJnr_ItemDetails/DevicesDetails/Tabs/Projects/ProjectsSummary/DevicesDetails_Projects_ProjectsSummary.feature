@@ -21,7 +21,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	Then color data is sorted by 'Readiness' column in ascending order
 	Then All text is not displayed for "Readiness" column in the String Filter
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsSummaryTab @DAS20496 @X_Ray
+#AnnI 5/18/20: ready only for Yellow_Dwarf
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsSummaryTab @DAS20496 @Yellow_Dwarf
 Scenario: EvergreenJnr_DevicesList_CheckThatSelectAllCheckboxInTheSelectColumnFilterIsDisplayedCorrectlyOnProjectSummaryTab
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
 	When User navigates to the 'Projects' left menu item
