@@ -218,6 +218,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
+            _driver.MoveToElement(listElement.SubMenuTopItems.FirstOrDefault(x => x.Enabled));
             _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
             Verify.IsTrue(listElement.EditedList.Displayed(), "Edit List menu is not displayed");
         }
