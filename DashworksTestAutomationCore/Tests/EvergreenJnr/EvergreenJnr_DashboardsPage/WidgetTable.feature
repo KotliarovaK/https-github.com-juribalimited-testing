@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereTh
 	When User selects 'All Devices' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Sum' in the 'AggregateFunction' dropdown
-	Then 'There are no fields available for this aggregate function' error message is displayed for 'Aggregate Function' dropdown
+	Then 'There are no fields available for this aggregate function' error message is displayed for 'Aggregate By' dropdown
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAggregateFunctionIsSelected
@@ -379,11 +379,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFuncAreNotAvailableForCo
 	And User adds new Widget
 	| WidgetType | Title           | List        | SplitBy     | AggregateFunction |
 	| Table      | DAS16275_Widget | All Devices | Device Type | Severity          |
-	Then 'There are no fields available for this aggregate function' error message is displayed for 'Aggregate Function' dropdown
+	Then 'There are no fields available for this aggregate function' error message is displayed for 'Aggregate By' dropdown
 	When User adds new Widget
 	| WidgetType | Title           | List        | Type      | AggregateFunction |
 	| Card       | DAS16275_Widget | All Devices | Aggregate | Severity          |
-	Then 'There are no fields available for this aggregate function' error message is displayed for 'Aggregate Function' dropdown
+	Then 'There are no fields available for this aggregate function' error message is displayed for 'Aggregate By' dropdown
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18324 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingEditingTableWidgetThatReturnsZeroResults
