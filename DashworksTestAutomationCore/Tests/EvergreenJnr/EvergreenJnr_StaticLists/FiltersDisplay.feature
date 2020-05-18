@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	And "5,159" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Windows7Mi: Portal Self Service \ SS Application List Completed is No or Not Applicable" is displayed in added filter info
+	And "Windows7Mi: Portal Self Service \ SS Application List Completed is Not Applicable or No" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @Evergreen_FiltersFeature @DAS10695 @DAS12152 @DAS12966 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExistingObjectToStaticList

@@ -238,7 +238,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	| Username   | Password  |
 	| DAS17592_1 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
@@ -252,11 +251,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN17592_2 | Read       |
-	#login as user2
 	When User clicks the Logout button
+	#login as user2
 	When User is logged in to the Evergreen as
 	| Username   | Password  |
 	| DAS17592_2 | m!gration |
+	When User waits for '3' seconds
 	When Dashboard with 'Dashboard_DAS17592' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
@@ -265,11 +265,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	| List       | Widget_For_DAS17592 | ADevicesList17592 | 10      | 10         |
 	Then 'Widget_For_DAS17592' Widget is displayed to the user
 	When User language is changed to "Deutsch" via API
+	When Dashboard with 'Dashboard_DAS17592' name is opened via API
 	When User clicks the Dashboard Details button
 	When User expands the list of shared lists
 	Then User sees table headers as 'Widget' and 'Liste'
-	#login as user1
 	When User clicks the Logout button
+	#login as user1
 	When User is logged in to the Evergreen as
 	| Username   | Password  |
 	| DAS17592_1 | m!gration |
