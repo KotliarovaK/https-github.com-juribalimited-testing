@@ -99,3 +99,69 @@ Scenario: EvergreenJnr_AdminPage_CheckThatValidationErrorAppearsAfterUsingBroken
 	Then 'List validated' success message for 'App Owner Scope' dropdown
 	When User selects 'UsersBroken_20928' in the 'App Owner Scope' dropdown
 	Then 'This list has errors' error message is displayed for 'App Owner Scope' dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS20877 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatCorrectValidationMessageAppearsForScopeFieldIfListHasArhivedDevices
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks on 'Hostname' column header
+	When User create dynamic list with "DeviceList_20877" name on "Devices" page
+	Then "DeviceList_20877" list is displayed to user
+	When User clicks 'Devices' on the left-hand menu
+	When User sets includes archived devices in 'true'
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User add "Device (Saved List)" filter where type is "In list" with Selected Value and following Association:
+	| SelectedList     | Association |
+	| DeviceList_20877 |             |
+	When User create dynamic list with "DeviceListForProject_20877" name on "Devices" page
+	Then "DeviceListForProject_20877" list is displayed to user
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Projects' left menu item
+	When User clicks 'CREATE PROJECT' button 
+	When User enters 'Project_20877' text to 'Project Name' textbox
+	When User selects 'DeviceListForProject_20877' option from 'Scope' autocomplete
+	Then 'This list may contain archived devices which will not be onboarded' message is displayed for 'Scope' field
+	When User clicks 'CREATE' button
+	Then 'The project has been created' text is displayed on inline success banner
+	When User clicks newly created object link
+	Then Page with 'Project_20877' header is displayed to user
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left submenu item
+	Then 'This list may contain archived devices which will not be onboarded' error message is displayed for 'Scope' dropdown
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks 'Delete' option in cogmenu for 'DeviceList_20877' list
+	When User confirms list removing
+	When User navigates to "Project_20877" project details
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left submenu item
+	Then 'This list has errors' error message is displayed for 'Scope' dropdown
+	When User clicks 'Devices' on the left-hand menu
+	When User navigates to the "DeviceListForProject_20877" list
+	When User clicks the Filters button
+	When User have removed " Device" filter
+	When User sets includes archived devices in 'false'
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
+	When User navigates to "Project_20877" project details
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left submenu item
+	Then 'This is a private list owned by you, others will not be able to onboard into this project' error message is displayed for 'Scope' dropdown
+	When User clicks 'Devices' on the left-hand menu
+	When User navigates to the "DeviceListForProject_20877" list
+	When User clicks the Permissions button
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
+	When User navigates to "Project_20877" project details
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left submenu item
+	Then 'List validated' success message for 'Scope' dropdown
+	When User clicks 'Devices' on the left-hand menu
+	When User navigates to the "DeviceListForProject_20877" list
+	When User sets includes archived devices in 'true'
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
+	When Project created via API and opened
+	| ProjectName       | Scope     | ProjectTemplate | Mode               |
+	| UserProject_20877 | All Users | None            | Standalone Project |
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left submenu item
+	When User navigates to the 'Device Scope' tab on Project Scope Changes page
+	When User selects 'DeviceListForProject_20877' in the 'Device Scope' dropdown
+	Then 'List validated' success message for 'Device Scope' dropdown
