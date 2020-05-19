@@ -13,10 +13,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
     public class BaseDetailsPage : SeleniumBasePage
     {
         private const string RowSelector = ".//tr[@role='row'][not(@hidden)]";
-        private const string TitleSelector = "./td[contains(@class,'column-key')]";
-        private const string ContentSelector = "./td[contains(@class,'column-value')]";
+        private const string TitleSelector = ".//td[contains(@class,'column-key')]";
+        private const string ContentSelector = ".//td[contains(@class,'column-value')]";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='details-keyvalue']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'details-container')]")]
         public IWebElement Table { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
