@@ -16,14 +16,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateUpdateTaskValueT
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	Then Star button is disabled
-	Then Star button has tooltip with 'Some values are missing or not valid' text
+	Then 'star' mat-icon is disabled
+	Then 'star' mat-icon has tooltip with 'Some values are missing or not valid' text
 	When User selects '<ProjectName>' option from 'Project' autocomplete
-	Then Star button is disabled
-	Then Star button has tooltip with 'Some values are missing or not valid' text
+	Then 'star' mat-icon is disabled
+	Then 'star' mat-icon has tooltip with 'Some values are missing or not valid' text
 	When User selects '<Task>' option from 'Task' autocomplete
-	Then Star button is not disabled
-	Then Star button has tooltip with 'Save as Favourite Bulk Update Type' text
+	Then 'star' mat-icon is not disabled
+	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This favourite bulk update will be created with the following parameters:' text is displayed on popup
 	Then following fields are displayed in the popup:
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters '20940_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'Favourite Bulk Update Name should be unique' error message is displayed for 'Favourite Bulk Update Name' field
 
@@ -94,16 +94,16 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpd
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ Dropdown Task' option from 'Task' autocomplete
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters '20950_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters 'TestFBU_20950' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters 'testFBU_209501' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters 'abc_20950' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -113,13 +113,13 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpd
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	Then following items have star icon in the 'Bulk Update Type' dropdown:
+	Then following items have 'star' icon in the 'Bulk Update Type' dropdown:
 	| Items          |
 	| 20950_TestFBU  |
 	| TestFBU_20950  |
 	| testFBU_209501 |
 	| abc_20950      |
-	Then Favourite Bulk Update items are displayed in ascending order
+	Then created items for 'Bulk Update Type' dropdown are displayed in ascending order
 
 @Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateTaskValueType
@@ -139,11 +139,11 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	When User selects 'Stage 1 \ Radiobutton Date App Task' option from 'Relative Task' autocomplete
 	When User enters '5' text to 'Value' textbox
 	When User selects 'weekdays after task value' in the 'DateUnit' dropdown
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User clicks 'CANCEL' button on popup
 	When User selects 'Failed' in the 'Update Value' dropdown
 	When User selects 'weekdays before task value' in the 'DateUnit' dropdown
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	Then following fields are displayed in the popup:
 	| Fields           |
 	| Bulk Update Type |
@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	Then 'weekdays before task value' value is displayed in the 'DateUnit' dropdown
 	Then 'UPDATE' button is not disabled
 	Then 'CANCEL' button is not disabled
-	Then Star button is not disabled
+	Then 'star' mat-icon is not disabled
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDeletedProject
@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects '20950_Project' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ DAS20950_Task' option from 'Task' autocomplete
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters 'DAS20950_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	#Delete Project
@@ -254,7 +254,6 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	Then following Values are not displayed in the 'Bulk Update Type' dropdown:
 	| Options          |
 	| DAS20950_TestFBU |
-	#Add FBU is not displayed in Manage Favourite
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDeletedTask
@@ -312,7 +311,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects '20950_Project' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ DAS20950_Task' option from 'Task' autocomplete
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters 'DAS20950_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	#Delete Task
@@ -335,4 +334,3 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	Then following Values are not displayed in the 'Bulk Update Type' dropdown:
 	| Options          |
 	| DAS20950_TestFBU |
-	#Add FBU is not displayed in Manage Favourite

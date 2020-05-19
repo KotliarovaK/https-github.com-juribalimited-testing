@@ -223,7 +223,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetDropdown(dropdownName).Click();
             var actionElement = _driver.NowAt<ActionsElement>();
-            var fbuList = page.GetFbuInDropdownOptions().Select(x => x.Text).ToList();
+            var fbuList = page.GetCreatedItemsInDropdownOptions().Select(x => x.Text).ToList();
             SortingHelper.IsListSorted(fbuList);
         }
     }

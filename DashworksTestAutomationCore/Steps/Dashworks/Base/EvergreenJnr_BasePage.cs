@@ -25,6 +25,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
+using DashworksTestAutomationCore.DTO.Evergreen;
+using DashworksTestAutomationCore.DTO.RuntimeVariables;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -42,11 +44,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly Teams _teams;
         private readonly Buckets _buckets;
         private readonly SelfServices _selfServices;
-
+        private readonly FavouriteBulkUpdate _favouriteBulkUpdate;
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
             Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,
-            Teams teams, Buckets buckets, SelfServices selfServices)
+            Teams teams, Buckets buckets, SelfServices selfServices, FavouriteBulkUpdate favouriteBulkUpdate)
         {
             _driver = driver;
             _automationActions = automationActions;
@@ -58,6 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _teams = teams;
             _buckets = buckets;
             _selfServices = selfServices;
+            _favouriteBulkUpdate = favouriteBulkUpdate;
         }
 
         #region Page Header/SubHeader
@@ -524,6 +527,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 case "Automation Name":
                     _automations.Value.Add(new AutomationsDto() { name = text });
                     break;
+                case "Favourite Bulk Update Name":
+                    _favouriteBulkUpdate.Value.Add(new FavouriteBulkUpdateDto() { FbuName = text });
+                    break;
                 case "Ring name":
                     //Get project ID if Ring is inside project
                     if (_driver.Url.Contains("/project/"))
@@ -924,8 +930,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
         }
 
-        [Then(@"following items have star icon in the '(.*)' dropdown:")]
-        public void ThenFollowingItemsHaveStarIconInTheDropdown(string dropdown, Table table)
+        [Then(@"following items have '(.*)' icon in the '(.*)' dropdown:")]
+        public void ThenFollowingItemsHaveIconInTheDropdown(string dropdown, string iconName, Table table)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetDropdown(dropdown).Click();
@@ -933,7 +939,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             foreach (var row in table.Rows)
             {
-                page.GetMatIconsOfDropdownOptionsByName(row["Items"]);
+                page.GetMatIconsOfDropdownOptionsByName(row["Items"], iconName);
             }
             page.BodyContainer.Click();
         }
@@ -1638,41 +1644,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             icon.GetIcon(iconTextInDom).Click();
         }
 
-        #endregion
-
-        #region Star button
-
-        [When(@"User clicks Star button")]
-        public void WhenUserClicksStarButton()
+        [When(@"User clicks '(.*)' mat-icon")]
+        public void WhenUserClicksMat_Icon(string matIconName)
         {
-            var button = _driver.NowAt<BaseDashboardPage>();
-            button.StarButton.Click();
+            var icon = _driver.NowAt<BaseDashboardPage>();
+            icon.GetMatIconByClassContent(matIconName).Click();
         }
 
-        [Then(@"Star button is disabled")]
-        public void ThenStarButtonIsDisabled()
+        [Then(@"'(.*)' mat-icon is disabled")]
+        public void ThenMat_IconIsDisabled(string matIconName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.AreEqual(true, Convert.ToBoolean(page.StarButton.GetAttribute("disabled")),
-                $"Star button is enabled");
+            Verify.AreEqual(true, Convert.ToBoolean(page.GetMatIconByClassContent(matIconName).GetAttribute("disabled")),
+                $"{matIconName} mat-icon is enabled");
         }
 
-        [Then(@"Star button is not disabled")]
-        public void ThenStarButtonIsNotDisabled()
+        [Then(@"'(.*)' mat-icon is not disabled")]
+        public void ThenMat_IconIsNotDisabled(string matIconName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.AreEqual(false, Convert.ToBoolean(page.StarButton.GetAttribute("disabled")),
-                $"Star button is disabled");
+            Verify.AreEqual(false, Convert.ToBoolean(page.GetMatIconByClassContent(matIconName).GetAttribute("disabled")),
+                $"{matIconName} mat-icon is disabled");
         }
 
-        [Then(@"Star button has tooltip with '(.*)' text")]
-        public void ThenStarButtonHasTooltipWithText(string text)
+        [Then(@"'(.*)' mat-icon has tooltip with '(.*)' text")]
+        public void ThenMat_IconHasTooltipWithText(string matIconName, string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.MouseHover(page.StarButton);
+            _driver.MouseHover(page.GetMatIconByClassContent(matIconName));
             var toolTipText = _driver.GetTooltipText();
-            Verify.AreEqual(text, toolTipText, "Star button's tooltip is incorrect");
+            Verify.AreEqual(text, toolTipText, $"{matIconName} mat-icon tooltip is incorrect");
         }
+
         #endregion
     }
 }

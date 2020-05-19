@@ -16,18 +16,19 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdat
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	Then Star button is disabled
-	Then Star button has tooltip with 'Some values are missing or not valid' text
+	Then 'star' mat-icon is disabled
+	Then 'star' mat-icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	Then 'CANCEL' button is not disabled
 	When User selects '<Project>' option from 'Project or Evergreen' autocomplete
 	Then 'UPDATE' button is disabled
-	Then Star button is not disabled
-	Then Star button has tooltip with 'Save as Favourite Bulk Update Type' text
+	Then 'star' mat-icon is not disabled
+	Then 'star' mat-icon is not disabled
+	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
 	When User selects '<RingName>' option from 'Ring' autocomplete
 	Then 'UPDATE' button is not disabled
-	Then Star button is not disabled
-	Then Star button has tooltip with 'Save as Favourite Bulk Update Type' text
+	Then 'star' mat-icon is not disabled
+	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
 
 	Examples: 
 	| PageName     | ColumnHeader  | RowName                          | Project              | RingName         |
@@ -50,7 +51,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateRing
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	When User selects 'Owned devices only' in the 'Also Move Devices' dropdown
 	When User selects 'All linked mailboxes' in the 'Also Move Mailboxes' dropdown
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This favourite bulk update will be created with the following parameters:' text is displayed on popup
 	Then following fields are displayed in the popup:
@@ -74,7 +75,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateRing
 	Then 'Favourite bulk update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '21000_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters '21000_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'Favourite Bulk Update Name should be unique' error message is displayed for 'Favourite Bulk Update Name' field
 
@@ -91,7 +92,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	Then following fields are displayed in the popup:
 	| Fields               |
 	| Bulk Update Type     |
@@ -104,22 +105,22 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| Ring                 | Unassigned           |
 	When User enters '21002_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters 'Test21002_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters 'test21002_RingFBU1' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters 'abc_21002_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	Then following items have star icon in the 'Bulk Update Type' dropdown:
+	Then following items have 'star' icon in the 'Bulk Update Type' dropdown:
 	| Items              |
 	| 21002_RingFBU      |
 	| abc_21002_RingFBU  |
 	| Test21002_RingFBU  |
 	| test21002_RingFBU1 |
-	Then Favourite Bulk Update items are displayed in ascending order
+	Then created items for 'Bulk Update Type' dropdown are displayed in ascending order
 
 @Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdateItemsRings
@@ -135,7 +136,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdat
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters '21002_RingFBU1' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	#Check Action panel values
@@ -180,7 +181,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
 	When User selects '21002_RingProject' option from 'Project or Evergreen' autocomplete
 	When User selects '21002_Ring' option from 'Ring' autocomplete
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	When User enters '21002_FBU_Ring' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	#Delete Ring
@@ -206,7 +207,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	Then '21002_RingProject' content is displayed in 'Project or Evergreen' autocomplete
 	Then '[Ring not found]' content is displayed in 'Ring' autocomplete
 	Then 'The selected ring cannot be found' error message is displayed for 'Ring' field
-	When User clicks Star button
+	When User clicks 'star' mat-icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then User compares data in the fields in the popup:
 	| Field | Data             |
