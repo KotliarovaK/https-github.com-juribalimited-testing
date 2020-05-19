@@ -45,7 +45,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-header-menu')]//div[@class='ag-column-select-panel']")]
         public IWebElement ColumnPanelInColumnSettings { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'icon-checkbox')]/ancestor::div[@ref='eSelect']")]
+        //[FindsBy(How = How.XPath, Using = "//span[contains(@class, 'icon-checkbox')]/ancestor::div[@ref='eSelect']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@ref='primaryColsHeaderPanel']//div[@ref='eSelect']")]
         public IWebElement SelectAllCheckboxOnColumnSettingsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-tab']//span[@class='ag-icon ag-icon-filter']")]
