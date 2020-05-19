@@ -342,9 +342,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHe
 	Then following columns added to the table:
 	| ColumnName |
 	| Priority   |
-	When User clicks on 'Readiness' column header
+	When User clicks on 'Priority' column header
 	Then numeric data in table is sorted by 'Priority' column in descending order
-	When User clicks on 'Readiness' column header
+	When User clicks on 'Priority' column header
 	Then numeric data in table is sorted by 'Priority' column in ascending order
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15898
