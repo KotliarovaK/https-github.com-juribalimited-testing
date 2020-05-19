@@ -158,9 +158,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@role='row']/div[@col-id='displayOrder' and @role='gridcell']")]
         public IList<IWebElement> DisplayOrderValues { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
-        public IWebElement DescendingSortingIcon { get; set; }
-
         //TODO should be removed
         #region Messages
 
