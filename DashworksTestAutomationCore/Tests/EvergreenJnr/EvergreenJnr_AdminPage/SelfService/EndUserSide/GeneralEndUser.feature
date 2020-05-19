@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	| AOC Name      | DAS_21191_Proj_1 | Do not allow owner to be changed | DAS_21191_UserStatList_1 |
 	When Projects created by User are removed via API
 	When User navigates to End User landing page with '21191_SI_1' Self Service Identifier
-	Then User sees error message 'The component AOC Name could not be shown, project not found' for 'AOC Name' component
+	Then User sees error message 'The component AOC Name could not be shown, project not found' for 'AOC Name' component on end user page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21191 @Cleanup @SelfService @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponentIfUserScopeListNotFound
@@ -191,7 +191,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	| AOC Name      | DAS_21191_Proj_2 | Allow owner to be removed or set to another user | DAS_21191_UserStatList_2 |
 	Then User remove list with "DAS_21191_UserStatList_2" name on "Users" page
 	When User navigates to End User landing page with '21191_SI_2' Self Service Identifier
-	Then User sees error message 'The component AOC Name could not be shown, user scope list not found' for 'AOC Name' component
+	Then User sees error message 'The component AOC Name could not be shown, user scope list not found' for 'AOC Name' component on end user page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21191 @Cleanup @SelfService @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponentIfUserScopeListIsBroken
@@ -220,7 +220,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	| ComponentName | ProjectName      | OwnerPermission                                  | UserScope                   |
 	| AOC Name      | DAS_21191_Proj_3 | Allow owner to be removed or set to another user | DAS_21191_UserStatList_3_BR |
 	When User navigates to End User landing page with '21191_SI_3' Self Service Identifier
-	Then User sees error message 'The component AOC Name could not be shown, user scope list has errors' for 'AOC Name' component
+	Then User sees error message 'The component AOC Name could not be shown, user scope list has errors' for 'AOC Name' component on end user page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21191 @Cleanup @SelfService @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponentIfApplicationNotOnboarded
@@ -241,7 +241,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	| ComponentName | ProjectName      | OwnerPermission                                  | UserScope                |
 	| AOC Name      | DAS_21191_Proj_4 | Allow owner to be removed or set to another user | DAS_21191_UserStatList_4 |
 	When User navigates to End User landing page with '21191_SI_4' Self Service Identifier
-	Then User sees error message 'The component AOC Name could not be shown, application not onboarded into this project' for 'AOC Name' component
+	Then User sees error message 'The component AOC Name could not be shown, application not onboarded into this project' for 'AOC Name' component on end user page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21191 @Cleanup @SelfService @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponentIfApplicationNotOnboardedAndUserScopeListNotFound
@@ -263,4 +263,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	| AOC Name      | DAS_21191_Proj_5 | Allow owner to be removed or set to another user | DAS_21191_UserStatList_5 |
 	Then User remove list with "DAS_21191_UserStatList_5" name on "Users" page
 	When User navigates to End User landing page with '21191_SI_5' Self Service Identifier
-	Then User sees error message 'The component AOC Name could not be shown, user scope list not found, application not onboarded into this project' for 'AOC Name' component
+	Then User sees error message 'The component AOC Name could not be shown, user scope list not found, application not onboarded into this project' for 'AOC Name' component on end user page

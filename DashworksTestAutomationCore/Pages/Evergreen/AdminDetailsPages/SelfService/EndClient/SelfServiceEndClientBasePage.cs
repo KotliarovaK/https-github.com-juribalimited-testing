@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
         [FindsBy(How = How.XPath, Using = ".//div[@class='ssw-tools']")]
         public IWebElement SelfServiceToolsPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='component-error']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='component-error']")]
         public IWebElement СomponentError { get; set; }
 
         public string GetComponenErrorMessageOnEndUserPage(string componentName)
@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
             }
             catch
             {
-                throw new Exception($"Component with '{componentName}' name was not found");
+                throw new Exception($"Unable to get error message for '{componentName}' component");
             }      
         }
 
