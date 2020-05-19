@@ -388,6 +388,15 @@ namespace DashworksTestAutomation.Helpers
             return ring;
         }
 
+        public static string GetRingIdByProjectName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [RingId] FROM [PM].[dbo].[Rings] WHERE [ProjectId] = '{GetProjectId(name)}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
         #endregion
 
         #region Buckets
