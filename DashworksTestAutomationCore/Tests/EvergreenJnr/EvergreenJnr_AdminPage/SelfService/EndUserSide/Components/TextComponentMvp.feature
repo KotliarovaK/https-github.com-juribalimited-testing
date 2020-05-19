@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21149 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21149 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckWarningPopUpAfterDeletingUserScopeFromAOCAndRedirectingToAnotherPage
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
@@ -112,4 +112,4 @@ Scenario: EvergreenJnr_AdminPage_CheckWarningPopUpAfterDeletingUserScopeFromAOCA
 	And User clicks on item with 'Page' type and 'Welcome' name on Self Service Builder Panel
 	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
 	Then "YES" button is displayed in the warning message
-	Then "NO" button is displayed in the warning message 
+	Then "NO" button is displayed in the warning message
