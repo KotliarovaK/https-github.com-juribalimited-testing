@@ -421,7 +421,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
-            Verify.IsFalse(listPageMenu.AscendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
+            Verify.IsFalse(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"date in table is sorted by '(.*)' column in descending order")]
@@ -442,7 +442,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList);
-            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Date in table for '{columnName}' column in not sorted in ascending order");
+            Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Date in table for '{columnName}' column in not sorted in ascending order");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in ascending order")]
@@ -451,7 +451,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
-            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Numbers in table for '{columnName}' column in not sorted in ascending order");
+            Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Numbers in table for '{columnName}' column in not sorted in ascending order");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in ascending order by default")]
@@ -460,7 +460,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
-            Verify.IsFalse(listPageMenu.AscendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
+            Verify.IsFalse(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in descending order")]
@@ -494,7 +494,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             {
                 SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList));
             }
-            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"color data is sorted by '(.*)' column in descending order")]
@@ -536,7 +536,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList));
 
-            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "Ascending Sorting icon is not displayed");
+            Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), "Ascending Sorting icon is not displayed");
         }
 
         [Then(@"boolean data is sorted by '(.*)' column in descending order")]

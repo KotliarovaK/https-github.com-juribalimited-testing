@@ -161,10 +161,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
         public IWebElement DescendingSortingIcon { get; set; }
 
-        //TODO remove this webElement
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
-        public IWebElement AscendingSortingIcon { get; set; }
-
         //TODO should be removed
         #region Messages
 
