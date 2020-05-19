@@ -135,12 +135,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	#Application onboarding
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
-    When User navigates to the 'Applications' tab on Project Scope Changes page
-    When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
-    | Objects    |
-    | VSCmdShell |
-    When User clicks 'UPDATE ALL CHANGES' button
-    When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Applications' tab on Project Scope Changes page
+	When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+	| Objects    |
+	| VSCmdShell |
+	When User clicks 'UPDATE ALL CHANGES' button
+	When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
 	When User create static list with "DAS_21191_UserStatList_1" name on "Users" page with following items
@@ -168,12 +168,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	#Application onboarding
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
-    When User navigates to the 'Applications' tab on Project Scope Changes page
-    When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
-    | Objects    |
-    | VSCmdShell |
-    When User clicks 'UPDATE ALL CHANGES' button
-    When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Applications' tab on Project Scope Changes page
+	When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+	| Objects    |
+	| VSCmdShell |
+	When User clicks 'UPDATE ALL CHANGES' button
+	When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
 	When User create static list with "DAS_21191_UserStatList_2" name on "Users" page with following items
@@ -201,12 +201,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	#Application onboarding
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
-    When User navigates to the 'Applications' tab on Project Scope Changes page
-    When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
-    | Objects    |
-    | VSCmdShell |
-    When User clicks 'UPDATE ALL CHANGES' button
-    When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Applications' tab on Project Scope Changes page
+	When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+	| Objects    |
+	| VSCmdShell |
+	When User clicks 'UPDATE ALL CHANGES' button
+	When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
 	When User creates broken list with 'DAS_21191_UserStatList_3_BR' name on 'Users' page
