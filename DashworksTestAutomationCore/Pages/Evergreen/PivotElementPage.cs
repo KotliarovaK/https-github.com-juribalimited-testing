@@ -162,8 +162,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetColumnHeaders()
         {
-            var headers = Driver.FindElements(By.XPath($".//div[@class='ag-header-container']/div/div//span[@class='ag-header-group-text']"));
+            var headers =
+                Driver.FindElements(By.XPath($".//div[@class='ag-header-container']//div[@class='ag-header-row'][{GetMainHeadersRowIndex()}]//span[@class='ag-header-group-text']"));
+            //var headers = Driver.FindElements(By.XPath($".//div[@class='ag-header-container']/div/div//span[@class='ag-header-group-text']"));
             return headers.Select(x => x.Text).ToList();
+        }
+
+        public int GetMainHeadersRowIndex()
+        {
+            var headers = Driver.FindElements(By.XPath($".//div[@class='ag-header-container']//div[@class='ag-header-row']")).Count;
+            return headers-1;
         }
 
         public List<string> GetColId()
