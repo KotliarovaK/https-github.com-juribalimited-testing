@@ -71,8 +71,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
 
-#ppd AnnI 4/27/20: GD ready only for 'X_Ray' (need Cleanup?)
-@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196 @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithoutOwnerToWithoutOwner
 	When User navigates to the 'Application' details page for the item with '4018' ID
 	Then Details page for 'Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030' item is displayed to the user

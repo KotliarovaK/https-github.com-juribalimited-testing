@@ -340,7 +340,6 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToNowValueForBulkUpdate
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	When User selects 'days before now' in the 'Units' dropdown
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
