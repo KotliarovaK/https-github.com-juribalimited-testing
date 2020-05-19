@@ -50348,6 +50348,140 @@
     "taskFilter": false
   },
   {
+    "id": "project_task_65_13389_1_Task_Value",
+    "label": "Pr000: Mail testing \\ Mail Notifications",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "Pr000: Mail testing \\ Mail Notifications",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: Pr000",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-Pr000",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/users/filters/options/project_task_65_13389_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Mail Notifications",
+        "name": "project_task_65_13389_1_Task"
+      }
+    ],
+    "tooltip": "Task: Mail Notifications \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: No",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_65_13390_3_Task",
+    "label": "Pr000: Mail testing \\ Override Email Address",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "Pr000: Mail testing \\ Override Email Address",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: Pr000",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-Pr000",
+    "filterType": 0,
+    "type": "textlist",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Contains",
+        "translatedDropdownValue": "Contains",
+        "translatedTextValue": "Contains"
+      },
+      {
+        "key": "Does not contain",
+        "translatedDropdownValue": "Does not contain",
+        "translatedTextValue": "Does not contain"
+      },
+      {
+        "key": "Begins with",
+        "translatedDropdownValue": "Begins with",
+        "translatedTextValue": "Begins with"
+      },
+      {
+        "key": "Does not begin with",
+        "translatedDropdownValue": "Does not begin with",
+        "translatedTextValue": "Does not begin with"
+      },
+      {
+        "key": "Ends with",
+        "translatedDropdownValue": "Ends with",
+        "translatedTextValue": "Ends with"
+      },
+      {
+        "key": "Does not end with",
+        "translatedDropdownValue": "Does not end with",
+        "translatedTextValue": "Does not end with"
+      },
+      {
+        "key": "Empty",
+        "translatedDropdownValue": "Empty",
+        "translatedTextValue": "is empty"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "",
+    "getOptionsMethodParams": null,
+    "displayType": null,
+    "displayOrder": 0,
+    "parameterCount": 0,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Override Email Address",
+        "name": "project_task_65_13390_3_Task"
+      }
+    ],
+    "tooltip": "Task: Override Email Address \n Task Type: Normal \n Value Type: Text \n Readiness: No",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
     "id": "project_task_65_13269_3_Task",
     "label": "Pr000: Planning \\ Send an Email to the owner",
     "translatedShortLabel": null,
@@ -51579,9 +51713,9 @@
   },
   {
     "id": "project_task_49_13212_1_Task_Value",
-    "label": "prK: email \\ Email Notifications Allowed?",
+    "label": "prK: email \\ --Email Notifications Allowed?",
     "translatedShortLabel": null,
-    "translatedTextLabel": "prK: email \\ Email Notifications Allowed?",
+    "translatedTextLabel": "prK: email \\ --Email Notifications Allowed?",
     "customTranslatedTextLabel": null,
     "translatedCategory": "Project Tasks: prK",
     "translatedNoItems": null,
@@ -51616,11 +51750,11 @@
     "hasCorrespondingColumn": true,
     "columns": [
       {
-        "translatedName": "Email Notifications Allowed?",
+        "translatedName": "--Email Notifications Allowed?",
         "name": "project_task_49_13212_1_Task"
       }
     ],
-    "tooltip": "Task: Email Notifications Allowed? \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: No",
+    "tooltip": "Task: --Email Notifications Allowed? \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: No",
     "savedListFilter": false,
     "objectTypeId": 0,
     "taskFilter": true
