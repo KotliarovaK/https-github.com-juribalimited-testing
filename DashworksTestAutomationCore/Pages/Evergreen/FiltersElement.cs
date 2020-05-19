@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FilterValuesSelector = ".//span[contains(@class, 'filter-label-value')]";
 
-        public const string FilterOptionsSelector = ".//span[@class='filter-label-op']";
+        public const string FilterOptionsSelector = ".//span[contains(@class, 'filter-label-op')]";
 
         public const string FilterNameSelector = ".//span[@class='filter-label-name']";
 
