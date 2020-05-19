@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then "Show Original Application Column On Application Dashboards" checkbox is not displayed on the Admin page
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
-	Then 'Mailboxes' tab is opened on Project Scope Changes page
+	Then 'Devices' tab is opened on Project Scope Changes page
 	When User expands multiselect and selects following Objects
 	| Objects         |
 	| 00K4CEEQ737BA4L |

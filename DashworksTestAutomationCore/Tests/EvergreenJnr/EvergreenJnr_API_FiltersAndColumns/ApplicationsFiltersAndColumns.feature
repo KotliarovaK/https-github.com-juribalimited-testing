@@ -4,7 +4,7 @@
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen via API
 
-@Evergreen @Applications @API @FiltersAndColumns
+@Evergreen @Applications @API @FiltersAndColumns @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckAllColumns
 	Then All columns with correct data are returned from the API for 'Applications' list
 

@@ -4,11 +4,11 @@
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen via API
 
-@Evergreen @Users @API @FiltersAndColumns
+@Evergreen @Users @API @FiltersAndColumns Not_Ready
 Scenario: EvergreenJnr_UsersList_CheckAllColumns 
 	Then All columns with correct data are returned from the API for 'Users' list
 
-@Evergreen @Users @API @FiltersAndColumns
+@Evergreen @Users @API @FiltersAndColumns @Not_Ready
 Scenario: EvergreenJnr_UsersList_CheckAllFilters 
 	Then All filters with correct data are returned from the API for 'Users' list
 
