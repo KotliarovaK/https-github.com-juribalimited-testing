@@ -257,7 +257,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User navigates to the 'Readiness' left menu item
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "FALSE" content is displayed for "Ready" column
-	Then "1" content is displayed for "Task Values Count" column
+	Then "13" content is displayed for "Task Values Count" column
 	When User clicks 'Change to ready' option in Cog-menu for 'GREY' item from 'Readiness' column
 	Then 'click here to view the Grey readiness' link is displayed
 	Then 'The readiness has been updated' and ', changes might not take effect immediately' texts are displayed on inline success banner
@@ -266,13 +266,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User clicks 'CANCEL' button 
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "TRUE" content is displayed for "Ready" column
-	Then "1" content is displayed for "Task Values Count" column
+	Then "13" content is displayed for "Task Values Count" column
 	When User clicks 'Change to not ready' option in Cog-menu for 'GREY' item from 'Readiness' column
 	Then 'click here to view the Grey readiness' link is displayed
 	Then 'The readiness has been updated' and ', changes might not take effect immediately' texts are displayed on inline success banner
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "FALSE" content is displayed for "Ready" column
-	Then "1" content is displayed for "Task Values Count" column
+	Then "13" content is displayed for "Task Values Count" column
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks 'CANCEL' button 

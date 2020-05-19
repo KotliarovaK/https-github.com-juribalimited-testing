@@ -46,7 +46,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterL
 Examples: 
 	| ListName     | FilterName                                   | FilterValue            | RowsCount | ColumnName    | ObjectName              | Text                                                        |
 	| Applications | Barry'sUse: Target App                       | Python 2.2a4 (SMS_GEN) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)            |
-	| Mailboxes    | EmailMigra: Migration \ BT/QMM Switch Status | Not Started            | 729       | Email Address | alex.cristea@juriba.com | EmailMigra: Migration \ BT/QMM Switch Status is Not Started |
+	| Mailboxes    | EmailMigra: Migration \ BT/QMM Switch Status | Not Started            | 730       | Email Address | alex.cristea@juriba.com | EmailMigra: Migration \ BT/QMM Switch Status is Not Started |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS13201 @DAS14757 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems

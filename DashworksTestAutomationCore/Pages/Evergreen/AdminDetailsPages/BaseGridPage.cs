@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Base;
@@ -160,6 +161,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
         public IWebElement DescendingSortingIcon { get; set; }
 
+        //TODO remove this webElement
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
         public IWebElement AscendingSortingIcon { get; set; }
 
@@ -779,6 +781,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var allHeaders = GetAllHeaders().Select(x => x.FindElement(By.XPath(AllHeadersTextSelector))).ToList();
             return allHeaders;
+        }
+
+        public bool IsColumnSorted(string columnName, ColumnSortingOrder columnSortingOrder)
+        {
+            var iconSelector =
+                By.XPath($".//span[contains(@class,'ag-header-icon')][contains(@class,'ag-sort-{columnSortingOrder.GetValue()}')][not(contains(@class,'hiden'))]");
+            var header = GetColumnHeaderByName(columnName);
+
+            return Driver.IsElementInElementDisplayed(header, iconSelector, WebDriverExtensions.WaitTime.Short);
+        }
+
+        public enum ColumnSortingOrder
+        {
+            [Description("ascending")]
+            Ascending,
+            [Description("descending")]
+            Descending,
+            [Description("none")]
+            None,
         }
 
         #endregion

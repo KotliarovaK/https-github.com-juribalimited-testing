@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         private const string TitleSelector = "./td[contains(@class,'column-key')]";
         private const string ContentSelector = "./td[contains(@class,'column-value')]";
 
-        [FindsBy(How = How.XPath, Using = ".//table[@aria-label='Elements']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='details-keyvalue']")]
         public IWebElement Table { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

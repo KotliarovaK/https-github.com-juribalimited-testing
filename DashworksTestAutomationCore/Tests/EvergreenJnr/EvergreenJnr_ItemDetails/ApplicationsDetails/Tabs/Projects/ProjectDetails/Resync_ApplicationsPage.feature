@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value         |
 	| App Rationalisation | UNCATEGORISED |
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value          |
 	| App Rationalisation | FORWARD PATH   |
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value         |
 	| App Rationalisation | UNCATEGORISED |
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value |
 	| App Rationalisation | KEEP  |
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value |
 	| App Rationalisation | KEEP  |
@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value  |
 	| App Rationalisation | RETIRE |
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value  |
 	| App Rationalisation | RETIRE |
@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value  |
 	| App Rationalisation | RETIRE |
@@ -242,7 +242,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	Then 'Any apps forward pathed to this app will be set to Uncategorised' text is displayed on inline tip banner
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value  |
 	| App Rationalisation | RETIRE |
@@ -276,7 +276,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value         |
 	| App Rationalisation | UNCATEGORISED |
@@ -300,7 +300,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value         |
 	| App Rationalisation | UNCATEGORISED |
@@ -324,7 +324,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value         |
 	| App Rationalisation | UNCATEGORISED |
@@ -358,7 +358,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	When User clicks 'RESYNC' button
 	When User unchecks 'Resync owner' checkbox
 	When User unchecks 'Resync name' checkbox
-	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title               | Value         |
 	| App Rationalisation | UNCATEGORISED |

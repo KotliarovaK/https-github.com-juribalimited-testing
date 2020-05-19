@@ -1556,3 +1556,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityFilterWorks
 	Then table data is filtered correctly
 	When User creates 'DAS19721_List' dynamic list
 	Then "DAS19721_List" list is displayed to user
+
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS20998
+Scenario: EvergreenJnr_ApplicationsList_CheckThatOwnerFilterInTheApplicationListWorksCorrectly
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When user select "Owner" filter
+	Then There are no errors in the browser console
+	When User select "Does not equal" Operator value
+	Then There are no errors in the browser console
+	When User enters "AU\ACG224403 (Xavier R. Ball)" text in Search field at selected Lookup Filter
+	When User clicks checkbox at selected Lookup Filter
+	When User clicks Save filter button
+	Then table content is present
+	Then There are no errors in the browser console
