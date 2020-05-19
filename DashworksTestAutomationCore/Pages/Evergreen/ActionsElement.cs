@@ -27,9 +27,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD']//ancestor::button")]
         public IWebElement AddButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-option//mat-icon/parent::span/span")]
-        public IList<IWebElement> FavouriteBulkUpdateList { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

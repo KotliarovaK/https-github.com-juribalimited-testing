@@ -121,4 +121,4 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| abc_21002_BucketFBU  |
 	| Test21002_BucketFBU  |
 	| test21002_BucketFBU1 |
-	Then Favourite Bulk Update items are displayed in ascending order
+	Then created items for 'Bulk Update Type' dropdown are displayed in ascending order

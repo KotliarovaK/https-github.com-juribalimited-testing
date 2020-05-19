@@ -933,7 +933,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             foreach (var row in table.Rows)
             {
-                page.GetStarIconsOfDropdownOptionsByName(row["Items"]);
+                page.GetMatIconsOfDropdownOptionsByName(row["Items"]);
             }
             page.BodyContainer.Click();
         }

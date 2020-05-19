@@ -217,13 +217,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             listElement.ListNameTextBox.SendKeys(listName);
         }
 
-        [Then(@"Favourite Bulk Update items are displayed in ascending order")]
-        public void ThenFavouriteBulkUpdateItemsAreDisplayedInAscendingOrder()
+        [Then(@"created items for '(.*)' dropdown are displayed in ascending order")]
+        public void ThenCreatedItemsForDropdownAreDisplayedInAscendingOrder(string dropdownName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetDropdown("Bulk Update Type").Click();
+            page.GetDropdown(dropdownName).Click();
             var actionElement = _driver.NowAt<ActionsElement>();
-            var fbuList = actionElement.FavouriteBulkUpdateList.Select(x => x.Text).ToList();
+            var fbuList = page.GetFbuInDropdownOptions().Select(x => x.Text).ToList();
             SortingHelper.IsListSorted(fbuList);
         }
     }

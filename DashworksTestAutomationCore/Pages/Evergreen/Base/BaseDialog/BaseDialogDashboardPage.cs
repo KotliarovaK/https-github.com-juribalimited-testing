@@ -85,6 +85,7 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
         #endregion
 
         #region Fields
+
         public string CompareFieldContent(string fieldName)
         {
             var allRows = Driver.FindElements(By.XPath(RowSelector));
@@ -100,6 +101,7 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
         }
 
         #endregion
+
         //Currently are using only for Self Service Dialog Page
         public bool IsItemInListOfDialogPageDisplayed(string itemName)
         {

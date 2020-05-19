@@ -940,11 +940,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.IsElementDisplayed(selector);
         }
 
-        public IWebElement GetStarIconsOfDropdownOptionsByName(string value)
+        public IWebElement GetMatIconsOfDropdownOptionsByName(string value) 
         {
             Driver.WaitForElementToBeDisplayed(GetDropdownValueByName(value));
-            var star = GetDropdownValueByName(value).FindElement(By.XPath(".//preceding-sibling::mat-icon[contains(@class, 'favourite-icon')]"));
-            return star;
+            var matItem = GetDropdownValueByName(value).FindElement(By.XPath("/../mat-icon"));
+            return matItem;
+        }
+
+        public IList<IWebElement> GetFbuInDropdownOptions(bool withoutSelected = false)
+        {
+            Driver.WaitForElementsToBeDisplayed(By.XPath(DropdownOptionsSelector(withoutSelected)));
+            return Driver.FindElements(By.XPath(
+                $"{DropdownOptionsSelector(withoutSelected)}/../mat-icon/following-sibling::span"));
         }
 
         public bool IsDropdownOpened(bool withoutSelected = false)
@@ -1425,6 +1432,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetIcon(string iconTextInDom)
         {
             return Driver.FindElement(By.XPath($".//i[@class='material-icons'][text()='{iconTextInDom}']"));
+        }
+
+        public IWebElement GetIconWithoutText(string iconName)
+        {
+            return Driver.FindElement(By.XPath($".//i[contains(@class, 'material-icons') and contains(@class, 'mat-{iconName}')]//ancestor::button"));
         }
 
         #endregion
