@@ -476,8 +476,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedFor
 		| Applications | UserSchedu: Three \ Date App Req A                                             |
 		| Mailboxes    | Created Date                                                                   |
 
-#sz: at moment of test creation thre is a bug and in this case 100 items were returned #DAS20915
-@Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS20917 @Not_Ready
+@Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS20917
 Scenario Outline: EvergreenJnr_UsersList_CheckThatSpecificGroupFiltersWorks
 	When User clicks '<List>' on the left-hand menu
 	When User clicks the Filters button
@@ -485,11 +484,11 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatSpecificGroupFiltersWorks
 	When User select "Equals" Operator value
 	When User enters "<Term>" text in Search field at selected Filter
 	When User clicks 'ADD' button
-	Then message 'No users found' is displayed to the user
+	Then message '<Message>' is displayed to the user
 
 Examples:
-		| List    | Filter               | Term               |
-		| Users   | Mailbox GUID         | abrakadabra        |
-		| Devices | Group Display Name   | ApplicationAccount |
-		| Users   | Mailbox Display Name | ApplicationAccount |
-		| Users   | Exchange Online      | ApplicationAccount |
+		| List    | Filter               | Term                               | Message          |
+		| Users   | Mailbox GUID         | abrakadabra                        | No users found   |
+		| Devices | Group Display Name   | ApplicationAccount                 | No devices found |
+		| Users   | Mailbox Display Name | ApplicationAccount                 | No users found   |
+		| Users   | Mailbox Display Name | Exchange Online-ApplicationAccount | No users found   |

@@ -975,3 +975,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnboardedItemsAreDisplayedInTheGridA
 	| SelectedCheckboxes  |
 	| StaticList_DAS18829 |
 	Then "2" rows are displayed in the agGrid
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS21224
+Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterCantBeAppliedWithoutAssociation
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When user select "Application" filter
+	When User select "Equals" Operator value
+	Then There are no errors in the browser console
+	When User enters ""WPF/E" (codename) Community Technology Preview (Feb 2007)" text in Search field at selected Lookup Filter
+	When User clicks checkbox at selected Lookup Filter
+	Then 'ADD' button is disabled
+	

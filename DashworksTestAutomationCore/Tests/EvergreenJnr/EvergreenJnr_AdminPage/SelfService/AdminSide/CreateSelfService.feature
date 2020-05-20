@@ -356,3 +356,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceS
 	Then 'Self Service Scope' autocomplete contains following options:
 	| Options          |
 	| All Applications |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20759 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceWithUnknownNameCanBeCreated
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	When User clicks 'CREATE SELF SERVICE' button
+	When User enters 'Unknown' text to 'Self Service Name' textbox
+	When User selects 'All Applications' option from 'Self Service Scope' autocomplete
+	When User enters 'testSelfService' text to 'Self Service Identifier' textbox
+	When User clicks 'CREATE' button
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	When User enters "Unknown" text in the Search field for "Self Service Name" column
+	Then 'Unknown' content is displayed in the 'Self Service Name' column

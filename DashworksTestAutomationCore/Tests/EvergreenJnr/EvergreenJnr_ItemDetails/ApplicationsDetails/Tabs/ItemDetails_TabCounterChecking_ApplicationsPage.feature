@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS15345 @DAS16831 @DAS17142 @DAS17524
+	#5/20/20 AnnI: upd ready only for 'Yellow_Dwarf'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS15345 @DAS16831 @DAS17142 @DAS17524 @Yellow_Dwarf
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInEvergreenMode
 	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for 'ABBYY FineReader 8.0 Professional Edition' item is displayed to the user
@@ -41,7 +42,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	#================ checks counters ================#
 	And 'Projects' left submenu item with some count is displayed
 	And 'Evergreen Incoming Apps' left submenu item with some count is displayed
-	And 'Project Incoming Apps' left submenu item with some count is displayed
+	And 'Project Incoming Apps' left submenu item is displayed without count
 	And 'Evergreen Details' left submenu item is displayed without count
 	And 'Project Details' left submenu item is displayed without count
 	#================ checks sub-menu for main MSI tab ================#
@@ -66,8 +67,18 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	And 'Devices' left submenu item with some count is displayed
 	And 'Groups' left submenu item with some count is displayed
 	And 'AD' left submenu item is displayed without count
+	#================ checks sub-menu for main Self Service tab ================#
+	When User navigates to the 'Self Service' left menu item
+	Then 'Self Service' left menu have following submenu items:
+	| SubTabName          |
+	| Self Services       |
+	| Self Service Status |
+	#================ checks counters ================#
+	And 'Self Services' left submenu item with some count is displayed
+	And 'Self Service Status' left submenu item is displayed without count
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16885 @DAS17213 @DAS16831 @DAS17142 @DAS17524
+	#5/20/20 AnnI: upd ready only for 'Yellow_Dwarf'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16885 @DAS17213 @DAS16831 @DAS17142 @DAS17524 @Yellow_Dwarf
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInProjectMode
 	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for 'ABBYY FineReader 8.0 Professional Edition' item is displayed to the user
@@ -115,3 +126,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	#================ checks counters ================#
 	And 'MSI Files' left submenu item is displayed without count
 	And 'AOK' left submenu item is displayed without count
+	#================ checks sub-menu for main Self Service tab ================#
+	When User navigates to the 'Self Service' left menu item
+	Then 'Self Service' left menu have following submenu items:
+	| SubTabName          |
+	| Self Services       |
+	| Self Service Status |
+	#================ checks counters ================#
+	And 'Self Services' left submenu item with some count is displayed
+	And 'Self Service Status' left submenu item is displayed without count
