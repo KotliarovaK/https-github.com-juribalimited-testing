@@ -14,6 +14,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-expand-collapse')]")]
         public IWebElement CollapseExpandAllButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='page-context']")]
+        public IWebElement PagesPanel { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>

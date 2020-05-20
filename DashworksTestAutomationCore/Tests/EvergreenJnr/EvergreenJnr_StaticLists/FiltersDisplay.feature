@@ -32,7 +32,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	When User navigates to the "Static List TestName14" list
 	Then "2" rows are displayed in the agGrid
 	And Filters Button is disabled
-	And Filter button on AGgrid is disabled
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @Evergreen_FiltersFeature @DAS10978 @DAS12034 @DAS12221 @DAS12232 @DAS12351 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList

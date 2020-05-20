@@ -72,6 +72,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             _driver.SwitchTo().Window(_driver.WindowHandles.Last());
         }
 
+        [When(@"User opens Self Service with invalid ID '(.*)'")]
+        public void WhenUserOpensSelfServiceWithInvalidId(string invalidId)
+        {
+            _driver.WaitForDataLoading();
+            var url = $"{UrlProvider.EvergreenUrl}#/admin/selfservice/{invalidId}/details";
+            _driver.Navigate().GoToUrl(url);
+        }
+
         [Then(@"Self Service Details page is displayed correctly")]
         public void ThenSelfServiceDetailsPageIsDisplayedCorrectly()
         {
