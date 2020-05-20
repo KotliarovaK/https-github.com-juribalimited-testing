@@ -370,3 +370,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceWithUnknownNameCanBeCreated
 	When User navigates to the 'Self Services' parent left menu item
 	When User enters "Unknown" text in the Search field for "Self Service Name" column
 	Then 'Unknown' content is displayed in the 'Self Service Name' column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20469 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelfServiceIdIsChangedToAnInvalidOne
+    When User create static list with "DAS_20469_AppList_1" name on "Applications" page with following items
+	| ItemName |
+	|          |
+    When User creates Self Service via API
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope               |
+	| DAS_20469_SS_1 | 20469_1_SI        | true    | true                | DAS_20469_AppList_1 |  
+	When User opens Self Service with invalid ID '2XXXX_1_SI'
+    Then 'This self service does not exist' text is displayed on inline error banner
