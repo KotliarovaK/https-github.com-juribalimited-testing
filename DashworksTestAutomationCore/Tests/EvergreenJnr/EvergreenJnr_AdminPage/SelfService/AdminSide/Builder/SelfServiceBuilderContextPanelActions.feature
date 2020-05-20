@@ -121,14 +121,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReorderingCogMenuOptionsDisplaysProper
 	| Edit           |
 	| Move to top    |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21198 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21149 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckSelfServicePagesPanel
-	When User create static list with "DAS_21198" name on "Applications" page with following items
+	When User create static list with "DAS_21149" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
 	And User creates Self Service via API and open it
 	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
-	| DAS_21198_SS_1 | 21198_1_SI        | true    | true                | DAS_21198 |
+	| DAS_21149_SS_1 | 21149_1_SI        | true    | true                | DAS_21149 |
 	And User navigates to the 'Builder' left menu item
 	Then Pages panel is displayed to the user
 	And Pages Button is highlighted

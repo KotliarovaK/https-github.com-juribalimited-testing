@@ -370,23 +370,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperWarningMessageDisplaysIfAOCScope
 	When User clicks on 'Change Owner' button on end user Self Service page
 	Then 'There are no valid users' error message is displayed under 'Owner' field on Self Service EndUser dialog
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21149 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21198 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckWarningPopUpAfterDeletingUserScopeFromAOCAndRedirectingToAnotherPage
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
-	| DAS_21149_Proj | All Users | None            | Standalone Project |
-	When User create static list with "DAS_21149" name on "Applications" page with following items
+	| DAS_21198_Proj | All Users | None            | Standalone Project |
+	When User create static list with "DAS_21198" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
-	When User create static list with "DAS_21149_scope" name on "Users" page with following items
+	When User create static list with "DAS_21198_scope" name on "Users" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
 	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
-	| DAS_21149_SS_1 | 21149_1_SI        | true    | true                | DAS_21149 |
+	| DAS_21198_SS_1 | 21198_1_SI        | true    | true                | DAS_21198 |
 	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName    | OwnerPermission                            | UserScope       | ShowInSelfService |
-	| AOC Name      | DAS_21149_Proj | Allow owner to be set to another user only | DAS_21149_scope | true              |
+	| AOC Name      | DAS_21198_Proj | Allow owner to be set to another user only | DAS_21198_scope | true              |
 	When User navigates to the 'Builder' left menu item
 	And User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	And User enters '' text to 'Owner Scope' textbox
