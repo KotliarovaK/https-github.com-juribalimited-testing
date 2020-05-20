@@ -104,6 +104,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks the Pages button")]
+        public void WhenUserClicksThePagesButton()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForElementToBeDisplayed(menu.PagesButton);
+            menu.PagesButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
         [Then(@"Create Project button is disabled on the Base Dashboard Page")]
         public void ThenCreateProjectButtonIsDisabledOnTheBaseDashboardPage()
         {
@@ -154,11 +164,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Associations Button is highlighted")]
-        public void ThenAssociationsButtonIsEnabled()
+        public void ThenAssociationsButtonIsHighlighted()
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(menu.AssociationButton);
             Verify.IsTrue(Convert.ToBoolean(menu.AssociationButton.GetAttribute("class").Contains("active")), "Association Button is inactive");
+        }
+
+        [Then(@"Pages Button is highlighted")]
+        public void ThenPagesButtonIsHighlighted()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForElementToBeDisplayed(menu.PagesButton);
+            Verify.IsTrue(Convert.ToBoolean(menu.PagesButton.GetAttribute("class").Contains("active")), "Pages Button is inactive");
+        }
+
+        [Then(@"Pages Button is not highlighted")]
+        public void ThenPagesButtonIsNotHighlighted()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForElementToBeDisplayed(menu.PagesButton);
+            Verify.IsFalse(Convert.ToBoolean(menu.PagesButton.GetAttribute("class").Contains("active")), "Pages Button is inactive");
         }
 
         [Then(@"Filter button on AGgrid is disabled")]
