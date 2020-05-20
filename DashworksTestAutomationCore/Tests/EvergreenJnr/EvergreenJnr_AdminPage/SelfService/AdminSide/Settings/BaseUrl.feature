@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @SelfService_BaseURL @Do_Not_Run_With_SelfService_BaseURL @DAS18941 @DAS19821 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @SelfService_BaseURL @Do_Not_Run_With_SelfService_BaseURL @DAS18941 @DAS19821 @DAS20469 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrl
 	When User sets self service base url as 'https://default.corp.juriba.com'
 	When User clicks 'Admin' on the left-hand menu
