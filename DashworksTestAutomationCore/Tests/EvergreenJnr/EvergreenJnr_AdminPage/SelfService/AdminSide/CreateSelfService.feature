@@ -381,3 +381,53 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelf
 	| DAS_20469_SS_1 | 20469_1_SI        | true    | true                | DAS_20469_AppList_1 |  
 	When User opens Self Service with invalid ID '2XXXX_1_SI'
     Then 'This self service does not exist' text is displayed on inline error banner
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20207 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelfServiceAlreadyExistsWithThisName
+	When User create static list with "DAS_20207_AppList_1" name on "Applications" page with following items
+	| ItemName |
+	|          | 
+	When User create static list with "DAS_20207_AppList_2" name on "Applications" page with following items
+	| ItemName |
+	|          |
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	When User clicks 'CREATE SELF SERVICE' button
+	Then There are no errors in the browser console
+	When User enters 'DAS_20207_SS_1' text to 'Self Service Name' textbox
+	When User creates Self Service via API
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope               |
+	| DAS_20207_SS_1 | 20207_1_SI        | true    | true                | DAS_20207_AppList_1 |
+	When User selects 'DAS_20207_AppList_2' option from 'Self Service Scope' autocomplete
+	When User enters '20207_2_SI' text to 'Self Service Identifier' textbox
+	Then 'Allow anonymous user to use self service' checkbox is disabled
+	Then 'Allow anonymous user to use self service' checkbox is checked
+	Then 'Enable self service portal' checkbox is enabled
+	Then 'Enable self service portal' checkbox is unchecked	
+	When User clicks 'CREATE' button
+	Then 'A self service already exists with this name' text is displayed on inline error banner
+
+	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21197 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelfServiceAlreadyExistsWithThisIdentifier
+	When User create static list with "DAS_21197_AppList_1" name on "Applications" page with following items
+	| ItemName |
+	|          | 
+	When User create static list with "DAS_21197_AppList_2" name on "Applications" page with following items
+	| ItemName |
+	|          |
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	When User clicks 'CREATE SELF SERVICE' button
+	Then There are no errors in the browser console
+	When User enters 'DAS_21197_SS_2' text to 'Self Service Name' textbox
+	When User selects 'DAS_21197_AppList_2' option from 'Self Service Scope' autocomplete
+	When User enters '21197_1_SI' text to 'Self Service Identifier' textbox
+	When User creates Self Service via API
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope               |
+	| DAS_21197_SS_1 | 21197_1_SI        | true    | true                | DAS_21197_AppList_1 |
+	Then 'Allow anonymous user to use self service' checkbox is disabled
+	Then 'Allow anonymous user to use self service' checkbox is checked
+	Then 'Enable self service portal' checkbox is enabled
+	Then 'Enable self service portal' checkbox is unchecked	
+	When User clicks 'CREATE' button
+	Then 'A self service already exists with this identifier' text is displayed on inline error banner
