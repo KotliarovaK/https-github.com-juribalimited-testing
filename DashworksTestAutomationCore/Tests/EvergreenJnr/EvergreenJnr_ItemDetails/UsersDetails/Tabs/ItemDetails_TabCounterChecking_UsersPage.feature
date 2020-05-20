@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415 @DAS15583 @DAS15348 @DAS17141 @DAS16830 @DAS18198
+	#5/20/20 AnnI: upd ready only for 'Yellow_Dwarf'
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415 @DAS15583 @DAS15348 @DAS17141 @DAS16830 @DAS18198 @Yellow_Dwarf
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInEvergreenMode
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item 
 	Then Details page for '0072B088173449E3A93' item is displayed to the user
@@ -70,6 +71,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	And 'Evergreen Owned' left submenu item with some count is displayed
 	And 'Advertisements' left submenu item with some count is displayed
 	And 'Collections' left submenu item with some count is displayed
+	And 'Project Owned' left submenu item is displayed without count
 	#================ checks sub-menu for main Mailboxes tab ================#
 	When User navigates to the 'Mailboxes' left menu item
 	Then 'Mailboxes' left menu have following submenu items:
@@ -156,6 +158,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	#================ checks counters ================#
 	And 'Evergreen Summary' left submenu item with some count is displayed
 	And 'Evergreen Detail' left submenu item with some count is displayed
+	And 'Evergreen Owned' left submenu item with some count is displayed
+	And 'Project Owned' left submenu item with some count is displayed
 	And 'Advertisements' left submenu item with some count is displayed
 	And 'Collections' left submenu item with some count is displayed
 	#================ checks sub-menu for main Mailboxes tab ================#
