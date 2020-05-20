@@ -329,7 +329,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.FilterTypeValues.Select(value => value.Text);
+            //TODO remove this if and Old element
+            var actualList = filterElement.FilterTypeValuesOld.Any() ?
+                filterElement.FilterTypeValuesOld.Select(value => value.Text) :
+                filterElement.FilterTypeValues.Select(value => value.Text);
             Verify.AreEqual(expectedList, actualList, "Filter type values are different");
         }
 
