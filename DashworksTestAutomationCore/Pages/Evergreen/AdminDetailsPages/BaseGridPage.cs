@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input | .//div[@class='ag-column-select-header']//input[contains(@class, 'checkbox-input')]")]
         public IWebElement SelectAllCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@ref='eCellWrapper']//*[contains(@class,'ag-selection-checkbox')]")]
         public IList<IWebElement> Checkboxes { get; set; }
 
         #region Inline Edit. Appears on double click on cell
