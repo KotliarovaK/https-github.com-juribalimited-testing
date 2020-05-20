@@ -407,7 +407,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelf
 	When User clicks 'CREATE' button
 	Then 'A self service already exists with this name' text is displayed on inline error banner
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21197 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21197 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelfServiceAlreadyExistsWithThisIdentifier
 	When User create static list with "DAS_21197_AppList_1" name on "Applications" page with following items
 	| ItemName |
