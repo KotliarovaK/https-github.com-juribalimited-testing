@@ -518,7 +518,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             }
             Driver.WaitForDataLoading();
             IList<IWebElement> elements = new List<IWebElement>();
-            elements = Driver.FindElements(Driver.FindElements(selector).Any() ?
+            elements = Driver.FindElements(Driver.IsElementExists(selector) ?
                 selector : By.XPath(firstPartSelector));
             return elements;
         }
@@ -528,8 +528,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             List<string> result = new List<string>();
             foreach (IWebElement tableElement in GetColumnElementsByColumnName(columnName))
             {
+                Thread.Sleep(110);
                 result.Add(tableElement.Text);
-                Thread.Sleep(100);
             }
             //return GetColumnElementsByColumnName(columnName).Select(x => x.Text).ToList();
             return result;
