@@ -73,10 +73,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         }
 
         [When(@"User opens Self Service with invalid ID '(.*)'")]
-        public void WhenUserOpensSelfServiceWithInvalidId(string sSIvalidId)
+        public void WhenUserOpensSelfServiceWithInvalidId(string invalidId)
         {
             _driver.WaitForDataLoading();
-            var url = $"{UrlProvider.EvergreenUrl}#/admin/selfservice/{sSIvalidId}/details";
+            var url = $"{UrlProvider.EvergreenUrl}#/admin/selfservice/{invalidId}/details";
             _driver.Navigate().GoToUrl(url);
         }
 
