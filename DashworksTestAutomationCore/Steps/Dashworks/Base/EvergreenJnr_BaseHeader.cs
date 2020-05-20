@@ -138,7 +138,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(menu.AssociationButton);
-            Verify.IsTrue(menu.AssociationButton.IsElementActive(), "Association Button is inactive");
+            Verify.IsTrue(menu.AssociationButton.IsElementActive(), "Association Button is not highlighted");
         }
 
         [Then(@"Pages Button is highlighted")]
@@ -146,7 +146,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(menu.PagesButton);
-            Verify.IsTrue(menu.PagesButton.IsElementActive(), "Pages Button is highlighted");
+            Verify.IsTrue(menu.PagesButton.IsElementActive(), "Pages Button is not highlighted");
         }
 
         [Then(@"Pages Button is not highlighted")]
@@ -154,7 +154,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(menu.PagesButton);
-            Verify.IsFalse(menu.PagesButton.IsElementActive(), "Pages Button is not highlighted");
+            Verify.IsFalse(menu.PagesButton.IsElementActive(), "Pages Button is highlighted");
         }
 
         [Then(@"List details button is disabled")]
