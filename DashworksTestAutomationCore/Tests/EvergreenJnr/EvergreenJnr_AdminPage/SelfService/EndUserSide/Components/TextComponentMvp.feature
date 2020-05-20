@@ -88,28 +88,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21149 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_CheckWarningPopUpAfterDeletingUserScopeFromAOCAndRedirectingToAnotherPage
-	When Project created via API and opened
-	| ProjectName    | Scope     | ProjectTemplate | Mode               |
-	| DAS_21149_Proj | All Users | None            | Standalone Project |
-	When User create static list with "DAS_21149" name on "Applications" page with following items
-	| ItemName   |
-	| VSCmdShell |
-	When User create static list with "DAS_21149_scope" name on "Users" page with following items
-	| ItemName |
-	|          |
-	When User creates Self Service via API and open it
-	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
-	| DAS_21149_SS_1 | 21149_1_SI        | true    | true                | DAS_21149 |
-	When User creates new application ownership component for 'Welcome' Self Service page via API
-	| ComponentName | ProjectName    | OwnerPermission                            | UserScope       | ShowInSelfService |
-	| AOC Name      | DAS_21149_Proj | Allow owner to be set to another user only | DAS_21149_scope | true              |
-	When User navigates to the 'Builder' left menu item
-	And User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
-	And User enters '' text to 'Owner Scope' textbox
-	And User clicks on item with 'Page' type and 'Welcome' name on Self Service Builder Panel
-	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
-	Then "YES" button is displayed in the warning message
-	Then "NO" button is displayed in the warning message
