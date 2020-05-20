@@ -1,4 +1,4 @@
-﻿Feature: CerateSelfServicePageViaApi
+﻿Feature: CreateSelfServicePageViaApi
 	Self Service
 
 Background: Pre-Conditions
