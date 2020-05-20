@@ -37017,6 +37017,294 @@
     "taskFilter": false
   },
   {
+    "id": "project_task_63_13399_1_Task_Value",
+    "label": "2004: Self Service \\ App List Completed",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ App List Completed",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13399_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "App List Completed",
+        "name": "project_task_63_13399_1_Task"
+      }
+    ],
+    "tooltip": "Task: App List Completed \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_63_13400_1_Task_Value",
+    "label": "2004: Self Service \\ App List Enabled",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ App List Enabled",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13400_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "App List Enabled",
+        "name": "project_task_63_13400_1_Task"
+      }
+    ],
+    "tooltip": "Task: App List Enabled \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_63_13401_1_Task_Value",
+    "label": "2004: Self Service \\ Comp Ownership Completed",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Comp Ownership Completed",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13401_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Comp Ownership Completed",
+        "name": "project_task_63_13401_1_Task"
+      }
+    ],
+    "tooltip": "Task: Comp Ownership Completed \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_63_13402_1_Task_Value",
+    "label": "2004: Self Service \\ Comp Ownership Enabled",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Comp Ownership Enabled",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13402_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Comp Ownership Enabled",
+        "name": "project_task_63_13402_1_Task"
+      }
+    ],
+    "tooltip": "Task: Comp Ownership Enabled \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_63_13403_1_Task_Value",
+    "label": "2004: Self Service \\ Department&Location Completed",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Department&Location Completed",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13403_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Department&Location Completed",
+        "name": "project_task_63_13403_1_Task"
+      }
+    ],
+    "tooltip": "Task: Department&Location Completed \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_63_13404_1_Task_Value",
+    "label": "2004: Self Service \\ Department&Location Enabled",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Department&Location Enabled",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13404_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Department&Location Enabled",
+        "name": "project_task_63_13404_1_Task"
+      }
+    ],
+    "tooltip": "Task: Department&Location Enabled \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
     "id": "project_task_63_13275_1_Task_Value",
     "label": "2004: Pre-Migration \\ Device Priority",
     "translatedShortLabel": null,
@@ -37600,6 +37888,294 @@
     "taskFilter": true
   },
   {
+    "id": "project_task_63_13406_1_Task_Value",
+    "label": "2004: Self Service \\ Other Options 1 Completed",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Other Options 1 Completed",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13406_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Other Options 1 Completed",
+        "name": "project_task_63_13406_1_Task"
+      }
+    ],
+    "tooltip": "Task: Other Options 1 Completed \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_63_13407_1_Task_Value",
+    "label": "2004: Self Service \\ Other Options 1 Enabled",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Other Options 1 Enabled",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13407_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Other Options 1 Enabled",
+        "name": "project_task_63_13407_1_Task"
+      }
+    ],
+    "tooltip": "Task: Other Options 1 Enabled \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_63_13408_1_Task_Value",
+    "label": "2004: Self Service \\ Other Options 2 Completed",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Other Options 2 Completed",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13408_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Other Options 2 Completed",
+        "name": "project_task_63_13408_1_Task"
+      }
+    ],
+    "tooltip": "Task: Other Options 2 Completed \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_63_13409_1_Task_Value",
+    "label": "2004: Self Service \\ Other Options 2 Enabled",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Other Options 2 Enabled",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13409_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Other Options 2 Enabled",
+        "name": "project_task_63_13409_1_Task"
+      }
+    ],
+    "tooltip": "Task: Other Options 2 Enabled \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_63_13410_1_Task_Value",
+    "label": "2004: Self Service \\ Project Date Completed",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Project Date Completed",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13410_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Project Date Completed",
+        "name": "project_task_63_13410_1_Task"
+      }
+    ],
+    "tooltip": "Task: Project Date Completed \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
+    "id": "project_task_63_13411_1_Task_Value",
+    "label": "2004: Self Service \\ Project Date Enabled",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Project Date Enabled",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13411_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Project Date Enabled",
+        "name": "project_task_63_13411_1_Task"
+      }
+    ],
+    "tooltip": "Task: Project Date Enabled \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: No",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
     "id": "project_task_63_13266_1_Task_Value",
     "label": "2004: Pre-Migration \\ Ready to Migrate",
     "translatedShortLabel": null,
@@ -37812,6 +38388,54 @@
     "taskFilter": false
   },
   {
+    "id": "project_task_63_13405_1_Task_Value",
+    "label": "2004: Self Service \\ Self Service Enabled",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service \\ Self Service Enabled",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Tasks: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectTasks-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_task_63_13405_1_task_value",
+    "getOptionsMethodParams": [
+      "GetTaskValuesByLanguageJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 0,
+    "parameterCount": 2,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Self Service Enabled",
+        "name": "project_task_63_13405_1_Task"
+      }
+    ],
+    "tooltip": "Task: Self Service Enabled \n Task Type: Normal \n Value Type: Radiobutton \n Readiness: Yes",
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": true
+  },
+  {
     "id": "project_stage_63_383_stageValueId",
     "label": "2004: Pre-Migration",
     "translatedShortLabel": null,
@@ -37910,6 +38534,59 @@
       {
         "translatedName": "Migration",
         "name": "project_stage_63_385_stageValue"
+      }
+    ],
+    "tooltip": null,
+    "savedListFilter": false,
+    "objectTypeId": 0,
+    "taskFilter": false
+  },
+  {
+    "id": "project_stage_63_441_stageValueId",
+    "label": "2004: Self Service",
+    "translatedShortLabel": null,
+    "translatedTextLabel": "2004: Self Service",
+    "customTranslatedTextLabel": null,
+    "translatedCategory": "Project Stages: 2004",
+    "translatedNoItems": null,
+    "category": "ProjectStage-2004",
+    "filterType": 7,
+    "type": "multiselect",
+    "operators": [
+      {
+        "key": "Equals",
+        "translatedDropdownValue": "Equals",
+        "translatedTextValue": "is"
+      },
+      {
+        "key": "Does not equal",
+        "translatedDropdownValue": "Does not equal",
+        "translatedTextValue": "is not"
+      },
+      {
+        "key": "Not empty",
+        "translatedDropdownValue": "Not empty",
+        "translatedTextValue": "is not empty"
+      }
+    ],
+    "options": [],
+    "addEmptyValue": true,
+    "optionsUrl": "/devices/filters/options/project_stage_63_441_stagevalueid",
+    "getOptionsMethodParams": [
+      "GetProjectReadinessListJsonListItems"
+    ],
+    "displayType": "Readiness",
+    "displayOrder": 6,
+    "parameterCount": 1,
+    "getAssociationsMethodParams": null,
+    "associations": null,
+    "associationDisplayType": "None",
+    "translatedAssociationName": null,
+    "hasCorrespondingColumn": true,
+    "columns": [
+      {
+        "translatedName": "Self Service",
+        "name": "project_stage_63_441_stageValue"
       }
     ],
     "tooltip": null,

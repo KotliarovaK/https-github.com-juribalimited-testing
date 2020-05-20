@@ -13,8 +13,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
     {
         public const string FilterCheckboxValuesSelector = ".//mat-option[contains(@class, 'mat-option-multiple')]";
 
-        public const string FilterTypeOnTheColumnPanel = ".//div[@class='ag-filter']//select[not(contains(@class,'hidden'))]//option";
-
         [FindsBy(How = How.XPath,
             Using = ".//mat-option[@class='selectAllOption mat-option mat-option-multiple ng-star-inserted']")]
         public IWebElement AllCheckboxesSelectedStringFilter { get; set; }
@@ -30,10 +28,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Using = ".//button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter']//select[not(contains(@class,'hidden'))]")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='ag-filter']//*[@ref='eOptions1']")]
         public IWebElement FilterTypeDropdownOnTheColumnPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = FilterTypeOnTheColumnPanel)]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter']//select[not(contains(@class,'hidden'))]//option")]
+        public IList<IWebElement> FilterTypeValuesOld { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-theme-dashworks ag-popup')]//div[contains(@class,'ag-list-item')]/span")]
         public IList<IWebElement> FilterTypeValues { get; set; }
 
         [FindsBy(How = How.XPath, Using = FilterCheckboxValuesSelector)]
@@ -45,7 +46,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-header-menu')]//div[@class='ag-column-select-panel']")]
         public IWebElement ColumnPanelInColumnSettings { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'icon-checkbox')]/ancestor::div[@ref='eSelect']")]
+        //[FindsBy(How = How.XPath, Using = "//span[contains(@class, 'icon-checkbox')]/ancestor::div[@ref='eSelect']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@ref='primaryColsHeaderPanel']//div[@ref='eSelect']")]
         public IWebElement SelectAllCheckboxOnColumnSettingsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-tab']//span[@class='ag-icon ag-icon-filter']")]

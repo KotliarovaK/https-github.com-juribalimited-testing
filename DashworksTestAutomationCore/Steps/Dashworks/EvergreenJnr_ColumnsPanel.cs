@@ -172,7 +172,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var currentUrl = _driver.Url;
             var sorting = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(sorting.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
+            Verify.IsTrue(sorting.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), "Ascending icon is not displayed");
             Verify.Contains("%20asc", currentUrl, columnName);
         }
 

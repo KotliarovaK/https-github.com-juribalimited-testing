@@ -166,12 +166,12 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	And User selects '2004 Rollout' option from 'Project' autocomplete
 	And User selects 'Pre-Migration \ Scheduled Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters '6 Nov 2018' text to 'Date' datepicker
-	And User clicks datepicker icon 
+	And User enters '6 Nov 2020' text to 'Date' datepicker
+	And User clicks datepicker icon
 	And User selects '6' day in the Datepicker
 	#Added wait as we need some time fo datepicker to be updated
 	And User waits for '3' seconds
-	And User clicks datepicker icon 
+	And User clicks datepicker icon
 	Then '5' day is displayed green in the Datepicker
 	And Datepicker has tooltip with '8' rows for '5' day
 	When User selects '5' day in the Datepicker

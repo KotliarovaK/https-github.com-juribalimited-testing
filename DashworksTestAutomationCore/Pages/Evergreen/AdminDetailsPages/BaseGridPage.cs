@@ -39,7 +39,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement AgMenu { get; set; }
 
         //TODO probably can be changed to something more generic
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input | .//mat-option//div[contains(@class, 'checkbox')]//input")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input | .//div[@class='ag-column-select-header']//input[contains(@class, 'checkbox-input')]")]
         public IWebElement SelectAllCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
@@ -157,13 +157,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@role='row']/div[@col-id='displayOrder' and @role='gridcell']")]
         public IList<IWebElement> DisplayOrderValues { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
-        public IWebElement DescendingSortingIcon { get; set; }
-
-        //TODO remove this webElement
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
-        public IWebElement AscendingSortingIcon { get; set; }
 
         //TODO should be removed
         #region Messages
@@ -525,7 +518,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             }
             Driver.WaitForDataLoading();
             IList<IWebElement> elements = new List<IWebElement>();
-            elements = Driver.FindElements(Driver.FindElements(selector).Any() ?
+            elements = Driver.FindElements(Driver.IsElementExists(selector) ?
                 selector : By.XPath(firstPartSelector));
             return elements;
         }
@@ -535,8 +528,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             List<string> result = new List<string>();
             foreach (IWebElement tableElement in GetColumnElementsByColumnName(columnName))
             {
+                Thread.Sleep(110);
                 result.Add(tableElement.Text);
-                Thread.Sleep(100);
             }
             //return GetColumnElementsByColumnName(columnName).Select(x => x.Text).ToList();
             return result;

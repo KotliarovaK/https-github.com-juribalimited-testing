@@ -133,17 +133,17 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	| Update relative to a different task value |
 	| Remove                                    |
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
-	Then 'days before current value' content is displayed in 'Units' dropdown
+	Then 'days after current value' content is displayed in 'Units' dropdown
 	When User enters '999999' text to 'Value' textbox
 	Then '999999' content is displayed in 'Value' textbox
 	When User enters '-5' text to 'Value' textbox
 	Then '-5' content is displayed in 'Value' textbox
 	Then following Values are displayed in the 'Units' dropdown:
 	| Options                       |
-	| days before current value     |
 	| days after current value      |
-	| weekdays before current value |
+	| days before current value     |
 	| weekdays after current value  |
+	| weekdays before current value |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @DAS19274
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties
@@ -166,12 +166,12 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	When User selects 'days before now' in the 'Units' dropdown
 	Then following Values are displayed in the 'Units' dropdown:
 	| Options             |
-	| days before now     |
 	| days after now      |
-	| weekdays before now |
+	| days before now     |
 	| weekdays after now  |
-	| hours before now    |
+	| weekdays before now |
 	| hours after now     |
+	| hours before now    |
 	When User selects 'weekdays before now' in the 'Units' dropdown
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274
