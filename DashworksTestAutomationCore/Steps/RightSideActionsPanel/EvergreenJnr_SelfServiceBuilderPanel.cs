@@ -107,6 +107,20 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             action.GetButton("MOVE").Click();
         }
 
+        [Then(@"Pages panel is displayed to the user")]
+        public void ThenPagesPanelIsDisplayedToTheUser()
+        {
+            var filterElement = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            Verify.IsTrue(filterElement.PagesPanel.Displayed(), "Pages panel was not displayed");
+        }
+
+        [Then(@"Pages panel is not displayed to the user")]
+        public void ThenPagesPanelIsNotDisplayedToTheUser()
+        {
+            var filterElement = _driver.NowAtWithoutWait<SelfServiceBuilderContextPanel>();
+            Verify.IsFalse(filterElement.PagesPanel.Displayed(), "Pages panel was displayed");
+        }
+
         [Then(@"User sees item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
         public void ThenUserSeesItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {

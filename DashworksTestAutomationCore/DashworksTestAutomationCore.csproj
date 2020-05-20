@@ -93,10 +93,10 @@
       <DependentUpon>ProjectsPart27.feature</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\CerateSelfServicePageViaApi.feature.cs">
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\CreateSelfServicePageViaApi.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>CerateSelfServicePageViaApi.feature</DependentUpon>
+      <DependentUpon>CreateSelfServicePageViaApi.feature</DependentUpon>
     </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\DisabledBecauseOfMVP\Builder\CreatePageViaBuilder.feature.cs">
       <DesignTime>True</DesignTime>
@@ -266,9 +266,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectsPart27.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\CerateSelfServicePageViaApi.feature">
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\CreateSelfServicePageViaApi.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CerateSelfServicePageViaApi.feature.cs</LastGenOutput>
+      <LastGenOutput>CreateSelfServicePageViaApi.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\DisabledBecauseOfMVP\Builder\CreatePageViaBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

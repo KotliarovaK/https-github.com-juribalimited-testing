@@ -48,6 +48,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'fltrBtn')]")]
         public IWebElement FilterButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i[text()='insert_drive_file']/ancestor::button")]
+        public IWebElement PagesButton { get; set; }
+
         #endregion
 
         public override List<By> GetPageIdentitySelectors()
