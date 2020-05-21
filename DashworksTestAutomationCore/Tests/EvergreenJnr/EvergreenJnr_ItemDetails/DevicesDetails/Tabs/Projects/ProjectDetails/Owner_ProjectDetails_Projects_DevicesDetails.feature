@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatEmptyOwnerFieldOnProjectDetailsTabI
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @Yellow_Dwarf
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRadioButtonForRemovingOwnerIsWorkingCorrectly
 	#with owner
-	When User navigates to the 'Devices' details page for the item with '1' ID
+	When User navigates to the 'Device' details page for the item with '1' ID
 	Then Details page for '00BDM1JUR8IF419' item is displayed to the user
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
@@ -249,9 +249,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRadioButtonForRemovingOwnerIsWork
 	Then '' content is displayed in 'User' autocomplete
 	Then 'UPDATE' button is not disabled on popup
 	Then 'Retain the existing owner as a user of this device' checkbox is enabled
-	Then "Retain the existing owner as a user of this device" checkbox is checked
 	#without owner
-	When User navigates to the 'Devices' details page for the item with '16720' ID
+	When User navigates to the 'Device' details page for the item with '16720' ID
 	Then Details page for 'XYQHP376EA8FVM' item is displayed to the user
 	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
@@ -264,7 +263,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRadioButtonForRemovingOwnerIsWork
 	#AnnI 5/20/20: This functionality ready only for 'Yellow_Dwarf'
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @Yellow_Dwarf @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnDevicesDetailsPage
-	When User navigates to the 'Devices' details page for the item with '13414' ID
+	When User navigates to the 'Device' details page for the item with '13414' ID
 	Then Details page for 'NHGXHWZV66RDOW' item is displayed to the user
 	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
@@ -275,10 +274,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnDev
 	| Device Owner | Randi P. Evans |
 	When User clicks on edit button for 'Device Owner' field
 	When User checks 'Remove owner' radio button
-	Then "Retain the existing owner as a user of this device" checkbox is checked
-	Then 'UPDATE' button is disabled on popup
+	When User clicks 'UPDATE' button on popup
 	Then 'Device Owner will be removed' text is displayed on inline tip banner
-	Then 'UPDATE' button is disabled on popup
+	When User clicks 'UPDATE' button on popup
 	Then 'Device Owner successfully removed' text is displayed on inline success banner
 	Then following content is displayed on the Details Page
 	| Title        | Value |
@@ -287,12 +285,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnDev
 	When User enters "HET299182" text in the Search field for "User" column
 	Then "HET299182" content is displayed for "User" column
 	Then "FALSE" content is displayed for "Owner" column
-		#S2
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button
 	When User clicks 'RESYNC' button on popup
 	When User clicks 'RESYNC' button on popup
+		#S2
 	Then following content is displayed on the Details Page
 	| Title        | Value          |
 	| Device Owner | Randi P. Evans |
@@ -308,3 +306,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnDev
 	| Device Owner |       |
 	When User navigates to the 'Users' left menu item
 	Then 'No users found for this device' message is displayed on empty greed
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'RESYNC' button
+	When User clicks 'RESYNC' button on popup
+	When User clicks 'RESYNC' button on popup
