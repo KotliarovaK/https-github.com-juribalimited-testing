@@ -91,6 +91,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTwoValidationsMessagesAreNotDisplayed
 	When User clicks on 'Hostname' column header
 	When User create dynamic list with "DAS21238_list" name on "Devices" page
 	Then "DAS21238_list" list is displayed to user
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User clicks 'CREATE AUTOMATION' button
+	When User enters 'DAS21238_Automation' text to 'Automation Name' textbox
+	When User enters 'DAS21238' text to 'Description' textbox
+	When User selects 'DAS21238_list' option from 'Scope' autocomplete
+	When User selects 'Manual' in the 'Run' dropdown
+	When User clicks 'CREATE' button
+	When User clicks 'Devices' on the left-hand menu
+	When User navigates to the "DAS21238_list" list
 	When User clicks the Filters button
 	When User clicks Add New button on the Filter panel
 	When User add "Windows7Mi: Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service (Owner)" filter where type is "Equals" with added column and Lookup option
@@ -100,14 +112,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTwoValidationsMessagesAreNotDisplayed
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	Then Page with 'Automations' header is displayed to user
-	When User clicks 'CREATE AUTOMATION' button 
-	Then 'Create Automation' page subheader is displayed to user
-	When User enters 'DAS21238_Automation' text to 'Automation Name' textbox
-	When User enters 'DAS21238' text to 'Description' textbox
+	When User enters "DAS21238_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then 'This list uses, or refers to a list that uses, a value of "Me" which is not valid as an automation scope' error message is displayed for 'Scope' field
+	When User selects '(broken) Missing Column' option from 'Scope' autocomplete
+	Then 'This list has errors' error message is displayed for 'Scope' dropdown
 	When User selects 'DAS21238_list' option from 'Scope' autocomplete
-	Then 'This list uses, or refers to a list that uses, a value of 'Me' or 'My Team' which is not valid as a project scope, this must be updated before proceeding' text is displayed on inline tip banner
-	When User selects 'DAS21238_list' option from 'Scope' autocomplete
+	Then 'This list uses, or refers to a list that uses, a value of "Me" which is not valid as an automation scope' error message is displayed for 'Scope' field
+	When User selects 'All Devices' option from 'Scope' autocomplete
+	Then No error message is displayed for 'Scope' field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20759 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationWithUnknownNameCanBeCreated
