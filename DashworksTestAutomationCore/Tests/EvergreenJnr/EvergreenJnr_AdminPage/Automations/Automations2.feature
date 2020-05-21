@@ -108,3 +108,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTwoValidationsMessagesAreNotDisplayed
 	When User selects 'DAS21238_list' option from 'Scope' autocomplete
 	Then 'This list uses, or refers to a list that uses, a value of 'Me' or 'My Team' which is not valid as a project scope, this must be updated before proceeding' text is displayed on inline tip banner
 	When User selects 'DAS21238_list' option from 'Scope' autocomplete
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20759 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatAutomationWithUnknownNameCanBeCreated
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Automations' left menu item
+	When User clicks 'CREATE AUTOMATION' button 
+	When User enters 'Unknown' text to 'Automation Name' textbox
+	When User enters 'test_20759' text to 'Description' textbox
+	When User selects 'All Devices' option from 'Scope' autocomplete
+	When User selects 'Manual' in the 'Run' dropdown
+	When User clicks 'CREATE' button
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Automations' left menu item
+	When User enters "Unknown" text in the Search field for "Automation" column
+	Then 'Unknown' content is displayed in the 'Automation' column
