@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
             //Wait for option to be applied
             Thread.Sleep(400);
-            page.BodyContainer.Click();
+            _driver.ClickByJavascript(page.BodyContainer);
         }
 
         [Then(@"following Group By values ​​are displayed for User on menu panel")]
@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             Verify.AreEqual(expectedList, actualList, "Group By values are not displayed correctly");
 
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
         }
     }
 }

@@ -183,7 +183,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 
             //Click on BodyContainer to avoid click interception because of cogMenu overlap
             var page = _driver.NowAt<BasePage>();
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
         }
 
         #endregion
