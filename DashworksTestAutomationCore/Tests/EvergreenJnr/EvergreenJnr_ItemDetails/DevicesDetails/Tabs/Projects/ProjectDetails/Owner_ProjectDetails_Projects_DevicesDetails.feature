@@ -289,7 +289,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnDev
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button
 	When User clicks 'RESYNC' button on popup
-	When User clicks 'RESYNC' button on popup
 		#S2
 	Then following content is displayed on the Details Page
 	| Title        | Value          |
@@ -297,9 +296,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnDev
 	When User clicks on edit button for 'Device Owner' field
 	When User checks 'Remove owner' radio button
 	When User unchecks 'Retain the existing owner as a user of this device' checkbox
-	Then 'UPDATE' button is disabled on popup
+	When User clicks 'UPDATE' button on popup
 	Then 'Device Owner will be removed' text is displayed on inline tip banner
-	Then 'UPDATE' button is disabled on popup
+	When User clicks 'UPDATE' button on popup
 	Then 'Device Owner successfully removed' text is displayed on inline success banner
 	Then following content is displayed on the Details Page
 	| Title        | Value |
@@ -309,5 +308,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnDev
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button
-	When User clicks 'RESYNC' button on popup
 	When User clicks 'RESYNC' button on popup
