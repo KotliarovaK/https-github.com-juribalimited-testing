@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void WhenUserClicksCog_MenuForItemInTheColumnAndSeesFollowingCogMenuOptions(string columnContent, string column, Table options)
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.ClickByJavascript(cogMenu.BodyContainer);
+            _driver.ClickByActions(cogMenu.BodyContainer);
             var cogMenuElement = cogMenu.GetCogMenuByItem(column, columnContent);
             _driver.MouseHover(cogMenuElement);
             cogMenu.GetCogMenuByItem(column, columnContent).Click();
@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             //Close cog-menu if it is still opened from previous step
             if (cogMenu.CogMenuItems.Any(x => x.Displayed()))
             {
-                _driver.ClickByJavascript(cogMenu.BodyContainer);
+                _driver.ClickByActions(cogMenu.BodyContainer);
             }
             var cogMenuElement = cogMenu.GetCogMenuByItem(column, columnContent);
             _driver.MouseHover(cogMenuElement);
@@ -74,7 +74,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             //Close cog-menu if it is still opened from previous step
             if (cogMenu.CogMenuItems.Any(x => x.Displayed()))
             {
-                _driver.ClickByJavascript(cogMenu.BodyContainer);
+                _driver.ClickByActions(cogMenu.BodyContainer);
             }
 
             var leftPanel = _driver.NowAt<CustomListElement>();
@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void WhenUserClicksCogMenuForListAndSeesFollowingCogMenuOptions(string listName, Table options)
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.ClickByJavascript(cogMenu.BodyContainer);
+            _driver.ClickByActions(cogMenu.BodyContainer);
 
             var leftPanel = _driver.NowAt<CustomListElement>();
             var itemCogMenu = leftPanel.GetSettingsIconForList(listName);
@@ -108,7 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void WhenUserMovesItemFromColumnToThePosition(string columnContent, string column, string position)
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.ClickByJavascript(cogMenu.BodyContainer);
+            _driver.ClickByActions(cogMenu.BodyContainer);
             _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
             cogMenu.GetCogMenuByItem(column, columnContent).Click();
             _driver.WaitForDataLoading();
