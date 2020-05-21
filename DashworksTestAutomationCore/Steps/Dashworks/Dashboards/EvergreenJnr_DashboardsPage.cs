@@ -321,7 +321,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreEqual(tooltip, toolTipText, "Tooltip text is not correctly");
 
             var body = _driver.NowAt<BaseGridPage>();
-            _driver.ClickByJavascript(body.BodyContainer);
+            _driver.ClickByActions(body.BodyContainer);
         }
 
         [Then(@"User sees following items for expanded menu:")]

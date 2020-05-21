@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingStringValuesAreContainedInTheFilterDropdownForTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
-             _driver.ClickByJavascript(page.BodyContainer);
+             _driver.ClickByActions(page.BodyContainer);
             page.OpenColumnFilter(columnName);
 
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
@@ -64,7 +64,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Verify.Contains(row["Values"], actualList, $"{row["Values"]} String values are not contained in the filter!");
             }
 
-             _driver.ClickByJavascript(page.BodyContainer);
+             _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"All text is not displayed for ""(.*)"" column in the String Filter")]
@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksFollowingCheckboxesFromColumnSettingsPanelForTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
-             _driver.ClickByJavascript(page.BodyContainer);
+             _driver.ClickByActions(page.BodyContainer);
             page.OpenColumnSettings(columnName);
 
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
@@ -91,19 +91,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 menu.GetColumnCheckbox(row["checkboxes"]).Click();
             }
-             _driver.ClickByJavascript(page.BodyContainer);
+             _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"'(.*)' checkbox is checked in the filter dropdown for the '(.*)' column")]
         public void ThenCheckboxIsCheckedInTheFilterDropdownForTheColumn(string checkboxName, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-             _driver.ClickByJavascript(page.BodyContainer);
+             _driver.ClickByActions(page.BodyContainer);
             page.OpenColumnFilter(columnName);
 
             Verify.IsTrue(page.GetCheckedFilterByCheckboxName(checkboxName).Displayed(), $"{checkboxName} Checkbox is not selected");
 
-             _driver.ClickByJavascript(page.BodyContainer);
+             _driver.ClickByActions(page.BodyContainer);
         }
 
         #endregion
@@ -251,7 +251,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksStringFilterButtonForColumn(string columnName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            _driver.ClickByJavascript(filterElement.BodyContainer);
+            _driver.ClickByActions(filterElement.BodyContainer);
             filterElement.OpenColumnFilter(columnName);
         }
 
@@ -260,7 +260,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClosesCheckboxFilter()
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            _driver.ClickByJavascript(filterElement.BodyContainer);
+            _driver.ClickByActions(filterElement.BodyContainer);
         }
 
         [Then(@"Dropdown List is displayed correctly in the Filter on the Details Page")]
@@ -348,7 +348,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 menu.DateToValue.SendKeys(row["DateTo"]);
             }
             var body = _driver.NowAt<BaseGridPage>();
-            _driver.ClickByJavascript(body.BodyContainer);
+            _driver.ClickByActions(body.BodyContainer);
         }
 
         [When(@"User select criteria with following date:")]
@@ -438,7 +438,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Thread.Sleep(500);
             page.FilterSearchTextBox.ClearWithHomeButton(_driver);
-             _driver.ClickByJavascript(page.BodyContainer);
+             _driver.ClickByActions(page.BodyContainer);
         }
 
         [When(@"User select ""(.*)"" checkbox on the Column Settings panel")]

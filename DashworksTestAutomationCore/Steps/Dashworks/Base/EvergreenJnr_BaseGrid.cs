@@ -962,7 +962,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             //TODO remove this click
-            _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             page.OpenColumnFilter(columnName);
 
             var bpage = _driver.NowAt<BaseDashboardPage>();
@@ -971,14 +971,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 bpage.SetMatOptionCheckboxState(checkbox, state, page.ColumnFilterDropdownOverlay);
             }
 
-            _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"following checkboxes are displayed in the filter dropdown menu for the '(.*)' column:")]
         public void ThenFollowingSCheckboxesAreDisplayedInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             page.OpenColumnFilter(columnName);
 
             var bpage = _driver.NowAt<BaseDashboardPage>();
@@ -987,7 +987,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 Verify.IsTrue(bpage.IsMatOptionCheckboxDisplayed(cb), $"'{cb}' is not displayed in the filter for '{columnName}' column");
             }
 
-            _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         #endregion

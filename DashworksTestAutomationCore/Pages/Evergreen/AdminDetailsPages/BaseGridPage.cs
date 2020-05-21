@@ -215,11 +215,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetSearchFieldTextByColumnName(string columnName)
         {
-            var selector =
-                By.XPath(
-                    $"{ActionElementSelector(columnName)}//input");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            var actionElementSelector = By.XPath(ActionElementSelector(columnName));
+            Driver.WaitForElementToBeDisplayed(actionElementSelector);
+
+            var actionElement = Driver.FindElement(actionElementSelector);
+            Driver.WaitForElementInElementToBeDisplayed(actionElement, By.XPath(".//input"));
+
+            var input = actionElement.FindElement(By.XPath(".//input"));
+
+            return input;
         }
 
         public void PopulateSearchFieldByColumnName(string columnName, string text)

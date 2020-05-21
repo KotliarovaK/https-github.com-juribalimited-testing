@@ -217,7 +217,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.AutocompleteSelectCheckboxes(placeholder, checkbox, true, true);
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [When(@"User unchecks '(.*)' option after search from '(.*)' autocomplete")]
@@ -225,7 +225,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.AutocompleteSelectCheckboxes(placeholder, checkbox, false, true);
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [When(@"User clears '(.*)' autocomplete")]
@@ -265,7 +265,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var options = page.GetAllAutocompleteOptions(placeholder);
             Verify.AreEqual(option, options.First(),
                 $"'{option}' option should be first in the '{placeholder}' autocomplete");
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"'(.*)' autocomplete last option is '(.*)'")]
@@ -300,7 +300,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 textbox.Clear();
                 textbox.SendKeys(value);
                 Verify.IsFalse(page.IsAutocompleteCheckboxDisplayed(value), $"'{value}' checkbox is displayed, but should not");
-                 _driver.ClickByJavascript(page.BodyContainer);
+                _driver.ClickByActions(page.BodyContainer);
             }
         }
 
@@ -315,7 +315,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 textbox.Clear();
                 textbox.SendKeys(value);
                 Verify.IsTrue(page.IsAutocompleteCheckboxDisplayed(value), $"'{value}' checkbox is missed");
-                 _driver.ClickByJavascript(page.BodyContainer);
+                _driver.ClickByActions(page.BodyContainer);
             }
         }
 
@@ -338,7 +338,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     $"Options in the '{field}' autocomplete are not in alphabetical order");
             }
 
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"only below options are displayed in the '(.*)' autocomplete")]
@@ -360,7 +360,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.That(actualOptions,
                 Is.SupersetOf(table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
                 "Some options are missing!");
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' autocomplete")]
@@ -390,7 +390,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 actualOptions,
                 $"Incorrect values are present in the '{placeholder}' autocomplete after search by '{searchText}' text");
 
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"only options having search term '(.*)' are displayed in '(.*)' autocomplete")]
@@ -404,7 +404,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.That(actualOptions.All(x => x.Contains(searchText)), Is.True,
                 $"Incorrect values are present in the '{placeholder}' autocomplete after search by '{searchText}' text");
 
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"only below options are selected in the '(.*)' autocomplete")]
@@ -437,8 +437,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var text = page.GetTextbox(placeholder).GetAttribute("value");
-            Verify.That(expectedText.Equals(text), Is.EqualTo(expectedCondition),
-                $"Incorrect text in the '{placeholder}' autocomplete/textbox");
+            Verify.AreEqual(expectedText, text, $"Incorrect text in the '{placeholder}' autocomplete/textbox");
         }
 
         [Then(@"All items in the '(.*)' autocomplete have icons")]
@@ -448,7 +447,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetTextbox(dropdown).Click();
 
             Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"All icon items in the '(.*)' autocomplete have any of tooltip")]
@@ -459,7 +458,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             page.GetTextbox(dropdown).Click();
             VerifyTooltipOfDropdownIcons(page, expectedTooltips);
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"'(.*)' icon displayed for '(.*)' option from '(.*)' autocomplete")]
@@ -491,7 +490,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.WaitForDataLoading();
             Verify.IsFalse(_driver.IsElementDisplayed(page.AutocompletePagination), $"X of Y items label is displayed for {autocompelte}");
 
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         #endregion
@@ -560,7 +559,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var textbox = page.GetTextbox(placeholder);
             textbox.ClearWithBackspaces();
             textbox.SendKeys(text);
-            _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             _driver.WaitForDataLoading();
         }
 
@@ -571,7 +570,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var textbox = page.GetTextbox(placeholder);
             textbox.Clear();
             textbox.SendKeys(dayOfWeek.GetNextWeekday().ToString("dd MMM yyyy"));
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [When(@"User enters random number between '(.*)' and '(.*)' to '(.*)' textbox")]
@@ -582,7 +581,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var textbox = page.GetTextbox(placeholder);
             _driver.ClearByJavascript(textbox);
             textbox.SendKeys(number);
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [When(@"User adds '(.*)' value from '(.*)' textbox")]
@@ -636,7 +635,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenNoErrorMessageIsDisplayedForField(string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
 
             Verify.That(page.IsTextboxDisplayedWithError(placeholder), Is.False, $"Error message was displayed for '{placeholder}' textbox");
         }
@@ -645,7 +644,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenMessageIsDisplayedForField(string message, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
 
             Verify.AreEqual(message, page.GetTextboxErrorMessage(placeholder),
                 $"Incorrect message is displayed in the '{placeholder}' field");
@@ -715,7 +714,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var button = page.GetTextboxAddButton(fieldName);
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             _driver.MouseHover(button);
             var toolTipText = _driver.GetTooltipText();
             Verify.AreEqual(text, toolTipText, $"Incorrect tooltip for Add button in the {fieldName} textbox");
@@ -883,7 +882,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropDownName).Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.GetDropdownValues();
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             Verify.AreEqual(expectedList, actualList, $"Value for '{dropDownName}' are different");
         }
 
@@ -894,7 +893,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetDropdown(dropDownName).Click();
             List<string> actualOptions = page.GetDropdownValues();
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             Verify.That(actualOptions,
                 Is.SupersetOf(options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
                 "Some options are missing!");
@@ -921,7 +920,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropdown).Click();
 
             Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"All icon items in the '(.*)' dropdown have any of tooltip")]
@@ -932,7 +931,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             page.GetDropdown(dropdown).Click();
             VerifyTooltipOfDropdownIcons(page, expectedTooltips);
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"'(.*)' option is first in the '(.*)' dropdown")]
@@ -941,7 +940,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetDropdown(dropDownName).Click();
             List<string> actualOptions = page.GetDropdownValues();
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             Verify.AreEqual(option, actualOptions.First(),
                 $"First option in the '{dropDownName}' dropdown should be '{option}'");
         }
@@ -952,7 +951,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetDropdown(dropDownName).Click();
             List<string> actualOptions = page.GetDropdownValues(true);
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
 
             if (!actualOptions.Any())
             {
@@ -1021,7 +1020,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdownForField(fieldName).Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.GetDropdownValues();
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             Verify.AreEqual(expectedList, actualList, $"Value in the dropdown for the '{fieldName}' field are different");
         }
 
@@ -1047,7 +1046,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             datepicker.SendKeys(OpenQA.Selenium.Keys.Delete);
             datepicker.SendKeys(text);
 
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         #endregion
@@ -1304,7 +1303,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.ClickButton(buttonName);
             Verify.IsTrue(page.IsMenuButtonDisplayed(menuButtonName),
                 $"'{menuButtonName}' menu button is not displayed for '{buttonName}' button");
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         #endregion
@@ -1585,7 +1584,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var selectedCount = page.GetAllOptionsFromMenuPanel().Select(x => x.Value).Count(x => x.Equals(true));
             Verify.AreEqual(expectedCount, selectedCount,
                 $"Incorrect number of checked values in the '{buttonAriaLabel}' menu");
-             _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         #endregion
