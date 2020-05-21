@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterByName(filterName);
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
         }
 
         //TODO: AnnI 3/25/20 Can we replace with WhenUserChecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step?
@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterWithItemListByName(filterName);
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
         }
 
         [Then(@"'(.*)' text is displayed in the filter dropdown for the '(.*)' column")]
@@ -225,7 +225,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsAllRowsOnTheGrid()
         {
             var checkbox = _driver.NowAt<BaseGridPage>();
-            checkbox.BodyContainer.Click();
+            _driver.ClickByJavascript(checkbox.BodyContainer);
             checkbox.SelectAllCheckBox.Click();
         }
 
@@ -992,7 +992,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksStringFilterButtonForColumnOnTheAdminPage(string columnName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            filterElement.BodyContainer.Click();
+            _driver.ClickByJavascript(filterElement.BodyContainer);
             filterElement.OpenColumnFilter(columnName);
         }
 
@@ -1013,7 +1013,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             list.Remove("Select All"); //Remove 'Select All' checkbox that can be present on some filters (ALWAYS IN THE TOP)
             list.Remove("Evergreen"); //Remove 'Evergreen' checkbox that can be present on some filters (ALWAYS IN THE TOP)
 
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
             Verify.AreEqual(list.OrderBy(s => s, StringComparer.OrdinalIgnoreCase), list, $"Values in '{columnName}'column are not in alphabetical order");
         }
 

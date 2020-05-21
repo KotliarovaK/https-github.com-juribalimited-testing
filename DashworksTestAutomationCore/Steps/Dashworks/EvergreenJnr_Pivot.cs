@@ -308,7 +308,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var actualList = pivot.AggregateOptionsOnPivotPanel.Select(value => value.Text).ToList();
             Verify.AreEqual(expectedList, actualList, "Aggregate function in drop-down are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
         }
 
         [Then(@"""(.*)"" is displayed in the columns for aggregate functions")]

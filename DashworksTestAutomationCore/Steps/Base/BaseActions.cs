@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Base
         public void WhenUserClicksBodyContainer()
         {
             var page = _driver.NowAt<BasePage>();
-            page.BodyContainer.Click();
+            _driver.ClickByJavascript(page.BodyContainer);
         }
 
         [When(@"User navigates to '(.*)' url via address line")]

@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogCreateEditPageD
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' value is displayed in the 'In Catalog' dropdown
 	Then 'CREATE' button is disabled
-	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
 	When User selects 'TRUE' in the 'In Catalog' dropdown
 	When User selects 'UNKNOWN' in the 'Sticky Compliance' dropdown
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown

@@ -39,7 +39,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetDropdown(dropDownName).Click();
             List<string> actualOptions = page.GetDropdownValues(true);
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
 
             if (!actualOptions.Any())
             {

@@ -510,7 +510,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
                     return webElement;
                 }
                 //Waiting till tooltip disappears 
-                BodyContainer.Click();
+                Driver.ClickByJavascript(BodyContainer);
                 Thread.Sleep(2000);
             }
 

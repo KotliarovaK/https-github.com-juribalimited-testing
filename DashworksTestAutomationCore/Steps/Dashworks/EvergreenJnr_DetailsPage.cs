@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingStringValuesAreContainedInTheFilterDropdownForTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
             page.OpenColumnFilter(columnName);
 
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
@@ -64,7 +64,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Verify.Contains(row["Values"], actualList, $"{row["Values"]} String values are not contained in the filter!");
             }
 
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
         }
 
         [Then(@"All text is not displayed for ""(.*)"" column in the String Filter")]
@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksFollowingCheckboxesFromColumnSettingsPanelForTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
             page.OpenColumnSettings(columnName);
 
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
@@ -91,19 +91,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 menu.GetColumnCheckbox(row["checkboxes"]).Click();
             }
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
         }
 
         [Then(@"'(.*)' checkbox is checked in the filter dropdown for the '(.*)' column")]
         public void ThenCheckboxIsCheckedInTheFilterDropdownForTheColumn(string checkboxName, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
             page.OpenColumnFilter(columnName);
 
             Verify.IsTrue(page.GetCheckedFilterByCheckboxName(checkboxName).Displayed(), $"{checkboxName} Checkbox is not selected");
 
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
         }
 
         #endregion
@@ -251,15 +251,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksStringFilterButtonForColumn(string columnName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            filterElement.BodyContainer.Click();
+            _driver.ClickByJavascript(filterElement.BodyContainer);
             filterElement.OpenColumnFilter(columnName);
         }
 
+        //TODO replace by step that just click body container
         [When(@"User closes Checkbox filter")]
         public void WhenUserClosesCheckboxFilter()
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            filterElement.BodyContainer.Click();
+            _driver.ClickByJavascript(filterElement.BodyContainer);
         }
 
         [Then(@"Dropdown List is displayed correctly in the Filter on the Details Page")]
@@ -276,7 +277,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Verify.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
             }
 
-            filterElement.BodyContainer.Click();
+            _driver.ClickByJavascript(filterElement.BodyContainer);
         }
 
         [When(@"User selects ""(.*)"" text from key value grid on the Details Page")]
@@ -347,7 +348,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 menu.DateToValue.SendKeys(row["DateTo"]);
             }
             var body = _driver.NowAt<BaseGridPage>();
-            body.BodyContainer.Click();
+            _driver.ClickByJavascript(body.BodyContainer);
         }
 
         [When(@"User select criteria with following date:")]
@@ -437,7 +438,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Thread.Sleep(500);
             page.FilterSearchTextBox.ClearWithHomeButton(_driver);
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
         }
 
         [When(@"User select ""(.*)"" checkbox on the Column Settings panel")]
