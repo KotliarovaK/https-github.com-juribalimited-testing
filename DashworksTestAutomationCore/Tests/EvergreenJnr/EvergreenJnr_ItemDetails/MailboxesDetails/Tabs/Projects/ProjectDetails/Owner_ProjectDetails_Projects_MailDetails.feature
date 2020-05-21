@@ -24,7 +24,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatTheRadioButtonForRemovingOwnerIsWo
 	Then '' content is displayed in 'User' autocomplete
 	Then 'UPDATE' button is not disabled on popup
 	Then 'Retain the existing owner as a user of this mailbox' checkbox is enabled
-	Then "Retain the existing owner as a user of this mailbox" checkbox is checked
 	#without owner
 	When User navigates to the 'Mailbox' details page for the item with '40152' ID
 	Then Details page for 'alex.cristea@juriba.com' item is displayed to the user
@@ -50,7 +49,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnM
 	| Mailbox Owner | Abdulle, Ismail |
 	When User clicks on edit button for 'Mailbox Owner' field
 	When User checks 'Remove owner' radio button
-	Then "Retain the existing owner as a user of this mailbox" checkbox is checked
 	When User clicks 'UPDATE' button on popup
 	Then 'Mailbox Owner will be removed' text is displayed on inline tip banner
 	When User clicks 'UPDATE' button on popup
@@ -66,7 +64,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnM
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button
-	When User clicks 'RESYNC' button on popup
 	When User clicks 'RESYNC' button on popup
 		#S2
 	Then following content is displayed on the Details Page
@@ -89,5 +86,4 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnM
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button
-	When User clicks 'RESYNC' button on popup
 	When User clicks 'RESYNC' button on popup
