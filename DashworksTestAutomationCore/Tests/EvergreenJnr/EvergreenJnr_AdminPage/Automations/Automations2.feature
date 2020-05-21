@@ -116,11 +116,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTwoValidationsMessagesAreNotDisplayed
 	When User clicks content from "Automation" column
 	Then 'This list uses, or refers to a list that uses, a value of "Me" which is not valid as an automation scope' error message is displayed for 'Scope' field
 	When User selects '(broken) Missing Column' option from 'Scope' autocomplete
-	Then 'This list has errors' error message is displayed for 'Scope' dropdown
+	Then 'This list has errors' error message is displayed for 'Scope' field
 	When User selects 'DAS21238_list' option from 'Scope' autocomplete
 	Then 'This list uses, or refers to a list that uses, a value of "Me" which is not valid as an automation scope' error message is displayed for 'Scope' field
 	When User selects 'All Devices' option from 'Scope' autocomplete
-	Then No error message is displayed for 'Scope' field
+	Then 'List validated' success message for 'Scope' field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20759 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationWithUnknownNameCanBeCreated

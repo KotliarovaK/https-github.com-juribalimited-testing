@@ -135,7 +135,6 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdat
 	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
-
 	When User clicks 'star' mat-icon
 	When User enters '21002_RingFBU1' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
@@ -150,7 +149,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdat
 	When User selects '21002_RingFBU1' in the 'Bulk Update Type' dropdown
 	Then '19083_Project' content is displayed in 'Project or Evergreen' autocomplete
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @DAS21253 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRing
 	When Project created via API and opened
 	| ProjectName       | Scope       | ProjectTemplate | Mode               |
@@ -205,8 +204,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects '21002_FBU_Ring' in the 'Bulk Update Type' dropdown
 	Then '21002_RingProject' content is displayed in 'Project or Evergreen' autocomplete
-	Then '[Ring not found]' content is displayed in 'Ring' autocomplete
-	Then 'The selected ring cannot be found' error message is displayed for 'Ring' field
+	Then '' content is displayed in 'Ring' autocomplete
 	When User clicks 'star' mat-icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then User compares data in the fields in the popup:

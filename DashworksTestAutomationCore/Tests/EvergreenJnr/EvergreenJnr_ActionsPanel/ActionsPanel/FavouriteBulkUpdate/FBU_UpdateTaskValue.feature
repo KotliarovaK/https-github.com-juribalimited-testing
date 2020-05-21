@@ -255,7 +255,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	| Options          |
 	| DAS20950_TestFBU |
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @DAS21253 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDeletedTask
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -276,21 +276,20 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	When User clicks "Create Task" button
 	When User creates Task
 	| Name          | Help     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| DAS20950_Task | DAS20950 | Stage_DAS17691   | Normal         | Radiobutton     | Computer         |                          | false              |
+	| DAS20950_Task | DAS20950 | Stage_DAS20950   | Normal         | Radiobutton     | Computer         |                          | false              |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
 	When User clicks "Create Task" button
 	When User creates Task
-	| Name          | Help     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
-	| DAS20951_Task | DAS20951 | Stage_DAS17691   | Normal         | Radiobutton     | Computer         | false                    |
+	| Name          | Help     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| DAS20951_Task | DAS20951 | Stage_DAS20950   | Normal         | Radiobutton     | Computer         |                          | false              |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
-	When User navigates to "ProjectForDAS18025" project details
+	When User navigates to "20950_Project" project details
 	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	When User expands multiselect and selects following Objects
@@ -306,11 +305,11 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00K4CEEQ737BA4L  |
+	| 00KLL9S8NRF0X6   |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects '20950_Project' option from 'Project' autocomplete
-	When User selects 'Stage 1 \ DAS20950_Task' option from 'Task' autocomplete
+	When User selects 'Stage_DAS20950 \ DAS20950_Task' option from 'Task' autocomplete
 	When User clicks 'star' mat-icon
 	When User enters 'DAS20950_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
@@ -330,10 +329,10 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	Then following Values are not displayed in the 'Bulk Update Type' dropdown:
-	| Options          |
-	| DAS20950_TestFBU |
+	When User selects 'DAS20950_TestFBU' in the 'Bulk Update Type' dropdown
+	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
+	Then '' content is displayed in 'Project' autocomplete
+	Then 'Task' autocomplete is not displayed
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21249 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckTaskDropdownAfterRestoringFbuAndCreatingNew
