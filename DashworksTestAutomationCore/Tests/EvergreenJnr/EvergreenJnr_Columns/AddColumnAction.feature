@@ -563,3 +563,24 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridDisplaysDataAfterAddingEver
 	| ColumnName |
 	| In Catalog |
 	Then table content is present
+
+@Evergreen @Applications @EvergreenJnr_Columns @DAS20759 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValueDisplayedCorrectlyForAddedCustomColumn
+	When User creates new Custom Field via API
+	| FieldName         | FieldLabel  | AllowExternalUpdate | Enabled | Computer | Application |
+	| CustomField_20759 | Label_20759 | true                | true    | true     | true        |
+	When User navigates to the 'Device' details page for '00BDM1JUR8IF419' item
+	Then Details page for '00BDM1JUR8IF419' item is displayed to the user
+	When User navigates to the 'Custom Fields' left submenu item
+	And User clicks 'ADD CUSTOM FIELD' button 
+	When User selects 'Label_20759' option from 'Custom Field' autocomplete
+	When User enters 'Unknown' text to 'Value' textbox
+	When User clicks 'ADD' button on popup
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName  |
+	| Label_20759 |
+	When User clicks on 'Label_20759' column header
+	When User clicks on 'Label_20759' column header
+	Then 'Unknown' content is displayed in the 'Label_20759' column
