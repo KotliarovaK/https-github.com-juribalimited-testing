@@ -215,7 +215,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Verify.IsTrue(_driver.IsElementExists(innerColour), "Colour item is not found");
             }
             var page = _driver.NowAt<BaseGridPage>();
-            page.BodyContainer.Click();
+             _driver.ClickByJavascript(page.BodyContainer);
         }
 
         [Then(@"Color Scheme dropdown displayed with '(.*)' placeholder")]

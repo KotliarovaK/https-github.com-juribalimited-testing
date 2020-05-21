@@ -53,7 +53,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
                 Driver.FindElement(byControl).Click();
                 Driver.FindElement(byControl).Clear();
                 Driver.FindElement(byControl).SendKeys(value);
-                BodyContainer.Click();
+                Driver.ClickByJavascript(BodyContainer);
             }
         }
 

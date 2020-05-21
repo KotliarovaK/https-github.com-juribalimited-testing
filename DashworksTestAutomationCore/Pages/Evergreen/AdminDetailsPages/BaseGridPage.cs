@@ -249,7 +249,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var input = GetDatepickerByColumnName(columnName);
             input.Clear();
             input.SendKeys(text);
-            BodyContainer.Click();
+            Driver.ClickByJavascript(BodyContainer);
         }
 
         #endregion
