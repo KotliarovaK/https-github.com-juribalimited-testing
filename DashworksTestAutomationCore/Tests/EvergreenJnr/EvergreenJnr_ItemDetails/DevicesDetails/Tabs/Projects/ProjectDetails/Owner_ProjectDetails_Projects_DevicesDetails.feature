@@ -221,33 +221,3 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnDev
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button
 	When User clicks 'RESYNC' button on popup
-
-	#AnnI 5/21/20: This functionality ready only for 'Yellow_Dwarf'
-	#AnnI 2/21/20: need to add 'Cleanup' for Owner field;
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20257 @DAS21091 @Cleanup @Yellow_Dwarf
-Scenario: EvergreenJnr_DevicesList_CheckThatTheRedBannerMessageIsDisplayedAndTheKeyValueTableIsReloadedOnTheObjectProjectDetailsTabAfterLosingPermissionsToEditTheObjectEhileEditing
-	When User clicks the Logout button
-	When User is logged in to the Evergreen as
-	| Username           | Password |
-	| TestAnalysisEditor | qa111111 |
-	Then Evergreen Dashboards page should be displayed to the user
-	When User navigates to the 'Device' details page for the item with '8504' ID
-	Then Details page for '02X387UDGZJPQY' item is displayed to the user
-	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
-	When User navigates to the 'Projects' left menu item
-	When User navigates to the 'Project Details' left submenu item
-	Then following content is displayed on the Details Page
-	| Title        | Value            |
-	| Device Owner | Wendi Z. Schultz |
-	When User clicks on edit button for 'Device Owner' field
-	When User enters '111' in the 'User' autocomplete field and selects 'BCLABS\065A1846F11140798A8 (88763) - Siddu, Arjun' value
-	When User clicks 'UPDATE' button on popup
-	Then 'Device Owner will be changed to Siddu, Arjun' text is displayed on inline tip banner
-	When User navigates to 'evergreen/#/device/8504/projects/project?$projectId=56' URL in a new tab
-	When User clicks on edit button for 'Evergreen Bucket' field
-	When User selects 'Manchester' option from 'Move Bucket' autocomplete
-	When User clicks 'MOVE' button on popup
-	When User clicks 'MOVE' button on popup
-	When User switches to previous tab
-	When User clicks 'UPDATE' button on popup
-	Then 'You no longer has the permission to edit this User' text is displayed on inline error banner
