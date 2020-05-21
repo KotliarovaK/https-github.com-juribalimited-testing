@@ -721,3 +721,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEvergrinRingBasedListCanBeUsedInW
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS20973_Widget' Widget is displayed to the user
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20996 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckCorrectTableWidgetCreatedBasedOnProjectRings
+	When Dashboard with 'Dashboard_20996' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title         | List         | SplitBy    | AggregateFunction | AggregateBy | OrderBy        |
+	| Table      | Widget_209961 | 2004 Rollout | 2004: Ring | Count distinct    | Device Key  | 2004: Ring ASC |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	When User clicks 'CREATE' button 
+	Then 'Widget_209961' Widget is displayed to the user
+	Then There are no errors in the browser console

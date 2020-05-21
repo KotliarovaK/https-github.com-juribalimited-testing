@@ -350,3 +350,48 @@ Scenario: EvergreenJnr_DashboardsPage_CheckLongDescriptionCanBeHiddenAndShown
 	When User clicks 'See full description' link in description for 'SectionName' section
 	Then User sees 'Description Long Text Description Long Text Description Long Text Description Long Text Description Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long' description for 'SectionName' section
 	When User clicks 'Hide full description' link in description for 'SectionName' section
+
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS21111 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckSectionsDisplayingAfterWidgetReordering
+	When Dashboard with 'Dashboard_21111' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 1_Widget | All Devices | 5       | 5          |
+	Then '1_Widget' Widget is displayed to the user
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 2_Widget | All Devices | 5       | 5          |
+	Then '2_Widget' Widget is displayed to the user
+	When User clicks 'ADD SECTION' button
+	When User clicks ADD WIDGET button for '2' Section on Dashboards page
+	When User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 3_Widget | All Devices | 5       | 5          |
+	Then '3_Widget' Widget is displayed to the user
+	When User clicks 'Duplicate' menu option for '2_Widget' widget
+	When User clicks 'Move to section' menu option for '2_Widget2' widget
+	When User selects '2' in the 'Select Section' dropdown
+	When User clicks 'MOVE' button
+	When User clicks refresh button in the browser
+	Then User sees '1_Widget' widget placed in '1' section
+	Then User sees '2_Widget' widget placed in '1' section
+	Then User sees '3_Widget' widget placed in '2' section
+	Then User sees '2_Widget2' widget placed in '2' section
+
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS21109 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckNoConsoleErrorDisplayedAfterDuplicatingSectionAndWidget
+	When Dashboard with 'Dashboard for DAS21109' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 1_Widget | All Devices | 5       | 5          |
+	Then '1_Widget' Widget is displayed to the user
+	When User remembers number of Sections and Widgets on Dashboards page
+	When User clicks 'Duplicate' menu option for '1_Widget' widget
+	When User clicks 'Duplicate' menu option for section with '1_Widget' widget
+	Then There are no errors in the browser console
+	Then User sees number of Sections increased by '1' on Dashboards page	
