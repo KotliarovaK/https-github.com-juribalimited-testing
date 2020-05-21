@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Providers;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -32,6 +33,7 @@ namespace DashworksTestAutomation.Utils
             //A exception with a null response was thrown sending an HTTP request to the remote WebDriver server for URL http://autohub.corp.juriba.com:4444/wd/hub/session. The status of the exception was UnknownError, and the message was: Only one usage of each socket address (protocol/network address/port) is normally permitted.
             catch (WebDriverException)
             {
+                Logger.Write("WARNING: Browser was not created. Retry to create browser");
                 return CreateDriverInstance();
             }
         }
