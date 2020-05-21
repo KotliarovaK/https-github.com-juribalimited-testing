@@ -1567,6 +1567,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOwnerFilterInTheApplicationList
 	Then There are no errors in the browser console
 	When User enters "AU\ACG224403 (Xavier R. Ball)" text in Search field at selected Lookup Filter
 	When User clicks checkbox at selected Lookup Filter
+	Then "Add column" checkbox is not displayed
 	When User clicks Save filter button
 	Then table content is present
 	Then There are no errors in the browser console

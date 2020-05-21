@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input | .//div[@class='ag-column-select-header']//input[contains(@class, 'checkbox-input')]")]
         public IWebElement SelectAllCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@ref='eCellWrapper']//*[contains(@class,'ag-selection-checkbox')]")]
         public IList<IWebElement> Checkboxes { get; set; }
 
         #region Inline Edit. Appears on double click on cell
@@ -207,7 +207,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         private string ActionElementSelector(string columnName)
         {
             var results =
-                $".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')]//input | .//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]";
+                $".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')] | .//div[@role='presentation']//div[contains(@class,'ag-header-viewport')]//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]";
             return results;
         }
 
@@ -228,7 +228,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             input.Click();
             input.Clear();
             input.SendKeys(text);
-            BodyContainer.Click();
+            Driver.ClickByJavascript(BodyContainer);
         }
 
         #endregion

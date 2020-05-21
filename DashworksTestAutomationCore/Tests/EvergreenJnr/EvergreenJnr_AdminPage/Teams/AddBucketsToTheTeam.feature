@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
 	When User click on "Users" column header on the Admin page
 	Then numeric data in table is sorted by 'Users' column in descending order
 	When User click on "Users" column header on the Admin page
-	Then numeric data in table is sorted by 'Mailboxes' column in ascending order
+	Then numeric data in table is sorted by 'Users' column in ascending order
 	When User click on "Mailboxes" column header on the Admin page
 	Then numeric data in table is sorted by 'Mailboxes' column in descending order
 	When User click on "Mailboxes" column header on the Admin page
