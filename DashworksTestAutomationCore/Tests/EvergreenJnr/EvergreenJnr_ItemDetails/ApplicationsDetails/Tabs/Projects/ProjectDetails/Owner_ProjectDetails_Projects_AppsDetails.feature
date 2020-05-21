@@ -55,7 +55,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRemovingOwnerIsWorkingCorrectly
 	| App Owner |       |
 	When User clicks 'RESYNC' button
 	When User clicks 'RESYNC' button on popup
-	When User clicks 'RESYNC' button on popup
 	Then following content is displayed on the Details Page
 	| Title     | Value        |
 	| App Owner | Jack I. Bean |
