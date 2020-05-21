@@ -84,3 +84,27 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationMessagesForScopeDropdownWhenList
 	Then '[List not found]' content is displayed in 'Scope' textbox
 	When User selects 'All Mailboxes' option from 'Scope' autocomplete
 	Then 'List validated' success message for 'Scope' field
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Automations @DAS21238 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatTwoValidationsMessagesAreNotDisplayed
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks on 'Hostname' column header
+	When User create dynamic list with "DAS21238_list" name on "Devices" page
+	Then "DAS21238_list" list is displayed to user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User add "Windows7Mi: Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service (Owner)" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Me             |
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User clicks 'CREATE AUTOMATION' button 
+	Then 'Create Automation' page subheader is displayed to user
+	When User enters 'DAS21238_Automation' text to 'Automation Name' textbox
+	When User enters 'DAS21238' text to 'Description' textbox
+	When User selects 'DAS21238_list' option from 'Scope' autocomplete
+	Then 'This list uses, or refers to a list that uses, a value of 'Me' or 'My Team' which is not valid as a project scope, this must be updated before proceeding' text is displayed on inline tip banner
+	When User selects 'DAS21238_list' option from 'Scope' autocomplete

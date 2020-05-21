@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBuck
 	When User clicks 'CREATE' button
 	When User clicks 'star' mat-icon
 	When User enters '21000_BulkFBU' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite Bulk Update Name should be unique' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'Favourite bulk update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
 @Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItemsBuckets

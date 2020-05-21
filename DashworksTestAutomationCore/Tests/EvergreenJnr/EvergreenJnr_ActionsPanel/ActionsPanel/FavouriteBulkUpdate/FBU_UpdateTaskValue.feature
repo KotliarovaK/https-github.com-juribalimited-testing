@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
 	When User clicks 'star' mat-icon
 	When User enters '20940_TestFBU' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite Bulk Update Name should be unique' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'Favourite bulk update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpdateTaskValueType
@@ -334,3 +334,68 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	Then following Values are not displayed in the 'Bulk Update Type' dropdown:
 	| Options          |
 	| DAS20950_TestFBU |
+
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21249 @Yellow_Dwarf
+Scenario: EvergreenJnr_AllUsers_CheckTaskDropdownAfterRestoringFbuAndCreatingNew
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 1 \ Dropdown Task' option from 'Task' autocomplete
+	When User clicks 'star' mat-icon
+	When User enters '21249_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User selects '21249_TestFBU' in the 'Bulk Update Type' dropdown
+	Then 'zUser Sch for Automations Feature' content is displayed in 'Project' autocomplete
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 1 \ Dropdown Task' option from 'Task' autocomplete
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21250 @Yellow_Dwarf
+Scenario: EvergreenJnr_AllUsers_CheckThatBulkUpdateTypeDropdownIsNotEmptyAfterRestoring
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 3 \ DDL Slot Task' option from 'Task' autocomplete
+	When User clicks 'star' mat-icon
+	When User enters 'DAS21250_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks 'star' mat-icon
+	When User enters '21250_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	Then 'Update task value' content is displayed in 'Bulk Update Type' dropdown
+
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21248 @Yellow_Dwarf
+Scenario: EvergreenJnr_AllDevices_CheckThatCapacitySlotDropdownIsNotEmptyForNoneValue
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User selects 'Pre-Migration \ Scheduled Date' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Date' dropdown
+	When User enters '28 May 2020' text to 'Date' textbox
+	When User selects 'None' in the 'Slot' dropdown
+	When User clicks 'star' mat-icon
+	When User enters 'DAS21248_FBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User selects 'DAS21248_FBU' in the 'Bulk Update Type' dropdown
+	Then 'None' content is displayed in 'Slot' dropdown

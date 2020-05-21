@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User clicks 'star' mat-icon
 	When User enters '20853_TestFBU' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite Bulk Update Name should be unique' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'Favourite bulk update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
 @Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForUpdateCustomFieldFavouriteBulkUpdateItems

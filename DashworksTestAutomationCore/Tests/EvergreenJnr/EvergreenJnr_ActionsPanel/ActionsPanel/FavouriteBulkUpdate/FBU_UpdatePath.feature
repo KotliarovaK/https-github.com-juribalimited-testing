@@ -363,3 +363,23 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupDeletingAndEditing
 	Then 'This Favourite Bulk Update will be permanently deleted' text is displayed on inline tip banner
 	When User clicks 'DELETE' button on inline tip banner
 	Then 'The Favourite Bulk Update has been deleted' text is displayed on inline success banner
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21257 @Yellow_Dwarf
+Scenario: EvergreenJnr_AllUsers_ChecThatFavoriteBulkUpdateNameFieldIsNotCaseSensitive
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User selects 'VIP User' option from 'Path' autocomplete
+	When User clicks 'star' mat-icon
+	When User enters 'das21257_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks 'star' mat-icon
+	When User enters 'Das21257_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	Then 'Favourite bulk update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
