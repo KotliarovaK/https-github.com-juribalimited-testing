@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpd
 	| abc_20950      |
 	Then created items for 'Bulk Update Type' dropdown are displayed in ascending order
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @Yellow_Dwarf
+@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @DAS @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateTaskValueType
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -398,3 +398,81 @@ Scenario: EvergreenJnr_AllDevices_CheckThatCapacitySlotDropdownIsNotEmptyForNone
 	When User clicks 'CREATE' button
 	When User selects 'DAS21248_FBU' in the 'Bulk Update Type' dropdown
 	Then 'None' content is displayed in 'Slot' dropdown
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @FavouriteBulkUpdate @DAS21252 @Yellow_Dwarf
+Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChangingTask
+	When Project created via API and opened
+	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| 21252_Project | All Devices | None            | Standalone Project |
+	When User clicks 'Projects' on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "21252_Project" Project
+	Then "Manage Project Details" page is displayed to the user
+	When User navigate to "Stages" tab
+	Then "Manage Stages" page is displayed to the user
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName   |
+	| 21252_Stage |
+	And User clicks "Create Stage" button
+	And User navigate to "Tasks" tab
+	Then "Manage Tasks" page is displayed to the user
+	When User clicks "Create Task" button
+	And User creates Task
+	| Name       | Help  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| 21252_Task | 21252 | 21252_Stage      | Normal         | Radiobutton     | Computer         |                          | false              |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskHasAnOwner | TaskImpactsReadiness | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| false          | DateOnly       | None                  | false          | true                 | false       | false         | false      | false       |
+	When User publishes the task
+	Then selected task was published
+	When User navigate to Evergreen link
+	#Create FBU
+	When User navigates to "21252_Project" project details
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Devices' tab on Project Scope Changes page
+	When User expands multiselect and selects following Objects
+	| Objects        |
+	| 00KLL9S8NRF0X6 |
+	When User clicks 'UPDATE ALL CHANGES' button 
+	When User clicks 'UPDATE PROJECT' button 
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00KLL9S8NRF0X6   |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects '21252_Project' option from 'Project' autocomplete
+	When User selects '21252_Stage \ 21252_Task' option from 'Task' autocomplete
+	When User clicks 'star' mat-icon
+	When User enters '21252_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	#Change Task
+	When User clicks 'Projects' on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "21252_Project" Project
+	Then "Manage Project Details" page is displayed to the user
+	When User navigate to "Tasks" tab
+	When User navigate to "21252_Task" Task
+	When User updates the Task page
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskHasAnOwner | TaskImpactsReadiness | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | DateOnly       | None                  | true           | true                 | false       | false         | false      | false       |
+	When User navigate to Evergreen link
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00KLL9S8NRF0X6   |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects '21252_TestFBU' in the 'Bulk Update Type' dropdown
+	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
+	Then '' content is displayed in 'Project' autocomplete
