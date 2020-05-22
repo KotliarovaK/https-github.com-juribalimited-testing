@@ -91,3 +91,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessWithUnknownTooltipDisplayedCo
 	When User navigates to the 'Readiness' left menu item
 	When User enters "Unknown" text in the Search field for "Tooltip" column
 	Then 'Unknown' content is displayed in the 'Tooltip' column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Project_Creation_and_Scope @Projects @DAS17433 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatProjectCanBeCreatedFromMailboxesListHavingProjectNameFiltered
+	When User clicks 'Mailboxes' on the left-hand menu
+	When User navigates to 'mailboxes?$filter=(project_48_shortName%20EQUALS%20('hamiltkz%40rdlabs.local'))' url via address line
+	Then table content is present
+	When User create dynamic list with "List_17433" name on "Mailboxes" page
+	When Project created via API and opened
+	| ProjectName            | Scope      | ProjectTemplate | Mode               |
+	| MailboxesProject_17433 | List_17433 | None            | Standalone Project |
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left submenu item
+	Then 'List_17433' content is displayed in 'Scope' dropdown

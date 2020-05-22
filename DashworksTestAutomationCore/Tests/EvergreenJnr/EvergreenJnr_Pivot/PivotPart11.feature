@@ -66,3 +66,21 @@ Scenario: EvergreenJnr_Devices_CheckThatEmptyRowVlueLeadsToCorrectFilteredPage
 	Then "Device Type is Data Centre" is displayed in added filter info
 	Then "Manufacturer is Dell" is displayed in added filter info
 	Then "Country is Empty" is displayed in added filter info
+
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS17433
+Scenario: EvergreenJnr_Mailboxes_CheckThatNoConsoleErrorDisplayedAfterRunninfPivotFromProjectOwnerFilter
+	When User clicks 'Mailboxes' on the left-hand menu
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups        |
+	| EmailMigra: Name |
+	When User selects the following Columns on Pivot:
+	| Columns      |
+	| Mailbox Type |
+	When User selects the following Values on Pivot:
+	| Values             |
+	| Owner Display Name |
+	When User selects aggregate function "Count" on Pivot
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	Then There are no errors in the browser console

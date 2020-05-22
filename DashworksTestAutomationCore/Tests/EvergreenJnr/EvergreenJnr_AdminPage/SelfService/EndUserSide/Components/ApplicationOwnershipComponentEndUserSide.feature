@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20322 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
-	Given User resync 'Application' objects for '2004 Rollout' project
+	When User resync 'Application' objects for '2004 Rollout' project
     | values     |
     | VSCmdShell |
 	When User create static list with "DAS_20421" name on "Applications" page with following items
@@ -393,3 +393,46 @@ Scenario: EvergreenJnr_AdminPage_CheckWarningPopUpAfterDeletingUserScopeFromAOCA
 	And User clicks on item with 'Page' type and 'Welcome' name on Self Service Builder Panel
 	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
 	Then "YES" button is displayed in the warning message
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21181 @Cleanup @SelfService @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatOnlyOnboardedUsersThatInTheScopeListCanBeFoundInOwnerDropdown
+	When Project created via API and opened
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
+	| DAS_21181_Proj_1 | All Users | None            | Standalone Project |
+	When User onboard objects to 'DAS_21181_Proj_1' project
+	| UserObjects         |
+	| 024213574157421A9CD |
+	| 0BC5F2D82BC34785AB8 |
+	When User onboard objects to 'DAS_21181_Proj_1' project
+	| ApplicationObjects |
+	| VSCmdShell         |
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
+	When User clicks 'Users' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Username" filter where type is "Equals" with added column and following value:
+	| Values              |
+	| 0BC5F2D82BC34785AB8 |
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'DAS_21181_AppStatList_2' list
+	When User clicks the Permissions button
+	When User selects 'Everyone can see' in the 'Sharing' dropdown
+	When User create static list with "DAS_21181" name on "Applications" page with following items
+	| ItemName   |
+	| VSCmdShell |
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
+	| DAS_21181_SS_1 | 21181_SI_1        | true    | true                | DAS_21181 |
+	When User creates new application ownership component for 'Welcome' Self Service page via API
+	| ComponentName | ProjectName      | OwnerPermission                            | UserScope               | ShowInSelfService |
+	| AOC Name      | DAS_21181_Proj_1 | Allow owner to be set to another user only | DAS_21181_AppStatList_2 | true              |
+	When User navigates to End User landing page with '21181_SI_1' Self Service Identifier
+	When User clicks on 'Change Owner' button on end user Self Service page
+	#Then 'There are no valid users' error message is displayed under 'Owner' field on Self Service EndUser dialog
+	When User enters 'Andrews' in the 'Owner' autocomplete field and selects '0BC5F2D82BC34785AB8 (Andrews, Katie)' value
+	When User clicks 'Update' button on popup
+	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
+	| FirstColumn  | SecondColumn        |
+	| Username     | 0BC5F2D82BC34785AB8 |
+	| Domain       | BCLABS              |
+	| Display Name | Andrews, Katie      |

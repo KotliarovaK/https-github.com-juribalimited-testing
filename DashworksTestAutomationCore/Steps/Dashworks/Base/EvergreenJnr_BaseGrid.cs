@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var grid = _driver.NowAt<BaseGridPage>();
             Verify.That(grid.GetAllHeaders().All(x => x.GetCssValue("background-color").Equals("rgba(0, 0, 0, 0)")), Is.True, "Column header is not transparent");
-            Verify.That(grid.GetAllHeadersTextElements().All(x => x.GetCssValue("color").Equals("rgba(121, 124, 127, 1)")), Is.True, "Column header text has wrong color");
+            Verify.That(grid.GetAllHeadersTextElements().All(x => x.GetCssValue("color").Equals("rgba(21, 40, 69, 1)")), Is.True, "Column header text has wrong color");
         }
 
         #endregion
@@ -262,7 +262,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             Verify.That(page.GetColumnElementsByColumnName(columnName).All(x => x.GetCssValue("background-color").Equals("rgba(0, 0, 0, 0)")), Is.True, "Column background is not transparent");
-            Verify.That(page.GetColumnElementsByColumnName(columnName).All(x => x.GetCssValue("color").Equals("rgba(55, 61, 69, 1)")), Is.True, "Column text has wrong color");
+            Verify.That(page.GetColumnElementsByColumnName(columnName).All(x => x.GetCssValue("color").Equals("rgba(21, 40, 69, 1)")), Is.True, "Column text has wrong color");
         }
 
         [Then(@"'(.*)' content is displayed in the '(.*)' column")]
@@ -962,7 +962,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             //TODO remove this click
-            _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             page.OpenColumnFilter(columnName);
 
             var bpage = _driver.NowAt<BaseDashboardPage>();
@@ -971,14 +971,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 bpage.SetMatOptionCheckboxState(checkbox, state, page.ColumnFilterDropdownOverlay);
             }
 
-            _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"following checkboxes are displayed in the filter dropdown menu for the '(.*)' column:")]
         public void ThenFollowingSCheckboxesAreDisplayedInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             page.OpenColumnFilter(columnName);
 
             var bpage = _driver.NowAt<BaseDashboardPage>();
@@ -987,7 +987,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 Verify.IsTrue(bpage.IsMatOptionCheckboxDisplayed(cb), $"'{cb}' is not displayed in the filter for '{columnName}' column");
             }
 
-            _driver.ClickByJavascript(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         #endregion

@@ -328,7 +328,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
 
             Verify.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
 
-            _driver.ClickByJavascript(listElement.BodyContainer);
+            _driver.ClickByActions(listElement.BodyContainer);
         }
 
         [Then(@"Delete List option is NOT available")]

@@ -725,3 +725,24 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleOnCardWidgetAfterChangin
 	When Dashboard with 'Dashboard_20368' name is opened via API
 	When User checks 'Edit mode' slide toggle
 	Then User sees 'This widget refers to a column which is not in the list' text in warning message of 'CardWidget_20368' widget on Dashboards page
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17433 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectNameWidgetListCanBeUsedInWidget
+	When User clicks 'Mailboxes' on the left-hand menu
+	When User clicks the Filters button
+	When User add "EmailMigra: Name" filter where type is "Equals" with added column and following value:
+	| Values                |
+	| hamiltkz@rdlabs.local |
+	Then table content is present
+	When User create dynamic list with "UsersList_17433" name on "Mailboxes" page
+	Then "UsersList_17433" list is displayed to user
+	When Dashboard with 'Dashboard_17433' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title        | List            | Type      | AggregateFunction |
+	| Card       | Widget_17433 | UsersList_17433 | Aggregate | Count             |
+	Then 'Widget_17433' Widget is displayed to the user
+	Then Value '1' is displayed in the card 'Widget_17433' widget
+	When User clicks data in card 'Widget_17433' widget
+	Then "1" rows are displayed in the agGrid

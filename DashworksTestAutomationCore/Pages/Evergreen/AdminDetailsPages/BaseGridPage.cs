@@ -207,7 +207,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         private string ActionElementSelector(string columnName)
         {
             var results =
-                $".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')] | .//div[@role='presentation']//div[contains(@class,'ag-header-viewport')]//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]";
+                $".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')] | .//div[@role='presentation']//div[contains(@class,'ag-header-viewport')]//div[contains(@class,'ag-header-row')][2]/div[{GetColumnNumberByName(columnName)}]";
             return results;
         }
 
@@ -215,11 +215,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetSearchFieldTextByColumnName(string columnName)
         {
-            var selector =
-                By.XPath(
-                    $"{ActionElementSelector(columnName)}//input");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            var actionElementSelector = By.XPath(ActionElementSelector(columnName));
+            Driver.WaitForElementToBeDisplayed(actionElementSelector);
+
+            var actionElement = Driver.FindElement(actionElementSelector);
+            Driver.WaitForElementInElementToBeDisplayed(actionElement, By.XPath(".//input"));
+
+            var input = actionElement.FindElement(By.XPath(".//input"));
+
+            return input;
         }
 
         public void PopulateSearchFieldByColumnName(string columnName, string text)
