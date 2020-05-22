@@ -233,10 +233,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingActio
 	When User clicks 'UPDATE' button
 	Then 'The automation action has been updated' text is displayed on inline success banner
 
-	When User clicks Group By button and set checkboxes state
-         | Checkboxes | State |
-         |            |       |
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDateAndTimeInAutomationLogGrid
 	When User creates new Automation via API

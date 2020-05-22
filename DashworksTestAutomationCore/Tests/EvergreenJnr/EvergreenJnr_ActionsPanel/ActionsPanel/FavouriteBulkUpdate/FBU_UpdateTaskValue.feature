@@ -393,6 +393,7 @@ Scenario: EvergreenJnr_AllDevices_CheckThatCapacitySlotDropdownIsNotEmptyForNone
 	When User selects 'Pre-Migration \ Scheduled Date' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '28 May 2020' text to 'Date' textbox
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'None' in the 'Slot' dropdown
 	When User clicks 'star' mat-icon
 	When User enters 'DAS21248_FBU' text to 'Favourite Bulk Update Name' textbox
@@ -400,7 +401,7 @@ Scenario: EvergreenJnr_AllDevices_CheckThatCapacitySlotDropdownIsNotEmptyForNone
 	When User selects 'DAS21248_FBU' in the 'Bulk Update Type' dropdown
 	Then 'None' content is displayed in 'Slot' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @FavouriteBulkUpdate @DAS21252 @Yellow_Dwarf
+@Evergreen @EvergreenJnr_AdminPage @Automations @FavouriteBulkUpdate @DAS21252 @Yellow_Dwarf @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChangingTask
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
