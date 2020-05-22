@@ -476,8 +476,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedFor
 		| Applications | UserSchedu: Three \ Date App Req A                                             |
 		| Mailboxes    | Created Date                                                                   |
 
-@Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS20917
-Scenario Outline: EvergreenJnr_UsersList_CheckThatSpecificGroupFiltersWorks
+@Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS20917
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSpecificGroupFiltersWorks
 	When User clicks '<List>' on the left-hand menu
 	When User clicks the Filters button
 	When user select "<Filter>" filter
@@ -492,3 +492,22 @@ Examples:
 		| Devices | Group Display Name   | ApplicationAccount                 | No devices found |
 		| Users   | Mailbox Display Name | ApplicationAccount                 | No users found   |
 		| Users   | Mailbox Display Name | Exchange Online-ApplicationAccount | No users found   |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS17433 @Cleanup
+Scenario Outline: EvergreenJnr_AllLists_CheckThatNewProjectFilterWorks
+	When User clicks '<List>' on the left-hand menu
+	When User clicks the Filters button
+	When User add "<Filter>" filter where type is "Equals" with added column and following value:
+	| Values |
+	| <Term> |
+	Then "<Filter>" filter is added to the list
+	Then table content is present
+	When User create dynamic list with "<List>_17433" name on "<List>" page
+	Then "<List>_17433" list is displayed to user
+
+Examples:
+		| List         | Filter           | Term                  |
+		| Mailboxes    | EmailMigra: Name | hamiltkz@rdlabs.local |
+		| Users        | 2004: Name       | ZKF383983             |
+		| Applications | 2004: Name       | XingMPEG Player       |
+		
