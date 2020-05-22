@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20322 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
-	Given User resync 'Application' objects for '2004 Rollout' project
+	When User resync 'Application' objects for '2004 Rollout' project
     | values     |
     | VSCmdShell |
 	When User create static list with "DAS_20421" name on "Applications" page with following items

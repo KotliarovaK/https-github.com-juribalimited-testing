@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonWor
 	When User create static list with "DAS_20330_2" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
-	Given User resync 'Application' objects for 'DAS_20330_Proj_2' project
+	When User resync 'Application' objects for 'DAS_20330_Proj_2' project
     | values     |
     | VSCmdShell |
 	When User creates Self Service via API and open it

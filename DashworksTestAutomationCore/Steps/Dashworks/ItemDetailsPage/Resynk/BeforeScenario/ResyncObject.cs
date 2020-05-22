@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.BeforeS
             _resyncObjects = resyncObjects;
         }
 
-        [Given(@"User resync '(.*)' objects for '(.*)' project")]
+        [When(@"User resync '(.*)' objects for '(.*)' project")]
         public void GivenUserResyncObjectsForProject(string listName, string projectName, Table table)
         {
             var projId = DatabaseHelper.GetProjectId(projectName);
