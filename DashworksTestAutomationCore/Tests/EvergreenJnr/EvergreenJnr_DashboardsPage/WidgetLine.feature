@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceListFilteredPage
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
+	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
 	And user select "Device Type" filter
 	And User clicks in search field in the Filter block
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	When User checks 'Edit mode' slide toggle
 	Then Tooltip is displayed for the point of Line widget
 	| WidgetName               | NumberOfPoint | Tooltip      |
-	| Project ScheduleDAS16069 | 1             | 5 Nov 2018 4 |
+	| Project ScheduleDAS16069 | 1             | 5 Nov 2020 4 |
 	When User clicks point of Line widget
 	| WidgetName               | NumberOfPoint | 
 	| Project ScheduleDAS16069 | 1             | 

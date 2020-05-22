@@ -224,7 +224,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithT
 	When User selects 'Hostname DESC' in the 'OrderBy' dropdown
 	Then 'Hostname DESC' content is displayed in 'OrderBy' dropdown
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18066 @Cleanup
+#waiting for X-Ray updates with filter fixes
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18066 @Cleanup @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsApplied
 	When Dashboard with 'DAS18167_Dashboard' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -237,6 +238,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyV
 	Then all cells in the 'Vendor' column are empty
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
+	#is empty label is missing
 	Then Check that filter 'Vendor' with option 'is empty' is added
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16842 @Cleanup

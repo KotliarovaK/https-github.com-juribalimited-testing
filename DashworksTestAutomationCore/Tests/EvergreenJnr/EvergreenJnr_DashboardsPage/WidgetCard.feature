@@ -42,7 +42,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 	Then 'WidgetForDAS15207' Widget is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138 @Cleanup
+#wait for response from Lisa 22\05\2020 two weeks max
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138 @Cleanup @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage
 	When Dashboard with 'Dashboard for DAS16138' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -55,12 +56,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	Then 'WidgetForDAS16138' Widget is displayed to the user
 	When User checks 'Edit mode' slide toggle
 	When User clicks data in card 'WidgetForDAS16138' widget
-	#Then Save as a new list option is available
 	Then "8" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then "2004: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
 	Then "Any Device in list 2004 Rollout" is displayed in added filter info
 
+#SZ wait for lisa rasponse 22/05 for two weeks
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @Cleanup @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User navigates to "2004 Rollout" project details
@@ -180,20 +181,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	| Build Date |
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "ListForDas15722" name on "Devices" page
-	And Dashboard with 'DashboardForDas15722' name created via API and opened
+	When Dashboard with 'DashboardForDas15722' name created via API and opened
 	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title             | List            | Type      | AggregateBy | AggregateFunction | Drilldown |
 	| Card       | WidgetForDAS15722 | ListForDas15722 | Aggregate | Build Date  | First             | Yes       |
 	Then Widget Preview is displayed to the user
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS15722' Widget is displayed to the user
-	And There are no errors in the browser console
-	When User checks 'Edit mode' slide toggle
-	When User clicks data in card 'WidgetForDAS15722' widget
-	Then "1" rows are displayed in the agGrid
+	Then There are no errors in the browser console
 
 @Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
@@ -526,9 +524,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	Then 'WidgetForDAS16844' Widget is displayed to the user
 	When User checks 'Edit mode' slide toggle
 	Then Value '17,427' is displayed in the card 'WidgetForDAS16844' widget
-	When User clicks data in card 'WidgetForDAS16844' widget
-	#Then Save as a new list option is available
-	Then "17,427" rows are displayed in the agGrid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16844 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingStaticListContainsArchivedItems
@@ -551,8 +546,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	Then 'WidgetForDAS16844' Widget is displayed to the user
 	When User checks 'Edit mode' slide toggle
 	Then Value '1' is displayed in the card 'WidgetForDAS16844' widget
-	When User clicks data in card 'WidgetForDAS16844' widget
-	Then "1" rows are displayed in the agGrid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16167 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidgetsIfTheSourceListHasNoRows
