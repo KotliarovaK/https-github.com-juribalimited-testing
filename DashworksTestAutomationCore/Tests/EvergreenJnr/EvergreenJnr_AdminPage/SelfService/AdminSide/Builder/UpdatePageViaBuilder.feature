@@ -7,19 +7,19 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationShownWhenUserEditPage
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with "19792 UserStatList_1" name on "Applications" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
-	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
-	| 1         | TestProj_1 | Test_ID_1         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+	| ServiceId | Name             | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope                |
+	| 1         | 19792_TestProj_1 | 19792_ID_1        | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 19792 UserStatList_1 |        
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_1' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name           | DisplayName           | ShowInSelfService |
-	| Test_ID_1         | TestPageName_1 | TestPageDisplayName_1 | true              |
+	| 19792_ID_1        | TestPageName_1 | TestPageDisplayName_1 | true              |
 	When User navigates to the 'Builder' left menu item
     When User clicks on cogmenu button for item with 'Page' type and 'TestPageName_1' name on Self Service Builder Panel
 	When User clicks 'Edit' option in opened Cog-menu
@@ -29,19 +29,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationShownWhenUser
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnabledIfUserDidDidntChangesAndProperToolTipsAreDisplays
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with "19792 UserStatList_2" name on "Applications" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
-	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
-	| 1         | TestProj_2 | Test_ID_2         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+	| ServiceId | Name             | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope                |
+	| 1         | 19792_TestProj_2 | 19792_ID_2        | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 19792 UserStatList_2 |        
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_2' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name           | DisplayName           | ShowInSelfService |
-	| Test_ID_2         | TestPageName_2 | TestPageDisplayName_2 | true              |
+	| 19792_ID_2        | TestPageName_2 | TestPageDisplayName_2 | true              |
 	When User navigates to the 'Builder' left menu item
     When User clicks on cogmenu button for item with 'Page' type and 'TestPageName_2' name on Self Service Builder Panel
 	When User clicks 'Edit' option in opened Cog-menu
@@ -70,19 +70,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnabledIfUserDid
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWillBeSavedWithProperNotificationAndHighlightedOnContextPanel
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with "19792 UserStatList_3" name on "Applications" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
-	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
-	| 1         | TestProj_3 | Test_ID_3         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+	| ServiceId | Name             | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope                |
+	| 1         | 19792_TestProj_3 | 19792_ID_3        | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 19792 UserStatList_3 |   
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
-	When User clicks 'Edit' option in Cog-menu for 'TestProj_3' item from 'Self Service Name' column
+	When User clicks 'Edit' option in Cog-menu for '19792_TestProj_3' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name           | DisplayName           | ShowInSelfService |
-	| Test_ID_3         | TestPageName_3 | TestPageDisplayName_3 | false             |
+	| 19792_ID_3        | TestPageName_3 | TestPageDisplayName_3 | false             |
 	When User navigates to the 'Builder' left menu item
     When User clicks on cogmenu button for item with 'Page' type and 'TestPageName_3' name on Self Service Builder Panel
 	When User clicks 'Edit' option in opened Cog-menu
@@ -101,19 +101,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWillBeSavedWith
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario Outline: EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with "<StatUserList>" name on "Applications" page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
-	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
-	| 1         | TestProj_4 | Test_ID_4         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+	| ServiceId | Name     | ServiceIdentifier   | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope          |
+	| 1         | <SSName> | <ServiceIdentifier> | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | <UserStatList> |         
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
-	When User clicks 'Edit' option in Cog-menu for 'TestProj_4' item from 'Self Service Name' column
+	When User clicks 'Edit' option in Cog-menu for '<SSName>' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User creates new Self Service Page via API
-	| ServiceIdentifier | Name           | DisplayName           | ShowInSelfService |
-	| Test_ID_4         | TestPageName_4 | TestPageDisplayName_4 | false             |
+	| ServiceIdentifier   | Name           | DisplayName           | ShowInSelfService |
+	| <ServiceIdentifier> | TestPageName_4 | TestPageDisplayName_4 | false             |
 	When User navigates to the 'Builder' left menu item
     When User clicks on cogmenu button for item with 'Page' type and 'TestPageName_4' name on Self Service Builder Panel
 	When User clicks 'Edit' option in opened Cog-menu
@@ -123,28 +123,36 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation
 	Then 'UPDATE' button is not disabled
 
 	Examples:
-	| PageName                                                     | Page Display Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-	| DisplayPage_2                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-	| 60_S"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kknnnljfjndfjk9849804 | 254_S"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                   |
-	| 41_S"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kk                    | 255_AS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                  |
-	| 40_S"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^kk                     | 256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                 |
-	| 39_S"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^k                      | 256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep |
+	| ServiceIdentifier | UserStatList | PageName              | Page Display Name                                            |
+	| TestProj_A4       | 19792_IA_4   | 19792 UserStatList_A4 |                                                              |
+	| TestProj_B4       | 19792_IB_4   | 19792 UserStatList_B4 | 60_S"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kknnnljfjndfjk9849804 | 254_S"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                   |
+	| TestProj_C4       | 19792_IC_4   | 19792 UserStatList_C4 | 41_S"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kk                    | 255_AS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                  |
+	| TestProj_D4       | 19792_IF_4   | 19792 UserStatList_D4 | 40_S"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^kk                     | 256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                 |
+	| TestProj_F4       | 19792_IG_4   | 19792 UserStatList_F4 | 39_S"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^k                      | 256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep |
+
+	Examples:
+	| StatUserList | ServiceIdentifierStat | SSName | PageName                                                     | Page Display Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+	|              |                       |        | DisplayPage_2                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+	|              |                       |        | 60_S"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kknnnljfjndfjk9849804 | 254_S"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                   |
+	|              |                       |        | 41_S"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kk                    | 255_AS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                  |
+	|              |                       |        | 40_S"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^kk                     | 256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                 |
+	|              |                       |        | 39_S"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^k                      | 256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedThePagePreviewIsShownOnTheDesignSurface
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with "DAS19792_UserStatList_5" name on "Applications" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
-	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
-	| 1         | TestProj_5 | Test_ID_5         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+	| ServiceId | Name                | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope                   |
+	| 1         | DAS19792_TestProj_5 | 19792_ID_5        | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | DAS19792_UserStatList_5 |         
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
-	When User clicks 'Edit' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
+	When User clicks 'Edit' option in Cog-menu for 'DAS19792_TestProj_5' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name           | DisplayName           | ShowInSelfService |
-	| Test_ID_5         | TestPageName_5 | TestPageDisplayName_5 | true              |
+	| 19792_ID_5        | TestPageName_5 | TestPageDisplayName_5 | true              |
 	When User navigates to the 'Builder' left menu item
     When User clicks on cogmenu button for item with 'Page' type and 'TestPageName_5' name on Self Service Builder Panel
 	When User clicks 'Edit' option in opened Cog-menu
@@ -153,22 +161,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedThePagePre
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheUserLeavesThePageConfigurationWithoutSavingChangesTheySeeTheStandardWarningModalWindowPopup
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with "DAS19792_UserStatList_6" name on "Applications" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
-	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
-	| 1         | TestProj_6 | Test_ID_6         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+	| ServiceId | Name                | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope                   |
+	| 1         | DAS19792_TestProj_6 | 19792_ID_6        | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | DAS19792_UserStatList_6 |         
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
-	When User clicks 'Edit' option in Cog-menu for 'TestProj_6' item from 'Self Service Name' column
+	When User clicks 'Edit' option in Cog-menu for 'DAS19792_TestProj_6' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name           | DisplayName           | ShowInSelfService |
-	| Test_ID_6         | TestPageName_6 | TestPageDisplayName_5 | true              |
+	| 19792_ID_6        | TestPageName_6 | TestPageDisplayName_6 | true              |
 	When User navigates to the 'Builder' left menu item
     When User clicks on cogmenu button for item with 'Page' type and 'TestPageName_6' name on Self Service Builder Panel
 	When User clicks 'Edit' option in opened Cog-menu
-	When User enters 'UpdatedDisplayPage_6' text to 'Page Display Name' textbox
+	When User enters 'UpdatedDisplayPage_A6' text to 'Page Display Name' textbox
 	When User navigates to the 'Details' left submenu item
 	Then popup is displayed to User
