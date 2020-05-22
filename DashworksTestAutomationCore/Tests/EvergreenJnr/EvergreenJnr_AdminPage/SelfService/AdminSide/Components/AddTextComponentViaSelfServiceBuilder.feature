@@ -7,15 +7,15 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserSeesProperTootltipForAddItemButton
-	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
+	When User create static list with "SelfServiceStaticAppList_DAS_19982" name on "Applications" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
-    | Name       | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope                    |
-    | TestProj_1 | Test_ID_1         | true    | true                | SelfServiceStaticAppList |
+    | Name                 | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope                              |
+    | TestProj_1_DAS_19982 | 19982_ID_1        | true    | true                | SelfServiceStaticAppList_DAS_19982 |
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName       | ShowInSelfService |
-	| Test_ID_1         | TestPageSs1 | TestPageSsDisplay | false             |
+	| 19982_ID_1        | TestPageSs1 | TestPageSsDisplay | false             |
 	When User navigates to the 'Builder' left menu item
     Then User sees 'Add Component' tootltip text of Add Item button for item with 'Page' type and 'TestPageSs1' name on Self Service Builder Panel
 
