@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationSelfServiceColumns
 	When User create dynamic list with "20791List" name on "Applications" page
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20073 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20073 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckApplicationSelfServiceFilters
 	When User creates Self Service via API and open it
 	| Name         | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope            |
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationSelfServiceFilters
 	| Content |
 	|         |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21232 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21232 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceHasCompletedStatus
 	When Project created via API and opened
 	| ProjectName | Scope     | ProjectTemplate | Mode               |
