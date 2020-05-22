@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceHasCompletedStatus
 	| ColumnName                      |
 	| 21232_SI: Welcome Page Status   |
 	| 21232_SI: Thank You Page Status |
-	And User perform search by "AtomixMP3"
+	And User perform search by "VSCmdShell"
 	Then Content in the '21232_SI: Welcome Page Status' column is equal to
 	| Content    |
 	| Not viewed |
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceHasCompletedStatus
 	| ColumnName                      |
 	| 21232_SI: Welcome Page Status   |
 	| 21232_SI: Thank You Page Status |
-	And User perform search by "AtomixMP3"
+	And User perform search by "VSCmdShell"
 	Then Content in the '21232_SI: Welcome Page Status' column is equal to
 	| Content   |
 	| Completed |
