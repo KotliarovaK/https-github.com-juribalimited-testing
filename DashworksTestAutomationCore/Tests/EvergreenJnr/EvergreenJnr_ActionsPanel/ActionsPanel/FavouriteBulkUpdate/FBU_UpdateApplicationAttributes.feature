@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21005 @Yellow_Dwarf
+@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21005 @DAS21353 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplicationAttributesValidationsForEvergreen
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplication
 	Then 'UPDATE' button is not disabled
 	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21005 @Yellow_Dwarf
+@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21005 @DAS21353 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplicationAttributesValidationsForProject
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
