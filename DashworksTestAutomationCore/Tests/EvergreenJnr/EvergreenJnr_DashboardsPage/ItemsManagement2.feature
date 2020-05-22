@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @DAS17150 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
-	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
+	When Dashboard with 'Dashboard_16326' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
@@ -18,7 +18,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17551 @DAS17150 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
@@ -34,7 +33,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	When User waits for '3' seconds
 	When User create dynamic list with "AApplicationsList17551" name on "Applications" page
 	Then "AApplicationsList17551" list is displayed to user
-	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
+	When Dashboard with 'Dashboard_16326' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
@@ -42,11 +41,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	| List       | Widget_For_DAS17551 | AApplicationsList17551 | 10      | 10         |
 	Then 'Widget_For_DAS17551' Widget is displayed to the user
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Delete' option in cogmenu for 'ADevicesList17551' list
 	When User confirms list removing
 	Then list with "ADevicesList17551" name is removed
-	When Dashboard with 'Dashboard_DAS16326' name is opened via API
+	When Dashboard with 'Dashboard_16326' name is opened via API
 	When User checks 'Edit mode' slide toggle
 	Then User sees 'This widget refers to list AApplicationsList17551 which has errors' text in warning message of 'Widget_For_DAS17551' widget on Dashboards page
 	Then 'AApplicationsList17551' link is displayed in warning message on Dashboards page
@@ -54,40 +52,40 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15877 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
-	When Dashboard with 'Dashboard_DAS15877' name created via API and opened
+	When Dashboard with 'Dashboard_15877' name created via API and opened
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks cogmenu for 'Dashboard_DAS15877' list and sees following cog-menu options
-	| options    |
+	When User clicks cogmenu for 'Dashboard_15877' list and sees following cog-menu options
+	| options        |
 	| Manage         |
 	| Make favourite |
 	| Duplicate      |
 	| Set default    |
-	| Delete         | 
+	| Delete         |
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	When User clicks 'Dashboards' on the left-hand menu
 	When User clicks 'CREATE DASHBOARD' button 
-	When User creates new Dashboard with 'Dashboard_DAS12974' name
-	When User clicks 'Manage' option in cogmenu for 'Dashboard_DAS12974' list
-	When User changes dashboard name to 'Dashboard_DAS12974Updated'
-	Then 'Dashboard_DAS12974Updated' list is displayed in the Lists panel
+	When User creates new Dashboard with 'Dashboard_12974' name
+	When User clicks 'Manage' option in cogmenu for 'Dashboard_12974' list
+	When User changes dashboard name to 'Dashboard_12974Updated'
+	Then 'Dashboard_12974Updated' list is displayed in the Lists panel
 	When User selects state 'true' for 'Favourite Dashboard' checkbox
-	Then Dashboard with name 'Dashboard_DAS12974Updated' marked as favorite
+	Then Dashboard with name 'Dashboard_12974Updated' marked as favorite
 	When User selects state 'false' for 'Favourite Dashboard' checkbox
-	Then Dashboard with name 'Dashboard_DAS12974Updated' not marked as favorite
+	Then Dashboard with name 'Dashboard_12974Updated' not marked as favorite
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
-	When Dashboard with 'Dashboard_DAS12974Default' name created via API and opened
+	When Dashboard with 'Dashboard_12974Default' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	Then User sees correct tooltip for Show Dashboards panel
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks 'Manage' option in cogmenu for 'Dashboard_DAS12974Default' list
+	When User clicks 'Manage' option in cogmenu for 'Dashboard_12974Default' list
 	When User selects state 'true' for 'Default Dashboard' checkbox
 	Then 'Default Dashboard' checkbox is checked
 	Then 'Default Dashboard' checkbox is disabled
-	Then Dashboard with name 'Dashboard_DAS12974Default' marked as default
+	Then Dashboard with name 'Dashboard_12974Default' marked as default
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists
@@ -120,7 +118,7 @@ Examples:
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17985 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOff
-	When Dashboard with 'Dashboard for DAS17985' name created via API and opened
+	When Dashboard with 'Dashboard_17985' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
@@ -131,7 +129,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenE
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18152 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget
-	When Dashboard with 'Dashboard for DAS18152' name created via API and opened
+	When Dashboard with 'Dashboard_18152' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
@@ -155,7 +153,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWi
 Scenario: EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo
 	When User clicks 'print' button on the Dashboards page
 	Then Print Preview is displayed to the User
-	And User clicks on Dashworks logo
+	Then User clicks on Dashworks logo
 	Then Print Preview is displayed to the User
 
 @Evergreen @EvergreenJnr_DashboardsPage	@DAS18483 @Cleanup
@@ -187,13 +185,13 @@ Scenario Outline: EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveA
 	Then 'UPDATE' button is not disabled
 
 Examples:
-	| DashboardName       | WidgetType | WidgetName | UpdatedType |
-	| DashboardDAS20070_1 | Column     | DAS20070_1 | Pie         |
-	| DashboardDAS20070_2 | Pie        | DAS20070_2 | Column      |
+	| DashboardName     | WidgetType | WidgetName | UpdatedType |
+	| Dashboard_20070_1 | Column     | DAS20070_1 | Pie         |
+	| Dashboard_20070_2 | Pie        | DAS20070_2 | Column      |
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS20070 @Cleanup
 Scenario: EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeIfAllFieldsAreFilled
-	When Dashboard with 'DashboardDAS20070_3' name created via API and opened
+	When Dashboard with 'Dashboard_20070_3' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget

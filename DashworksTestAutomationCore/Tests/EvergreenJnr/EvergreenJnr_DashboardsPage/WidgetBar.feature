@@ -13,17 +13,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	| Secure Boot Enabled |
 	| Manufacturer        |
 	| Compliance          |
-	And User clicks on 'Manufacturer' column header
+	When User clicks on 'Manufacturer' column header
 	Then data in table is sorted by 'Manufacturer' column in ascending order
 	When User create dynamic list with "List15356" name on "Devices" page
-	And User clicks 'Dashboards' on the left-hand menu
+	When User clicks 'Dashboards' on the left-hand menu
 	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | MaxValues | ShowLegend |
 	| Bar        | WidgetForDAS15356 | List15356 | Secure Boot Enabled | Device Type | Count distinct    | Secure Boot Enabled ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
 
@@ -36,7 +36,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	| ZZZZ   |
 	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS16167' list
 	Then "ListForDAS16167" list is displayed to user
-	When Dashboard with 'DAS16167_Dashboard' name created via API and opened
+	When Dashboard with 'Dashboard_16167' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
@@ -87,7 +87,7 @@ Scenario Outline: EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorC
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17360 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType
-	When Dashboard with 'DashFor17360' name created via API and opened
+	When Dashboard with 'Dashboard_17360' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
@@ -108,7 +108,7 @@ Examples:
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17360 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet
-	When Dashboard with 'DashFor17360Cat' name created via API and opened
+	When Dashboard with 'Dashboard_17360_1' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
