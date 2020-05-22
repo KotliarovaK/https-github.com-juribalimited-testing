@@ -477,3 +477,59 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChanging
 	When User selects '21252_TestFBU' in the 'Bulk Update Type' dropdown
 	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
 	Then '' content is displayed in 'Project' autocomplete
+
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21319
+Scenario: EvergreenJnr_AllUsers_CheckOwnerFieldCreateFavouriteBulkUpdatePopUp
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	When User selects 'One \ Radio Date Owner User' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects 'Admin IT' option from 'Team' autocomplete
+	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
+	When User selects 'D-Team' option from 'Team' autocomplete
+	When User clicks 'star' mat-icon
+	Then following fields are displayed in the popup:
+	| Fields           |
+	| Bulk Update Type |
+	| Project          |
+	| Task             |
+	| Update Owner     |
+	| Team             |
+	Then User compares data in the fields in the popup:
+	| Field            | Data                         |
+	| Bulk Update Type | Update task value            |
+	| Project          | Computer Scheduled Test (Jo) |
+	| Task             | One \ Radio Date Owner User  |
+	| Update Owner     | Update                       |
+	| Team             | D-Team                       |
+
+@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21317 @Yellow_Dwarf
+Scenario: EvergreenJnr_AllApplications_CheckValueFieldForUpdateRelativeToADifferentTask
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Application" rows in the grid
+	| SelectedRowsName                         |
+	| 0047 - Microsoft Access 97 SR-2 Francais |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	When User selects 'One \ Date App- Application Delivery Date' option from 'Task' autocomplete
+	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
+	When User selects 'One \ Radio Rag Date Owner App Req A' option from 'Relative Task' autocomplete
+	When User enters '12' text to 'Value' textbox
+	When User selects 'weekdays after task value' in the 'DateUnit' dropdown
+	When User clicks 'star' mat-icon
+	When User enters 'DAS21317_FBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User selects 'DAS21317_FBU' in the 'Bulk Update Type' dropdown
+	Then '12' content is displayed in 'Value' textbox
