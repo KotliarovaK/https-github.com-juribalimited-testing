@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpd
 	| abc_20950      |
 	Then created items for 'Bulk Update Type' dropdown are displayed in ascending order
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @DAS @Yellow_Dwarf
+@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @DAS21318 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateTaskValueType
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -137,6 +137,15 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	When User selects 'Started' in the 'Update Value' dropdown
 	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
 	When User selects 'Stage 1 \ Radiobutton Date App Task' option from 'Relative Task' autocomplete
+	#DAS21318
+	Then 'days after task value' value is displayed in the 'DateUnit' dropdown
+	When User selects '2004 Rollout' option from 'Relative Project' autocomplete
+	When User selects 'Information \ App Delivery Date' option from 'Relative Task' autocomplete
+	Then 'days after task value' value is displayed in the 'DateUnit' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Relative Project' autocomplete
+	When User selects 'Stage 1 \ Radiobutton Date App Task' option from 'Relative Task' autocomplete
+	Then 'days after task value' value is displayed in the 'DateUnit' dropdown
+	#DAS21318
 	When User enters '5' text to 'Value' textbox
 	When User selects 'weekdays after task value' in the 'DateUnit' dropdown
 	When User clicks 'star' mat-icon
@@ -166,14 +175,6 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	| Value            | 5 weekdays before task value              |
 	When User enters 'DAS20940_FBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks refresh button in the browser
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Application" rows in the grid
-	| SelectedRowsName                         |
-	| 0047 - Microsoft Access 97 SR-2 Francais |
-	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'DAS20940_FBU' in the 'Bulk Update Type' dropdown
 	Then 'zUser Sch for Automations Feature' content is displayed in 'Project' autocomplete
 	Then 'Stage 2 \ Radio Date Slot App' content is displayed in 'Task' autocomplete
 	Then 'Failed' content is displayed in 'Update Value' dropdown
