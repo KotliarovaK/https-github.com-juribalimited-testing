@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	When User selects 'VIP User' option from 'Path' autocomplete
 	When User clicks 'star' mat-icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
-	Then 'This favourite bulk update will be created with the following parameters:' text is displayed on popup
+	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
 	Then following fields are displayed in the popup:
 	| Fields           |
 	| Bulk Update Type |
@@ -64,12 +64,12 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	When User enters '' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks 'star' mat-icon
 	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
 @Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20773 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItems
@@ -188,7 +188,7 @@ Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdate
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'specific FBU' in the 'Bulk Update Type' dropdown
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	Then 'This favourite bulk update is invalid' text is displayed on inline error banner
+	Then 'This Favourite Bulk Update is invalid' text is displayed on inline error banner
 	Then 'UPDATE' button is disabled
 	Then 'star' mat-icon is not disabled
 	#Add value [Path not found] in Manage Favourite
@@ -382,4 +382,4 @@ Scenario: EvergreenJnr_AllUsers_ChecThatFavoriteBulkUpdateNameFieldIsNotCaseSens
 	When User clicks 'CREATE' button
 	When User clicks 'star' mat-icon
 	When User enters 'Das21257_TestFBU' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field

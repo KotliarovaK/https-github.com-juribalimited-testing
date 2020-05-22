@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	Then 'UPDATE' button is not disabled
 	When User clicks 'star' mat-icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
-	Then 'This favourite bulk update will be created with the following parameters:' text is displayed on popup
+	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
 	Then following fields are displayed in the popup:
 	| Fields           |
 	| Bulk Update Type |
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	When User enters '' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '20853_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User clicks 'star' mat-icon
 	When User enters '20853_TestFBU' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
 @Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForUpdateCustomFieldFavouriteBulkUpdateItems
@@ -188,7 +188,7 @@ Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkU
 	| 7-Zip 16.02 (x64) |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects '208535_TestFBU_CF' in the 'Bulk Update Type' dropdown
-	Then 'This favourite bulk update is invalid' text is displayed on inline error banner
+	Then 'This Favourite Bulk Update is invalid' text is displayed on inline error banner
 	Then 'UPDATE' button is disabled
 	Then 'star' mat-icon is disabled
 

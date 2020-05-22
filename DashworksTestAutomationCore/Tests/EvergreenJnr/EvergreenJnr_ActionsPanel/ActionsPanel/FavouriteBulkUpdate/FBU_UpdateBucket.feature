@@ -41,9 +41,9 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBuck
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	#When User select "Username" rows in the grid
-	#| SelectedRowsName    |
-	#| 002B5DC7D4D34D5C895 |
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update bucket' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBuck
 	When User selects 'Owned mailboxes only' in the 'Also Move Mailboxes' dropdown
 	When User clicks 'star' mat-icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
-	Then 'This favourite bulk update will be created with the following parameters:' text is displayed on popup
+	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
 	Then following fields are displayed in the popup:
 	| Fields               |
 	| Bulk Update Type     |
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBuck
 	| Also Move Mailboxes  |
 	Then User compares data in the fields in the popup:
 	| Field                | Data                 |
-	| Bulk Update Type     | Update Bucket        |
+	| Bulk Update Type     | Update bucket        |
 	| Project or Evergreen | Evergreen            |
 	| Bucket               | Unassigned           |
 	| Also Move Devices    | All linked devices   |
@@ -71,12 +71,12 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBuck
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	When User enters '' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '21000_BulkFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks 'star' mat-icon
 	When User enters '21000_BulkFBU' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
 @Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItemsBuckets
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| Also Move Users      |
 	Then User compares data in the fields in the popup:
 	| Field                | Data          |
-	| Bulk Update Type     | Update Bucket |
+	| Bulk Update Type     | Update bucket |
 	| Project or Evergreen | Evergreen     |
 	| Bucket               | Amsterdam     |
 	| Also Move Users      | None          |

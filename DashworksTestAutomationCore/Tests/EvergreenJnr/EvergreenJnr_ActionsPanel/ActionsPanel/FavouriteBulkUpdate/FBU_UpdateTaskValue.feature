@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
 	When User clicks 'star' mat-icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
-	Then 'This favourite bulk update will be created with the following parameters:' text is displayed on popup
+	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
 	Then following fields are displayed in the popup:
 	| Fields           |
 	| Bulk Update Type |
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	When User enters '' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '20940_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
 	When User clicks 'star' mat-icon
 	When User enters '20940_TestFBU' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpdateTaskValueType

@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateRing
 	When User selects 'All linked mailboxes' in the 'Also Move Mailboxes' dropdown
 	When User clicks 'star' mat-icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
-	Then 'This favourite bulk update will be created with the following parameters:' text is displayed on popup
+	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
 	Then following fields are displayed in the popup:
 	| Fields               |
 	| Bulk Update Type     |
@@ -72,12 +72,12 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateRing
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	When User enters '' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '21000_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks 'star' mat-icon
 	When User enters '21000_RingFBU' text to 'Favourite Bulk Update Name' textbox
-	Then 'Favourite bulk update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
+	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
 @Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItemsRings
