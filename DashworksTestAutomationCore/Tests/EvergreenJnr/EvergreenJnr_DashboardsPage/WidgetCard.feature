@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 	And There are no errors in the browser console
 
 #wait for response from Lisa 22\05\2020 two weeks max
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138 @Cleanup @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage
 	When Dashboard with 'Dashboard for DAS16138' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	Then "Any Device in list 2004 Rollout" is displayed in added filter info
 
 #SZ wait for lisa rasponse 22/05 for two weeks
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @Cleanup @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User navigates to "2004 Rollout" project details
 	When User navigates to the 'Scope' left menu item
@@ -737,5 +737,3 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectNameWidgetListCanBeUsedInW
 	| Card       | Widget_17433 | UsersList_17433 | Aggregate | Count             |
 	Then 'Widget_17433' Widget is displayed to the user
 	Then Value '1' is displayed in the card 'Widget_17433' widget
-	When User clicks data in card 'Widget_17433' widget
-	Then "1" rows are displayed in the agGrid

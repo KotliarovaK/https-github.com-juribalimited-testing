@@ -225,7 +225,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithT
 	Then 'Hostname DESC' content is displayed in 'OrderBy' dropdown
 
 #waiting for X-Ray updates with filter fixes
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18066 @Cleanup @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18066 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsApplied
 	When Dashboard with 'DAS18167_Dashboard' name created via API and opened
 	When User checks 'Edit mode' slide toggle
