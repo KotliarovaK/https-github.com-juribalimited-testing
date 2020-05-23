@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User waits for '2' seconds
 	When User create dynamic list with "AListForDAS16278" name on "Devices" page
 	Then "AListForDAS16278" list is displayed to user
-	When Dashboard with 'DAS16278_Dashboard' name created via API and opened
+	When Dashboard with 'Dashboard_16278' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	When User move 'Hostname' column to 'Device Type' column
 	When User create dynamic list with "ListForDas15780" name on "Devices" page
 	Then "ListForDas15780" list is displayed to user
-	When Dashboard with '2004 ProjectDAS15780' name created via API and opened
+	When Dashboard with 'Dashboard_15780' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
@@ -86,12 +86,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
-	When Dashboard with 'Dashboard12983' name created via API and opened
+	When Dashboard with 'Dashboard_12983' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When  User clicks 'ADD WIDGET' button 
 	When User adds new Widget
-	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | CategoriseBy | DisplayType | OrderBy | AggregateBy | MaxValues |
-	| Column     | ColumnWidget | All Devices | Count distinct    | Operating System | Device Type  | Stacked     |Operating System ASC | Hostname    | 2         |
+	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | CategoriseBy | DisplayType | OrderBy              | AggregateBy | MaxValues |
+	| Column     | ColumnWidget | All Devices | Count distinct    | Operating System | Device Type  | Stacked     | Operating System ASC | Hostname    | 2         |
 	When User selects the Colour Scheme by color code 'rgb(143, 20, 64)'
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
@@ -101,19 +101,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	| Other      |
 	| OS X 10.5  |
 	Then User sees color code 'rgb(143, 20, 64)' on the 'ColumnWidget' widget
-
-@Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
-	When Dashboard with 'Dashboard12983' name created via API and opened
-	When User checks 'Edit mode' slide toggle
-	When  User clicks 'ADD WIDGET' button 
-	When User adds new Widget
-	| WidgetType | Title          | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy | MaxValues |
-	| Column     | ColumnWidget#1 | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    | 2         |
-	When User selects the Colour Scheme by index '2'
-	Then Widget Preview is displayed to the user
-	When User clicks 'CREATE' button 
-	Then 'ColumnWidget#1' Widget is displayed to the user
+	
 	When User clicks 'Edit' menu option for 'ColumnWidget#1' widget
 	When User adds new Widget
 	| WidgetType | Title          | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy | MaxValues |
@@ -121,4 +109,4 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	When User selects the Colour Scheme by index '3'
 	Then Widget Preview is displayed to the user
 	When User clicks 'UPDATE' button 
-	Then 'ColumnWidget#2' Widget is displayed to the user
+	Then 'ColumnWidget#2' Widget is displayed to the user	
