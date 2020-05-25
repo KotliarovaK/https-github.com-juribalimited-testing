@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRadioButtonForRemovingOwnerI
 
 	#AnnI 5/20/20: This functionality ready only for 'Yellow_Dwarf'
 	#AnnI 2/21/20: need to add 'Cleanup' for Owner field;
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20257 @Cleanup @Yellow_Dwarf @Cleanup
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20257 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRemovingOwnerIsWorkingCorrectlyOnAppsDetailsPage
 	When User navigates to the 'Application' details page for the item with '823' ID
 	Then Details page for 'Add-ons' item is displayed to the user

@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjec
 	Then 'UPDATE' button is disabled on popup
 	Then 'Retain the existing owner as a user of this device' checkbox is disabled
 	When User enters 'Austin O. Ball' in the 'User' autocomplete field and selects 'US-W\ADL183503 (19831) - Austin O. Ball' value
-	Then 'Retain the existing owner as a user of this device' checkbox is unchecked
+	Then 'Retain the existing owner as a user of this device' checkbox is checked
 	When User clicks 'UPDATE' button on popup
 	Then 'Device Owner will be changed to Austin O. Ball' text is displayed on inline tip banner
 	When User clicks 'UPDATE' button on popup
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjec
 	Then 'UPDATE' button is disabled on popup
 	Then 'Retain the existing owner as a user of this device' checkbox is disabled
 	When User enters 'Snow' in the 'User' autocomplete field and selects 'UK\ACG370114 (5539) - James N. Snow' value
-	Then 'Retain the existing owner as a user of this device' checkbox is unchecked
+	Then 'Retain the existing owner as a user of this device' checkbox is checked
 	When User clicks 'UPDATE' button on popup
 	Then 'Device Owner will be changed to James N. Snow' text is displayed on inline tip banner
 	When User clicks 'UPDATE' button on popup
