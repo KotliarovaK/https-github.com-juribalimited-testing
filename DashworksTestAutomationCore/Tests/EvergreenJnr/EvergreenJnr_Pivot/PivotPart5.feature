@@ -53,26 +53,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayI
 	| COMPLETE       |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @DAS15252
-Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrderForUsers
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
-	| RowGroups           |
-	| Organisational Unit |
-	And User selects the following Columns on Pivot:
-	| Columns                           |
-	| Windows7Mi: Application Readiness |
-	And User selects the following Values on Pivot:
-	| Values     |
-	| Compliance |
-	And User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	And data in the table is sorted by "Organizational Unit" column in ascending order by default for the Pivot
-	Then Empty value is displayed on the first place for the Pivot
-	Then color data in the column headers is sorted in correct order for the Pivot
-
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @DAS15252
 Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrderForDevices
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -115,22 +95,3 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	| ColumnName     |
 	| NOT APPLICABLE |
 	| AUDIT FAILED   |
-
-@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
-Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForApplications
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
-	| RowGroups |
-	| Import    |
-	And User selects the following Columns on Pivot:
-	| Columns             |
-	| UserEvergr: Stage 3 |
-	And User selects the following Values on Pivot:
-	| Values                |
-	| DeviceSche: Readiness |
-	And User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	Then data in the table is sorted by "Import" column in ascending order by default for the Pivot
-	Then color data in the column headers is sorted in correct order for the Pivot

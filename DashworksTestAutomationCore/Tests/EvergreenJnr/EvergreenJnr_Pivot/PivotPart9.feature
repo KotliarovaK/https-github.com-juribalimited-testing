@@ -5,25 +5,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14373
-Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildColumnDisplayInTheCorrectOrder
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
-	| RowGroups              |
-	| Application Compliance |
-	And User selects the following Columns on Pivot:
-	| Columns               |
-	| Operating System      |
-	| Service Pack or Build |
-	And User selects the following Values on Pivot:
-	| Values     |
-	| Owner City |
-	And User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	And data in the table is sorted by "Application Compliance" column in ascending order by default for the Pivot
-
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13786 @DAS13868
 Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 	When User clicks 'Users' on the left-hand menu
