@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then date in the column headers is sorted in correct order for the Pivot
-	Then data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Owner Last Logon Date" filter where type is "Between" without added column and Date options

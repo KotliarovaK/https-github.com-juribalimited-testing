@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectReadinessTaskColumnsDis
 	| Compliance |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "Vendor" column in ascending order by default for the Pivot
+	And data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectReadinessTaskColumnsDispla
 	| Owner Compliance |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "Evergreen Bucket" column in ascending order by default for the Pivot
+	And data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Empty value is not displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName               |

@@ -506,36 +506,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Sort order on Pivot
 
-        [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order for the Pivot")]
-        public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderForThePivot(string columnName)
+        [Then(@"numeric data in column headers is sorted in descending order by default for the Pivot")]
+        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var actualList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsNumericListSorted(actualList);
-        }
-
-        [Then(@"numeric data in table is sorted by ""(.*)"" column in descending order for the Pivot")]
-        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderForThePivot(string columnName)
-        {
-            var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            var expectedList = pivot.GetColumnHeaders();
             SortingHelper.IsNumericListSorted(expectedList, false);
         }
 
-        [Then(@"data in the table is sorted by ""(.*)"" column in ascending order by default for the Pivot")]
-        public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefaultForThePivot(string columnName)
+        [Then(@"data in left-pinned column is sorted in ascending order by default for the Pivot")]
+        public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefaultForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            var expectedList = pivot.GetLeftPinnedColumnContent();
             SortingHelper.IsListSorted(expectedList);
-        }
-
-        [Then(@"data in the table is sorted by ""(.*)"" column in descending order by default for the Pivot")]
-        public void ThenDataInTheTableIsSortedByColumnInDescendingOrderByDefaultForThePivot(string p0)
-        {
-            var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSorted(expectedList, false);
         }
 
         [Then(@"color data in the column headers is sorted in correct order for the Pivot")]
