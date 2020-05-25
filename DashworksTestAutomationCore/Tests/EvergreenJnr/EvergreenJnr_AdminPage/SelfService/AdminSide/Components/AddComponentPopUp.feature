@@ -7,15 +7,15 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @DAS20069 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatTheAddComponentPopUpHasAListOfAvailableComponents
-	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
+	When User create static list with "DAS_19982_SelfServiceStaticAppList" name on "Applications" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
-    | Name       | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope                    |
-    | TestProj_2 | Test_ID_2         | true    | true                | SelfServiceStaticAppList |
+    | Name                 | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope                              |
+    | DAS_19982_TestProj_2 | 19982_ID_2        | true    | true                | DAS_19982_SelfServiceStaticAppList |
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName       | ShowInSelfService |
-	| Test_ID_2         | TestPageSs2 | TestPageSsDisplay | false             |
+	| 19982_ID_2        | TestPageSs2 | TestPageSsDisplay | false             |
 	When User navigates to the 'Builder' left menu item
     When User clicks on Add Item button for item with 'Page' type and 'Welcome' name on Self Service Builder Panel
 	Then popup with 'Add Component' title is displayed
