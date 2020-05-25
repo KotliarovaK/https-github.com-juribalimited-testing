@@ -5,6 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
+	#AnnI 5/25/20: Need to addd 'Cleanup' for Relink
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS17655 @DAS17831 @DAS18002 @DAS18112 @DAS18284 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnDevicesPage
 	When User navigates to the 'Device' details page for '06RIV0KXJMHJ1K' item
@@ -39,7 +40,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And User clicks 'RELINK' button on popup
 	Then 'Device successfully relinked' text is displayed on inline success banner
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @DAS19884
+	#AnnI 5/25/20: Need to addd 'Cleanup' for Relink
+@Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @DAS19884 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyRelinked
 	When User navigates to the 'Device' details page for '00K4CEEQ737BA4L' item
 	Then Details page for '00K4CEEQ737BA4L' item is displayed to the user
