@@ -193,16 +193,21 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatThereIsNoEmptyOptionInInListFilter
 	When User selects "Mailbox (Saved List)" filter from "Saved List" category
 	Then "Empty" checkbox is not available for current opened filter
 
-@Evergreen @Evergreen_FiltersFeature @Filter_MailboxesList @DAS19348
+@Evergreen @Evergreen_FiltersFeature @Filter_MailboxesList @DAS19348 @Remove_Profile_Changes
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectly
+	When User clicks Profile in Account Dropdown
+	Then Profile page is displayed to user
+	When User navigates to the 'Preferences' left menu item
+	When User selects 'High Contrast' in the 'Display Mode' dropdown
+	When User clicks 'UPDATE' button
 	When User clicks 'Mailboxes' on the left-hand menu
 	When User clicks the Columns button
 	When ColumnName is entered into the search box and the selection is clicked
-		| ColumnName     |
-		| Recipient Type |
+	| ColumnName     |
+	| Recipient Type |
 	Then ColumnName is added to the list
-		| ColumnName     |
-		| Recipient Type |
+	| ColumnName     |
+	| Recipient Type |
 	When User clicks the Filters button
 	When User add "Recipient Type" filter where type is "Does not equal" without added column and "Empty" Lookup option
 	Then "Recipient Type" filter is added to the list
@@ -211,10 +216,50 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCor
 	#translation
 	When User language is changed to "Test Language" via API
 	Then grid headers are displayed in the following order
-		| ColumnName |
-		| [9999999]  |
-		| [9999999]  |
-		| [9999999]  |
-		| [9999999]  |
-		| [9999999]  |
-		| [9999999]  |
+	| ColumnName |
+	| [9999999]  |
+	| [9999999]  |
+	| [9999999]  |
+	| [9999999]  |
+	| [9999999]  |
+	| [9999999]  |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_MailboxesList @DAS17433 @Remove_Profile_Changes
+Scenario: EvergreenJnr_MailboxesList_CheckThatNewProjectNameColumnDisplayedCorrectly
+	When User clicks Profile in Account Dropdown
+	Then Profile page is displayed to user
+	When User navigates to the 'Preferences' left menu item
+	When User selects 'High Contrast' in the 'Display Mode' dropdown
+	When User clicks 'UPDATE' button
+	When User clicks 'Mailboxes' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| EmailMigra: Name |
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| EmailMigra: Name |
+	When User clicks the Filters button
+	When User add "EmailMigra: Name" filter where type is "Equals" without added column and following value:
+	| Values                |
+	| hamiltkz@rdlabs.local |
+	Then "EmailMigra: Name" filter is added to the list
+	Then Column headers are displayed in high contrast
+	Then Text content of 'EmailMigra: Name' column is displayed in High Contrast
+	#translation
+	When User language is changed to "Test Language" via API
+	Then grid headers are displayed in the following order
+	| ColumnName            |
+	| [9999999]             |
+	| [9999999]             |
+	| [9999999]             |
+	| [9999999]             |
+	| [9999999]             |
+	| EmailMigra: [9999999] |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_MailboxesList @DAS20619
+Scenario: EvergreenJnr_MailboxesList_CheckThatNoErrorDisplayedWhenFilterIncludesProjectNameFilter
+	When User clicks 'Mailboxes' on the left-hand menu
+	When User navigates to 'mailboxes?$filter=(project_48_shortName%20EQUALS%20('hamiltkz%40rdlabs.local'))' url via address line
+	Then table content is present
+	Then There are no errors in the browser console

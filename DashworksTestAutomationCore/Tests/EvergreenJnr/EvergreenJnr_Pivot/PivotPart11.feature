@@ -6,25 +6,6 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS19348
-Scenario: EvergreenJnr_Mailboxes_CheckThatRecipientTypeColumnCanBeUsedInPivot
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User selects 'Pivot' in the 'Create' dropdown
-	When User selects the following Row Groups on Pivot:
-	| RowGroups      |
-	| Recipient Type |
-	When User selects the following Columns on Pivot:
-	| Columns          |
-	| Mailbox Platform |
-	When User selects the following Values on Pivot:
-	| Values        |
-	| Email Address |
-	When User selects aggregate function "Count" on Pivot
-	When User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	Then data in the table is sorted by "Recipient Type" column in ascending order by default for the Pivot
-
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS19348
 Scenario: EvergreenJnr_Devices_CheckThatNoConsoleErrorDisplayedAfterRunninfPivotFromObjectOwnerFilter
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
@@ -43,6 +24,25 @@ Scenario: EvergreenJnr_Devices_CheckThatNoConsoleErrorDisplayedAfterRunninfPivot
 	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14373
+Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildColumnDisplayInTheCorrectOrder
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User selects 'Pivot' in the 'Create' dropdown
+	And User selects the following Row Groups on Pivot:
+	| RowGroups              |
+	| Application Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns               |
+	| Operating System      |
+	| Service Pack or Build |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	And User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	And data in the table is sorted by "Application Compliance" column in ascending order by default for the Pivot
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS21056
 Scenario: EvergreenJnr_Devices_CheckThatEmptyRowVlueLeadsToCorrectFilteredPage
@@ -66,3 +66,28 @@ Scenario: EvergreenJnr_Devices_CheckThatEmptyRowVlueLeadsToCorrectFilteredPage
 	Then "Device Type is Data Centre" is displayed in added filter info
 	Then "Manufacturer is Dell" is displayed in added filter info
 	Then "Country is Empty" is displayed in added filter info
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS17433 @DAS21302 @DAS19348
+Scenario: EvergreenJnr_AllLists_CheckThatNoConsoleErrorDisplayedAfterRunninfPivotForParticularSet
+	When User clicks '<List>' on the left-hand menu
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| <Row>     |
+	When User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	When User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User selects aggregate function "Count" on Pivot
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	Then There are no errors in the browser console
+	Then data in the table is sorted by "<ColumnToCheck>" column in ascending order by default for the Pivot
+
+Examples:
+	| List      | Row                                       | Column           | Value              | ColumnToCheck  |
+	| Mailboxes | EmailMigra: Name                          | Mailbox Type     | Owner Display Name | UserMailbox    |
+	| Devices   | Windows7Mi: Pre-Migration \ VDI Only Task | Device Type      | Boot Up Date       | Data Centre    |
+	| Mailboxes | Recipient Type                            | Mailbox Platform | Email Address      | Recipient Type |

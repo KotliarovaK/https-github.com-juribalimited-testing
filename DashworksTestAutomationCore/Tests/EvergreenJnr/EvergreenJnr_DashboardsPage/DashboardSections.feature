@@ -102,7 +102,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	Then 'Section successfully created' text is displayed on inline success banner
 	Then User sees number of Sections increased by '1' on Dashboards page
 	
-	
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14618 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When Dashboard with 'Dashboard_DAS14618' name created via API and opened
