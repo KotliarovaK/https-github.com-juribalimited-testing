@@ -81,13 +81,13 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
 	When User clicks on 'Change Owner' button on end user Self Service page
 	Then popup with 'Change Owner' title is displayed
 	Then 'Owner' autocomplete is displayed
-	Then 'Change Owner' button is disabled on popup
-	Then Button 'Change Owner' has 'Some values are missing or not valid' tooltip on popup
+	Then 'Update' button is disabled on popup
+	Then Button 'Update' has 'Some values are missing or not valid' tooltip on popup
 	When User clicks 'Cancel' button on popup
 	Then popup is not displayed to User
 	When User clicks on 'Change Owner' button on end user Self Service page
 	When User enters 'Jones' in the 'Owner' autocomplete field and selects '03C54BC1198843A4A03 (Jones, Tina)' value
-	When User clicks 'Change Owner' button on popup
+	When User clicks 'Update' button on popup
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn        |
 	| Username     | 03C54BC1198843A4A03 |
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
 	When User navigates to End User landing page with '20421_1_SI' Self Service Identifier
 	When User clicks on 'Change Owner' button on end user Self Service page
 	When User enters 'Jones' in the 'Owner' autocomplete field and selects '03C54BC1198843A4A03 (Jones, Tina)' value
-	When User clicks 'Change Owner' button on popup
+	When User clicks 'Update' button on popup
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn        |
 	| Username     | 03C54BC1198843A4A03 |
@@ -149,16 +149,16 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
 	Then popup with 'Change Owner' title is displayed
 	Then 'Remove owner' radio button is enabled
 	Then 'Assign an owner' radio button is enabled
-	Then 'Change Owner' button is disabled on popup
-	Then Button 'Change Owner' has 'Some values are missing or not valid' tooltip on popup
-	Then 'Change Owner' button is disabled on popup
+	Then 'Update' button is disabled on popup
+	Then Button 'Update' has 'Some values are missing or not valid' tooltip on popup
+	Then 'Update' button is disabled on popup
 	Then 'Cancel' button is not disabled on popup
 	When User checks 'Remove owner' radio button
-	Then 'Change Owner' button is not disabled on popup
+	Then 'Update' button is not disabled on popup
 	When User checks 'Assign an owner' radio button
 	Then 'Owner' autocomplete is displayed
-	Then 'Change Owner' button is disabled on popup
-	Then Button 'Change Owner' has 'Some values are missing or not valid' tooltip on popup
+	Then 'Update' button is disabled on popup
+	Then Button 'Update' has 'Some values are missing or not valid' tooltip on popup
 	Then 'Cancel' button is not disabled on popup
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20647 @Cleanup @SelfServiceMVP
@@ -247,7 +247,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	When User navigates to End User landing page with '20425_1_SI' Self Service Identifier
 	And User clicks on 'Change Owner' button on end user Self Service page
 	And User enters 'Jones' in the 'Owner' autocomplete field and selects '03C54BC1198843A4A03 (Jones, Tina)' value
-	And User clicks 'Change Owner' button on popup
+	And User clicks 'Update' button on popup
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn        |
 	| Username     | 03C54BC1198843A4A03 |
@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	When User navigates to End User landing page with '20425_1_SI' Self Service Identifier
 	And User clicks on 'Change Owner' button on end user Self Service page
 	And User checks 'Remove owner' radio button
-	And User clicks 'Change Owner' button on popup
+	And User clicks 'Update' button on popup
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn |
 	| Username     |              |
