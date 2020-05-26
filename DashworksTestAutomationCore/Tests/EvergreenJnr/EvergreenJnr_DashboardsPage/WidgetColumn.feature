@@ -138,13 +138,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckFiltersAfterRedirectingFromWidgetData
 	When User create dynamic list with "20415_List" name on "Users" page
 	And Dashboard with 'Dashboard20415' name created via API and opened
 	And User checks 'Edit mode' slide toggle
-	And  User clicks 'ADD WIDGET' button 
+	And  User clicks 'ADD WIDGET' button
 	And User adds new Widget
 	| WidgetType | Title        | List       | AggregateFunction | SplitBy                              | CategoriseBy                                                        | DisplayType | OrderBy                                  | DrillDown | ShowLegend |
 	| Column     | 20415_Widget | 20415_List | Count             | UserEvergr: Stage 2 \ Scheduled Date | UserEvergr: Stage 3 \ Group User Radiobutton RAG Date Owner (Owner) | Stacked     | UserEvergr: Stage 2 \ Scheduled Date ASC | Yes       | true       |
 	Then Widget Preview is displayed to the user
-	When User clicks 'CREATE' button 
-	When User clicks on 'Administrator' category of '20415_Widget' widget 
+	When User clicks 'CREATE' button
+	When User clicks on 'Administrator' category of '20415_Widget' widget
 	Then URL is 'evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedObjectName,project_task_56_13245_2_Task,project_task_56_13251_1_owner&$filter=(project_task_56_13245_2_Task%20IS%20NOT%20EMPTY%20()%20AND%20project_task_56_13251_1_ownerId%20IS%20NOT%20EMPTY%20()%20AND%20project_task_56_13245_2_Task%20EQUALS%20('13%20Dec%202018%2012:00')%20AND%20project_task_56_13251_1_ownerId%20EQUALS%20('f98fa56f-e271-47ff-a90e-31e2f02748b3'))'
 	And User sees "2" rows in grid
 	And Content in the 'UserEvergr: Stage 2 \ Scheduled Date' column is equal to
