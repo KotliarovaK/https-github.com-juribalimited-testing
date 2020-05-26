@@ -39,7 +39,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement AgMenu { get; set; }
 
         //TODO probably can be changed to something more generic
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input | .//div[@class='ag-column-select-header']//input[contains(@class, 'checkbox-input')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input | .//div[@class='mat-checkbox-inner-container']//input")]
         public IWebElement SelectAllCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@ref='eCellWrapper']//*[contains(@class,'ag-selection-checkbox')]")]

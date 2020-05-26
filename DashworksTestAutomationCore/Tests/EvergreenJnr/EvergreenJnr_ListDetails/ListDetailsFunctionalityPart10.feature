@@ -31,8 +31,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectl
 	When User clicks '<Lists>' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
 	When User selects the following Row Groups on Pivot:
-	| RowGroups |
-	| <RowGroup>  |
+	| RowGroups  |
+	| <RowGroup> |
 	When User selects the following Columns on Pivot:
 	| Columns  |
 	| <Column> |
