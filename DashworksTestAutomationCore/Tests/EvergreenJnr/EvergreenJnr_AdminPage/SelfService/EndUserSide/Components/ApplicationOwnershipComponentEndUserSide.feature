@@ -134,8 +134,8 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
 	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope               |
 	| DAS_20421_SS_1 | 20421_1_SI        | true    | true                | DAS_20421_AppList_1 |
 	When User creates new application ownership component for 'Welcome' Self Service page via API
-	| ComponentName | ProjectName      | OwnerPermission                                  | OwnerScope |
-	| AOC Name      | DAS_20421_Proj_1 | Allow owner to be removed or set to another user | All Users  |
+	| ComponentName | ProjectName      | OwnerPermission                                  | UserScope |
+	| AOC Name      | DAS_20421_Proj_1 | Allow owner to be removed or set to another user | All Users |
 	When User navigates to End User landing page with '20421_1_SI' Self Service Identifier
 	When User clicks on 'Change Owner' button on end user Self Service page
 	When User enters 'Jones' in the 'Owner' autocomplete field and selects '03C54BC1198843A4A03 (Jones, Tina)' value
