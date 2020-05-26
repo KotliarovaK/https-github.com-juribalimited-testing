@@ -90,17 +90,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	When User checks 'Edit mode' slide toggle
 	When  User clicks 'ADD WIDGET' button 
 	When User adds new Widget
-	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | CategoriseBy | DisplayType | OrderBy              | AggregateBy | MaxValues |
-	| Column     | ColumnWidget | All Devices | Count distinct    | Operating System | Device Type  | Stacked     | Operating System ASC | Hostname    | 2         |
+	| WidgetType | Title          | List        | AggregateFunction | SplitBy          | CategoriseBy | DisplayType | OrderBy              | AggregateBy | MaxValues |
+	| Column     | ColumnWidget#1 | All Devices | Count distinct    | Operating System | Device Type  | Stacked     | Operating System ASC | Hostname    | 2         |
 	When User selects the Colour Scheme by color code 'rgb(143, 20, 64)'
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then 'ColumnWidget' Widget is displayed to the user
-	Then Line X labels of 'ColumnWidget' column widget is displayed in following order:
+	Then 'ColumnWidget#1' Widget is displayed to the user
+	Then Line X labels of 'ColumnWidget#1' column widget is displayed in following order:
 	| ColumnName |
 	| Other      |
 	| OS X 10.5  |
-	Then User sees color code 'rgb(143, 20, 64)' on the 'ColumnWidget' widget
+	Then User sees color code 'rgb(143, 20, 64)' on the 'ColumnWidget#1' widget
 	
 	When User clicks 'Edit' menu option for 'ColumnWidget#1' widget
 	When User adds new Widget

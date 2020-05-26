@@ -188,16 +188,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _dashboard.Value.Add(new DashboardDto() { DashboardName = dashboardName, User = _user });
         }
 
-        [When(@"User types '(.*)' as dashboard title")]
-        public void WhenEnterDashboardTitle(string dashboardName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-
-            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
-            listElement.DashboardNameTextBox.SendKeys(dashboardName);
-        }
-
         #endregion
 
         #region Details panel

@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	When User add "CPU Count" filter where type is "Equals" with added column and following value:
 	| Values |
 	| 0      |
-	When User create dynamic list with "DAS18168_List" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'DAS18168_List' list
 	Then "DAS18168_List" list is displayed to user
 	When Dashboard with 'Dashboard_18168' name created via API and opened
 	When User checks 'Edit mode' slide toggle
