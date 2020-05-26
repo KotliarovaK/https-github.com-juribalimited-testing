@@ -946,12 +946,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Column filter
 
+        //	| checkboxes |
         [When(@"User checks following checkboxes in the filter dropdown menu for the '(.*)' column:")]
         public void WhenUserChecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
         {
             SetFilterCheckboxesState(columnName, table, true);
         }
 
+        //	| checkboxes |
         [When(@"User unchecks following checkboxes in the filter dropdown menu for the '(.*)' column:")]
         public void WhenUserUnchecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
         {
