@@ -37,16 +37,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         private void OpenItemDetailsById(string listName, string id)
         {
             //Navigate back to evergreeen from self service end user page
-            if (_driver.Url.Contains("selfservice") && _driver.Url.Contains("ObjectId"))
+            if (_driver.Url.Contains("selfservice") && _driver.Url.Contains("pageId"))
             {
                 _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
             }
+
+            _driver.NowAt<BaseHeaderElement>();
 
             var url = $"{UrlProvider.EvergreenUrl}#/{listName}/{id}/details/{listName}";
 
             _driver.NavigateToUrl(url);
             _driver.WaitForDataLoading();
-            _driver.NowAt<BaseHeaderElement>();
         }
     }
 }
