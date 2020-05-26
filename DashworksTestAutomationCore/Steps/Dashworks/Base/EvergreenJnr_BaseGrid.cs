@@ -902,6 +902,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.WaitForDataLoading();
         }
 
+        [Then(@"Ascending order applied to '(.*)' column and displayed in URL")]
+        public void ThenAscendingOrderAppliedToColumnAndDisplayedInURL(string columnName)
+        {
+            var currentUrl = _driver.Url;
+            var sorting = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(sorting.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), "Ascending icon is not displayed");
+            Verify.Contains("%20asc", currentUrl, columnName);
+        }
+
+        [Then(@"Descending order applied to '(.*)' column and displayed in URL")]
+        public void ThenDescendingOrderAppliedToColumnAndDisplayedInURL(string columnName)
+        {
+            var currentUrl = _driver.Url;
+            var sorting = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(sorting.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Descending), "Descending icon is not displayed");
+            Verify.Contains("%20desc", currentUrl, columnName);
+        }
+
         #endregion
 
         #region Pinned column

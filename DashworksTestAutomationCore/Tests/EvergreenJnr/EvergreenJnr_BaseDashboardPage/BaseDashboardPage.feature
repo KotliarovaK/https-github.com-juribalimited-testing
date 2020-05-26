@@ -13,12 +13,12 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToD
 	And Appropriate header font weight is displayed
 	Then 'v5.4.9.0' Application version is displayed in the left-hand menu
 
-Examples:
-	| ListName     |
-	| Devices      |
-	| Users        |
-	| Applications |
-	| Mailboxes    |
+	Examples:
+		| ListName     |
+		| Devices      |
+		| Users        |
+		| Applications |
+		| Mailboxes    |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11618
 Scenario Outline: EvergreenJnr_AllList_CheckDefaultSortOrderOnTheLists
@@ -27,50 +27,50 @@ Scenario Outline: EvergreenJnr_AllList_CheckDefaultSortOrderOnTheLists
 	And The first cell of the table matches to default sorting "<ListName>" list
 	And data in the table is sorted by "<ColumnName>" column in ascending order by default
 
-Examples: 
-	| ListName     | ColumnName    |
-	| Devices      | Hostname      |
-	| Users        | Username      |
-	| Applications | Application   |
-	| Mailboxes    | Email Address |
+	Examples:
+		| ListName     | ColumnName    |
+		| Devices      | Hostname      |
+		| Users        | Username      |
+		| Applications | Application   |
+		| Mailboxes    | Email Address |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
 Scenario Outline: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllDevicesOrAllUsersLink
 	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to the "<AllItems>" list
 	Then grid headers are displayed in the following order
-	| ColumnName |
-	| <Column1>  |
-	| <Column2>  |
-	| <Column3>  |
-	| <Column4>  |
+		| ColumnName |
+		| <Column1>  |
+		| <Column2>  |
+		| <Column3>  |
+		| <Column4>  |
 
-Examples: 
-	| ListName     | AllItems         | Column1       | Column2          | Column3          | Column4            |
-	| Devices      | All Devices      | Hostname      | Device Type      | Operating System | Owner Display Name |
-	| Users        | All Users        | Username      | Domain           | Display Name     | Distinguished Name |
+	Examples:
+		| ListName | AllItems    | Column1  | Column2     | Column3          | Column4            |
+		| Devices  | All Devices | Hostname | Device Type | Operating System | Owner Display Name |
+		| Users    | All Users   | Username | Domain      | Display Name     | Distinguished Name |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
 Scenario: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllApplicationsLink
 	When User clicks 'Applications' on the left-hand menu
 	And User navigates to the "All Applications" list
 	Then grid headers are displayed in the following order
-	| ColumnName  |
-	| Application |
-	| Vendor      |
-	| Version     |
+		| ColumnName  |
+		| Application |
+		| Vendor      |
+		| Version     |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
 Scenario: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllMailboxesLink
 	When User clicks 'Mailboxes' on the left-hand menu
 	And User navigates to the "All Mailboxes" list
 	Then grid headers are displayed in the following order
-	| ColumnName         |
-	| Email Address      |
-	| Mailbox Platform   |
-	| Mail Server        |
-	| Mailbox Type       |
-	| Owner Display Name |
+		| ColumnName         |
+		| Email Address      |
+		| Mailbox Platform   |
+		| Mail Server        |
+		| Mailbox Type       |
+		| Owner Display Name |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11988 @DAS10972
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns
@@ -93,12 +93,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfte
 	When User clicks on '<ColumnName>' column header
 	Then Save to New Custom List element is NOT displayed
 
-Examples:
-	| ListName     | ColumnName    | AddSortOrders    |
-	| Devices      | Hostname      | Device Type      |
-	| Users        | Username      | Domain           |
-	| Applications | Application   | Vendor           |
-	| Mailboxes    | Email Address | Mailbox Platform |
+	Examples:
+		| ListName     | ColumnName    | AddSortOrders    |
+		| Devices      | Hostname      | Device Type      |
+		| Users        | Username      | Domain           |
+		| Applications | Application   | Vendor           |
+		| Mailboxes    | Email Address | Mailbox Platform |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11895
 Scenario: EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyNavigateBetweenMainTabs
@@ -116,12 +116,12 @@ Scenario Outline: EvergreenJnr_AllList_CheckPositionOfContextMenuInGrid
 	#TODO update the next step in the same way as the step above.
 	Then User sees context menu placed near '<CellText>' cell in the '<ColumnName>' column
 
-Examples: 
-	| ListName     | CellText                         | ColumnName    |
-	| Devices      | 001PSUMZYOW581                   | Hostname      |
-	| Users        | Spruill, Shea                    | Display Name  |
-	| Applications | 11.2.5388.0                      | Version       |
-	| Mailboxes    | 002B5DC7D4D34D5C895@bclabs.local | Email Address |
+	Examples:
+		| ListName     | CellText                         | ColumnName    |
+		| Devices      | 001PSUMZYOW581                   | Hostname      |
+		| Users        | Spruill, Shea                    | Display Name  |
+		| Applications | 11.2.5388.0                      | Version       |
+		| Mailboxes    | 002B5DC7D4D34D5C895@bclabs.local | Email Address |
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174
 Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndColumns
@@ -130,16 +130,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndC
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName            |
-	| Owner Cost Centre     |
-	| ComputerSc: In Scope  |
-	| Windows7Mi: Object ID |
+		| ColumnName            |
+		| Owner Cost Centre     |
+		| ComputerSc: In Scope  |
+		| Windows7Mi: Object ID |
 	Then "Cost Centre" column is added to URL on "Devices" page
 	And "ComputerSc: In Scope" column is added to URL on "Devices" page
 	And "Windows7Mi: Object ID" column is added to URL on "Devices" page
 	When User clicks on 'Owner Cost Centre' column header
-	Then data in table is sorted by 'Owner Cost Centre' column in ascending order
-	And Ascending order sorted on "Owner Cost Centre" column is displayed in URL
+	Then Content is empty in the column
+		| ColumnName        |
+		| Owner Cost Centre |
+	Then Ascending order applied to 'Owner Cost Centre' column and displayed in URL
 	When User navigates to the "All Devices" list
 	Then default URL is displayed on "Devices" page
 
@@ -150,20 +152,20 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes |
-	| Red                |
+		| SelectedCheckboxes |
+		| Red                |
 	Then "Compliance" column is added to URL on "Users" page
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes |
-	| Green              |
+		| SelectedCheckboxes |
+		| Green              |
 	Then "Compliance" column is added to URL on "Users" page
 	When User navigates to the "All Users" list
 	Then default URL is displayed on "Users" page
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "User Application Compliance" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes |
-	| Amber              |
+		| SelectedCheckboxes |
+		| Amber              |
 	Then "User Application Compliance" column is added to URL on "Users" page
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11641
@@ -181,8 +183,8 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfter
 	Then 'All <ListName>' list should be displayed to the user
 	When User clicks the Columns button
 	And User adds columns to the list
-	| ColumnName  |
-	| <AddColumn> |
+		| ColumnName  |
+		| <AddColumn> |
 	And User create dynamic list with "DynamicList1" name on "<ListName>" page
 	And User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
@@ -221,12 +223,12 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfter
 	Then data in table is sorted by '<ColumnName>' column in descending order
 	When User clicks on '<ColumnName>' column header
 
-Examples:
-	| ListName     | ColumnName    | AddSortOrders    | AddColumn                |
-	| Devices      | Hostname      | Device Type      | ComputerSc: Readiness ID |
-	| Users        | Username      | Domain           | UserSchedu: Readiness ID |
-	| Applications | Application   | Vendor           | UserSchedu: Readiness ID |
-	| Mailboxes    | Email Address | Mailbox Platform | EmailMigra: Readiness ID |
+	Examples:
+		| ListName     | ColumnName    | AddSortOrders    | AddColumn                |
+		| Devices      | Hostname      | Device Type      | ComputerSc: Readiness ID |
+		| Users        | Username      | Domain           | UserSchedu: Readiness ID |
+		| Applications | Application   | Vendor           | UserSchedu: Readiness ID |
+		| Mailboxes    | Email Address | Mailbox Platform | EmailMigra: Readiness ID |
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @DAS12867 @DAS12999 @DAS14189 @DAS16961 @Projects
 Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
@@ -244,15 +246,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreD
 	Then 'All <ListName>' list should be displayed to the user
 	And Create button is displayed
 	And User sees that 'Create' dropdown contains following options:
-	| Options |
-	| PROJECT |
-	| PIVOT   |
+		| Options |
+		| PROJECT |
+		| PIVOT   |
 
-Examples:
-	| ListName     | 
-	| Devices      | 
-	| Users        | 
-	| Mailboxes    | 
+	Examples:
+		| ListName  |
+		| Devices   |
+		| Users     |
+		| Mailboxes |
 
 @Evergreen @Applications @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
 Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForApplicationPage
@@ -260,8 +262,8 @@ Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDi
 	Then 'All Applications' list should be displayed to the user
 	And Create button is displayed
 	And User sees that 'Create' dropdown contains following options:
-	| Options |
-	| PIVOT   |
+		| Options |
+		| PIVOT   |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12337
 Scenario Outline: EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData
@@ -269,11 +271,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreN
 	Then 'All <ListName>' list should be displayed to the user
 	And Empty link is displayed for first row in the "<ColumnName>" column
 
-Examples:
-	| ListName     | ColumnName    |
-	| Users        | Username      |
-	| Applications | Application   |
-	| Mailboxes    | Email Address |
+	Examples:
+		| ListName     | ColumnName    |
+		| Users        | Username      |
+		| Applications | Application   |
+		| Mailboxes    | Email Address |
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @Widgets @DAS15444 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhichHasDependencies
@@ -294,10 +296,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	When User clicks 'Dashboards' on the left-hand menu
 	When User clicks 'CREATE DASHBOARD' button
 	And User creates new Dashboard with 'Dashboard for DAS15444' name
-	And User clicks 'ADD WIDGET' button 
+	And User clicks 'ADD WIDGET' button
 	And User creates new Widget
-	| WidgetType | Title                | List             | MaxRows | MaxColumns |
-	| List       | Widget_For_ DAS15444 | DynamicList15444 | 10      | 10         |
+		| WidgetType | Title                | List             | MaxRows | MaxColumns |
+		| List       | Widget_For_ DAS15444 | DynamicList15444 | 10      | 10         |
 	Then 'Widget_For_ DAS15444' Widget is displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -311,16 +313,16 @@ Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrec
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	When User creates new clear User
-	| Username | FullName      | Password | ConfirmPassword | Roles                 |
-	| DAS16558 | DAS16558_User | 1234qwer | 1234qwer        | Project Administrator |
+		| Username | FullName      | Password | ConfirmPassword | Roles                 |
+		| DAS16558 | DAS16558_User | 1234qwer | 1234qwer        | Project Administrator |
 	Then Success message is displayed
 	When User cliks Logout link
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User login with following credentials:
-	| Username | Password |
-	| DAS16558 | 1234qwer |
+		| Username | Password |
+		| DAS16558 | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then error page with '403' status code and 'You are not authorized to view this page, speak to your Dashworks administrator' error message is displayed
@@ -346,5 +348,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavig
 
 @Evergreen @EvergreenJnr_BaseDashboardPage @DAS20056
 Scenario: EvergreenJnr_DevicesList_CheckThat500FullErrorPageIsDisplyed
-    When User navigates to 'device/453454353/details/device' url via address line
-    Then error page with '500' status code and 'Object reference not set to an instance of an object.' error message is displayed
+	When User navigates to 'device/453454353/details/device' url via address line
+	Then error page with '500' status code and 'Object reference not set to an instance of an object.' error message is displayed
