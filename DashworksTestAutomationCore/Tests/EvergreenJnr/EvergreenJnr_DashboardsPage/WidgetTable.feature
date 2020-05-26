@@ -152,11 +152,11 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhen
 	When User selects '<AggregateFunc>' in the 'AggregateFunction' dropdown
 	When User selects 'Last Logon Date' in the 'AggregateBy' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
-	| items                      |
-	| Domain ASC                 |
-	| Domain DESC                |
-	| Last Logon Date First ASC  |
-	| Last Logon Date First DESC |
+	| items                                           |
+	| Domain ASC                                      |
+	| Domain DESC                                     |
+	| <AggregateFunc> Logon Date <AggregateFunc> ASC  |
+	| <AggregateFunc> Logon Date <AggregateFunc> DESC |
 
 Examples: 
 	| AggregateFunc |
@@ -344,7 +344,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingE
 	When User Add And "App Count (Used)" filter where type is "Less than" with added column and following value:
     | Values |
     | 1      |
-	When User create dynamic list with "AListForDAS18324" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'AListForDAS18324' list
 	Then "AListForDAS18324" list is displayed to user
 	When Dashboard with 'Dashboard_18324' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -369,7 +369,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	| Empty              |
 	| Green              |
 	| Amber              |
-	When User create dynamic list with "Devices_List_DAS18327" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'Devices_List_DAS18327' list
+	Then "Devices_List_DAS18327" list is displayed to user
 	When Dashboard with 'Dashboard_18327' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
@@ -544,7 +545,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorDisplayedWhenClicki
 	| Empty              |
 	| Green              |
 	| Amber              |
-	When User create dynamic list with "Devices_List_DAS18631" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'Devices_List_DAS18631' list
+	Then "Devices_List_DAS18631" list is displayed to user
 	When Dashboard with 'Dashboard_18631' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
@@ -569,7 +571,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplay
 	When User add "Windows7Mi: Pre-Migration \ VDI Only Task (Owner)" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Me                 |
-	When User create dynamic list with "Devices_List_DAS20227" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'Devices_List_DAS20227' list
+	Then "Devices_List_DAS20227" list is displayed to user
 	When Dashboard with 'Dashboard_20227' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
@@ -635,7 +638,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetCanBeCreatedBasedOnListWith
 	When User Add And "Compliance" filter where type is "Does not equal" with added column and Lookup option
 	| SelectedValues |
 	| Empty          |
-	When User create dynamic list with "Devices_List_DAS20678" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'Devices_List_DAS20678' list
 	Then "Devices_List_DAS20678" list is displayed to user
 	When Dashboard with 'Dashboard_20678' name created via API and opened
 	When User checks 'Edit mode' slide toggle
