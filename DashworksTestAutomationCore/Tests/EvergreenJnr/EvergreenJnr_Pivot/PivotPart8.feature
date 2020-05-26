@@ -139,7 +139,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsD
 	| Owner City |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "<RowGroups>" column in ascending order by default for the Pivot
+	And data in left-pinned column is sorted in ascending order by default for the Pivot
 
 Examples:
 	| RowGroups              | Columns               |
@@ -165,4 +165,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuild
 	| Owner City |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "Operating System" column in ascending order by default for the Pivot
+	And data in left-pinned column is sorted in ascending order by default for the Pivot

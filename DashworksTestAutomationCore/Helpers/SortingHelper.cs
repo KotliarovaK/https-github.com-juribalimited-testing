@@ -13,8 +13,14 @@ namespace DashworksTestAutomation.Helpers
         public static void IsListSorted(List<string> originalList, bool isAscending = true)
         {
             originalList = originalList.Where(x => !x.Equals("") && !x.Equals("Empty")).ToList();
+
+            //Fail if nothing to sort
+            if (!originalList.Any())
+                throw new Exception("List is empty. There is nothing to sort.");
+
             //Ascending
             List<string> expectedList = originalList.OrderBy(s => s).ToList();
+
             if (!isAscending)
                 expectedList.Reverse();
 
@@ -38,9 +44,9 @@ namespace DashworksTestAutomation.Helpers
             var originalColorsList = originalList.Select(x => Enum.Parse(typeof(T), x.Replace(" ", String.Empty))).ToList();
             var originalColorsListSorted = originalColorsList.OrderBy(s => Enum.Parse(typeof(T), s.ToString().Replace("_", " "))).ToList();
 
-            //Return if nothing to sort
+            //Fail if nothing to sort
             if (!originalList.Any())
-                return;
+                throw new Exception("List is empty. There is nothing to sort.");
 
             if (!isAscending)
                 originalColorsListSorted.Reverse();
@@ -63,9 +69,9 @@ namespace DashworksTestAutomation.Helpers
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
 
-            //Return if nothing to sort
+            //Fail if nothing to sort
             if (!originalList.Any())
-                return;
+                throw new Exception("List is empty. There is nothing to sort.");
 
             List<KeyValuePair<int, string>> unsortedList = new List<KeyValuePair<int, string>>();
             int intValue;
@@ -105,9 +111,9 @@ namespace DashworksTestAutomation.Helpers
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
 
-            //Return if nothing to sort
+            //Fail if nothing to sort
             if (!originalList.Any())
-                return;
+                throw new Exception("List is empty. There is nothing to sort.");
 
             List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
             DateTime datevalue;
