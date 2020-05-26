@@ -25,18 +25,18 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| HDD Total Size (GB) |
-	And User create dynamic list with "DAS16167_HddList" name on "Devices" page
-	When Dashboard with 'DAS16167_HddList' name created via API and opened
+	When User create dynamic list with "<WidgetType>List_16167" name on "Devices" page
+	When Dashboard with '<WidgetType>Dashboard_16167' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
-	| WidgetType   | Title           | List             | SplitBy          | AggregateFunction | AggregateBy         | OrderBy                         |
-	| <WidgetType> | HddListDAS16167 | DAS16167_HddList | Operating System | Minimum           | HDD Total Size (GB) | HDD Total Size (GB) Minimum ASC |
+	| WidgetType   | Title           | List                   | SplitBy          | AggregateFunction | AggregateBy         | OrderBy                         |
+	| <WidgetType> | HddListDAS16167 | <WidgetType>List_16167 | Operating System | Minimum           | HDD Total Size (GB) | HDD Total Size (GB) Minimum ASC |
 	Then Widget Preview is displayed to the user
-	And 'All values are 0' message is displayed in Preview
+	Then 'All values are 0' message is displayed in Preview
 	When User clicks 'CREATE' button 
 	Then 'HddListDAS16167' Widget is displayed to the user
-	And 'All values are 0' message is displayed in 'HddListDAS16167' widget
+	Then 'All values are 0' message is displayed in 'HddListDAS16167' widget
 
 Examples: 
 	| WidgetType |

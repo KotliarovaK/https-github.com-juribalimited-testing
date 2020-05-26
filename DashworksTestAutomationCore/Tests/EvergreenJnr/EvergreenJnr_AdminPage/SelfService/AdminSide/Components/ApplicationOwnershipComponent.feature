@@ -13,12 +13,12 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	When User create static list with "DAS_20019_1" name on "Applications" page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_20019_11" name on "Users" page with following items
+	When User create static list with "UserStatList_DAS_20019_1" name on "Users" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
-	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
-	| DAS_20019_SS_1 | 20019_1_SI        | true    | true                | DAS_20019_1 |
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope                    |
+	| DAS_20019_SS_1 | 20019_1_SI        | true    | true                | UserStatList_DAS_20019_1 |
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 20019_1_SI        | TestPageSs1 | DAS_20019_Page_1 | true              |
@@ -54,9 +54,9 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	Then 'Owner Scope' autocomplete is displayed
 	Then '' content is displayed in 'Owner Scope' autocomplete
 	Then 'Owner Scope' autocomplete contains following options:
-	| values       |
-	| All Users    |
-	| DAS_20019_11 |
+	| values                   |
+	| All Users                |
+	| UserStatList_DAS_20019_1 |
 	Then 'Owner Scope' autocomplete first option is 'All Users'
 	Then following fields to display are displayed on application ownership component page
 	| fields       |
@@ -124,30 +124,30 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19909 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	When Project created via API
-	| ProjectName    | Scope     | ProjectTemplate | Mode               |
-	| DAS_19909_Proj | All Users | None            | Standalone Project |
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
+	| DAS_19909_Proj_A | All Users | None            | Standalone Project |
 	When Project created via API and opened
-	| ProjectName        | Scope     | ProjectTemplate | Mode               |
-	| DAS_19909_Proj_Up | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19909_2" name on "Applications" page with following items
+	| ProjectName         | Scope     | ProjectTemplate | Mode               |
+	| DAS_19909_Proj_Up_A | All Users | None            | Standalone Project |
+	When User create static list with "DAS_19909_2_A" name on "Applications" page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19909_3" name on "Users" page with following items
+	When User create static list with "DAS_19909_3_A" name on "Users" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
-	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
-	| DAS_19909_SS_2 | 19909_2_SI        | true    | true                | DAS_19909_2 |
+	| Name             | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope         |
+	| DAS_19909_SS_2_A | 19909_2_AI        | true    | true                | DAS_19909_2_A |
 	When User creates new application ownership component for 'Welcome' Self Service page via API
-	| ComponentName | ProjectName    | OwnerPermission                  |
-	| AOC Name      | DAS_19909_Proj | Do not allow owner to be changed |
+	| ComponentName | ProjectName      | OwnerPermission                  |
+	| AOC Name      | DAS_19909_Proj_A | Do not allow owner to be changed |
 	When User navigates to the 'Builder' left submenu item
 	#Update information
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	When User enters 'AOC_Updated Name' text to 'Component Name' textbox
-	When User selects 'DAS_19909_Proj_Up' option from 'Project' autocomplete
+	When User selects 'DAS_19909_Proj_Up_A' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
-	When User selects 'DAS_19909_3' option from 'Owner Scope' autocomplete
+	When User selects 'DAS_19909_3_A' option from 'Owner Scope' autocomplete
 	When User waits for info message disappears under 'Owner Scope' field
 	#The step below was disabled because of MVP changes, enable it when AOC component pass MVP stage
 	#When User checks 'Show this component' checkbox
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	When User waits for info message disappears under 'Owner Scope' field
 	Then 'AOC Name' content is displayed in 'Component Name' textbox
-	Then 'DAS_19909_Proj' content is displayed in 'Project' autocomplete
+	Then 'DAS_19909_Proj_A' content is displayed in 'Project' autocomplete
 	Then 'Do not allow owner to be changed' radio button is checked
 	Then 'Owner Scope' autocomplete is not displayed
 	When User checks 'Allow owner to be set to another user only' radio button

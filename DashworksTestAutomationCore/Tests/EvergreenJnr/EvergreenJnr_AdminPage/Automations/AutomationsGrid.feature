@@ -109,6 +109,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCreatedByAndCreatedDateColumnOnTheAutomati
 	When User clicks on 'Created Date' column header
 	Then date in table is sorted by 'Created Date' column in ascending order
 	When User enters '9 Aug 2019' text in the Search field for 'Created Date' datepicker
+	When User clicks on 'Created Date' column header
 	Then Rows counter contains "6" found row of all rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18346 @Cleanup

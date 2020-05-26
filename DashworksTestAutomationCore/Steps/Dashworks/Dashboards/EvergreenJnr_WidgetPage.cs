@@ -442,6 +442,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
             var actualItems = page.GetMainCategoriesOfListDDL().Select(x => x.Text).ToList();
             var expectedItems = items.Rows.SelectMany(row => row.Values).ToList();
+            _driver.ClickByActions(page.BodyContainer);
 
             for (int i = 0; i < expectedItems.Count; i++)
             {

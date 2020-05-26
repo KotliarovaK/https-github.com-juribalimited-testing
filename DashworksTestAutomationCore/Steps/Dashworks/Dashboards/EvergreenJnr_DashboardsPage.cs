@@ -573,7 +573,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             Verify.AreEqual(message, page.TextInDeleteAlert(widgetName).Text, "Delete confirmation text is different");
         }
-      
+
+        [Then(@"'(.*)' message is displayed in '(.*)' widget")]
+        public void ThenEmptyMessageTextDisplayedForWidget(string message, string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.GetWidgetEmptyMessageByName(widgetName).Text, Is.EqualTo(message), "Widget message is different.");
+        }
+
         [Then(@"'(.*)' link is displayed in warning message on Dashboards page")]
         public void ThenLinkIsDisplayedInWarningMessageOnDashboardsPage(string text)
         {
@@ -815,12 +822,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(page.GetCardWidgetContent(widgetName).Text, Is.EqualTo(value), "Card value is different.");
         }
 
-        [Then(@"'(.*)' message is displayed in '(.*)' widget")]
-        public void ThenEmptyMessageTextDisplayedForWidget(string message, string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.GetWidgetEmptyMessageByName(widgetName).Text, Is.EqualTo(message), "Widget message is different.");
-        }
+       
 
         [Then(@"Tooltip is displayed for the point of Line widget")]
         public void ThenTooltipIsDisplayedForThePoint(Table items)

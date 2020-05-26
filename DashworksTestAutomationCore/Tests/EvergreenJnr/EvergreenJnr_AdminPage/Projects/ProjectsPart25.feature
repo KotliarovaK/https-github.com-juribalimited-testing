@@ -6,39 +6,27 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForDeviceProjects
+Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForProjects
 	When Project created via API and opened
-	| ProjectName         | Scope       | ProjectTemplate | Mode               |
-	| DAS17699_AllDevices | All Devices | None            | Standalone Project |
+	| ProjectName   | Scope  | ProjectTemplate | Mode               |
+	| <ProjectName> | <List> | None            | Standalone Project |
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	When User selects 'Users with Device Count' in the 'User Scope' dropdown with wait
-	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	When User selects 'Apps with a Vendor' in the 'Application Scope' dropdown with wait
-	When User navigates to the 'Scope Changes' left menu item
-	When User navigates to the 'Scope Details' left menu item
-	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	Then Scope List dropdown displayed with "Users with Device Count" value
-	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	Then Scope List dropdown displayed with "Apps with a Vendor" value
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForMailboxProjects
-	When Project created via API and opened
-	| ProjectName           | Scope         | ProjectTemplate | Mode               |
-	| DAS17699_AllMailboxes | All Mailboxes | None            | Standalone Project |
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	When User selects 'Users with Device Count' in the 'User Scope' dropdown with wait
+	When User selects '<UserScope>' in the 'User Scope' dropdown with wait
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User checks 'Include applications' radio button
 	When User selects 'Apps with a Vendor' in the 'Application Scope' dropdown with wait
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	Then Scope List dropdown displayed with "Users with Device Count" value
+	Then Scope List dropdown displayed with "<UserScope>" value
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then Scope List dropdown displayed with "Apps with a Vendor" value
+
+Examples: 
+	| ProjectName            | List          | UserScope               |
+	| ProjectDevice_17699    | All Devices   | Users with Device Count |
+	| ProjectMailboxes_17699 | All Mailboxes | Users with Device Count |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699 @DAS18943
 Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject

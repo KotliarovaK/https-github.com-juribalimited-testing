@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTwoPagesWillBeCreatedByDefaultWhenNewS
 	When User navigates to the 'Builder' left menu item
 	Then 'Welcome' page subheader is displayed to user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19950 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19950 @DAS21297 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToEditTheNamesInEditMode
     When User create static list with "1803 Apps" name on "Applications" page with following items
 	| ItemName |
@@ -54,6 +54,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToEditTheNamesInEditMode
 	When User selects 'Edit' cogmenu option for 'Page' item type with 'Welcome' name on Self Service Builder Panel
 	When User clears 'Page Name' textbox with backspaces
 	When User clears 'Page Display Name' textbox with backspaces
+	Then 'UPDATE' button is disabled
+	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	When User enters 'Updated Welcome0' text to 'Page Name' textbox
 	When User enters 'Updated Welcome' text to 'Page Display Name' textbox
 	When User clicks 'UPDATE' button

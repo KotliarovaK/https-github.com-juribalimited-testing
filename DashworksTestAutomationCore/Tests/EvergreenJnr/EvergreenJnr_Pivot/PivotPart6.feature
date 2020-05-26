@@ -5,128 +5,123 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
-Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForMailboxes
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14427 @DAS14423 @DAS15252 @DAS14426 @DAS14377 @DAS13864 @DAS17433 @DAS21302 @DAS19348
+Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForParticularExample
+	When User clicks '<List>' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups |
-	| Language  |
-	And User selects the following Columns on Pivot:
-	| Columns               |
-	| EmailMigra: Migration |
-	And User selects the following Values on Pivot:
-	| Values                |
-	| EmailMigra: Readiness |
-	And User clicks 'RUN PIVOT' button 
+	| <Row>     |
+	When User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	When User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	Then data in the table is sorted by "Language" column in ascending order by default for the Pivot
-	Then color data in the column headers is sorted in correct order for the Pivot
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
-Scenario: EvergreenJnr_UsersLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForUsers
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
+Examples:
+	| List         | Row                                       | Column                            | Value                 |
+	| Mailboxes    | Language                                  | EmailMigra: Migration             | EmailMigra: Readiness |
+	| Users        | Region                                    | EmailMigra: Migration             | Compliance            |
+	| Devices      | Region                                    | Current                           | CPU Count             |
+	| Applications | Import                                    | 2004: Target App Readiness        | Compliance            |
+	| Users        | Organisational Unit                       | Windows7Mi: Application Readiness | Compliance            |
+	| Applications | Import                                    | UserEvergr: Stage 3               | DeviceSche: Readiness |
+	| Devices      | UseMeForAu: Ring                          | City                              | Owner Cost Centre     |
+	| Mailboxes    | EmailMigra: Name                          | Mailbox Type                      | Owner Display Name    |
+	| Devices      | Windows7Mi: Pre-Migration \ VDI Only Task | Device Type                       | Boot Up Date          |
+	| Mailboxes    | Recipient Type                            | Mailbox Platform                  | Email Address         |
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14428 @DAS13865 @DAS14429
+Scenario Outline: EvergreenJnr_AllLists_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
+	When User clicks '<List>' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups |
-	| Region    |
-	And User selects the following Columns on Pivot:
-	| Columns               |
-	| EmailMigra: Migration |
-	And User selects the following Values on Pivot:
-	| Values     |
-	| Compliance |
-	And User clicks 'RUN PIVOT' button 
+	| <Row>     |
+	When User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	When User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	Then data in the table is sorted by "Region" column in ascending order by default for the Pivot
-	Then color data in the column headers is sorted in correct order for the Pivot
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| UNKNOWN    |
+	| RED        |
+	| AMBER      |
+	| GREEN      |
+	| IGNORE     |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
-Scenario: EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForDevices
+Examples:
+	| List         | Row    | Column           | Value                 |
+	| Mailboxes    | City   | Owner Compliance | EmailMigra: Readiness |
+	| Applications | Vendor | Compliance       | Import                |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS19348
+Scenario: EvergreenJnr_Devices_CheckThatNoConsoleErrorDisplayedAfterRunninfPivotFromObjectOwnerFilter
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Owner" filter where type is "Equal" without added column and "AU\AAO798996 (Darren J. Walter)" Lookup option
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups      |
+	| Device Type |
+	When User selects the following Columns on Pivot:
+	| Columns          |
+	|Hostname |
+	When User selects the following Values on Pivot:
+	| Values        |
+	| Operating System |
+	When User selects aggregate function "Count" on Pivot
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14373
+Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildColumnDisplayInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
-	| RowGroups |
-	| Region    |
+	| RowGroups              |
+	| Application Compliance |
 	And User selects the following Columns on Pivot:
-	| Columns |
-	| Current |
-	And User selects the following Values on Pivot:
-	| Values    |
-	| CPU Count |
-	And User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	Then data in the table is sorted by "Region" column in ascending order by default for the Pivot
-	Then color data in the column headers is sorted in correct order for the Pivot
-
-@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14427
-Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessColumnsDisplayInTheCorrectOrder
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
-	| RowGroups |
-	| Import    |
-	And User selects the following Columns on Pivot:
-	| Columns                    |
-	| 2004: Target App Readiness |
+	| Columns               |
+	| Operating System      |
+	| Service Pack or Build |
 	And User selects the following Values on Pivot:
 	| Values     |
-	| Compliance |
+	| Owner City |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	Then data in the table is sorted by "Import" column in ascending order by default for the Pivot
-	Then color data in the column headers is sorted in correct order for the Pivot
+	And data in left-pinned column is sorted in ascending order by default for the Pivot
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS14428 @DAS13865
-Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS21056
+Scenario: EvergreenJnr_Devices_CheckThatEmptyRowVlueLeadsToCorrectFilteredPage
+	When User clicks 'Devices' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups |
-	| City      |
-	And User selects the following Columns on Pivot:
-	| Columns          |
-	| Owner Compliance |
-	And User selects the following Values on Pivot:
-	| Values                |
-	| EmailMigra: Readiness |
-	And User clicks 'RUN PIVOT' button 
+	| Country   |
+	When User selects the following Columns on Pivot:
+	| Columns      |
+	| Device Type  |
+	| Manufacturer |
+	When User selects the following Values on Pivot:
+	| Values   |
+	| Hostname |
+	When User selects aggregate function "Count" on Pivot
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "City" column in ascending order by default for the Pivot
-	Then Pivot column headers is displayed in following order:
-	| ColumnName |
-	| UNKNOWN    |
-	| RED        |
-	| AMBER      |
-	| GREEN      |
-	| IGNORE     |
-
-@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
-Scenario: EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForApplications
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
-	| RowGroups |
-	| Vendor    |
-	And User selects the following Columns on Pivot:
-	| Columns    |
-	| Compliance |
-	And User selects the following Values on Pivot:
-	| Values |
-	| Import |
-	And User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	And data in the table is sorted by "<SortedColumn>" column in ascending order by default for the Pivot
-	Then Pivot column headers is displayed in following order:
-	| ColumnName |
-	| UNKNOWN    |
-	| RED        |
-	| AMBER      |
-	| GREEN      |
-	| IGNORE     |
+	When User clicks value from 'Empty' row and 'Dell' column
+	When User clicks the Filters button
+	Then "Device Type is Data Centre" is displayed in added filter info
+	Then "Manufacturer is Dell" is displayed in added filter info
+	Then "Country is Empty" is displayed in added filter info

@@ -5,25 +5,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14377 @DAS13864
-Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrder
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
-	| RowGroups        |
-	| UseMeForAu: Ring |
-	And User selects the following Columns on Pivot:
-	| Columns     |
-	| City        |
-	And User selects the following Values on Pivot:
-	| Values            |
-	| Owner Cost Centre |
-	And User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	Then data in the column headers is sorted in correct order for the Pivot
-	Then color data in the left-pinned column is sorted in descending order for the Pivot
-
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @DAS13864 @DAS13786 @DAS13867 @DAS15376
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
@@ -41,7 +22,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then date in the column headers is sorted in correct order for the Pivot
-	Then data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Owner Last Logon Date" filter where type is "Between" without added column and Date options
