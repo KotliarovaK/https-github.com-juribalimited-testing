@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 	| Building |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	Then data in the table is sorted by "Common Name" column in ascending order by default for the Pivot
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	When User creates Pivot list with "Pivot_DAS_14206" name
 	Then "Pivot_DAS_14206" list is displayed to user
 	When User navigates to the "All Users" list
