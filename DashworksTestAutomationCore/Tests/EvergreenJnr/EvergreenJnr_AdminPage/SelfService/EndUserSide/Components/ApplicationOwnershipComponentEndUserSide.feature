@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
 	| Title     | Value |
 	| App Owner |       |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20426 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20426 @DAS21095 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
 	| Title     | Value      |
 	| App Owner | Jones Tina |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20239 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20239 @DAS21095 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownShowOnlyUsersThatHaveBeen
 	When User enters '024213574157421A9CD (Reyes, Natasha)' text to 'Owner' textbox
 	Then 'Owner' autocomplete is not displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20425 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20425 @DAS21095 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |

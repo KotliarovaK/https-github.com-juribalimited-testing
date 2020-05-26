@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonIsn
 	When User navigates to End User landing page with '20330_1_SI' Self Service Identifier
 	Then 'Undo all changes I made on this page' button is not displayed for End User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20330 @Cleanup @SelfService @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20330 @DAS21095 @Cleanup @SelfService @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonWorksCorrectly
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
