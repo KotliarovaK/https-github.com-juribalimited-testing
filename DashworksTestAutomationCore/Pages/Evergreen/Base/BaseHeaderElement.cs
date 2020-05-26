@@ -13,7 +13,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
     //!!!Element with header and breadcrumbs under grid!!!
     public class BaseHeaderElement : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//h1 | .//div[contains(@class, 'ssw-header')]")]
+        [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement Header { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@id,'pagetitle')]//a[contains(@class,'subTitle')]")]

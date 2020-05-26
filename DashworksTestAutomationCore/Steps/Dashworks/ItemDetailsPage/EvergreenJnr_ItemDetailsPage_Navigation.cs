@@ -42,12 +42,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
                 _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
             }
 
-            _driver.NowAt<BaseHeaderElement>();
-
             var url = $"{UrlProvider.EvergreenUrl}#/{listName}/{id}/details/{listName}";
 
             _driver.NavigateToUrl(url);
             _driver.WaitForDataLoading();
+            _driver.NowAt<BaseHeaderElement>();
         }
     }
 }
