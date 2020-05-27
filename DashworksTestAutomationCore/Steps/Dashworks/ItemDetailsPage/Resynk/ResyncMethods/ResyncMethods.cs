@@ -31,8 +31,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.ResyncM
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}{item.List.ToLower()}/{id}/relinkObjects";
                 var request = requestUri.GenerateRequest();
                 request.AddParameter("projectId", projId);
-                request.AddParameter("IsOwnerResync", true);
-                request.AddParameter("IsAppsResync", true);
+                switch (item.List)
+                {
+                    case "Device":
+                        request.AddParameter("IsOwnerResync", true);
+                        request.AddParameter("IsAppsResync", true);
+                        break;
+                    case "User":
+                        request.AddParameter("IsAppsResync", true);
+                        break;
+                    case "Application":
+                        request.AddParameter("IsAppAttributesResync", true);
+                        request.AddParameter("IsOwnerResync", true);
+                        break;
+                    case "Mailbox":
+                        request.AddParameter("IsOwnerResync", true);
+                        break;
+                    default:
+                        throw new Exception($"Unknown list type: {item.List}");
+                }
+
                 request.AddParameter("IsNameResync", true);
                 request.AddParameter("IsSkipRelink", true);
                 request.AddParameter("objectId", id);
