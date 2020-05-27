@@ -50,7 +50,7 @@ Examples:
 	| Mailboxes    | All Mailboxes    | Mailbox Platform | Email Address    |
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS12515 @Cleanup
-Scenario Outline: EvergreenJnr_UserList_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton
+Scenario: EvergreenJnr_UserList_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
 	When User clicks on 'Distinguished Name' column header
@@ -70,7 +70,7 @@ Scenario Outline: EvergreenJnr_UserList_CheckThatNewCustomListMenuIsHiddenInTheL
 	Then Actions panel is displayed to the user
 	Then Save to New Custom List element is NOT displayed
 
-	@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12515 @Cleanup
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12515 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton
 	When User clicks '<ListName>' on the left-hand menu
 	Then '<ListLabel>' list should be displayed to the user
