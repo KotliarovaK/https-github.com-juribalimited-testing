@@ -441,6 +441,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(By.XPath(".//span[@class='text-container ng-star-inserted']"));
         }
 
+        //TODO The same method is used on BaseFilter need to remove this duplication
         public void SelectOperator(string operatorValue)
         {
             Driver.WaitForElementToBeDisplayed(
