@@ -49,12 +49,33 @@ Examples:
 	| Users        | All Users        | Domain           | Username         |
 	| Mailboxes    | All Mailboxes    | Mailbox Platform | Email Address    |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12515 @Cleanup
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS12515 @Cleanup
+Scenario Outline: EvergreenJnr_UserList_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks on 'Distinguished Name' column header
+	Then data in table is sorted by 'Distinguished Name' column in ascending order
+	Then Save to New Custom List element is displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Save to New Custom List element is NOT displayed
+	When User create static list with "StaticList7412" name on "Users" page with following items
+	| ItemName |
+	|          |
+	Then "StaticList7412" list is displayed to user
+	When User clicks on 'Distinguished Name' column header
+	Then data in table is sorted by 'Distinguished Name' column in ascending order
+	Then Save to New Custom List element is displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Save to New Custom List element is NOT displayed
+
+	@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12515 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton
 	When User clicks '<ListName>' on the left-hand menu
 	Then '<ListLabel>' list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in ascending order
+	Then all cells in the '<ColumnName>' column are empty
 	Then Save to New Custom List element is displayed
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -64,7 +85,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheL
 	|          |
 	Then "<StaticListName>" list is displayed to user
 	When User clicks on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in ascending order
+	Then all cells in the '<ColumnName>' column are empty
 	Then Save to New Custom List element is displayed
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -74,7 +95,6 @@ Examples:
 	| ListName     | ListLabel        | ColumnName         | StaticListName |
 	| Devices      | All Devices      | Owner Display Name | StaticList5548 |
 	| Applications | All Applications | Version            | StaticList8944 |
-	| Users        | All Users        | Distinguished Name | StaticList7412 |
 	| Mailboxes    | All Mailboxes    | Owner Display Name | StaticList9512 |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Cleanup
