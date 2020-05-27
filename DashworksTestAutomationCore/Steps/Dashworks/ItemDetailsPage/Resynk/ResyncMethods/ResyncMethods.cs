@@ -64,7 +64,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.ResyncM
                 }
 
                 //Ping application about project status
-                var projRequestUri = $"{UrlProvider.RestClientBaseUrl}application/{id}/project?$lang=en-GB&projectId={projId}";
+                var projRequestUri = $"{UrlProvider.RestClientBaseUrl}{item.List}/{id}/project?$lang=en-GB&projectId={projId}";
                 var projRequest = projRequestUri.GenerateRequest();
 
                 var projResponse = _client.Evergreen.Get(projRequest);
