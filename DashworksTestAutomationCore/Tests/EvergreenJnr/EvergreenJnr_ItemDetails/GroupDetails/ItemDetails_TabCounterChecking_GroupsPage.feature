@@ -43,13 +43,18 @@ Scenario: EvergreenJnr_GroupsList_CheckThatNewStyleForSelectAllCheckboxInTheSele
 	Then Details page for 'Domain Computers' item is displayed to the user
 	When User navigates to the 'Members' left menu item
 	When User navigates to the 'Device Members' left submenu item
-	When User clicks String Filter button for "Operating System" column
-	When User deselect all rows on the grid
-	Then Select All checkbox have unchecked state
-	When User selects all rows on the grid
-	Then Select All checkbox have full checked state
 	When User unchecks following checkboxes in the filter dropdown menu for the 'Operating System' column:
 	| checkboxes |
 	| Other      |
 	When User clicks String Filter button for "Operating System" column
-	Then Select All checkbox have indeterminate checked state
+	Then Select All checkbox in the filter dropdown menu have indeterminate checked state
+	When User checks following checkboxes in the filter dropdown menu for the 'Operating System' column:
+	| checkboxes |
+	| Select All |
+	When User clicks String Filter button for "Operating System" column
+	Then Select All checkbox in the filter dropdown menu have full checked state
+	When User checks following checkboxes in the filter dropdown menu for the 'Operating System' column:
+	| checkboxes |
+	| Select All |
+	When User clicks String Filter button for "Operating System" column
+	Then Select All checkbox in the filter dropdown menu have unchecked state

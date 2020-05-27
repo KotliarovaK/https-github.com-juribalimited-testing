@@ -1008,6 +1008,30 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.ClickByActions(page.BodyContainer);
         }
 
+        [Then(@"Select All checkbox in the filter dropdown menu have unchecked state")]
+        public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveUncheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(0, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckboxForColumnFilterDropdown),
+                "'Select all' checkbox is not fully selected");
+        }
+
+        [Then(@"Select All checkbox in the filter dropdown menu have full checked state")]
+        public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveFullCheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(2, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckboxForColumnFilterDropdown),
+                "'Select all' checkbox is not fully selected");
+        }
+
+        [Then(@"Select All checkbox in the filter dropdown menu have indeterminate checked state")]
+        public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveIndeterminateCheckedState()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(1, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckboxForColumnFilterDropdown),
+                "'Select all' checkbox is not fully selected");
+        }
+
         #endregion
 
         #region Column content tooltip
