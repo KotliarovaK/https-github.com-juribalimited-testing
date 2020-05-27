@@ -135,3 +135,22 @@ Scenario: EvergreenJnr_AdminPage_CheckSelfServicePagesPanel
 	When User clicks the Pages button
 	Then Pages panel is not displayed to the user
 	And Pages Button is not highlighted
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21262 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatExpandButtonOnSSBuilderContextPanelCollapseWorksCorrectly
+	When User create static list with "UserStatList_DAS21262_1" name on "Applications" page with following items
+	| ItemName   |
+	| VSCmdShell |
+	When User creates Self Service via API and open it
+	| Name              | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope                   |
+	| DAS_DAS21262_SS_1 | 21262_1_SI        | true    | true                | UserStatList_DAS21262_1 |
+	When User creates new text component for 'Welcome' Self Service page via API
+	| ComponentName  | ExtraPropertiesText             | ShowInSelfService |
+	| WelcomeTxtComp | <p>Sunt haud pauci homĭnes,</p> | true              |
+	When User navigates to the 'Builder' left menu item
+	When User clicks on Collapse button for item with 'Page' type and 'Welcome' name on Self Service Builder Panel
+	When User clicks on Collapse button for item with 'Page' type and 'Thank You' name on Self Service Builder Panel
+	Then User sees 'Expand all' tooltip for Collapse or Exapnd button at Self Service Builder Panel
+	When User clicks Expand All Sections button on Self Service Builder Panel
+	Then User sees item with 'Text' type and 'WelcomeTxtComp' name on Self Service Builder Panel
+	Then User sees item with 'Text' type and 'Thank You' name on Self Service Builder Panel
