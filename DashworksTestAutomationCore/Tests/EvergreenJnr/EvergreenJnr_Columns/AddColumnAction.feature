@@ -14,16 +14,7 @@ Scenario: EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList
 	| ColumnName          |
 	| Device Key          |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11452
-Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumn
-	When User add following columns using URL to the "Mailboxes" page:
-	| ColumnName                 |
-	| Owner Department Full Path |
-	When User clicks on 'Owner Department Full Path' column header
-	Then data in table is sorted by 'Owner Department Full Path' column in ascending order
-	And 'All Mailboxes' list should be displayed to the user
-
-@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11452
+@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11452 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumn
 	When User clicks 'Mailboxes' on the left-hand menu
 	When User create static list with "DAS11452_1132" name on "Mailboxes" page with following items
@@ -44,7 +35,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSorting
 	| Owner Department Full Path |
 	When User clicks on 'Owner Department Full Path' column header
 	Then data in table is sorted by 'Owner Department Full Path' column in ascending order
-	And 'All Mailboxes' list should be displayed to the user
+	When User clicks on 'Owner Department Full Path' column header
+	Then data in table is sorted by 'Owner Department Full Path' column in descending order
+	Then 'DAS11452_1132' list should be displayed to the user
 	Then There are no errors in the browser console
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11576
@@ -307,7 +300,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrec
 	And User clicks 'CANCEL' button 
 	Then Add And button is displayed on the Filter panel
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12481
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12481 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatStateCountyAndPostalCodeColumnsAreDisplayed
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
@@ -475,11 +468,22 @@ Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplayin
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
-	And User add following columns using URL to the "Applications" page:
+	When User create static list with "DAS18961_List3" name on "Applications" page with following items
+	| ItemName                                |
+	| Microsoft Office 2003 MUI Pack (Danish) |
+	| AP00159 - Oracle Jinitiator 1.1.8.16    |
+	| Windows Media Player 7.1                |
+	| JAlbum                                  |
+	| Exemples daffichage de dessins de CAO   |
+	Then "DAS18961_List3" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName               |
 	| 2004: Target App Version |
-	When User create dynamic list with "DAS18961_List3" name on "Applications" page
-	Then "DAS18961_List3" list is displayed to user
+	Then ColumnName is added to the list
+	| ColumnName               |
+	| 2004: Target App Version |
 	When User clicks on '2004: Target App Version' column header
 	Then data in table is sorted by '2004: Target App Version' column in ascending order
 	When User clicks on '2004: Target App Version' column header
