@@ -1139,9 +1139,6 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilte
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User clicks on '<ColumnName>' column header
-	Then Content is empty in the column
-		| ColumnName   |
-		| <ColumnName> |
 	Then Descending order applied to '<ColumnName>' column and displayed in URL
 
 	Examples:
@@ -1210,7 +1207,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User clicks on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in descending order
+	Then Descending order applied to '<ColumnName>' column and displayed in URL
 
 	Examples:
 		| ColumnName                        | Operators                         | FilterOption | Text                                       | RowsCount |
