@@ -66,7 +66,7 @@ Scenario Outline: EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorC
 	When User clicks the Filters button
 	When User add "<Filter>" filter where type is "<Operator>" with added column and Lookup option
     | SelectedValues |
-	When User create dynamic list with "<SavedList>" name on "<ListType>" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates '<SavedList>' list
 	Then "<SavedList>" list is displayed to user
 	When Dashboard with '<DashboardName>' name created via API and opened
 	When User checks 'Edit mode' slide toggle
