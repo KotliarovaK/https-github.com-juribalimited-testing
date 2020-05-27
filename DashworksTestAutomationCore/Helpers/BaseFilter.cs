@@ -781,7 +781,6 @@ namespace DashworksTestAutomation.Helpers
                         ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date (Inclusive)']"))
                     .SendKeys(row["EndDateInclusive"]);
             }
-            _driver.FindElement(By.XPath(".//body")).Click();
             SaveFilter();
         }
     }

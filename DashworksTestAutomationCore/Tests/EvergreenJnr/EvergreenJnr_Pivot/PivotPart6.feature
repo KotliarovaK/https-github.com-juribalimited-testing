@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14427 @DAS14423 @DAS15252 @DAS14426 @DAS14377 @DAS13864 @DAS17433 @DAS21302 @DAS19348
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14427 @DAS14423 @DAS15252 @DAS14426 @DAS14377 @DAS13864 @DAS17433 @DAS19348
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForParticularExample
 	When User clicks '<List>' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
@@ -23,17 +23,38 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectStageColumnsDisplayInThe
 	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 
 Examples:
-	| List         | Row                                       | Column                            | Value                 |
-	| Mailboxes    | Language                                  | EmailMigra: Migration             | EmailMigra: Readiness |
-	| Users        | Region                                    | EmailMigra: Migration             | Compliance            |
-	| Devices      | Region                                    | Current                           | CPU Count             |
-	| Applications | Import                                    | 2004: Target App Readiness        | Compliance            |
-	| Users        | Organisational Unit                       | Windows7Mi: Application Readiness | Compliance            |
-	| Applications | Import                                    | UserEvergr: Stage 3               | DeviceSche: Readiness |
-	| Devices      | UseMeForAu: Ring                          | City                              | Owner Cost Centre     |
-	| Mailboxes    | EmailMigra: Name                          | Mailbox Type                      | Owner Display Name    |
-	| Devices      | Windows7Mi: Pre-Migration \ VDI Only Task | Device Type                       | Boot Up Date          |
-	| Mailboxes    | Recipient Type                            | Mailbox Platform                  | Email Address         |
+	| List         | Row                 | Column                            | Value                 |
+	| Mailboxes    | Language            | EmailMigra: Migration             | EmailMigra: Readiness |
+	| Users        | Region              | EmailMigra: Migration             | Compliance            |
+	| Devices      | Region              | Current                           | CPU Count             |
+	| Applications | Import              | 2004: Target App Readiness        | Compliance            |
+	| Users        | Organisational Unit | Windows7Mi: Application Readiness | Compliance            |
+	| Applications | Import              | UserEvergr: Stage 3               | DeviceSche: Readiness |
+	| Devices      | UseMeForAu: Ring    | City                              | Owner Cost Centre     |
+	| Mailboxes    | EmailMigra: Name    | Mailbox Type                      | Owner Display Name    |
+	| Mailboxes    | Recipient Type      | Mailbox Platform                  | Email Address         |
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS21302
+Scenario Outline: EvergreenJnr_AllLists_CheckThatPivotCanBeCreatedBasedOnParticularRow
+	When User clicks '<List>' on the left-hand menu
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| <Row>     |
+	When User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	When User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	Then There are no errors in the browser console
+
+Examples:
+	| List    | Row                                       | Column      | Value        |
+	| Devices | Windows7Mi: Pre-Migration \ VDI Only Task | Device Type | Boot Up Date |
+
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14428 @DAS13865 @DAS14429
 Scenario Outline: EvergreenJnr_AllLists_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
@@ -87,21 +108,20 @@ Scenario: EvergreenJnr_Devices_CheckThatNoConsoleErrorDisplayedAfterRunninfPivot
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14373
 Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildColumnDisplayInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups              |
 	| Application Compliance |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns               |
 	| Operating System      |
 	| Service Pack or Build |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in left-pinned column is sorted in ascending order by default for the Pivot
+	Then color data in the left-pinned column is sorted in descending order for the Pivot
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS21056
 Scenario: EvergreenJnr_Devices_CheckThatEmptyRowVlueLeadsToCorrectFilteredPage
