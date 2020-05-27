@@ -331,6 +331,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 	When User clicks 'Edit' menu option for section with '3_Widget' widget
 	When User clicks Hide section checkbox on Edit Section page
 	Then 'Hide section' checkbox is checked
+	When User clicks 'UPDATE' button
+	Then '1_Widget' Widget is displayed to the user
+	When User unchecks 'Edit mode' slide toggle
 	Then Widget with the name '1_Widget' is missing
 
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14472 @Cleanup

@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
 	| Title     | Value |
 	| App Owner |       |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20426 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20426 @DAS21095 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
@@ -81,13 +81,13 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
 	When User clicks on 'Change Owner' button on end user Self Service page
 	Then popup with 'Change Owner' title is displayed
 	Then 'Owner' autocomplete is displayed
-	Then 'Change Owner' button is disabled on popup
-	Then Button 'Change Owner' has 'Some values are missing or not valid' tooltip on popup
+	Then 'Update' button is disabled on popup
+	Then Button 'Update' has 'Some values are missing or not valid' tooltip on popup
 	When User clicks 'Cancel' button on popup
 	Then popup is not displayed to User
 	When User clicks on 'Change Owner' button on end user Self Service page
 	When User enters 'Jones' in the 'Owner' autocomplete field and selects '03C54BC1198843A4A03 (Jones, Tina)' value
-	When User clicks 'Change Owner' button on popup
+	When User clicks 'Update' button on popup
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn        |
 	| Username     | 03C54BC1198843A4A03 |
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
 	| Title     | Value      |
 	| App Owner | Jones Tina |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20239 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20239 @DAS21095 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
@@ -134,12 +134,12 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
 	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope               |
 	| DAS_20421_SS_1 | 20421_1_SI        | true    | true                | DAS_20421_AppList_1 |
 	When User creates new application ownership component for 'Welcome' Self Service page via API
-	| ComponentName | ProjectName      | OwnerPermission                                  | OwnerScope |
-	| AOC Name      | DAS_20421_Proj_1 | Allow owner to be removed or set to another user | All Users  |
+	| ComponentName | ProjectName      | OwnerPermission                                  | UserScope |
+	| AOC Name      | DAS_20421_Proj_1 | Allow owner to be removed or set to another user | All Users |
 	When User navigates to End User landing page with '20421_1_SI' Self Service Identifier
 	When User clicks on 'Change Owner' button on end user Self Service page
 	When User enters 'Jones' in the 'Owner' autocomplete field and selects '03C54BC1198843A4A03 (Jones, Tina)' value
-	When User clicks 'Change Owner' button on popup
+	When User clicks 'Update' button on popup
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn        |
 	| Username     | 03C54BC1198843A4A03 |
@@ -149,16 +149,16 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
 	Then popup with 'Change Owner' title is displayed
 	Then 'Remove owner' radio button is enabled
 	Then 'Assign an owner' radio button is enabled
-	Then 'Change Owner' button is disabled on popup
-	Then Button 'Change Owner' has 'Some values are missing or not valid' tooltip on popup
-	Then 'Change Owner' button is disabled on popup
+	Then 'Update' button is disabled on popup
+	Then Button 'Update' has 'Some values are missing or not valid' tooltip on popup
+	Then 'Update' button is disabled on popup
 	Then 'Cancel' button is not disabled on popup
 	When User checks 'Remove owner' radio button
-	Then 'Change Owner' button is not disabled on popup
+	Then 'Update' button is not disabled on popup
 	When User checks 'Assign an owner' radio button
 	Then 'Owner' autocomplete is displayed
-	Then 'Change Owner' button is disabled on popup
-	Then Button 'Change Owner' has 'Some values are missing or not valid' tooltip on popup
+	Then 'Update' button is disabled on popup
+	Then Button 'Update' has 'Some values are missing or not valid' tooltip on popup
 	Then 'Cancel' button is not disabled on popup
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20647 @Cleanup @SelfServiceMVP
@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownShowOnlyUsersThatHaveBeen
 	When User enters '024213574157421A9CD (Reyes, Natasha)' text to 'Owner' textbox
 	Then 'Owner' autocomplete is not displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20425 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20425 @DAS21095 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
@@ -247,7 +247,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	When User navigates to End User landing page with '20425_1_SI' Self Service Identifier
 	And User clicks on 'Change Owner' button on end user Self Service page
 	And User enters 'Jones' in the 'Owner' autocomplete field and selects '03C54BC1198843A4A03 (Jones, Tina)' value
-	And User clicks 'Change Owner' button on popup
+	And User clicks 'Update' button on popup
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn        |
 	| Username     | 03C54BC1198843A4A03 |
@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	When User navigates to End User landing page with '20425_1_SI' Self Service Identifier
 	And User clicks on 'Change Owner' button on end user Self Service page
 	And User checks 'Remove owner' radio button
-	And User clicks 'Change Owner' button on popup
+	And User clicks 'Update' button on popup
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn |
 	| Username     |              |
@@ -320,7 +320,7 @@ Scenario: EvergreenJnr_AdminPage_RemoveOwnerAndRadioBattonValidationOnEndUserPag
 	| AOC Name      | DAS_20427_Proj_1 | Allow owner to be removed only | DAS_20427_forComponent_1 |
 	When User navigates to End User landing page with '20427_1_SI' Self Service Identifier
 	Then 'Remove Owner' button is disabled for End User
-	Then 'Remove Owner' button has tooltip with 'This application to do not have an owner to be removed' text on end user Self Service page
+	Then 'Remove Owner' button has tooltip with 'This application does not have an owner to be removed' text on end user Self Service page
 	When User opens 'DAS_20427_SS_1' Self Service
 	When User navigates to the 'Builder' left menu item
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel

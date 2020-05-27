@@ -53,10 +53,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
-	And User clicks 'CREATE EVERGREEN CAPACITY UNIT' button 
+	And User clicks 'CREATE EVERGREEN CAPACITY UNIT' button
 	And User enters 'CapacityUnit13201' text to 'Capacity Unit Name' textbox
 	And User enters '13201' text to 'Description' textbox
-	And User clicks 'CREATE' button 
+	And User clicks 'CREATE' button
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Actions button
 	And User select "Hostname" rows in the grid
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -354,6 +354,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilt
 	When User enters '100001' text to 'dayValue' textbox
 	Then '100000' content is displayed in 'dayValue' textbox
 	Then User sees '0 to 100000' hint below 'dayValue' field
+
 	#Update after Eugene add automation attribute "Units"
 	#When User selects 'days ahead' in the 'Units' dropdown
 
@@ -398,7 +399,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAdded
 	Then "Dashworks First Seen is empty" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User clicks on 'Dashworks First Seen' column header
-	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
+	Then Content is empty in the column
+		| ColumnName           |
+		| Dashworks First Seen |
+	Then Descending order applied to 'Dashworks First Seen' column and displayed in URL
 
 Examples:
 	| ListName     | RowsCount |
