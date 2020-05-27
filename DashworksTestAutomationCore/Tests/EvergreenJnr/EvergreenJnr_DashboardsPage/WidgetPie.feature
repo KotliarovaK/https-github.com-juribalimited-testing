@@ -280,7 +280,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	| Amber              |
 	| Green              |
 	#| None               |
-	When User create dynamic list with "ListForDAS17467" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS17467' list
 	Then "ListForDAS17467" list is displayed to user
 	When Dashboard with 'Dashboard_17467' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -305,14 +305,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
-	Then Filters panel is displayed to the user
 	When User add "2004: Readiness" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Blocked            |
 	| Amber              |
 	| Green              |
 	| Grey               |
-	When User create dynamic list with "ListForDAS17467_1" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS17467_1' list
 	Then "ListForDAS17467_1" list is displayed to user
 	When Dashboard with 'Dashboard_17467_1' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -391,7 +390,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWi
 	| Amber              |
 	| Green              |
 	| Grey               |
-	When User create dynamic list with "ListForDAS18574" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS18574' list
 	Then "ListForDAS18574" list is displayed to user
 	When Dashboard with 'Dashboard_18574' name created via API and opened
 	When User checks 'Edit mode' slide toggle

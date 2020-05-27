@@ -283,7 +283,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceValuesAreShownWithTheCo
 	When User add "Owner Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Green              |
-	When User create dynamic list with "Devices_List_DAS15852" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'Devices_List_DAS15852' list
 	Then "Devices_List_DAS15852" list is displayed to user
 	When Dashboard with 'Dashboard_15852' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -562,7 +562,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorDisplayedWhenClicki
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel
-	Then "2004: In Scope = true AND 2004: In Scope = true) OR (2004: Readiness = Empty, Amber or Green AND 2004: In Scope = true)" text is displayed in filter container
+	Then "(2004: In Scope = true AND 2004: In Scope = true) OR (2004: Readiness = Empty, Amber or Green AND 2004: In Scope = true)" text is displayed in filter container
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20227 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplayedOnWidgetTable
