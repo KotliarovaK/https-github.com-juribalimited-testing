@@ -75,7 +75,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheL
 	When User clicks '<ListName>' on the left-hand menu
 	Then '<ListLabel>' list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
-	Then all cells in the '<ColumnName>' column are empty
+	Then Ascending order applied to '<ColumnName>' column and displayed in URL
 	Then Save to New Custom List element is displayed
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -85,7 +85,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheL
 	|          |
 	Then "<StaticListName>" list is displayed to user
 	When User clicks on '<ColumnName>' column header
-	Then all cells in the '<ColumnName>' column are empty
+	Then Ascending order applied to '<ColumnName>' column and displayed in URL
 	Then Save to New Custom List element is displayed
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
