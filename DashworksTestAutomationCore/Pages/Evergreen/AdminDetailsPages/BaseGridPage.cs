@@ -42,6 +42,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input | .//div[@class='ag-column-select-header']//input[contains(@class, 'checkbox-input')]")]
         public IWebElement SelectAllCheckbox { get; set; }
 
+        //TODO remove this one
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
+        public IWebElement SelectAllCheckBox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@ref='eCellWrapper']//*[contains(@class,'ag-selection-checkbox')]")]
         public IList<IWebElement> Checkboxes { get; set; }
 
@@ -121,9 +125,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement ArchivedDevicesIncludedTooltip { get; set; }
 
         #endregion
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
-        public IWebElement SelectAllCheckBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement DateSearchField { get; set; }
