@@ -25,7 +25,6 @@ Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
 	Then date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in descending order
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
-	When User scrolls grid to the bottom
 	Then date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in ascending order
 
 @Evergreen @Applications @EvergreenJnr_GridActions @TableSorting @DAS10612
@@ -39,7 +38,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality
 	When User clicks on 'Barry'sUse: Audit & Configuration \ Package Delivery Date' column header
 	Then date in table is sorted by 'Barry'sUse: Audit & Configuration \ Package Delivery Date' column in descending order
 	When User clicks on 'Barry'sUse: Audit & Configuration \ Package Delivery Date' column header
-	When User scrolls grid to the bottom
 	Then date in table is sorted by 'Barry'sUse: Audit & Configuration \ Package Delivery Date' column in ascending order
 	
 @Evergreen @Mailboxes @EvergreenJnr_GridActions @TableSorting @DAS10612
@@ -54,12 +52,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	When User clicks on 'Created Date' column header
 	Then date in table is sorted by 'Created Date' column in descending order
 	When User clicks on 'Created Date' column header
-	When User scrolls grid to the bottom
 	Then date in table is sorted by 'Created Date' column in ascending order
 	When User clicks on 'EmailMigra: Pre-Migration \ Scheduled date' column header
 	Then date in table is sorted by 'EmailMigra: Pre-Migration \ Scheduled date' column in descending order
 	When User clicks on 'EmailMigra: Pre-Migration \ Scheduled date' column header
-	When User scrolls grid to the bottom
 	Then date in table is sorted by 'EmailMigra: Pre-Migration \ Scheduled date' column in ascending order
 
 @Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS10612
@@ -99,7 +95,6 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppro
 	When User clicks '<ListName>' on the left-hand menu
 	Then 'All <ListName>' list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
-	When User scrolls grid to the bottom
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order
@@ -124,7 +119,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	| ColumnName   |
 	| <ColumnName> |
 	When User clicks on '<ColumnName>' column header
-	When User scrolls grid to the bottom
 	Then numeric data in table is sorted by '<ColumnName>' column in ascending order
 	When User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
@@ -135,7 +129,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| <ColumnName> |
-	When User scrolls grid to the bottom
 	Then numeric data in table is sorted by '<ColumnName>' column in ascending order
 	Then Edit List menu is not displayed
 
