@@ -154,7 +154,10 @@
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\ProjectDetails_Projects_AppDetails.feature.cs">
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Self Service\SelfServices.feature.cs">
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Self Service\SelfServiceStatus_SelfService_AppDetails.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Self Service\SelfServices_SelfService_AppDetails.feature.cs">
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\EvergreenDetails\ProjectsSummary_Projects_DevicesDetails.feature.cs">
@@ -322,9 +325,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectDetails_Projects_AppDetails.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Self Service\SelfServices.feature">
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Self Service\SelfServiceStatus_SelfService_AppDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SelfServices.feature.cs</LastGenOutput>
+      <LastGenOutput>SelfServiceStatus_SelfService_AppDetails.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Self Service\SelfServices_SelfService_AppDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SelfServices_SelfService_AppDetails.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\EvergreenDetails\ProjectsSummary_Projects_DevicesDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
