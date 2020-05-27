@@ -152,11 +152,11 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhen
 	When User selects '<AggregateFunc>' in the 'AggregateFunction' dropdown
 	When User selects 'Last Logon Date' in the 'AggregateBy' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
-	| items                                           |
-	| Domain ASC                                      |
-	| Domain DESC                                     |
-	| <AggregateFunc> Logon Date <AggregateFunc> ASC  |
-	| <AggregateFunc> Logon Date <AggregateFunc> DESC |
+	| items                                |
+	| Domain ASC                           |
+	| Domain DESC                          |
+	| Last Logon Date <AggregateFunc> ASC  |
+	| Last Logon Date <AggregateFunc> DESC |
 
 Examples: 
 	| AggregateFunc |
@@ -385,7 +385,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel
-	Then "(2004: In Scope = true AND 2004: Readiness = Empty, Green or Amber AND 2004: In Scope = true)" text is displayed in filter container
+	Then "(2004: In Scope = true AND 2004: Readiness = Empty, Amber or Green AND 2004: In Scope = true)" text is displayed in filter container
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18232 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplayedInTableWidget
@@ -562,7 +562,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorDisplayedWhenClicki
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel
-	Then "(2004: In Scope = true AND 2004: In Scope = true) OR (2004: Readiness = Empty, Green or Amber AND 2004: In Scope = true)" text is displayed in filter container
+	Then "2004: In Scope = true AND 2004: In Scope = true) OR (2004: Readiness = Empty, Amber or Green AND 2004: In Scope = true)" text is displayed in filter container
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20227 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplayedOnWidgetTable
