@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatNewPatternOfTheVerticalMenuIsDisplaye
 	And 'Device Members' left submenu item with some count is displayed
 	And 'Member Of' left submenu item with some count is displayed
 
-@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20677 @X_Ray
+@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20677
 Scenario: EvergreenJnr_GroupsList_CheckThatNewStyleForSelectAllCheckboxInTheSelectFilterOfTheAgridIsDisplayedCorrectly
 	When User navigates to the 'Group' details page for the item with '61654' ID
 	Then Details page for 'Domain Computers' item is displayed to the user

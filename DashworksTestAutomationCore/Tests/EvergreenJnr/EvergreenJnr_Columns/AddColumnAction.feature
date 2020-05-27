@@ -23,6 +23,30 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSorting
 	Then data in table is sorted by 'Owner Department Full Path' column in ascending order
 	And 'All Mailboxes' list should be displayed to the user
 
+@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11452
+Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumn
+	When User clicks 'Mailboxes' on the left-hand menu
+	When User create static list with "DAS11452_1132" name on "Mailboxes" page with following items
+	| ItemName                         |
+	| EFEFB86670C04D47A19@bclabs.local |
+	| XOZ675399@bclabs.local           |
+	| 9E468B86FF0C496ABE9@bclabs.local |
+	| Audrey.Folson@bclabs.local       |
+	| GDD9575618@bclabs.local          |
+	Then "DAS11452_1132" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                 |
+	| Owner Department Full Path |
+	Then ColumnName is added to the list
+	| ColumnName                 |
+	| Owner Department Full Path |
+	When User clicks on 'Owner Department Full Path' column header
+	Then data in table is sorted by 'Owner Department Full Path' column in ascending order
+	And 'All Mailboxes' list should be displayed to the user
+	Then There are no errors in the browser console
+
 @Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11576
 Scenario Outline: EvergreenJnr_MailboxesList_CheckThatMaxReceiveSizeAndMaxSendSizeColumnIsDisplayedAfterSelectingOnFilterPanel 
 	When User clicks 'Mailboxes' on the left-hand menu
@@ -285,8 +309,16 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrec
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12481
 Scenario Outline: EvergreenJnr_AllLists_CheckThatStateCountyAndPostalCodeColumnsAreDisplayed
-	When User clicks '<ListName>' on the left-hand menu
-	Then 'All <ListName>' list should be displayed to the user
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
+	When User create static list with "<ListName>" name on "<PageName>" page with following items
+	| ItemName |
+	| <Item1>  |
+	| <Item2>  |
+	| <Item3>  |
+	| <Item4>  |
+	| <Item5>  |
+	Then "<ListName>" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -307,10 +339,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatStateCountyAndPostalCodeColumns
 	Then data in table is sorted by 'Postal Code' column in descending order
 
 Examples:
-	| ListName     |
-	| Devices      |
-	| Users        |
-	| Mailboxes    |
+	| ListName          | PageName  | Item1                | Item2                 | Item3             | Item4                | Item5                 |
+	| List_DAS12481_D_1 | Devices   | 001BAQXT6JWFPI       | 00CWZRC4UK6W20        | 00I0COBFWHOF27    | 04I01QSFL1AWKM       | 05PFM2OWVCSCZ1        |
+	| List_DAS12481_U_1 | Users     | XHU600119            | FPX815218             | ZMY284489         | ADU251712            | BEV672383             |
+	| List_DAS12481_M_1 | Mailboxes | adamsny@bclabs.local | rosarica@bclabs.local | hocf@bclabs.local | mccoyjc@bclabs.local | levinemc@bclabs.local |
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15807
 Scenario: EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserList
@@ -351,7 +383,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated
 	And User clicks the Filters button
 	And User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| <FilterValue>               |
+	| <FilterValue>      |
 	And User language is changed to "Deutsch" via API
 	And User clicks refresh button in the browser
 	Then '<TranslatedFilterValue>' content is displayed in the '<TranslatedColumnName>' column
@@ -456,11 +488,22 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
-	And User add following columns using URL to the "Applications" page:
+	When User create static list with "DAS18961_List4" name on "Applications" page with following items
+	| ItemName                                                    |
+	| Organization Charts                                         |
+	| HOTLLAMA Media Player - Update                              |
+	| Rhapsody Player Engine                                      |
+	| Microsoft Visual C++ 2010  x64 Redistributable - 10.0.30319 |
+	| SmartSound Quicktracks for Premiere 6.5                     |
+	Then "DAS18961_List4" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                 |
 	| 2004: Target App Readiness |
-	When User create dynamic list with "DAS18961_List4" name on "Applications" page
-	Then "DAS18961_List4" list is displayed to user
+	Then ColumnName is added to the list
+	| ColumnName                 |
+	| 2004: Target App Readiness |
 	When User clicks on '2004: Target App Readiness' column header
 	Then data in table is sorted by '2004: Target App Readiness' column in descending order
 	When User clicks on '2004: Target App Readiness' column header
