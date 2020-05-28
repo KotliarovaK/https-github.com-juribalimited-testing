@@ -71,6 +71,8 @@ Examples:
 	| Mailboxes | EmailMigra: In Scope                                                                                          | TRUE          | This list uses, or refers to a list that uses, an In Scope filter which is not valid as a project scope   |
 	| Devices   | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service (Owner) | Me            | This list uses, or refers to a list that uses, a value of "Me" which is not valid as a project scope      |
 	| Users     | Windows7Mi: Communication \ Send Applications List - User Object Task (Team)                                  | My Team       | This list uses, or refers to a list that uses, a value of "My Team" which is not valid as a project scope |
+	| Devices   | 2004: Migration \ In Place Upgrade (Team)                                                                     | My Team       | This list uses, or refers to a list that uses, a value of "My Team" which is not valid as a project scope |
+	| Mailboxes | EmailMigra: Pre-Migration \ Mailbox Radiobutton RAG Date & Time Owner (Owner)                                 | Me            | This list uses, or refers to a list that uses, a value of "Me" which is not valid as a project scope      |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS18878 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatInScopeFilteredStaticListCanBeUsedForProjectCreation

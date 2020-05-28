@@ -132,6 +132,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	Then User sees Edit mode trigger has grey style on Dashboards page
 	Then User sees Ellipsis icon disabled for Section having 'WidgetForDAS12977' Widget on Dashboards page
 	Then User sees Ellipsis icon disabled for 'WidgetForDAS12977' Widget on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'CREATE DASHBOARD' button
 	When User creates new Dashboard with 'Dashboard_20202' name
 	Then "New dashboard created" message is displayed
