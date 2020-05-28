@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	When User add "CPU Count" filter where type is "Equals" with added column and following value:
 	| Values |
 	| 0      |
-	When User create dynamic list with "DAS18168_List" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'DAS18168_List' list
 	Then "DAS18168_List" list is displayed to user
 	When Dashboard with 'Dashboard_18168' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetCanBeCreatedBasedOnGroupsFi
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	When User add "Group" filter where type is "Equals" without added column and "AU\GAPP-A0121127" Lookup option
-	When User create dynamic list with "ListForDAS18759_1" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS18759_1' list
 	Then "ListForDAS18759_1" list is displayed to user
 	When Dashboard with 'Dashboard_18759' name created via API and opened
 	When User checks 'Edit mode' slide toggle

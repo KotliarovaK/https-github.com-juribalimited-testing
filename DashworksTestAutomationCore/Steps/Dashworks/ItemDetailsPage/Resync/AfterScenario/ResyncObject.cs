@@ -4,7 +4,7 @@ using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using TechTalk.SpecFlow;
 
-namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.AfterScenario
+namespace DashworksTestAutomationCore.Steps.Dashworks.ItemDetailsPage.Resync.AfterScenario
 {
     [Binding]
     class ResyncObject : SpecFlowContext

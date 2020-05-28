@@ -843,6 +843,15 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'UPDATE' button is disabled
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17588
+Scenario: EvergreenJnr_ApplicationsList_CheckAutomationsCategoryOrder
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	Then Category Automations displayed before projects categories
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS19066 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValidationForActionName
 	When User creates new Automation via API and open it

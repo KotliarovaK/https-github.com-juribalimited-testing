@@ -11,10 +11,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	Then User sees 'Refresh' tooltip for 'Refresh' on the Dashboard
 	When User clicks 'print' button on the Dashboards page
 	Then Print Preview is displayed to the User
-
 	Then User clicks on Dashworks logo
 	Then Print Preview is displayed to the User
-
 	Then There is no breadcrumbs displayed on Dashboard page
 	When User selects 'A4' option in the 'Paper Size' dropdown for Print Preview Settings
 	Then Print Preview is displayed in 'A4' format and 'Portrait' layout view
@@ -113,7 +111,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	| WidgetTitles               |
 	| WidgetForDAS12978_2_Edited |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12977 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12977 @DAS20202 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	When Dashboard with 'Dashboard_12977' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -126,14 +124,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	When User clicks Show Dashboards panel icon on Dashboards page
 	Then User sees Dashboards sub menu on Dashboards page
 	When User navigates to the "Dashboard_12977" list
-	Then 'CREATE DASHBOARD' button is displayed 
+	Then 'CREATE DASHBOARD' button is displayed
+	Then 'CREATE DASHBOARD' button is not disabled
 	Then 'ADD SECTION' button is not displayed
 	Then 'ADD WIDGET' button is not displayed
 	Then User sees Edit mode trigger is in the Off position on Dashboards page
 	Then User sees Edit mode trigger has grey style on Dashboards page
 	Then User sees Ellipsis icon disabled for Section having 'WidgetForDAS12977' Widget on Dashboards page
 	Then User sees Ellipsis icon disabled for 'WidgetForDAS12977' Widget on Dashboards page
-	When User clicks the Dashboard Details button
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'CREATE DASHBOARD' button
+	When User creates new Dashboard with 'Dashboard_20202' name
+	Then "New dashboard created" message is displayed
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @DAS14358 @DAS14618 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing

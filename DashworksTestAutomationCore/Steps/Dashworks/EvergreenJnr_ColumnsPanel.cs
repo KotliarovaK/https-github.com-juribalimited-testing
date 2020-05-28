@@ -167,15 +167,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"Ascending order sorted on ""(.*)"" column is displayed in URL")]
-        public void ThenAscendingOrderSortedOnColumnIsDisplayedInURL(string columnName)
-        {
-            var currentUrl = _driver.Url;
-            var sorting = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(sorting.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), "Ascending icon is not displayed");
-            Verify.Contains("%20asc", currentUrl, columnName);
-        }
-
         [Then(@"default URL is displayed on ""(.*)"" page")]
         public void ThenDefaultURLIsDisplayedOnPage(string pageName)
         {

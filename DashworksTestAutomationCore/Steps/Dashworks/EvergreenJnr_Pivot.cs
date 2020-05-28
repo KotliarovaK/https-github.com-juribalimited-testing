@@ -465,10 +465,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenPivotColumnHeadersIsDisplayedInFollowingOrder(Table table)
         {
             var columnElement = _driver.NowAt<PivotElementPage>();
-
-            var columnNames = columnElement.GetPivotHeadersContentToList();
+            var columnNames = columnElement.GetColumnHeaders();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Verify.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");
+
+            Verify.That(columnNames, Is.EqualTo(expectedList), "Columns order on Pivot page is incorrect");
         }
 
         [Then(@"Pivot left-pinned column content is displayed in following order:")]
@@ -565,7 +565,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDataInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotHeadersContentToList().Where(x => !x.Equals("")).ToList();
+            var expectedList = pivot.GetColumnHeaders();
             SortingHelper.IsListSorted(expectedList);
         }
 
@@ -573,7 +573,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDateInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotHeadersContentToList().Where(x => !x.Equals("")).ToList();
+            var expectedList = pivot.GetColumnHeaders().Where(x=>!x.Equals("Empty")).ToList();
             SortingHelper.IsListSortedByDate(expectedList, false);
         }
 

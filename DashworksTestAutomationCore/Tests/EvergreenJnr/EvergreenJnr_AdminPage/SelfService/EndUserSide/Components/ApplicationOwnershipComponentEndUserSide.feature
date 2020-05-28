@@ -320,7 +320,7 @@ Scenario: EvergreenJnr_AdminPage_RemoveOwnerAndRadioBattonValidationOnEndUserPag
 	| AOC Name      | DAS_20427_Proj_1 | Allow owner to be removed only | DAS_20427_forComponent_1 |
 	When User navigates to End User landing page with '20427_1_SI' Self Service Identifier
 	Then 'Remove Owner' button is disabled for End User
-	Then 'Remove Owner' button has tooltip with 'This application to do not have an owner to be removed' text on end user Self Service page
+	Then 'Remove Owner' button has tooltip with 'This application does not have an owner to be removed' text on end user Self Service page
 	When User opens 'DAS_20427_SS_1' Self Service
 	When User navigates to the 'Builder' left menu item
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel

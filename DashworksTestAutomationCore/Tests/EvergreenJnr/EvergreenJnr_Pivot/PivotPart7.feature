@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429 @DAS14430
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario Outline: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForUsers
 	When User clicks '<List>' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
@@ -32,7 +32,35 @@ Scenario Outline: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInThe
 Examples:
 	| List    | Row      | Column           | Value                 |
 	| Users   | Domain   | Compliance       | UserEvergr: Readiness |
-	| Devices | Hostname | Owner Compliance | Owner City            |
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14430
+Scenario Outline: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForDevice
+	When User clicks '<List>' on the left-hand menu
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| <Row>     |
+	When User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	When User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| Empty      |
+	| UNKNOWN    |
+	| RED        |
+	| AMBER      |
+	| GREEN      |
+	| IGNORE     |
+
+Examples:
+	| List    | Row      | Column           | Value      |
+	| Devices | Hostname | Owner Compliance | Owner City |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForDevices
