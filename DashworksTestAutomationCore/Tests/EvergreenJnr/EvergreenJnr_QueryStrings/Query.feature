@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "17,248" rows are displayed in the agGrid
-	And "Any Application in list StaticList13179 used by device's owner; used on device; entitled to device; installed on device; or entitled to device's owner" is displayed in added filter info
+	And "Any Application in list StaticList13179 used on device; entitled to device; installed on device; used by device's owner; or entitled to device's owner" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "17,279" rows are displayed in the agGrid
-	And "Any Application in list Dynamic13179 not used on device; not entitled to device; not installed on device; not used by device's owner; or not entitled to device's owner" is displayed in added filter info
+	And "Any Application in list Dynamic13179 not entitled to device's owner; not used by device's owner; not installed on device; not entitled to device; or not used on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilter
