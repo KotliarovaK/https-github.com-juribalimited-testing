@@ -21,31 +21,30 @@ Scenario: EvergreenJnr_UsersList_CheckThatTheFilterItemsInHeaderAreDisplayedAcco
 	Then Details page for 'XIV480469' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Device Project Summary' left submenu item
-	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
-	| checkboxes                        |
-	| Select All                        |
-	| Device Evergreen Capacity Project |
-	Then 'Device Evergreen Capacity Project' text is displayed in the filter dropdown for the 'Project' column
-	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
-	| checkboxes                      |
-	| User Evergreen Capacity Project |
-	Then 'Device Evergreen Capacity Project,User Evergreen Capacity Project' text is displayed in the filter dropdown for the 'Project' column
-	When User checks following checkboxes in the filter dropdown menu for the 'Project Type' column:
-	| checkboxes                 |
-	| Computer Scheduled Project |
-	Then 'Device scoped,User scoped' text is displayed in the filter dropdown for the 'Project Type' column
 	When User clicks following checkboxes from Column Settings panel for the 'Project' column:
 	| checkboxes |
 	| Device     |
 	| Bucket     |
 	| Ring       |
-	When User checks following checkboxes in the filter dropdown menu for the 'Path' column:
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                      |
+	| Select All                      |
+	| User Evergreen Capacity Project |
+	Then 'User Evergreen Capacity Project' text is displayed in the filter dropdown for the 'Project' column
+	When User clicks button with 'ResetFilters' aria label
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project Type' column:
+	| checkboxes                 |
+	| Computer Scheduled Project |
+	Then 'Device scoped,User scoped' text is displayed in the filter dropdown for the 'Project Type' column
+	When User clicks button with 'ResetFilters' aria label
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Path' column:
 	| checkboxes                   |
 	| R.requestTypeComp            |
 	| Computer Request Type A      |
 	| Computer: Laptop Replacement |
 	Then '[Default (Computer)]' text is displayed in the filter dropdown for the 'Path' column
-	When User checks following checkboxes in the filter dropdown menu for the 'Category' column:
+	When User clicks button with 'ResetFilters' aria label
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Category' column:
 	| checkboxes           |
 	| Empty                |
 	| comp category K      |
