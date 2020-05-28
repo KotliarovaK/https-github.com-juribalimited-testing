@@ -277,3 +277,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceS
 	Then 'Self Service Scope' autocomplete contains following options:
 	| Options          |
 	| All Applications |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21294 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningPopupDisplayedAfterClickingOnCogMenuAndEditOptionForAnotherComponent
+	When User create static list with "DAS_21294_AppList_1" name on "Applications" page with following items
+	| ItemName |
+	|          | 
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope               |
+	| DAS_21294_SS_1 | 21294_1_SI        | true    | true                | DAS_21294_AppList_1 |
+	When User creates new text component for 'Welcome' Self Service page via API
+	| ComponentName  | ExtraPropertiesText             | ShowInSelfService |
+	| WelcomeTxtComp | <p>Sunt haud pauci homĭnes,</p> | true              |
+	When User navigates to the 'Builder' left submenu item
+	When User selects 'Edit' cogmenu option for 'Text' item type with 'Thank You' name on Self Service Builder Panel
+	When User enters '_Additional_Text' text to the text editor
+	When User clicks on cogmenu button for item with 'Text' type and 'WelcomeTxtComp' name on Self Service Builder Panel
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
