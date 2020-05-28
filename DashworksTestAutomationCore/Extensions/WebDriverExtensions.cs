@@ -345,12 +345,23 @@ namespace DashworksTestAutomation.Extensions
             //Small wait for dropdown display
             Thread.Sleep(500);
 
-            var options = GetCustomSelectboxOptions(driver, selectbox);
+            //TODO: [Yurii Timchenko] commented code below doesn't work on 6 Dec 2018. Temporary fixed below, will be rewritten when new filters functionality is ready (per K. Kim's answer)
+            //var options = driver.FindElements(By.XPath(
+            //".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
+            var options = driver.FindElements(By.XPath(
+                "//div[contains(@class,'mat-select-panel mat-primary')]/mat-option"));
 
             if (!options.Any())
-                throw new Exception($"Filter options were not loaded, unable to select '{option}'");
+            {
+                options = driver.FindElements(By.XPath(
+                    "//mat-option[@class='mat-option ng-star-inserted']"));
+                if (!options.Any())
+                    throw new Exception($"Filter options were not loaded, unable to select '{option}'");
+            }
 
             driver.MouseHover(options.Last());
+            //options = driver.FindElements(By.XPath(
+            //".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]"));
             driver.ClickByJavascript(options.First(x => x.Text.ContainsText(option)));
         }
 
