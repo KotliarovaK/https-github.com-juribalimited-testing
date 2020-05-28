@@ -855,7 +855,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenAllDataIsUniqueInTheColumn(string columnName)
         {
             var grid = _driver.NowAt<BaseGridPage>();
-            var columnData = grid.GetColumnDataByScrolling(columnName);
+            var columnData = grid.GetColumnDataByScrolling(columnName, 600);
 
             //Get all elements that has more than one occurence in the list
             var duplicates = columnData.GroupBy(x => x)
@@ -871,7 +871,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var grid = _driver.NowAt<BaseGridPage>();
             foreach (var column in table.Rows)
             {
-                var columnData = grid.GetColumnDataByScrolling(column["column"]);
+                var columnData = grid.GetColumnDataByScrolling(column["column"], 600);
 
                 //Get all elements that has more than one occurence in the list
                 var duplicates = columnData.GroupBy(x => x)
