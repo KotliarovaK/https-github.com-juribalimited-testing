@@ -8,16 +8,15 @@ Background: Pre-Conditions
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFieldForApplications
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Vendor      |
 	| Application |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns        |
 	| Inventory Site |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
 	When User clicks the Filters button
@@ -28,7 +27,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	When User clicks Save filter button
 	When User clicks the Pivot button
 	When User selects aggregate function "Severity" on Pivot
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User expanded "Altera" left-pinned value on Pivot
 	Then following values are displayed for "SMS_GEN" column on Pivot
@@ -143,10 +142,11 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectReadinessTaskColumnsDis
 	| Compliance |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "Vendor" column in ascending order by default for the Pivot
+	And data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
+	| Empty          |
 	| NOT APPLICABLE |
 	| STARTED        |
 
@@ -166,8 +166,9 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectReadinessTaskColumnsDispla
 	| Owner Compliance |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "Evergreen Bucket" column in ascending order by default for the Pivot
+	And data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Empty value is not displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
-	| ColumnName               |
-	| INFRASTRUCTURE READY     |
+	| ColumnName           |
+	| Empty                |
+	| INFRASTRUCTURE READY |

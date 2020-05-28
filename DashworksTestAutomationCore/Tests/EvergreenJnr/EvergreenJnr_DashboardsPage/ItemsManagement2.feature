@@ -43,6 +43,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	When Dashboard with 'Dashboard_12974Favorite' name created via API and opened
+	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks the Dashboard Details button
 	When User changes dashboard name to 'Dashboard_12974Updated'
 	Then 'Dashboard_12974Updated' list is displayed in the Lists panel
@@ -67,12 +68,11 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhen
 	When Dashboard with 'DAS12974DUPLICATED' name created via API and opened
 	When User clicks 'Dashboards' on the left-hand menu
 	When User clicks 'CREATE DASHBOARD' button 
-	When User types '<DashboardName>' as dashboard title
+	When User enters '<DashboardName>' text to 'Dashboard Name' textbox
 	Then Warning message with "Dashboard name should be unique" is displayed
-	When User types 'extra' as dashboard title
+	When User enters '<DashboardName>extra' text to 'Dashboard Name' textbox
 	Then Warning message with 'Dashboard name should be unique' text is not displayed
-	
-	When User types '<DashboardName>' as dashboard title
+	When User enters '<DashboardName>' text to 'Dashboard Name' textbox
 	Then Warning message with "Dashboard name should be unique" is displayed
 	When User clicks 'CANCEL' button
 	Then Warning message with 'Dashboard name should be unique' text is not displayed

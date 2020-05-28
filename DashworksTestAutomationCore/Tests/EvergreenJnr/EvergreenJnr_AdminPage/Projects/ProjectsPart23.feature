@@ -97,8 +97,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithou
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User create new User
-	| Username      | FullName  | Password | ConfirmPassword | Roles                     |
-	| DAS16137_user | Test_User | 1234qwer | 1234qwer        | Analysis Editor           |
+	| Username      | FullName  | Password | ConfirmPassword | Roles           |
+	| DAS16137_user | Test_User | 1234qwer | 1234qwer        | Analysis Editor |
 	Then Success message is displayed
 	When User cliks Logout link
 	Then User is logged out

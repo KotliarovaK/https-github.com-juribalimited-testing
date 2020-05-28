@@ -6,22 +6,21 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
-Scenario: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForUsers
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
+Scenario Outline: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForUsers
+	When User clicks '<List>' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups |
-	| Domain    |
-	And User selects the following Columns on Pivot:
-	| Columns    |
-	| Compliance |
-	And User selects the following Values on Pivot:
-	| Values                |
-	| UserEvergr: Readiness |
-	And User clicks 'RUN PIVOT' button 
+	| <Row>     |
+	When User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	When User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "Domain" column in ascending order by default for the Pivot
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName |
 	| UNKNOWN    |
@@ -29,6 +28,39 @@ Scenario: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectO
 	| AMBER      |
 	| GREEN      |
 	| IGNORE     |
+
+Examples:
+	| List    | Row      | Column           | Value                 |
+	| Users   | Domain   | Compliance       | UserEvergr: Readiness |
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14430
+Scenario Outline: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForDevice
+	When User clicks '<List>' on the left-hand menu
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| <Row>     |
+	When User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	When User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| Empty      |
+	| UNKNOWN    |
+	| RED        |
+	| AMBER      |
+	| GREEN      |
+	| IGNORE     |
+
+Examples:
+	| List    | Row      | Column           | Value      |
+	| Devices | Hostname | Owner Compliance | Owner City |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForDevices
@@ -46,38 +78,13 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrec
 	| 2004: Readiness |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "Inventory Site" column in ascending order by default for the Pivot
+	And data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName |
 	| UNKNOWN    |
 	| RED        |
 	| AMBER      |
 	| GREEN      |
-
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14430
-Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayInTheCorrectOrder
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
-	| RowGroups |
-	| Hostname  |
-	And User selects the following Columns on Pivot:
-	| Columns          |
-	| Owner Compliance |
-	And User selects the following Values on Pivot:
-	| Values     |
-	| Owner City |
-	And User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	And data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
-	Then Pivot column headers is displayed in following order:
-	| ColumnName |
-	| UNKNOWN    |
-	| RED        |
-	| AMBER      |
-	| GREEN      |
-	| IGNORE     |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15139 @DAS13833 @DAS13843 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfThatWereAppliedToTheCustomList

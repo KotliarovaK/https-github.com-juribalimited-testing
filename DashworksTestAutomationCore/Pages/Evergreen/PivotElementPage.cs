@@ -163,14 +163,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public List<string> GetColumnHeaders()
         {
             var headers =
-                Driver.FindElements(By.XPath($".//div[@class='ag-header-container']//div[@class='ag-header-row'][{GetMainHeadersRowIndex()}]//span[@class='ag-header-group-text']"));
+                Driver.FindElements(By.XPath($".//div[@class='ag-header-container']//div[contains(@class, 'ag-header-row')][{GetMainHeadersRowIndex()}]//span[@class='ag-header-group-text']"));
             //var headers = Driver.FindElements(By.XPath($".//div[@class='ag-header-container']/div/div//span[@class='ag-header-group-text']"));
             return headers.Select(x => x.Text).ToList();
         }
 
         public int GetMainHeadersRowIndex()
         {
-            var headers = Driver.FindElements(By.XPath($".//div[@class='ag-header-container']//div[@class='ag-header-row']")).Count;
+            var headers = Driver.FindElements(By.XPath($".//div[@class='ag-header-container']//div[contains(@class, 'ag-header-row')]")).Count;
             return headers-1;
         }
 
@@ -189,17 +189,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return colId;
         }
 
-        public List<string> GetPivotColumnContent()
+        public List<string> GetLeftPinnedColumnContent()
         {
-            var by = By.XPath(
-                ".//div[@class='ag-pinned-left-cols-viewport-wrapper']//div[@role='row']//span[@ref='eValue']");
-            return Driver.FindElements(by).Select(x => x.Text).Where(x => !x.Contains("Empty")).ToList();
+            var by = By.XPath(".//div[@col-id='ag-Grid-AutoColumn']//span[@ref='eValue']");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public List<string> GetLeftPinnedPivotColorColumnContent()
         {
             var by = By.XPath(
-                ".//div[@class='ag-pinned-left-cols-container']//span[@class='ag-group-value']//div[@class='status']");
+                ".//div[@class='ag-pinned-left-cols-container']//span[@class='ag-group-value']//div[contains(@class, 'status status')]");
             return Driver.FindElements(by).Select(x => x.GetCssValue("background-color")).ToList();
         }
 

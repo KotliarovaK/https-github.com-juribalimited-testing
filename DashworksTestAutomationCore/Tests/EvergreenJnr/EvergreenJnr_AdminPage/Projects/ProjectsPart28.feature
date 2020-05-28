@@ -6,26 +6,6 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS20115 @Cleanup
-Scenario Outline: EvergreenJnr_AdminPage_CheckThatCorrectTooltipIsDisplayedForProjectButtonWhenListContainsMeOrMyTeamFilters
-	When User clicks '<List>' on the left-hand menu
-	When User clicks the Filters button
-	When User clicks Add New button on the Filter panel
-	When User add "<Filter>" filter where type is "Equals" with added column and Lookup option
-	| SelectedValues |
-	| <Value>        |
-	When User clicks Save button on the list panel
-	When User create dynamic list with "<List>List_20115" name on "<List>" page
-	Then "<List>List_20115" list is displayed to user
-	When User clicks 'Create' dropdown
-	Then tooltip is displayed with "<Tooltip>" text for Create Project button
-	Then Create Project button is disabled on the Base Dashboard Page
-
-Examples:
-	| List    | Filter                                                                                                        | Value   | Tooltip                                                                                                   |
-	| Devices | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service (Owner) | Me      | This list uses, or refers to a list that uses, a value of "Me" which is not valid as a project scope      |
-	| Users   | Windows7Mi: Communication \ Send Applications List - User Object Task (Team)                                  | My Team | This list uses, or refers to a list that uses, a value of "My Team" which is not valid as a project scope |
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS20115 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectTooltipIsDisplayedForProjectDetailsWhenListContainsMeFilters
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks on 'Hostname' column header

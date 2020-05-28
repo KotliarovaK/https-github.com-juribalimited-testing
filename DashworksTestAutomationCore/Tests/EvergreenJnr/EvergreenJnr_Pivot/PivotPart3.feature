@@ -10,19 +10,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Hostname  |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns                                 |
 	| Windows7Mi: Pre-Migration \ Target Date |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values            |
 	| Owner Cost Centre |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then date in the column headers is sorted in correct order for the Pivot
-	Then data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Owner Last Logon Date" filter where type is "Between" without added column and Date options
@@ -34,20 +34,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS15376
 Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes
 	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups             |
 	| MailboxEve: In Scope  |
 	| MailboxEve: Readiness |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns |
 	| City    |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values                |
 	| MailboxEve: Readiness |
 	When User selects aggregate function "Severity" on Pivot
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User expanded "TRUE" left-pinned value on Pivot
 	Then following values are displayed for "London" column on Pivot
@@ -68,14 +67,14 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Vendor      |
 	| Application |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns        |
 	| Inventory Site |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values                           |
 	| ComputerSc: Target App Readiness |
 	When User clicks the Filters button
@@ -86,7 +85,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	When User clicks Save filter button
 	When User clicks the Pivot button
 	When User selects aggregate function "Severity" on Pivot
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User expanded "Microsoft" left-pinned value on Pivot
 	Then following values are displayed for "TierA Site01" column on Pivot

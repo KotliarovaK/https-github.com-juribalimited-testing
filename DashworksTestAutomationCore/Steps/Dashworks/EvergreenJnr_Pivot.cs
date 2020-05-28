@@ -465,10 +465,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenPivotColumnHeadersIsDisplayedInFollowingOrder(Table table)
         {
             var columnElement = _driver.NowAt<PivotElementPage>();
-
-            var columnNames = columnElement.GetPivotHeadersContentToList();
+            var columnNames = columnElement.GetColumnHeaders();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Verify.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");
+
+            Verify.That(columnNames, Is.EqualTo(expectedList), "Columns order on Pivot page is incorrect");
         }
 
         [Then(@"Pivot left-pinned column content is displayed in following order:")]
@@ -506,36 +506,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Sort order on Pivot
 
-        [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order for the Pivot")]
-        public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderForThePivot(string columnName)
+        [Then(@"numeric data in column headers is sorted in descending order by default for the Pivot")]
+        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var actualList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsNumericListSorted(actualList);
-        }
-
-        [Then(@"numeric data in table is sorted by ""(.*)"" column in descending order for the Pivot")]
-        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderForThePivot(string columnName)
-        {
-            var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            var expectedList = pivot.GetColumnHeaders();
             SortingHelper.IsNumericListSorted(expectedList, false);
         }
 
-        [Then(@"data in the table is sorted by ""(.*)"" column in ascending order by default for the Pivot")]
-        public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefaultForThePivot(string columnName)
+        [Then(@"data in left-pinned column is sorted in ascending order by default for the Pivot")]
+        public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefaultForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            var expectedList = pivot.GetLeftPinnedColumnContent();
             SortingHelper.IsListSorted(expectedList);
-        }
-
-        [Then(@"data in the table is sorted by ""(.*)"" column in descending order by default for the Pivot")]
-        public void ThenDataInTheTableIsSortedByColumnInDescendingOrderByDefaultForThePivot(string p0)
-        {
-            var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSorted(expectedList, false);
         }
 
         [Then(@"color data in the column headers is sorted in correct order for the Pivot")]
@@ -581,7 +565,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDataInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotHeadersContentToList().Where(x => !x.Equals("")).ToList();
+            var expectedList = pivot.GetColumnHeaders();
             SortingHelper.IsListSorted(expectedList);
         }
 
@@ -589,7 +573,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDateInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotHeadersContentToList().Where(x => !x.Equals("")).ToList();
+            var expectedList = pivot.GetColumnHeaders().Where(x=>!x.Equals("Empty")).ToList();
             SortingHelper.IsListSortedByDate(expectedList, false);
         }
 

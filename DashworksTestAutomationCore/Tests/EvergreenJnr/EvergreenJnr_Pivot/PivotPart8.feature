@@ -126,20 +126,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValu
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| <RowGroups> |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns   |
 	| <Columns> |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "<RowGroups>" column in ascending order by default for the Pivot
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 
 Examples:
 	| RowGroups              | Columns               |
@@ -165,4 +164,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuild
 	| Owner City |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in the table is sorted by "Operating System" column in ascending order by default for the Pivot
+	And data in left-pinned column is sorted in ascending order by default for the Pivot

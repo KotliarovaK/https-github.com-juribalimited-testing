@@ -42,7 +42,7 @@ Examples:
 	| Mailboxes | Mailbox Platform | Exchange 2003 | cProjList_DAS18878 | 18878_ProjectC | EmailMigra: In Scope | TRUE          | Mailbox Scope | Applications |
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS18878 @DAS20115 @Cleanup
-Scenario Outline: EvergreenJnr_AdminPage_CheckThatInScopeFilteredListCantBeUsedForProjectCreation
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatInScopeAndMyTeamFilteredListCantBeUsedForProjectCreation
 	When User clicks '<List>' on the left-hand menu
 	When User clicks the Filters button
 	When User clicks Add New button on the Filter panel
@@ -50,10 +50,10 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatInScopeFilteredListCantBeUsedF
 	| SelectedValues  |
 	| <Filter1_Value> |
 	When User clicks Save button on the list panel
-	When User create dynamic list with "<ListName>" name on "<List>" page
-	Then "<ListName>" list is displayed to user
+	When User create dynamic list with "<List>List_20115" name on "<List>" page
+	Then "<List>List_20115" list is displayed to user
 	When User clicks 'Create' dropdown
-	Then tooltip is displayed with "This list uses, or refers to a list that uses, an In Scope filter which is not valid as a project scope" text for Create Project button
+	Then tooltip is displayed with "<Tooltip>" text for Create Project button
 	Then Create Project button is disabled on the Base Dashboard Page
 	When User clicks Body container
 	When User clicks 'Admin' on the left-hand menu
@@ -61,14 +61,18 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatInScopeFilteredListCantBeUsedF
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
 	Then 'Scope' autocomplete does NOT have options
-	| Options    |
-	| <ListName> |
+	| Options          |
+	| <List>List_20115 |
 
 Examples:
-	| List      | Filter1              | Filter1_Value | ListName            |
-	| Devices   | 2004: Owner In Scope | TRUE          | aaProjList_DAS18878 |
-	| Users     | 2004: In Scope       | TRUE          | bbProjList_DAS18878 |
-	| Mailboxes | EmailMigra: In Scope | TRUE          | ccProjList_DAS18878 |
+	| List      | Filter1                                                                                                       | Filter1_Value | Tooltip                                                                                                   |
+	| Devices   | 2004: Owner In Scope                                                                                          | TRUE          | This list uses, or refers to a list that uses, an In Scope filter which is not valid as a project scope   |
+	| Users     | 2004: In Scope                                                                                                | TRUE          | This list uses, or refers to a list that uses, an In Scope filter which is not valid as a project scope   |
+	| Mailboxes | EmailMigra: In Scope                                                                                          | TRUE          | This list uses, or refers to a list that uses, an In Scope filter which is not valid as a project scope   |
+	| Devices   | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service (Owner) | Me            | This list uses, or refers to a list that uses, a value of "Me" which is not valid as a project scope      |
+	| Users     | Windows7Mi: Communication \ Send Applications List - User Object Task (Team)                                  | My Team       | This list uses, or refers to a list that uses, a value of "My Team" which is not valid as a project scope |
+	| Devices   | 2004: Migration \ In Place Upgrade (Team)                                                                     | My Team       | This list uses, or refers to a list that uses, a value of "My Team" which is not valid as a project scope |
+	| Mailboxes | EmailMigra: Pre-Migration \ Mailbox Radiobutton RAG Date & Time Owner (Owner)                                 | Me            | This list uses, or refers to a list that uses, a value of "Me" which is not valid as a project scope      |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS18878 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatInScopeFilteredStaticListCanBeUsedForProjectCreation
