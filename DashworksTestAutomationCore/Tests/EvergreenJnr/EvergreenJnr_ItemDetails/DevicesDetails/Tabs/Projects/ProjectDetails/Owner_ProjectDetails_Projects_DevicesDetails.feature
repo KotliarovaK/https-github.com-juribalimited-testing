@@ -5,73 +5,85 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	#AnnI 2/21/20: need to add 'Cleanup' for Owner field;
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @X_Ray @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectly
-	When User navigates to the 'Device' details page for '00CWZRC4UK6W20' item
-	Then Details page for '00CWZRC4UK6W20' item is displayed to the user
-	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User resync 'Device' objects for 'User Evergreen Capacity Project' project
+	| values          |
+	| 5L8ROLREPYGEYES |
+	When User navigates to the 'Device' details page for '5L8ROLREPYGEYES' item
+	Then Details page for '5L8ROLREPYGEYES' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Device Owner' field
 	Then 'UPDATE' button is disabled on popup
 	Then 'Retain the existing owner as a user of this device' checkbox is disabled
-	When User enters 'Austin O. Ball' in the 'User' autocomplete field and selects 'US-W\ADL183503 (19831) - Austin O. Ball' value
+	When User enters '111' in the 'User' autocomplete field and selects 'BCLABS\065A1846F11140798A8 (88763) - Siddu, Arjun' value
 	Then 'Retain the existing owner as a user of this device' checkbox is checked
+	When User unchecks 'Retain the existing owner as a user of this device' checkbox
 	When User clicks 'UPDATE' button on popup
-	Then 'Device Owner will be changed to Austin O. Ball' text is displayed on inline tip banner
+	Then 'Device Owner will be changed to Siddu, Arjun' text is displayed on inline tip banner
 	When User clicks 'UPDATE' button on popup
-	Then 'Device Owner successfully updated to Austin O. Ball' text is displayed on inline success banner
+	Then 'Device Owner successfully updated to Siddu, Arjun' text is displayed on inline success banner
 	Then following content is displayed on the Details Page
-	| Title        | Value          |
-	| Device Owner | Austin O. Ball |
+	| Title        | Value        |
+	| Device Owner | Siddu, Arjun |
 	When User clicks on edit button for 'Device Owner' field
-	When User enters 'Felicienne Vadnais' in the 'User' autocomplete field and selects 'FR\AAV4528222 (6) - Felicienne Vadnais' value
-	When User clicks 'UPDATE' button on popup
-	When User clicks 'UPDATE' button on popup
-	Then following content is displayed on the Details Page
-	| Title        | Value              |
-	| Device Owner | Felicienne Vadnais |
-	When User navigates to the 'Users' left menu item
-	When User enters "Austin O. Ball" text in the Search field for "Display Name" column
-	Then 'Austin O. Ball' content is displayed in the 'Display Name' column
-	When User enters "Felicienne Vadnais" text in the Search field for "Display Name" column
-	Then 'Felicienne Vadnais' content is displayed in the 'Display Name' column
-
-	#AnnI 2/21/20: need to add 'Cleanup' for Owner field;
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @Not_Ready
-Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectlyWithSelectedCheckbox
-	When User navigates to the 'Device' details page for '01N3Y2GUS6XTK7' item
-	Then Details page for '01N3Y2GUS6XTK7' item is displayed to the user
-	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
-	When User navigates to the 'Projects' left menu item
-	When User navigates to the 'Project Details' left submenu item
-	When User clicks on edit button for 'Device Owner' field
-	Then 'UPDATE' button is disabled on popup
-	Then 'Retain the existing owner as a user of this device' checkbox is disabled
-	When User enters 'Snow' in the 'User' autocomplete field and selects 'UK\ACG370114 (5539) - James N. Snow' value
-	Then 'Retain the existing owner as a user of this device' checkbox is checked
-	When User clicks 'UPDATE' button on popup
-	Then 'Device Owner will be changed to James N. Snow' text is displayed on inline tip banner
-	When User clicks 'UPDATE' button on popup
-	Then 'Device Owner successfully updated to James N. Snow' text is displayed on inline success banner
-	Then following content is displayed on the Details Page
-	| Title        | Value         |
-	| Device Owner | James N. Snow |
-	When User clicks on edit button for 'Device Owner' field
-	When User enters 'Mc Millan' in the 'User' autocomplete field and selects 'UK\ACD252468 (15419) - Nicolas O. Mc Millan' value
+	When User enters '232' in the 'User' autocomplete field and selects 'AU\ADA242322 (27427) - Chad A. Rosario' value
 	When User unchecks 'Retain the existing owner as a user of this device' checkbox
 	When User clicks 'UPDATE' button on popup
 	When User clicks 'UPDATE' button on popup
 	Then following content is displayed on the Details Page
-	| Title        | Value                |
-	| Device Owner | Nicolas O. Mc Millan |
+	| Title        | Value           |
+	| Device Owner | Chad A. Rosario |
 	When User navigates to the 'Users' left menu item
-	Then 'James N. Snow' content is not displayed in the 'Display Name' column
-	When User enters "Nicolas O. Mc Millan" text in the Search field for "Display Name" column
-	Then 'Nicolas O. Mc Millan' content is displayed in the 'Display Name' column
+	When User enters "Chad A. Rosario" text in the Search field for "Display Name" column
+	Then 'Chad A. Rosario' content is displayed in the 'Display Name' column
+	When User enters "Percy Guertin" text in the Search field for "Display Name" column
+	Then 'Percy Guertin' content is not displayed in the 'Display Name' column
+	When User enters "Siddu, Arjun" text in the Search field for "Display Name" column
+	Then 'Siddu, Arjun' content is not displayed in the 'Display Name' column
 
-	#AnnI 2/21/20: need to add 'Cleanup' for Owner field;
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @Cleanup
+Scenario: EvergreenJnr_DevicesList_ChecksThatThePopupForChangingTheOwnerOnProjectDetailsTabIsDisplayedCorrectlyWithSelectedCheckbox
+	When User resync 'Device' objects for 'User Evergreen Capacity Project' project
+	| values         |
+	| JWTSMWCX0VR4D5 |
+	When User navigates to the 'Device' details page for 'JWTSMWCX0VR4D5' item
+	Then Details page for 'JWTSMWCX0VR4D5' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title        | Value          |
+	| Device Owner | Pamela L. Knox |
+	When User clicks on edit button for 'Device Owner' field
+	Then 'UPDATE' button is disabled on popup
+	Then 'Retain the existing owner as a user of this device' checkbox is disabled
+	When User enters '111' in the 'User' autocomplete field and selects 'BCLABS\07EB3DA466FE44408F6 (91114) - Vergara, Margarita' value
+	Then 'Retain the existing owner as a user of this device' checkbox is checked
+	When User clicks 'UPDATE' button on popup
+	Then 'Device Owner will be changed to Vergara, Margarita' text is displayed on inline tip banner
+	When User clicks 'UPDATE' button on popup
+	Then 'Device Owner successfully updated to Vergara, Margarita' text is displayed on inline success banner
+	Then following content is displayed on the Details Page
+	| Title        | Value              |
+	| Device Owner | Vergara, Margarita |
+	When User clicks on edit button for 'Device Owner' field
+	When User enters '232' in the 'User' autocomplete field and selects 'BCLABS\2287232EF3CE43D980E (90351) - Brunson, Larry' value
+	When User clicks 'UPDATE' button on popup
+	When User clicks 'UPDATE' button on popup
+	Then following content is displayed on the Details Page
+	| Title        | Value          |
+	| Device Owner | Brunson, Larry |
+	When User navigates to the 'Users' left menu item
+	When User enters "Pamela L. Knox" text in the Search field for "Display Name" column
+	Then 'Pamela L. Knox' content is displayed in the 'Display Name' column
+	When User enters "Vergara, Margarita" text in the Search field for "Display Name" column
+	Then 'Vergara, Margarita' content is displayed in the 'Display Name' column
+	When User enters "Brunson, Larry" text in the Search field for "Display Name" column
+	Then 'Brunson, Larry' content is displayed in the 'Display Name' column
+
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObjectEditorRoleIsWorkingCorrectlyForTheOwnerField
 	When User create new User via API
@@ -115,14 +127,19 @@ Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionForProjectComputerObje
 	When User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Mailbox Owner' field is not displayed
 
-	#AnnI 2/21/20: need to add 'Cleanup' for Owner field;
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @DAS20839
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20214 @DAS20839 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatEmptyOwnerFieldOnProjectDetailsTabIsDisplayedCorrectly
+	When User resync 'Device' objects for 'User Evergreen Capacity Project' project
+	| values          |
+	| 0405FHJHVG45U71 |
 	When User navigates to the 'Device' details page for the item with '14' ID
 	Then Details page for '0405FHJHVG45U71' item is displayed to the user
 	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title        | Value          |
+	| Device Owner | Gaetane Lanoie |
 	When User clicks on edit button for 'Device Owner' field
 	When User enters 'Jon' in the 'User' autocomplete field and selects 'BCLABS\03C54BC1198843A4A03 (88868) - Jones, Tina' value
 	When User clicks 'UPDATE' button on popup
@@ -141,7 +158,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatEmptyOwnerFieldOnProjectDetailsTabI
 	| Device Owner | Empty |
 
 	#AnnI 5/20/20: This functionality ready only for 'Yellow_Dwarf'
-	#AnnI 2/21/20: need to add 'Cleanup' for Owner field;
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20257 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRadioButtonForRemovingOwnerIsWorkingCorrectly
 	#with owner
@@ -172,9 +188,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRadioButtonForRemovingOwnerIsWork
 	Then 'Remove owner' radio button is disabled
 
 	#AnnI 5/20/20: This functionality ready only for 'Yellow_Dwarf'
-	#AnnI 2/21/20: need to add 'Cleanup' for Owner field;
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20257 @Cleanup @Yellow_Dwarf @Cleanup
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @OwnerField @DAS20257 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnDevicesDetailsPage
+	When User resync 'Device' objects for 'Havoc (Big Data)' project
+	| values         |
+	| NHGXHWZV66RDOW |
 	When User navigates to the 'Device' details page for the item with '13414' ID
 	Then Details page for 'NHGXHWZV66RDOW' item is displayed to the user
 	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
@@ -217,7 +235,3 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingOwnerIsWorkingCorrectlyOnDev
 	| Device Owner |       |
 	When User navigates to the 'Users' left menu item
 	Then 'No users found for this device' message is displayed on empty greed
-	When User navigates to the 'Projects' left menu item
-	When User navigates to the 'Project Details' left submenu item
-	When User clicks 'RESYNC' button
-	When User clicks 'RESYNC' button on popup
