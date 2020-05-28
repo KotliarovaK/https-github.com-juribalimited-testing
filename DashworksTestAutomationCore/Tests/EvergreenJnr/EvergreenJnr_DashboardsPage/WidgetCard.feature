@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	When User clicks data in card 'WidgetForDAS16138' widget
 	Then "8" rows are displayed in the agGrid
 	When User clicks the Filters button
-	Then "2004: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
+	Then "2004: Pre-Migration \ Scheduled Date is 5 Nov 2020" is displayed in added filter info
 	Then "Any Device in list 2004 Rollout" is displayed in added filter info
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @Cleanup

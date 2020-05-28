@@ -703,7 +703,7 @@
     "hideOnRowGroups": false,
     "hideOnValues": false,
     "key": "objectKey",
-    "uRL": "applications?$filter=(user EQUALS('{0}') WHERE (hua,eta,odwaiio,odwaiet))",
+    "uRL": "applications?$filter=(user EQUALS('{0}') WHERE (hua,eta))",
     "additionalURL": null,
     "tooltip": null,
     "dataType": "Number",

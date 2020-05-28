@@ -12,7 +12,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	| ColumnName           |
 	| Secure Boot Enabled  |
 	| Windows7Mi: In Scope |
-	When User create dynamic list with "14920_List" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates '14920_List' list
+	Then "14920_List" list is displayed to user
 	When Dashboard with 'Dashboard for DAS14920' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
@@ -25,9 +26,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
 	Then 'DAS-14920_1' Widget is displayed to the user
-	Then '2,189' count is displayed for 'False' in the table Widget
-	Then '2,192' count is displayed for 'True' in the table Widget
-	Then '12,898' count is displayed for 'Unknown' in the table Widget
+	Then '2,189' count is displayed for 'False' column in 'DAS-14920_1' table Widget
+	Then '2,192' count is displayed for 'True' column in 'DAS-14920_1' table Widget
+	Then '12,898' count is displayed for 'Unknown' column in 'DAS-14920_1' table Widget
 	#Second Widget creation
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
@@ -35,8 +36,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	| Table      | DAS-14920_2 | 14920_List | Windows7Mi: In Scope | Count             | Count ASC | 10        |
 	Then There are no errors in the browser console
 	Then 'DAS-14920_2' Widget is displayed to the user
-	Then '12,120' count is displayed for 'False' in the table Widget
-	Then '5,159' count is displayed for 'True' in the table Widget
+	Then '12,120' count is displayed for 'False' column in 'DAS-14920_2' table Widget
+	Then '5,159' count is displayed for 'True' column in 'DAS-14920_2' table Widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16073 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
@@ -61,8 +62,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 	| WidgetType | Title               | List             | SplitBy | AggregateFunction | OrderBy    | MaxValues |
 	| Table      | WidgetForDAS16069_1 | All Applications | Vendor  | Count             | Count DESC | 500       |
 	Then 'WidgetForDAS16069_1' Widget is displayed to the user
-	Then '918' count is displayed for 'Microsoft Corporation' in the table Widget
-	When User clicks '918' value for 'Microsoft Corporation' column
+	Then '918' count is displayed for 'Microsoft Corporation' column in 'WidgetForDAS16069_1' table Widget
+	Then User clicks '918' value for 'Microsoft Corporation' column in 'WidgetForDAS16069_1' table widget
 	Then "918" rows are displayed in the agGrid
 	Then grid headers are displayed in the following order
 	| ColumnName         |
@@ -152,11 +153,11 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhen
 	When User selects '<AggregateFunc>' in the 'AggregateFunction' dropdown
 	When User selects 'Last Logon Date' in the 'AggregateBy' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
-	| items                                           |
-	| Domain ASC                                      |
-	| Domain DESC                                     |
-	| <AggregateFunc> Logon Date <AggregateFunc> ASC  |
-	| <AggregateFunc> Logon Date <AggregateFunc> DESC |
+	| items                                |
+	| Domain ASC                           |
+	| Domain DESC                          |
+	| Last Logon Date <AggregateFunc> ASC  |
+	| Last Logon Date <AggregateFunc> DESC |
 
 Examples: 
 	| AggregateFunc |
@@ -175,8 +176,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickthoughNumbersBasedArchivedItemsR
 	| WidgetType | Title             | List      | SplitBy  | AggregateFunction | OrderBy      |
 	| Table      | WidgetForDAS17599 | List17599 | Hostname | Count             | Hostname ASC |
 	Then 'WidgetForDAS17599' Widget is displayed to the user
-	Then '82' count is displayed for 'Empty' in the table Widget
-	When User clicks '82' value for 'Empty' column
+	Then '82' count is displayed for 'Empty' column in 'WidgetForDAS17599' table Widget
+	Then User clicks '82' value for 'Empty' column in 'WidgetForDAS17599' table widget
 	Then "82" rows are displayed in the agGrid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18145 @Cleanup
@@ -211,7 +212,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	Then 'WidgetForDAS18091' Widget is displayed to the user
 	Then There is no 'Empty' column for 'WidgetForDAS18091' widget
 	#DAS18090 
-	When User clicks 'NOT READY' value for 'Windows 10' column
+	Then User clicks 'NOT READY' value for 'Windows 10' column in 'WidgetForDAS18091' table widget
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Operating System is Windows 10" is displayed in added filter info
@@ -283,7 +284,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceValuesAreShownWithTheCo
 	When User add "Owner Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Green              |
-	When User create dynamic list with "Devices_List_DAS15852" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'Devices_List_DAS15852' list
 	Then "Devices_List_DAS15852" list is displayed to user
 	When Dashboard with 'Dashboard_15852' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -356,36 +357,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingE
 	Then There are no errors in the browser console
 	When User clicks 'CREATE' button
 	Then 'WidgetForDAS18324' Widget is displayed to the user
-
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18327 @DAS19007 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyAfterClickingThroughTableWidget
-	When User clicks 'Devices' on the left-hand menu
-	When User clicks the Filters button
-	When User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes |
-	| TRUE               |
-	When User Add And "2004: Readiness" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes |
-	| Empty              |
-	| Green              |
-	| Amber              |
-	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'Devices_List_DAS18327' list
-	Then "Devices_List_DAS18327" list is displayed to user
-	When Dashboard with 'Dashboard_18327' name created via API and opened
-	When User checks 'Edit mode' slide toggle
-	When User clicks 'ADD WIDGET' button 
-	When User adds new Widget
-	| WidgetType | Title           | List                  | SplitBy        | AggregateFunction | AggregateBy     | OrderBy            |
-	| Table      | DAS18327_Widget | Devices_List_DAS18327 | 2004: In Scope | Severity          | 2004: Readiness | 2004: In Scope ASC |
-	Then Widget Preview is displayed to the user
-	When User clicks 'CREATE' button 
-	Then 'DAS18327_Widget' Widget is displayed to the user
-	When User checks 'Edit mode' slide toggle
-	When User clicks 'AMBER' value for 'True' column
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User clicks Filter Expression icon in Filter Panel
-	Then "(2004: In Scope = true AND 2004: Readiness = Empty, Green or Amber AND 2004: In Scope = true)" text is displayed in filter container
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18232 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplayedInTableWidget
@@ -533,7 +504,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetBasedOnTaskValueSeveri
 	| Not Applicable |
 	| Not Started    |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18631 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18631 @DAS18327 @DAS19007 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorDisplayedWhenClickingThroughWidgetBasedOnListWithTwoFiltersSepartedByOr
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
@@ -557,12 +528,33 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorDisplayedWhenClicki
 	When User clicks 'CREATE' button 
 	Then 'DAS18631_Widget' Widget is displayed to the user
 	When User checks 'Edit mode' slide toggle
-	When User clicks 'BLOCKED' value for 'True' column
+	Then User clicks 'BLOCKED' value for 'True' column in 'DAS18631_Widget' table widget
 	Then There are no errors in the browser console
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel
-	Then "(2004: In Scope = true AND 2004: In Scope = true) OR (2004: Readiness = Empty, Green or Amber AND 2004: In Scope = true)" text is displayed in filter container
+	Then "(2004: In Scope = true AND 2004: In Scope = true) OR (2004: Readiness = Empty, Amber or Green AND 2004: In Scope = true)" text is displayed in filter container
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS21299 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoClicksThroughWorksForTableEmptyValue
+	When Dashboard with 'Dashboard_21299' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title           | List         | SplitBy         | AggregateFunction | AggregateBy     | OrderBy                      |
+	| Table      | DAS21299_Widget | 2004 Rollout | 2004: Readiness | Severity          | 2004: Readiness | 2004: Readiness Severity ASC |
+	Then Widget Preview is displayed to the user
+	When User clicks 'CREATE' button 
+	Then 'DAS21299_Widget' Widget is displayed to the user
+	When User checks 'Edit mode' slide toggle
+	Then User clicks 'Empty' value for 'Empty' column in 'DAS21299_Widget' table widget
+	Then There are no errors in the browser console
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "2004: Readiness is Empty" is displayed in added filter info
+	Then "Any Device in list 2004 Rollout" is displayed in added filter info
+	When User clicks Filter Expression icon in Filter Panel
+	Then "(2004: Readiness = Empty AND Device (Saved List) IN 2004 Rollout AND 2004: Readiness = Empty)" text is displayed in filter container
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20227 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplayedOnWidgetTable
