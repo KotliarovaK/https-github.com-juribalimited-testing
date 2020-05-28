@@ -209,7 +209,7 @@ namespace DashworksTestAutomation.Extensions
                 }
                 catch (Exception e)
                 {
-                  throw new Exception($"Error waiting element by '{by}' : {e.Message}");
+                    throw new Exception($"Error waiting element by '{by}' : {e.Message}");
                 }
         }
 
@@ -321,29 +321,36 @@ namespace DashworksTestAutomation.Extensions
 
         #region Web element extensions
 
+        //This method DO NOT opened selectbox. It get options from already opened selectbox. Open it before use!!!
+        public static IList<IWebElement> GetCustomSelectboxOptions(this RemoteWebDriver driver, IWebElement selectbox)
+        {
+            //TODO: [Yurii Timchenko] commented code below doesn't work on 6 Dec 2018. Temporary fixed below, will be rewritten when new filters functionality is ready (per K. Kim's answer)
+            //var options = driver.FindElements(By.XPath(
+            //".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
+            var options = driver.FindElements(By.XPath(
+                ".//div[contains(@class,'mat-select-panel mat-primary')]/mat-option//mat-checkbox"));
+
+            if (!options.Any())
+            {
+                options = driver.FindElements(By.XPath(
+                    ".//mat-option[@class='mat-option ng-star-inserted']"));
+            }
+
+            return options;
+        }
+
         public static void SelectCustomSelectbox(this RemoteWebDriver driver, IWebElement selectbox, string option)
         {
             selectbox.Click();
             //Small wait for dropdown display
             Thread.Sleep(500);
 
-            //TODO: [Yurii Timchenko] commented code below doesn't work on 6 Dec 2018. Temporary fixed below, will be rewritten when new filters functionality is ready (per K. Kim's answer)
-            //var options = driver.FindElements(By.XPath(
-            //".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
-            var options = driver.FindElements(By.XPath(
-                "//div[contains(@class,'mat-select-panel mat-primary')]/mat-option"));
+            var options = GetCustomSelectboxOptions(driver, selectbox);
 
             if (!options.Any())
-            {
-                options = driver.FindElements(By.XPath(
-                    "//mat-option[@class='mat-option ng-star-inserted']"));
-                if (!options.Any())
-                    throw new Exception($"Filter options were not loaded, unable to select '{option}'");
-            }
+                throw new Exception($"Filter options were not loaded, unable to select '{option}'");
 
             driver.MouseHover(options.Last());
-            //options = driver.FindElements(By.XPath(
-            //".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]"));
             driver.ClickByJavascript(options.First(x => x.Text.ContainsText(option)));
         }
 
@@ -378,7 +385,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static bool IsTooltipDisplayed(this RemoteWebDriver driver)
         {
-            return driver.IsElementDisplayed(By.XPath(_toolTipSelector), WebDriverExtensions.WaitTime.Short) 
+            return driver.IsElementDisplayed(By.XPath(_toolTipSelector), WebDriverExtensions.WaitTime.Short)
                    || driver.IsElementDisplayed(By.XPath(_toolTipBubbleSelector), WebDriverExtensions.WaitTime.Short);
         }
 

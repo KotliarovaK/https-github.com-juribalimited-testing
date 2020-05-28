@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "ATestList9A0AE8" list
 	Then "ATestList9A0AE8" list is displayed to user
-	Then Ascending order applied to 'Owner Display Name' column and displayed in URL
+	Then all cells in the 'Owner Display Name' column are empty
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "ATestList9A0AE8" list

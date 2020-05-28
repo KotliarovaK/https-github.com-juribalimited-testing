@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#AnnI 3/18/20: This is implemented only for 'Wormhole'
-@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20323 @DAS20382 @Cleanup @Wormhole
+@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20323 @DAS20382 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatErrorMessageIsDisplayedOnTheObjectDetailsPageIfEvergreenBucketChangedByAdminUser
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
