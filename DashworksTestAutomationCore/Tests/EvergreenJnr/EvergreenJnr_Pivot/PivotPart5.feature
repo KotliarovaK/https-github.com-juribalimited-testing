@@ -79,20 +79,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups                                                          |
 	| Barry'sUse: Audit & Configuration \ Validate User Device Ownership |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns                                                            |
 	| Barry'sUse: Audit & Configuration \ Validate User Device Ownership |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values                      |
 	| 2004: Application Readiness |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in left-pinned column is sorted in ascending order by default for the Pivot
+	#Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
-	| ColumnName     |
+	| ColumnName |
+	| Empty      |
 	| NOT APPLICABLE |
 	| AUDIT FAILED   |
