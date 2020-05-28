@@ -621,7 +621,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $"return document.querySelector(\"div[row-index = '{rowIndex}']>div:nth-of-type({columnNumber})\")");
         }
 
-        public List<string> GetColumnDataByScrolling(string columnName)
+        /// <summary>
+        /// Scroll agGrid and collect data from it
+        /// </summary>
+        /// <param name="columnName">agGrid Column Name</param>
+        /// <param name="breakAfterRows">Rows to scroll. Zero to scroll to the bottom of the grid but not deeper than 2k rows</param>
+        /// <returns></returns>
+        public List<string> GetColumnDataByScrolling(string columnName, int breakAfterRows = 0)
         {
             var columnData = new List<string>();
             var columnNumber = GetColumnNumberByName(columnName);
@@ -667,6 +673,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
                 if (iter > 2002)
                     break;
+
+                if (breakAfterRows != 0 && iter >= breakAfterRows)
+                    break;
+
             } while (element != null);
 
             return columnData;

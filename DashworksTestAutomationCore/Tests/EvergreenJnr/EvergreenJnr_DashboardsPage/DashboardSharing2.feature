@@ -313,7 +313,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTaskMeOwnerValuesFiltersCanBeUsed
 	| WidgetType | Title     | List                     | SplitBy                           | AggregateFunction | OrderBy                               | MaxValues |
 	| Table      | DAS-18880 | aMyDeviceListForDAS18880 | s.Me/MyPr: Stg1 \ S.task1 (Owner) | Count             | s.Me/MyPr: Stg1 \ S.task1 (Owner) ASC | 10        |
 	Then 'DAS-18880' Widget is displayed to the user
-	Then '5' count is displayed for 'User(Me)' in the table Widget
+	Then '5' count is displayed for 'User(Me)' column in 'DAS-18880' table Widget
 	When User clicks the Dashboard Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	Then Review Widget List Permissions is displayed to the User
@@ -351,7 +351,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTaskTeamOwnerValuesFiltersCanBeUs
 	| WidgetType | Title     | List                       | SplitBy                          | AggregateFunction | OrderBy                              | MaxValues |
 	| Table      | DAS-18880 | aTeamDeviceListForDAS18880 | s.Me/MyPr: Stg1 \ S.task1 (Team) | Count             | s.Me/MyPr: Stg1 \ S.task1 (Team) ASC | 10        |
 	Then 'DAS-18880' Widget is displayed to the user
-	Then '8' count is displayed for 's.TeamMe/My' in the table Widget
+	Then '8' count is displayed for 's.TeamMe/My' column in 'DAS-18880' table Widget
 	When User clicks the Dashboard Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	Then Review Widget List Permissions is displayed to the User
