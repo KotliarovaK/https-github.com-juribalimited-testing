@@ -50,6 +50,18 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.CollapseExpandAllElementsOnSelfServiceBuilderContextPanel(false);
         }
 
+        [Then(@"User sees '(.*)' tooltip for Collapse or Exapnd button at Self Service Builder Panel")]
+        public void ThenUserSeesTooltipForCollapsOrExapndButtonAtSelfServiceBuilderPanel(string expectedTooltipText)
+        {
+            var builderContextPanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            var button = builderContextPanel.CollapseExpandAllButton;
+
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+
+            Verify.AreEqual(expectedTooltipText, toolTipText, "Collapse/Expand button Tooltip missmatch");
+        }
+
         [When(@"User clicks on Expand button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
         public void WhenUserClicksOnExpandButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {
