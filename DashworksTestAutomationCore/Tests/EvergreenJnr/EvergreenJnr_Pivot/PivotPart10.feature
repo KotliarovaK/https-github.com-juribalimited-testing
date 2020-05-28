@@ -25,6 +25,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
 	Then Empty value is displayed on the first place for the Pivot column header
 	Then Pivot column headers is displayed in following order:
 	| ColumnName  |
+	| Empty       |
 	| Belfast     |
 	| Calgary     |
 	| Cardiff     |

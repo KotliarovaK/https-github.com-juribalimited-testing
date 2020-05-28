@@ -74,25 +74,24 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413 @DAS14748 @DAS13786 @DAS13869 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage
 	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Common Name |
 	Then reset button on main panel is displayed
 	When User selects the following Values on Pivot:
 	| Values   |
 	| Building |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	When User creates Pivot list with "Pivot_DAS_14206" name
 	Then "Pivot_DAS_14206" list is displayed to user
 	When User navigates to the "All Users" list
-	And User selects 'Pivot' in the 'Create' dropdown
+	When User selects 'Pivot' in the 'Create' dropdown
 	Then 'ADD ROW GROUP' button is not disabled
-	And 'ADD COLUMN' button is not disabled
-	And 'ADD VALUE' button is not disabled
+	Then 'ADD COLUMN' button is not disabled
+	Then 'ADD VALUE' button is not disabled
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedList

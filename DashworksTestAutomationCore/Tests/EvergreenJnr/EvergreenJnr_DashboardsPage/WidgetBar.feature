@@ -35,7 +35,8 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	When User add "Owner Display Name" filter where type is "Equals" with added column and following value:
 	| Values |
 	| ZZZZ   |
-	When User create dynamic list with "ListForDAS16167" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS16167' list
+	Then "ListForDAS16167" list is displayed to user
 	When Dashboard with 'Dashboard_16167' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
@@ -65,7 +66,7 @@ Scenario Outline: EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorC
 	When User clicks the Filters button
 	When User add "<Filter>" filter where type is "<Operator>" with added column and Lookup option
     | SelectedValues |
-	When User create dynamic list with "<SavedList>" name on "<ListType>" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates '<SavedList>' list
 	Then "<SavedList>" list is displayed to user
 	When Dashboard with '<DashboardName>' name created via API and opened
 	When User checks 'Edit mode' slide toggle

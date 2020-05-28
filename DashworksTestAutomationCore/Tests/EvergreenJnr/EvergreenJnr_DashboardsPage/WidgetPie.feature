@@ -209,7 +209,8 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhen
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| HDD Total Size (GB) |
-	When User create dynamic list with "HddList" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'HddList' list
+	Then "HddList" list is displayed to user
 	When Dashboard with 'Dashboard_15362' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
@@ -232,7 +233,6 @@ Examples:
 	| Minimum       | HDD Total Size (GB) Minimum ASC | HDD Total Size (GB) Minimum DESC |
 	| Maximum       | HDD Total Size (GB) Maximum ASC | HDD Total Size (GB) Maximum DESC |
 	| Average       | HDD Total Size (GB) Average ASC | HDD Total Size (GB) Average DESC |
-	| Count         | Count ASC                       | Count DESC                       |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAggregateFunctionIsSelected
@@ -280,7 +280,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	| Amber              |
 	| Green              |
 	#| None               |
-	When User create dynamic list with "ListForDAS17467" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS17467' list
 	Then "ListForDAS17467" list is displayed to user
 	When Dashboard with 'Dashboard_17467' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -305,14 +305,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
-	Then Filters panel is displayed to the user
 	When User add "2004: Readiness" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Blocked            |
 	| Amber              |
 	| Green              |
 	| Grey               |
-	When User create dynamic list with "ListForDAS17467_1" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS17467_1' list
 	Then "ListForDAS17467_1" list is displayed to user
 	When Dashboard with 'Dashboard_17467_1' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -391,7 +390,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWi
 	| Amber              |
 	| Green              |
 	| Grey               |
-	When User create dynamic list with "ListForDAS18574" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS18574' list
 	Then "ListForDAS18574" list is displayed to user
 	When Dashboard with 'Dashboard_18574' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -410,7 +409,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageDisplayedForWidgetB
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName      |
 	| 2004: Readiness |
-	When User create dynamic list with "20366_List" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates '20366_List' list
+	Then "20366_List" list is displayed to user
 	When Dashboard with 'Dashboard_20366' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
@@ -425,7 +425,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageDisplayedForWidgetB
 	When User clicks the Columns button
 	When User removes "2004: Readiness" column by Column panel
 	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
-	When Dashboard with 'Dashboard for DAS20366' name is opened via API
+	When Dashboard with 'Dashboard_20366' name is opened via API
 	When User checks 'Edit mode' slide toggle
 	Then User sees 'This widget refers to a column which is not in the list' text in warning message of 'WidgetForDAS20366' widget on Dashboards page
 	When User clicks edit option for broken widget on Dashboards page
@@ -454,7 +454,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCanBeCreatedWithListBasedOnCritic
 	When User clicks the Columns button
 	When User removes "2004: Readiness" column by Column panel
 	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
-	When Dashboard with 'Dashboard for DAS20366' name is opened via API
+	When Dashboard with 'Dashboard_20366' name is opened via API
 	When User checks 'Edit mode' slide toggle
 	Then User sees 'This widget refers to a column which is not in the list' text in warning message of 'WidgetForDAS20366' widget on Dashboards page
 	When User clicks edit option for broken widget on Dashboards page
