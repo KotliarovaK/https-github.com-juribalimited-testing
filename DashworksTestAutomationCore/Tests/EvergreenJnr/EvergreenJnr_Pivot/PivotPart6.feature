@@ -74,6 +74,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatMailboxOwnerComplianceColumnsDi
 	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName |
+	| Empty      |
 	| UNKNOWN    |
 	| RED        |
 	| AMBER      |

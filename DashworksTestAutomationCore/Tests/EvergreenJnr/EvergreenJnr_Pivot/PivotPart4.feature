@@ -147,6 +147,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectReadinessTaskColumnsDis
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
+	| Empty          |
 	| NOT APPLICABLE |
 	| STARTED        |
 
@@ -169,5 +170,6 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectReadinessTaskColumnsDispla
 	And data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Empty value is not displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
-	| ColumnName               |
-	| INFRASTRUCTURE READY     |
+	| ColumnName           |
+	| Empty                |
+	| INFRASTRUCTURE READY |
