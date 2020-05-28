@@ -279,7 +279,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceS
 	| All Applications |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21294 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_CheckThatxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningPopupDisplayedAfterClickingOnCogMenuAndEditOptionForAnotherComponent
 	When User create static list with "DAS_21294_AppList_1" name on "Applications" page with following items
 	| ItemName |
 	|          | 
@@ -293,4 +293,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 	When User selects 'Edit' cogmenu option for 'Text' item type with 'Thank You' name on Self Service Builder Panel
 	When User enters '_Additional_Text' text to the text editor
 	When User clicks on cogmenu button for item with 'Text' type and 'WelcomeTxtComp' name on Self Service Builder Panel
-	
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
