@@ -386,7 +386,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
 
-            var expectedList = listPageMenu.GetColumnDataByScrolling(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
             Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Descending), $"Values in table for '{columnName}' column in not sorted in descending order");
@@ -408,7 +408,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
 
-            var actualList = page.GetColumnDataByScrolling(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = page.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             Verify.IsTrue(page.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Values in table for '{columnName}' column in not sorted in ascending order");
         }
