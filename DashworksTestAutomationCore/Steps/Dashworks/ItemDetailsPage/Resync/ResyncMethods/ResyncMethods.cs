@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -11,7 +7,7 @@ using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
 using RestSharp;
 
-namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.ResyncMethods
+namespace DashworksTestAutomationCore.Steps.Dashworks.ItemDetailsPage.Resync.ResyncMethods
 {
     public class ResyncMethods
     {
@@ -31,8 +27,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.ResyncM
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}{item.List.ToLower()}/{id}/relinkObjects";
                 var request = requestUri.GenerateRequest();
                 request.AddParameter("projectId", projId);
-                request.AddParameter("IsOwnerResync", true);
-                request.AddParameter("IsAppsResync", true);
+                switch (item.List)
+                {
+                    case "Device":
+                        request.AddParameter("IsOwnerResync", true);
+                        request.AddParameter("IsAppsResync", true);
+                        break;
+                    case "User":
+                        request.AddParameter("IsAppsResync", true);
+                        break;
+                    case "Application":
+                        request.AddParameter("IsAppAttributesResync", true);
+                        request.AddParameter("IsOwnerResync", true);
+                        break;
+                    case "Mailbox":
+                        request.AddParameter("IsOwnerResync", true);
+                        break;
+                    default:
+                        throw new Exception($"Unknown list type: {item.List}");
+                }
+
                 request.AddParameter("IsNameResync", true);
                 request.AddParameter("IsSkipRelink", true);
                 request.AddParameter("objectId", id);
@@ -46,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.ResyncM
                 }
 
                 //Ping application about project status
-                var projRequestUri = $"{UrlProvider.RestClientBaseUrl}application/{id}/project?$lang=en-GB&projectId={projId}";
+                var projRequestUri = $"{UrlProvider.RestClientBaseUrl}{item.List}/{id}/project?$lang=en-GB&projectId={projId}";
                 var projRequest = projRequestUri.GenerateRequest();
 
                 var projResponse = _client.Evergreen.Get(projRequest);

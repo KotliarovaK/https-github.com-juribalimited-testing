@@ -25,6 +25,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatProjectReadinessTaskColumnsDisplayInC
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
+	| Empty          |
 	| NOT APPLICABLE |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
@@ -47,6 +48,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayI
 	Then Empty value is not displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
+	| Empty          |
 	| NOT APPLICABLE |
 	| STARTED        |
 	| FAILED         |

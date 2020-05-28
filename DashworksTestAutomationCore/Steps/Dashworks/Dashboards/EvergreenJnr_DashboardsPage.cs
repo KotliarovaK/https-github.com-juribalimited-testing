@@ -188,16 +188,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _dashboard.Value.Add(new DashboardDto() { DashboardName = dashboardName, User = _user });
         }
 
-        [When(@"User types '(.*)' as dashboard title")]
-        public void WhenEnterDashboardTitle(string dashboardName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-
-            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
-            listElement.DashboardNameTextBox.SendKeys(dashboardName);
-        }
-
         #endregion
 
         #region Details panel
@@ -751,18 +741,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
-        [Then(@"'(.*)' count is displayed for '(.*)' in the table Widget")]
-        public void ThenCountIsDisplayedForInTheTableWidget(string boolean, string count)
+        [Then(@"'(.*)' count is displayed for '(.*)' column in '(.*)' table Widget")]
+        public void ThenCountIsDisplayedForInTheTableWidget(string value, string column, string widget)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.IsTrue(page.GetCountForTableWidget(count, boolean).Displayed(), $"{count} is not display for {boolean}");
+            Verify.IsTrue(page.GetCountForTableWidget(widget, column, value).Displayed(), $"{widget} is not display for {value}");
         }
 
-        [When(@"User clicks '(.*)' value for '(.*)' column")]
-        public void WhenUserClicksValueFromColumn(string value, string column)
+        [Then(@"User clicks '(.*)' value for '(.*)' column in '(.*)' table widget")]
+        public void WhenUserClicksValueFromColumn(string value, string column, string widget)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.GetCountForTableWidget(column, value).Click();
+            page.GetCountForTableWidget(widget, column, value).Click();
         }
 
         [Then(@"There is no '(.*)' column for '(.*)' widget")]
