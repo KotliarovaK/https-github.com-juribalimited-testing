@@ -15,7 +15,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThro
 	And User clicks "00BDM1JUR8IF419" link on the Details Page
 	Then "Project Object" page is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectsTab @DAS21260
+	#AnnI 5/28/20: Fixed only on 'Yellow_Dwarf'
+@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectsTab @DAS21260 @Yellow_Dwarf
 Scenario: EvergreenJnr_UsersList_CheckThatTheFilterItemsInHeaderAreDisplayedAccordingToItsItemsInCellsAndFiltersDdlForTheColumnsWithStringAndExternalLinkTypes
 	When User navigates to the 'User' details page for 'XIV480469' item
 	Then Details page for 'XIV480469' item is displayed to the user
