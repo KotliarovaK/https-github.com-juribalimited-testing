@@ -55,9 +55,8 @@ Examples:
 	| List    | Row                                       | Column      | Value        |
 	| Devices | Windows7Mi: Pre-Migration \ VDI Only Task | Device Type | Boot Up Date |
 
-
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14428 @DAS13865 @DAS14429
-Scenario Outline: EvergreenJnr_AllLists_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14428
+Scenario Outline: EvergreenJnr_Mailboxes_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
 	When User clicks '<List>' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
 	When User selects the following Row Groups on Pivot:
@@ -84,7 +83,34 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatMailboxOwnerComplianceColumnsDi
 Examples:
 	| List         | Row    | Column           | Value                 |
 	| Mailboxes    | City   | Owner Compliance | EmailMigra: Readiness |
-	| Applications | Vendor | Compliance       | Import                |
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
+Scenario Outline: EvergreenJnr_Applications_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
+	When User clicks '<List>' on the left-hand menu
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| <Row>     |
+	When User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	When User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| UNKNOWN    |
+	| RED        |
+	| AMBER      |
+	| GREEN      |
+	| IGNORE     |
+
+Examples:
+	| List         | Row    | Column     | Value  |
+	| Applications | Vendor | Compliance | Import |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS19348
 Scenario: EvergreenJnr_Devices_CheckThatNoConsoleErrorDisplayedAfterRunninfPivotFromObjectOwnerFilter
@@ -122,7 +148,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuild
 	| Owner City |
 	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	Then color data in the left-pinned column is sorted in descending order for the Pivot
+	#Then color data in the left-pinned column is sorted in descending order for the Pivot
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS21056
 Scenario: EvergreenJnr_Devices_CheckThatEmptyRowVlueLeadsToCorrectFilteredPage

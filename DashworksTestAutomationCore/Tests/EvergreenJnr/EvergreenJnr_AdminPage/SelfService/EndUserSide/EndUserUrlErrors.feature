@@ -37,3 +37,12 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageWhenSelfServiceObjectNotFound
 	| DAS_19653_SS_1 | 19653_1_SI        | true    | true                | DAS_19653_1 |
 	When User navigates to End User landing page with '19653_1_SI' Self Service Identifier and inccorect GUID '4e6aea42-ed2f-4017-b7ad-4dde477e68d'
 	Then self service error page with 'This application cannot be found' text is displayed for end client
+
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21291 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckDisabledSelfService
+	When User creates Self Service via API and open it
+	| Name     | ServiceIdentifier | Enabled  | AllowAnonymousUsers | Scope            |
+	| 21291_SS | 21291_SI          | false    | true                | All Applications |
+	When User navigates to End User landing page with '21291_SI' Self Service Identifier
+	Then self service error page with 'Self service is not enabled' text is displayed for end client

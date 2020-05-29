@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValu
 	| Count  |
 	When User clicks close button for "Owner City" chip
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
@@ -138,30 +138,49 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsD
 	| Owner City |
 	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	Then data in left-pinned column is sorted in ascending order by default for the Pivot
+	#Then data in left-pinned column is sorted in ascending order by default for the Pivot
 
 Examples:
 	| RowGroups              | Columns               |
 	| Operating System       | Owner Compliance      |
 	| Service Pack or Build  | Owner Compliance      |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14373
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
+	When User clicks 'Devices' on the left-hand menu
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| <RowGroups> |
+	When User selects the following Columns on Pivot:
+	| Columns   |
+	| <Columns> |
+	When User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	#Then color data in the left-pinned column is sorted in descending order for the Pivot
+
+Examples:
+	| RowGroups              | Columns               |
 	| Application Compliance | Operating System      |
 	| Application Compliance | Service Pack or Build |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372
 Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildRowGroupDisplayInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups             |
 	| Operating System      |
 	| Service Pack or Build |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns          |
 	| Owner Compliance |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in left-pinned column is sorted in ascending order by default for the Pivot
+	#Then data in left-pinned column is sorted in ascending order by default for the Pivot

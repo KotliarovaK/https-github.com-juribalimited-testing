@@ -333,7 +333,7 @@ namespace DashworksTestAutomation.Extensions
             if (!options.Any())
             {
                 options = driver.FindElements(By.XPath(
-                    ".//mat-option[@class='mat-option ng-star-inserted']"));
+                    ".//mat-option[contains(@class, 'mat-option ng-star-inserted')]"));
             }
 
             return options;

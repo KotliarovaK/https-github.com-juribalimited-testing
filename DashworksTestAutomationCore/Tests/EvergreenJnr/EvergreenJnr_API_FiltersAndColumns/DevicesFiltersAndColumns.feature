@@ -21,6 +21,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData
 Examples: 
 	| FilterCategory | FilterName           | QueryString                                                                                                                                                                     |
 	| Suggested      | Windows7Mi: Category | devices?$filter=(project_1_subCategoryId%20EQUALS%20('NULL'%2C'76'))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_1_subCategoryId,project_1_subCategory |
+	| Application    | Application          | devices?$filter=(application%20NOT%20EQUALS%20('493')%20WHERE%20(uod%2Cetd))                                                                                                    |
 
 @Evergreen @Devices @API @FiltersAndColumns @DAS21009
 Scenario: EvergreenJnr_DevicesList_CheckCountryFilterDisplaying
