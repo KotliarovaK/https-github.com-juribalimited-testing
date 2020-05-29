@@ -51,8 +51,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
                     throw new Exception($"Unable to create Onboard Object: {response.StatusCode}, {response.ErrorMessage}");
                 }
             }
-
-            WaitForObjectsToBeOnboarded(projectName, table);
         }
 
         public void WaitForObjectsToBeOnboarded(string projectName, Table table)
