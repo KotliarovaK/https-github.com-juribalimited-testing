@@ -637,6 +637,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public List<string> GetColumnDataByScrolling(string columnName, int breakAfterRows = 0)
         {
             var colId = GetColIdByColumnName(columnName);
+            //2002 here is just to check that data is not duplicated each 1k records
+            var maxScrolledRows = breakAfterRows > 2002 ? breakAfterRows : 2002;
 
             var columnData = new List<string>();
             var iter = 0;
@@ -679,7 +681,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                     break;
                 }
 
-                if (iter > 2002)
+                if (iter > maxScrolledRows)
                     break;
 
                 if (breakAfterRows != 0 && iter >= breakAfterRows)
