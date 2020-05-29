@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
                 var onboardResult = GetProjectScopeHistory(projectId).Results;
 
                 if (objectsToBeOnboarded.All(x => onboardResult.Select(p => p.ShortName).Contains(x))
-                    && objectsToBeOnboarded.All(x => onboardResult.Select(p => p.OnboardStatus).Equals("Succeeded")))
+                    && onboardResult.All(p => p.OnboardStatus.Equals("Succeeded")))
                 {
                     break;
                 }
