@@ -386,7 +386,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
 
-            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
             Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Descending), $"Values in table for '{columnName}' column in not sorted in descending order");
@@ -408,7 +408,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
 
-            var actualList = page.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = page.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             Verify.IsTrue(page.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Values in table for '{columnName}' column in not sorted in ascending order");
         }
@@ -855,7 +855,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenAllDataIsUniqueInTheColumn(string columnName)
         {
             var grid = _driver.NowAt<BaseGridPage>();
-            var columnData = grid.GetColumnDataByScrolling(columnName);
+            var columnData = grid.GetColumnDataByScrolling(columnName, 600);
 
             //Get all elements that has more than one occurence in the list
             var duplicates = columnData.GroupBy(x => x)
@@ -871,7 +871,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var grid = _driver.NowAt<BaseGridPage>();
             foreach (var column in table.Rows)
             {
-                var columnData = grid.GetColumnDataByScrolling(column["column"]);
+                var columnData = grid.GetColumnDataByScrolling(column["column"], 600);
 
                 //Get all elements that has more than one occurence in the list
                 var duplicates = columnData.GroupBy(x => x)

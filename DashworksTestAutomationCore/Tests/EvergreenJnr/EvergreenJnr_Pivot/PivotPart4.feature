@@ -8,16 +8,15 @@ Background: Pre-Conditions
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFieldForApplications
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Vendor      |
 	| Application |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns        |
 	| Inventory Site |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
 	When User clicks the Filters button
@@ -28,7 +27,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	When User clicks Save filter button
 	When User clicks the Pivot button
 	When User selects aggregate function "Severity" on Pivot
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User expanded "Altera" left-pinned value on Pivot
 	Then following values are displayed for "SMS_GEN" column on Pivot
