@@ -21,6 +21,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
         public void WhenUserOnboardObjectsToTheProject(string projectName, Table table)
         {
             _onboardObjectsToProjectApiMethods.OnboardObjectsToProjectAPI(projectName, table);
+            _onboardObjectsToProjectApiMethods.WaitForObjectsToBeOnboarded(projectName, table);
         }
     }
 }
