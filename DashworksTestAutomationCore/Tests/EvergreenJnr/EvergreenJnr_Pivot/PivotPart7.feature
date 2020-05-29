@@ -48,7 +48,7 @@ Scenario Outline: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInThe
 	| <Value> |
 	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	Then data in left-pinned column is sorted in ascending order by default for the Pivot
+	#Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName |
 	| Empty      |

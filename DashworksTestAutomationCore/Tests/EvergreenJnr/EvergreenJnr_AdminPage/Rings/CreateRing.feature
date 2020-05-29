@@ -22,6 +22,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	When User enters 'OneRing' text to 'Ring name' textbox
 	Then 'A ring already exists with this name' error message is displayed for 'Ring name' field
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS21296 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingNewProjectRing
+	When Project created via API and opened
+	| ProjectName   | Scope         | ProjectTemplate | Mode               |
+	| Project_21296 | All Mailboxes | None            | Standalone Project |
+	When User navigates to the 'Rings' left menu item
+	When User clicks 'CREATE PROJECT RING' button 
+	When User enters 'ProjectRing_21296' text to 'Ring name' textbox
+	When User enters 'RingDescription' text to 'Description' textbox
+	When User clicks 'CREATE' button
+	Then 'The ring has been created' text is displayed on inline success banner
+	Then There are no errors in the browser console
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently
 	When Project created via API and opened

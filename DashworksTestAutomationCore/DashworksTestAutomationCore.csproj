@@ -151,6 +151,9 @@
       <DependentUpon>PermissionsSettings02.feature</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\Owner_ProjectDetails_Projects_AppsDetails.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\ProjectDetails_Projects_AppDetails.feature.cs">
       <DesignTime>True</DesignTime>
     </Compile>
@@ -172,6 +175,9 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ItemDetailsDisplay.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Owner_ProjectDetails_Projects_MailDetails.feature.cs">
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Users.feature.cs">
       <DependentUpon>MailboxesDetails_Users.feature</DependentUpon>
@@ -321,6 +327,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings02.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\Owner_ProjectDetails_Projects_AppsDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Owner_ProjectDetails_Projects_AppsDetails.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\ProjectDetails_Projects_AppDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectDetails_Projects_AppDetails.feature.cs</LastGenOutput>
@@ -344,6 +354,10 @@
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsDisplay.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Owner_ProjectDetails_Projects_MailDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Owner_ProjectDetails_Projects_MailDetails.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Users.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>

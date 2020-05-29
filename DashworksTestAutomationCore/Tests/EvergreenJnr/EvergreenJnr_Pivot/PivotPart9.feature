@@ -73,8 +73,8 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	| 25 Apr 2018        | 02 May 2018      |
 	Then "(Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374
-Scenario Outline: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863
+Scenario Outline: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup1
 	When User clicks '<List>' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
 	When User selects the following Row Groups on Pivot:
@@ -97,6 +97,25 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatus
 	| Complete      |
 
 Examples:
-	| List    | Row                | Column             | Value |
-	| Devices | ComputerSc: Status | Country            | City  |
-	| Devices | Building           | ComputerSc: Status | User  |
+	| List    | Row                | Column  | Value |
+	| Devices | ComputerSc: Status | Country | City  |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14374
+Scenario Outline: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup2
+	When User clicks '<List>' on the left-hand menu
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| <Row>     |
+	When User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	When User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User clicks 'RUN PIVOT' button 
+	#Then data in left-pinned column is sorted in ascending order by default for the Pivot
+
+Examples:
+	| List    | Row      | Column             | Value  |
+	| Devices | Building | ComputerSc: Status | Region |

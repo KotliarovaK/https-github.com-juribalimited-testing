@@ -16,6 +16,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| Projects     |
 	| MSI          |
 	| Distribution |
+	| Self Service |
 	#================ checks sub-menu for main Details tab ================#
 	And 'Details' left menu have following submenu items:
 	| SubTabName        |
@@ -89,6 +90,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| Projects     |
 	| MSI          |
 	| Distribution |
+	| Self Service |
 	#================ checks sub-menu for main Details tab ================#
 	And 'Details' left menu have following submenu items:
 	| SubTabName        |
