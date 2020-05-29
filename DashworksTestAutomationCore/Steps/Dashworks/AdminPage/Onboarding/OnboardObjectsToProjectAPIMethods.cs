@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
                     continue;
                 }
 
-                throw new Exception($"Objects were not onboarded");
+                throw new Exception($"Timeout onboarding objects");
             }
         }
 
