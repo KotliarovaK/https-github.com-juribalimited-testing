@@ -100,6 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonWor
 	| ComponentName | ProjectName      | OwnerPermission                                  | UserScope               |
 	| AOC Name      | DAS_20330_Proj_2 | Allow owner to be removed or set to another user | UserStatList_DAS20330_2 |
 	When User navigates to End User landing page with '20330_2_SI' Self Service Identifier
+	Then There are no errors in the browser console
 	Then 'Undo all changes I made on this page' button is disabled for End User
 	Then 'Undo all changes I made on this page' button has tooltip with 'You have not made any changes yet' text on end user Self Service page
 	When User clicks on 'Change Owner' button on end user Self Service page

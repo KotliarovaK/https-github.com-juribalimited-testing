@@ -37,3 +37,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWhenСomponentIsSelectedAndTheUserColl
 	When User clicks on Collapse button for item with 'Page' type and 'TestPageSs1_1' name on Self Service Builder Panel
 	Then Item with 'Page' type and 'TestPageSs1_1' name on Self Service Builder Panel is highlighted
 	Then Item name text with 'Page' type and 'TestPageSs1_1' name on Self Service Builder Panel is not highlighted
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21165 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_ChecThatProperErrorMessageDisplaysWhenUserIsTryingToUpdateNonExistingComponent
+	When User create static list with "DAS_21165_AppList_2" name on "Applications" page with following items
+	| ItemName |
+	|          | 
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope               |
+	| DAS_21165_SS_2 | 21165_2_SI        | true    | true                | DAS_21165_AppList_2 |
+	When User navigates to the 'Builder' left menu item
+	When User selects 'Edit' cogmenu option for 'Text' item type with 'Thank You' name on Self Service Builder Panel
+	When User opens '21165_2_SI' Self Service in a new tab
+	When User navigates to the 'Builder' left menu item
+	When User selects 'Delete' cogmenu option for 'Text' item type with 'Thank You' name on Self Service Builder Panel
+	When User clicks 'DELETE' button on inline tip banner
+	When User switches to previous tab
+	When User enters '_Additional_Text' text to the text editor
+	When User clicks 'UPDATE' button
+	Then 'This component does not exist' text is displayed on inline error banner
