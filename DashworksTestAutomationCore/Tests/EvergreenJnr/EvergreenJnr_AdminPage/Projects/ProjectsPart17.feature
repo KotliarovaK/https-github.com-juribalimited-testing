@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks 'DELETE' button
 	Then 'DELETE' button is displayed
 	Then 'DELETE' button is displayed on inline tip banner
-	When User cancels the selection of all rows on the Projects page
+	When User deselect all rows on the grid
 	Then 'Actions' dropdown is disabled
 	Then 'DELETE' button is not displayed
 	When User enters "NewProjectNameDAS11977" text in the Search field for "Project" column

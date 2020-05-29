@@ -121,8 +121,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement ArchivedDevicesIncludedTooltip { get; set; }
 
         #endregion
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
-        public IWebElement SelectAllCheckBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement DateSearchField { get; set; }

@@ -1013,28 +1013,27 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"Select All checkbox in the filter dropdown menu have unchecked state")]
         public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveUncheckedState()
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            var options = _driver.GetCustomSelectboxOptions(page.SelectAllCheckbox);
-            Verify.AreEqual(0, _driver.GetEvergreenCheckboxTripleState(options.First(x => x.Text.ContainsText("Select All"))), 
-                "'Select all' checkbox is not fully selected");
+            CheckSelectAllCheckboxState(0);
         }
 
         [Then(@"Select All checkbox in the filter dropdown menu have full checked state")]
         public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveFullCheckedState()
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            var options = _driver.GetCustomSelectboxOptions(page.SelectAllCheckbox);
-            Verify.AreEqual(2, _driver.GetEvergreenCheckboxTripleState(options.First(x => x.Text.ContainsText("Select All"))),
-                "'Select all' checkbox is not fully selected");
+            CheckSelectAllCheckboxState(2);
         }
 
         [Then(@"Select All checkbox in the filter dropdown menu have indeterminate checked state")]
         public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveIndeterminateCheckedState()
         {
+            CheckSelectAllCheckboxState(1);
+        }
+
+        private void CheckSelectAllCheckboxState(int expectedCondition)
+        {
             var page = _driver.NowAt<BaseGridPage>();
             var options = _driver.GetCustomSelectboxOptions(page.SelectAllCheckbox);
-            Verify.AreEqual(1, _driver.GetEvergreenCheckboxTripleState(options.First(x => x.Text.ContainsText("Select All"))),
-                "'Select all' checkbox is not fully selected");
+            Verify.AreEqual(expectedCondition, _driver.GetEvergreenCheckboxTripleState(options.First(x => x.Text.ContainsText("Select All"))),
+                "'Select all' checkbox has a wrong condition");
         }
 
         #endregion

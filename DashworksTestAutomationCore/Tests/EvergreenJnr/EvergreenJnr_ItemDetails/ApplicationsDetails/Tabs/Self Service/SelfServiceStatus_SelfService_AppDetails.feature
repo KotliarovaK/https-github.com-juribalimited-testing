@@ -25,10 +25,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSelfServiceStatusTabIsDisplayed
 	| Self Service |
 	| Page         |
 	| Status       |
-	When User unchecks following checkboxes in the filter dropdown menu for the 'Status' column:
-	| checkboxes  |
-	| Select All  |
-	When User checks following checkboxes in the filter dropdown menu for the 'Status' column:
+	When User checks following checkboxes in the filter dropdown menu for the 'Self Service' column:
 	| checkboxes    |
+	| Select All    |
 	| DAS21202_SS_2 |
-	Then Rows counter contains "1" found row of all rows
+	Then 'DAS21202_SS_2' text is displayed in the filter dropdown for the 'Self Service' column
+	Then Rows counter contains "2" found row of all rows

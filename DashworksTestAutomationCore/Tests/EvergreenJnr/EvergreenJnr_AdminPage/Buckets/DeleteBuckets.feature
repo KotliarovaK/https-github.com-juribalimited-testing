@@ -21,15 +21,15 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button 
 	Then 'You cannot delete the default bucket' text is displayed on inline tip banner
-	When User clicks Select All checkbox on the grid
+	When User deselect all rows on the grid
 	And User enters "Unassigned" text in the Search field for "Bucket" column
-	And User clicks Select All checkbox on the grid
+	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button 
 	Then 'You cannot delete the default bucket' text is displayed on inline tip banner
-	When User clicks Select All checkbox on the grid
+	When User deselect all rows on the grid
 	And User enters "TestBucket4" text in the Search field for "Bucket" column
-	And User clicks Select All checkbox on the grid
+	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button 
 	Then 'This bucket will be permanently deleted and any objects within it reassigned to the default bucket' text is displayed on inline tip banner
