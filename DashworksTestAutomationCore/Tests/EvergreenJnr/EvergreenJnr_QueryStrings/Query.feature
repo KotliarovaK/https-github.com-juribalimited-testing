@@ -126,6 +126,7 @@ Examples:
 	| Application Import                              | evergreen/#/devices?$filter=(applicationImport%20NOT%20EQUALS%20('SCCM%202012%20PS1'%2C'A01%20SMS%20(Spoof%C2%A7'%2C'DC1%20SMS%20(DEV50%C2%A7'%2C'SCCM%202012'%2C'SCCM%202012%20Named%20Instance')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo)) | 5,203  |
 	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))                                                                                                                                                        | 5,195  |
 	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                                                       | 16,228 |
+	| App Count (Used) AND CPU Count                  | evergreen/#/devices?$filter=(usedApplications%20IS%20EMPTY%20()%20AND%20processorCount%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,usedApplications,processorCount                                  | 189    |
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Cleanup
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList
