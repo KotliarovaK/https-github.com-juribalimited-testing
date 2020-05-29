@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
 
         #region Project Scope History
 
-        public ProjectScopeHistory GetProjectScopeHistory(string projectId)
+        private ProjectScopeHistory GetProjectScopeHistory(string projectId)
         {
             var requestTypes = $"{UrlProvider.RestClientBaseUrl}admin/projects/{projectId}/projectScopeHistory?$lang=en-GB".GenerateRequest();
             var response = _client.Evergreen.Get(requestTypes);
@@ -94,13 +94,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
             return JsonConvert.DeserializeObject<ProjectScopeHistory>(content);
         }
 
-        public partial class ProjectScopeHistory
+        private class ProjectScopeHistory
         {
             [JsonProperty("results")]
             public List<Result> Results { get; set; }
         }
 
-        public partial class Result
+        private class Result
         {
             [JsonProperty("shortName")]
             public string ShortName { get; set; }
