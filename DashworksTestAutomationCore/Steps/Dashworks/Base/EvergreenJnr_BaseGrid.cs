@@ -1014,7 +1014,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveUncheckedState()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Verify.AreEqual(0, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckboxForColumnFilterDropdown),
+            var options = _driver.GetCustomSelectboxOptions(page.SelectAllCheckbox);
+            Verify.AreEqual(0, _driver.GetEvergreenCheckboxTripleState(options.First(x => x.Text.ContainsText("Select All"))), 
                 "'Select all' checkbox is not fully selected");
         }
 
@@ -1022,7 +1023,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveFullCheckedState()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Verify.AreEqual(2, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckboxForColumnFilterDropdown),
+            var options = _driver.GetCustomSelectboxOptions(page.SelectAllCheckbox);
+            Verify.AreEqual(2, _driver.GetEvergreenCheckboxTripleState(options.First(x => x.Text.ContainsText("Select All"))),
                 "'Select all' checkbox is not fully selected");
         }
 
@@ -1030,7 +1032,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveIndeterminateCheckedState()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Verify.AreEqual(1, _driver.GetEvergreenCheckboxTripleState(page.SelectAllCheckboxForColumnFilterDropdown),
+            var options = _driver.GetCustomSelectboxOptions(page.SelectAllCheckbox);
+            Verify.AreEqual(1, _driver.GetEvergreenCheckboxTripleState(options.First(x => x.Text.ContainsText("Select All"))),
                 "'Select all' checkbox is not fully selected");
         }
 
