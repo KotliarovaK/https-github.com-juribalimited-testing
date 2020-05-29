@@ -110,9 +110,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceHasCompletedStatus
 	When User onboard objects to '21232_Proj' project
 	| ApplicationObjects |
 	| VSCmdShell         |
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
 	When User resync 'Application' objects for '21232_Proj' project
 	| Values     |
 	| VSCmdShell |
@@ -168,9 +165,6 @@ Scenario: EvergreenJnr_AdminPage_CheckSelfServiceStatusesWithoutMakingChanges
 	When User onboard objects to '21222_Proj' project
 	| ApplicationObjects |
 	| VSCmdShell         |
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
 	When User resync 'Application' objects for '21222_Proj' project
 	| Values     |
 	| VSCmdShell |

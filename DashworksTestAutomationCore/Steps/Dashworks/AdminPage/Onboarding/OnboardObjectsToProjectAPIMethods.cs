@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Onboarding;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.DTO.RuntimeVariables.Onboarding;
@@ -50,7 +51,67 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
                     throw new Exception($"Unable to create Onboard Object: {response.StatusCode}, {response.ErrorMessage}");
                 }
             }
+
+            WaitForObjectsToBeOnboarded(projectName, table);
         }
+
+        public void WaitForObjectsToBeOnboarded(string projectName, Table table)
+        {
+            var projectId = DatabaseHelper.GetProjectId(projectName);
+            var objectsToBeOnboarded = table.Rows.SelectMany(row => row.Values).ToList();
+
+            for (int i = 0; i < 10; i++)
+            {
+                var onboardResult = GetProjectScopeHistory(projectId).Results;
+
+                if (objectsToBeOnboarded.All(x => onboardResult.Select(p => p.ShortName).Contains(x))
+                    && objectsToBeOnboarded.All(x => onboardResult.Select(p => p.OnboardStatus).Equals("Succeeded")))
+                {
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(5000);
+                    continue;
+                }
+
+                throw new Exception($"Objects were not onboarded");
+            }
+        }
+
+
+        #region Project Scope History
+
+        public ProjectScopeHistory GetProjectScopeHistory(string projectId)
+        {
+            var requestTypes = $"{UrlProvider.RestClientBaseUrl}admin/projects/{projectId}/projectScopeHistory?$lang=en-GB".GenerateRequest();
+            var response = _client.Evergreen.Get(requestTypes);
+
+            if (!response.StatusCode.Equals(HttpStatusCode.OK))
+            {
+                throw new Exception($"Unable to get Project Scope History: {response.StatusCode}, {response.ErrorMessage}");
+            }
+
+            var content = response.Content;
+            return JsonConvert.DeserializeObject<ProjectScopeHistory>(content);
+        }
+
+        public partial class ProjectScopeHistory
+        {
+            [JsonProperty("results")]
+            public List<Result> Results { get; set; }
+        }
+
+        public partial class Result
+        {
+            [JsonProperty("shortName")]
+            public string ShortName { get; set; }
+
+            [JsonProperty("onboardStatus")]
+            public string OnboardStatus { get; set; }
+        }
+
+        #endregion
 
         #region Request Types Data
 
