@@ -621,6 +621,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $"return document.querySelector(\"div[row-index = '{rowIndex}']>div:nth-of-type({columnNumber})\")");
         }
 
+        public IWebElement GetGridCell(int rowIndex, string colId)
+        {
+            return (IWebElement)Driver.ExecuteScript(
+                $"return document.evaluate('.//div[@row-index=\"{rowIndex}\"]//div[@col-id=\"{colId}\" and @role=\"gridcell\"]//*[string-length(text())>0]', document).iterateNext();");
+        }
+
         /// <summary>
         /// Scroll agGrid and collect data from it
         /// </summary>
@@ -629,10 +635,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         /// <returns></returns>
         public List<string> GetColumnDataByScrolling(string columnName, int breakAfterRows = 0)
         {
+            var colId = GetColIdByColumnName(columnName);
+
             var columnData = new List<string>();
             var columnNumber = GetColumnNumberByName(columnName);
             var iter = 0;
-            var element = GetGridCell(iter, columnNumber);
+            var element = GetGridCell(iter, colId);
             columnData.Add(element.Text);
             do
             {
@@ -640,12 +648,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 try
                 {
                     Driver.MouseHoverByJavascript(element);
-                    element = GetGridCell(iter, columnNumber);
+                    element = GetGridCell(iter, colId);
                 }
                 catch (StaleElementReferenceException)
                 {
                     Thread.Sleep(5000);
-                    element = GetGridCell(iter, columnNumber);
+                    element = GetGridCell(iter, colId);
                     Driver.MouseHoverByJavascript(element);
                 }
 
@@ -653,7 +661,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 if (element == null)
                 {
                     Thread.Sleep(3000);
-                    element = GetGridCell(iter, columnNumber);
+                    element = GetGridCell(iter, colId);
                 }
 
                 try
@@ -663,7 +671,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 catch (StaleElementReferenceException)
                 {
                     Thread.Sleep(3000);
-                    element = GetGridCell(iter, columnNumber);
+                    element = GetGridCell(iter, colId);
                     columnData.Add(element.Text);
                 }
                 catch (NullReferenceException)
