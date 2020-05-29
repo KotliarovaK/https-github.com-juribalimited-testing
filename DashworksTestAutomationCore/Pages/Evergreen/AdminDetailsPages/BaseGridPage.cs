@@ -188,6 +188,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return new List<By> { };
         }
 
+        //TODO this method should be removed and replaced by get col-id
         public int GetColumnNumberByName(string columnName)
         {
             List<string> allHeadersWithText = GetAllHeadersText();
@@ -638,7 +639,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var colId = GetColIdByColumnName(columnName);
 
             var columnData = new List<string>();
-            var columnNumber = GetColumnNumberByName(columnName);
             var iter = 0;
             var element = GetGridCell(iter, colId);
             columnData.Add(element.Text);
