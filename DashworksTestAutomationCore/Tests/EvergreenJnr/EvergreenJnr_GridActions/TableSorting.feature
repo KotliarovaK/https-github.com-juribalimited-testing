@@ -119,7 +119,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	| ColumnName   |
 	| <ColumnName> |
 	When User clicks on '<ColumnName>' column header
-	Then numeric data in table is sorted by '<ColumnName>' column in ascending order
+	Then User scrols '20000' rows to check numeric data in table is sorted by '<ColumnName>' column in ascending order
 	When User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
 	When User navigates to the "<AllListName>" list
@@ -129,7 +129,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| <ColumnName> |
-	Then numeric data in table is sorted by '<ColumnName>' column in ascending order
+	Then User scrols '20000' rows to check numeric data in table is sorted by '<ColumnName>' column in ascending order
 	Then Edit List menu is not displayed
 
 Examples: 
