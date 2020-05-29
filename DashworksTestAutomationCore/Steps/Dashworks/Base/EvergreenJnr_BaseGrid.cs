@@ -1031,8 +1031,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private void CheckSelectAllCheckboxState(int expectedCondition)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var options = _driver.GetCustomSelectboxOptions(page.SelectAllCheckbox);
-            Verify.AreEqual(expectedCondition, _driver.GetEvergreenCheckboxTripleState(options.First(x => x.Text.ContainsText("Select All"))),
+            var options = _driver.GetCustomSelectboxOptions();
+            var option = options.First(x => x.Text.ContainsText("Select All"));
+            if (!option.Text.Equals("Select All"))
+                throw new Exception("'Select all' checkbox is not found");
+            Verify.AreEqual(expectedCondition, _driver.GetEvergreenCheckboxTripleState(option),
                 "'Select all' checkbox has a wrong condition");
         }
 
