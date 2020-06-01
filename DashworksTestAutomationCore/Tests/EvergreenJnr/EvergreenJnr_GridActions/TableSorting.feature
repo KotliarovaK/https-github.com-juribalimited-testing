@@ -18,14 +18,14 @@ Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
 	When User clicks on 'Boot Up Date' column header
 	Then date in table is sorted by 'Boot Up Date' column in descending order
 	When User clicks on 'Boot Up Date' column header
-	Then date in table is sorted by 'Boot Up Date' column in ascending order
+	Then '20000' rows of date in table is sorted by 'Boot Up Date' column in ascending order
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Windows 10     | 16,969       |
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
 	Then date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in descending order
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
-	Then date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in ascending order
+	Then '20000' rows of date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in ascending order
 
 @Evergreen @Applications @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality
@@ -119,7 +119,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	| ColumnName   |
 	| <ColumnName> |
 	When User clicks on '<ColumnName>' column header
-	Then User scrols '20000' rows to check numeric data in table is sorted by '<ColumnName>' column in ascending order
+	Then '2000' rows of numeric data in table is sorted by '<ColumnName>' column in ascending order
 	When User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
 	When User navigates to the "<AllListName>" list
@@ -129,7 +129,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| <ColumnName> |
-	Then User scrols '20000' rows to check numeric data in table is sorted by '<ColumnName>' column in ascending order
+	Then '2000' rows of numeric data in table is sorted by '<ColumnName>' column in ascending order
 	Then Edit List menu is not displayed
 
 Examples: 

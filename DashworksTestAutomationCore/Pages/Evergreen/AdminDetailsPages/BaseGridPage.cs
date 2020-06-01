@@ -671,7 +671,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                     break;
                 }
 
-                if (iter > 20000)
+                if (iter > 2002)
                     break;
 
                 if (breakAfterRows != 0 && iter >= breakAfterRows)

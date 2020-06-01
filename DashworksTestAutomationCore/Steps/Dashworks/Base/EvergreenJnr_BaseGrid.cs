@@ -430,7 +430,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
 
-            var originalList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
+            var originalList = listPageMenu.GetColumnDataByScrolling(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
             Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Descending), $"Date in table for '{columnName}' column in not sorted in descending order");
         }
@@ -438,9 +438,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"date in table is sorted by '(.*)' column in ascending order")]
         public void ThenDateInTableIsSortedByColumnInAscendingOrder(string columnName)
         {
+            checkDateInTableSortedByColumnInAscendingOrder(columnName);
+        }
+
+        //Use this step if only if you need to scroll more than 600+ rows
+        [Then(@"'(.*)' rows of date in table is sorted by '(.*)' column in ascending order")]
+        public void ThenRowsOfDateInTableIsSortedByColumnInAscendingOrder(int rowsToScroll, string columnName)
+        {
+            checkDateInTableSortedByColumnInAscendingOrder(columnName, rowsToScroll);
+        }
+
+        public void checkDateInTableSortedByColumnInAscendingOrder(string columnName, int rowsToScroll = 600)
+        {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
 
-            var originalList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
+            var originalList = listPageMenu.GetColumnDataByScrolling(columnName, rowsToScroll).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList);
             Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Date in table for '{columnName}' column in not sorted in ascending order");
         }
@@ -448,13 +460,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"numeric data in table is sorted by '(.*)' column in ascending order")]
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrder(string columnName)
         {
-            ScrollToCheckNumericDataInTableIsSortedByColumnInAscendingOrder(columnName);
+            CheckNumericDataInTableIsSortedByColumnInAscendingOrder(columnName);
         }
 
-        [Then(@"User scrols '(.*)' rows to check numeric data in table is sorted by '(.*)' column in ascending order")]
-        public void ThenUserScrolsRowsToCheckNumericDataInTableIsSortedByColumnInAscendingOrder(int rowsToScroll, string columnName)
+        //Use this step if only if you need to scroll more than 600+ rows
+        [Then(@"'(.*)' rows of numeric data in table is sorted by '(.*)' column in ascending order")]
+        public void ThenRowsOfNumericDataInTableIsSortedByColumnInAscendingOrder(int rowsToScroll, string columnName)
         {
-            ScrollToCheckNumericDataInTableIsSortedByColumnInAscendingOrder(columnName, rowsToScroll);
+            CheckNumericDataInTableIsSortedByColumnInAscendingOrder(columnName, rowsToScroll);
+        }
+
+        public void CheckNumericDataInTableIsSortedByColumnInAscendingOrder(string columnName, int rowsToScroll = 600)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var actualList = listPageMenu.GetColumnDataByScrolling(columnName, rowsToScroll).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(actualList);
+            Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Numbers in table for '{columnName}' column in not sorted in ascending order");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in ascending order by default")]
@@ -652,14 +673,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.WaitForDataLoading();
             listPageMenu.GetColumnHeaderByName(columnName).Click();
             _driver.WaitForDataLoading();
-        }
-
-        public void ScrollToCheckNumericDataInTableIsSortedByColumnInAscendingOrder(string columnName, int rowsToScroll = 600)
-        {
-            var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var actualList = listPageMenu.GetColumnDataByScrolling(columnName, rowsToScroll).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsNumericListSorted(actualList);
-            Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Numbers in table for '{columnName}' column in not sorted in ascending order");
         }
 
         #endregion
