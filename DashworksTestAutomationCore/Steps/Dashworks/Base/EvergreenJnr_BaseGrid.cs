@@ -1010,24 +1010,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.ClickByActions(page.BodyContainer);
         }
 
-        [Then(@"Select All checkbox in the filter dropdown menu have unchecked state")]
-        public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveUncheckedState()
-        {
-            CheckSelectAllCheckboxState(0);
-        }
-
-        [Then(@"Select All checkbox in the filter dropdown menu have full checked state")]
-        public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveFullCheckedState()
-        {
-            CheckSelectAllCheckboxState(2);
-        }
-
-        [Then(@"Select All checkbox in the filter dropdown menu have indeterminate checked state")]
-        public void ThenSelectAllCheckboxInTheFilterDropdownMenuHaveIndeterminateCheckedState()
-        {
-            CheckSelectAllCheckboxState(1);
-        }
-
         [Then(@"'(.*)' checkbox has '(.*)' condition in selectbox")]
         public void ThenCheckboxHasConditionInSelectbox(string checkbox, string condition)
         {
