@@ -32,3 +32,22 @@ Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumn
 	| Category              |
 	| Application Readiness |
 	| Stage 1               |
+
+	#AnnI 5/29/20: fixed only for 'Yellow_Dwarf'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectsTab @DAS21286 @Zion_NewGrid @Yellow_Dwarf
+Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketColumnIsRenamedToTheGroupValueOnTheApplicationDetailsPageProjectsTab
+	When User navigates to the 'Application' details page for the item with '882' ID
+	Then Details page for 'Access' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Projects' left submenu item
+	Then following columns are displayed on the Item details page:
+	| ColumnName    |
+	| Project       |
+	| Project Type  |
+	| Group         |
+	| Path          |
+	| Workflow      |
+	| Category      |
+	| Delivery Date |
+	| Slot          |
+	| Readiness     |

@@ -821,6 +821,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region ScrollGrid
 
+        [When(@"User scrolls grid to the top")]
+        public void WhenUserScrollsGridToTheTop()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementsToBeDisplayed(By.XPath(page.AllCellsInTheGrid));
+            _driver.ScrollGridToTheTop(page.TableBody);
+        }
+
         [When(@"User scrolls grid to the bottom")]
         public void WhenUserScrollsGridToTheBottom()
         {
@@ -1008,6 +1016,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
 
             _driver.ClickByActions(page.BodyContainer);
+        }
+
+        [Then(@"'(.*)' checkbox has '(.*)' condition in selectbox")]
+        public void ThenCheckboxHasConditionInSelectbox(string checkbox, string condition)
+        {
+            switch (condition)
+            {
+                case "unchecked":
+                    Verify.AreEqual(0, _driver.GetCheckboxStateFromCustomSelectbox(checkbox), $"'{checkbox}' checkbox is not unchecked");
+                    break;
+                case "indeterminate":
+                    Verify.AreEqual(1, _driver.GetCheckboxStateFromCustomSelectbox(checkbox), $"'{checkbox}' checkbox is not indeterminate");
+                    break;
+                case "checked":
+                    Verify.AreEqual(2, _driver.GetCheckboxStateFromCustomSelectbox(checkbox), $"'{checkbox}' checkbox is not checked");
+                    break;
+                default:
+                    throw new Exception($"Unknown checkbox condition: {condition}");
+            }
         }
 
         #endregion
