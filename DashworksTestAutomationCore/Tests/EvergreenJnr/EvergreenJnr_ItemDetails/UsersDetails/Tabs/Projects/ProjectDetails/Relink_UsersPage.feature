@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	#need to add cleanup
+	#AnnI 5/25/20: Need to addd 'Cleanup' for Relink
 @Evergreen @Users @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnUsersPage
 	When User navigates to the 'User' details page for 'ZZR457072' item

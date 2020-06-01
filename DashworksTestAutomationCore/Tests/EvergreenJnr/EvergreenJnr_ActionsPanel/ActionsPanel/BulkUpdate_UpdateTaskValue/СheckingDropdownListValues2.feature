@@ -51,10 +51,12 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "2004: Migration \ Migrated Date" filter where type is "Not empty" with added column and Date options
-	| StartDateInclusive | EndDateInclusive |
+	When user select "2004: Migration \ Migrated Date" filter
+	When User select "Not empty" Operator value
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
+	When User clicks Search button and opens Search panel for agGrid
+	When User perform search by "CDQ172G3MZS444"
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| CDQ172G3MZS444   |

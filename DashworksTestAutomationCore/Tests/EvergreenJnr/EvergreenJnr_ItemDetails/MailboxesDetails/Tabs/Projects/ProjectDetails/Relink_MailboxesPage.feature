@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	#need to add cleanup
+	#AnnI 5/25/20: Need to addd 'Cleanup' for Relink
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS18284 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '01A921EFD05545818AA@bclabs.local' item
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatTooltipForDisabledRelinkButtonIsDi
 	Then popup is displayed to User
 	Then Button 'RELINK' has 'Select a mailbox' tooltip on popup
 
-@Evergreen @Mailbox @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323 @Universe
+@Evergreen @Mailbox @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323
 Scenario: EvergreenJnr_MailboxList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete
 	When User navigates to the 'Mailbox' details page for '0072B088173449E3A93@bclabs.local' item
 	Then Details page for '0072B088173449E3A93@bclabs.local' item is displayed to the user
@@ -80,6 +80,7 @@ Scenario: EvergreenJnr_MailboxList_CheckThatObjectsAreDisplayedInSearchResultAft
 	When User clicks 'RELINK' button
 	Then only options having search term '993' are displayed in 'Mailbox' autocomplete
 
+	#AnnI 5/25/20: Need to addd 'Cleanup' for Relink
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS21175 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_MailboxList_CheckTheMailboxDataInProjectModeIsUpdatedAccordingToTheEvergreenDataAfterRelinkingResyncingTheMailboxToAnotherOne
 	When User navigates to the 'Mailbox' details page for '02171CE96D0244BBB80@bclabs.local' item
@@ -96,7 +97,8 @@ Scenario: EvergreenJnr_MailboxList_CheckTheMailboxDataInProjectModeIsUpdatedAcco
 	When User navigates to the 'Mailbox Owner' left submenu item
 	Then 'No mailbox owner found for this mailbox' message is displayed on empty greed
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS21160 @Yellow_Dwarf
+	#AnnI 5/25/20: Need to addd 'Cleanup' for Relink
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS21160 @Yellow_Dwarf @Cleanup
 Scenario: EvergreenJnr_MailboxList_CheckThatAllDataIsUpdatedAccordingToTheSelectedCheckboxesOnTheMailboxDetailsPageAfterRelinkingTheSameMailboxesAFewTimes
 	When User navigates to the 'Mailbox' details page for the item with '45822' ID
 	Then Details page for '01D9682B16E140FBAB6@bclabs.local' item is displayed to the user

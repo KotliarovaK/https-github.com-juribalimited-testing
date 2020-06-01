@@ -1010,6 +1010,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.ClickByActions(page.BodyContainer);
         }
 
+        [Then(@"'(.*)' checkbox has '(.*)' condition in selectbox")]
+        public void ThenCheckboxHasConditionInSelectbox(string checkbox, string condition)
+        {
+            switch (condition)
+            {
+                case "unchecked":
+                    Verify.AreEqual(0, _driver.GetCheckboxStateFromCustomSelectbox(checkbox), $"'{checkbox}' checkbox is not unchecked");
+                    break;
+                case "indeterminate":
+                    Verify.AreEqual(1, _driver.GetCheckboxStateFromCustomSelectbox(checkbox), $"'{checkbox}' checkbox is not indeterminate");
+                    break;
+                case "checked":
+                    Verify.AreEqual(2, _driver.GetCheckboxStateFromCustomSelectbox(checkbox), $"'{checkbox}' checkbox is not checked");
+                    break;
+                default:
+                    throw new Exception($"Unknown checkbox condition: {condition}");
+            }
+        }
+
         #endregion
 
         #region Column content tooltip
