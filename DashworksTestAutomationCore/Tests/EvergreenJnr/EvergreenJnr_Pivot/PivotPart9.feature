@@ -8,7 +8,6 @@ Background: Pre-Conditions
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13786 @DAS13868
 Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
 	When User selects the following Row Groups on Pivot:
 	| RowGroups  |
@@ -26,18 +25,17 @@ Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374
 Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups          |
 	| EmailMigra: Status |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns |
 	| Country |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values |
 	| City   |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot left-pinned column content is displayed in following order:
 	| ColumnName    |
 	| Not Onboarded |
@@ -50,24 +48,22 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowG
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @DAS15376
 Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups    |
 	| 2004: Status |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns |
 	| Country |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values |
 	| City   |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot left-pinned column content is displayed in following order:
 	| ColumnName    |
 	| Not Onboarded |
 	| Onboarded     |
 	When User clicks the Filters button
-	Then Filters panel is displayed to the user
 	When User add "Last Logon Date" filter where type is "Between" without added column and Date options
 	| StartDateInclusive | EndDateInclusive |
 	| 25 Apr 2018        | 02 May 2018      |
