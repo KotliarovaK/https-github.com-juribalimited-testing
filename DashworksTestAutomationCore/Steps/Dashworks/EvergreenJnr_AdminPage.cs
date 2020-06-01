@@ -220,15 +220,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{text} is not displayed in the Project Scope Changes section");
         }
 
-        //TODO replace by WhenUserDeselectAllRowsOnTheGrid
-        [When(@"User clicks Select All checkbox on the grid")]
-        public void WhenUserSelectsAllRowsOnTheGrid()
-        {
-            var checkbox = _driver.NowAt<BaseGridPage>();
-            _driver.ClickByActions(checkbox.BodyContainer);
-            checkbox.SelectAllCheckBox.Click();
-        }
-
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
         public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
         {
@@ -447,10 +438,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 dashboardPage.PopulateSearchFieldByColumnName(columnName, row.Values.FirstOrDefault());
                 _driver.WaitForDataLoading();
-                dashboardPage.SelectAllCheckBox.Click();
+                dashboardPage.SelectAllCheckbox.Click();
                 if (iteration != 0)
                 {
-                    dashboardPage.SelectAllCheckBox.Click();
+                    dashboardPage.SelectAllCheckbox.Click();
                 }
                 iteration++;
             }
@@ -1067,13 +1058,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             inlineTipBanner.VerifyColor(MessageType.Tip);
             _driver.WaitForDataLoading();
             inlineTipBanner.GetButton(MessageType.Tip, "DELETE").Click();
-        }
-
-        [When(@"User cancels the selection of all rows on the Projects page")]
-        public void WhenUserCancelsTheSelectionOfAllRowsOnTheProjectsPage()
-        {
-            var checkbox = _driver.NowAt<ProjectsPage>();
-            checkbox.SelectAllCheckBox.Click();
         }
 
         [Then(@"Counter shows ""(.*)"" found rows")]

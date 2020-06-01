@@ -321,8 +321,22 @@ namespace DashworksTestAutomation.Extensions
 
         #region Web element extensions
 
+        public static int GetCheckboxStateFromCustomSelectbox(this RemoteWebDriver driver, string checkbox)
+        {
+            var options = driver.GetCustomSelectboxOptions();
+            if (!options.Any(x => x.Text.ContainsText(checkbox)))
+            {
+                throw new Exception($"There are not '{checkbox}' option in selectbox");
+            }
+
+            var cbElement = options.First(x => x.Text.ContainsText(checkbox));
+
+            var result = GetEvergreenCheckboxTripleState(driver, cbElement);
+            return result;
+        }
+
         //This method DO NOT opened selectbox. It get options from already opened selectbox. Open it before use!!!
-        public static IList<IWebElement> GetCustomSelectboxOptions(this RemoteWebDriver driver, IWebElement selectbox)
+        public static IList<IWebElement> GetCustomSelectboxOptions(this RemoteWebDriver driver)
         {
             //TODO: [Yurii Timchenko] commented code below doesn't work on 6 Dec 2018. Temporary fixed below, will be rewritten when new filters functionality is ready (per K. Kim's answer)
             //var options = driver.FindElements(By.XPath(
@@ -345,7 +359,7 @@ namespace DashworksTestAutomation.Extensions
             //Small wait for dropdown display
             Thread.Sleep(500);
 
-            var options = GetCustomSelectboxOptions(driver, selectbox);
+            var options = GetCustomSelectboxOptions(driver);
 
             if (!options.Any())
                 throw new Exception($"Filter options were not loaded, unable to select '{option}'");

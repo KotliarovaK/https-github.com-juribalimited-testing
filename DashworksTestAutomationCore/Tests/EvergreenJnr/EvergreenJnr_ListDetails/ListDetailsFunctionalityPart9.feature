@@ -97,6 +97,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectl
 	Then '<Data>' label is displayed in List Details
 
 Examples: 
-| Lists        | Filter      | SearchTerm                                | ListName                  | ListType           | Data               |
-| Devices      | Hostname    | 00CWZRC4UK6W20                            | ADynamicDevices18127      | List Type: Dynamic | Data: Devices      |
-| Applications | Application | Microsoft Office 97, Professional Edition | ADynamicApplications18127 | List Type: Dynamic | Data: Applications |
+	| Lists        | Filter      | SearchTerm                                | ListName                  | ListType           | Data               |
+	| Devices      | Hostname    | 00CWZRC4UK6W20                            | ADynamicDevices18127      | List Type: Dynamic | Data: Devices      |
+	| Applications | Application | Microsoft Office 97, Professional Edition | ADynamicApplications18127 | List Type: Dynamic | Data: Applications |

@@ -5,6 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
+	#AnnI 5/25/20: Need to addd 'Cleanup' for Relink
 @Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
@@ -47,7 +48,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPo
 	When User enters 'gh#' text to 'Application' textbox
 	Then Error message is not displayed
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196 @DAS18980
+	#AnnI 5/25/20: Need to addd 'Cleanup' for Relink
+@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196 @DAS18980 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithOwnerToWithoutOwner
 	When User navigates to the 'Application' details page for the item with '4017' ID
 	Then Details page for 'Microsoft Exchange Client Language Pack - Lithuanian' item is displayed to the user
@@ -71,7 +73,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196
+	#AnnI 5/25/20: Need to addd 'Cleanup' for Relink
+@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithoutOwnerToWithoutOwner
 	When User navigates to the 'Application' details page for the item with '4018' ID
 	Then Details page for 'Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030' item is displayed to the user

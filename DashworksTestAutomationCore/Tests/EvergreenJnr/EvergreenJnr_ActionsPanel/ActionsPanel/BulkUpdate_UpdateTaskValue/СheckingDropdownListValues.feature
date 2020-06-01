@@ -137,8 +137,8 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	And User selects '2004 Rollout' option from 'Project' autocomplete
 	And User selects 'Pre-Migration \ Scheduled Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters '23 Nov 2018' text to 'Date' datepicker
-	Then following Values are displayed in the 'Capacity Slot' dropdown:
+	And User enters '23 Nov 2020' text to 'Date' datepicker
+	Then following Values are displayed in the 'Slot' dropdown:
 	| Options                      |
 	| None                         |
 	| Birmingham Morning           |

@@ -164,7 +164,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             //Waiting for changed List details button state
             Thread.Sleep(500);
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
-            Verify.IsFalse(menu.ListDetailsButton.Disabled(), "List Details Button is active");
+            Verify.IsTrue(menu.ListDetailsButton.Disabled(), "List Details Button is active");
         }
     }
 }
