@@ -321,6 +321,20 @@ namespace DashworksTestAutomation.Extensions
 
         #region Web element extensions
 
+        public static int GetCheckboxStateFromCustomSelectbox(this RemoteWebDriver driver, string checkbox)
+        {
+            var options = driver.GetCustomSelectboxOptions();
+            if (!options.Any(x => x.Text.ContainsText(checkbox)))
+            {
+                throw new Exception($"There are not '{checkbox}' option in selectbox");
+            }
+
+            var cbElement = options.First(x => x.Text.ContainsText(checkbox));
+
+            var result = GetEvergreenCheckboxTripleState(driver, cbElement);
+            return result;
+        }
+
         //This method DO NOT opened selectbox. It get options from already opened selectbox. Open it before use!!!
         public static IList<IWebElement> GetCustomSelectboxOptions(this RemoteWebDriver driver)
         {

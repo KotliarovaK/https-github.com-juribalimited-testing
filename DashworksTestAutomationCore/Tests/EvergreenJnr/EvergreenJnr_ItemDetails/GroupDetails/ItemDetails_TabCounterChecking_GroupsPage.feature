@@ -48,6 +48,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatNewStyleForSelectAllCheckboxInTheSele
 	| Other      |
 	When User clicks String Filter button for "Operating System" column
 	Then Select All checkbox in the filter dropdown menu have indeterminate checked state
+	Then 'Select All' checkbox has 'indeterminate' condition in selectbox
 	When User checks following checkboxes in the filter dropdown menu for the 'Operating System' column:
 	| checkboxes |
 	| Select All |

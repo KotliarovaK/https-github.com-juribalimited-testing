@@ -1028,15 +1028,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             CheckSelectAllCheckboxState(1);
         }
 
-        private void CheckSelectAllCheckboxState(int expectedCondition)
+        [Then(@"'(.*)' checkbox has '(.*)' condition in selectbox")]
+        public void ThenCheckboxHasConditionInSelectbox(string checkbox, string condition)
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            var options = _driver.GetCustomSelectboxOptions();
-            var option = options.First(x => x.Text.ContainsText("Select All"));
-            if (!option.Text.Equals("Select All"))
-                throw new Exception("'Select all' checkbox is not found");
-            Verify.AreEqual(expectedCondition, _driver.GetEvergreenCheckboxTripleState(option),
-                "'Select all' checkbox has a wrong condition");
+            switch (condition)
+            {
+                case "unchecked":
+                    Verify.AreEqual(0, _driver.GetCheckboxStateFromCustomSelectbox(checkbox), $"'{checkbox}' checkbox is not unchecked");
+                    break;
+                case "indeterminate":
+                    Verify.AreEqual(1, _driver.GetCheckboxStateFromCustomSelectbox(checkbox), $"'{checkbox}' checkbox is not indeterminate");
+                    break;
+                case "checked":
+                    Verify.AreEqual(2, _driver.GetCheckboxStateFromCustomSelectbox(checkbox), $"'{checkbox}' checkbox is not checked");
+                    break;
+                default:
+                    throw new Exception($"Unknown checkbox condition: {condition}");
+            }
         }
 
         #endregion
