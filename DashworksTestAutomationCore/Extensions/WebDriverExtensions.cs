@@ -522,6 +522,12 @@ namespace DashworksTestAutomation.Extensions
             return result;
         }
 
+        public static void ScrollGridToTheTop(this RemoteWebDriver driver, IWebElement gridElement)
+        {
+            IJavaScriptExecutor ex = driver;
+            ex.ExecuteScript($"arguments[0].scrollTop = 0;", gridElement);
+        }
+
         public static void ScrollGridToTheEnd(this RemoteWebDriver driver, IWebElement gridElement)
         {
             IJavaScriptExecutor ex = driver;

@@ -821,6 +821,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region ScrollGrid
 
+        [When(@"User scrolls grid to the top")]
+        public void WhenUserScrollsGridToTheTop()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementsToBeDisplayed(By.XPath(page.AllCellsInTheGrid));
+            _driver.ScrollGridToTheTop(page.TableBody);
+        }
+
         [When(@"User scrolls grid to the bottom")]
         public void WhenUserScrollsGridToTheBottom()
         {
