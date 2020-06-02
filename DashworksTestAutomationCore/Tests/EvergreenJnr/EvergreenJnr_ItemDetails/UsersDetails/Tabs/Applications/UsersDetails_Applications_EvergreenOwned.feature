@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRespectiveObjectDetailsPageIsOpenedAft
 	When User clicks "7-Zip 16.02 (x64)" link on the Details Page
 	Then Details page for '7-Zip 16.02 (x64)' item is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetail @AplicationsTab @DAS21378
+@Evergreen @Users @EvergreenJnr_ItemDetails @ApplicationsTab @DAS21378
 Scenario: EvergreenJnr_UsersList_CheckThatOldAgGridIsDisplayedCorrectlyAndThereAraNoConsoleErrors
 	When User navigates to the 'User' details page for 'SMA332466' item
 	Then Details page for 'SMA332466' item is displayed to the user
