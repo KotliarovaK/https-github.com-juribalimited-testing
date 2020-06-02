@@ -308,3 +308,19 @@ Scenario: EvergreenJnr_AdminPage_ChecThatProperErrorMessageDisplaysWhenUserIsTry
 	When User selects 'Delete' cogmenu option for 'Text' item type with 'Thank You' name on Self Service Builder Panel
 	When User clicks 'DELETE' button on inline tip banner
 	Then 'This Self Service does not exist' text is displayed on inline error banner
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21398 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatAddComponentPopupIsntDisplayedAfterClickingOnPageTileAndSaveChanges
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope            |
+	| DAS_21398_SS_1 | 21398_1_SI        | true    | true                | All Applications |
+	When User creates new text component for 'Welcome' Self Service page via API
+	| ComponentName  | ExtraPropertiesText             | ShowInSelfService |
+	| WelcomeTxtComp | <p>Sunt haud pauci homĭnes,</p> | true              |
+	When User navigates to the 'Builder' left submenu item
+	When User selects 'Edit' cogmenu option for 'Text' item type with 'Thank You' name on Self Service Builder Panel
+	When User enters '_Additional_Text' text to the text editor
+	When User clicks on item with 'Text' type and 'WelcomeTxtComp' name on Self Service Builder Panel
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
+	When User clicks 'YES' button on popup
+	Then popup is not displayed to User
