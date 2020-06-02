@@ -206,6 +206,9 @@
       <DependentUpon>PivotPart13.feature</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart17.feature.cs">
+      <DependentUpon>PivotPart17.feature</DependentUpon>
+    </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart16.feature.cs">
       <DependentUpon>PivotPart16.feature</DependentUpon>
     </Compile>
@@ -414,6 +417,12 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PivotPart13.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart17.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>PivotPart14.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart16.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>

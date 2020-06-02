@@ -589,5 +589,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnContentList = columnElement.GetColumnContentOnPivotByName(column);
             columnContentList[leftColumn.IndexOf(row)].FindElement(By.XPath(".//a")).Click();
         }
+
+        [Then(@"'(.*)' value is displayed for '(.*)' row and '(.*)' column")]
+        public void ThenValueIsDisplayedForColumnsAndRow(string value, string row, string column)
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+            var leftColumnValues = columnElement.GetLeftPinnedColumnContentOnPivot().Select(column => column.Text).ToList();
+            var columnContentList = columnElement.GetColumnContentOnPivotByName(column);
+
+            Verify.That(value, Is.EqualTo(columnContentList[leftColumnValues.IndexOf(row)].Text), $"Wrong value displayed for {column} and {row}");
+        }
     }
 }
