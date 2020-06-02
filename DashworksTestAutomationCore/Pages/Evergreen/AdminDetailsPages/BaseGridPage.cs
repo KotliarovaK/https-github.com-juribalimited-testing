@@ -621,7 +621,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetGridCell(int rowIndex, string colId)
         {
             return (IWebElement)Driver.ExecuteScript(
-                $"return document.evaluate('(.//div[@row-index=\"{rowIndex}\"]//div[@col-id=\"{colId}\" and @role=\"gridcell\"]//*[last()])[last()]', document).iterateNext();");
+                $"return document.evaluate('.//div[@row-index=\"{rowIndex}\"]//div[@col-id=\"{colId}\" and @role=\"gridcell\"]', document).iterateNext();");
             //$"return document.evaluate('.//div[@row-index=\"{rowIndex}\"]//div[@col-id=\"{colId}\" and @role=\"gridcell\"]//*[string-length(text())>0]', document).iterateNext();");
         }
 
