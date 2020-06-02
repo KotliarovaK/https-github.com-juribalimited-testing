@@ -48,24 +48,28 @@ Scenario: EvergreenJnr_AdminPage_CheckDisabledSelfService
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21385 @Cleanup @SelfServiceMVP
 Scenario Outline: EvergreenJnr_AdminPage_CheckEnduserErrorMessageHandling
-	When User create static list with "<UserStatList>" name on "Applications" page with following items
-	| ItemName   |
-	| VSCmdShell |
 	When User creates Self Service via API and open it
-	| Name     | ServiceIdentifier   | Enabled | AllowAnonymousUsers | Scope          |
-	| <SSName> | <ServiceIdentifier> | true    | true                | <UserStatList> |
+	| Name     | ServiceIdentifier   | Enabled   | AllowAnonymousUsers | Scope          |
+	| <SSName> | <ServiceIdentifier> | <Enabled> | true                | <UserStatList> |
 	When User creates new Self Service Page via API
 	| ServiceIdentifier   | Name        | DisplayName       | ShowInSelfService |
 	| <ServiceIdentifier> | TestPageSs1 | TestPageSsDisplay | false             |
-	When User navigates to End User landing page with '<ServiceIdentifier>' Self Service Identifier via URL that contains '<SSID>' SSID '<GUID>' GUID and '<PageID>' Page ID
+	When User navigates to End User landing page with '<ServiceIdentifier>' Self Service Identifier via URL that contains '<SSID>' Identifier '<GUID>' GUID and '<PageID>' Page ID
 	Then self service error page with '<ErrorMessage>' text is displayed for end client
 
 	Examples:
-	| UserStatList               | SSName               | ServiceIdentifier | SSID  | GUID  | PageID | ErrorMessage                     |
-	| UserStatList_DAS_21385_1_A | SSName_DAS_21385_1_A | 21385_1_SA        | XXXXX | VALID | VALID  | This is not a valid self service |
-	| UserStatList_DAS_21385_1_B | SSName_DAS_21385_1_B | 21385_1_SB        | VALID | XXXXX | VALID  | This is not a valid self service |
-	| UserStatList_DAS_21385_1_C | SSName_DAS_21385_1_C | 21385_1_SC        | VALID | VALID | XXXXX  | This is not a valid self service |
-	| UserStatList_DAS_21385_1_D | SSName_DAS_21385_1_D | 21385_1_SD        | XXXXX | XXXXX | VALID  | This is not a valid self service |
-	| UserStatList_DAS_21385_1_E | SSName_DAS_21385_1_E | 21385_1_SE        | XXXXX | VALID | XXXXX  | This is not a valid self service |
-	| UserStatList_DAS_21385_1_F | SSName_DAS_21385_1_F | 21385_1_SF        | VALID | XXXXX | XXXXX  | This is not a valid self service |
-	| UserStatList_DAS_21385_1_G | SSName_DAS_21385_1_G | 21385_1_SG        | XXXXX | XXXXX | XXXXX  | This is not a valid self service |
+	| UserStatList | SSName               | ServiceIdentifier | Enabled | SSID  | GUID  | PageID | ErrorMessage                     |
+	| All Users    | SSName_DAS_21385_1_A | 21385_1_SA        | true    | XXXXX | VALID | VALID  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_B | 21385_1_SB        | true    | VALID | XXXXX | VALID  | This application cannot be found |
+	| All Users    | SSName_DAS_21385_1_C | 21385_1_SC        | true    | VALID | VALID | XXXXX  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_D | 21385_1_SD        | true    | XXXXX | XXXXX | VALID  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_E | 21385_1_SE        | true    | XXXXX | VALID | XXXXX  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_F | 21385_1_SF        | true    | VALID | XXXXX | XXXXX  | This application cannot be found |
+	| All Users    | SSName_DAS_21385_1_G | 21385_1_SG        | true    | XXXXX | XXXXX | XXXXX  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_A | 21385_1_SA        | false   | XXXXX | VALID | VALID  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_B | 21385_1_SB        | false   | VALID | XXXXX | VALID  | Self Service is not enabled      |
+	| All Users    | SSName_DAS_21385_1_C | 21385_1_SC        | false   | VALID | VALID | XXXXX  | Self Service is not enabled      |
+	| All Users    | SSName_DAS_21385_1_D | 21385_1_SD        | false   | XXXXX | XXXXX | VALID  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_E | 21385_1_SE        | false   | XXXXX | VALID | XXXXX  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_F | 21385_1_SF        | false   | VALID | XXXXX | XXXXX  | Self Service is not enabled      |
+	| All Users    | SSName_DAS_21385_1_G | 21385_1_SG        | false   | XXXXX | XXXXX | XXXXX  | This is not a valid self service |

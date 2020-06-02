@@ -69,21 +69,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         }
 
         //Always use valid Self Service Identifier for the firts placeholder, use 'VALID' keyword to get valid URL part for the next 3 placeholders
-        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier via URL that contains '(.*)' SSID '(.*)' GUID and '(.*)' Page ID")]
-        public void WhenUserNavigatesToEndUserLandingPageWithSelfServiceIdentifierViaURLThatContainsSSIDGUIDAndPageID(string baseSSID, string sSID, string gUID, string pageID)
+        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier via URL that contains '(.*)' Identifier '(.*)' GUID and '(.*)' Page ID")]
+        public void WhenUserNavigatesToEndUserLandingPageWithSelfServiceIdentifierViaURLThatContainsSSIDGUIDAndPageID(string baseSSIdentifier, string sSIdentifier, string gUID, string pageID)
         {
 
-            var ss = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(baseSSID));
+            var ss = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(baseSSIdentifier));
             SelfServicePageDto page = _selfServicePages.Value.First();
 
-            if (sSID.Equals("VALID"))
+            if (sSIdentifier.Equals("VALID"))
             {
-                sSID = ss.ServiceId.ToString();
+                sSIdentifier = baseSSIdentifier;
             }
 
             if (gUID.Equals("VALID"))
             {
-                gUID = DatabaseHelper.GetSelfServiceObjectGuid(baseSSID);
+                gUID = DatabaseHelper.GetSelfServiceObjectGuid(baseSSIdentifier);
             }
 
             if (pageID.Equals("VALID"))
@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
                 pageID = DatabaseHelper.GetSelfServicePageId(page).ToString();
             }
 
-            string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{sSID}/{gUID}/pageId/{pageID}";
+            string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{sSIdentifier}/{gUID}/pageId/{pageID}";
 
             _driver.WaitForDataLoading();
             _driver.NavigateToUrl(navigationUrl);
