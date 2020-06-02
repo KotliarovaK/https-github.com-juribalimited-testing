@@ -66,10 +66,10 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckEnduserErrorMessageHandling
 	| All Users    | SSName_DAS_21385_1_E | 21385_1_SE        | true    | XXXXX | VALID | XXXXX  | This is not a valid self service |
 	| All Users    | SSName_DAS_21385_1_F | 21385_1_SF        | true    | VALID | XXXXX | XXXXX  | This application cannot be found |
 	| All Users    | SSName_DAS_21385_1_G | 21385_1_SG        | true    | XXXXX | XXXXX | XXXXX  | This is not a valid self service |
-	| All Users    | SSName_DAS_21385_1_A | 21385_1_SA        | false   | XXXXX | VALID | VALID  | This is not a valid self service |
-	| All Users    | SSName_DAS_21385_1_B | 21385_1_SB        | false   | VALID | XXXXX | VALID  | Self Service is not enabled      |
-	| All Users    | SSName_DAS_21385_1_C | 21385_1_SC        | false   | VALID | VALID | XXXXX  | Self Service is not enabled      |
-	| All Users    | SSName_DAS_21385_1_D | 21385_1_SD        | false   | XXXXX | XXXXX | VALID  | This is not a valid self service |
-	| All Users    | SSName_DAS_21385_1_E | 21385_1_SE        | false   | XXXXX | VALID | XXXXX  | This is not a valid self service |
-	| All Users    | SSName_DAS_21385_1_F | 21385_1_SF        | false   | VALID | XXXXX | XXXXX  | Self Service is not enabled      |
-	| All Users    | SSName_DAS_21385_1_G | 21385_1_SG        | false   | XXXXX | XXXXX | XXXXX  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_H | 21385_1_SH        | false   | XXXXX | VALID | VALID  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_I | 21385_1_SI        | false   | VALID | XXXXX | VALID  | Self service is not enabled      |
+	| All Users    | SSName_DAS_21385_1_J | 21385_1_SJ        | false   | VALID | VALID | XXXXX  | Self service is not enabled      |
+	| All Users    | SSName_DAS_21385_1_K | 21385_1_SK        | false   | XXXXX | XXXXX | VALID  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_L | 21385_1_SL        | false   | XXXXX | VALID | XXXXX  | This is not a valid self service |
+	| All Users    | SSName_DAS_21385_1_M | 21385_1_SM        | false   | VALID | XXXXX | XXXXX  | Self service is not enabled      |
+	| All Users    | SSName_DAS_21385_1_N | 21385_1_SN        | false   | XXXXX | XXXXX | XXXXX  | This is not a valid self service |
