@@ -8,20 +8,19 @@ Background: Pre-Conditions
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
 Scenario: EvergreenJnr_UsersLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrderForUsers
 	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| City      |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns                                                           |
 	| Windows7Mi: Communication \ Group User Radiobutton Readiness Only |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in left-pinned column is sorted in ascending order by default for the Pivot
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
@@ -31,20 +30,19 @@ Scenario: EvergreenJnr_UsersLists_CheckThatProjectReadinessTaskColumnsDisplayInC
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
 Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrderForDevices
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Import    |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns                                                  |
 	| UserEvergr: Stage 1 \ Dropdown Readiness Date (Computer) |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in left-pinned column is sorted in ascending order by default for the Pivot
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Empty value is not displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
@@ -77,22 +75,44 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColu
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @DAS15252 @DAS13786 @DAS13823 @DAS16244
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
-	And User selects the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups                                                          |
 	| Barry'sUse: Audit & Configuration \ Validate User Device Ownership |
-	And User selects the following Columns on Pivot:
+	When User selects the following Columns on Pivot:
 	| Columns                                                            |
 	| Barry'sUse: Audit & Configuration \ Validate User Device Ownership |
-	And User selects the following Values on Pivot:
+	When User selects the following Values on Pivot:
 	| Values                      |
 	| 2004: Application Readiness |
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	And data in left-pinned column is sorted in ascending order by default for the Pivot
+	#Then data in left-pinned column is sorted in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
+	| Empty          |
 	| NOT APPLICABLE |
 	| AUDIT FAILED   |
+
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
+Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrderForMailboxes
+	When User clicks 'Mailboxes' on the left-hand menu
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups        |
+	| Evergreen Bucket |
+	When User selects the following Columns on Pivot:
+	| Columns                                              |
+	| EmailMigra: Pre-Migration \ Infrastructure Readiness |
+	When User selects the following Values on Pivot:
+	| Values           |
+	| Owner Compliance |
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
+	Then Empty value is not displayed on the first place for the Pivot
+	Then Pivot column headers is displayed in following order:
+	| ColumnName           |
+	| Empty                |
+	| INFRASTRUCTURE READY |

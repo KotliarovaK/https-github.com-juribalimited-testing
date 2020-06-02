@@ -55,9 +55,8 @@ Examples:
 	| List    | Row                                       | Column      | Value        |
 	| Devices | Windows7Mi: Pre-Migration \ VDI Only Task | Device Type | Boot Up Date |
 
-
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14428 @DAS13865 @DAS14429
-Scenario Outline: EvergreenJnr_AllLists_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14428
+Scenario Outline: EvergreenJnr_Mailboxes_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
 	When User clicks '<List>' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
 	When User selects the following Row Groups on Pivot:
@@ -84,65 +83,31 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatMailboxOwnerComplianceColumnsDi
 Examples:
 	| List         | Row    | Column           | Value                 |
 	| Mailboxes    | City   | Owner Compliance | EmailMigra: Readiness |
-	| Applications | Vendor | Compliance       | Import                |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS19348
-Scenario: EvergreenJnr_Devices_CheckThatNoConsoleErrorDisplayedAfterRunninfPivotFromObjectOwnerFilter
-	When User clicks 'Devices' on the left-hand menu
-	When User clicks the Filters button
-	When User add "Owner" filter where type is "Equal" without added column and "AU\AAO798996 (Darren J. Walter)" Lookup option
-	When User selects 'Pivot' in the 'Create' dropdown
-	When User selects the following Row Groups on Pivot:
-	| RowGroups      |
-	| Device Type |
-	When User selects the following Columns on Pivot:
-	| Columns          |
-	|Hostname |
-	When User selects the following Values on Pivot:
-	| Values        |
-	| Operating System |
-	When User selects aggregate function "Count" on Pivot
-	When User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	Then There are no errors in the browser console
-
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14373
-Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildColumnDisplayInTheCorrectOrder
-	When User clicks 'Devices' on the left-hand menu
-	When User selects 'Pivot' in the 'Create' dropdown
-	When User selects the following Row Groups on Pivot:
-	| RowGroups              |
-	| Application Compliance |
-	When User selects the following Columns on Pivot:
-	| Columns               |
-	| Operating System      |
-	| Service Pack or Build |
-	When User selects the following Values on Pivot:
-	| Values     |
-	| Owner City |
-	When User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	Then color data in the left-pinned column is sorted in descending order for the Pivot
-
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS21056
-Scenario: EvergreenJnr_Devices_CheckThatEmptyRowVlueLeadsToCorrectFilteredPage
-	When User clicks 'Devices' on the left-hand menu
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
+Scenario Outline: EvergreenJnr_Applications_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
+	When User clicks '<List>' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
 	When User selects the following Row Groups on Pivot:
 	| RowGroups |
-	| Country   |
+	| <Row>     |
 	When User selects the following Columns on Pivot:
-	| Columns      |
-	| Device Type  |
-	| Manufacturer |
+	| Columns  |
+	| <Column> |
 	When User selects the following Values on Pivot:
-	| Values   |
-	| Hostname |
-	When User selects aggregate function "Count" on Pivot
+	| Values  |
+	| <Value> |
 	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	When User clicks value from 'Empty' row and 'Dell' column
-	When User clicks the Filters button
-	Then "Device Type is Data Centre" is displayed in added filter info
-	Then "Manufacturer is Dell" is displayed in added filter info
-	Then "Country is Empty" is displayed in added filter info
+	Then data in left-pinned column is sorted in ascending order by default for the Pivot
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| UNKNOWN    |
+	| RED        |
+	| AMBER      |
+	| GREEN      |
+	| IGNORE     |
+
+Examples:
+	| List         | Row    | Column     | Value  |
+	| Applications | Vendor | Compliance | Import |

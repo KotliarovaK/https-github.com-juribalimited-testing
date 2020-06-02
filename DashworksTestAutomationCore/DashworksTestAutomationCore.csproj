@@ -57,10 +57,16 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality1 - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\PermissionsSettings - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Trend.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart1 - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart14 - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart15 - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart2 - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart3 - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart6 - Copy.feature.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutomationUtils" Version="1.0.13" />
+    <PackageReference Include="AutomationUtils" Version="1.0.14" />
     <PackageReference Include="BoDi" Version="1.4.1" />
     <PackageReference Include="CompareNETObjects" Version="4.66.0" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
@@ -151,6 +157,9 @@
       <DependentUpon>PermissionsSettings02.feature</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\Owner_ProjectDetails_Projects_AppsDetails.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\ProjectDetails_Projects_AppDetails.feature.cs">
       <DesignTime>True</DesignTime>
     </Compile>
@@ -173,6 +182,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ItemDetailsDisplay.feature</DependentUpon>
     </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Owner_ProjectDetails_Projects_MailDetails.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Users.feature.cs">
       <DependentUpon>MailboxesDetails_Users.feature</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -181,6 +193,28 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ToolTips_UsersDetails.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart11.feature.cs">
+      <DependentUpon>PivotPart11.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart12.feature.cs">
+      <DependentUpon>PivotPart12.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart13.feature.cs">
+      <DependentUpon>PivotPart13.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart16.feature.cs">
+      <DependentUpon>PivotPart16.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart15.feature.cs">
+      <DependentUpon>PivotPart15.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart14.feature.cs">
+      <DependentUpon>PivotPart14.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
 
@@ -321,6 +355,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings02.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\Owner_ProjectDetails_Projects_AppsDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Owner_ProjectDetails_Projects_AppsDetails.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\ProjectDetails_Projects_AppDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectDetails_Projects_AppDetails.feature.cs</LastGenOutput>
@@ -345,6 +383,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsDisplay.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Owner_ProjectDetails_Projects_MailDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Owner_ProjectDetails_Projects_MailDetails.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\MailboxesDetails_Users.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
@@ -354,6 +396,42 @@
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\ToolTips_UsersDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ToolTips_UsersDetails.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart11.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart11.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart12.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart12.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart13.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart13.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart16.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>PivotPart14.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart15.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>PivotPart14.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart14.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart14.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
   </ItemGroup>
 

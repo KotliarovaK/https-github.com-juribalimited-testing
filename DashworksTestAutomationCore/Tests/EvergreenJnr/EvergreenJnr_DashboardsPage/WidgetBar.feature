@@ -14,8 +14,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	| Manufacturer        |
 	| Compliance          |
 	When User clicks on 'Manufacturer' column header
-	Then data in table is sorted by 'Manufacturer' column in ascending order
-	When User create dynamic list with "List15356" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'List15356' list
+	Then "List15356" list is displayed to user
 	When Dashboard with 'Dashboard_15356' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 

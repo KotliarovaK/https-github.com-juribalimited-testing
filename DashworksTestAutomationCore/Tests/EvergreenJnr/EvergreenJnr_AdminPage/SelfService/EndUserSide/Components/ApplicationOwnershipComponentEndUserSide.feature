@@ -406,9 +406,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyOnboardedUsersThatInTheScopeListCa
 	When User onboard objects to 'DAS_21181_Proj_1' project
 	| ApplicationObjects |
 	| VSCmdShell         |
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
 	When User clicks 'Users' on the left-hand menu
 	When User clicks the Filters button
 	When User add "Username" filter where type is "Equals" with added column and following value:

@@ -107,54 +107,93 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceHasCompletedStatus
 	When Project created via API and opened
 	| ProjectName | Scope     | ProjectTemplate | Mode               |
 	| 21232_Proj  | All Users | None            | Standalone Project |
-	And User onboard objects to '21232_Proj' project
+	When User onboard objects to '21232_Proj' project
 	| ApplicationObjects |
 	| VSCmdShell         |
-	And User navigates to the 'Scope' left menu item
-	And User navigates to the 'Queue' left menu item
-	And User waits until Queue disappears
-	And User resync 'Application' objects for '21232_Proj' project
+	When User resync 'Application' objects for '21232_Proj' project
 	| Values     |
 	| VSCmdShell |
-	And User create static list with "21232_UserList" name on "Users" page with following items
+	When User create static list with "21232_UserList" name on "Users" page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
-	And User create static list with "21232_AppList" name on "Applications" page with following items
+	When User create static list with "21232_AppList" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
-	And User creates Self Service via API and open it
+	When User creates Self Service via API and open it
 	| Name     | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope         |
 	| 21232_SS | 21232_SI          | true    | true                | 21232_AppList |
-	And User creates new application ownership component for 'Welcome' Self Service page via API
+	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName | OwnerPermission                | UserScope      |
 	| AOC Name      | 21232_Proj  | Allow owner to be removed only | 21232_UserList |
-	And User clicks 'Applications' on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                      |
 	| 21232_SI: Welcome Page Status   |
 	| 21232_SI: Thank You Page Status |
-	And User perform search by "VSCmdShell"
+	When User perform search by "VSCmdShell"
 	Then Content in the '21232_SI: Welcome Page Status' column is equal to
 	| Content    |
 	| Not viewed |
-	And Content in the '21232_SI: Thank You Page Status' column is equal to
+	Then Content in the '21232_SI: Thank You Page Status' column is equal to
 	| Content    |
 	| Not viewed |
 	When User navigates to End User landing page with '21232_SI' Self Service Identifier
-	And User clicks on 'Remove Owner' button on end user Self Service page
-	And User clicks on 'Continue' button on end user Self Service page
-	And User navigate to Evergreen URL
-	And User clicks 'Applications' on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User clicks on 'Remove Owner' button on end user Self Service page
+	When User clicks on 'Continue' button on end user Self Service page
+	Then Header is displayed on End User page
+	When User navigate to Evergreen URL
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                      |
 	| 21232_SI: Welcome Page Status   |
 	| 21232_SI: Thank You Page Status |
-	And User perform search by "VSCmdShell"
+	When User perform search by "VSCmdShell"
 	Then Content in the '21232_SI: Welcome Page Status' column is equal to
 	| Content   |
 	| Completed |
-	And Content in the '21232_SI: Thank You Page Status' column is equal to
+	Then Content in the '21232_SI: Thank You Page Status' column is equal to
+	| Content   |
+	| Completed |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21222 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckSelfServiceStatusesWithoutMakingChanges
+	When Project created via API and opened
+	| ProjectName | Scope     | ProjectTemplate | Mode               |
+	| 21222_Proj  | All Users | None            | Standalone Project |
+	When User onboard objects to '21222_Proj' project
+	| ApplicationObjects |
+	| VSCmdShell         |
+	When User resync 'Application' objects for '21222_Proj' project
+	| Values     |
+	| VSCmdShell |
+	When User create static list with "21222_UserList" name on "Users" page with following items
+	| ItemName            |
+	| 03C54BC1198843A4A03 |
+	When User create static list with "21222_AppList" name on "Applications" page with following items
+	| ItemName   |
+	| VSCmdShell |
+	When User creates Self Service via API and open it
+	| Name     | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope         |
+	| 21222_SS | 21222_SI          | true    | true                | 21222_AppList |
+	When User creates new application ownership component for 'Welcome' Self Service page via API
+	| ComponentName | ProjectName | OwnerPermission                | UserScope      |
+	| AOC Name      | 21222_Proj  | Allow owner to be removed only | 21222_UserList |
+	When User navigates to End User landing page with '21222_SI' Self Service Identifier
+	When User clicks on 'Continue' button on end user Self Service page
+	Then Header is displayed on End User page
+	When User navigate to Evergreen URL
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                      |
+	| 21222_SI: Welcome Page Status   |
+	| 21222_SI: Thank You Page Status |
+	When User perform search by "VSCmdShell"
+	Then Content in the '21222_SI: Welcome Page Status' column is equal to
+	| Content   |
+	| Completed |
+	Then Content in the '21222_SI: Thank You Page Status' column is equal to
 	| Content   |
 	| Completed |

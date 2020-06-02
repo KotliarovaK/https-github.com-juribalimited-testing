@@ -518,8 +518,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefaultForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetLeftPinnedColumnContent();
+            var expectedList = pivot.GetLeftPinnedColumnContent().Where(x => !x.Equals("Empty")).ToList(); ;
             SortingHelper.IsListSorted(expectedList);
+            //SortingHelper.IsListSortedByEnum<ColorCompliance>(expectedList);
         }
 
         [Then(@"color data in the column headers is sorted in correct order for the Pivot")]
@@ -545,7 +546,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 expectedList.Add(pivot.GetPivotNumberByColor(color));
             }
-            SortingHelper.IsNumericListSorted(expectedList);
+            SortingHelper.IsNumericListSorted(expectedList, false);
         }
 
         [Then(@"color data in the left-pinned column is sorted in ascending order for the Pivot")]
