@@ -82,3 +82,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatRespectiveObjectDetailsPageIsOpenedAft
 	When User clicks refresh button in the browser
 	When User clicks "7-Zip 16.02 (x64)" link on the Details Page
 	Then Details page for '7-Zip 16.02 (x64)' item is displayed to the user
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ApplicationsTab @DAS21378
+Scenario: EvergreenJnr_UsersList_CheckThatOldAgGridIsDisplayedCorrectlyAndThereAreNoConsoleErrors
+	When User navigates to the 'User' details page for 'SMA332466' item
+	Then Details page for 'SMA332466' item is displayed to the user
+	When User navigates to the 'Applications' left menu item
+	And User navigates to the 'Evergreen Summary' left submenu item
+	Then Counter shows "17" found rows
+	Then There are no errors in the browser console
