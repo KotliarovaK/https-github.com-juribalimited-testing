@@ -72,7 +72,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier via URL that contains '(.*)' Identifier '(.*)' GUID and '(.*)' Page ID")]
         public void WhenUserNavigatesToEndUserLandingPageWithSelfServiceIdentifierViaURLThatContainsSSIDGUIDAndPageID(string baseSSIdentifier, string sSIdentifier, string gUID, string pageID)
         {
-
             var ss = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(baseSSIdentifier));
             SelfServicePageDto page = _selfServicePages.Value.First();
 
