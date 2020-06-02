@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRespectiveObjectDetailsPageIsOpenedAft
 	Then Details page for '7-Zip 16.02 (x64)' item is displayed to the user
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ApplicationsTab @DAS21378
-Scenario: EvergreenJnr_UsersList_CheckThatOldAgGridIsDisplayedCorrectlyAndThereAraNoConsoleErrors
+Scenario: EvergreenJnr_UsersList_CheckThatOldAgGridIsDisplayedCorrectlyAndThereAreNoConsoleErrors
 	When User navigates to the 'User' details page for 'SMA332466' item
 	Then Details page for 'SMA332466' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
