@@ -49,7 +49,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlyCreatedNonTeamUserCanNotUpdateP
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPBU" User
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @DAS16826 @DAS18267 @Cleanup
+	#AnnI 6/2/20: DAS21304 fixed only for 'Yellow_Dwarf'
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @DAS16826 @DAS18267 @DAS21304 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
 	When User create new User via API
 	| Username  | Email | FullName              | Password  | Roles                 |
