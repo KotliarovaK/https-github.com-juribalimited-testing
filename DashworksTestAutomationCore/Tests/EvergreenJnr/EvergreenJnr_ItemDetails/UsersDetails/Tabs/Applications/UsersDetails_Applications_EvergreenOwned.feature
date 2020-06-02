@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingC
 	Then User click back button in the browser
 	And Details page for 'ZZP911429' item is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20046 @DAS20741 Set_Application_Owned_User
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20046 @DAS20741 @Set_Application_Owned_User
 Scenario: EvergreenJnr_UsersList_CheckThatGroupedNameIsNotDisplayedAsALink
 	Given Link user to the Evergreen application owned
 	| UserName  | ApplicationId |
@@ -70,3 +70,15 @@ Scenario: EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANa
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Evergreen Owned' left submenu item
 	Then 'Empty' content is displayed in the 'Application' column
+
+	#AnnI 5/29/20: Fixed only for 'Yellow_Dwarf'
+@Evergreen @Users @EvergreenJnr_ItemDetails @ApplicationsTab @DAS21380 @Yellow_Dwarf @Cleanup
+Scenario: EvergreenJnr_UsersList_CheckThatRespectiveObjectDetailsPageIsOpenedAfterClickingThroughTheInternalLinkRegardlessOfTheUiLanguage
+	When User navigates to the 'User' details page for the item with '6663' ID
+	Then Details page for 'SMA332466' item is displayed to the user
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Evergreen Owned' left submenu item
+	When User language is changed to "deutsch" via API
+	When User clicks refresh button in the browser
+	When User clicks "7-Zip 16.02 (x64)" link on the Details Page
+	Then Details page for '7-Zip 16.02 (x64)' item is displayed to the user

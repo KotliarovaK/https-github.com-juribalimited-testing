@@ -10,15 +10,15 @@ Scenario: EvergreenJnr_AdminPage_CreateApplicationOwnershipPageValidation
 	When Project created via API
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_19910_Proj | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19910_1" name on "Applications" page with following items
+	When User create static list with "DAS_19910_1_A" name on "Applications" page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19910_11" name on "Users" page with following items
+	When User create static list with "DAS_19910_1_B" name on "Users" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
-	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
-	| DAS_19910_SS_1 | 19910_1_SI        | true    | true                | DAS_19910_1 |
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope         |
+	| DAS_19910_SS_1 | 19910_1_SI        | true    | true                | DAS_19910_1_A |
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19910_1_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CreateApplicationOwnershipPageValidation
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#AOC can be created when correct data is entered
-	When User selects 'DAS_19910_11' option from 'Owner Scope' autocomplete
+	When User selects 'DAS_19910_1_B' option from 'Owner Scope' autocomplete
 	When User waits for info message disappears under 'Owner Scope' field
 	Then 'CREATE' button is not disabled
 	When User clicks 'CREATE' button
@@ -56,22 +56,22 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenUserScope
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_19910_Proj_2 | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19910_2" name on "Applications" page with following items
+	When User create static list with "DAS_19910_2A" name on "Applications" page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19910_22" name on "Users" page with following items
+	When User create static list with "DAS_19910_2B" name on "Users" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
 	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
-	| DAS_19910_SS_2 | 19910_2_SI        | true    | true                | DAS_19910_2 |
+	| DAS_19910_SS_2 | 19910_2_SI        | true    | true                | DAS_19910_2A |
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19910_2_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
 	| 19910_2_SI        | TestPageSs2 | DAS_19910_Page_2 | true              |
 	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName      | OwnerPermission                            | UserScope    | ShowInSelfService |
-	| AOC Name      | DAS_19910_Proj_2 | Allow owner to be set to another user only | DAS_19910_22 | true              |
+	| AOC Name      | DAS_19910_Proj_2 | Allow owner to be set to another user only | DAS_19910_2B | true              |
 	When User navigates to the 'Builder' left submenu item
 	#
 	When User lists were removed by API
@@ -87,17 +87,17 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_19910_Proj_3 | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19910_3" name on "Applications" page with following items
+	When User create static list with "DAS_19910_3A" name on "Applications" page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19910_33" name on "Users" page with following items
+	When User create static list with "DAS_19910_3B" name on "Users" page with following items
 	| ItemName |
 	|          |
 	When User creates broken list with 'Broken_DAS_19910_33' name on 'Users' page
 	When User creates list with 'MissedClolumn_DAS_19910_33' name and missing column on 'Users' page
 	When User creates Self Service via API and open it
 	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
-	| DAS_19910_SS_3 | 19910_3_SI        | true    | true                | DAS_19910_3 |
+	| DAS_19910_SS_3 | 19910_3_SI        | true    | true                | DAS_19910_3A |
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19910_3_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check Broken list column validation
-	When User selects 'DAS_19910_33' option from 'Owner Scope' autocomplete
+	When User selects 'DAS_19910_3B' option from 'Owner Scope' autocomplete
 	When User waits for info message disappears under 'Owner Scope' field
 	When User clicks 'CREATE' button
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check list with missed column validation
-	When User selects 'DAS_19910_33' option from 'Owner Scope' autocomplete
+	When User selects 'DAS_19910_3B' option from 'Owner Scope' autocomplete
 	When User waits for info message disappears under 'Owner Scope' field
 	When User selects 'MissedClolumn_DAS_19910_33' option from 'Owner Scope' autocomplete
 	When User waits for info message disappears under 'Owner Scope' field

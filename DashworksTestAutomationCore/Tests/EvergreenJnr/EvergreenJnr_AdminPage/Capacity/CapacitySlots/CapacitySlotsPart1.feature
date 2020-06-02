@@ -141,11 +141,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	When User clicks 'CREATE SLOT' button 
 	When User enters 'Slot19328' text to 'Slot Name' textbox
 	When User enters 'NewSlotName' text to 'Display Name' textbox
-	When User enters 'Dec 31, 1899' text to 'Slot Available From' textbox
+	When User enters '31 Dec 1899' text to 'Slot Available From' textbox
 	Then 'Please enter a valid date' error message is displayed for 'Slot Available From' field
-	When User enters 'Jun 7, 2079' text to 'Slot Available To' textbox
+	When User enters '7 Jun 2079' text to 'Slot Available To' textbox
 	Then 'Please enter a valid date' error message is displayed for 'Slot Available To' field
-	When User enters 'Jan 1, 1900' text to 'Slot Available From' textbox
-	When User enters 'Jun 6, 2079' text to 'Slot Available To' textbox
+	When User enters '1 Jan 1900' text to 'Slot Available From' textbox
+	When User enters '6 Jun 2079' text to 'Slot Available To' textbox
 	When User clicks 'CREATE' button 
 	Then 'Your capacity slot has been created' text is displayed on inline success banner

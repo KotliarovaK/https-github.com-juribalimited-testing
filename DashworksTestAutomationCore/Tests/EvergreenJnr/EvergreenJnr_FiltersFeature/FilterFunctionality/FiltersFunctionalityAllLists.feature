@@ -53,10 +53,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
-	And User clicks 'CREATE EVERGREEN CAPACITY UNIT' button 
+	And User clicks 'CREATE EVERGREEN CAPACITY UNIT' button
 	And User enters 'CapacityUnit13201' text to 'Capacity Unit Name' textbox
 	And User enters '13201' text to 'Description' textbox
-	And User clicks 'CREATE' button 
+	And User clicks 'CREATE' button
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Actions button
 	And User select "Hostname" rows in the grid
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	When User clicks the Filters button
 	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
@@ -354,6 +354,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilt
 	When User enters '100001' text to 'dayValue' textbox
 	Then '100000' content is displayed in 'dayValue' textbox
 	Then User sees '0 to 100000' hint below 'dayValue' field
+
 	#Update after Eugene add automation attribute "Units"
 	#When User selects 'days ahead' in the 'Units' dropdown
 
@@ -398,7 +399,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAdded
 	Then "Dashworks First Seen is empty" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User clicks on 'Dashworks First Seen' column header
-	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
+	Then Content is empty in the column
+		| ColumnName           |
+		| Dashworks First Seen |
+	Then Descending order applied to 'Dashworks First Seen' column and displayed in URL
 
 Examples:
 	| ListName     | RowsCount |
@@ -429,8 +433,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
-		| SelectedCheckboxes |
-		| Empty              |
+	| SelectedCheckboxes |
+	| Empty              |
 	Then Save to New Custom List element is displayed
 	When User click Edit button for "<FilterName>" filter
 	Then User changes filter type to "Does not equal"
@@ -438,25 +442,25 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	When User have reset all filters
 	Then Save to New Custom List element is NOT displayed
 	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
-		| SelectedCheckboxes |
-		| Empty              |
+	| SelectedCheckboxes |
+	| Empty              |
 	Then Save to New Custom List element is displayed
 	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
-		| SelectedCheckboxes |
-		| Red                |
+	| SelectedCheckboxes |
+	| Red                |
 	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
-		| SelectedCheckboxes |
-		| Amber              |
+	| SelectedCheckboxes |
+	| Amber              |
 	Then Save to New Custom List element is displayed
 	When User have reset all filters
 	Then Save to New Custom List element is NOT displayed
 
 	Examples:
-		| PageName     | FilterName           | NewFilterName    |
-		| Devices      | Windows7Mi: Category | Compliance       |
-		| Users        | UserSchedu: Category | Compliance       |
-		| Applications | Havoc(BigD: Category | Compliance       |
-		| Mailboxes    | EmailMigra: Category | Owner Compliance |
+	| PageName     | FilterName           | NewFilterName    |
+	| Devices      | Windows7Mi: Category | Compliance       |
+	| Users        | UserSchedu: Category | Compliance       |
+	| Applications | Havoc(BigD: Category | Compliance       |
+	| Mailboxes    | EmailMigra: Category | Owner Compliance |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS11088
 Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFilters
@@ -467,14 +471,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedFor
 	When user select "<FilterName>" filter
 	Then There are no errors in the browser console
 
-	Examples:
-		| ListName     | FilterName                                                                     |
-		| Devices      | Build Date                                                                     |
-		| Devices      | Owner Last Logon Date                                                          |
-		| Devices      | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
-		| Users        | Barry'sUse: Project Dates \ Scheduled Date                                     |
-		| Applications | UserSchedu: Three \ Date App Req A                                             |
-		| Mailboxes    | Created Date                                                                   |
+Examples:
+	| ListName     | FilterName                                                                     |
+	| Devices      | Build Date                                                                     |
+	| Devices      | Owner Last Logon Date                                                          |
+	| Devices      | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
+	| Users        | Barry'sUse: Project Dates \ Scheduled Date                                     |
+	| Applications | UserSchedu: Three \ Date App Req A                                             |
+	| Mailboxes    | Created Date                                                                   |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS20917
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSpecificGroupFiltersWorks
@@ -487,11 +491,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSpecificGroupFiltersWorks
 	Then message '<Message>' is displayed to the user
 
 Examples:
-		| List    | Filter               | Term                               | Message          |
-		| Users   | Mailbox GUID         | abrakadabra                        | No users found   |
-		| Devices | Group Display Name   | ApplicationAccount                 | No devices found |
-		| Users   | Mailbox Display Name | ApplicationAccount                 | No users found   |
-		| Users   | Mailbox Display Name | Exchange Online-ApplicationAccount | No users found   |
+	| List    | Filter               | Term                               | Message          |
+	| Users   | Mailbox GUID         | abrakadabra                        | No users found   |
+	| Devices | Group Display Name   | ApplicationAccount                 | No devices found |
+	| Users   | Mailbox Display Name | ApplicationAccount                 | No users found   |
+	| Users   | Mailbox Display Name | Exchange Online-ApplicationAccount | No users found   |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS17433 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNewProjectFilterWorks
@@ -506,8 +510,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNewProjectFilterWorks
 	Then "<List>_17433" list is displayed to user
 
 Examples:
-		| List         | Filter           | Term                  |
-		| Mailboxes    | EmailMigra: Name | hamiltkz@rdlabs.local |
-		| Users        | 2004: Name       | ZKF383983             |
-		| Applications | 2004: Name       | XingMPEG Player       |
-		
+	| List         | Filter           | Term                  |
+	| Mailboxes    | EmailMigra: Name | hamiltkz@rdlabs.local |
+	| Users        | 2004: Name       | ZKF383983             |
+	| Applications | 2004: Name       | XingMPEG Player       |

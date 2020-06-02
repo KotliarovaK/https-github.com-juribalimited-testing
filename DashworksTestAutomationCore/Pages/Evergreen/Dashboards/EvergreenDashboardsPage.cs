@@ -353,17 +353,30 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         #region Table
 
-        public IWebElement GetTableWidgetContentWithoutLink(string content)
+        public IWebElement GetWidgetElement(string widget)
         {
-            var columnContent = By.XPath($".//td[not(contains(@class, 'link'))]/span[text()='{content}']");
-            return Driver.FindElement(columnContent);
+            var widget_el = By.XPath($".//*[text()='{widget}']/ancestor::div[@class='widget']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(widget_el);
         }
 
-        public IWebElement GetCountForTableWidget(string boolean, string number)
+        private int GetTableWidgetColumnIndex(string widget, string column)
         {
-            var dashboardWidget = By.XPath($".//table//th[text()='{boolean}']//ancestor::table//span[text()='{number}']");
+            var table_headers = GetWidgetColumnHeaders(widget).Select(x=>x.Text).ToList();
+            return table_headers.IndexOf(column)+1;
+        }
+
+        public IList<IWebElement> GetWidgetColumnHeaders(string widget_title)
+        {
+            var columnHeaders = By.XPath($".//table//thead//th");
+            return GetWidgetElement(widget_title).FindElements(columnHeaders);
+        }
+
+        public IWebElement GetCountForTableWidget(string widget, string column, string value)
+        {
+            var table_value = By.XPath($".//td[contains(@class, 'mat-cell cdk')][{GetTableWidgetColumnIndex(widget, column)}]");
             Driver.WaitForDataLoading();
-            return Driver.FindElement(dashboardWidget);
+            return Driver.FindElement(table_value);
         }
 
         public IList<IWebElement> GetTableWidgetHorizontalHeaders(string widgetName)
@@ -371,6 +384,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             var columnHeaders = By.XPath($".//*[text()='{widgetName}']/ancestor :: div//table//thead//th");
             return Driver.FindElements(columnHeaders);
         }
+
+        public IWebElement GetTableWidgetContentWithoutLink(string content)
+        {
+            var columnContent = By.XPath($".//td[not(contains(@class, 'link'))]/span[text()='{content}']");
+            return Driver.FindElement(columnContent);
+        }
+
 
         public IList<IWebElement> GetTableWidgetVerticalHeaders(string widgetName)
         {
@@ -427,7 +447,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         public IWebElement GetCardWidgetContent(string widgetTitle)
         {
-            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
+            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[contains(@class, 'card-widget-value')]");
             Driver.WaitForElementToBeDisplayed(cardWidget);
             return Driver.FindElement(cardWidget);
         }

@@ -102,7 +102,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	Then 'Section successfully created' text is displayed on inline success banner
 	Then User sees number of Sections increased by '1' on Dashboards page
 	
-	
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14618 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When Dashboard with 'Dashboard_DAS14618' name created via API and opened
@@ -332,6 +331,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 	When User clicks 'Edit' menu option for section with '3_Widget' widget
 	When User clicks Hide section checkbox on Edit Section page
 	Then 'Hide section' checkbox is checked
+	When User clicks 'UPDATE' button
+	Then '1_Widget' Widget is displayed to the user
+	When User unchecks 'Edit mode' slide toggle
 	Then Widget with the name '1_Widget' is missing
 
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14472 @Cleanup

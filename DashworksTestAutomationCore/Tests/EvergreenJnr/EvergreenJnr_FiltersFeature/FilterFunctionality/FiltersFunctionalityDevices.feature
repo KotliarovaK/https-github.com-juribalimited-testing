@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	| Values |
 	| 1      |
 	Then "App Count (Installed) is less than 1" is displayed in added filter info
-	Then "5,195" rows are displayed in the agGrid
+	Then "5,006" rows are displayed in the agGrid
 
 @Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @FiltersDisplay @DAS11660 @DAS13376 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatOperatorsForApplicationSavedListFilterIsDisplayedCorrectly

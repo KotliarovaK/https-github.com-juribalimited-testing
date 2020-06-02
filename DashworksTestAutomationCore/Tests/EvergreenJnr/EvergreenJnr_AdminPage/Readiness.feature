@@ -228,7 +228,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoChangesAppliedAfterCancelButtonPress
 	And User enters "Ignore" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then 'Ignore' content is displayed in 'Readiness' textbox
-	Then 'Tooltip' textbox content is not equal to 'tooltip14938_2' text
+	Then 'Ignore' content is displayed in 'Tooltip' textbox
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14938 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditReadiness

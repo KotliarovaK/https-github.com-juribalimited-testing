@@ -125,26 +125,26 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with "<UserList>" name on "Applications" page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
-	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
-	| 1         | TestProj_8 | Test_ID_8         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |   
+	| ServiceId | Name     | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope      |
+	| 1         | <SSName> | <SSID>            | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | <UserList> |   
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
-	When User clicks 'Edit' option in Cog-menu for 'TestProj_8' item from 'Self Service Name' column
-	When User enters 'TestProj_88' text to 'Self Service Name' textbox
-	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete without search
+	When User clicks 'Edit' option in Cog-menu for '<SSName>' item from 'Self Service Name' column
+	When User enters '<SSName>' text to 'Self Service Name' textbox
+	When User selects '<UserList>' option from 'Self Service Scope' autocomplete without search
 	When User enters '<Self Service Identifier>' text to 'Self Service Identifier' textbox
 	Then 'UPDATE' button is not disabled
 	Then '<Self Service Identifier after cut>' content is displayed in 'Self Service Identifier' textbox
 
 Examples:
-	| Self Service Identifier                       | Self Service Identifier after cut |
-	| 123qweTJ911                                   | 123qweTJ91                        |
-	| 123456789012                                  | 1234567890                        |
-	| 1234567890WIEOEOEPEP1111212123424334324234234 | 1234567890                        |
+	| SSID       | SSName             | UserList                 | Self Service Identifier                       | Self Service Identifier after cut |
+	| SI19082_8A | SSName_DAS19082_8A | UserStatList_DAS19082_8A | 123qweTJ911                                   | 123qweTJ91                        |
+	| SI19082_8B | SSName_DAS19082_8B | UserStatList_DAS19082_8B | 123456789012                                  | 1234567890                        |
+	| SI19082_8C | SSName_DAS19082_8C | UserStatList_DAS19082_8C | 1234567890WIEOEOEPEP1111212123424334324234234 | 1234567890                        |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatDisabledSelfServiceChangesTheCheckboxStateInEditAfterEnableInCogMenu
@@ -277,3 +277,34 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceS
 	Then 'Self Service Scope' autocomplete contains following options:
 	| Options          |
 	| All Applications |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21294 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningPopupDisplayedAfterClickingOnCogMenuAndEditOptionForAnotherComponent
+	When User create static list with "DAS_21294_AppList_1" name on "Applications" page with following items
+	| ItemName |
+	|          | 
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope               |
+	| DAS_21294_SS_1 | 21294_1_SI        | true    | true                | DAS_21294_AppList_1 |
+	When User creates new text component for 'Welcome' Self Service page via API
+	| ComponentName  | ExtraPropertiesText             | ShowInSelfService |
+	| WelcomeTxtComp | <p>Sunt haud pauci homĭnes,</p> | true              |
+	When User navigates to the 'Builder' left submenu item
+	When User selects 'Edit' cogmenu option for 'Text' item type with 'Thank You' name on Self Service Builder Panel
+	When User enters '_Additional_Text' text to the text editor
+	When User clicks on cogmenu button for item with 'Text' type and 'WelcomeTxtComp' name on Self Service Builder Panel
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
+	
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21165 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_ChecThatProperErrorMessageDisplaysWhenUserIsTryingToDeleteComponentOfNonExistingSelfService
+	When User create static list with "DAS_21165_AppList_1" name on "Applications" page with following items
+	| ItemName |
+	|          | 
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope               |
+	| DAS_21165_SS_1 | 21165_1_SI        | true    | true                | DAS_21165_AppList_1 |
+	When User navigates to the 'Builder' left menu item
+	Then User deletes the Self Services via API
+	When User selects 'Delete' cogmenu option for 'Text' item type with 'Thank You' name on Self Service Builder Panel
+	When User clicks 'DELETE' button on inline tip banner
+	Then 'This Self Service does not exist' text is displayed on inline error banner

@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonIsn
 	When User navigates to End User landing page with '20330_1_SI' Self Service Identifier
 	Then 'Undo all changes I made on this page' button is not displayed for End User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20330 @Cleanup @SelfService @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20330 @DAS21095 @Cleanup @SelfService @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonWorksCorrectly
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
@@ -83,28 +83,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonWor
     When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
-	When User create static list with "DAS_20330_forComponent_2" name on "Users" page with following items
+	When User create static list with "UserStatList_DAS20330_2" name on "Users" page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "DAS_20330_2" name on "Applications" page with following items
+	When User create static list with "AppStatList_DAS20330_2" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User resync 'Application' objects for 'DAS_20330_Proj_2' project
     | values     |
     | VSCmdShell |
 	When User creates Self Service via API and open it
-	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
-	| DAS_20330_SS_2 | 20330_2_SI        | true    | true                | DAS_20330_2 |
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope                  |
+	| DAS_20330_SS_2 | 20330_2_SI        | true    | true                | AppStatList_DAS20330_2 |
 	When User creates new application ownership component for 'Welcome' Self Service page via API
-	| ComponentName | ProjectName      | OwnerPermission                                  | UserScope                |
-	| AOC Name      | DAS_20330_Proj_2 | Allow owner to be removed or set to another user | DAS_20330_forComponent_2 |
+	| ComponentName | ProjectName      | OwnerPermission                                  | UserScope               |
+	| AOC Name      | DAS_20330_Proj_2 | Allow owner to be removed or set to another user | UserStatList_DAS20330_2 |
 	When User navigates to End User landing page with '20330_2_SI' Self Service Identifier
+	Then There are no errors in the browser console
 	Then 'Undo all changes I made on this page' button is disabled for End User
 	Then 'Undo all changes I made on this page' button has tooltip with 'You have not made any changes yet' text on end user Self Service page
 	When User clicks on 'Change Owner' button on end user Self Service page
 	When User checks 'Remove owner' radio button
-	When User clicks 'Change Owner' button on popup
+	When User clicks 'Update' button on popup
 	When User clicks on 'Undo all changes I made on this page' button on end user Self Service page
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn   |
@@ -114,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonWor
 	When User clicks on 'Change Owner' button on end user Self Service page
 	When User checks 'Assign an owner' radio button
 	When User enters 'Jones' in the 'Owner' autocomplete field and selects '03C54BC1198843A4A03 (Jones, Tina)' value
-	When User clicks 'Change Owner' button on popup
+	When User clicks 'Update' button on popup
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
 	| FirstColumn  | SecondColumn        |
 	| Username     | 03C54BC1198843A4A03 |

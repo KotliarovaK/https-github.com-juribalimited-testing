@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using AutomationUtils.Extensions;
+﻿using System.Linq;
 using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.DTO.RuntimeVariables;
-using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Providers;
-using RestSharp;
 using TechTalk.SpecFlow;
 
-namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.BeforeScenario
+namespace DashworksTestAutomationCore.Steps.Dashworks.ItemDetailsPage.Resync.BeforeScenario
 {
     [Binding]
     class ResyncObject : SpecFlowContext

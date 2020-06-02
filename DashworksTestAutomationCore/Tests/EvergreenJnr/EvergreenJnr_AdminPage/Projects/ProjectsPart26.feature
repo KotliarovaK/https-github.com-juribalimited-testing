@@ -83,4 +83,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserScopeValueCanBeChangedForProjectBa
 	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
 	Then 'Users with Device Count' content is displayed in 'User Scope' dropdown
-

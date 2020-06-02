@@ -14,13 +14,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User clicks Reset Filters button on the Admin page
 	#Then Counter shows "558" found rows
 	When User opens 'Bucket' column settings
-	And User clicks Filter button on the Column Settings panel
-	And User enters "123455465" text in the Filter field
-	And User clears Filter field
+	When User clicks Filter button on the Column Settings panel
+	When User enters "123455465" text in the Filter field
+	When User clears Filter field
 	Then There are no errors in the browser console
 	When User opens 'Devices' column settings
-	And User enters "123455465" text in the Filter field
-	And User clears Filter field
+	When User enters "123455465" text in the Filter field
+	When User clears Filter field
 	Then Content is present in the table on the Admin page
 	Then There are no errors in the browser console
 	When User checks following checkboxes in the filter dropdown menu for the 'Default' column:
@@ -40,11 +40,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User click on "Devices" column header on the Admin page
 	Then numeric data in table is sorted by 'Devices' column in descending order
 	When User click on "Devices" column header on the Admin page
-	Then numeric data in table is sorted by 'Devices' column in ascending order
+	Then all cells in the 'Devices' column are empty
 	When User click on "Users" column header on the Admin page
 	Then numeric data in table is sorted by 'Users' column in descending order
 	When User click on "Users" column header on the Admin page
-	Then numeric data in table is sorted by 'Users' column in ascending order
+	Then all cells in the 'Users' column are empty
 	When User click on "Default" column header on the Admin page
 	Then boolean data is sorted by 'Default' column in ascending order
 	When User click on "Default" column header on the Admin page

@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatNewPatternOfTheVerticalMenuIsDisplaye
 	And 'Device Members' left submenu item with some count is displayed
 	And 'Member Of' left submenu item with some count is displayed
 
-@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20677 @X_Ray
+@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20677
 Scenario: EvergreenJnr_GroupsList_CheckThatNewStyleForSelectAllCheckboxInTheSelectFilterOfTheAgridIsDisplayedCorrectly
 	When User navigates to the 'Group' details page for the item with '61654' ID
 	Then Details page for 'Domain Computers' item is displayed to the user
@@ -47,8 +47,14 @@ Scenario: EvergreenJnr_GroupsList_CheckThatNewStyleForSelectAllCheckboxInTheSele
 	| checkboxes |
 	| Other      |
 	When User clicks String Filter button for "Operating System" column
-	Then Select All checkbox have indeterminate checked state
-	When User selects all rows on the grid
-	Then Select All checkbox have full checked state
-	When User deselect all rows on the grid
-	Then Select All checkbox have unchecked state
+	Then 'Select All' checkbox has 'indeterminate' condition in selectbox
+	When User checks following checkboxes in the filter dropdown menu for the 'Operating System' column:
+	| checkboxes |
+	| Select All |
+	When User clicks String Filter button for "Operating System" column
+	Then 'Select All' checkbox has 'checked' condition in selectbox
+	When User checks following checkboxes in the filter dropdown menu for the 'Operating System' column:
+	| checkboxes |
+	| Select All |
+	When User clicks String Filter button for "Operating System" column
+	Then 'Select All' checkbox has 'unchecked' condition in selectbox

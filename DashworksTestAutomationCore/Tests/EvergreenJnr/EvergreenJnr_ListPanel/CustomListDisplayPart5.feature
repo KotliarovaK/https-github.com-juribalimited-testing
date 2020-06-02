@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringWhenAttempting
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestName QQRT" name on "Devices" page
 	Then "TestName QQRT" list is displayed to user
-	And "8" rows are displayed in the agGrid
+	Then "10" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedColumnsWithoutErrors
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	When User navigates to the "ATestList9A0AE8" list
 	Then "ATestList9A0AE8" list is displayed to user
 	When User clicks on 'Owner Display Name' column header
-	Then data in table is sorted by 'Owner Display Name' column in ascending order
+	Then Ascending order applied to 'Owner Display Name' column and displayed in URL
 	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	And User clicks the Logout button
 	Then User is logged out
@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "ATestList9A0AE8" list
 	Then "ATestList9A0AE8" list is displayed to user
-	And data in table is sorted by 'Owner Display Name' column in ascending order
+	Then all cells in the 'Owner Display Name' column are empty
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "ATestList9A0AE8" list

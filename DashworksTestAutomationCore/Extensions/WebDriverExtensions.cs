@@ -209,7 +209,7 @@ namespace DashworksTestAutomation.Extensions
                 }
                 catch (Exception e)
                 {
-                  throw new Exception($"Error waiting element by '{by}' : {e.Message}");
+                    throw new Exception($"Error waiting element by '{by}' : {e.Message}");
                 }
         }
 
@@ -321,29 +321,50 @@ namespace DashworksTestAutomation.Extensions
 
         #region Web element extensions
 
+        public static int GetCheckboxStateFromCustomSelectbox(this RemoteWebDriver driver, string checkbox)
+        {
+            var options = driver.GetCustomSelectboxOptions();
+            if (!options.Any(x => x.Text.ContainsText(checkbox)))
+            {
+                throw new Exception($"There are not '{checkbox}' option in selectbox");
+            }
+
+            var cbElement = options.First(x => x.Text.ContainsText(checkbox));
+
+            var result = GetEvergreenCheckboxTripleState(driver, cbElement);
+            return result;
+        }
+
+        //This method DO NOT opened selectbox. It get options from already opened selectbox. Open it before use!!!
+        public static IList<IWebElement> GetCustomSelectboxOptions(this RemoteWebDriver driver)
+        {
+            //TODO: [Yurii Timchenko] commented code below doesn't work on 6 Dec 2018. Temporary fixed below, will be rewritten when new filters functionality is ready (per K. Kim's answer)
+            //var options = driver.FindElements(By.XPath(
+            //".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
+            var options = driver.FindElements(By.XPath(
+                ".//div[contains(@class,'mat-select-panel mat-primary')]/mat-option//mat-checkbox"));
+
+            if (!options.Any())
+            {
+                options = driver.FindElements(By.XPath(
+                    ".//mat-option[contains(@class, 'mat-option ng-star-inserted')]"));
+            }
+
+            return options;
+        }
+
         public static void SelectCustomSelectbox(this RemoteWebDriver driver, IWebElement selectbox, string option)
         {
             selectbox.Click();
             //Small wait for dropdown display
             Thread.Sleep(500);
 
-            //TODO: [Yurii Timchenko] commented code below doesn't work on 6 Dec 2018. Temporary fixed below, will be rewritten when new filters functionality is ready (per K. Kim's answer)
-            //var options = driver.FindElements(By.XPath(
-            //".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
-            var options = driver.FindElements(By.XPath(
-                "//div[contains(@class,'mat-select-panel mat-primary')]/mat-option"));
+            var options = GetCustomSelectboxOptions(driver);
 
             if (!options.Any())
-            {
-                options = driver.FindElements(By.XPath(
-                    "//mat-option[@class='mat-option ng-star-inserted']"));
-                if (!options.Any())
-                    throw new Exception($"Filter options were not loaded, unable to select '{option}'");
-            }
+                throw new Exception($"Filter options were not loaded, unable to select '{option}'");
 
             driver.MouseHover(options.Last());
-            //options = driver.FindElements(By.XPath(
-            //".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]"));
             driver.ClickByJavascript(options.First(x => x.Text.ContainsText(option)));
         }
 
@@ -378,7 +399,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static bool IsTooltipDisplayed(this RemoteWebDriver driver)
         {
-            return driver.IsElementDisplayed(By.XPath(_toolTipSelector), WebDriverExtensions.WaitTime.Short) 
+            return driver.IsElementDisplayed(By.XPath(_toolTipSelector), WebDriverExtensions.WaitTime.Short)
                    || driver.IsElementDisplayed(By.XPath(_toolTipBubbleSelector), WebDriverExtensions.WaitTime.Short);
         }
 
@@ -513,6 +534,12 @@ namespace DashworksTestAutomation.Extensions
             IJavaScriptExecutor ex = driver;
             bool result = (bool)ex.ExecuteScript("return arguments[0].scrollHeight > arguments[0].clientHeight", element);
             return result;
+        }
+
+        public static void ScrollGridToTheTop(this RemoteWebDriver driver, IWebElement gridElement)
+        {
+            IJavaScriptExecutor ex = driver;
+            ex.ExecuteScript($"arguments[0].scrollTop = 0;", gridElement);
         }
 
         public static void ScrollGridToTheEnd(this RemoteWebDriver driver, IWebElement gridElement)

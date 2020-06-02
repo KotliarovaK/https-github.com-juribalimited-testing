@@ -29,25 +29,25 @@ Examples:
 Scenario: EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplayed
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User clicks on "Devices" navigation link
+	When User clicks 'Devices' header breadcrumb
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for '0072B088173449E3A93' item is displayed to the user
-	When User clicks on "Users" navigation link
+	When User clicks 'Users' header breadcrumb
 	Then 'All Users' list should be displayed to the user
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for 'ABBYY FineReader 8.0 Professional Edition' item is displayed to the user
-	When User clicks on "Applications" navigation link
+	When User clicks 'Applications' header breadcrumb
 	Then 'All Applications' list should be displayed to the user
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
 	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
 	Then Details page for '00B5CCB89AD0404B965@bclabs.local' item is displayed to the user
-	When User clicks on "Mailboxes" navigation link
+	When User clicks 'Mailboxes' header breadcrumb
 	Then 'All Mailboxes' list should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18827

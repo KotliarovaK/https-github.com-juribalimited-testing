@@ -39,7 +39,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement AgMenu { get; set; }
 
         //TODO probably can be changed to something more generic
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input | .//div[@class='ag-column-select-header']//input[contains(@class, 'checkbox-input')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input")]
         public IWebElement SelectAllCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@ref='eCellWrapper']//*[contains(@class,'ag-selection-checkbox')]")]
@@ -122,9 +122,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #endregion
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
-        public IWebElement SelectAllCheckBox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement DateSearchField { get; set; }
 
@@ -187,6 +184,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return new List<By> { };
         }
 
+        //TODO this method should be removed and replaced by get col-id
         public int GetColumnNumberByName(string columnName)
         {
             List<string> allHeadersWithText = GetAllHeadersText();
@@ -620,12 +618,27 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $"return document.querySelector(\"div[row-index = '{rowIndex}']>div:nth-of-type({columnNumber})\")");
         }
 
-        public List<string> GetColumnDataByScrolling(string columnName)
+        public IWebElement GetGridCell(int rowIndex, string colId)
         {
+            return (IWebElement)Driver.ExecuteScript(
+                $"return document.evaluate('.//div[@row-index=\"{rowIndex}\"]//div[@col-id=\"{colId}\" and @role=\"gridcell\"]//*[string-length(text())>0]', document).iterateNext();");
+        }
+
+        /// <summary>
+        /// Scroll agGrid and collect data from it
+        /// </summary>
+        /// <param name="columnName">agGrid Column Name</param>
+        /// <param name="breakAfterRows">Rows to scroll. Zero to scroll to the bottom of the grid but not deeper than 2k rows</param>
+        /// <returns></returns>
+        public List<string> GetColumnDataByScrolling(string columnName, int breakAfterRows = 0)
+        {
+            var colId = GetColIdByColumnName(columnName);
+            //2002 here is just to check that data is not duplicated each 1k records
+            var maxScrolledRows = breakAfterRows > 2002 ? breakAfterRows : 2002;
+
             var columnData = new List<string>();
-            var columnNumber = GetColumnNumberByName(columnName);
             var iter = 0;
-            var element = GetGridCell(iter, columnNumber);
+            var element = GetGridCell(iter, colId);
             columnData.Add(element.Text);
             do
             {
@@ -633,12 +646,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 try
                 {
                     Driver.MouseHoverByJavascript(element);
-                    element = GetGridCell(iter, columnNumber);
+                    element = GetGridCell(iter, colId);
                 }
                 catch (StaleElementReferenceException)
                 {
                     Thread.Sleep(5000);
-                    element = GetGridCell(iter, columnNumber);
+                    element = GetGridCell(iter, colId);
                     Driver.MouseHoverByJavascript(element);
                 }
 
@@ -646,7 +659,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 if (element == null)
                 {
                     Thread.Sleep(3000);
-                    element = GetGridCell(iter, columnNumber);
+                    element = GetGridCell(iter, colId);
                 }
 
                 try
@@ -656,7 +669,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 catch (StaleElementReferenceException)
                 {
                     Thread.Sleep(3000);
-                    element = GetGridCell(iter, columnNumber);
+                    element = GetGridCell(iter, colId);
                     columnData.Add(element.Text);
                 }
                 catch (NullReferenceException)
@@ -664,8 +677,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                     break;
                 }
 
-                if (iter > 2002)
+                if (iter > maxScrolledRows)
                     break;
+
+                if (breakAfterRows != 0 && iter >= breakAfterRows)
+                    break;
+
             } while (element != null);
 
             return columnData;
