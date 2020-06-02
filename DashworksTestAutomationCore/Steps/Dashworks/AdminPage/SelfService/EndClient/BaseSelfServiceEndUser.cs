@@ -47,6 +47,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             _driver.NavigateToUrl(navigationUrl);
         }
 
+        #region Invalid URL navigation 
+
         [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier and inccorect GUID '(.*)'")]
         public void WhenUserNavigatesToFirsEndUserPageWithSelfServiceIdentifierAndInccorectGuid(string selfServiceIdentifier, string incorrectGuid)
         {
@@ -65,6 +67,37 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             _driver.WaitForDataLoading();
             _driver.NavigateToUrl(navigationUrl);
         }
+
+        //Always use valid Self Service Identifier for the firts placeholder, use 'VALID' keyword to get valid URL part for the next 3 placeholders
+        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier via URL that contains '(.*)' SSID '(.*)' GUID and '(.*)' Page ID")]
+        public void WhenUserNavigatesToEndUserLandingPageWithSelfServiceIdentifierViaURLThatContainsSSIDGUIDAndPageID(string baseSSID, string sSID, string gUID, string pageID)
+        {
+
+            var ss = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(baseSSID));
+            SelfServicePageDto page = _selfServicePages.Value.First();
+
+            if (sSID.Equals("VALID"))
+            {
+                sSID = ss.ServiceId.ToString();
+            }
+
+            if (gUID.Equals("VALID"))
+            {
+                gUID = DatabaseHelper.GetSelfServiceObjectGuid(baseSSID);
+            }
+
+            if (pageID.Equals("VALID"))
+            {
+                pageID = DatabaseHelper.GetSelfServicePageId(page).ToString();
+            }
+
+            string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{sSID}/{gUID}/pageId/{pageID}";
+
+            _driver.WaitForDataLoading();
+            _driver.NavigateToUrl(navigationUrl);
+        }
+
+        #endregion
 
         [Then(@"Self Service Tools Panel displayed for end client")]
         public void ThenSelfServiceToolsPanelDisplayedForEndClient()
