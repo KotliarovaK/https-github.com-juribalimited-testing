@@ -27,10 +27,10 @@ Scenario: EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot
 	When User sets includes archived devices in 'false'
 	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
-	When User updates existing pivot
+	When User clicks 'SAVE' button and select 'UPDATE PIVOT' menu button
 	Then "DAS16815_Pivot" list is displayed to user
 	When User sets includes archived devices in 'true'
-	And User clicks 'RUN PIVOT' button 
+	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	When User creates Pivot list with "DAS16815_Pivot_Updated" name
 	Then "DAS16815_Pivot_Updated" list is displayed to user

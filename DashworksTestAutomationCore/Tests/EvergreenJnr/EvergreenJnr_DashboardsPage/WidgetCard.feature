@@ -652,10 +652,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetPreviewDisplayedIfListConta
 	| ColumnName       |
 	| Owner Compliance |
 	When User clicks on 'Owner Compliance' column header
-	Then color data is sorted by 'Owner Compliance' column in ascending order
+	When User waits for '3' seconds
 	When User move 'Owner Compliance' column to 'Hostname' column
 	When User move 'Hostname' column to 'Operating System' column
-	When User create dynamic list with "Devices_List_DAS20837" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'Devices_List_DAS20837' list
 	Then "Devices_List_DAS20837" list is displayed to user
 	When Dashboard with 'Dashboard_20837' name created via API and opened
 	When User checks 'Edit mode' slide toggle
