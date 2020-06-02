@@ -53,7 +53,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	Then 'The capacity slot details have been updated' text is displayed on inline success banner
 	When User clicks content from "Capacity Slot" column
 	Then "" content is displayed in "Tasks" field
-	Then "All Capacity Units" content is displayed in "Capacity Units" field
+	Then only below options are selected in the 'Capacity Units' autocomplete
+	| Options    |
+	| Unassigned |
 	And 'Application' content is displayed in 'Object Type' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Cleanup
@@ -128,6 +130,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	Then only below options are selected in the 'Teams' autocomplete
 	| Options   |
 	| 2004 Team |
+	| Admin IT  |
 	When User selects 'Capacity Units' in the 'Capacity Type' dropdown
 	And User clicks 'UPDATE' button 
 	#Check updated Capacity Type value
