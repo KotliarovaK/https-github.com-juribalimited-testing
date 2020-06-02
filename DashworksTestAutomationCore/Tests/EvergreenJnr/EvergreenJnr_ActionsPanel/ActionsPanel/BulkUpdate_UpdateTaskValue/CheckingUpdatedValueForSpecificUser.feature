@@ -174,8 +174,8 @@ Examples:
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                 |
-	| DAS13290 | Value | Test     | m!gration | Project Administrator |
+	| Username | Email | FullName | Password  | Roles                |
+	| DAS13290 | Value | Test     | m!gration | Project Bulk Updater |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |

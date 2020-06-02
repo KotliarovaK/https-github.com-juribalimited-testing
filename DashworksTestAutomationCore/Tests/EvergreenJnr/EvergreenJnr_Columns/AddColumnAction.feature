@@ -442,11 +442,22 @@ Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplaying
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
-	And User add following columns using URL to the "Applications" page:
+	When User create static list with "DAS18961_List1" name on "Applications" page with following items
+	| ItemName                                |
+	| Microsoft Office 2003 MUI Pack (Danish) |
+	| AP00159 - Oracle Jinitiator 1.1.8.16    |
+	| Windows Media Player 7.1                |
+	| JAlbum                                  |
+	| Exemples daffichage de dessins de CAO   |
+	Then "DAS18961_List1" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName           |
 	| 2004: Target App Key |
-	When User create dynamic list with "DAS18961_List1" name on "Applications" page
-	Then "DAS18961_List1" list is displayed to user
+	Then ColumnName is added to the list
+	| ColumnName           |
+	| 2004: Target App Key |
 	When User clicks on '2004: Target App Key' column header
 	Then numeric data in table is sorted by '2004: Target App Key' column in ascending order
 	When User clicks on '2004: Target App Key' column header
