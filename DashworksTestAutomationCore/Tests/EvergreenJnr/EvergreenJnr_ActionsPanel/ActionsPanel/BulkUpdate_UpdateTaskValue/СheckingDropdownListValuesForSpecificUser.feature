@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13264 @DAS13265 @DAS13278 @DAS14448 @Cleanup
+	#AnnI 6/2/20: DAS21304 fixed only for 'Yellow_Dwarf'
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13264 @DAS13265 @DAS13278 @DAS14448 @DAS21304 @Cleanup @Yellow_Dwarf
 Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole
 	When User create new User via API
 	| Username   | Email | FullName | Password  | Roles                 |
@@ -54,8 +55,8 @@ Examples:
 	| DAS13264_Applications | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project         | Audit & Configuration \ Package Delivery Date | Remove     |
 	| DAS13264_Mailboxes    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration              | Pre-Migration \ Out Of Office Start Date      | Remove     |
 
-	#AnnI 3/18/20 Fixed and updated for 'Wormhole'
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Cleanup @Wormhole
+	#AnnI 6/2/20: DAS21304 fixed only for 'Yellow_Dwarf'
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @DAS21304 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner
 	When User create new User via API
 	| Username | Email | FullName | Password  | Roles                 |
@@ -118,7 +119,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13268" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13280 @Cleanup
+	#AnnI 6/2/20: DAS21304 fixed only for 'Yellow_Dwarf'
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13280 @DAS21304 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	When User create new User via API
 	| Username | Email | FullName | Password  | Roles                 |
@@ -152,7 +154,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13280" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup
+	#AnnI 6/2/20: DAS21304 fixed only for 'Yellow_Dwarf'
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @DAS21304 @Cleanup @Yellow_Dwarf
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User create new User via API
 	| Username   | Email | FullName | Password  | Roles                 |

@@ -32,7 +32,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	Then "2" list is displayed to user
 	When User navigates to the "<ListToNavigate>" list
 	And User clicks on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User clicks 'SAVE' button and select 'SAVE AS DYNAMIC LIST' menu button
 	When User enters ' 2' text to 'List Name' textbox
 	Then Warning message with "List Name should be unique" is displayed
