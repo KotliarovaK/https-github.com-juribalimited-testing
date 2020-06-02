@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @DAS18267 @Cleanup
+	#AnnI 6/2/20: DAS21304 fixed only for 'Yellow_Dwarf'
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @DAS18267 @DAS21304 @Cleanup @Yellow_Dwarf
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
 	When User create new User via API
 	| Username | Email | FullName | Password  | Roles                 |
@@ -84,7 +85,8 @@ Examples:
 	| DAS1324 | LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             | NOT APPLICABLE | FAILED             |
 	| DAS1325 | ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   | NOT APPLICABLE | COMPLETE           |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Cleanup
+	#AnnI 6/2/20: DAS21304 fixed only for 'Yellow_Dwarf'
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS21304 @Cleanup @Yellow_Dwarf
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
 	When User create new User via API
 	| Username | Email | FullName | Password  | Roles                 |
@@ -171,11 +173,12 @@ Examples:
 	| DAS13282   | DLL972653  | COMPLETE       | NOT STARTED        | Complete       | Not Started    |
 	| DAS13283   | LZI970280  | NOT APPLICABLE | FAILED             | Not Applicable | Failed         |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @Cleanup
+	#AnnI 6/2/20: DAS-21304 fixed only for 'Yellow_Dwarf'
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @DAS21304 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                |
-	| DAS13290 | Value | Test     | m!gration | Project Bulk Updater |
+	| Username | Email | FullName | Password  | Roles                 |
+	| DAS13290 | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
@@ -219,16 +222,22 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	| SelectedRowsName |
 	| LZI970280        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects 'Failed' in the 'Update Value' dropdown
-	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters '28 Nov 2018' text to 'Date' datepicker
-	And User selects 'User Slot' in the 'Capacity Slot' dropdown
-	And User navigate to the bottom of the Action panel
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	When User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
+	When User selects 'Failed' in the 'Update Value' dropdown
+	When User selects 'Update' in the 'Update Date' dropdown
+	When User enters '28 Nov 2018' text to 'Date' datepicker
+	When User clicks datepicker icon 
+	When User selects '29' day in the Datepicker
+	#Added wait as we need some time fo datepicker to be updated
+	When User waits for '3' seconds
+	When User clicks datepicker icon
+	When User selects '28' day in the Datepicker
+	When User selects 'User Slot' in the 'Capacity Slot' dropdown
+	When User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
-	And User clicks 'UPDATE' button 
+	When User clicks 'UPDATE' button 
 	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
@@ -237,7 +246,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User refreshes agGrid
 	Then 'FAILED' content is displayed in the 'Windows7Mi: User Acceptance Test \ Perform User Acceptance Test' column
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @DAS14127 @Cleanup
+	#AnnI 6/2/20: DAS21304 fixed only for 'Yellow_Dwarf'
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @DAS14127 @DAS21304 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User create new User via API
 	| Username | Email | FullName | Password  | Roles                 |
