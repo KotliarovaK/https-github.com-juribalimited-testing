@@ -54,7 +54,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckEnduserErrorMessageHandling
 	When User creates new Self Service Page via API
 	| ServiceIdentifier   | Name        | DisplayName       | ShowInSelfService |
 	| <ServiceIdentifier> | TestPageSs1 | TestPageSsDisplay | false             |
-	When User navigates to End User landing page with '<ServiceIdentifier>' Self Service Identifier via URL that contains '<SSID>' Identifier '<GUID>' GUID and '<PageID>' Page ID
+	When User navigates to End User landing page with '<ServiceIdentifier>' Self Service Identifier via URL
+	| SSID   | GUID   | PageID   |
+	| <SSID> | <GUID> | <PageID> |
 	Then self service error page with '<ErrorMessage>' text is displayed for end client
 
 	Examples:

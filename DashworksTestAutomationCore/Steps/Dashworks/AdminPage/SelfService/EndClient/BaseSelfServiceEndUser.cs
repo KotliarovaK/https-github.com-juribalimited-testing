@@ -69,31 +69,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         }
 
         //Always use valid Self Service Identifier for the firts placeholder, use 'VALID' keyword to get valid URL part for the next 3 placeholders
-        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier via URL that contains '(.*)' Identifier '(.*)' GUID and '(.*)' Page ID")]
-        public void WhenUserNavigatesToEndUserLandingPageWithSelfServiceIdentifierViaURLThatContainsSSIDGUIDAndPageID(string baseSSIdentifier, string sSIdentifier, string gUID, string pageID)
+        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier via URL")]
+        public void WhenUserNavigatesToEndUserLandingPageWithSelfServiceIdentifierViaURL(string baseSSIdentifier, Table table) //string sSIdentifier, string gUID, string pageID)
         {
-            var ss = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(baseSSIdentifier));
-            SelfServicePageDto page = _selfServicePages.Value.First();
-
-            if (sSIdentifier.Equals("VALID"))
+            foreach (TableRow row in table.Rows)
             {
-                sSIdentifier = baseSSIdentifier;
-            }
+                var ss = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(baseSSIdentifier));
+                SelfServicePageDto page = _selfServicePages.Value.First();
 
-            if (gUID.Equals("VALID"))
-            {
-                gUID = DatabaseHelper.GetSelfServiceObjectGuid(baseSSIdentifier);
-            }
+                var sSIdentifier = row["SSID"];
+                var gUID = row["GUID"];
+                var pageID = row["PageID"];
 
-            if (pageID.Equals("VALID"))
-            {
-                pageID = DatabaseHelper.GetSelfServicePageId(page).ToString();
-            }
+                if (sSIdentifier.Equals("VALID"))
+                {
+                    sSIdentifier = baseSSIdentifier;
+                }
 
-            string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{sSIdentifier}/{gUID}/pageId/{pageID}";
+                if (gUID.Equals("VALID"))
+                {
+                    gUID = DatabaseHelper.GetSelfServiceObjectGuid(baseSSIdentifier);
+                }
 
-            _driver.WaitForDataLoading();
-            _driver.NavigateToUrl(navigationUrl);
+                if (pageID.Equals("VALID"))
+                {
+                    pageID = DatabaseHelper.GetSelfServicePageId(page).ToString();
+                }
+
+                string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{sSIdentifier}/{gUID}/pageId/{pageID}";
+
+                _driver.WaitForDataLoading();
+                _driver.NavigateToUrl(navigationUrl);
+            }   
         }
 
         #endregion
