@@ -25,6 +25,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
 	Then date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in descending order
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
+	When User scrolls grid to the top
 	Then '20000' rows of date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in ascending order
 
 @Evergreen @Applications @EvergreenJnr_GridActions @TableSorting @DAS10612
@@ -56,6 +57,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	When User clicks on 'EmailMigra: Pre-Migration \ Scheduled date' column header
 	Then date in table is sorted by 'EmailMigra: Pre-Migration \ Scheduled date' column in descending order
 	When User clicks on 'EmailMigra: Pre-Migration \ Scheduled date' column header
+	When User scrolls grid to the top
 	Then date in table is sorted by 'EmailMigra: Pre-Migration \ Scheduled date' column in ascending order
 
 @Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS10612
@@ -74,6 +76,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	When User clicks on 'Barry'sUse: Project Dates \ Migrated Date' column header
 	Then date in table is sorted by 'Barry'sUse: Project Dates \ Migrated Date' column in descending order
 	When User clicks on 'Barry'sUse: Project Dates \ Migrated Date' column header
+	When User scrolls grid to the top
 	Then date in table is sorted by 'Barry'sUse: Project Dates \ Migrated Date' column in ascending order
 
 @Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS11568
@@ -119,7 +122,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	| ColumnName   |
 	| <ColumnName> |
 	When User clicks on '<ColumnName>' column header
-	Then '2000' rows of numeric data in table is sorted by '<ColumnName>' column in ascending order
+	Then '20000' rows of numeric data in table is sorted by '<ColumnName>' column in ascending order
 	When User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
 	When User navigates to the "<AllListName>" list
@@ -129,7 +132,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| <ColumnName> |
-	Then '2000' rows of numeric data in table is sorted by '<ColumnName>' column in ascending order
+	When User scrolls grid to the top
+	Then '20000' rows of numeric data in table is sorted by '<ColumnName>' column in ascending order
 	Then Edit List menu is not displayed
 
 Examples: 
