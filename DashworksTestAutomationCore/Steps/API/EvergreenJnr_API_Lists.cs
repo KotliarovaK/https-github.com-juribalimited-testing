@@ -110,7 +110,7 @@ namespace DashworksTestAutomation.Steps.API
 
         private void CreateDynamicListWithNameAndAccessTypeOnPage(string listName, string pageName, string accessType = "Private")
         {
-            var url = CreateDynamicList(listName, pageName, _driver.Url);
+            var url = CreateDynamicList(listName, pageName, _driver.Url, accessType);
 
             _driver.Navigate().GoToUrl(url);
             _driver.WaitForDataLoading();
@@ -175,7 +175,7 @@ namespace DashworksTestAutomation.Steps.API
 
         [When(@"User create static list with ""(.*)"" name on ""(.*)"" page with following items")]
         public void WhenUserCreateStaticListWithNameOnPageWithFollowingItems(
-            string listName, string pageName, Table table, string accessType = "Private")
+            string listName, string pageName, Table table)
         {
             CreateStaticListWithNameOnPageWithAccessTypeWithFollowingItems(listName, pageName, table);
         }
