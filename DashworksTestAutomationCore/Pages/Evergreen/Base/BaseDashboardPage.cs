@@ -900,10 +900,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
             var namedTextbox = GetDropdown(placeholder);
             var errorSelector = By.XPath($".//ancestor::div[@dropdownstyle]//mat-error");
-            
+
             if (!Driver.IsElementDisplayed(namedTextbox.FindElement(errorSelector), WebDriverExtensions.WaitTime.Medium))
                 throw new Exception($"Error message was not displayed for '{placeholder}' dropdown");
-            
+
             return namedTextbox.FindElement(errorSelector);
         }
 
@@ -940,18 +940,23 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.IsElementDisplayed(selector);
         }
 
-        public IWebElement GetMatIconsOfDropdownOptionsByName(string value, string matIconName) 
+        public IWebElement GetMatIconsOfDropdownOptionsByName(string value, string matIconName, bool withoutSelected = false)
         {
-            Driver.WaitForElementToBeDisplayed(GetDropdownValueByName(value));
-            var matItem = GetDropdownValueByName(value).FindElement(By.XPath($"/../mat-icon[text()='{matIconName}']"));
-            return matItem;
+            var optionWithIcon = GetCreatedItemsInDropdownOptions(matIconName, withoutSelected);
+            if (!optionWithIcon.Any(x => x.Text.Equals(value)))
+            {
+                throw new Exception($"Unable to find '{value}' option with icon");
+            }
+
+            var element = optionWithIcon.First(x => x.Text.Equals(value));
+            return element;
         }
 
-        public IList<IWebElement> GetCreatedItemsInDropdownOptions(bool withoutSelected = false)
+        public IList<IWebElement> GetCreatedItemsInDropdownOptions(string icon, bool withoutSelected = false)
         {
             Driver.WaitForElementsToBeDisplayed(By.XPath(DropdownOptionsSelector(withoutSelected)));
             return Driver.FindElements(By.XPath(
-                $"{DropdownOptionsSelector(withoutSelected)}/../mat-icon/following-sibling::span"));
+                $"{DropdownOptionsSelector(withoutSelected)}/../mat-icon[contains(@class,'ng-{icon}')]/following-sibling::span"));
         }
 
         public bool IsDropdownOpened(bool withoutSelected = false)
