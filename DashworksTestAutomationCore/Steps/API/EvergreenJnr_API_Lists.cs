@@ -98,6 +98,33 @@ namespace DashworksTestAutomation.Steps.API
         [When(@"User create dynamic list with ""(.*)"" name on ""(.*)"" page")]
         public void WhenUserCreateDynamicListWithNameOnPage(string listName, string pageName)
         {
+            CreateDynamicListWithNameAndAccessTypeOnPage(listName, pageName);
+        }
+
+        [When(@"User create dynamic list with '(.*)' name and '(.*)' access type on '(.*)' page")]
+        public void WhenUserCreateDynamicListWithNameAndAccessTypeOnPage(string listName, string accessType, string pageName)
+        {
+            switch (accessType)
+            {
+                case "Private":
+                    accessType = "Private";
+                    break;
+                case "Everyone can see":
+                    accessType = "SharedAllUsersReadOnly";
+                    break;
+                case "Everyone can edit":
+                    accessType = "SharedAllUsersEdit";
+                    break;
+                case "Specific users / teams":
+                    accessType = "SharedSpecificUsers";
+                    break;
+
+            }
+            CreateDynamicListWithNameAndAccessTypeOnPage(listName, pageName, accessType);
+        }
+
+        private void CreateDynamicListWithNameAndAccessTypeOnPage(string listName, string pageName, string accessType = "Private")
+        {
             var url = CreateDynamicList(listName, pageName, _driver.Url);
 
             _driver.Navigate().GoToUrl(url);
@@ -127,7 +154,7 @@ namespace DashworksTestAutomation.Steps.API
             }
         }
 
-        private string CreateDynamicList(string name, string pageName, string url)
+        private string CreateDynamicList(string name, string pageName, string url, string accessType = "Private")
         {
             var queryString = GetDynamicQueryStringFromUrl(url, pageName);
             var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
@@ -139,7 +166,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listName", name);
             request.AddParameter("listType", "dynamic");
             request.AddParameter("queryString", queryString);
-            request.AddParameter("sharedAccessType", "Private");
+            request.AddParameter("sharedAccessType", accessType);
             request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             var response = _client.Evergreen.Post(request);
@@ -162,8 +189,38 @@ namespace DashworksTestAutomation.Steps.API
         }
 
         [When(@"User create static list with ""(.*)"" name on ""(.*)"" page with following items")]
-        public void WhenUserCreateStaticListWithNameOnPageWithFollowingItems(string listName, string pageName,
-            Table table)
+        public void WhenUserCreateStaticListWithNameOnPageWithFollowingItems(
+            string listName, string pageName, Table table, string accessType = "Private")
+        {
+            CreateStaticListWithNameOnPageWithAccessTypeWithFollowingItems(listName, pageName, table);
+        }
+
+        [When(@"User create static list with '(.*)' name and '(.*)' access type on '(.*)' page with following items")]
+        public void WhenUserCreateStaticListWithNameAndAccessTypeOnPageWithFollowingItems(
+            string listName, string accessType, string pageName, Table table)
+        {
+            switch (accessType)
+            {
+                case "Private":
+                    accessType = "Private";
+                    break;
+                case "Everyone can see":
+                    accessType = "SharedAllUsersReadOnly";
+                    break;
+                case "Everyone can edit":
+                    accessType = "SharedAllUsersEdit";
+                    break;
+                case "Specific users / teams":
+                    accessType = "SharedSpecificUsers";
+                    break;
+
+            }
+            CreateStaticListWithNameOnPageWithAccessTypeWithFollowingItems(listName, pageName, table, accessType);
+        }
+
+
+        private void CreateStaticListWithNameOnPageWithAccessTypeWithFollowingItems(
+            string listName, string pageName, Table table, string accessType = "Private")
         {
             var items = string.Empty;
 
@@ -205,7 +262,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
             request.AddParameter("listName", listName);
             request.AddParameter("listType", "Static");
-            request.AddParameter("sharedAccessType", "Private");
+            request.AddParameter("sharedAccessType", accessType);
             request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             var response = _client.Evergreen.Post(request);
@@ -251,7 +308,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listName", listName);
             request.AddParameter("listType", "Static");
             request.AddParameter("queryString", queryString);
-            request.AddParameter("sharedAccessType", "Private");
+            request.AddParameter("sharedAccessType", accessType);
             request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             response = _client.Evergreen.Put(request);
