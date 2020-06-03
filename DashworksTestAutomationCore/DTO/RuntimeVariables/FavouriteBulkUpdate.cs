@@ -1,17 +1,15 @@
-﻿using DashworksTestAutomationCore.DTO.Evergreen;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using DashworksTestAutomationCore.Steps.Dashworks.ActionsPanel.FavouriteBulkUpdate;
 
 namespace DashworksTestAutomationCore.DTO.RuntimeVariables
 {
-    class FavouriteBulkUpdate
+    class FavouriteBulkUpdateObjects
     {
-        public List<FavouriteBulkUpdateDto> Value { get; set; }
+        public List<RemoveFbuMethods.Favourit> Value { get; set; }
 
-        public FavouriteBulkUpdate()
+        public FavouriteBulkUpdateObjects()
         {
-            Value = new List<FavouriteBulkUpdateDto>();
+            Value = new List<RemoveFbuMethods.Favourit>();
         }
     }
 }

@@ -27,6 +27,7 @@ using TechTalk.SpecFlow;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 using DashworksTestAutomationCore.DTO.Evergreen;
 using DashworksTestAutomationCore.DTO.RuntimeVariables;
+using DashworksTestAutomationCore.Steps.Dashworks.ActionsPanel.FavouriteBulkUpdate;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -44,11 +45,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly Teams _teams;
         private readonly Buckets _buckets;
         private readonly SelfServices _selfServices;
-        private readonly FavouriteBulkUpdate _favouriteBulkUpdate;
+        private readonly FavouriteBulkUpdateObjects _favouriteBulkUpdate;
+        private readonly RestWebClient _client;
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
             Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,
-            Teams teams, Buckets buckets, SelfServices selfServices, FavouriteBulkUpdate favouriteBulkUpdate)
+            Teams teams, Buckets buckets, SelfServices selfServices, FavouriteBulkUpdateObjects favouriteBulkUpdate, RestWebClient client)
         {
             _driver = driver;
             _automationActions = automationActions;
@@ -61,6 +63,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _buckets = buckets;
             _selfServices = selfServices;
             _favouriteBulkUpdate = favouriteBulkUpdate;
+            _client = client;
         }
 
         #region Page Header/SubHeader
@@ -527,7 +530,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     _automations.Value.Add(new AutomationsDto() { name = text });
                     break;
                 case "Favourite Bulk Update Name":
-                    _favouriteBulkUpdate.Value.Add(new FavouriteBulkUpdateDto() { FbuName = text });
+                    _favouriteBulkUpdate.Value.Add(new RemoveFbuMethods.Favourit() { Name = text });
                     break;
                 case "Ring name":
                     //Get project ID if Ring is inside project
