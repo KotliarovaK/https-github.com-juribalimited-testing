@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSelfServicesTabIsDisplayedCorre
 	When User enters "21202_SS_1" text in the Search field for "Self Service Identifier" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks button with 'ResetFilters' aria label
-	When User enters "/#/selfservice/21202_SS_1" text in the Search field for "Self Service Link" column
+	When User enters "21202_SS_1" text in the Search field for "Self Service Link" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks button with 'ResetFilters' aria label
 	When User unchecks following checkboxes in the filter dropdown menu for the 'Status' column:
@@ -49,3 +49,46 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSelfServicesTabIsDisplayedCorre
 	| Self Service Identifier |
 	| Status                  |
 	| Self Service Link       |
+
+#AnnI 6/03/20: This functionality is implemented only for 'Yellow_Dwarf'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @SelfServicesTab @DAS21178 @Cleanup @Yellow_Dwarf
+Scenario: EvergreenJnr_ApplicationsList_CheckThatStatusIsUpdatedToThePartiallyCompleteOnTheApplicationSelfServicePageAfterOpeningTheSelfService
+	#precondition
+	When User create static list with "DAS_21178_SS_List" name on "Applications" page with following items
+	| ItemName          |
+	| 7-Zip 16.02 (x64) |
+	When User creates Self Service via API
+	| Name          | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope             |
+	| DAS21178_SS_1 | 21178_SS_1        | true    | true                | DAS_21178_SS_List |
+	#scenario
+	When User navigates to the 'Application' details page for the item with '4093' ID
+	Then Details page for '7-Zip 16.02 (x64)' item is displayed to the user
+	When User navigates to the 'Self Service' parent left menu item
+	When User navigates to the 'Self Services' left submenu item
+	When User enters "DAS21178_SS_1" text in the Search field for "Self Service" column
+	Then "Not Started" content is displayed for "Status" column
+	When User clicks button with 'ResetFilters' aria label
+	When User enters "21178_SS_1" text in the Search field for "Self Service Link" column
+	When User click content from "Self Service Link" column
+	Then Page with 'Welcome' subheader is displayed to user
+	Then User click back button in the browser
+	When User enters "DAS21178_SS_1" text in the Search field for "Self Service" column
+	Then "Partially complete (1 of 2)" content is displayed for "Status" column
+
+#AnnI 6/03/20: This functionality is implemented only for 'Yellow_Dwarf'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @SelfServicesTab @DAS21179 @Cleanup @Yellow_Dwarf
+Scenario: EvergreenJnr_ApplicationsList_CheckThatSelfServiceWhichHasTheUnknowncustomNameIsDisplayedCorrectlyForSelfServicePage
+	#precondition
+	When User create static list with "DAS_21179_SS_List" name on "Applications" page with following items
+	| ItemName          |
+	| 7-Zip 16.02 (x64) |
+	When User creates Self Service via API
+	| Name    | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope             |
+	| Unknown | 21179_SS_1        | true    | true                | DAS_21179_SS_List |
+	#scenario
+	When User navigates to the 'Application' details page for the item with '4093' ID
+	Then Details page for '7-Zip 16.02 (x64)' item is displayed to the user
+	When User navigates to the 'Self Service' parent left menu item
+	When User navigates to the 'Self Services' left submenu item
+	When User enters "Unknown" text in the Search field for "Self Service" column
+	Then "Unknown" content is displayed for "Self Service" column
