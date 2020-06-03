@@ -42,7 +42,7 @@ Examples:
 	| Devices | Hostname | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service (Owner) | Me      | This list uses, or refers to a list that uses, a value of "Me" which is not valid as an automation scope      |
 	| Users   | Username | Windows7Mi: Communication \ Send Applications List - User Object Task (Team)                                  | My Team | This list uses, or refers to a list that uses, a value of "My Team" which is not valid as an automation scope |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS21048 @Cleanup @X_Ray
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS21048 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValidationMessagesForScopeDropdownWhenListDeleted
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

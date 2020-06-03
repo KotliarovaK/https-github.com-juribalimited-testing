@@ -16,16 +16,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateUpdatePathForAll
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
-	Then 'star' mat-icon is disabled
-	Then 'star' mat-icon has tooltip with 'Some values are missing or not valid' text
+	Then 'star' mat icon is disabled
+	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	When User selects '<ProjectName>' option from 'Project' autocomplete
 	Then 'UPDATE' button is disabled
-	Then 'star' mat-icon is not disabled
-	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
+	Then 'star' mat icon is not disabled
+	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 	When User selects '<PathName>' option from 'Path' autocomplete
 	Then 'UPDATE' button is not disabled
-	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
+	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 
 	Examples: 
 	| PageName     | ColumnHeader  | RowName                          | ProjectName     | PathName                |
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'VIP User' option from 'Path' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
 	Then following fields are displayed in the popup:
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
@@ -84,16 +84,16 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItems
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'VIP User' option from 'Path' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '20773_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'TestFBU_20773' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'testFBU_207731' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'abc_20773' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItems
 	| TestFBU_20773  |
 	| testFBU_207731 |
 	| abc_20773      |
-	Then created items for 'Bulk Update Type' dropdown are displayed in ascending order
+	Then items with 'star' icon for 'Bulk Update Type' dropdown are displayed in ascending order
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdatePathType
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateP
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Desktop Upgrade' option from 'Path' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '20774_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateP
 	Then 'Desktop Upgrade' content is displayed in 'Path' autocomplete
 	Then 'UPDATE' button is not disabled
 	Then 'CANCEL' button is not disabled
-	Then 'star' mat-icon is not disabled
+	Then 'star' mat icon is not disabled
 
 @Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateWithoutPath
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateW
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '20774_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateW
 	Then '' content is displayed in 'Path' autocomplete
 	Then 'UPDATE' button is disabled
 	Then 'CANCEL' button is not disabled
-	Then 'star' mat-icon is not disabled
+	Then 'star' mat icon is not disabled
 
 #Add specific User with broken  FBU to check Error message when Path was deleted
 @Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Yellow_Dwarf
@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdate
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	Then 'This Favourite Bulk Update is invalid' text is displayed on inline error banner
 	Then 'UPDATE' button is disabled
-	Then 'star' mat-icon is not disabled
+	Then 'star' mat icon is not disabled
 
 @Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateForDeletedProject
@@ -220,7 +220,7 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateF
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '20774_Project' option from 'Project' autocomplete
 	When User selects '[Default (Mailbox)]' option from 'Path' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '20774_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	#Delete Project
@@ -239,7 +239,6 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateF
 	Then following Values are not displayed in the 'Bulk Update Type' dropdown:
 	| Options       |
 	| 20774_TestFBU |
-	#Add FBU is not displayed in Manage Favourite
 
 @Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @DAS20955 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopup
@@ -253,7 +252,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopup
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '207741_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks 'Mailboxes' on the left-hand menu
@@ -266,7 +265,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopup
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects 'Email Migration' option from 'Project' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '207742_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -300,7 +299,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupColumns
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '207743_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -335,10 +334,10 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupDeletingAndEditing
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects 'Email Migration' option from 'Project' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '20777_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '20777_TestFBU1' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -374,9 +373,9 @@ Scenario: EvergreenJnr_AllUsers_ChecThatFavoriteBulkUpdateNameFieldIsNotCaseSens
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'VIP User' option from 'Path' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'das21257_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'Das21257_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field

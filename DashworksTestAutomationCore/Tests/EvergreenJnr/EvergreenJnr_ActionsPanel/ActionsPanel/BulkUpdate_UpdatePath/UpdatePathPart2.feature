@@ -239,7 +239,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdatePathInBulkUpdateTypeTeamToGroupSe
 	And User perform search by "Z11REX196H34MG"
 	Then '[Default (Computer)]' content is displayed in the 'zDeviceAut: Path' column
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS21036 @X_Ray
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS21036
 Scenario: EvergreenJnr_DevicesList_CheckThatWarningBannerDisappearsAfterClosingActionPanel
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -269,4 +269,3 @@ Scenario: EvergreenJnr_DevicesList_CheckThatWarningBannerDisappearsAfterClosingA
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
-	#Then inline tip banner is not displayed

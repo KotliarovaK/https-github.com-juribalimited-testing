@@ -215,16 +215,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 
             var listElement = _driver.NowAt<ActionsElement>();
             listElement.ListNameTextBox.SendKeys(listName);
-        }
-
-        [Then(@"created items for '(.*)' dropdown are displayed in ascending order")]
-        public void ThenCreatedItemsForDropdownAreDisplayedInAscendingOrder(string dropdownName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetDropdown(dropdownName).Click();
-            var actionElement = _driver.NowAt<ActionsElement>();
-            var fbuList = page.GetCreatedItemsInDropdownOptions().Select(x => x.Text).ToList();
-            SortingHelper.IsListSorted(fbuList);
-        }
+        }        
     }
 }

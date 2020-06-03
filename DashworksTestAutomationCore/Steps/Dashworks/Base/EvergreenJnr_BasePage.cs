@@ -956,6 +956,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.ClickByActions(page.BodyContainer);
         }
 
+        [Then(@"items with '(.*)' icon for '(.*)' dropdown are displayed in ascending order")]
+        public void ThenItemsWithIconForDropdownAreDisplayedInAscendingOrder(string icon, string dropdownName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropdownName).Click();
+            var fbuList = page.GetItemsWithIconInDropdownOptions(icon).Select(x => x.Text).ToList();
+            SortingHelper.IsListSorted(fbuList);
+        }
+
         [Then(@"'(.*)' option is first in the '(.*)' dropdown")]
         public void ThenOptionIsFirstInTheDropdown(string option, string dropDownName)
         {
@@ -1645,36 +1654,36 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             icon.GetIcon(iconTextInDom).Click();
         }
 
-        [When(@"User clicks '(.*)' mat-icon")]
-        public void WhenUserClicksMat_Icon(string matIconName)
+        [When(@"User clicks '(.*)' mat icon")]
+        public void WhenUserClicksMatIcon(string matIconName)
         {
             var icon = _driver.NowAt<BaseDashboardPage>();
             icon.GetMatIconByClassContent(matIconName).Click();
         }
 
-        [Then(@"'(.*)' mat-icon is disabled")]
-        public void ThenMat_IconIsDisabled(string matIconName)
+        [Then(@"'(.*)' mat icon is disabled")]
+        public void ThenMatIconIsDisabled(string matIconName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.AreEqual(true, Convert.ToBoolean(page.GetMatIconByClassContent(matIconName).GetAttribute("disabled")),
-                $"{matIconName} mat-icon is enabled");
+                $"{matIconName} mat icon is enabled");
         }
 
-        [Then(@"'(.*)' mat-icon is not disabled")]
-        public void ThenMat_IconIsNotDisabled(string matIconName)
+        [Then(@"'(.*)' mat icon is not disabled")]
+        public void ThenMatIconIsNotDisabled(string matIconName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.AreEqual(false, Convert.ToBoolean(page.GetMatIconByClassContent(matIconName).GetAttribute("disabled")),
-                $"{matIconName} mat-icon is disabled");
+                $"{matIconName} mat icon is disabled");
         }
 
-        [Then(@"'(.*)' mat-icon has tooltip with '(.*)' text")]
-        public void ThenMat_IconHasTooltipWithText(string matIconName, string text)
+        [Then(@"'(.*)' mat icon has tooltip with '(.*)' text")]
+        public void ThenMatIconHasTooltipWithText(string matIconName, string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.MouseHover(page.GetMatIconByClassContent(matIconName));
             var toolTipText = _driver.GetTooltipText();
-            Verify.AreEqual(text, toolTipText, $"{matIconName} mat-icon tooltip is incorrect");
+            Verify.AreEqual(text, toolTipText, $"'{matIconName}' mat icon tooltip is incorrect");
         }
 
         #endregion

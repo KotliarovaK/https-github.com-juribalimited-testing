@@ -16,14 +16,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdat
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update custom field' in the 'Bulk Update Type' dropdown
-	Then 'star' mat-icon is disabled
-	Then 'star' mat-icon has tooltip with 'Some values are missing or not valid' text
+	Then 'star' mat icon is disabled
+	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	Then 'CANCEL' button is not disabled
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	Then 'UPDATE' button is disabled
-	Then 'star' mat-icon is not disabled
-	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
+	Then 'star' mat icon is not disabled
+	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 
 	Examples: 
 	| PageName     | ColumnHeader  | RowName                          |
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	When User selects 'Remove specific values' in the 'Update Values' dropdown
 	When User adds 'test' value from 'Value' textbox
 	Then 'UPDATE' button is not disabled
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
 	Then following fields are displayed in the popup:
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update custom field' in the 'Bulk Update Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '20853_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
@@ -97,16 +97,16 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForUpdateCustomFieldFavouriteB
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Add to existing values' in the 'Update Values' dropdown
 	When User adds 'test' value from 'Value' textbox
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'DAS20853_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '1DAS20853_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'testFBU_2085' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'abc_22085' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForUpdateCustomFieldFavouriteB
 	| 1DAS20853_TestFBU |
 	| testFBU_2085      |
 	| abc_22085         |
-	Then created items for 'Bulk Update Type' dropdown are displayed in ascending order
+	Then items with 'star' icon for 'Bulk Update Type' dropdown are displayed in ascending order
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateCustomFieldType
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdat
 	When User enters '0' text to 'Find Value' textbox
 	When User enters '1' text to 'Replace Value' textbox
 	Then 'UPDATE' button is not disabled
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '208535_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdat
 	Then '1' content is displayed in 'Replace Value' textbox
 	Then 'UPDATE' button is not disabled
 	Then 'CANCEL' button is not disabled
-	Then 'star' mat-icon is not disabled
+	Then 'star' mat icon is not disabled
 
 @Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkUpdateWithoutCustomField
@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkU
 	When User selects '20853' option from 'Custom Field' autocomplete
 	When User selects 'Remove specific values' in the 'Update Values' dropdown
 	When User adds '12' value from 'Value' textbox
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '208535_TestFBU_CF' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser
@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkU
 	When User selects '208535_TestFBU_CF' in the 'Bulk Update Type' dropdown
 	Then 'This Favourite Bulk Update is invalid' text is displayed on inline error banner
 	Then 'UPDATE' button is disabled
-	Then 'star' mat-icon is disabled
+	Then 'star' mat icon is disabled
 
 @Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupForUpdateCustomFieldType
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupForUpdateCustomFie
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '207741_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks 'Mailboxes' on the left-hand menu
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupForUpdateCustomFie
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
 	When User selects 'Email Migration' option from 'Project' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '207742_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks refresh button in the browser

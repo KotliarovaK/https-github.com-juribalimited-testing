@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyFo
 	When User clicks 'RESYNC' button on popup
 	Then 'Application successfully resynced' text is displayed on inline success banner
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @X_Ray @Cleanup
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfAppIsAleadyOnboardedAndNotKeep
 	When User navigates to the 'Application' details page for the item with '228' ID
 	Then Details page for 'Hotfix for Windows Media Player 10 (KB903157)' item is displayed to the user
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | UNCATEGORISED |
 	| Target App          |               |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @X_Ray @Cleanup
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfAppIsAleadyOnboardedAndIsKeep
 	When User navigates to the 'Application' details page for the item with '4166' ID
 	Then Details page for 'EC2ConfigService' item is displayed to the user
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | FORWARD PATH   |
 	| Target App          | Adobe Reader 5 |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfAppIsNotOnboarded
 	When User navigates to the 'Application' details page for the item with '4346' ID
 	Then Details page for 'Dolby Voice 2.7.0' item is displayed to the user
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | UNCATEGORISED |
 	| Target App          |               |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfAppIsNotOnboardedAndEvergreenForwardPathedToIt
 	When User navigates to the 'Application' details page for the item with '1' ID
 	Then Details page for 'Python 2.2a4' item is displayed to the user
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | KEEP  |
 	| Target App          |       |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfAppIsOnboardedButNotForwardPathedToAnotherApp
 	When User navigates to the 'Application' details page for the item with '630' ID
 	Then Details page for 'ATI Multimedia Center' item is displayed to the user
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | KEEP  |
 	| Target App          |       |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfProjectAndEvergreenAppIsRetired
 	When User navigates to the 'Application' details page for the item with '985' ID
 	Then Details page for 'WebZIP' item is displayed to the user
@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | RETIRE |
 	| Target App          |        |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfEvergreenAppRetiredAndProjectAppIsUncategorised
 	When User navigates to the 'Application' details page for the item with '209' ID
 	Then Details page for 'xine-devel' item is displayed to the user
@@ -189,7 +189,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | RETIRE |
 	| Target App          |        |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfEvergreenAppRetiredAndProjectAppIsForwardPathedToAnotherApp
 	When User navigates to the 'Application' details page for the item with '783' ID
 	Then Details page for 'Aide sur les fichiers programme' item is displayed to the user
@@ -223,7 +223,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | KEEP  |
 	| Target App          |       |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfEvergreenAppRetiredAndProjectAppIsForwardPathedToFirstApp
 	When User navigates to the 'Application' details page for the item with '243' ID
 	Then Details page for 'Adobe Reader 7.0.7 - Chinese Simplified' item is displayed to the user
@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | UNCATEGORISED |
 	| Target App          |               |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfEvergreenAndProjectAppsAreUncategorised
 	When User navigates to the 'Application' details page for the item with '4316' ID
 	Then Details page for 'Skype™ 7.37' item is displayed to the user
@@ -282,7 +282,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | UNCATEGORISED |
 	| Target App          |               |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfEvergreenAppIsUncategorisedAndProjectAppIsRetired
 	When User navigates to the 'Application' details page for the item with '4523' ID
 	Then Details page for 'Softerra LDAP Administrator 2015.2 (64-bit)' item is displayed to the user
@@ -306,7 +306,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | UNCATEGORISED |
 	| Target App          |               |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfEvergreenAppIsUncategorisedAndProjectAppIAppOneIsForwardPathedToAppTwo
 	When User navigates to the 'Application' details page for the item with '4120' ID
 	Then Details page for 'Datazen Publisher' item is displayed to the user
@@ -340,7 +340,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectly
 	| App Rationalisation | KEEP  |
 	| Target App          |       |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20732 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationIsWorksCorrectlyIfEvergreenAppIsUncategorisedAndProjectAppIAppTwoIsForwardPathedToAppOne
 	When User navigates to the 'Application' details page for the item with '234' ID
 	Then Details page for 'River Past Audio Converter' item is displayed to the user
