@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddPageToSelfServiceViaBuilder
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddPageToSelfServiceViaBui
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddPageToSelfServiceViaBuilderWithOnlyFiledPageName
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddPageToSelfServiceViaBui
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCretePageWithNotProperlyFiledFields
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -78,7 +78,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCretePageWithNot
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedTheCreatePageConfigurationIsClosedAndTheDefaultViewIsReloaded
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedTheCreateP
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatWhenCancelButtonIsClickedWhileCreatingVeryFirstPageForTheSelfServiceThenCreatePageFormReturnsToTheDefaultState
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWhenCancelButtonIsClickedWhileCreating
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatValidationMessageDisplaysIfUserLeftPageNameEmpty
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -145,7 +145,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatValidationMessageDisplaysIfUserLeftPag
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19831 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCanOpenCreateSelfServicePageWhenOnePageIsAlreadyExists
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API

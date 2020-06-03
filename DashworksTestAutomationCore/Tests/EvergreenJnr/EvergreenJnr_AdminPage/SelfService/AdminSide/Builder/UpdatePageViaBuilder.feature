@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationShownWhenUserEditPage
-	When User create static list with "19792 UserStatList_1" name on "Applications" page with following items
+	When User create static list with '19792 UserStatList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationShownWhenUser
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnabledIfUserDidDidntChangesAndProperToolTipsAreDisplays
-	When User create static list with "19792 UserStatList_2" name on "Applications" page with following items
+	When User create static list with '19792 UserStatList_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnabledIfUserDid
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWillBeSavedWithProperNotificationAndHighlightedOnContextPanel
-	When User create static list with "19792 UserStatList_3" name on "Applications" page with following items
+	When User create static list with '19792 UserStatList_3' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWillBeSavedWith
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario Outline: EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation
-	When User create static list with "<StatUserList>" name on "Applications" page with following items
+	When User create static list with '<StatUserList>' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -132,7 +132,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedThePagePreviewIsShownOnTheDesignSurface
-	When User create static list with "DAS19792_UserStatList_5" name on "Applications" page with following items
+	When User create static list with 'DAS19792_UserStatList_5' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedThePagePre
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheUserLeavesThePageConfigurationWithoutSavingChangesTheySeeTheStandardWarningModalWindowPopup
-	When User create static list with "DAS19792_UserStatList_6" name on "Applications" page with following items
+	When User create static list with 'DAS19792_UserStatList_6' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API

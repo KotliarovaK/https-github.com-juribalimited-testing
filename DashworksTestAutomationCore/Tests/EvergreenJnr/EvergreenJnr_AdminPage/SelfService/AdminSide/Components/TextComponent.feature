@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19979 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCreatePage
-	When User create static list with "DAS_19979_11" name on "Users" page with following items
+	When User create static list with 'DAS_19979_11' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCreatePage
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19979 @DAS20049 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForUpdatePage
-	When User create static list with "DAS_19979_22" name on "Users" page with following items
+	When User create static list with 'DAS_19979_22' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForUpdatePage
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20049 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCancelUpdateFunctionality
-	When User create static list with "DAS_20049_33" name on "Users" page with following items
+	When User create static list with 'DAS_20049_33' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCancelUpdateFunctionalit
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20160 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatTextEditorOptionsIsAvailableForTextComponent
-	When User create static list with "DAS_20160" name on "Applications" page with following items
+	When User create static list with 'DAS_20160' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it

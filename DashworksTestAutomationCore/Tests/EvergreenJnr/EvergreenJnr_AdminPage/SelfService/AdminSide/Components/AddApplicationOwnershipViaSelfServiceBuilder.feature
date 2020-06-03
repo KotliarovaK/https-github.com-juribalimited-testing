@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneApplicationOwner
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_19982_Proj_1 | All Users | None            | Standalone Project |
-	When User create static list with "AppStatList_DAS_19982_1" name on "Applications" page with following items
+	When User create static list with 'AppStatList_DAS_19982_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneApplicationOwner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatLastPageDoesNotAllowAnyInteractiveComponentToBeAdded 
-	When User create static list with "AppStatList_DAS_19982_2" name on "Applications" page with following items
+	When User create static list with 'AppStatList_DAS_19982_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatLastPageDoesNotAllowAnyInteractiveComp
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20243 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserUnableToCreateTwoApplicationOwnershipComponents
-    When User create static list with "AppStatList_DAS_20243_1" name on "Applications" page with following items
+    When User create static list with 'AppStatList_DAS_20243_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
 	When User clicks 'Admin' on the left-hand menu

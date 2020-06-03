@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserSeesProperTootltipForAddItemButton
-	When User create static list with "AppStatList_DAS_19982_1" name on "Applications" page with following items
+	When User create static list with 'AppStatList_DAS_19982_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserSeesProperTootltipForAddItemButton
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterClickOnComponentItWillBeHighlightedAndAddButtonEnabled
-	When User create static list with "AppStatList_DAS_19982_3" name on "Applications" page with following items
+	When User create static list with 'AppStatList_DAS_19982_3' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterClickOnComponentItWillBeHighlight
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @DAS20765 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatWhenUserClickedOnAddButtonThePopupWillBeRemovedAndBuildeDesignSurfaceShowsCorrecComponentConfigurationPage
-	When User create static list with "AppStatList_DAS_19982_4" name on "Applications" page with following items
+	When User create static list with 'AppStatList_DAS_19982_4' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
