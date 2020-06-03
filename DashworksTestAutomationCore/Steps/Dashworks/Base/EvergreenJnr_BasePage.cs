@@ -25,7 +25,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
-using DashworksTestAutomationCore.DTO.Evergreen;
 using DashworksTestAutomationCore.DTO.RuntimeVariables;
 using DashworksTestAutomationCore.Steps.Dashworks.ActionsPanel.FavouriteBulkUpdate;
 
