@@ -104,22 +104,7 @@ namespace DashworksTestAutomation.Steps.API
         [When(@"User create dynamic list with '(.*)' name and '(.*)' access type on '(.*)' page")]
         public void WhenUserCreateDynamicListWithNameAndAccessTypeOnPage(string listName, string accessType, string pageName)
         {
-            switch (accessType)
-            {
-                case "Private":
-                    accessType = "Private";
-                    break;
-                case "Everyone can see":
-                    accessType = "SharedAllUsersReadOnly";
-                    break;
-                case "Everyone can edit":
-                    accessType = "SharedAllUsersEdit";
-                    break;
-                case "Specific users / teams":
-                    accessType = "SharedSpecificUsers";
-                    break;
-
-            }
+            accessType = GetAccessType(accessType);
             CreateDynamicListWithNameAndAccessTypeOnPage(listName, pageName, accessType);
         }
 
@@ -199,22 +184,7 @@ namespace DashworksTestAutomation.Steps.API
         public void WhenUserCreateStaticListWithNameAndAccessTypeOnPageWithFollowingItems(
             string listName, string accessType, string pageName, Table table)
         {
-            switch (accessType)
-            {
-                case "Private":
-                    accessType = "Private";
-                    break;
-                case "Everyone can see":
-                    accessType = "SharedAllUsersReadOnly";
-                    break;
-                case "Everyone can edit":
-                    accessType = "SharedAllUsersEdit";
-                    break;
-                case "Specific users / teams":
-                    accessType = "SharedSpecificUsers";
-                    break;
-
-            }
+            accessType = GetAccessType(accessType);
             CreateStaticListWithNameOnPageWithAccessTypeWithFollowingItems(listName, pageName, table, accessType);
         }
 
@@ -421,6 +391,23 @@ namespace DashworksTestAutomation.Steps.API
         {
             var queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + $"&$listid={listId}";
             return queryString;
+        }
+
+        private string GetAccessType(string accessType)
+        {
+            switch (accessType)
+            {
+                case "Private":
+                    return "Private";
+                case "Everyone can see":
+                    return "SharedAllUsersReadOnly";
+                case "Everyone can edit":
+                    return "SharedAllUsersEdit";
+                case "Specific users / teams":
+                    return "SharedSpecificUsers";
+                default:
+                    throw new Exception($"'{accessType}' is not defined Access Type");
+            }
         }
     }
 }
