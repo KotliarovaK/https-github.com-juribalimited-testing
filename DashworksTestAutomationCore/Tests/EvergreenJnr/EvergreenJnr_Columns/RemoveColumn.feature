@@ -256,9 +256,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create dynamic list with "TestList0E8A84" name on "Devices" page
+	When User create static list with "TestList3C5E3C" name on "Devices" page with following items
+	| ItemName        |
+	| 00K4CEEQ737BA4L |
+	| 00SH8162NAS524  |
+	| 00KWQ4J3WKQM0G  |
+	| 01COJATLYVAR7A6 |
+	| 01WNOSNMP5QLXC  |
+	| 02QS1WBYUHCAG8Z |
+	| 04I01QSFL1AWKM  |
+	| 063X2ZOB8V3GUY  |
+	| 06FJ38R7KCG5B67 |
+	Then "TestList3C5E3C" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -290,9 +299,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create dynamic list with "TestList3C5E3C" name on "Devices" page
+	When User create static list with "TestList3C5E3C" name on "Devices" page with following items
+	| ItemName        |
+	| 00K4CEEQ737BA4L |
+	| 00SH8162NAS524  |
+	| 00KWQ4J3WKQM0G  |
+	| 01COJATLYVAR7A6 |
+	| 01WNOSNMP5QLXC  |
+	| 02QS1WBYUHCAG8Z |
+	| 04I01QSFL1AWKM  |
+	| 063X2ZOB8V3GUY  |
+	| 06FJ38R7KCG5B67 |
 	Then "TestList3C5E3C" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
