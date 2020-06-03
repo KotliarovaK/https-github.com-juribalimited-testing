@@ -432,7 +432,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelf
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21292 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatPrivateListNotAppearInSelfServiceAutocoplete
-    When User create static list with 'DAS21292_AppList' name and 'Private' access type on 'Applications' page with following items
+	When User create static list with 'DAS21292_AppList' name and 'Private' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User create static list with 'DAS21292_UserList' name and 'Private' access type on 'Users' page with following items
