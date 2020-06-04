@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_Devices_CheckThatFilterPanelDisplayingAfterClickingThroug
 	Then "Owner Home Drive is Empty" is displayed in added filter info
 	Then "Owner Display Name is empty" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DA21349
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS21349
 Scenario: EvergreenJnr_Devices_CheckThatSumAggregateFunctionWorks
 	When User clicks 'Devices' on the left-hand menu
 	When User selects 'Pivot' in the 'Create' dropdown
@@ -49,4 +49,5 @@ Scenario: EvergreenJnr_Devices_CheckThatSumAggregateFunctionWorks
 	When User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then table content is present
+	Then There are no errors in the browser console
 	

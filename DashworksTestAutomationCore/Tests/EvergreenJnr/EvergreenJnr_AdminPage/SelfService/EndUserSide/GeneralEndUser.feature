@@ -29,11 +29,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonIsn
     When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
-	When User create static list with "DAS_20330_forComponent_1" name on "Users" page with following items
+	When User create static list with 'DAS_20330_forComponent_1' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "DAS_20330_1" name on "Applications" page with following items
+	When User create static list with 'DAS_20330_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Add an onboarded owner to the App
@@ -83,11 +83,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUndoAllChangesIMadeOnThisPageButtonWor
     When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
-	When User create static list with "UserStatList_DAS20330_2" name on "Users" page with following items
+	When User create static list with 'UserStatList_DAS20330_2' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "AppStatList_DAS20330_2" name on "Applications" page with following items
+	When User create static list with 'AppStatList_DAS20330_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User resync 'Application' objects for 'DAS_20330_Proj_2' project
@@ -144,11 +144,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
-	When User create static list with "DAS_21191_UserStatList_1" name on "Users" page with following items
+	When User create static list with 'DAS_21191_UserStatList_1' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "DAS_21191_AppStatList_1" name on "Applications" page with following items
+	When User create static list with 'DAS_21191_AppStatList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -177,11 +177,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
-	When User create static list with "DAS_21191_UserStatList_2" name on "Users" page with following items
+	When User create static list with 'DAS_21191_UserStatList_2' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "DAS_21191_AppStatList_2" name on "Applications" page with following items
+	When User create static list with 'DAS_21191_AppStatList_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -211,7 +211,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
 	When User creates broken list with 'DAS_21191_UserStatList_3_BR' name on 'Users' page
-	When User create static list with "DAS_21191_AppStatList_3" name on "Applications" page with following items
+	When User create static list with 'DAS_21191_AppStatList_3' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -228,11 +228,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_21191_Proj_4 | All Users | None            | Standalone Project |
-	When User create static list with "DAS_21191_UserStatList_4" name on "Users" page with following items
+	When User create static list with 'DAS_21191_UserStatList_4' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "DAS_21191_AppStatList_4" name on "Applications" page with following items
+	When User create static list with 'DAS_21191_AppStatList_4' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -249,11 +249,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperErrorMessageDisplaysForComponent
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_21191_Proj_5 | All Users | None            | Standalone Project |
-	When User create static list with "DAS_21191_UserStatList_5" name on "Users" page with following items
+	When User create static list with 'DAS_21191_UserStatList_5' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "DAS_21191_AppStatList_5" name on "Applications" page with following items
+	When User create static list with 'DAS_21191_AppStatList_5' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it

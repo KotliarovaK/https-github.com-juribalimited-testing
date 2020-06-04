@@ -7,7 +7,7 @@ Background: Pre-Conditions
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20407 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperCogMenuOptionsArePresentAndMoveToOptionsWorksProperly
-	When User create static list with "UserStatList_DAS_20407_1" name on "Applications" page with following items
+	When User create static list with 'UserStatList_DAS_20407_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperCogMenuOptionsArePresentAndMoveT
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20407 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAndDeleteOptionsWorksProperly
-	When User create static list with "UserStatList_DAS_20407_2" name on "Applications" page with following items
+	When User create static list with 'UserStatList_DAS_20407_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAndDeleteOptionsWorksProperly
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18994 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatIfdDifferentPageCogmenuIsOpenedThePageDoesNotLoadInTheBuilderDesignPanel
-	When User create static list with "UserStatList_DAS_18994_1" name on "Applications" page with following items
+	When User create static list with 'UserStatList_DAS_18994_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
     When User creates Self Service via API
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatIfdDifferentPageCogmenuIsOpenedThePage
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18994 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatReorderingCogMenuOptionsDisplaysProperlyAccordingToItemsPlaceInRightSidePanel
-	When User create static list with "UserStatList_DAS_18994_2" name on "Applications" page with following items
+	When User create static list with 'UserStatList_DAS_18994_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
     When User creates Self Service via API
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReorderingCogMenuOptionsDisplaysProper
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21149 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckSelfServicePagesPanel
-	When User create static list with "DAS_21149" name on "Applications" page with following items
+	When User create static list with 'DAS_21149' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	And User creates Self Service via API and open it
@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelfServicePagesPanel
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21262 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatExpandButtonOnSSBuilderContextPanelCollapseWorksCorrectly
-	When User create static list with "UserStatList_DAS21262_1" name on "Applications" page with following items
+	When User create static list with 'UserStatList_DAS21262_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it

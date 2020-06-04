@@ -205,7 +205,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         private string ActionElementSelector(string columnName)
         {
             var results =
-                $".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')] | .//div[@role='presentation']//div[contains(@class,'ag-header-viewport')]//div[contains(@class,'ag-header-row')][2]/div[{GetColumnNumberByName(columnName)}]";
+                $".//div[@role='presentation']//div[contains(@class,'ag-header-viewport')]//div[contains(@class,'ag-header-row')][2]/div[{GetColumnNumberByName(columnName)}]";
+            //TODO below is the old selector. If the new one will work correctly remove this comment
+            //$".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')] | .//div[@role='presentation']//div[contains(@class,'ag-header-viewport')]//div[contains(@class,'ag-header-row')][2]/div[{GetColumnNumberByName(columnName)}]";
             return results;
         }
 
