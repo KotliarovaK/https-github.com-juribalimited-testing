@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	| 002B5DC7D4D34D5C895  |
 	| 00BDBAEA57334C7C8F4  |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
+	And User selects 'Update capacity unit' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit12141Users' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
