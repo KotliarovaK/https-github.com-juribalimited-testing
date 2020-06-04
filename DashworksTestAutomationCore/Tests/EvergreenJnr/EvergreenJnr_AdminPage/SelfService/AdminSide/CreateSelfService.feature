@@ -429,3 +429,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelf
 	Then 'Enable self service portal' checkbox is unchecked	
 	When User clicks 'CREATE' button
 	Then 'A self service already exists with this identifier' text is displayed on inline error banner
+
+	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21433 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatNoUnsavedChagesPopupWhenUserLeaveCreateSSBlancAndNavigateToSettings
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	When User clicks 'CREATE SELF SERVICE' button
+	When User navigates to the 'Self Services' parent left menu item
+	Then popup is not displayed to User
