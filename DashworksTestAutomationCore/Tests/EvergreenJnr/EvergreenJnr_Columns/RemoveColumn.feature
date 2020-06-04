@@ -257,8 +257,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create dynamic list with "TestList0E8A84" name on "Devices" page
+	When User create dynamic list with "TestList3C5E3C_D2" name on "Devices" page
+	Then "TestList3C5E3C_D2" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -276,7 +276,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	| Red                |
 	Then "Compliance" filter is added to the list
 	#And "9,174" rows are displayed in the agGrid
-	And table data is filtered correctly
 	And "Compliance" filter with "Red" values is added to URL on "Devices" page
 	And "Compliance" column is added to URL on "Devices" page
 	And "Device Key" column is added to URL on "Devices" page
@@ -291,9 +290,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create dynamic list with "TestList3C5E3C" name on "Devices" page
-	Then "TestList3C5E3C" list is displayed to user
+	When User create dynamic list with "TestList3C5E3C_D" name on "Devices" page
+	Then "TestList3C5E3C_D" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -311,7 +309,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	| Red                |
 	Then "Compliance" filter is added to the list
 	#And "9,174" rows are displayed in the agGrid
-	And table data is filtered correctly
 	And "Compliance" filter with "Red" values is added to URL on "Devices" page
 	And "Compliance" column is added to URL on "Devices" page
 	And "Device Key" column is added to URL on "Devices" page
