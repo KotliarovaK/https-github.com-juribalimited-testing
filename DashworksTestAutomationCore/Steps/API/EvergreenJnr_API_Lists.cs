@@ -98,7 +98,19 @@ namespace DashworksTestAutomation.Steps.API
         [When(@"User create dynamic list with ""(.*)"" name on ""(.*)"" page")]
         public void WhenUserCreateDynamicListWithNameOnPage(string listName, string pageName)
         {
-            var url = CreateDynamicList(listName, pageName, _driver.Url);
+            CreateDynamicListWithNameAndAccessTypeOnPage(listName, pageName);
+        }
+
+        [When(@"User create dynamic list with '(.*)' name and '(.*)' access type on '(.*)' page")]
+        public void WhenUserCreateDynamicListWithNameAndAccessTypeOnPage(string listName, string accessType, string pageName)
+        {
+            accessType = GetAccessType(accessType);
+            CreateDynamicListWithNameAndAccessTypeOnPage(listName, pageName, accessType);
+        }
+
+        private void CreateDynamicListWithNameAndAccessTypeOnPage(string listName, string pageName, string accessType = "Private")
+        {
+            var url = CreateDynamicList(listName, pageName, _driver.Url, accessType);
 
             _driver.Navigate().GoToUrl(url);
             _driver.WaitForDataLoading();
@@ -127,7 +139,7 @@ namespace DashworksTestAutomation.Steps.API
             }
         }
 
-        private string CreateDynamicList(string name, string pageName, string url)
+        private string CreateDynamicList(string name, string pageName, string url, string accessType = "Private")
         {
             var queryString = GetDynamicQueryStringFromUrl(url, pageName);
             var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
@@ -139,7 +151,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listName", name);
             request.AddParameter("listType", "dynamic");
             request.AddParameter("queryString", queryString);
-            request.AddParameter("sharedAccessType", "Private");
+            request.AddParameter("sharedAccessType", accessType);
             request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             var response = _client.Evergreen.Post(request);
@@ -162,8 +174,23 @@ namespace DashworksTestAutomation.Steps.API
         }
 
         [When(@"User create static list with ""(.*)"" name on ""(.*)"" page with following items")]
-        public void WhenUserCreateStaticListWithNameOnPageWithFollowingItems(string listName, string pageName,
-            Table table)
+        public void WhenUserCreateStaticListWithNameOnPageWithFollowingItems(
+            string listName, string pageName, Table table)
+        {
+            CreateStaticListWithNameOnPageWithAccessTypeWithFollowingItems(listName, pageName, table);
+        }
+
+        [When(@"User create static list with '(.*)' name and '(.*)' access type on '(.*)' page with following items")]
+        public void WhenUserCreateStaticListWithNameAndAccessTypeOnPageWithFollowingItems(
+            string listName, string accessType, string pageName, Table table)
+        {
+            accessType = GetAccessType(accessType);
+            CreateStaticListWithNameOnPageWithAccessTypeWithFollowingItems(listName, pageName, table, accessType);
+        }
+
+
+        private void CreateStaticListWithNameOnPageWithAccessTypeWithFollowingItems(
+            string listName, string pageName, Table table, string accessType = "Private")
         {
             var items = string.Empty;
 
@@ -205,7 +232,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
             request.AddParameter("listName", listName);
             request.AddParameter("listType", "Static");
-            request.AddParameter("sharedAccessType", "Private");
+            request.AddParameter("sharedAccessType", accessType);
             request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             var response = _client.Evergreen.Post(request);
@@ -251,7 +278,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listName", listName);
             request.AddParameter("listType", "Static");
             request.AddParameter("queryString", queryString);
-            request.AddParameter("sharedAccessType", "Private");
+            request.AddParameter("sharedAccessType", accessType);
             request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             response = _client.Evergreen.Put(request);
@@ -364,6 +391,23 @@ namespace DashworksTestAutomation.Steps.API
         {
             var queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + $"&$listid={listId}";
             return queryString;
+        }
+
+        private string GetAccessType(string accessType)
+        {
+            switch (accessType)
+            {
+                case "Private":
+                    return "Private";
+                case "Everyone can see":
+                    return "SharedAllUsersReadOnly";
+                case "Everyone can edit":
+                    return "SharedAllUsersEdit";
+                case "Specific users / teams":
+                    return "SharedSpecificUsers";
+                default:
+                    throw new Exception($"'{accessType}' is not defined Access Type");
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20325 @DAS20430 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckEndUserLastPage
-	When User create static list with "DAS_20325" name on "Applications" page with following items
+	When User create static list with 'DAS_20325' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEndUserLastPage
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20291 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
-	When User create static list with "DAS_20291" name on "Applications" page with following items
+	When User create static list with 'DAS_20291' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20342 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPage
-	When User create static list with "DAS_20342" name on "Applications" page with following items
+	When User create static list with 'DAS_20342' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
