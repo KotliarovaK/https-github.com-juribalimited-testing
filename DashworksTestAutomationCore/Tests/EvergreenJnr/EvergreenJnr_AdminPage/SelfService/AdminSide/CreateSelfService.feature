@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19950 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatTwoPagesWillBeCreatedByDefaultWhenNewSelfServiceIsCreated
-    When User create static list with "AppStatList_DAS19950_1" name on "Applications" page with following items
+    When User create static list with 'AppStatList_DAS19950_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
 	When User clicks 'Admin' on the left-hand menu
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTwoPagesWillBeCreatedByDefaultWhenNewS
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19950 @DAS21297 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToEditTheNamesInEditMode
-    When User create static list with "AppStatList_DAS19950_2" name on "Applications" page with following items
+    When User create static list with 'AppStatList_DAS19950_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
 	When User clicks 'Admin' on the left-hand menu
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToEditTheNamesInEditMode
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19950 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperOptionsAreDisabledInCogMenuAndCreatePageButtonDoesntDisplay
-    When User create static list with "AppStatList_DAS19950_3" name on "Applications" page with following items
+    When User create static list with 'AppStatList_DAS19950_3' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
 	When User clicks 'Admin' on the left-hand menu
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperOptionsAreDisabledInCogMenuAndCr
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19950 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneApplicationOwnershipComponentToTheFirstPageAndUableToAddItToTheLastOne
-    When User create static list with "AppStatList_DAS19950_4" name on "Applications" page with following items
+    When User create static list with 'AppStatList_DAS19950_4' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
 	When User clicks 'Admin' on the left-hand menu
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneApplicationOwner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20272 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatTheBannerAboutCreatedSelfServiceWontBeDisplayedIfUserSwitchBetweenPages
-    When User create static list with "AppStatList_DAS20272_1" name on "Applications" page with following items
+    When User create static list with 'AppStatList_DAS20272_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User clicks 'Admin' on the left-hand menu
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheBannerAboutCreatedSelfServiceWontBe
 
 	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19187 @DAS19364 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
-	When User create static list with "AppStatList_DAS19187_1" name on "Applications" page with following items
+	When User create static list with 'AppStatList_DAS19187_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
 	When User clicks 'Admin' on the left-hand menu
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutName
-	When User create static list with "AppStatList_DAS19082_1" name on "Applications" page with following items
+	When User create static list with 'AppStatList_DAS19082_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
     When User clicks 'Admin' on the left-hand menu
@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutName
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithDuplicatedName
-	When User create static list with "AppStatList_DAS19082_2" name on "Applications" page with following items
+	When User create static list with 'AppStatList_DAS19082_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
     When User creates Self Service via API
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithBrokenSco
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithDuplicatedIdentifier
-	When User create static list with "AppStatList_DAS19082_3" name on "Applications" page with following items
+	When User create static list with 'AppStatList_DAS19082_3' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
     When User creates Self Service via API
@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithDuplicate
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
-	When User create static list with "<AppList>" name on "Applications" page with following items
+	When User create static list with '<AppList>' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
     When User clicks 'Admin' on the left-hand menu
@@ -254,7 +254,7 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField
-	When User create static list with "<AppList>" name on "Applications" page with following items
+	When User create static list with '<AppList>' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
     When User clicks 'Admin' on the left-hand menu
@@ -282,7 +282,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserWillBeReturnedToTheGridPageIfNoDat
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19289 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserCreatedSelfService
-    When User create static list with "AppStatList_DAS19289_1" name on "Applications" page with following items
+    When User create static list with 'AppStatList_DAS19289_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
     When User clicks 'Admin' on the left-hand menu
@@ -297,7 +297,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDispla
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19842 @DAS19876 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceNameShouldShowsWhenEachOfTheSelfServiceSubActionsAreSelected
-    When User create static list with "AppStatList_DAS19842_1" name on "Applications" page with following items
+    When User create static list with 'AppStatList_DAS19842_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -326,7 +326,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceNameShouldShowsWhenEachOfTh
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19864 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceUrlPreviewConstructedProperly
-    When User create static list with "AppStatList_DAS19864_1" name on "Applications" page with following items
+    When User create static list with 'AppStatList_DAS19864_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -340,7 +340,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceUrlPreviewConstructedProper
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19922 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceScopeDropdown
-    When User create static list with "AppStatList_DAS19922_1" name on "Applications" page with following items
+    When User create static list with 'AppStatList_DAS19922_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -371,7 +371,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceWithUnknownNameCanBeCreated
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20469 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelfServiceIdIsChangedToAnInvalidOne
-    When User create static list with "DAS_20469_AppList_1" name on "Applications" page with following items
+    When User create static list with 'DAS_20469_AppList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -382,10 +382,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelf
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20207 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelfServiceAlreadyExistsWithThisName
-	When User create static list with "DAS_20207_AppList_1" name on "Applications" page with following items
+	When User create static list with 'DAS_20207_AppList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
-	When User create static list with "DAS_20207_AppList_2" name on "Applications" page with following items
+	When User create static list with 'DAS_20207_AppList_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User clicks 'Admin' on the left-hand menu
@@ -407,10 +407,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelf
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21197 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelfServiceAlreadyExistsWithThisIdentifier
-	When User create static list with "DAS_21197_AppList_1" name on "Applications" page with following items
+	When User create static list with 'DAS_21197_AppList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
-	When User create static list with "DAS_21197_AppList_2" name on "Applications" page with following items
+	When User create static list with 'DAS_21197_AppList_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User clicks 'Admin' on the left-hand menu
@@ -430,10 +430,30 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelf
 	When User clicks 'CREATE' button
 	Then 'A self service already exists with this identifier' text is displayed on inline error banner
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21433 @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_CheckThatNoUnsavedChagesPopupWhenUserLeaveCreateSSBlancAndNavigateToSettings
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21292 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatPrivateListNotAppearInSelfServiceAutocoplete
+	When User create static list with 'DAS21292_AppList' name and 'Private' access type on 'Applications' page with following items
+	| ItemName |
+	|          |
+	When User create static list with 'DAS21292_UserList' name and 'Private' access type on 'Users' page with following items
+	| ItemName |
+	|          |
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
-	When User navigates to the 'Self Services' parent left menu item
-	Then popup is not displayed to User
+	Then Page with 'Self Services' header is displayed to user
+	Then 'Self Service Scope' autocomplete does NOT have options
+	| Options          |
+	| DAS21292_AppList |
+	When User creates Self Service via API and open it
+	| Name         | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope            |
+	| DAS_20073_SS | 20073_SI          | true    | true                | All Applications |
+	When User navigates to the 'Builder' left submenu item
+	When User clicks on Add Item button for item with 'Page' type and 'Welcome' name on Self Service Builder Panel
+	When User clicks on 'Application Ownership' component on dialog
+	When User clicks 'ADD' button on popup
+	When User checks 'Allow owner to be set to another user only' radio button
+	Then 'Owner Scope' autocomplete is displayed
+	Then 'Owner Scope' autocomplete does NOT have options
+	| Options           |
+	| DAS21292_UserList |
