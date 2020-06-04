@@ -50,8 +50,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSelfServicesTabIsDisplayedCorre
 	| Status                  |
 	| Self Service Link       |
 
-#AnnI 6/03/20: This functionality is implemented only for 'Yellow_Dwarf'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @SelfServicesTab @DAS21178 @Cleanup @Yellow_Dwarf
+@Evergreen @Applications @EvergreenJnr_ItemDetails @SelfServicesTab @DAS21178 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatStatusIsUpdatedToThePartiallyCompleteOnTheApplicationSelfServicePageAfterOpeningTheSelfService
 	#precondition
 	When User create static list with "DAS_21178_SS_List" name on "Applications" page with following items
@@ -75,8 +74,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatStatusIsUpdatedToThePartiallyCo
 	When User enters "DAS21178_SS_1" text in the Search field for "Self Service" column
 	Then "Partially complete (1 of 2)" content is displayed for "Status" column
 
-#AnnI 6/03/20: This functionality is implemented only for 'Yellow_Dwarf'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @SelfServicesTab @DAS21179 @Cleanup @Yellow_Dwarf
+@Evergreen @Applications @EvergreenJnr_ItemDetails @SelfServicesTab @DAS21179 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatSelfServiceWhichHasTheUnknowncustomNameIsDisplayedCorrectlyForSelfServicePage
 	#precondition
 	When User create static list with "DAS_21179_SS_List" name on "Applications" page with following items
