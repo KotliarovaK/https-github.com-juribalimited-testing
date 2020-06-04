@@ -122,9 +122,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #endregion
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
-        public IWebElement DateSearchField { get; set; }
-
         [FindsBy(How = How.XPath, Using = ObjectsToAdd)]
         public IList<IWebElement> ObjectsList { get; set; }
 
