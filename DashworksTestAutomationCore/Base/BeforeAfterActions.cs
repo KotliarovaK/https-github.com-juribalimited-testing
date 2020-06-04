@@ -168,23 +168,23 @@ namespace DashworksTestAutomation.Base
                 catch { }
             }
 
-            try
-            {
-                var requestUri = "http://autorelease.corp.juriba.com:81/admin/projects/allProjects?$lang=en-GB";
-                var request = requestUri.GenerateRequest();
+            //try
+            //{
+            //    var requestUri = "http://autorelease.corp.juriba.com:81/admin/projects/allProjects?$lang=en-GB";
+            //    var request = requestUri.GenerateRequest();
 
-                var resp = _client.Evergreen.Get(request);
+            //    var resp = _client.Evergreen.Get(request);
 
-                if (!resp.Content.Contains("User Scheduled Test (Jo)"))
-                {
-                    Logger.Write("============> !!! PROJECT DELETED !!! <============");
-                }
-            }
-            catch (Exception e)
-            {
-                Logger.Write(e);
-                Logger.Write("============> !!! PROJECT DELETED !!! <============");
-            }
+            //    if (!resp.Content.Contains("User Scheduled Test (Jo)"))
+            //    {
+            //        Logger.Write("============> !!! PROJECT DELETED !!! <============");
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    Logger.Write(e);
+            //    Logger.Write("============> !!! PROJECT DELETED !!! <============");
+            //}
         }
 
         [BeforeTestRun]

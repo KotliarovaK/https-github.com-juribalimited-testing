@@ -987,3 +987,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterCantBeAppliedWithou
 	When User clicks checkbox at selected Lookup Filter
 	Then 'ADD' button is disabled
 	
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS21345
+Scenario: EvergreenJnr_DevicesList_CheckThatFilterDisplaysFilterConfditionApplied
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "App Count (Entitled)" filter where type is "Equals" without added column and following value:
+	| Values |
+	| 1      |
+	When User Add And "App Count (Installed)" filter where type is "Greater than" with added column and following value:
+	| Values |
+	| 3      |
+	When User Add And "App Count (Total)" filter where type is "Does not equal" with added column and following value:
+	| Values |
+	| 10     |
+	Then "App Count (Entitled) is 1" is displayed in added filter info
+	Then "App Count (Installed) is greater than 3" is displayed in added filter info
+	Then "App Count (Total) is not 10" is displayed in added filter info

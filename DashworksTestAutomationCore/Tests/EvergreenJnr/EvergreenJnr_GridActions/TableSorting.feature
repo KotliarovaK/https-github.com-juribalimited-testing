@@ -12,19 +12,29 @@ Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
 	| ColumnName                                                                     |
 	| Boot Up Date                                                                   |
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User add "Boot Up Date" filter where type is "Not empty" with added column and following value:
+	| Values |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Android        | 22           |
+	| Android        | 21           |
 	When User clicks on 'Boot Up Date' column header
 	Then date in table is sorted by 'Boot Up Date' column in descending order
 	When User clicks on 'Boot Up Date' column header
 	Then date in table is sorted by 'Boot Up Date' column in ascending order
+	When User is remove filter by URL
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User add "Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task" filter where type is "Not empty" with added column and following value:
+	| Values |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Windows 10     | 16,969       |
+	| Windows 10     | 17       |
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
 	Then date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in descending order
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
+	When User scrolls grid to the top
 	Then date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in ascending order
 
 @Evergreen @Applications @EvergreenJnr_GridActions @TableSorting @DAS10612
@@ -56,25 +66,36 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	When User clicks on 'EmailMigra: Pre-Migration \ Scheduled date' column header
 	Then date in table is sorted by 'EmailMigra: Pre-Migration \ Scheduled date' column in descending order
 	When User clicks on 'EmailMigra: Pre-Migration \ Scheduled date' column header
+	When User scrolls grid to the top
 	Then date in table is sorted by 'EmailMigra: Pre-Migration \ Scheduled date' column in ascending order
 
 @Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	When User add following columns using URL to the "Users" page:
-	| ColumnName                                |
-	| Last Logon Date                           |
-	| Barry'sUse: Project Dates \ Migrated Date |
+	| ColumnName                        |
+	| Last Logon Date                   |
+	| UserSchedu: Three \ Migrated Date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Tim            | 147          |
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User add "Last Logon Date" filter where type is "Not empty" with added column and following value:
+	| Values |
 	When User clicks on 'Last Logon Date' column header
 	Then date in table is sorted by 'Last Logon Date' column in descending order
 	When User clicks on 'Last Logon Date' column header
 	Then date in table is sorted by 'Last Logon Date' column in ascending order
-	When User clicks on 'Barry'sUse: Project Dates \ Migrated Date' column header
-	Then date in table is sorted by 'Barry'sUse: Project Dates \ Migrated Date' column in descending order
-	When User clicks on 'Barry'sUse: Project Dates \ Migrated Date' column header
-	Then date in table is sorted by 'Barry'sUse: Project Dates \ Migrated Date' column in ascending order
+	When User is remove filter by URL
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User add "UserSchedu: Three \ Migrated Date" filter where type is "Not empty" with added column and following value:
+	| Values |
+	When User clicks on 'UserSchedu: Three \ Migrated Date' column header
+	Then date in table is sorted by 'UserSchedu: Three \ Migrated Date' column in descending order
+	When User clicks on 'UserSchedu: Three \ Migrated Date' column header
+	When User scrolls grid to the top
+	Then date in table is sorted by 'UserSchedu: Three \ Migrated Date' column in ascending order
 
 @Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS11568
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList
@@ -118,6 +139,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| <ColumnName> |
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User add "<ColumnName>" filter where type is "Not empty" with added column and following value:
+	| Values |
 	When User clicks on '<ColumnName>' column header
 	Then numeric data in table is sorted by '<ColumnName>' column in ascending order
 	When User create dynamic list with "<DynamicListName>" name on "<ListName>" page
