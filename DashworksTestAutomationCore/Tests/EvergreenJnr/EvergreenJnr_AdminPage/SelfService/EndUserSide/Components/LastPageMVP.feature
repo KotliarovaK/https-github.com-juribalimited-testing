@@ -5,9 +5,9 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20325 @DAS20430 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20325 @DAS20430 @DAS20838 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckEndUserLastPage
-	When User create static list with "DAS_20325" name on "Applications" page with following items
+	When User create static list with 'DAS_20325' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
@@ -33,8 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEndUserLastPage
 	And 'Undo all changes I made on this page' button is not displayed for End User
 	And 'Back' button displayed for End User
 	And User sees 'Thank You' text component 'Thank You' on end user page
-	And User sees 'You have completed the self service.' text styled as 'Normal' in 'Thank You' Text Component of 'Thank You' on end user page
-	And User sees 'You can now close the page.' text styled as 'Normal' in 'Thank You' Text Component of 'Thank You' on end user page
+	And User sees 'You have completed this self service, you may now close this page.' text styled as 'Normal' in 'Thank You' Text Component of 'Thank You' on end user page
 	When User clicks on 'Back' button on end user Self Service page
 	Then Subject Title 'Application: VSCmdShell' is displayed on End User page
 	And 'Back' button is disabled for End User
@@ -43,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEndUserLastPage
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20291 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
-	When User create static list with "DAS_20291" name on "Applications" page with following items
+	When User create static list with 'DAS_20291' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
@@ -70,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEndUserPageDisplayedCorrectly
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20342 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPage
-	When User create static list with "DAS_20342" name on "Applications" page with following items
+	When User create static list with 'DAS_20342' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
