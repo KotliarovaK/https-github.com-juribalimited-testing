@@ -270,7 +270,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var columnContent = page.GetColumnContentByColumnName(columnName);
+            var columnContent = page.GetColumnDataByScrolling(columnName, 600);
             Verify.Contains(textContent, columnContent, $"'{textContent}' is not present in the '{columnName}' column");
         }
 
@@ -286,7 +286,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
             else
             {
-                var column = page.GetColumnContentByColumnName(columnName);
+                var column = page.GetColumnDataByScrolling(columnName, 600);
                 if (column.Any())
                 {
                     Verify.IsFalse(column.Contains(textContent), $"'{textContent}' is present in the '{columnName}' column");
@@ -304,7 +304,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var columnContent = page.GetColumnContentByColumnName(columnName);
+            var columnContent = page.GetColumnDataByScrolling(columnName, 600);
             Verify.IsTrue(columnContent.All(x => x.Equals(textContent)), $"'{textContent}' is not present in the '{columnName}' column");
         }
 
@@ -329,7 +329,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var columnContent = page.GetColumnContentByColumnName(columnName);
+            var columnContent = page.GetColumnDataByScrolling(columnName, 600);
             var expectedList = table.Rows.Select(x => x["Content"]).ToList();
             Verify.IsTrue(columnContent.SequenceEqual(expectedList),
                 $"Expected content is not present in the '{columnName}' column");
@@ -340,7 +340,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            var columnContent = page.GetColumnContentByColumnName(columnName);
+            var columnContent = page.GetColumnDataByScrolling(columnName, 600);
             var expectedList = table.Rows.Select(x => x["Content"]).ToList();
             foreach (string content in expectedList)
             {
@@ -354,7 +354,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var originalList = page.GetColumnContentByColumnName(columnName);
+            var originalList = page.GetColumnDataByScrolling(columnName, 600);
 
             foreach (var item in originalList)
             {
@@ -366,7 +366,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenNumbersSumInTheColumnIsEqualTo(string columnName, int expectedSum)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var numbers = page.GetColumnContentByColumnName(columnName);
+            var numbers = page.GetColumnDataByScrolling(columnName, 600);
             var total = numbers.Where(x => !string.IsNullOrEmpty(x)).Sum(x => Convert.ToInt32(x));
             Verify.That(total, Is.EqualTo(expectedSum),
                 $"Sum of objects in the '{columnName}' column is incorrect!");
@@ -376,7 +376,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenAllCellsInTheColumnAreEmpty(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var cells = page.GetColumnContentByColumnName(columnName);
+            var cells = page.GetColumnDataByScrolling(columnName, 600);
             Verify.IsTrue(cells.All(string.IsNullOrEmpty),
                 $"Some content is displayed in the '{columnName}' column");
         }
@@ -397,7 +397,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
 
-            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
             Verify.IsFalse(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Descending), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
@@ -418,7 +418,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
 
-            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
             Verify.IsFalse(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
@@ -430,7 +430,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
 
-            var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var originalList = listPageMenu.GetColumnDataByScrolling(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
             Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Descending), $"Date in table for '{columnName}' column in not sorted in descending order");
         }
@@ -438,9 +438,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"date in table is sorted by '(.*)' column in ascending order")]
         public void ThenDateInTableIsSortedByColumnInAscendingOrder(string columnName)
         {
+            checkDateInTableSortedByColumnInAscendingOrder(columnName);
+        }
+
+        //Use this step if only if you need to scroll more than 600+ rows
+        [Then(@"'(.*)' rows of date in table is sorted by '(.*)' column in ascending order")]
+        public void ThenRowsOfDateInTableIsSortedByColumnInAscendingOrder(int rowsToScroll, string columnName)
+        {
+            checkDateInTableSortedByColumnInAscendingOrder(columnName, rowsToScroll);
+        }
+
+        public void checkDateInTableSortedByColumnInAscendingOrder(string columnName, int rowsToScroll = 600)
+        {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
 
-            var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var originalList = listPageMenu.GetColumnDataByScrolling(columnName, rowsToScroll).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList);
             Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Date in table for '{columnName}' column in not sorted in ascending order");
         }
@@ -448,8 +460,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"numeric data in table is sorted by '(.*)' column in ascending order")]
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrder(string columnName)
         {
+            CheckNumericDataInTableIsSortedByColumnInAscendingOrder(columnName);
+        }
+
+        //Use this step if only if you need to scroll more than 600+ rows
+        [Then(@"'(.*)' rows of numeric data in table is sorted by '(.*)' column in ascending order")]
+        public void ThenRowsOfNumericDataInTableIsSortedByColumnInAscendingOrder(int rowsToScroll, string columnName)
+        {
+            CheckNumericDataInTableIsSortedByColumnInAscendingOrder(columnName, rowsToScroll);
+        }
+
+        public void CheckNumericDataInTableIsSortedByColumnInAscendingOrder(string columnName, int rowsToScroll = 600)
+        {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = listPageMenu.GetColumnDataByScrolling(columnName, rowsToScroll).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
             Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Numbers in table for '{columnName}' column in not sorted in ascending order");
         }
@@ -458,7 +482,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderByDefault(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
             Verify.IsFalse(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
@@ -467,7 +491,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenNumericDataInTableIsSortedByColumnInDescendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
             Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Descending), $"Numbers in table for '{columnName}' column in not sorted in descending order");
         }
@@ -476,7 +500,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderByDefault(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
             Verify.IsFalse(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Descending), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
@@ -485,7 +509,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenColorDataIsSortedByColumnInAscendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             if (columnName.Equals("Compliance") || columnName.Equals("Owner Compliance"))
             {
                 SortingHelper.IsListSortedByEnum<ColorCompliance>(new List<string>(expectedList));
@@ -501,7 +525,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenColorDataIsSortedByColumnInDescendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             if (columnName.Equals("Compliance") || columnName.Equals("Owner Compliance"))
             {
                 SortingHelper.IsListSortedByEnum<ColorCompliance>(new List<string>(expectedList), false);
@@ -514,12 +538,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         [Then(@"Color data displayed with correct color for '(.*)' column")]
-        public void ThenColorDataDisplayedWithCorrectColor(string column)
+        public void ThenColorDataDisplayedWithCorrectColor(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
 
-            var columnValues = page.GetColumnContentByColumnName(column).Where(x => !x.Equals("")).ToList();
-            var columnColors = page.GetColumnColors(column).Where(x => !x.Equals("")).ToList();
+            var columnValues = page.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
+            var columnColors = page.GetColumnColors(columnName).Where(x => !x.Equals("")).ToList();
 
             //Page load less colors than content cells
             for (int i = 0; i < columnColors.Count; i++)
@@ -533,7 +557,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenBooleanDataIsSortedByColumnInAscendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList));
 
             Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Ascending), "Ascending Sorting icon is not displayed");
@@ -543,7 +567,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenBooleanDataIsSortedByColumnInDescendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList), false);
             Verify.IsTrue(listPageMenu.IsColumnSorted(columnName, BaseGridPage.ColumnSortingOrder.Descending), "Descending Sorting icon is not displayed");
         }
@@ -556,19 +580,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             switch (listName)
             {
                 case "Devices":
-                    Verify.AreEqual("001BAQXT6JWFPI", content.GetColumnContentByColumnName("Hostname").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    Verify.AreEqual("001BAQXT6JWFPI", content.GetColumnDataByScrolling("Hostname", 600).First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 case "Users":
-                    Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Username").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    Verify.AreEqual("Empty", content.GetColumnDataByScrolling("Username", 600).First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 case "Applications":
-                    Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Application").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    Verify.AreEqual("Empty", content.GetColumnDataByScrolling("Application", 600).First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 case "Mailboxes":
-                    Verify.AreEqual("Empty", content.GetColumnContentByColumnName("Email Address").First(), "PLEASE ADD EXCEPTION MESSAGE");
+                    Verify.AreEqual("Empty", content.GetColumnDataByScrolling("Email Address", 600).First(), "PLEASE ADD EXCEPTION MESSAGE");
                     break;
 
                 default:
@@ -580,7 +604,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefault(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var originalList = listPageMenu.GetColumnContentByColumnName(columnName).ToList();
+            var originalList = listPageMenu.GetColumnDataByScrolling(columnName, 600).ToList();
             SortingHelper.IsListSorted(originalList);
         }
 
@@ -593,7 +617,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             {
                 //Sort newly added column to got only value at first places
                 WhenUserClicksOnColumnHeader(row["ColumnName"]);
-                var content = page.GetColumnContentByColumnName(row["ColumnName"]);
+                var content = page.GetColumnDataByScrolling(row["ColumnName"], 600);
 
                 //Check that at least 10 cells has some content
                 Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Newly added column is empty");
@@ -625,7 +649,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             foreach (var row in table.Rows)
             {
-                var content = page.GetColumnContentByColumnName(row["ColumnName"]);
+                var content = page.GetColumnDataByScrolling(row["ColumnName"], 600);
                 Verify.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is empty");
             }
         }
@@ -637,7 +661,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             foreach (var row in table.Rows)
             {
-                var content = page.GetColumnContentByColumnName(row["ColumnName"]);
+                var content = page.GetColumnDataByScrolling(row["ColumnName"], 600);
                 Verify.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is not empty");
             }
         }
