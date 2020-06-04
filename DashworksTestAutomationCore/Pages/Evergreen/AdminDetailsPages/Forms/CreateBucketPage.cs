@@ -35,12 +35,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
             Driver.WaitForElementToBeDisplayed(By.XPath(teamNameSelector));
             Driver.FindElement(By.XPath(teamNameSelector)).Click();
         }
-
-        public IWebElement GetDefaultCheckboxByName(string checkbox)
-        {
-            var selector = By.XPath($".//span[text()='{checkbox}']");
-            Driver.WaitForDataLoading();
-            return Driver.FindElement(selector);
-        }
     }
 }
