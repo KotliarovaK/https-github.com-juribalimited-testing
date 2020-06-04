@@ -10,10 +10,10 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	When Project created via API
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_20019_Proj | All Users | None            | Standalone Project |
-	When User create static list with "DAS_20019_1" name on "Applications" page with following items
+	When User create static list with 'DAS_20019_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
-	When User create static list with "UserStatList_DAS_20019_1" name on "Users" page with following items
+	When User create static list with 'UserStatList_DAS_20019_1' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -74,10 +74,10 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	When Project created via API and opened
 	| ProjectName       | Scope     | ProjectTemplate | Mode               |
 	| DAS_19909_Proj_Up | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19909_2" name on "Applications" page with following items
+	When User create static list with 'DAS_19909_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19909_3" name on "Users" page with following items
+	When User create static list with 'DAS_19909_3' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -129,10 +129,10 @@ Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	When Project created via API and opened
 	| ProjectName         | Scope     | ProjectTemplate | Mode               |
 	| DAS_19909_Proj_Up_A | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19909_2_A" name on "Applications" page with following items
+	When User create static list with 'DAS_19909_2_A' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19909_3_A" name on "Users" page with following items
+	When User create static list with 'DAS_19909_3_A' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it

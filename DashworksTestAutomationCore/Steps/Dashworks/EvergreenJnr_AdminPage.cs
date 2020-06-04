@@ -43,13 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"field for Date column is empty")]
-        public void ThenFieldForDateColumnIsEmpty()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Verify.IsEmpty(page.DateSearchField.GetAttribute("value"), "Date Search textbox is not empty");
-        }
-
         [When(@"User selects following date filter on the Projects page")]
         public void WhenUserSelectsFollowingDateFilterOnTheProjectsPage(Table table)
         {

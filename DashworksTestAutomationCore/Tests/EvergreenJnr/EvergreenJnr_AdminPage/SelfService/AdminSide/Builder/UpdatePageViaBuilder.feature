@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationShownWhenUserEditPage
-	When User create static list with "19792 UserStatList_1" name on "Applications" page with following items
+	When User create static list with '19792 UserStatList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -27,9 +27,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationShownWhenUser
 	Then 'TestPageDisplayName_1' content is displayed in 'Page Display Name' textbox
 	Then 'Show page in self service' checkbox is checked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @DAS21405 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnabledIfUserDidDidntChangesAndProperToolTipsAreDisplays
-	When User create static list with "19792 UserStatList_2" name on "Applications" page with following items
+	When User create static list with '19792 UserStatList_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -60,17 +60,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnabledIfUserDid
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	When User enters 'TestPageDisplayName_2' text to 'Page Display Name' textbox
 	Then 'UPDATE' button is disabled
-	When User unchecks 'Show page in self service' checkbox
-	Then 'UPDATE' button is not disabled
-	When User checks 'Show page in self service' checkbox
-	Then 'UPDATE' button is disabled
-	Then 'UPDATE' button has tooltip with 'No changes made' text
-	When User clears 'Page Display Name' textbox with backspaces
-	Then 'UPDATE' button is not disabled
+	#The part of the TC below was diabled because of MVP restrictions (DAS-21405 - Show page in self service' checkbox checked by default and disabled)
+	#When User unchecks 'Show page in self service' checkbox
+	#Then 'UPDATE' button is not disabled
+	#When User checks 'Show page in self service' checkbox
+	#Then 'UPDATE' button is disabled
+	#Then 'UPDATE' button has tooltip with 'No changes made' text
+	#When User clears 'Page Display Name' textbox with backspaces
+	#Then 'UPDATE' button is not disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @DAS21405 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWillBeSavedWithProperNotificationAndHighlightedOnContextPanel
-	When User create static list with "19792 UserStatList_3" name on "Applications" page with following items
+	When User create static list with '19792 UserStatList_3' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -88,7 +89,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWillBeSavedWith
 	When User clicks 'Edit' option in opened Cog-menu
 	When User enters 'UPDATED_PageDisplayName' text to 'Page Display Name' textbox
 	When User enters 'UPDATED_PageName' text to 'Page Name' textbox
-	When User checks 'Show page in self service' checkbox
+	#The part of the TC below was diabled because of MVP restrictions (DAS-21405 - Show page in self service' checkbox checked by default and disabled)
+	#When User checks 'Show page in self service' checkbox
 	When User clicks 'UPDATE' button
 	Then Item with 'Page' type and 'UPDATED_PageName' name on Self Service Builder Panel is highlighted
 	Then 'The page has been updated' text is displayed on inline success banner
@@ -97,11 +99,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangesOfTheUpdatedPageWillBeSavedWith
 	When User clicks 'Edit' option in opened Cog-menu
 	Then 'UPDATED_PageName' content is displayed in 'Page Name' textbox
 	Then 'UPDATED_PageDisplayName' content is displayed in 'Page Display Name' textbox
-	Then 'Show page in self service' checkbox is checked
+	#Then 'Show page in self service' checkbox is checked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @DAS21405 @Cleanup @SelfServiceMVP
 Scenario Outline: EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation
-	When User create static list with "<StatUserList>" name on "Applications" page with following items
+	When User create static list with '<StatUserList>' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -119,7 +121,8 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation
 	When User clicks 'Edit' option in opened Cog-menu
 	When User enters '<PageName>' text to 'Page Name' textbox
 	When User enters '<Page Display Name>' text to 'Page Display Name' textbox
-	When User checks 'Show page in self service' checkbox
+	#The part of the TC below was diabled because of MVP restrictions (DAS-21405 - Show page in self service' checkbox checked by default and disabled)
+	#When User checks 'Show page in self service' checkbox
 	Then 'UPDATE' button is not disabled
 
 	Examples:
@@ -132,7 +135,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedThePagePreviewIsShownOnTheDesignSurface
-	When User create static list with "DAS19792_UserStatList_5" name on "Applications" page with following items
+	When User create static list with 'DAS19792_UserStatList_5' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -153,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedThePagePre
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatWhenTheUserLeavesThePageConfigurationWithoutSavingChangesTheySeeTheStandardWarningModalWindowPopup
-	When User create static list with "DAS19792_UserStatList_6" name on "Applications" page with following items
+	When User create static list with 'DAS19792_UserStatList_6' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
