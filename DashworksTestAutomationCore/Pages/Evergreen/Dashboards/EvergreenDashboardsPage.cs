@@ -89,11 +89,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'dependants')]//table//tr[1]/td")]
         public IList<IWebElement> DetailsSharedListTableHeaders { get; set; }
 
-        public IWebElement GetListIconFromListSectionOfDetailsPanel(string listName)
-        {
-            var by = By.XPath($".//td[text()='{listName}']/following-sibling::td/i");
-            return Driver.FindElement(by);
-        }
+        public IWebElement GetListIconFromListSectionOfDetailsPanel(string listName) =>
+            Driver.FindElement(By.XPath($".//td[text()='{listName}']/following-sibling::td/i"));
 
         #endregion
 

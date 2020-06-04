@@ -25,15 +25,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'delete')]/ancestor::button")]
         public IWebElement RemoveListButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'list-notification ng-star-inserted')]//button[contains(@class,'btn mat-button')]")]
-        public IWebElement DeleteButtonInTheWarningMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions action-panel-ddl']")]
-        public IWebElement PermissionsBlock { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions action-panel-ddl']//button[@title='Close']")]
-        public IWebElement ClosePermissionBlockButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Owner'][contains(@class, 'ng-pristine ng-valid')]")]
         public IWebElement AvailableOwnerField { get; set; }
 
@@ -55,11 +46,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement WarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[@class='userName']")]
-        public IList<IWebElement> PermissionAddedUser { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//td[@class='permission']")]
-        public IList<IWebElement> PermissionTypeOfAccess { get; set; }
+     
 
         public override List<By> GetPageIdentitySelectors()
         {
