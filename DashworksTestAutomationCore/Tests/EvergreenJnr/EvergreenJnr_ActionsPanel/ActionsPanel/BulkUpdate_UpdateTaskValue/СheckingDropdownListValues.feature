@@ -15,7 +15,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExi
 	| SelectedRowsName |
 	| <RowName>        |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One \ <TaskName>' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpub
 	| 001BAQXT6JWFPI   |
 	| 001PSUMZYOW581   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	When User enters 'Pre-Migration' text in 'Task' Search field
 	Then only below options are displayed in the 'Task' autocomplete
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	| 003F5D8E1A844B1FAA5 |
 	| 00A5B910A1004CF5AC4 |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User enters 'One' text in 'Task' Search field
 	Then 'Task' autocomplete contains following options:
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects '2004 Rollout' option from 'Project' autocomplete
 	And User selects 'Pre-Migration \ Scheduled Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	| SelectedRowsName |
 	| 00I0COBFWHOF27   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects '2004 Rollout' option from 'Project' autocomplete
 	And User selects 'Pre-Migration \ Scheduled Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker
 	| SelectedRowsName                   |
 	| Exchange Online-ApplicationAccount |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Stage 2 \ Scheduled Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User clicks the Actions button
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects '2004 Rollout' option from 'Project' autocomplete
 	And User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
@@ -233,7 +233,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User clicks the Actions button
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects '2004 Rollout' option from 'Project' autocomplete
 	And User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown

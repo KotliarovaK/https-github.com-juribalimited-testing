@@ -22,13 +22,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Rows counter shows "1" of "2" rows
 	When User clicks newly created object link
 	Then URL contains 'evergreen/#/admin/project/'
-	When User updates the "Default Unit" checkbox state
+	When User checks 'Default unit' checkbox
 	And User clicks 'UPDATE' button 
 	Then 'The capacity unit details have been updated' text is displayed on inline success banner
 	Then inline success banner is displayed
 	When User enters "13720" text in the Search field for "Description" column
 	And User click content from "Capacity Unit" column
-	Then "Default Unit" checkbox is checked and cannot be unchecked
+	Then "Default unit" checkbox is checked and cannot be unchecked
 	When User clicks 'CANCEL' button 
 	And User creates new Capacity Unit via api
 	| Name              | Description | IsDefault | Project                 |
@@ -63,13 +63,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User enters 'CapacityUnit12672' text to 'Capacity Unit Name' textbox
 	And User enters '12672' text to 'Description' textbox
-	And User updates the "Default Unit" checkbox state
+	When User checks 'Default unit' checkbox
 	And User clicks 'CREATE' button 
 	Then 'The capacity unit has been created' text is displayed on inline success banner
 	And 'Click here to view the CapacityUnit12672 capacity unit' link is displayed
 	When User clicks newly created object link
 	Then URL contains 'capacity/units/unit/'
-	And "Default Unit" checkbox is checked and cannot be unchecked
+	And "Default unit" checkbox is checked and cannot be unchecked
 	#DAS-13151
 	And 'UPDATE' button is disabled
 	And 'CANCEL' button is not disabled
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Capacity Unit" column
-	And User updates the "Default Unit" checkbox state
+	When User checks 'Default unit' checkbox
 	And User clicks 'UPDATE' button 
 	And User navigates to the 'Units' left menu item
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column

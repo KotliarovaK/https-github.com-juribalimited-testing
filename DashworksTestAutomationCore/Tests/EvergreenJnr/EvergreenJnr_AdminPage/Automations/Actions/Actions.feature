@@ -772,7 +772,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpeci
 	| 002B5DC7D4D34D5C895 |
 	| 00A5B910A1004CF5AC4 |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	Then 'Task' autocomplete does NOT have options
 	| Options         |

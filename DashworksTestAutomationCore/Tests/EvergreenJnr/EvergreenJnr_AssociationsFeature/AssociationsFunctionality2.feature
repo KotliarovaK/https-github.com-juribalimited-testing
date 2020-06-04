@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Associations @DAS18445 @Cleanup
 Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterClickingRemoveIcon
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterC
 @Evergreen @Associations @DAS18531 @DAS18763
 Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User create dynamic list with "ADevicesList18531" name on "Devices" page
 	Then "ADevicesList18531" list is displayed to user
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
@@ -67,13 +67,13 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User confirms list removing
 	Then list with "ADevicesList18531" name is removed
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	Then message 'No list generated Use association panel to create a list' is displayed to the user
 
 @Evergreen @Associations @DAS18424
 Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdded
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '<operator1>' option in 'Search associations' autocomplete of Associations panel
@@ -99,7 +99,7 @@ Examples:
 @Evergreen @Associations @DAS18379 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloaded
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel

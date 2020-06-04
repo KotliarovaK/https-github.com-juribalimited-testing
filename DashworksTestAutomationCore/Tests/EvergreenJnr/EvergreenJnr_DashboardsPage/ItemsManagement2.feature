@@ -179,14 +179,6 @@ Scenario: EvergreenJnr_Dashboard_CheckThatDashboardContinueWorkingAfterAddingLis
 	Then 'List_21413' Widget is displayed to the user
 	When User unchecks 'Edit mode' slide toggle
 	When User checks 'Edit mode' slide toggle
-	When User clicks 'Edit' menu option for 'List_21413' widget
-	When User updates Widget with following info:
-	| WidgetType | Title            | List        | MaxRows | MaxColumns |
-	| List       | List_21413Edited | All Devices | 5       | 5          |
-	Then 'List_21413Edited' Widget is displayed to the user
-	When User clicks 'Delete' menu option for 'List_21413Edited' widget
-	When User confirms item deleting on Dashboards page
-	Then Widget with the name 'List_21413Edited' is missing
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title           | List        | SplitBy  | AggregateFunction | OrderBy      |
@@ -195,6 +187,14 @@ Scenario: EvergreenJnr_Dashboard_CheckThatDashboardContinueWorkingAfterAddingLis
 	When User clicks 'Delete' menu option for 'Table_21413_new' widget
 	When User confirms item deleting on Dashboards page
 	Then Widget with the name 'Table_21413_new' is missing
+	When User clicks 'Edit' menu option for 'List_21413' widget
+	When User updates Widget with following info:
+	| WidgetType | Title            | List        | MaxRows | MaxColumns |
+	| List       | List_21413Edited | All Devices | 5       | 5          |
+	Then 'List_21413Edited' Widget is displayed to the user
+	When User clicks 'Delete' menu option for 'List_21413Edited' widget
+	When User confirms item deleting on Dashboards page
+	Then Widget with the name 'List_21413Edited' is missing
 	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS20358 @Cleanup

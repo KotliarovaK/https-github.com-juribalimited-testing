@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Associations @DAS18092
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociationsDropdown
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then "Used by device owner" filter is presented in the filters list
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedTo
 @Evergreen @Associations @DAS18987	@Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBranchFilter
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Installed on device' option in 'Search associations' autocomplete of Associations panel
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBran
 @Evergreen @Associations @DAS19320
 Scenario: EvergreenJnr_ApplicationsList_CheckThat
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListRunSuccessfullyAfterAddingC
 	When User enters 'Value19185_2' text to 'Value' textbox
 	When User clicks 'ADD' button on popup
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel

@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Associations @DAS18425 @DAS18458 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	Then Associations panel is displayed to the user
 	Then Export button is displayed disabled
 	When User clicks Add New button on the Filter panel
@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorAppearsAfterOpenningItem
 @Evergreen @Associations @DAS18425
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAdded
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedI
 @Evergreen @Associations @DAS18456 @DAS18530 @DAS18562 @DAS18127 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
@@ -65,17 +65,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	Then 'List Type: Dynamic' label is displayed in List Details
 	Then 'Data: Device Applications' label is displayed in List Details
 	#==<
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	Then There are no errors in the browser console
 	When User navigates to the "AssociationList18530" list
 	Then There are no errors in the browser console
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	Then There are no errors in the browser console
 
 @Evergreen @Associations @DAS18489 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasR
 Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotManagerIsNotOpenedByDefault
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	Then Associations panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotManagerIsNotOpenedByDefaul
 	Then Details panel is displayed to the user
 	Then 'List Type: Dynamic Pivot' label is displayed in List Details
 	Then 'Data: Device Applications' label is displayed in List Details
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	Then "Associations" panel is displayed to the user
 	When User navigates to the "DAS19937_Pivot" list
 	Then Actions panel is not displayed to the user

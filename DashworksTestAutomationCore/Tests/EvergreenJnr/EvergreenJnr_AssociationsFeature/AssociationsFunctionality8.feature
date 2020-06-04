@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Associations @DAS19810 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithFilterApplicationCustomField
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All User Applications" list
+	When User navigates to the "All Application Users" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project or Evergreen' autocomplete
 	When User selects 'Current' option in 'Search associations' autocomplete of Associations panel
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithFilterAppli
 @Evergreen @Associations @DAS20852
 Scenario: EvergreenJnr_ApplicationsList_CheckAssociationValuesAreNotDuplicatedAfterUsingSameProject
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	When User selects 'Current' option in 'Search associations' autocomplete of Associations panel
@@ -43,11 +43,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckAssociationValuesAreNotDuplicatedAf
 @Evergreen @Associations @DAS18837 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAllUserApplicatoinsWork
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All User Applications" list
-	When User navigates to the "All Device Applications" list
-	When User navigates to the "All User Applications" list
+	When User navigates to the "All Application Users" list
+	When User navigates to the "All Application Devices" list
+	When User navigates to the "All Application Users" list
 	When User navigates to the "All Applications" list
-	When User navigates to the "All User Applications" list
+	When User navigates to the "All Application Users" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then User sees options in 'Search associations' autocomplete of Associations panel

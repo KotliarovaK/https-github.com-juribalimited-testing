@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Associations @DAS18426 @Cleanup
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '<operator1>' option in 'Search associations' autocomplete of Associations panel
@@ -37,7 +37,7 @@ Examples:
 @Evergreen @Associations @DAS18804
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
@@ -68,7 +68,7 @@ Examples:
 @Evergreen @Associations @DAS18454 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAfterSortingAndRunninList
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAft
 @Evergreen @Associations @DAS18897 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfterRunningList
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
@@ -94,14 +94,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfte
 @Evergreen @Associations @DAS18447 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAfterGoingToAllDeviceApplicationsPageFromSavedList
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User creates 'AssociationList18447' dynamic list
 	Then table content is present
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	Then table content is present
 	Then Associations Button is highlighted
 	Then Associations panel is displayed to the user

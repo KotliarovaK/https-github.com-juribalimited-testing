@@ -66,7 +66,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyLinkIsDisplayedForFirstRowInTheColumn(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Verify.AreEqual("Empty", page.GetColumnContentByColumnName(columnName).First(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual("Empty", page.GetColumnContentByColumnName(columnName).First(), $"Empty link is not displayed for first row in the '{columnName}' column");
         }
 
         [Then(@"Account Profile menu is displayed correctly")]
