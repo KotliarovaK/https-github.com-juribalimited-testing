@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18972 @DAS19885 @DAS21385 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckErrorMessageWhenSelfServiceIsNotAvailable
-	When User create static list with "DAS_18972_1" name on "Applications" page with following items
+	When User create static list with 'DAS_18972_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageWhenSelfServiceIsNotAvailable
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19885 @DAS19653 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckNoErrorMessageWhenSelfServiceIsAvailableAndSelfServiceObjectWasFound
-When User create static list with "DAS_19885_1" name on "Applications" page with following items
+When User create static list with 'DAS_19885_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -29,7 +29,7 @@ When User create static list with "DAS_19885_1" name on "Applications" page with
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19653 @DAS21385 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckErrorMessageWhenSelfServiceObjectNotFound
-	When User create static list with "DAS_19653_1" name on "Applications" page with following items
+	When User create static list with 'DAS_19653_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it

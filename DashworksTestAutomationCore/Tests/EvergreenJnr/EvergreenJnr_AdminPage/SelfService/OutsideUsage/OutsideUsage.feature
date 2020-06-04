@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20791 @DAS20918 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckApplicationSelfServiceColumns
-	When User create static list with "DAS_20791" name on "Applications" page with following items
+	When User create static list with 'DAS_20791' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
@@ -113,10 +113,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceHasCompletedStatus
 	When User resync 'Application' objects for '21232_Proj' project
 	| Values     |
 	| VSCmdShell |
-	When User create static list with "21232_UserList" name on "Users" page with following items
+	When User create static list with '21232_UserList' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
-	When User create static list with "21232_AppList" name on "Applications" page with following items
+	When User create static list with '21232_AppList' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -168,10 +168,10 @@ Scenario: EvergreenJnr_AdminPage_CheckSelfServiceStatusesWithoutMakingChanges
 	When User resync 'Application' objects for '21222_Proj' project
 	| Values     |
 	| VSCmdShell |
-	When User create static list with "21222_UserList" name on "Users" page with following items
+	When User create static list with '21222_UserList' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
-	When User create static list with "21222_AppList" name on "Applications" page with following items
+	When User create static list with '21222_AppList' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it

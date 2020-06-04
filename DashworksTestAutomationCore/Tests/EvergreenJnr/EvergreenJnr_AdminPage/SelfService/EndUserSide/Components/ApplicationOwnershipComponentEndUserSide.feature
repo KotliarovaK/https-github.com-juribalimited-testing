@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
 	When User resync 'Application' objects for '2004 Rollout' project
     | values     |
     | VSCmdShell |
-	When User create static list with "DAS_20421" name on "Applications" page with following items
+	When User create static list with 'DAS_20421' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
@@ -64,11 +64,11 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
     When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
-	When User create static list with "DAS_20421_forComponent" name on "Users" page with following items
+	When User create static list with 'DAS_20421_forComponent' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "DAS_20421" name on "Applications" page with following items
+	When User create static list with 'DAS_20421' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
     When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
-	When User create static list with "DAS_20421_AppList_1" name on "Applications" page with following items
+	When User create static list with 'DAS_20421_AppList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -189,7 +189,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownShowOnlyUsersThatHaveBeen
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "DAS_20647" name on "Applications" page with following items
+	When User create static list with 'DAS_20647' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -235,7 +235,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "DAS_20425" name on "Applications" page with following items
+	When User create static list with 'DAS_20425' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -305,11 +305,11 @@ Scenario: EvergreenJnr_AdminPage_RemoveOwnerAndRadioBattonValidationOnEndUserPag
     When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
-	When User create static list with "DAS_20427_forComponent_1" name on "Users" page with following items
+	When User create static list with 'DAS_20427_forComponent_1' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
 	| 024213574157421A9CD |
-	When User create static list with "DAS_20427_1" name on "Applications" page with following items
+	When User create static list with 'DAS_20427_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -354,10 +354,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperWarningMessageDisplaysIfAOCScope
     When User clicks 'UPDATE PROJECT' button
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
-	When User create static list with "DAS_20825_UserList_1A" name on "Users" page with following items
+	When User create static list with 'DAS_20825_UserList_1A' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
-	When User create static list with "DAS_20825_AppList_1" name on "Applications" page with following items
+	When User create static list with 'DAS_20825_AppList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -375,10 +375,10 @@ Scenario: EvergreenJnr_AdminPage_CheckWarningPopUpAfterDeletingUserScopeFromAOCA
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_21198_Proj | All Users | None            | Standalone Project |
-	When User create static list with "DAS_21198" name on "Applications" page with following items
+	When User create static list with 'DAS_21198' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
-	When User create static list with "DAS_21198_scope" name on "Users" page with following items
+	When User create static list with 'DAS_21198_scope' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -414,7 +414,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyOnboardedUsersThatInTheScopeListCa
 	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'DAS_21181_AppStatList_2' list
 	When User clicks the Permissions button
 	When User selects 'Everyone can see' in the 'Sharing' dropdown
-	When User create static list with "DAS_21181" name on "Applications" page with following items
+	When User create static list with 'DAS_21181' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it

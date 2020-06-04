@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19215 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatWhenСomponentIsSelectedAndTheUserCollapsesThePagesBranchThePageItemHasAnOrangeBorderAndNotOrangeText
-	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
+	When User create static list with 'SelfServiceStaticAppList' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWhenСomponentIsSelectedAndTheUserColl
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21165 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_ChecThatProperErrorMessageDisplaysWhenUserIsTryingToUpdateNonExistingComponent
-	When User create static list with "DAS_21165_AppList_2" name on "Applications" page with following items
+	When User create static list with 'DAS_21165_AppList_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
 	When User creates Self Service via API and open it

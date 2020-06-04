@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayAndFormatingOfTextComponentOnEndUse
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20050 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckEditingAndChangingOrder
-	When User create static list with "DAS_20050_2" name on "Applications" page with following items
+	When User create static list with 'DAS_20050_2' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	When User creates Self Service via API and open it
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditingAndChangingOrder
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20626 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
-	When User create static list with "DAS_20626" name on "Applications" page with following items
+	When User create static list with 'DAS_20626' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
