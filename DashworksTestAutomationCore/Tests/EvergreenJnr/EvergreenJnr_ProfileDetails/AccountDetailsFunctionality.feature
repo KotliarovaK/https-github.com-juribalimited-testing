@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache
 	And User clicks 'UPDATE' button
 	Then 'User preferences have been changed' text is displayed on inline success banner
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS13026 @DAS14187 @Remove_Password_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS13026 @DAS14187 @DAS21305 @Remove_Password_Changes
 Scenario: EvergreenJnr_UserProfile_ChangingPassword
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
@@ -165,7 +165,19 @@ Scenario: EvergreenJnr_UserProfile_ChangingPassword
 	When User enters '54891' text to 'New Password' textbox
 	When User enters '54891' text to 'Confirm Password' textbox
 	And User clicks 'UPDATE' button
-	Then 'New password must be at least 6 characters long' text is displayed on inline error banner
+	Then 'Enter a password between 6 and 128 characters long' text is displayed on inline error banner
+	And There are no errors in the browser console
+	When User enters 'm!gration' text to 'Current Password' textbox
+	When User enters '       ' text to 'New Password' textbox
+	When User enters '       ' text to 'Confirm Password' textbox
+	And User clicks 'UPDATE' button
+	Then 'Enter a password between 6 and 128 characters long' text is displayed on inline error banner
+	And There are no errors in the browser console
+	When User enters 'm!gration' text to 'Current Password' textbox
+	When User enters 'StringWithMoreThan128CharactersStringWithMoreThan128CharactersStringWithMoreThan128CharactersStringWithMoreThan128CharactersString' text to 'New Password' textbox
+	When User enters 'StringWithMoreThan128CharactersStringWithMoreThan128CharactersStringWithMoreThan128CharactersStringWithMoreThan128CharactersString' text to 'Confirm Password' textbox
+	And User clicks 'UPDATE' button
+	Then 'Enter a password between 6 and 128 characters long' text is displayed on inline error banner
 	And There are no errors in the browser console
 	When User enters 'm!gration' text to 'Current Password' textbox
 	When User enters 'test5846' text to 'New Password' textbox
