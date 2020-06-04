@@ -394,6 +394,9 @@ namespace DashworksTestAutomation.Helpers
                 case "Devices_Scope \\ First_Action":
                     return "automationField_11_10_date";
 
+                case "UserSchedu: Three \\ Migrated Date":
+                    return "project_task_41_12844_2_Task";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }
