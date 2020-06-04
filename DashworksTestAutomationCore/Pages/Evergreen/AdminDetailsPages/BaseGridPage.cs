@@ -619,9 +619,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetGridCell(int rowIndex, string colId)
         {
-            return (IWebElement)Driver.ExecuteScript(
-                $"return document.evaluate('.//div[@row-index=\"{rowIndex}\"]//div[@col-id=\"{colId}\" and @role=\"gridcell\"]', document).iterateNext();");
-            //$"return document.evaluate('.//div[@row-index=\"{rowIndex}\"]//div[@col-id=\"{colId}\" and @role=\"gridcell\"]//*[string-length(text())>0]', document).iterateNext();");
+            var script =
+                    $"return document.evaluate('.//div[@row-index=\"{rowIndex}\"]//div[@col-id=\"{colId}\" and @role=\"gridcell\"]', document).iterateNext();";
+            var element = (IWebElement)Driver.ExecuteScript(script);
+            return element;
+        }
+
+        public IWebElement GetGridRow(int rowIndex)
+        {
+            var rowSelector =
+                $"return document.evaluate('.//div[@row-index=\"{rowIndex}\"]', document).iterateNext();";
+            var rowElement = (IWebElement)Driver.ExecuteScript(rowSelector);
+            return rowElement;
         }
 
         /// <summary>
@@ -638,14 +647,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
             var columnData = new List<string>();
             var iter = 0;
-            var element = GetGridCell(iter, colId);
-            columnData.Add(element.Text);
+            IWebElement element = null;
+
+            if (GetGridRow(iter) != null && GetGridCell(iter, colId) != null)
+            {
+                element = GetGridCell(iter, colId);
+                columnData.Add(element.Text);
+            }
             do
             {
                 iter++;
                 try
                 {
-                    Driver.MouseHoverByJavascript(element);
+                    if (element != null)
+                    {
+                        Driver.MouseHoverByJavascript(element);
+                    }
                     element = GetGridCell(iter, colId);
                 }
                 catch (StaleElementReferenceException)
