@@ -430,7 +430,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperInlineErrorBannerDispaysWhenSelf
 	When User clicks 'CREATE' button
 	Then 'A self service already exists with this identifier' text is displayed on inline error banner
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21433 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21433 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatNoUnsavedChagesPopupWhenUserLeaveCreateSSBlancAndNavigateToSettings
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
