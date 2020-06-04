@@ -15,7 +15,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValues
 	| SelectedRowsName |
 	| <Row>            |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	Then 'UPDATE' button is disabled
 	When User selects 'Remove all values' in the 'Update Values' dropdown
@@ -38,7 +38,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValue
 	| SelectedRowsName |
 	| <Row>            |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace all values' in the 'Update Values' dropdown
 	When User adds '1' value from 'Value' textbox
@@ -72,7 +72,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingVa
 	| SelectedRowsName |
 	| <Row>            |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Add to existing values' in the 'Update Values' dropdown
 	When User adds 'test' value from 'Value' textbox
@@ -95,7 +95,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificV
 	| SelectedRowsName |
 	| <Row>            |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Remove specific values' in the 'Update Values' dropdown
 	When User adds 'test' value from 'Value' textbox
@@ -118,7 +118,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleVa
 	| SelectedRowsName |
 	| <Row>            |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	And User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace single value' in the 'Update Values' dropdown
 	When User enters 'tests' text to 'Find Value' textbox

@@ -18,5 +18,5 @@ Scenario: EvergreenJnr_AdminPage_CheckBulkUpdateCustomFieldActionsForDisabledCus
 	| SelectedRowsName |
 	| Hunter, Melanie  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	Then '18166_CF' content is not displayed in 'Custom Field' autocomplete after search
