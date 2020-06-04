@@ -56,7 +56,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableF
 	| Los Angeles | GREEN	|
 	| San Diego   | BLOCKED |
 
-
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556
 Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFieldForDevices
 	When User clicks 'Devices' on the left-hand menu
