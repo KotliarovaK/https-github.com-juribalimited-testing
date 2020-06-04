@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying
 @Evergreen @Associations @DAS19810 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithColumnApplicationCustomField
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All User Applications" list
+	When User navigates to the "All Application Users" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project or Evergreen' autocomplete
 	When User selects 'Current' option in 'Search associations' autocomplete of Associations panel
