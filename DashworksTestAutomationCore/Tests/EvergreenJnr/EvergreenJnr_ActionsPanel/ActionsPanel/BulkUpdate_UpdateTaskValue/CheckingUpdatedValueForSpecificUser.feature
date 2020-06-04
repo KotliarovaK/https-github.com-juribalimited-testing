@@ -30,7 +30,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	| SelectedRowsName |
 	| <RowName>        |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	When User navigate to the bottom of the Action panel
@@ -59,7 +59,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	| SelectedRowsName |
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects '<DefaultValue>' in the 'Update Value' dropdown
@@ -110,7 +110,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	| SelectedRowsName |
 	| <RowName>        |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects '<NewValue>' in the 'Update Value' dropdown
@@ -142,7 +142,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	| SelectedRowsName |
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects '<DefaultValue>' in the 'Update Value' dropdown
@@ -198,7 +198,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	| SelectedRowsName |
 	| LZI970280        |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'Complete' in the 'Update Value' dropdown
@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	| SelectedRowsName |
 	| LZI970280        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	When User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	When User selects 'Failed' in the 'Update Value' dropdown
@@ -271,7 +271,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	| SelectedRowsName |
 	| LZI970280        |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
@@ -303,7 +303,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	| SelectedRowsName |
 	| LZI970280        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown

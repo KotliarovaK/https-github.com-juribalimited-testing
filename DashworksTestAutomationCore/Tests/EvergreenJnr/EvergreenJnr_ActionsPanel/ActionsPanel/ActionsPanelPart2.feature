@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNoErrorDisplayedWhenBulkUpdateMai
 	| SelectedRowsName                 |
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
+	And User selects 'Update ring' option from 'Bulk Update Type' autocomplete
 	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	And User clicks 'UPDATE' button 
@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnUserboxListForRingBulkUpdateOptionsO
 	| SelectedRowsName     |
 	| $231000-3AC04R8AR431 |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
+	And User selects 'Update ring' option from 'Bulk Update Type' autocomplete
 	Then 'Project or Evergreen' autocomplete contains following options:
 	| Options                                  |
 	| Barry's User Project                     |
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenBucketsInBulkUp
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
+	And User selects 'Update bucket' option from 'Bulk Update Type' autocomplete
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'Bucket' autocomplete options are sorted in the alphabetical order
 
@@ -131,6 +131,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenCapacityUnitsIn
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
+	And User selects 'Update capacity unit' option from 'Bulk Update Type' autocomplete
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'Capacity Unit' autocomplete options are sorted in the alphabetical order

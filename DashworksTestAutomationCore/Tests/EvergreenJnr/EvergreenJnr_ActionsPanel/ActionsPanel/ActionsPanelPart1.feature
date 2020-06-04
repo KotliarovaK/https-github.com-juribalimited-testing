@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesList
 	| 00BDBAEA57334C7C8F4@bclabs.local |
 	| 016E1B57C2DD4FCC986@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
+	And User selects 'Update bucket' option from 'Bulk Update Type' autocomplete
 	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project or Evergreen' autocomplete
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
 	Then following Values are displayed in the 'Also Move Users' dropdown:
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdate
 	| 00BDBAEA57334C7C8F4@bclabs.local |
 	| 016E1B57C2DD4FCC986@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
+	And User selects 'Update bucket' option from 'Bulk Update Type' autocomplete
 	Then 'Project or Evergreen' autocomplete contains following options:
 	| Options                            |
 	| Email Migration                    |
@@ -111,14 +111,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI             |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	Then following Values are displayed in the 'Bulk Update Type' dropdown:
-	| Options                       |
-	| Update application attributes |
-	| Update capacity unit          |
-	| Update custom field           |
-	| Update path                   |
-	| Update task value             |
-	| Manage favourites             |
+	#Add step to check defoult value for 'Bulk Update Type'autocomplete 4/06/2020 Kate
+	#Then following Values are displayed in the 'Bulk Update Type' dropdown:
+	#| Options                       |
+	#| Update application attributes |
+	#| Update capacity unit          |
+	#| Update custom field           |
+	#| Update path                   |
+	#| Update task value             |
+	#| Manage favourites             |
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS197462 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckActionPanelAfterAddingObjectsToStaticListViaListPanel

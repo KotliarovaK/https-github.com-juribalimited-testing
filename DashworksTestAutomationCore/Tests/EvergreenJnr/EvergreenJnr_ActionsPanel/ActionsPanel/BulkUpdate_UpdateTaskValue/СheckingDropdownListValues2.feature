@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 	| SelectedRowsName |
 	| Empty            |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
+	And User selects 'Update capacity unit' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Evergreen Capacity Unit 1' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	| SelectedRowsName |
 	| 00I0COBFWHOF27   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects '2004 Rollout' option from 'Project' autocomplete
 	And User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	| SelectedRowsName |
 	| CDQ172G3MZS444   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeProp
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProp
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Project Dates \ Forecast Date' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Audit & Configuration \ Validate User Device Ownership' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown

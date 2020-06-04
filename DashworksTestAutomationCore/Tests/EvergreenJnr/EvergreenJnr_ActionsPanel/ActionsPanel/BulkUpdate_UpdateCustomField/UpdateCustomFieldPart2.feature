@@ -14,7 +14,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckUpdateCustomFieldValues
 	| SelectedRowsName |
 	| <Row>            |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects '<CustomFieldValue>' option from 'Custom Field' autocomplete
 	Then '<MissingContent>' content is not displayed in 'Custom Field' autocomplete after search
 	Then 'UPDATE' button is disabled
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Remove all values' in the 'Update Values' dropdown
 	When User clicks 'UPDATE' button 
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	Then '' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Replace all values' in the 'Update Values' dropdown
 	When User adds '111' value from 'Value' textbox
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Add to existing values' in the 'Update Values' dropdown
 	#DAS18031
@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	Then 'alpha, beta' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Replace all values' in the 'Update Values' dropdown
 	#DAS18031
@@ -129,7 +129,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Replace single value' in the 'Update Values' dropdown
 	#DAS18031
@@ -146,7 +146,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForR
 	Then 'second' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Replace single value' in the 'Update Values' dropdown
 	When User enters 'second' text to 'Find Value' textbox
@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Remove specific values' in the 'Update Values' dropdown
 	#DAS18031
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForRepl
 	Then '02' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	And User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Add to existing values' in the 'Update Values' dropdown
 	When User adds '01' value from 'Value' textbox

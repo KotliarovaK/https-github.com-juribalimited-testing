@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUpdateCriticalityIsVisible
 	| SelectedRowsName  |
 	| 7-Zip 16.02 (x64) |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Criticality' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCriticalityWhenUpdateButtonCl
 	| SelectedRowsName  |
 	| 7-Zip 16.02 (x64) |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
 	Then 'UPDATE' button is disabled
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateC
 	| SelectedRowsName |
 	| Backburner       |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Core' in the 'Criticality' dropdown
 	When User selects 'GREEN' in the 'Sticky Compliance' dropdown
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateC
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Uncategorised' in the 'Criticality' dropdown
 	When User selects 'Remove' in the 'Sticky Compliance' dropdown
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCri
 	| SelectedRowsName |
 	| AddFlow 4        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project or Evergreen' autocomplete
 	When User selects 'Important' in the 'Criticality' dropdown
 	When User selects 'RETIRE' in the 'Rationalisation' dropdown
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCri
 	Then 'TRUE' content is displayed in the 'UseMeForAu: Hide From End Users' column
 	#Revert changes
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project or Evergreen' autocomplete
 	When User selects 'Core' in the 'Criticality' dropdown
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
