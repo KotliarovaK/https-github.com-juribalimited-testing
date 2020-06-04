@@ -191,7 +191,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| 30 Jul 2017 |
 	Then Rows counter shows "0" of "6" rows
 	When User clicks Reset Filters button on the Admin page
-	Then field for Date column is empty
+	Then '' content is displayed in 'Date' textbox
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Rows counter shows "1" of "6" rows
 	When User clicks Reset Filters button on the Admin page
@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| 30 Jul 2017 |
 	Then Rows counter shows "0" of "6" rows
 	When User clicks Reset Filters button on the Admin page
-	Then field for Date column is empty
+	Then '' content is displayed in 'Date' textbox
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Rows counter shows "1" of "6" rows
 	When User clicks Reset Filters button on the Admin page
