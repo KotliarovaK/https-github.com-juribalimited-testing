@@ -104,9 +104,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-star']//ancestor::button")]
-        public IWebElement StarButton { get; set; }
-
         #region All Lists dropdown
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownActionsLists')]")]

@@ -33,6 +33,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             };
         }
 
+        public IList<string> GetAllRowsValue()
+        {
+            Driver.WaitForElementsToBeDisplayed(Rows);
+            var by = By.XPath(".//td[1]//self::*[string-length(text())>0]");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
+
         public IWebElement GetRowByKey(string key)
         {
             Driver.WaitForElementsToBeDisplayed(Rows);
