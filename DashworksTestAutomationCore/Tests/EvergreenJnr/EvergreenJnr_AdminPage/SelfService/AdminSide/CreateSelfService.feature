@@ -463,5 +463,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoUnsavedChagesPopupWhenUserLeaveCreat
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
-	When User navigates to the 'Self Services' parent left menu item
+	When User navigates to the 'Self Service Settings' left submenu item
 	Then popup is not displayed to User
