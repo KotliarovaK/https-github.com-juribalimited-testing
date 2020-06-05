@@ -675,7 +675,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 //Data loading
                 if (element == null)
                 {
-                    Thread.Sleep(3000);
+                    Thread.Sleep(2000);
                     element = GetGridCell(iter, colId);
                 }
 
