@@ -650,7 +650,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEvergrinRingBasedListCanBeUsedInW
 	| SelectedValues   |
 	| Evergreen Ring 1 |
 	| Evergreen Ring 2 |
-	When User create dynamic list with "Devices_List_DAS20973" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'Devices_List_DAS20973' list
 	Then "Devices_List_DAS20973" list is displayed to user
 	When Dashboard with 'Dashboard_20973' name created via API and opened
 	When User checks 'Edit mode' slide toggle

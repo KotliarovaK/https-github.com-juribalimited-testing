@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then Page with 'TestBucket2' header is displayed to user
-	When User updates the "Default Bucket" checkbox state
+	When User checks 'Default Bucket' checkbox
 	When User clicks 'UPDATE' button
 	Then 'TestBucket2' text in 'The {0} bucket has been updated' message is displayed on inline success banner
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
@@ -28,6 +28,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Bucket" column
-	And User updates the "Default Bucket" checkbox state
+	When User checks 'Default Bucket' checkbox
 	When User clicks 'UPDATE' button
 	Then 'Unassigned' text in 'The {0} bucket has been updated' message is displayed on inline success banner

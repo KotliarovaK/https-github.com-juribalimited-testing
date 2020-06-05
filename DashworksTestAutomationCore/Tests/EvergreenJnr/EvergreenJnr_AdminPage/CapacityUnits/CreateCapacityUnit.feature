@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User close message on the Admin page
 	Then 'DefaultCapacityUnit13720' content is displayed in the 'Capacity Unit' column
 	When User clicks content from "Capacity Unit" column
-	Then "Default Unit" checkbox is checked and cannot be unchecked
+	Then "Default unit" checkbox is checked and cannot be unchecked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13013 @DAS12926 @DAS18351 @DAS18920 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWithTheSameNameInDifferentCase

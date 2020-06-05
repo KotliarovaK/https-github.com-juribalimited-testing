@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using AutomationUtils.Extensions;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.Base;
@@ -74,5 +76,20 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
         }
 
         #endregion
+
+        //Currently are using only for Self Service Dialog Page
+        public bool IsItemInListOfDialogPageDisplayed(string itemName)
+        {
+            try
+            {
+                var selector = $"{BaseDialogPageSelectors.PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{itemName}']";
+
+                return Driver.FindElement(By.XPath(selector)).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -465,7 +465,7 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFi
 		| Application (Saved List) |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS21015 @Cleanup
-Scenario Outline: EvergreenJnr_UsersList_ChecksThatMailboxFiltersWorksAndCanBeSavedAsPartOfList
+Scenario: EvergreenJnr_UsersList_ChecksThatMailboxFiltersWorksAndCanBeSavedAsPartOfList
 	When User clicks 'Users' on the left-hand menu
 	When User clicks the Filters button
 	When user select "Mailbox" filter
@@ -477,3 +477,22 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatMailboxFiltersWorksAndCanBeSa
 	Then There are no errors in the browser console
 	When User create dynamic list with "UsersList_21015" name on "Users" page
 	Then "UsersList_21015" list is displayed to user
+
+@Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS21470 @Cleanup
+Scenario Outline: EvergreenJnr_UsersList_CheckstAppCountUsedColumnClickingThrough
+	When User clicks 'Users' on the left-hand menu
+	When User clicks the Filters button
+	When User add "<filter>" filter where type is "<operator>" with added column and following value:
+	| Values  |
+	| <value> |
+	When User Add And "Username" filter where type is "Equals" with added column and following value:
+	| Values     |
+	| <username> |
+	When User clicks content from "<filter>" column
+	When User clicks the Filters button
+	Then "<filter_info>" is displayed in added filter info
+
+Examples:
+	| filter            | operator       | value | username   | filter_info                                                         |
+	| App Count (Total) | Does not equal | 100   | AWX8527521 | User is FR\AWX8527521 (Guy Paquet) has used app; or entitled to app |
+	| App Count (Used)  | Greater than   | 86    | AIU7879787 | User is FR\AIU7879787 (Moore Reault) has used app                   |

@@ -1091,10 +1091,20 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityColumnWorks
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS21362
 Scenario: EvergreenJnr_DevicesList_CheckThatSortingAscIsDisplayedEmptyCellsAtTheTop
 	When User clicks 'Devices' on the left-hand menu
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName           |
-	| App Count (Entitled) |
-	When User clicks on 'App Count (Entitled)' column header
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "App Count (Entitled)" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 0      |
 	Then all cells in the 'App Count (Entitled)' column are empty
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS21508
+Scenario: EvergreenJnr_DevicesList_CheckThatStageNameIsNotDuplicatedWhileSearching
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Columns button
+	When User enters "Windows7Mi: Pre-Migration" text in Search field at Columns Panel
+	When User close all columns categories
+	Then Category with counter is displayed on Columns panel
+	| Category                   | Number |
+	| Project Tasks: Windows7Mi  | 20     |
+	| Project Stages: Windows7Mi | 1      |

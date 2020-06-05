@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         //column = 1 is a first column after keys
         public List<string> GetRowsContent(int column = 1)
         {
-            var content = Rows.Select(x => GetContentFromRow(x)).ToList();
+            var content = Rows.Select(x => GetContentFromRow(x, column)).ToList();
             return content;
         }
 
@@ -77,7 +77,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         private string GetContentFromRow(IWebElement element, int column = 1)
         {
             var content = element.FindElement(By.XPath($".//td[{column + 1}]//span | .//td[{column + 1}]//div[count(*)=0] | .//td[{column + 1}]"));
-
             return content.Text;
         }
     }

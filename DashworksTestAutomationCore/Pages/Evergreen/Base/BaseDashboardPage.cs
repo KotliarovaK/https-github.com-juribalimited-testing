@@ -897,10 +897,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
             var namedTextbox = GetDropdown(placeholder);
             var errorSelector = By.XPath($".//ancestor::div[@dropdownstyle]//mat-error");
-            
+
             if (!Driver.IsElementDisplayed(namedTextbox.FindElement(errorSelector), WebDriverExtensions.WaitTime.Medium))
                 throw new Exception($"Error message was not displayed for '{placeholder}' dropdown");
-            
+
             return namedTextbox.FindElement(errorSelector);
         }
 
@@ -935,6 +935,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var selector =
                 By.XPath($"{DropdownOptionsSelector(withoutSelected)}/parent::div//i[contains(@class, '{iconName}')]");
             return Driver.IsElementDisplayed(selector);
+        }
+
+        public IWebElement GetMatIconsOfDropdownOptionsByName(string value, string matIconName, bool withoutSelected = false)
+        {
+            var optionWithIcon = GetItemsWithIconInDropdownOptions(matIconName, withoutSelected);
+            if (!optionWithIcon.Any(x => x.Text.Equals(value)))
+            {
+                throw new Exception($"Unable to find '{value}' option with icon");
+            }
+
+            var element = optionWithIcon.First(x => x.Text.Equals(value));
+            return element;
+        }
+
+        public IList<IWebElement> GetItemsWithIconInDropdownOptions(string icon, bool withoutSelected = false)
+        {
+            Driver.WaitForElementsToBeDisplayed(By.XPath(DropdownOptionsSelector(withoutSelected)));
+            return Driver.FindElements(By.XPath(
+                $"{DropdownOptionsSelector(withoutSelected)}/../mat-icon[contains(@class,'ng-{icon}')]/following-sibling::span"));
         }
 
         public bool IsDropdownOpened(bool withoutSelected = false)
@@ -1420,6 +1439,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetIcon(string iconTextInDom)
         {
             return Driver.FindElement(By.XPath($".//i[@class='material-icons'][text()='{iconTextInDom}']"));
+        }
+
+        public IWebElement GetMatIconByClassContent(string iconName)
+        {
+            return Driver.FindElement(By.XPath($".//i[contains(@class, 'material-icons') and contains(@class, 'mat-{iconName}')]//ancestor::button"));
         }
 
         #endregion

@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Associations @DAS20187 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectApplicationAssociationsArePersistedOfTheAllValues
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
@@ -20,14 +20,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectApplicationAssociationsA
 	When User creates 'Association20187' dynamic list
 	When User remembers the found rows number
 	When User navigates to the "All Applications" list
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User navigates to the "Association20187" list
 	Then Rows counter number equals to remembered value
 
 @Evergreen @Associations @DAS20131
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserCantAddMoreThanFiveAssociations
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying
 	When User selects 'High Contrast' in the 'Display Mode' dropdown
 	When User clicks 'UPDATE' button
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	Then 'RUN LIST' button is disabled
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying
 @Evergreen @Associations @DAS19810 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithColumnApplicationCustomField
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All User Applications" list
+	When User navigates to the "All Application Users" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project or Evergreen' autocomplete
 	When User selects 'Current' option in 'Search associations' autocomplete of Associations panel

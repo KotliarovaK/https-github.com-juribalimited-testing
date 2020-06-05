@@ -17,8 +17,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| 00RUUMAH9OZN9A   |
 	| 00SH8162NAS524   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	Then following Values are displayed in the 'Bulk Update Type' dropdown:
-	| Options              |
+	#Add step to check defoult value for 'Bulk Update Type'autocomplete 4/06/2020 Kate
+	Then 'Bulk Update Type' autocomplete contains following options:
+	| Options                                          |
 	| Update bucket        |
 	| Update capacity unit |
 	| Update custom field  |
@@ -26,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| Update ring          |
 	| Update task value    |
 	| Manage favourites    |
-	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Request Type:Device' option from 'Path' autocomplete
 	And User clicks 'CANCEL' button 
@@ -43,7 +44,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| SelectedRowsName |
 	| 00OMQQXWA1DRI6   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	Then 'Project' autocomplete contains following options:
 	| Options                                          |
 	| *Project K-Computer Scheduled Project            |
@@ -88,7 +89,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	And User selects 'Barry's User Project' option from 'Project' autocomplete
 	And User selects 'Desktop Replacement' option from 'Path' autocomplete
 	When User clears 'Project' autocomplete
@@ -105,16 +106,17 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	Then following Values are displayed in the 'Bulk Update Type' dropdown:
-	| Options              |
-	| Update bucket        |
-	| Update capacity unit |
-	| Update custom field  |
-	| Update path          |
-	| Update ring          |
-	| Update task value    |
-	| Manage favourites    |
-	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	#Add step to check defoult value for 'Bulk Update Type'autocomplete 4/06/2020 Kate
+	#Then following Values are displayed in the 'Bulk Update Type' dropdown:
+	#| Options              |
+	#| Update bucket        |
+	#| Update capacity unit |
+	#| Update custom field  |
+	#| Update path          |
+	#| Update ring          |
+	#| Update task value    |
+	#| Manage favourites    |
+	When User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
 	And User selects 'User Request Type 2' option from 'Path' autocomplete
 	When User clears 'Project' autocomplete
@@ -131,7 +133,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	Then 'Project' autocomplete options are sorted in the alphabetical order
 	When User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'Request Type A' option from 'Path' autocomplete
@@ -149,16 +151,17 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	| SelectedRowsName                 |
 	| 00A5B910A1004CF5AC4@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	Then following Values are displayed in the 'Bulk Update Type' dropdown:
-	| Options              |
-	| Update bucket        |
-	| Update capacity unit |
-	| Update custom field  |
-	| Update path          |
-	| Update ring          |
-	| Update task value    |
-	| Manage favourites    |
-	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	#Add step to check defoult value for 'Bulk Update Type'autocomplete 4/06/2020 Kate
+	#Then following Values are displayed in the 'Bulk Update Type' dropdown:
+	#| Options              |
+	#| Update bucket        |
+	#| Update capacity unit |
+	#| Update custom field  |
+	#| Update path          |
+	#| Update ring          |
+	#| Update task value    |
+	#| Manage favourites    |
+	When User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	And User selects 'Email Migration' option from 'Project' autocomplete
 	And User selects 'Personal Mailbox - VIP' option from 'Path' autocomplete
 	When User clears 'Project' autocomplete
@@ -175,25 +178,25 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	| 00CWZRC4UK6W20   |
 	| 00HA7MKAVVFDAV   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
+	And User selects 'Update capacity unit' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'London - Southbank' option from 'Capacity Unit' autocomplete
 	#====#
-	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	And User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	And User selects '[Default (Computer)]' option from 'Path' autocomplete
 	#====#
-	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
+	And User selects 'Update ring' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project or Evergreen' autocomplete
 	And User selects 'Unassigned' option from 'Ring' autocomplete
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'Evergreen Ring 1' option from 'Ring' autocomplete
 	#====#
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Stage 2 \ Date Task (Computer)' option from 'Task' autocomplete
 	#====#
-	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
+	And User selects 'Update bucket' option from 'Bulk Update Type' autocomplete
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'Evergreen Bucket 1' option from 'Bucket' autocomplete
 	And User clicks 'UPDATE' button 
@@ -214,7 +217,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdatePathInBulkUpdateTypeTeamToGroupSe
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	And User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'TestBulkUpdate' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
@@ -228,7 +231,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdatePathInBulkUpdateTypeTeamToGroupSe
 		#Revert Changes
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update path' in the 'Bulk Update Type' dropdown
+	And User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	And User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects '[Default (Computer)]' option from 'Path' autocomplete
 	And User clicks 'UPDATE' button 
@@ -238,3 +241,34 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdatePathInBulkUpdateTypeTeamToGroupSe
 	When User refreshes agGrid
 	And User perform search by "Z11REX196H34MG"
 	Then '[Default (Computer)]' content is displayed in the 'zDeviceAut: Path' column
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS21036
+Scenario: EvergreenJnr_DevicesList_CheckThatWarningBannerDisappearsAfterClosingActionPanel
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00KLL9S8NRF0X6   |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' option from 'Bulk Update Type' autocomplete
+	When User selects 'Barry's User Project' option from 'Project' autocomplete
+	When User selects 'Desktop Replacement' option from 'Path' autocomplete
+	When User clicks 'UPDATE' button 
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
+	When User clicks the Actions button
+	Then inline tip banner is not displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00KLL9S8NRF0X6   |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update path' option from 'Bulk Update Type' autocomplete
+	When User selects 'Barry's User Project' option from 'Project' autocomplete
+	When User selects 'Desktop Replacement' option from 'Path' autocomplete
+	When User clicks 'UPDATE' button 
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00KLL9S8NRF0X6   |

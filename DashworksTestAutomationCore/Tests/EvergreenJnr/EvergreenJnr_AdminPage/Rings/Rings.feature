@@ -14,20 +14,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User navigates to the 'Details' left menu item
 	Then 'Clone Evergreen rings to project rings' content is displayed in 'Rings' dropdown
 	When User navigates to the 'Rings' left menu item
-	And User enters "Unassigned" text in the Search field for "Ring" column
-	And User clicks content from "Ring" column
+	When User enters "Unassigned" text in the Search field for "Ring" column
+	When User clicks content from "Ring" column
 	Then Ring settings Maps to evergreen ring is displayed as "Unassigned"
 	When User sets "None" value in Maps to evergreen ring field
 	Then Ring settings Maps to evergreen ring is displayed as "None"
 	When User clicks 'Administration' header breadcrumb
 	When User clicks 'YES' button on popup
-	And User navigates to the 'Evergreen' left menu item
-	And User navigates to the 'Buckets' left menu item
-	And User clicks Reset Filters button on the Admin page
-	And User clicks String Filter button for "Project" column on the Admin page
-	And User selects "Select All" checkbox from String Filter with item list on the Admin page
-	And User clicks String Filter button for "Project" column on the Admin page
-	And User selects "ProjectForDAS14780" checkbox from String Filter with item list on the Admin page
+	When User navigates to the 'Evergreen' left menu item
+	When User navigates to the 'Buckets' left menu item
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "ProjectForDAS14780" checkbox from String Filter with item list on the Admin page
 	Then Content in the 'Bucket' column is equal to
 	| Content    |
 	| Unassigned |

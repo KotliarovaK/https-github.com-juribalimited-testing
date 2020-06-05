@@ -638,7 +638,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
         {
             var content = _driver.NowAt<BaseGridPage>();
-            content.GetHrefByColumnName(columnName);
             Verify.IsTrue(content.GetHrefByColumnName(columnName) != null, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
