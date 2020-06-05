@@ -87,21 +87,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Verify.IsFalse(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
         }
-
-        [Then(@"All Associations are selected by default")]
-        public void ThenAllAssociationsAreSelectedByDefault()
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            Verify.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
-        }
-
-        [Then(@"All Associations are disabled")]
-        public void ThenAllAssociationsAreDisabled()
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            Verify.IsTrue(projectsPage.DisabledAllAssociations.Displayed(), "All Associations is active");
-        }
-
+     
         [Then(@"User Scope checkboxes are disabled")]
         public void ThenUserScopeCheckboxesAreDisabled()
         {

@@ -47,30 +47,35 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then Page with 'TestProject5' header is displayed to user
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
-	And User navigates to the 'Applications' tab on Project Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 16819 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	Then All Associations are selected by default
+	Then 'Entitled to the user' checkbox is checked
+	Then 'Entitled to a device owned by the user' checkbox is checked
+	Then 'Installed on a device owned by the user' checkbox is checked
+	Then 'Used by the user on any device' checkbox is checked
+	Then 'Used by the user on a device they own' checkbox is checked
+	Then 'Used on an owned device by any user' checkbox is checked
 	When User navigates to the 'Device Scope' tab on Project Scope Changes page
-	And User selects "Do not include owned devices" checkbox on the Project details page
+	When User selects "Do not include owned devices" checkbox on the Project details page
 	Then Scope List dropdown is disabled
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then 'Entitled to a device owned by the user' checkbox is displayed
 	Then 'Installed on a device owned by the user' checkbox is displayed
 	Then 'Used on an owned device by any user' checkbox is displayed
 	When User navigates to the 'Scope Changes' left menu item
-	And User navigates to the 'Applications' tab on Project Scope Changes page
+	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Details' left menu item
-	And User selects "Clone Evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User selects "Clone Evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
-	And User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	Then 'Match to Evergreen Bucket' content is displayed in 'Bucket' dropdown
 
 @Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @Projects @DAS11886 @DAS12613 @DAS13199 @Cleanup @Project_Creation_and_Scope

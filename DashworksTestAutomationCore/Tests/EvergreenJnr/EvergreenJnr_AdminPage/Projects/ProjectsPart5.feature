@@ -13,19 +13,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	Then Page with 'TestName11881' header is displayed to user
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Details' left menu item
-	And User navigates to the 'Application Scope' tab on Project Scope Changes page
-	And User selects "Do not include applications" checkbox on the Project details page
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	When User selects "Do not include applications" checkbox on the Project details page
 	Then Scope List dropdown is disabled
-	Then All Associations are disabled
+	Then 'Entitled to the user' checkbox is disabled
+	Then 'Entitled to a device owned by the user' checkbox is disabled
+	Then 'Installed on a device owned by the user' checkbox is disabled
+	Then 'Used by the user on any device' checkbox is disabled
+	Then 'Used by the user on a device they own' checkbox is disabled
+	Then 'Used on an owned device by any user' checkbox is disabled
 	When User navigates to the 'Scope Changes' left menu item
 	Then inline info banner is not displayed
 	Then inline success banner is not displayed
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
-	And User navigates to the 'Application Scope' tab on Project Scope Changes page
-	And User selects "Include applications" checkbox on the Project details page
-	Then All Associations are selected by default
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	When User selects "Include applications" checkbox on the Project details page
+	Then 'Entitled to the user' checkbox is checked
+	Then 'Entitled to a device owned by the user' checkbox is checked
+	Then 'Installed on a device owned by the user' checkbox is checked
+	Then 'Used by the user on any device' checkbox is checked
+	Then 'Used by the user on a device they own' checkbox is checked
+	Then 'Used on an owned device by any user' checkbox is checked
 	Then Scope List dropdown is active
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
