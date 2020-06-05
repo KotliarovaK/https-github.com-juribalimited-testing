@@ -43,19 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [When(@"User selects following date filter on the Projects page")]
-        public void WhenUserSelectsFollowingDateFilterOnTheProjectsPage(Table table)
-        {
-            var filter = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            //filter.ResetFiltersButton.Click();
-            foreach (var row in table.Rows)
-            {
-                filter.DateFilterValue.SendKeys(row["FilterData"]);
-                filter.DateFilterValue.SendKeys(OpenQA.Selenium.Keys.Enter);
-            }
-        }
-
         //TODO: AnnI 3/25/20 Can we replace with WhenUserChecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step?
         [When(@"User selects ""(.*)"" checkbox from String Filter on the Admin page")]
         public void WhenUserSelectsCheckboxFromStringFilterOnTheAdminPage(string filterName)

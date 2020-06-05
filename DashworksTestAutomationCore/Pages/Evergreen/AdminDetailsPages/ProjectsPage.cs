@@ -55,9 +55,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Default Language']")]
         public IWebElement DefaultLanguage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
-        public IWebElement DateFilterValue { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[text()='Application Scope']")]
         public IWebElement ApplicationScopeTab { get; set; }
 
