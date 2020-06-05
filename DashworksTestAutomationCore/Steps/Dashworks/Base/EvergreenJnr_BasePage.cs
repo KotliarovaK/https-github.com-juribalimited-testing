@@ -1665,7 +1665,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenMatIconIsDisabled(string matIconName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.AreEqual(true, Convert.ToBoolean(page.GetMatIconByClassContent(matIconName).GetAttribute("disabled")),
+            Verify.AreEqual(true, page.GetMatIconByClassContent(matIconName).Disabled(),
                 $"{matIconName} mat icon is enabled");
         }
 
@@ -1673,7 +1673,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenMatIconIsNotDisabled(string matIconName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.AreEqual(false, Convert.ToBoolean(page.GetMatIconByClassContent(matIconName).GetAttribute("disabled")),
+            Verify.AreEqual(false, page.GetMatIconByClassContent(matIconName).Disabled(),
                 $"{matIconName} mat icon is disabled");
         }
 
