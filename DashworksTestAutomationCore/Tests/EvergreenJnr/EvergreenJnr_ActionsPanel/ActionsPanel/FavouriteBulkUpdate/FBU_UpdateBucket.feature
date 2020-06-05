@@ -53,14 +53,14 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBuck
 	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
-	Then following fields are displayed in the popup:
+	Then following fields are displayed in the table:
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
 	| Bucket               |
 	| Also Move Devices    |
 	| Also Move Mailboxes  |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field                | Data                 |
 	| Bulk Update Type     | Update bucket        |
 	| Project or Evergreen | Evergreen            |
@@ -92,13 +92,13 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'Amsterdam' option from 'Bucket' autocomplete
 	When User clicks 'star' mat icon
-	Then following fields are displayed in the popup:
+	Then following fields are displayed in the table:
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
 	| Bucket               |
 	| Also Move Users      |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field                | Data          |
 	| Bulk Update Type     | Update bucket |
 	| Project or Evergreen | Evergreen     |

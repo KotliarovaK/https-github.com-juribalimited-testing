@@ -55,26 +55,33 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	| Bulk Update Type |
 	| Project          |
 	| Path             |
-	#Then following fields are displayed in the popup:
-	#| Fields           |
-	#| Bulk Update Type |
-	#| Project          |
-	#| Path             |
-	#Then User compares data in the fields in the popup:
-	#| Field            | Data         |
-	#| Bulk Update Type | Update path  |
-	#| Project          | 2004 Rollout |
-	#| Path             | VIP User     |
-	#Then 'CANCEL' button is not disabled
-	#Then 'CREATE' button is disabled
-	#Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
-	#When User enters '' text to 'Favourite Bulk Update Name' textbox
-	#Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
-	#When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
-	#When User clicks 'CREATE' button
-	#When User clicks 'star' mat icon
-	#When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
-	#Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
+	Then User compares data in the fields from the table:
+	| Field            | Data         |
+	| Bulk Update Type | Update path  |
+	| Project          | 2004 Rollout |
+	| Path             | VIP User     |
+
+	Then following fields are displayed in the table:
+	| Fields           |
+	| Bulk Update Type |
+	| Project          |
+	| Path             |
+	Then User compares data in the fields from the table:
+	| Field            | Data         |
+	| Bulk Update Type | Update path  |
+	| Project          | 2004 Rollout |
+	| Path             | VIP User     |
+
+	Then 'CANCEL' button is not disabled
+	Then 'CREATE' button is disabled
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	When User enters '' text to 'Favourite Bulk Update Name' textbox
+	Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
+	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	When User clicks 'star' mat icon
+	When User enters '20772_TestFBU' text to 'Favourite Bulk Update Name' textbox
+	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
 @Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20773 @Cleanup @Yellow_Dwarf @Cleanup
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItems

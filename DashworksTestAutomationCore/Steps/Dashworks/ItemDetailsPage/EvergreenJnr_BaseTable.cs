@@ -53,6 +53,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Verify.AreEqual(expectedList, actualList, "Fields in the table are different");
         }
 
+        [Then(@"User compares data in the fields from the table:")]
+        public void ThenUserComparesDataInTheFieldsFromTheTable(Table table)
+        {
+            var page = _driver.NowAt<BaseTable>();
+            foreach (TableRow row in table.Rows)
+            {
+                var field = row["Field"];
+                var value = row["Data"];
+                Verify.AreEqual(page.GetRowContent(field), value,
+                    $"Incorrect data in the '{field}' field");
+            }
+        }
+
         #endregion
 
         #region Values

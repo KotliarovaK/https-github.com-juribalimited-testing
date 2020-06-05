@@ -40,7 +40,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
-
         public IWebElement GetRowByKey(string key)
         {
             Driver.WaitForElementsToBeDisplayed(Rows);
@@ -85,7 +84,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         private string GetContentFromRow(IWebElement element, int column = 1)
         {
             var content = element.FindElement(By.XPath($".//td[{column + 1}]//span | .//td[{column + 1}]//div[count(*)=0] | .//td[{column + 1}]"));
-
             return content.Text;
         }
     }

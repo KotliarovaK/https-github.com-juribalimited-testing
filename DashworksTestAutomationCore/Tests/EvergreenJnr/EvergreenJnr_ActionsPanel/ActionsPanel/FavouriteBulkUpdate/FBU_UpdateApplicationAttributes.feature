@@ -71,11 +71,11 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
-	Then following fields are displayed in the popup:
+	Then following fields are displayed in the table:
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field                | Data                          |
 	| Bulk Update Type     | Update application attributes |
 	| Project or Evergreen | Evergreen                     |
@@ -110,14 +110,14 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
-	Then following fields are displayed in the popup:
+	Then following fields are displayed in the table:
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
 	| Criticality          |
 	| Rationalisation      |
 	| Hide From End User   |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field                | Data                          |
 	| Bulk Update Type     | Update application attributes |
 	| Project or Evergreen | Barry's User Project          |

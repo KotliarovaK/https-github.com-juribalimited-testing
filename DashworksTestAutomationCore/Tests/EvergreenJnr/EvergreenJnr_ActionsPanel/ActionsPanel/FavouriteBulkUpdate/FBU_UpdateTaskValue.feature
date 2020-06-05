@@ -50,12 +50,12 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
-	Then following fields are displayed in the popup:
+	Then following fields are displayed in the table:
 	| Fields           |
 	| Bulk Update Type |
 	| Project          |
 	| Task             |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field            | Data                              |
 	| Bulk Update Type | Update task value                 |
 	| Project          | zUser Sch for Automations Feature |
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	When User selects 'Failed' in the 'Update Value' dropdown
 	When User selects 'weekdays before task value' in the 'DateUnit' dropdown
 	When User clicks 'star' mat icon
-	Then following fields are displayed in the popup:
+	Then following fields are displayed in the table:
 	| Fields           |
 	| Bulk Update Type |
 	| Project          |
@@ -163,14 +163,14 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	| Relative Project |
 	| Relative Task    |
 	| Value            |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field            | Data                                      |
 	| Bulk Update Type | Update task value                         |
 	| Project          | zUser Sch for Automations Feature         |
 	| Task             | Stage 2 \ Radio Date Slot App             |
 	| Update Value     | Failed                                    |
 	| Update Date      | Update relative to a different task value |
-	| Relative Project | zUser Sch for Automations Feature       |
+	| Relative Project | zUser Sch for Automations Feature         |
 	| Relative Task    | Stage 1 \ Radiobutton Date App Task       |
 	| Value            | 5 weekdays before task value              |
 	When User enters 'DAS20940_FBU' text to 'Favourite Bulk Update Name' textbox
@@ -497,14 +497,14 @@ Scenario: EvergreenJnr_AllUsers_CheckOwnerFieldCreateFavouriteBulkUpdatePopUp
 	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
 	When User selects 'D-Team' option from 'Team' autocomplete
 	When User clicks 'star' mat icon
-	Then following fields are displayed in the popup:
+	Then following fields are displayed in the table:
 	| Fields           |
 	| Bulk Update Type |
 	| Project          |
 	| Task             |
 	| Update Owner     |
 	| Team             |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field            | Data                         |
 	| Bulk Update Type | Update task value            |
 	| Project          | Computer Scheduled Test (Jo) |
