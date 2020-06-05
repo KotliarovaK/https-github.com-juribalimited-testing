@@ -186,9 +186,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by 'Bucket' column in ascending order
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by 'Bucket' column in descending order
-	When User selects following date filter on the Projects page
-	| FilterData  |
-	| 30 Jul 2017 |
+	When User enters '30 Jul 2017' text to 'Date' textbox
 	Then Rows counter shows "0" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	Then '' content is displayed in 'Date' textbox
@@ -240,9 +238,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by 'Status' column in ascending order
 	When User click on "Status" column header on the Admin page
 	Then data in table is sorted by 'Status' column in descending order
-	When User selects following date filter on the Projects page
-	| FilterData  |
-	| 30 Jul 2017 |
+	When User enters '30 Jul 2017' text to 'Date' textbox
 	Then Rows counter shows "0" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	Then '' content is displayed in 'Date' textbox

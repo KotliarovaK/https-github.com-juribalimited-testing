@@ -1097,3 +1097,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingAscIsDisplayedEmptyCellsAtThe
 	| Values |
 	| 0      |
 	Then all cells in the 'App Count (Entitled)' column are empty
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS21508
+Scenario: EvergreenJnr_DevicesList_CheckThatStageNameIsNotDuplicatedWhileSearching
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Columns button
+	When User enters "Windows7Mi: Pre-Migration" text in Search field at Columns Panel
+	When User close all columns categories
+	Then Category with counter is displayed on Columns panel
+	| Category                   | Number |
+	| Project Tasks: Windows7Mi  | 20     |
+	| Project Stages: Windows7Mi | 1      |

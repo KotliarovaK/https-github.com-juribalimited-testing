@@ -633,6 +633,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return rowElement;
         }
 
+        public int GetGridRowsCount()
+        {
+            var elements = Driver.FindElements(By.XPath(".//div[@row-index]/*[1]"));
+            return elements.Count;
+        }
+
         /// <summary>
         /// Scroll agGrid and collect data from it
         /// </summary>
@@ -649,14 +655,29 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var iter = 0;
             IWebElement element = null;
 
+            //If first cell exists. It can be empty if grid is grouped
             if (GetGridRow(iter) != null && GetGridCell(iter, colId) != null)
             {
                 element = GetGridCell(iter, colId);
                 columnData.Add(element.Text);
             }
+
+            //If grid has less than 17 rows then it makes no sense to scroll
+            var rowsCount = GetGridRowsCount();
+            if (rowsCount > 16)
+            {
+                rowsCount = maxScrolledRows;
+            }
+
             do
             {
                 iter++;
+
+                if (iter >= rowsCount)
+                {
+                    break;
+                }
+
                 try
                 {
                     if (element != null)
@@ -675,7 +696,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 //Data loading
                 if (element == null)
                 {
-                    Thread.Sleep(3000);
+                    Thread.Sleep(2000);
                     element = GetGridCell(iter, colId);
                 }
 

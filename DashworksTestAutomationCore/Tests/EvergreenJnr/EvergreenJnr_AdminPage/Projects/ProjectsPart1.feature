@@ -36,8 +36,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	| Private |
 	| Shared  |
 	When User enters 'TestProject7' text to 'Project Name' textbox
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks 'CREATE' button
+	When User selects 'All Devices' option from 'Scope' autocomplete
+	When User clicks 'CREATE' button
 	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks newly created object link
 	Then Page with 'TestProject7' header is displayed to user
@@ -46,16 +46,31 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	Then All Associations are selected by default
+	Then 'Entitled to the device owner' checkbox is checked
+	Then 'Entitled to the device' checkbox is checked
+	Then 'Installed on the device' checkbox is checked
+	Then 'Used by the device owner on any device' checkbox is checked
+	Then 'Used on the device by the device owner' checkbox is checked
+	Then 'Used on the device by any user' checkbox is checked
 	When User selects "Do not include applications" checkbox on the Project details page
-	Then All Associations are disabled
+	Then 'Entitled to the device owner' checkbox is disabled
+	Then 'Entitled to the device' checkbox is disabled
+	Then 'Installed on the device' checkbox is disabled
+	Then 'Used by the device owner on any device' checkbox is disabled
+	Then 'Used on the device by the device owner' checkbox is disabled
+	Then 'Used on the device by any user' checkbox is disabled
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User selects "Include applications" checkbox on the Project details page
-	Then All Associations are selected by default
+	Then 'Entitled to the device owner' checkbox is checked
+	Then 'Entitled to the device' checkbox is checked
+	Then 'Installed on the device' checkbox is checked
+	Then 'Used by the device owner on any device' checkbox is checked
+	Then 'Used on the device by the device owner' checkbox is checked
+	Then 'Used on the device by any user' checkbox is checked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14283 @DAS17167 @DAS20240 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved

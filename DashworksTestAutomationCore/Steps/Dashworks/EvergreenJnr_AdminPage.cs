@@ -43,19 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [When(@"User selects following date filter on the Projects page")]
-        public void WhenUserSelectsFollowingDateFilterOnTheProjectsPage(Table table)
-        {
-            var filter = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            //filter.ResetFiltersButton.Click();
-            foreach (var row in table.Rows)
-            {
-                filter.DateFilterValue.SendKeys(row["FilterData"]);
-                filter.DateFilterValue.SendKeys(OpenQA.Selenium.Keys.Enter);
-            }
-        }
-
         //TODO: AnnI 3/25/20 Can we replace with WhenUserChecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step?
         [When(@"User selects ""(.*)"" checkbox from String Filter on the Admin page")]
         public void WhenUserSelectsCheckboxFromStringFilterOnTheAdminPage(string filterName)
@@ -87,21 +74,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Verify.IsFalse(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
         }
-
-        [Then(@"All Associations are selected by default")]
-        public void ThenAllAssociationsAreSelectedByDefault()
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            Verify.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
-        }
-
-        [Then(@"All Associations are disabled")]
-        public void ThenAllAssociationsAreDisabled()
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            Verify.IsTrue(projectsPage.DisabledAllAssociations.Displayed(), "All Associations is active");
-        }
-
+     
         [Then(@"User Scope checkboxes are disabled")]
         public void ThenUserScopeCheckboxesAreDisabled()
         {
