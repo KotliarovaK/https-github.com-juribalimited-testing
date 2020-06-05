@@ -224,12 +224,15 @@ Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	And User clicks 'UPDATE PROJECT' button
 	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	#Change onbording to API step when DAS-20820 will be done
-	When User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
-	| Objects    |
-	| VSCmdShell |
-	And User clicks 'UPDATE ALL CHANGES' button
-	And User clicks 'UPDATE PROJECT' button
+	#Application onboarding
+    When User navigates to the 'Applications' tab on Project Scope Changes page
+    When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+    | Objects    |
+    | VSCmdShell |
+    When User clicks 'UPDATE ALL CHANGES' button
+    When User clicks 'UPDATE PROJECT' button
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
 	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	When User create static list with "DAS_20425_forComponent" name on "Users" page with following items
 	| ItemName            |
