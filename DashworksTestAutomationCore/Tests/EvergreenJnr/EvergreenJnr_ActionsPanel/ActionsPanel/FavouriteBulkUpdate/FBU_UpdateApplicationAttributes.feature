@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field                | Data                          |
 	| Bulk Update Type     | Update application attributes |
 	| Project or Evergreen | Evergreen                     |
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	| Criticality          |
 	| Rationalisation      |
 	| Hide From End User   |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field                | Data                          |
 	| Bulk Update Type     | Update application attributes |
 	| Project or Evergreen | Barry's User Project          |

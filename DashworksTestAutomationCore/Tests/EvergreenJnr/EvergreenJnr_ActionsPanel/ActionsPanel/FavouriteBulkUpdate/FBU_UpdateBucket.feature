@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBuck
 	| Bucket               |
 	| Also Move Devices    |
 	| Also Move Mailboxes  |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field                | Data                 |
 	| Bulk Update Type     | Update bucket        |
 	| Project or Evergreen | Evergreen            |
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| Project or Evergreen |
 	| Bucket               |
 	| Also Move Users      |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field                | Data          |
 	| Bulk Update Type     | Update bucket |
 	| Project or Evergreen | Evergreen     |

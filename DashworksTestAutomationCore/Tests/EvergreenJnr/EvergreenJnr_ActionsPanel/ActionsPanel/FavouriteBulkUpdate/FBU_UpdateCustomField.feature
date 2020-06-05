@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	| Custom Field     |
 	| Update Values    |
 	| Value            |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field            | Data                   |
 	| Bulk Update Type | Update custom field    |
 	| Custom Field     | Phoenix Field          |

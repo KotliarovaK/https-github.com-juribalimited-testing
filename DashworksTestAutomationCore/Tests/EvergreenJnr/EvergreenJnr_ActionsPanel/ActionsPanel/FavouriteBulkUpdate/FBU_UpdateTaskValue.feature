@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	| Bulk Update Type |
 	| Project          |
 	| Task             |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field            | Data                              |
 	| Bulk Update Type | Update task value                 |
 	| Project          | zUser Sch for Automations Feature |
@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	| Relative Project |
 	| Relative Task    |
 	| Value            |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field            | Data                                      |
 	| Bulk Update Type | Update task value                         |
 	| Project          | zUser Sch for Automations Feature         |
@@ -504,7 +504,7 @@ Scenario: EvergreenJnr_AllUsers_CheckOwnerFieldCreateFavouriteBulkUpdatePopUp
 	| Task             |
 	| Update Owner     |
 	| Team             |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field            | Data                         |
 	| Bulk Update Type | Update task value            |
 	| Project          | Computer Scheduled Test (Jo) |

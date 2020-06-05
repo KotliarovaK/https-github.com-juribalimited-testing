@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	| Bulk Update Type |
 	| Project          |
 	| Path             |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field            | Data         |
 	| Bulk Update Type | Update path  |
 	| Project          | 2004 Rollout |
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	| Bulk Update Type |
 	| Project          |
 	| Path             |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field            | Data         |
 	| Bulk Update Type | Update path  |
 	| Project          | 2004 Rollout |

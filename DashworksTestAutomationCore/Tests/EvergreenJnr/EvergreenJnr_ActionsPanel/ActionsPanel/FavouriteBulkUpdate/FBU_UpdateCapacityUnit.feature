@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateCapa
 	| Capacity Unit        |
 	| Also Move Devices    |
 	| Also Move Mailboxes  |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field                | Data                 |
 	| Bulk Update Type     | Update capacity unit |
 	| Project or Evergreen | Evergreen            |
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| Project or Evergreen |
 	| Capacity Unit        |
 	| Also Move Users      |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field                | Data                 |
 	| Bulk Update Type     | Update capacity unit |
 	| Project or Evergreen | Evergreen            |

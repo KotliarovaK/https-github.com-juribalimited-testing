@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateRing
 	| Ring                 |
 	| Also Move Devices    |
 	| Also Move Mailboxes  |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field                | Data                 |
 	| Bulk Update Type     | Update ring          |
 	| Project or Evergreen | Evergreen            |
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| Bulk Update Type     |
 	| Project or Evergreen |
 	| Ring                 |
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field                | Data                 |
 	| Bulk Update Type     | Update ring          |
 	| Project or Evergreen | Evergreen            |
@@ -207,6 +207,6 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	Then '' content is displayed in 'Ring' autocomplete
 	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
-	Then User compares data in the fields from the table:
+	Then User sees table with the following data
 	| Field | Data             |
 	| Ring  | [Ring not found] |
