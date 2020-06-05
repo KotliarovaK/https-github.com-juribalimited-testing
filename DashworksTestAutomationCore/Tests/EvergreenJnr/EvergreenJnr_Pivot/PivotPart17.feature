@@ -50,4 +50,9 @@ Scenario: EvergreenJnr_Devices_CheckThatSumAggregateFunctionWorks
 	Then Pivot run was completed
 	Then table content is present
 	Then There are no errors in the browser console
-	
+
+@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS21487
+Scenario: EvergreenJnr_Applications_CheckThatPivotCanBeGeneratedWithProjectReadinessIdRowGroupsValue
+	When User navigates to 'applications?$rowgroups=project_63_ragStatusId&$columns=packageName&$values=packageVersion%20count' url via address line
+	Then Pivot run was completed
+	Then There are no errors in the browser console
