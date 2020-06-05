@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergree
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 0072B088173449E3A93 |
-	And User selects 'Create static list' in the 'Action' dropdown
+	When User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "TestList20409" name
 	Then "TestList20409" list is displayed to user
 	When User creates new Automation via API and open it
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 011PLA470S0B9DJ  |
-	And User selects 'Create static list' in the 'Action' dropdown
+	When User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "AutoTestList20409" name
 	Then "AutoTestList20409" list is displayed to user
 	#Create Project
@@ -226,7 +226,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedC
 	When User select "Application" rows in the grid
 	| SelectedRowsName  |
 	| 7-Zip 16.02 (x64) |
-	And User selects 'Create static list' in the 'Action' dropdown
+	When User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "TestList204091" name
 	Then "TestList204091" list is displayed to user
 	#Create Automation

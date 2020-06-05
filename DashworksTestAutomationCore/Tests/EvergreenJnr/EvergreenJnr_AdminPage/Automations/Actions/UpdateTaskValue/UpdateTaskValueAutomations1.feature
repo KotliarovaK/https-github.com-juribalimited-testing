@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'Mailbox Evergreen Capacity Project' content is not displayed in 'Project' autocomplete after search
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @DAS19274 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @DAS19274 @DAS20889 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
@@ -47,10 +47,12 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then User sees '0 to 100,000' red hint below 'Value' field
 	When User enters '-5' text to 'Value' textbox
 	Then User sees '0 to 100,000' red hint below 'Value' field
-	When User enters '2' text to 'Value' textbox
+	When User enters '1' text to 'Value' textbox
 	Then 'CREATE' button is not disabled
 	When User selects 'days before current value' in the 'Units' dropdown
 	And User clicks 'CREATE' button
+	#Check Action grid
+	Then '1 day before current value' content is displayed in the 'Value' column
 	#Check created Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
@@ -58,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' textbox
 	Then 'One \ Date Computer' content is displayed in 'Task' textbox
-	Then '2' content is displayed in 'Value' textbox
+	Then '1' content is displayed in 'Value' textbox
 	Then 'days before current value' value is displayed in the 'Units' dropdown
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18965 @DAS18886 @Cleanup

@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckScopeListsForDifferentScopeAutomations
 	When User clicks 'Automations' header breadcrumb
 	When User clicks 'YES' button on popup
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20798 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20798 @DAS20240 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateWhileChangingScopeLists
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |

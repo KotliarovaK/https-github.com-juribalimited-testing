@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTabRedirectionIsWorkedCorrectly
 	Then There are no errors in the browser console
 
 #AnnI 4/16/20: This functionality is implemented only for 'X-Ray'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @DistributionTab @DAS20888 @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @DistributionTab @DAS20888
 Scenario: EvergreenJnr_ApplicationsList_CheckThatDistributionSubmenuItemIsActiveInProjectMode
 	When User navigates to the 'Application' details page for the item with '493' ID
 	When User navigates to the 'Distribution' left menu item

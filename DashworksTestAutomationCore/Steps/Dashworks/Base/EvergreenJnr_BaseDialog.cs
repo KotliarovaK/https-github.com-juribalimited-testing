@@ -6,6 +6,7 @@ using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
 using DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog;
+using System.Linq;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {

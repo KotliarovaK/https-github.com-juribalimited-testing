@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then 'Used on the device by the device owner' checkbox is checked
 	Then 'Used on the device by any user' checkbox is checked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14283 @DAS17167 @Cleanup @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14283 @DAS17167 @DAS20240 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
