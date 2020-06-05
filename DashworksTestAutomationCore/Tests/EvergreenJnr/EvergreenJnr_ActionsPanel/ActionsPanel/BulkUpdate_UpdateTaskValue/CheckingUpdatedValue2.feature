@@ -131,6 +131,6 @@ Scenario: EvergreenJnr_AllDevices_CheckBulkUpdateReadOnlyTaskIsNotAvailableToSel
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	Then 'Computer Read Only Task in Bulk Update' content is not displayed in 'Task' autocomplete after search

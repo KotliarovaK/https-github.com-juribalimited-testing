@@ -15,7 +15,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdat
 	| SelectedRowsName |
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	When User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	Then 'star' mat icon is disabled
 	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	When User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Remove specific values' in the 'Update Values' dropdown
 	When User adds 'test' value from 'Value' textbox
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	When User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User clicks 'star' mat icon
 	When User enters '20853_TestFBU' text to 'Favourite Bulk Update Name' textbox
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForUpdateCustomFieldFavouriteB
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	When User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Add to existing values' in the 'Update Values' dropdown
 	When User adds 'test' value from 'Value' textbox
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdat
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	When User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Replace single value' in the 'Update Values' dropdown
 	When User enters '0' text to 'Find Value' textbox
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdat
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '208535_TestFBU' in the 'Bulk Update Type' dropdown
+	When User selects '208535_TestFBU' option from 'Bulk Update Type' autocomplete
 	Then 'Phoenix Field' content is displayed in 'Custom Field' autocomplete
 	Then 'Replace single value' content is displayed in 'Update Values' dropdown
 	Then '0' content is displayed in 'Find Value' textbox
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkU
 	| SelectedRowsName  |
 	| 7-Zip 16.02 (x64) |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update custom field' in the 'Bulk Update Type' dropdown
+	When User selects 'Update custom field' option from 'Bulk Update Type' autocomplete
 	When User selects '20853' option from 'Custom Field' autocomplete
 	When User selects 'Remove specific values' in the 'Update Values' dropdown
 	When User adds '12' value from 'Value' textbox
@@ -187,7 +187,7 @@ Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkU
 	| SelectedRowsName  |
 	| 7-Zip 16.02 (x64) |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '208535_TestFBU_CF' in the 'Bulk Update Type' dropdown
+	When User selects '208535_TestFBU_CF' option from 'Bulk Update Type' autocomplete
 	Then 'This Favourite Bulk Update is invalid' text is displayed on inline error banner
 	Then 'UPDATE' button is disabled
 	Then 'star' mat icon is disabled
@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupForUpdateCustomFie
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User clicks 'star' mat icon
 	When User enters '207741_TestFBU' text to 'Favourite Bulk Update Name' textbox
@@ -215,7 +215,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupForUpdateCustomFie
 	| SelectedRowsName                 |
 	| 000F977AC8824FE39B8@bclabs.local |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	When User selects 'Email Migration' option from 'Project' autocomplete
 	When User clicks 'star' mat icon
 	When User enters '207742_TestFBU' text to 'Favourite Bulk Update Name' textbox
@@ -227,8 +227,8 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupForUpdateCustomFie
 	| SelectedRowsName                 |
 	| 000F977AC8824FE39B8@bclabs.local |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '207742_TestFBU' in the 'Bulk Update Type' dropdown
-	When User selects 'Manage favourites' in the 'Bulk Update Type' dropdown
+	When User selects '207742_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects 'Manage favourites' option from 'Bulk Update Type' autocomplete
 	Then popup with 'Favourite Bulk Updates' title is displayed
 	Then 'star207742_TestFBU' content is displayed in 'Bulk Update Type' dropdown
 	When User clicks Group By button and set checkboxes state

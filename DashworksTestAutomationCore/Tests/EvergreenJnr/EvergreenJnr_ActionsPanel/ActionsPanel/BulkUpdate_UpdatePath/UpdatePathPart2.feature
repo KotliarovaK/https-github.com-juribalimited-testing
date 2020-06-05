@@ -252,7 +252,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatWarningBannerDisappearsAfterClosingA
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Desktop Replacement' option from 'Path' autocomplete
 	When User clicks 'UPDATE' button 
@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatWarningBannerDisappearsAfterClosingA
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update path' in the 'Bulk Update Type' dropdown
+	When User selects 'Update path' option from 'Bulk Update Type' autocomplete
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Desktop Replacement' option from 'Path' autocomplete
 	When User clicks 'UPDATE' button 

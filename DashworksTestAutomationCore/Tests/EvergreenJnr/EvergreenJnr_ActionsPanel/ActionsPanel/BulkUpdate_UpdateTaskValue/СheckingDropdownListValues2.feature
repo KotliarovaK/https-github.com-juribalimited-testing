@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_UsersList_CheckRelativeTaskDdlForGroupTypeTasks
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	Then 'Group Stage \ Group User Date' content is not displayed in 'Task' autocomplete after search
 	When User selects 'One \ Radio Date Owner User' option from 'Task' autocomplete

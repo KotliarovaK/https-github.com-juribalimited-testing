@@ -15,7 +15,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdat
 	| SelectedRowsName |
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
+	When User selects 'Update ring' option from 'Bulk Update Type' autocomplete
 	Then 'star' mat icon is disabled
 	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateRing
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
+	When User selects 'Update ring' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	When User selects 'Owned devices only' in the 'Also Move Devices' dropdown
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| SelectedRowsName                 |
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
+	When User selects 'Update ring' option from 'Bulk Update Type' autocomplete
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	When User clicks 'star' mat icon
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdat
 	| SelectedRowsName                 |
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
+	When User selects 'Update ring' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	When User clicks 'star' mat icon
@@ -146,7 +146,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdat
 	| SelectedRowsName                 |
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '21002_RingFBU1' in the 'Bulk Update Type' dropdown
+	When User selects '21002_RingFBU1' option from 'Bulk Update Type' autocomplete
 	Then '19083_Project' content is displayed in 'Project or Evergreen' autocomplete
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @DAS21253 @Cleanup @Yellow_Dwarf
@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
+	When User selects 'Update ring' option from 'Bulk Update Type' autocomplete
 	When User selects '21002_RingProject' option from 'Project or Evergreen' autocomplete
 	When User selects '21002_Ring' option from 'Ring' autocomplete
 	When User clicks 'star' mat icon
@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '21002_FBU_Ring' in the 'Bulk Update Type' dropdown
+	When User selects '21002_FBU_Ring' option from 'Bulk Update Type' autocomplete
 	Then '21002_RingProject' content is displayed in 'Project or Evergreen' autocomplete
 	Then '' content is displayed in 'Ring' autocomplete
 	When User clicks 'star' mat icon

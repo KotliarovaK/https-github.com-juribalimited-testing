@@ -943,7 +943,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 page.GetMatIconsOfDropdownOptionsByName(row["Items"], iconName);
             }
             page.BodyContainer.Click();
-        }
+        } 
 
         [Then(@"All icon items in the '(.*)' dropdown have any of tooltip")]
         public void ThenUserSeesAllListsIconDisplayedWithTooltipInDropdown(string dropdown, Table table)

@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplication
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	Then 'star' mat icon is disabled
 	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplication
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	Then 'star' mat icon is disabled
 	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
 	When User selects 'Core' in the 'Criticality' dropdown
 	When User selects 'RETIRE' in the 'Rationalisation' dropdown
@@ -145,7 +145,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User clicks 'star' mat icon
 	When User enters '21007_TestFBU' text to 'Favourite Bulk Update Name' textbox
@@ -159,6 +159,8 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	When User clicks 'star' mat icon
 	When User enters 'abc_21007' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
+	Then following items have ' ' icon from ' ' autocomplete
+	| Items          |
 	Then following items have 'star' icon in the 'Bulk Update Type' dropdown:
 	| Items          |
 	| 21007_TestFBU  |
@@ -177,7 +179,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'GREEN' in the 'Sticky Compliance' dropdown
 	When User selects 'Critical' in the 'Criticality' dropdown
@@ -206,7 +208,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	When User selects 'Important' in the 'Criticality' dropdown
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
@@ -214,7 +216,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	When User clicks 'star' mat icon
 	When User enters 'DAS210071_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User selects 'DAS210071_TestFBU' in the 'Bulk Update Type' dropdown
+	When User selects 'DAS210071_TestFBU' option from 'Bulk Update Type' autocomplete
 	Then 'Important' content is displayed in 'Criticality' dropdown
 	Then 'UNCATEGORISED' content is displayed in 'Rationalisation' dropdown
 	Then 'FALSE' content is displayed in 'Hide From End Users' dropdown

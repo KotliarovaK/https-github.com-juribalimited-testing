@@ -15,7 +15,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateUpdateTaskValueT
 	| SelectedRowsName |
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	Then 'star' mat icon is disabled
 	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	When User selects '<ProjectName>' option from 'Project' autocomplete
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
 	When User clicks 'star' mat icon
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
 	When User clicks 'star' mat icon
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpd
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ Dropdown Task' option from 'Task' autocomplete
 	When User clicks 'star' mat icon
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 2 \ Radio Date Slot App' option from 'Task' autocomplete
 	When User selects 'Started' in the 'Update Value' dropdown
@@ -232,7 +232,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects '20950_Project' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ DAS20950_Task' option from 'Task' autocomplete
 	When User clicks 'star' mat icon
@@ -251,10 +251,8 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	Then following Values are not displayed in the 'Bulk Update Type' dropdown:
-	| Options          |
-	| DAS20950_TestFBU |
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
+	Then 'DAS20950_TestFBU' content is not displayed in 'Bulk Update Type' autocomplete after search
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @DAS21253 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDeletedTask
@@ -308,7 +306,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects '20950_Project' option from 'Project' autocomplete
 	When User selects 'Stage_DAS20950 \ DAS20950_Task' option from 'Task' autocomplete
 	When User clicks 'star' mat icon
@@ -330,7 +328,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'DAS20950_TestFBU' in the 'Bulk Update Type' dropdown
+	When User selects 'DAS20950_TestFBU' option from 'Bulk Update Type' autocomplete
 	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
 	Then '' content is displayed in 'Project' autocomplete
 	Then 'Task' autocomplete is not displayed
@@ -345,15 +343,15 @@ Scenario: EvergreenJnr_AllUsers_CheckTaskDropdownAfterRestoringFbuAndCreatingNew
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ Dropdown Task' option from 'Task' autocomplete
 	When User clicks 'star' mat icon
 	When User enters '21249_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User selects '21249_TestFBU' in the 'Bulk Update Type' dropdown
+	When User selects '21249_TestFBU' option from 'Bulk Update Type' autocomplete
 	Then 'zUser Sch for Automations Feature' content is displayed in 'Project' autocomplete
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ Dropdown Task' option from 'Task' autocomplete
 
@@ -367,7 +365,7 @@ Scenario: EvergreenJnr_AllUsers_CheckThatBulkUpdateTypeDropdownIsNotEmptyAfterRe
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 3 \ DDL Slot Task' option from 'Task' autocomplete
 	When User clicks 'star' mat icon
@@ -388,17 +386,17 @@ Scenario: EvergreenJnr_AllDevices_CheckThatCapacitySlotDropdownIsNotEmptyForNone
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Pre-Migration \ Scheduled Date' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '28 May 2020' text to 'Date' textbox
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'None' in the 'Slot' dropdown
 	When User clicks 'star' mat icon
 	When User enters 'DAS21248_FBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User selects 'DAS21248_FBU' in the 'Bulk Update Type' dropdown
+	When User selects 'DAS21248_FBU' option from 'Bulk Update Type' autocomplete
 	Then 'None' content is displayed in 'Slot' dropdown
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @FavouriteBulkUpdate @DAS21252 @Cleanup @Yellow_Dwarf
@@ -450,7 +448,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChanging
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects '21252_Project' option from 'Project' autocomplete
 	When User selects '21252_Stage \ 21252_Task' option from 'Task' autocomplete
 	When User clicks 'star' mat icon
@@ -475,7 +473,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChanging
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '21252_TestFBU' in the 'Bulk Update Type' dropdown
+	When User selects '21252_TestFBU' option from 'Bulk Update Type' autocomplete
 	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
 	Then '' content is displayed in 'Project' autocomplete
 
@@ -489,7 +487,7 @@ Scenario: EvergreenJnr_AllUsers_CheckOwnerFieldCreateFavouriteBulkUpdatePopUp
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Radio Date Owner User' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Owner' dropdown
@@ -522,7 +520,7 @@ Scenario: EvergreenJnr_AllApplications_CheckValueFieldForUpdateRelativeToADiffer
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Date App- Application Delivery Date' option from 'Task' autocomplete
 	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
@@ -532,5 +530,5 @@ Scenario: EvergreenJnr_AllApplications_CheckValueFieldForUpdateRelativeToADiffer
 	When User clicks 'star' mat icon
 	When User enters 'DAS21317_FBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User selects 'DAS21317_FBU' in the 'Bulk Update Type' dropdown
+	When User selects 'DAS21317_FBU' option from 'Bulk Update Type' autocomplete
 	Then '12' content is displayed in 'Value' textbox

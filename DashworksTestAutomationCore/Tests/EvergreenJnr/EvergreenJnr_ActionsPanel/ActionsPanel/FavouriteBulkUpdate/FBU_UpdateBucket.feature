@@ -15,7 +15,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdat
 	| SelectedRowsName |
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update bucket' in the 'Bulk Update Type' dropdown
+	When User selects 'Update bucket' option from 'Bulk Update Type' autocomplete
 	Then 'star' mat icon is disabled
 	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| SelectedRowsName                 |
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update bucket' in the 'Bulk Update Type' dropdown
+	When User selects 'Update bucket' option from 'Bulk Update Type' autocomplete
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'Amsterdam' option from 'Bucket' autocomplete
 	When User clicks 'star' mat icon
