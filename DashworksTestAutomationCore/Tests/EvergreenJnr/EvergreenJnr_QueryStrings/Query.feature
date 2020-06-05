@@ -252,7 +252,7 @@ Examples:
 	| FilterName                            | QueryString                                                                                                                                 | Rows   |
 	| App Count (Entitled)                  | evergreen/#/users?$filter=(entitledApplications%20%3C%3E%2010)                                                                              | 41,307 |
 	| App Count (Installed)                 | evergreen/#/users?$filter=(installedApplications%20>%2010)                                                                                  | 772    |
-	| App Count (Used)                      | evergreen/#/users?$filter=(usedApplications%20<%2010)                                                                                       | 41,224 |
+	| App Count (Used)                      | evergreen/#/users?$filter=(usedApplications%20<%2010)                                                                                       | 41,244 |
 	| Application                           | evergreen/#/users?$filter=(application%20NOT%20EQUALS%20('493')%20WHERE%20(nioadobu%2Cnetdobu%2Cnuodobu%2Cnetu%2Cnubu))                     | 41,339 |
 	| Application                           | evergreen/#/users?$filter=(application%20EQUALS%20('94')%20WHERE%20(netu))                                                                  | 41,243 |
 	| Application Compliance                | evergreen/#/users?$filter=(applicationMigrationRag%20EQUALS%20('Unknown')%20WHERE%20(nioadobu%2Cnetdobu%2Cnuodobu%2Cnetu%2Cnubu))           | 41,339 |
