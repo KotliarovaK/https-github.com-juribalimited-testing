@@ -61,24 +61,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.ClickByActions(page.BodyContainer);
         }
 
-        [Then(@"'(.*)' text is displayed in the filter dropdown for the '(.*)' column")]
-        public void ThenTextIsDisplayedInTheFilterDropdownForTheColumn(string expectedText, string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var actualText = page.GetDropdownFilterTextByColumnName(columnName);
-
-            Verify.AreEqual(expectedText, actualText, $"Expected '{expectedText}' text to be displayed in the dropdown filter for the'{columnName}' but was '{actualText}'");
-        }
-
-        [Then(@"'(.*)' text is not displayed in the filter dropdown for the '(.*)' column")]
-        public void ThenTextIsNotDisplayedInTheFilterDropdownForTheColumn(string expectedText, string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var actualText = page.GetDropdownFilterTextByColumnName(columnName);
-
-            Verify.AreNotEqual(expectedText, actualText, $"Expected '{expectedText}' text to be not equal to actual '{actualText}' text in the dropdown filter for the'{columnName}'");
-        }
-
         [Then(@"User Scope checkboxes are disabled")]
         public void ThenUserScopeCheckboxesAreDisabled()
         {
