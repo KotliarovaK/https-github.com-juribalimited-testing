@@ -27,6 +27,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Verify.IsTrue(page.Table.Displayed(), "Table is not displayed");
         }
 
+        //column starts from zero where zero is the first column in the table
+        [Then(@"following data is displayed in the '(.*)' column of the table")]
+        public void ThenFollowingDataIsDisplayedInTheColumnOfTheTable(int column, Table table)
+        {
+            var fields = _driver.NowAt<BaseTable>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = fields.GetRowsContent(column);
+            Verify.AreEqual(expectedList, actualList, "Incorrect column data");
+        }
+
         #region Keys
 
         [Then(@"'(.*)' field is displayed in the table")]
@@ -41,16 +51,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var page = _driver.NowAt<BaseTable>();
             Verify.IsFalse(page.IsRowWithKeyExists(key), $"'{key}' field is displayed in the table");
-        }
-
-        [Then(@"following fields are displayed in the table:")]
-        public void ThenFollowingFieldsAreDisplayedInTheTable(Table table)
-        {
-            var fields = _driver.NowAt<BaseTable>();
-
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = fields.GetAllRowsValue();
-            Verify.AreEqual(expectedList, actualList, "Fields in the table are different");
         }
 
         [Then(@"User compares data in the fields from the table:")]

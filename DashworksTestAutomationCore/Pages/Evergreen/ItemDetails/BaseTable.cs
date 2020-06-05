@@ -33,13 +33,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             };
         }
 
-        public IList<string> GetAllRowsValue()
-        {
-            Driver.WaitForElementsToBeDisplayed(Rows);
-            var by = By.XPath(".//td[1]//self::*[string-length(text())>0]");
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
-        }
-
         public IWebElement GetRowByKey(string key)
         {
             Driver.WaitForElementsToBeDisplayed(Rows);
@@ -76,7 +69,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         //column = 1 is a first column after keys
         public List<string> GetRowsContent(int column = 1)
         {
-            var content = Rows.Select(x => GetContentFromRow(x)).ToList();
+            var content = Rows.Select(x => GetContentFromRow(x, column)).ToList();
             return content;
         }
 

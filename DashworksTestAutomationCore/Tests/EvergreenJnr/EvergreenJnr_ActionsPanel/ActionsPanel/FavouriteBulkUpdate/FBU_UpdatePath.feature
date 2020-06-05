@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
-	Then following fields are displayed in the table:
+	Then following data is displayed in the '0' column of the table
 	| Fields           |
 	| Bulk Update Type |
 	| Project          |
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindow
 	| Project          | 2004 Rollout |
 	| Path             | VIP User     |
 
-	Then following fields are displayed in the table:
+	Then following data is displayed in the '0' column of the table
 	| Fields           |
 	| Bulk Update Type |
 	| Project          |

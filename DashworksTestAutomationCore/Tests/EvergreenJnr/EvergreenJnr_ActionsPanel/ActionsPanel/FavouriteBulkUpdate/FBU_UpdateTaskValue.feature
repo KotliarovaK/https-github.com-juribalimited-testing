@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
-	Then following fields are displayed in the table:
+	Then following data is displayed in the '0' column of the table
 	| Fields           |
 	| Bulk Update Type |
 	| Project          |
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	When User selects 'Failed' in the 'Update Value' dropdown
 	When User selects 'weekdays before task value' in the 'DateUnit' dropdown
 	When User clicks 'star' mat icon
-	Then following fields are displayed in the table:
+	Then following data is displayed in the '0' column of the table
 	| Fields           |
 	| Bulk Update Type |
 	| Project          |
@@ -497,7 +497,7 @@ Scenario: EvergreenJnr_AllUsers_CheckOwnerFieldCreateFavouriteBulkUpdatePopUp
 	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
 	When User selects 'D-Team' option from 'Team' autocomplete
 	When User clicks 'star' mat icon
-	Then following fields are displayed in the table:
+	Then following data is displayed in the '0' column of the table
 	| Fields           |
 	| Bulk Update Type |
 	| Project          |

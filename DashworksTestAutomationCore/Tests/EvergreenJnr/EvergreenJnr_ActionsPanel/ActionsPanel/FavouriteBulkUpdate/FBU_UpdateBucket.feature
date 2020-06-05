@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBuck
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update bucket' in the 'Bulk Update Type' dropdown
+	When User selects 'Update bucket' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Bucket' autocomplete
 	When User selects 'All linked devices' in the 'Also Move Devices' dropdown
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBuck
 	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
-	Then following fields are displayed in the table:
+	Then following data is displayed in the '0' column of the table
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'Amsterdam' option from 'Bucket' autocomplete
 	When User clicks 'star' mat icon
-	Then following fields are displayed in the table:
+	Then following data is displayed in the '0' column of the table
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
