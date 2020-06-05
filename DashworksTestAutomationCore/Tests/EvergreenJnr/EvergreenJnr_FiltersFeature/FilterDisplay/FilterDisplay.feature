@@ -1426,34 +1426,3 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterInfoDisplayedInWithErrorI
 	When User clicks the Filters button
 	Then "Any Device in list 2004 Rollout or [List not found] used on device" is displayed in added filter info
 	Then Filter info is displayed in error block
-
-@Evergreen @Evergreen_FiltersFeature @FiltersDisplay @Automations @DAS20954 @Cleanup
-Scenario: EvergreenJnr_DevicesList_CheckThatAutomationActionLabelIsDisplayedForSelectedFilter
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
-	When User creates new Automation via API and open it
-	| Name     | Description | IsActive | StopOnFailedAction | Scope       | Run    |
-	| DAS20954 | DAS20954    | true     | false              | All Devices | Manual |
-	Then Automation page is displayed correctly
-	When User navigates to the 'Actions' left menu item
-	When User clicks 'CREATE ACTION' button 
-	Then Create Action page is displayed to the User
-	When User enters 'DAS20954_Action' text to 'Action Name' textbox
-	When User selects 'Update path' in the 'Action Type' dropdown
-	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User selects 'Undetermined' option from 'Path' autocomplete
-	When User clicks 'CREATE' button
-	When User clicks 'Automations' header breadcrumb
-	Then Page with 'Automations' header is displayed to user
-	When User enters "DAS20954" text in the Search field for "Automation" column
-	When User clicks 'Run now' option in Cog-menu for 'DAS20954' item from 'Automation' column
-	When 'DAS20954' automation 'DAS20954_Action' action run has finished
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User clicks Add New button on the Filter panel
-	And user select "DAS20954 \ DAS20954_Action" filter
-	And User checks 'Empty' checkbox
-	And User clicks 'ADD' button
-	Then "Automation Action DAS20954 \ DAS20954_Action is Empty" is displayed in added filter info
