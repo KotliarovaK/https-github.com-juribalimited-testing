@@ -47,13 +47,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User navigates to the 'Capacity Units' left menu item
 	Then 'DefaultCapacityUnit13720' content is displayed in the 'Capacity Unit' column
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
-	Then "TRUE" content is displayed for "Default" column
-	Then "" content is displayed for "Devices" column
-	Then "" content is displayed for "Users" column
-	Then "" content is displayed for "Mailboxes" column
-	Then "" content is displayed for "Applications" column
+	Then 'TRUE' content is displayed in the 'Default' column
+	And '' content is displayed in the 'Devices' column
+	And '' content is displayed in the 'Users' column
+	And '' content is displayed in the 'Mailboxes' column
+	And '' content is displayed in the 'Applications' column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "FALSE" content is displayed for "Default" column
+	Then 'FALSE' content is displayed in the 'Default' column
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName         |
