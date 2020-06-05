@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	And User navigates to the 'Buckets' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks String Filter button for "Project" column on the Admin page
-	Then "1DevicesProject" is not displayed in the filter dropdown
+	Then '1DevicesProject' is not displayed in the filter dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12496 @DAS12485 @DAS12108 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove

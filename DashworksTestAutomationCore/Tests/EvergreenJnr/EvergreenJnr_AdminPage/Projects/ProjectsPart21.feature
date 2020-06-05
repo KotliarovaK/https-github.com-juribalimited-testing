@@ -106,4 +106,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks String Filter button for "Project" column
-	Then "13510TestProject" is not displayed in the filter dropdown
+	Then '13510TestProject' is not displayed in the filter dropdown

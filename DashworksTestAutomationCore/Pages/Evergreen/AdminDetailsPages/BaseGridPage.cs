@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
     {
         public string ColumnFilterDropdownOverlay = ".//div[contains(@class,'overlay-pane')][contains(@id,'overlay')]";
 
-        public const string AllHeadersSelector = "//div[@class='ag-header-container']/div[1]/div";
+        public const string AllHeadersSelector = ".//div[@class='ag-header-container']/div[contains(@class,'row-column')]/div";
 
         public const string AllHeadersTextSelector = ".//span[@class='ag-header-cell-text']";
 
@@ -182,6 +182,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         }
 
         //TODO this method should be removed and replaced by get col-id
+        //TODO: Yurii T. 5 Jun 2020: no col-di can be applied for table headers filters - see task DAS-18359
         public int GetColumnNumberByName(string columnName)
         {
             List<string> allHeadersWithText = GetAllHeadersText();
@@ -202,9 +203,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         private string ActionElementSelector(string columnName)
         {
             var results =
-                $".//div[@role='presentation']//div[contains(@class,'ag-header-viewport')]//div[contains(@class,'ag-header-row')][2]/div[{GetColumnNumberByName(columnName)}]";
-            //TODO below is the old selector. If the new one will work correctly remove this comment
-            //$".//div[@role='presentation']//div[contains(@class,'filter')]/div[{GetColumnNumberByName(columnName)}]//div[contains(@ref,'eFloatingFilterBody')] | .//div[@role='presentation']//div[contains(@class,'ag-header-viewport')]//div[contains(@class,'ag-header-row')][2]/div[{GetColumnNumberByName(columnName)}]";
+                $".//div[@ref='eHeaderContainer']//div[contains(@class,'floating-filter')]/div[{GetColumnNumberByName(columnName)}]";
             return results;
         }
 
@@ -257,12 +256,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #region Dropdown
 
-        public IWebElement GetDropdownFilterTextByColumnName(string columnName, string text)
+        public string GetDropdownFilterTextByColumnName(string columnName)
         {
             var selector =
-                By.XPath($"{ActionElementSelector(columnName)}//mat-placeholder[text()='{text}']");
+                By.XPath($"{ActionElementSelector(columnName)}//mat-placeholder");
             Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            return Driver.FindElement(selector).Text;
         }
 
         #endregion
@@ -320,7 +319,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool GetDisplayStateForStringFilterByName(string filterName)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
+            return Driver.IsElementDisplayed(By.XPath($".//div[contains(@class,'styled-filters')]//span[(text()='{filterName}')]"));
         }
 
         public void GetFilterCheckboxValuesForColumn(string filterName)

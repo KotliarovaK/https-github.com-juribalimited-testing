@@ -62,7 +62,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterByName(filterName);
-             _driver.ClickByActions(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         //TODO: AnnI 3/25/20 Can we replace with WhenUserChecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step?
@@ -71,23 +71,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterWithItemListByName(filterName);
-             _driver.ClickByActions(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"'(.*)' text is displayed in the filter dropdown for the '(.*)' column")]
-        public void ThenTextIsDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
+        public void ThenTextIsDisplayedInTheFilterDropdownForTheColumn(string expectedText, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
+            var actualText = page.GetDropdownFilterTextByColumnName(columnName);
+
+            Verify.AreEqual(expectedText, actualText, $"Expected '{expectedText}' text to be displayed in the dropdown filter for the'{columnName}' but was '{actualText}'");
         }
 
         [Then(@"'(.*)' text is not displayed in the filter dropdown for the '(.*)' column")]
-        public void ThenTextIsNotDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
+        public void ThenTextIsNotDisplayedInTheFilterDropdownForTheColumn(string expectedText, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
+            var actualText = page.GetDropdownFilterTextByColumnName(columnName);
+
+            Verify.AreNotEqual(expectedText, actualText, $"Expected '{expectedText}' text to be not equal to actual '{actualText}' text in the dropdown filter for the'{columnName}'");
         }
-     
+
         [Then(@"User Scope checkboxes are disabled")]
         public void ThenUserScopeCheckboxesAreDisabled()
         {
@@ -966,11 +970,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.OpenColumnFilter(columnName);
         }
 
-        [Then(@"""(.*)"" is not displayed in the filter dropdown")]
+        [Then(@"'(.*)' is not displayed in the filter dropdown")]
         public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(filterElement.GetDisplayStateForStringFilterByName(filterName), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(filterElement.GetDisplayStateForStringFilterByName(filterName), $"{filterName} is displayed but should not");
         }
 
         [Then(@"options are sorted in alphabetical order in dropdown for '(.*)' column")]
@@ -983,7 +987,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             list.Remove("Select All"); //Remove 'Select All' checkbox that can be present on some filters (ALWAYS IN THE TOP)
             list.Remove("Evergreen"); //Remove 'Evergreen' checkbox that can be present on some filters (ALWAYS IN THE TOP)
 
-             _driver.ClickByActions(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             Verify.AreEqual(list.OrderBy(s => s, StringComparer.OrdinalIgnoreCase), list, $"Values in '{columnName}'column are not in alphabetical order");
         }
 
