@@ -16,13 +16,13 @@ Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplication
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	Then 'star' mat-icon is disabled
-	Then 'star' mat-icon has tooltip with 'Some values are missing or not valid' text
+	Then 'star' mat icon is disabled
+	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'UPDATE' button is disabled
-	Then 'star' mat-icon is not disabled
-	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
+	Then 'star' mat icon is not disabled
+	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
 	Then 'No change' content is displayed in 'In Catalog' dropdown
 	Then 'No change' content is displayed in 'Criticality' dropdown
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplication
 	Then 'No change' content is displayed in 'Hide From End Users' dropdown
 	When User selects 'RED' in the 'Sticky Compliance' dropdown
 	Then 'UPDATE' button is not disabled
-	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
+	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 
 @Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21005 @DAS21353 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplicationAttributesValidationsForProject
@@ -43,18 +43,18 @@ Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplication
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	Then 'star' mat-icon is disabled
-	Then 'star' mat-icon has tooltip with 'Some values are missing or not valid' text
+	Then 'star' mat icon is disabled
+	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
 	Then 'UPDATE' button is disabled
-	Then 'star' mat-icon is not disabled
-	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
+	Then 'star' mat icon is not disabled
+	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 	When User selects 'Core' in the 'Criticality' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
 	Then 'No change' content is displayed in 'Hide From End Users' dropdown
 	Then 'UPDATE' button is not disabled
-	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
+	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 
 @Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21006 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindowUpdateApplicationAttributes
@@ -68,17 +68,18 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
-	Then following fields are displayed in the popup:
+	Then following fields are displayed in the table:
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field                | Data                          |
 	| Bulk Update Type     | Update application attributes |
 	| Project or Evergreen | Evergreen                     |
+
 	Then 'CANCEL' button is not disabled
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
@@ -86,7 +87,7 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '21006_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '21006_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
@@ -106,17 +107,17 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	When User selects 'RETIRE' in the 'Rationalisation' dropdown
 	When User selects 'FALSE' in the 'Hide From End Users' dropdown
 	Then 'UPDATE' button is not disabled
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
-	Then following fields are displayed in the popup:
+	Then following fields are displayed in the table:
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
 	| Criticality          |
 	| Rationalisation      |
 	| Hide From End User   |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field                | Data                          |
 	| Bulk Update Type     | Update application attributes |
 	| Project or Evergreen | Barry's User Project          |
@@ -130,7 +131,7 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '210061_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '210061_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
@@ -146,16 +147,16 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '21007_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'TestFBU_21007' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'testFBU_210071' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'abc_21007' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	Then following items have 'star' icon in the 'Bulk Update Type' dropdown:
@@ -164,7 +165,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	| TestFBU_21007  |
 	| testFBU_210071 |
 	| abc_21007      |
-	Then created items for 'Bulk Update Type' dropdown are displayed in ascending order
+	Then items with 'star' icon for 'Bulk Update Type' dropdown are displayed in ascending order
 
 @Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21007 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAttributesForEvergreen
@@ -182,7 +183,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	When User selects 'Critical' in the 'Criticality' dropdown
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	When User selects 'TRUE' in the 'Hide From End Users' dropdown
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'DAS21007_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User selects 'DAS21007_TestFBU' in the 'Bulk Update Type' dropdown
@@ -193,7 +194,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	Then 'TRUE' content is displayed in 'Hide From End Users' dropdown
 	Then 'UPDATE' button is not disabled
 	Then 'CANCEL' button is not disabled
-	Then 'star' mat-icon is not disabled
+	Then 'star' mat icon is not disabled
 
 @Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21007 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAttributesForProject
@@ -210,7 +211,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	When User selects 'Important' in the 'Criticality' dropdown
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	When User selects 'FALSE' in the 'Hide From End Users' dropdown
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'DAS210071_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User selects 'DAS210071_TestFBU' in the 'Bulk Update Type' dropdown
@@ -219,4 +220,4 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	Then 'FALSE' content is displayed in 'Hide From End Users' dropdown
 	Then 'UPDATE' button is not disabled
 	Then 'CANCEL' button is not disabled
-	Then 'star' mat-icon is not disabled
+	Then 'star' mat icon is not disabled

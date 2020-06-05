@@ -17,13 +17,6 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
         [FindsBy(How = How.XPath, Using = BaseDialogPageSelectors.PopupSelector)]
         public IWebElement PopupElement { get; set; }
 
-        private const string RowSelector = ".//tr[@role='row'][not(@hidden)]";
-        private const string FieldSelector = ".//td[contains(@class, 'mat-column-name')]";
-        private const string ValueSelector = "./td[contains(@class,'column-value')]";
-
-        [FindsBy(How = How.XPath, Using = FieldSelector)]
-        public IList<IWebElement> TableRowsName { get; set; }
-
         public IWebElement ComponentOfDialogPage(string componentName)
         {
             var selector = $"{BaseDialogPageSelectors.PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{componentName}']";
@@ -80,24 +73,6 @@ namespace DashworksTestAutomationCore.Pages.Evergreen.Base.BaseDialog
         public IWebElement GetSSTextboxInlineMessageElement(string placeholder)
         {
             return GetSSTextboxInlineMessageElement(placeholder, this.GetStringByFor(() => this.PopupElement));
-        }
-
-        #endregion
-
-        #region Fields
-
-        public string CompareFieldContent(string fieldName)
-        {
-            var allRows = Driver.FindElements(By.XPath(RowSelector));
-
-            if (allRows.Any(x => x.FindElement(By.XPath(FieldSelector)).Text.Equals(fieldName)))
-            {
-                var row = allRows.First(x => x.FindElement(By.XPath(FieldSelector)).Text.Equals(fieldName));
-                var content = row.FindElement(By.XPath(ValueSelector)).Text;
-                return content;
-            }
-            else
-                throw new Exception($"There are no field with '{fieldName}'");
         }
 
         #endregion

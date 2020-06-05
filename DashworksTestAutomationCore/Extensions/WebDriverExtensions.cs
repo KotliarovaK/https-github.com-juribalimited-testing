@@ -14,6 +14,7 @@ using System.Reflection;
 using System.Threading;
 using AutomationUtils.Utils;
 using AutomationUtils.Extensions;
+using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 
 namespace DashworksTestAutomation.Extensions
@@ -114,7 +115,8 @@ namespace DashworksTestAutomation.Extensions
         {
             //Suggested workaround to solve issue with not closed browsers after tests
             //TODO Try to remove and test without it
-            Thread.Sleep(3000);
+            if (!Browser.RemoteDriver.Equals("local"))
+                Thread.Sleep(3000);
 
             try
             {

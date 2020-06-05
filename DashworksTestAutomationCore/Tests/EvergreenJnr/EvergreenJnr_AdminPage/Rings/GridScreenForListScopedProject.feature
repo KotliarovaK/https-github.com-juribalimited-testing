@@ -18,28 +18,27 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	|            |
 	| Default    |
 	| Devices    |
-	When User clicks Cog-menu for 'Unassigned' item in the 'Ring' column and sees following cog-menu options
-	| options          |
-	| Edit             |
-	| Duplicate        |
-	| Move to top      |
-	| Move to bottom   |
-	| Move to position |
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters '14695_Ring' text to 'Ring name' textbox
 	When User clicks 'CREATE' button
 	Then 'The ring has been created' text is displayed on inline success banner
+	When User clicks Cog-menu for 'Unassigned' item in the 'Ring' column and sees following cog-menu options
+	| options          |
+	| Edit             |
+	| Duplicate        |
+	| Move to bottom   |
+	| Move to position |
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters 'Ring_Test' text to 'Ring name' textbox
 	When User clicks Default Ring checkbox
 	When User clicks 'CREATE' button
 	When User opens 'Ring' column settings
-	And User clicks Column button on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Display Order" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
 	Then User sees following Display order on the Automation page
 	| Values |
 	| 1      |
@@ -58,7 +57,6 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| options          |
 	| Edit             |
 	| Duplicate        |
-	| Move to top      |
 	| Move to bottom   |
 	| Move to position |
 	| Set default      |
@@ -66,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |
 	| Unassigned       |
-	And User selects 'Delete' in the 'Actions' dropdown
+	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
 	Then 'This ring will be permanently deleted and any objects within it reassigned to the default ring' text is displayed on inline tip banner
 	When User clicks 'DELETE' button on inline tip banner
@@ -87,9 +85,6 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| options          |
 	| Edit             |
 	| Duplicate        |
-	| Move to top      |
-	| Move to bottom   |
-	| Move to position |
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters '14705_Ring' text to 'Ring name' textbox

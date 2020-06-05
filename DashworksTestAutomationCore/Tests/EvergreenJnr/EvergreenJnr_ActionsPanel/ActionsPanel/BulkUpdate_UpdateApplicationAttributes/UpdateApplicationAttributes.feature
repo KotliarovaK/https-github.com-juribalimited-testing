@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceVal
 	| SelectedRowsName  |
 	| 7-Zip 16.02 (x64) |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	Then 'Sticky Compliance' dropdown is not displayed
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance
 	| SelectedRowsName                         |
 	|0047 - Microsoft Access 97 SR-2 Francais  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Remove' in the 'Sticky Compliance' dropdown
 	When User clicks 'UPDATE' button
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance
 	Then '' content is displayed in the 'Sticky Compliance' column
 	#Revert 'Update application attributes' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	And User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'UNKNOWN' in the 'Sticky Compliance' dropdown
 	When User clicks 'UPDATE' button
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateRationalisationDDLD
 	| SelectedRowsName                         |
 	|0047 - Microsoft Access 97 SR-2 Francais  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForDevic
 	| SelectedRowsName                         |
 	|0047 - Microsoft Access 97 SR-2 Francais  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUserS
 	| SelectedRowsName                         |
 	|0047 - Microsoft Access 97 SR-2 Francais  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
 	When User selects 'RETIRE' in the 'Rationalisation' dropdown
 
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForMailb
 	| SelectedRowsName                         |
 	|0047 - Microsoft Access 97 SR-2 Francais  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelec
 	| SelectedRowsName   |
 	| CodeWright 6.0BETA |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
 	When User enters '2' text to 'Target Application' textbox
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelec
 	| SelectedRowsName   |
 	| CodeWright 6.0BETA |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
 	When User enters 'Wise for Windows Installer 4.02 Evaluation' in the 'Target Application' autocomplete field and selects 'Wise for Windows Installer 4.02 Evaluation (162997)' value
@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdat
 	| SelectedRowsName   |
 	| CodeWright 6.0BETA |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 
@@ -218,7 +218,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesWhenUpda
 	| SelectedRowsName   |
 	| CodeWright 6.0BETA |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	And User clicks 'UPDATE' button 
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesWhenUpda
 	Then 'KEEP' content is displayed in the 'Evergreen Rationalisation' column
 	#Revert Changes
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	And User clicks 'UPDATE' button 
@@ -255,7 +255,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdat
 	| SelectedRowsName          |
 	| Image Express Utility 2.0 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
 	When User enters 'PlexTools Professional V2.21' in the 'Target Application' autocomplete field and selects 'PlexTools Professional V2.21' value
@@ -268,7 +268,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdat
 	Then 'FORWARD PATH' content is displayed in the 'Evergreen Rationalisation' column
 	#Revert Changes
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	And User clicks 'UPDATE' button 

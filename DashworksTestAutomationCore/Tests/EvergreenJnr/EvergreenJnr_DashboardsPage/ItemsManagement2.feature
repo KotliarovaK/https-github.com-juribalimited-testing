@@ -9,7 +9,6 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
-	Then Filters panel is displayed to the user
 	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
     | SelectedValues |
     | Mobile         |
@@ -163,3 +162,50 @@ Scenario: EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChan
 	Then 'UPDATE' button is disabled
 	When User selects 'Stacked' in the 'Display Type' dropdown
 	Then 'UPDATE' button is not disabled
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS21413 @Cleanup
+Scenario: EvergreenJnr_Dashboard_CheckThatDashboardContinueWorkingAfterAddingListWidget
+	When Dashboard with 'Dashboard_21413' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title       | List        | SplitBy  | AggregateFunction | OrderBy      |
+	| Table      | Table_21413 | All Devices | Hostname | Count             | Hostname ASC |
+	Then 'Table_21413' Widget is displayed to the user
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title      | List        | MaxRows | MaxColumns |
+	| List       | List_21413 | All Devices | 5       | 5          |
+	Then 'List_21413' Widget is displayed to the user
+	When User unchecks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title           | List        | SplitBy  | AggregateFunction | OrderBy      |
+	| Table      | Table_21413_new | All Devices | Hostname | Count             | Hostname ASC |
+	Then 'Table_21413_new' Widget is displayed to the user
+	When User clicks 'Delete' menu option for 'Table_21413_new' widget
+	When User confirms item deleting on Dashboards page
+	Then Widget with the name 'Table_21413_new' is missing
+	When User clicks 'Edit' menu option for 'List_21413' widget
+	When User updates Widget with following info:
+	| WidgetType | Title            | List        | MaxRows | MaxColumns |
+	| List       | List_21413Edited | All Devices | 5       | 5          |
+	Then 'List_21413Edited' Widget is displayed to the user
+	When User clicks 'Delete' menu option for 'List_21413Edited' widget
+	When User confirms item deleting on Dashboards page
+	Then Widget with the name 'List_21413Edited' is missing
+	Then There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS20358 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatDashbaordCanBeDeleted
+	When Dashboard with 'Dashboard_20358_Details' name created via API and opened
+	When User clicks the Dashboard Details button
+	When User clicks Delete list button
+	When User clicks 'DELETE' button
+	Then "Dashboard deleted" message is displayed
+	When Dashboard with 'Dashboard_20358_CogMenu' name created via API and opened
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks 'Delete' option in cogmenu for 'Dashboard_20358_CogMenu' list
+	When User clicks 'DELETE' button
+	Then "Dashboard deleted" message is displayed

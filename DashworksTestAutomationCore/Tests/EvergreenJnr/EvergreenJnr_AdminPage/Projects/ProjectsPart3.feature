@@ -76,7 +76,7 @@ Examples:
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,884    | TestProject4513 | 14884        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @DAS13199 @DAS13973 @Project_Creation_and_Scope @Projects @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @DAS13199 @DAS13973 @DAS21397 @Project_Creation_and_Scope @Projects @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -191,7 +191,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| 30 Jul 2017 |
 	Then Rows counter shows "0" of "6" rows
 	When User clicks Reset Filters button on the Admin page
-	Then field for Date column is empty
+	Then '' content is displayed in 'Date' textbox
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Rows counter shows "1" of "6" rows
 	When User clicks Reset Filters button on the Admin page
@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| 30 Jul 2017 |
 	Then Rows counter shows "0" of "6" rows
 	When User clicks Reset Filters button on the Admin page
-	Then field for Date column is empty
+	Then '' content is displayed in 'Date' textbox
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Rows counter shows "1" of "6" rows
 	When User clicks Reset Filters button on the Admin page

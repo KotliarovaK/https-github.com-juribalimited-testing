@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetApplicationSearchResultsBehav
 	| SelectedRowsName          |
 	| Image Express Utility 2.0 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	#Check Target Application search for project
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckInCatalogDropdownForUpdateApplicati
 	| SelectedRowsName          |
 	| Image Express Utility 2.0 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' value is displayed in the 'In Catalog' dropdown
 	When User selects 'TRUE' in the 'In Catalog' dropdown
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForBulkUpdateInCatalog
 	| SelectedRowsName                         |
 	|0047 - Microsoft Access 97 SR-2 Francais  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'TRUE' in the 'In Catalog' dropdown
 	When User clicks 'UPDATE' button
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForBulkUpdateInCatalog
 	Then 'TRUE' content is displayed in the 'In Catalog' column
 	#Revert changes
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'FALSE' in the 'In Catalog' dropdown
 	When User clicks 'UPDATE' button

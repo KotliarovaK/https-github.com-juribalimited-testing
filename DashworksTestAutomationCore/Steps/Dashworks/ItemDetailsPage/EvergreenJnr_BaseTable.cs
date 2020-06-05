@@ -6,6 +6,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
+using System.Linq;
 
 namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 {
@@ -40,6 +41,29 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var page = _driver.NowAt<BaseTable>();
             Verify.IsFalse(page.IsRowWithKeyExists(key), $"'{key}' field is displayed in the table");
+        }
+
+        [Then(@"following fields are displayed in the table:")]
+        public void ThenFollowingFieldsAreDisplayedInTheTable(Table table)
+        {
+            var fields = _driver.NowAt<BaseTable>();
+
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = fields.GetAllRowsValue();
+            Verify.AreEqual(expectedList, actualList, "Fields in the table are different");
+        }
+
+        [Then(@"User compares data in the fields from the table:")]
+        public void ThenUserComparesDataInTheFieldsFromTheTable(Table table)
+        {
+            var page = _driver.NowAt<BaseTable>();
+            foreach (TableRow row in table.Rows)
+            {
+                var field = row["Field"];
+                var value = row["Data"];
+                Verify.AreEqual(page.GetRowContent(field), value,
+                    $"Incorrect data in the '{field}' field");
+            }
         }
 
         #endregion

@@ -175,6 +175,12 @@
       <DependentUpon>PermissionsSettings02.feature</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails\Criticality_EvergreenDetails_Projects_AppDetails.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails\EvergreenCapacityUnit_EvergreenDetails_AppPage.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\Owner_ProjectDetails_Projects_AppsDetails.feature.cs">
       <DesignTime>True</DesignTime>
     </Compile>
@@ -223,6 +229,9 @@
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart13.feature.cs">
       <DependentUpon>PivotPart13.feature</DependentUpon>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart17.feature.cs">
+      <DependentUpon>PivotPart17.feature</DependentUpon>
     </Compile>
     <Compile Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart16.feature.cs">
       <DependentUpon>PivotPart16.feature</DependentUpon>
@@ -397,6 +406,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings02.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails\Criticality_EvergreenDetails_Projects_AppDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Criticality_EvergreenDetails_Projects_AppDetails.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails\EvergreenCapacityUnit_EvergreenDetails_AppPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EvergreenCapacityUnit_EvergreenDetails_AppPage.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\Owner_ProjectDetails_Projects_AppsDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Owner_ProjectDetails_Projects_AppsDetails.feature.cs</LastGenOutput>
@@ -456,6 +473,12 @@
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PivotPart13.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart17.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>PivotPart14.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart16.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>

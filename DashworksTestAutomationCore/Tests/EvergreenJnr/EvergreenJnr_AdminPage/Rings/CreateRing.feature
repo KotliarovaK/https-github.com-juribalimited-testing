@@ -34,6 +34,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingNew
 	When User clicks 'CREATE' button
 	Then 'The ring has been created' text is displayed on inline success banner
 	Then There are no errors in the browser console
+	When User clicks 'Mailboxes' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Project_21: Ring" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| ProjectRing_21296  |
+	Then There are no errors in the browser console
+	When User navigates to "Project_21296" project details
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left submenu item
+	When User selects 'ProjectRing_21296' in the 'Ring' dropdown
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently

@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetLeftPinnedExpandButtonByName(string text)
         {
-            var selector = By.XPath($"//div[@role='gridcell']//span[contains(text(),'{text}')]//ancestor::div[@col-id='ag-Grid-AutoColumn']//span[@class='ag-icon ag-icon-contracted']");
+            var selector = By.XPath($"//div[@role='gridcell']//span[contains(text(),'{text}')]//ancestor::div[@col-id='ag-Grid-AutoColumn']//span[contains(@class, 'icon-tree-closed')]");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -171,7 +171,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public int GetMainHeadersRowIndex()
         {
             var headers = Driver.FindElements(By.XPath($".//div[@class='ag-header-container']//div[contains(@class, 'ag-header-row')]")).Count;
-            return headers-1;
+            
+            return headers==1? 1 : headers -1;
         }
 
         public List<string> GetColId()

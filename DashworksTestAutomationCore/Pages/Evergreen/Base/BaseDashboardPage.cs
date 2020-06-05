@@ -104,9 +104,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-star']//ancestor::button")]
-        public IWebElement StarButton { get; set; }
-
         #region All Lists dropdown
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownActionsLists')]")]
@@ -942,7 +939,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IWebElement GetMatIconsOfDropdownOptionsByName(string value, string matIconName, bool withoutSelected = false)
         {
-            var optionWithIcon = GetCreatedItemsInDropdownOptions(matIconName, withoutSelected);
+            var optionWithIcon = GetItemsWithIconInDropdownOptions(matIconName, withoutSelected);
             if (!optionWithIcon.Any(x => x.Text.Equals(value)))
             {
                 throw new Exception($"Unable to find '{value}' option with icon");
@@ -952,7 +949,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return element;
         }
 
-        public IList<IWebElement> GetCreatedItemsInDropdownOptions(string icon, bool withoutSelected = false)
+        public IList<IWebElement> GetItemsWithIconInDropdownOptions(string icon, bool withoutSelected = false)
         {
             Driver.WaitForElementsToBeDisplayed(By.XPath(DropdownOptionsSelector(withoutSelected)));
             return Driver.FindElements(By.XPath(

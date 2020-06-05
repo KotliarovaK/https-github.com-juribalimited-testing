@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 #upd AnnI 4/27/20: GD will be updated only for 'X_Ray'
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20645 @DAS20614 @Zion_NewGrid @X_Ray
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20645 @DAS20614 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatItIsPossibleToApplyTheGroupingToTheMigrationColumnInTheSelectedProjectOnDevicesTab
 	When User navigates to the 'User' details page for 'TOM576324' item
 	Then Details page for 'TOM576324' item is displayed to the user
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDataInTheGridIsCropedByRingColumnOnO
 	Then Grid is grouped
 
 #AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
-@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20683 @Zion_NewGrid @X_Ray
+@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20683 @Zion_NewGrid
 Scenario: EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnApplicationsTabCollectionsSubTabForGroupPage
 	When User type "GSMS-ReportViewer" in Global Search Field
 	Then User clicks on "GSMS-ReportViewer" search result
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnApp
 	| Key        | true  |
 	Then Grid is grouped
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20866 @Zion_NewGrid @X_Ray
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20866 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_ChecksThatCheckboxIsNotDisappearsInTheGroupByDdlAfterRefreshingThePageInCaseTtheCheckboxRelatesToHiddenColumnByDefault
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user

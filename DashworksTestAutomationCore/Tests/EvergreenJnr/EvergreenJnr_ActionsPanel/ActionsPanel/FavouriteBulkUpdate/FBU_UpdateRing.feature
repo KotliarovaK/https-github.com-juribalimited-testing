@@ -16,19 +16,19 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdat
 	| <RowName>        |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	Then 'star' mat-icon is disabled
-	Then 'star' mat-icon has tooltip with 'Some values are missing or not valid' text
+	Then 'star' mat icon is disabled
+	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	Then 'CANCEL' button is not disabled
 	When User selects '<Project>' option from 'Project or Evergreen' autocomplete
 	Then 'UPDATE' button is disabled
-	Then 'star' mat-icon is not disabled
-	Then 'star' mat-icon is not disabled
-	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
+	Then 'star' mat icon is not disabled
+	Then 'star' mat icon is not disabled
+	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 	When User selects '<RingName>' option from 'Ring' autocomplete
 	Then 'UPDATE' button is not disabled
-	Then 'star' mat-icon is not disabled
-	Then 'star' mat-icon has tooltip with 'Save as Favourite Bulk Update' text
+	Then 'star' mat icon is not disabled
+	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 
 	Examples: 
 	| PageName     | ColumnHeader  | RowName                          | Project              | RingName         |
@@ -51,17 +51,17 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateRing
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	When User selects 'Owned devices only' in the 'Also Move Devices' dropdown
 	When User selects 'All linked mailboxes' in the 'Also Move Mailboxes' dropdown
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
 	Then 'This Favourite Bulk Update will be created with the following parameters:' text is displayed on popup
-	Then following fields are displayed in the popup:
+	Then following fields are displayed in the table:
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
 	| Ring                 |
 	| Also Move Devices    |
 	| Also Move Mailboxes  |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field                | Data                 |
 	| Bulk Update Type     | Update ring          |
 	| Project or Evergreen | Evergreen            |
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateRing
 	Then 'A Favourite Bulk Update name must be entered' error message is displayed for 'Favourite Bulk Update Name' field
 	When User enters '21000_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '21000_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
@@ -92,26 +92,26 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
-	When User clicks 'star' mat-icon
-	Then following fields are displayed in the popup:
+	When User clicks 'star' mat icon
+	Then following fields are displayed in the table:
 	| Fields               |
 	| Bulk Update Type     |
 	| Project or Evergreen |
 	| Ring                 |
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field                | Data                 |
 	| Bulk Update Type     | Update ring          |
 	| Project or Evergreen | Evergreen            |
 	| Ring                 | Unassigned           |
 	When User enters '21002_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'Test21002_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'test21002_RingFBU1' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters 'abc_21002_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	Then following items have 'star' icon in the 'Bulk Update Type' dropdown:
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| abc_21002_RingFBU  |
 	| Test21002_RingFBU  |
 	| test21002_RingFBU1 |
-	Then created items for 'Bulk Update Type' dropdown are displayed in ascending order
+	Then items with 'star' icon for 'Bulk Update Type' dropdown are displayed in ascending order
 
 @Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdateItemsRings
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdat
 	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '21002_RingFBU1' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	#Check Action panel values
@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	When User selects 'Update ring' in the 'Bulk Update Type' dropdown
 	When User selects '21002_RingProject' option from 'Project or Evergreen' autocomplete
 	When User selects '21002_Ring' option from 'Ring' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	When User enters '21002_FBU_Ring' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	#Delete Ring
@@ -205,8 +205,8 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	When User selects '21002_FBU_Ring' in the 'Bulk Update Type' dropdown
 	Then '21002_RingProject' content is displayed in 'Project or Evergreen' autocomplete
 	Then '' content is displayed in 'Ring' autocomplete
-	When User clicks 'star' mat-icon
+	When User clicks 'star' mat icon
 	Then popup with 'Create Favourite Bulk Update' title is displayed
-	Then User compares data in the fields in the popup:
+	Then User compares data in the fields from the table:
 	| Field | Data             |
 	| Ring  | [Ring not found] |

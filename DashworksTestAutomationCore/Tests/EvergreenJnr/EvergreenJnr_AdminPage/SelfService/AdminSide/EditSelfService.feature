@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18214 @DAS19364 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpenedOneAndUserIsAbleToEditIt
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpened
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutName
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutName
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutChanges
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutChange
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutSelectedScope
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutSelect
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithBrokenScopeList
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithBrokenSco
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -125,7 +125,7 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @SelfServiceMVP
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField
-	When User create static list with "<UserList>" name on "Applications" page with following items
+	When User create static list with '<UserList>' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -148,7 +148,7 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatDisabledSelfServiceChangesTheCheckboxStateInEditAfterEnableInCogMenu
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDisabledSelfServiceChangesTheCheckboxS
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @DAS19692 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatEnabledSelfServiceChangesTheCheckboxStateInEditAfterDisableInCogMenu
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnabledSelfServiceChangesTheCheckboxSt
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @DAS19692 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedWhenEnableDisableSelfService
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -191,7 +191,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedWhenE
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperNitificationAndButtonsOnItWillBeDisplayedWhenUserIsAboutToDeleteSelfService
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -206,7 +206,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperNitificationAndButtonsOnItWillBe
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedAfterTheSelfServiceWasDeletedAndItDoesntDisaplysAnymoreInTheGrid
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedAfter
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19289 @DAS21093 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserUpadatesSelfService
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -242,7 +242,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDispla
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19864 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdatedSelfServiceUrlPreviewConstructedProperly
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
     When User creates Self Service via API
@@ -264,7 +264,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdatedSelfServiceUrlPreviewConstructe
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19922 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceScopeDropdownWhileUpdate
-	When User create static list with "1803 Apps" name on "Applications" page with following items
+	When User create static list with '1803 Apps' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -280,7 +280,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceS
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21294 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningPopupDisplayedAfterClickingOnCogMenuAndEditOptionForAnotherComponent
-	When User create static list with "DAS_21294_AppList_1" name on "Applications" page with following items
+	When User create static list with 'DAS_21294_AppList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
 	When User creates Self Service via API and open it
@@ -297,7 +297,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningPopupDisplayedAfterClickingOnCo
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21165 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_ChecThatProperErrorMessageDisplaysWhenUserIsTryingToDeleteComponentOfNonExistingSelfService
-	When User create static list with "DAS_21165_AppList_1" name on "Applications" page with following items
+	When User create static list with 'DAS_21165_AppList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          | 
 	When User creates Self Service via API and open it
@@ -308,3 +308,19 @@ Scenario: EvergreenJnr_AdminPage_ChecThatProperErrorMessageDisplaysWhenUserIsTry
 	When User selects 'Delete' cogmenu option for 'Text' item type with 'Thank You' name on Self Service Builder Panel
 	When User clicks 'DELETE' button on inline tip banner
 	Then 'This Self Service does not exist' text is displayed on inline error banner
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS21398 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_CheckThatAddComponentPopupIsntDisplayedAfterClickingOnPageTileAndSaveChanges
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope            |
+	| DAS_21398_SS_1 | 21398_1_SI        | true    | true                | All Applications |
+	When User creates new text component for 'Welcome' Self Service page via API
+	| ComponentName  | ExtraPropertiesText             | ShowInSelfService |
+	| WelcomeTxtComp | <p>Sunt haud pauci homĭnes,</p> | true              |
+	When User navigates to the 'Builder' left submenu item
+	When User selects 'Edit' cogmenu option for 'Text' item type with 'Thank You' name on Self Service Builder Panel
+	When User enters '_Additional_Text' text to the text editor
+	When User clicks on item with 'Text' type and 'WelcomeTxtComp' name on Self Service Builder Panel
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
+	When User clicks 'YES' button on popup
+	Then popup is not displayed to User

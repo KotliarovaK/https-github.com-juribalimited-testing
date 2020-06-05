@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToDifferentTaskValue
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage B \ Original Task' option from 'Task' autocomplete
 	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToDifferentTaskValue
 	Then "5 Sep 2019" content is displayed for "zDeviceAut: Stage B \ Original Task" column
 	#Return value
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage B \ Original Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatDateWithTimeDisplayedAfterUpdateTas
 	| 00KLL9S8NRF0X6 |
 	| 00KWQ4J3WKQM0G |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'ProjectForDAS18025' option from 'Project' autocomplete
 	When User selects 'Stage18025 \ Task18025' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown

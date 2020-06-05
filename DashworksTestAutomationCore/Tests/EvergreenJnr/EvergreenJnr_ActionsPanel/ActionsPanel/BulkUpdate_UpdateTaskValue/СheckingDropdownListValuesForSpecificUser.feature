@@ -24,7 +24,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	| SelectedRowsName |
 	| <RowName>        |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects '<ProjectName>' option from 'Project' autocomplete
 	And User selects '<TaskName>' option from 'Task' autocomplete
 	And User selects '<UpdateDate>' in the 'Update Date' dropdown
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	| SelectedRowsName |
 	| 018UQ6KL9TF4YF   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Barry's User Project' option from 'Project' autocomplete
 	Then 'Task' autocomplete options are sorted in the alphabetical order
 	When User selects 'Audit & Configuration \ Validate User Device Ownership' option from 'Task' autocomplete
@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	| SelectedRowsName |
 	| 018UQ6KL9TF4YF   |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Stage 1 \ Dropdown Readiness Date (Computer)' option from 'Task' autocomplete
 	When User selects 'Started' in the 'Update Value' dropdown
@@ -173,7 +173,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	| SelectedRowsName |
 	| <RowName>        |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	When User enters 'Computer Read Only Task in Self Service' in the 'Task' autocomplete field and selects 'Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service' value
 	Then following Values are displayed in the 'Update Value' dropdown:
@@ -271,7 +271,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	| SelectedRowsName |
 	| <RowName>        |
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
@@ -296,7 +296,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then '<DefaultValue>' content is displayed in the 'Windows7Mi: User Acceptance Test \ Perform User Acceptance Test' column
 	#returns default object state
 	When User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete

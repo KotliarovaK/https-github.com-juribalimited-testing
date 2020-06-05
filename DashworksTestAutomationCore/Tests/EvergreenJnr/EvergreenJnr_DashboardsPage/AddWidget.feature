@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	Then Widget name 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' has word break style on Dashboards page
 	Then User sees '1' widgets with 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' name on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20412 @DAS20358 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20412 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterEditingDashboardSection
 	When Dashboard with 'Dashboard_20412' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -33,11 +33,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterE
 	When User clicks 'UPDATE' button
 	Then 'Section successfully updated' text is displayed on inline success banner
 	Then 'WidgetForDAS20412' Widget is displayed to the user
-	When User clicks the Dashboard Details button
-	When User clicks Delete list button
-	When User clicks 'DELETE' button
-	Then "Dashboard deleted" message is displayed
-	 
+		 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @DAS16853 @DAS18741 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsPlacedBeforeTheAggregateBySelection
 	When Dashboard with 'Dashboard_15437' name created via API and opened

@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU \ DT BU Dev' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	Then "14 Oct 2019" content is displayed for "zDeviceAut: Relative BU \ DT BU Dev" column
 	#Return value
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU \ DT BU Dev' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithNoChangeUpdateValue
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU' option from 'Stage' autocomplete
 	When User selects 'DT BU Us' option from 'Task' autocomplete
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithNoChangeUpdateValue
 	#Then '16 Oct 2019' content is displayed in the 'zUserAutom: Relative BU \ DT BU Us (Date)' column
 	#Return value
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU' option from 'Stage' autocomplete
 	When User selects 'DT BU Us' option from 'Task' autocomplete
@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithAfterCurrentValueUpdate
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU' option from 'Stage' autocomplete
 	When User selects 'DT BU Users' option from 'Task' autocomplete
@@ -160,7 +160,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	| Create static list |
 	| Bulk update        |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	Then 'UPDATE' button is disabled
 	And 'CANCEL' button is not disabled
 	When User selects '<ProjectName>' option from 'Project' autocomplete
@@ -218,7 +218,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	And User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
 	And User selects 'Stage DAS12864_0 \ Task DAS12864_0' option from 'Task' autocomplete
 	And User selects 'Started' in the 'Value' dropdown
@@ -253,7 +253,7 @@ Scenario: EvergreenJnr_UsersList_CheckRelativeUpdatesToTaskValues
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU' option from 'Stage' autocomplete
 	When User selects 'DT BU App' option from 'Task' autocomplete
@@ -287,7 +287,7 @@ Scenario: EvergreenJnr_UsersList_CheckUnitsDropDownUpdateTaskValueForBulkUpdate
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
@@ -300,7 +300,7 @@ Scenario: EvergreenJnr_UsersList_CheckUnitsDropDownUpdateTaskValueForBulkUpdate
 	Then "10 Feb 2020" content is displayed for "zDeviceAut: Stage A \ Weekdays BU Task" column
 	#Return value
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
@@ -335,7 +335,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToNowValueForBulkUpdate
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
@@ -347,7 +347,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToNowValueForBulkUpdate
 	Then current date is displayed for 'zDeviceAut: Stage A \ Weekdays BU Task' column
 	#Return value
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown

@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Associations @DAS21074
 Scenario: EvergreenJnr_Applications_CheckThatNoErrorAppearsRunningDifferentLists
 	When User clicks 'Applications' on the left-hand menu
-	When User navigates to the "All Device Applications" list
+	When User navigates to the "All Application Devices" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel

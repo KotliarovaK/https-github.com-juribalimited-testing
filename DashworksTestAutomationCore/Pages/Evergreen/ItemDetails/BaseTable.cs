@@ -33,12 +33,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             };
         }
 
+        public IList<string> GetAllRowsValue()
+        {
+            Driver.WaitForElementsToBeDisplayed(Rows);
+            var by = By.XPath(".//td[1]//self::*[string-length(text())>0]");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
         public IWebElement GetRowByKey(string key)
         {
             Driver.WaitForElementsToBeDisplayed(Rows);
-            if (Rows.Any(x => x.FindElement(By.XPath(".//td[1]//span")).Text.Equals(key)))
+            if (Rows.Any(x => x.FindElement(By.XPath(".//td[1]//self::*[string-length(text())>0]")).Text.Equals(key)))
             {
-                return Rows.First(x => x.FindElement(By.XPath(".//td[1]//span")).Text.Equals(key));
+                return Rows.First(x => x.FindElement(By.XPath(".//td[1]//self::*[string-length(text())>0]")).Text.Equals(key));
             }
             else
             {
@@ -76,10 +83,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         //column = 1 is a first column after keys
         private string GetContentFromRow(IWebElement element, int column = 1)
         {
-            var content = element.FindElement(By.XPath($".//td[{column + 1}]//span | .//td[{column + 1}]//div[count(*)=0]"));
-
+            var content = element.FindElement(By.XPath($".//td[{column + 1}]//span | .//td[{column + 1}]//div[count(*)=0] | .//td[{column + 1}]"));
             return content.Text;
-
         }
     }
 }

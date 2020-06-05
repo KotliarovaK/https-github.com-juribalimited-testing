@@ -10,10 +10,10 @@ Scenario: EvergreenJnr_AdminPage_CreateApplicationOwnershipPageValidation
 	When Project created via API
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_19910_Proj | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19910_1_A" name on "Applications" page with following items
+	When User create static list with 'DAS_19910_1_A' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19910_1_B" name on "Users" page with following items
+	When User create static list with 'DAS_19910_1_B' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -56,10 +56,10 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenUserScope
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_19910_Proj_2 | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19910_2A" name on "Applications" page with following items
+	When User create static list with 'DAS_19910_2A' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19910_2B" name on "Users" page with following items
+	When User create static list with 'DAS_19910_2B' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -87,10 +87,10 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_19910_Proj_3 | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19910_3A" name on "Applications" page with following items
+	When User create static list with 'DAS_19910_3A' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19910_3B" name on "Users" page with following items
+	When User create static list with 'DAS_19910_3B'' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates broken list with 'Broken_DAS_19910_33' name on 'Users' page
@@ -151,13 +151,13 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation
 	When Project created via API
 	| ProjectName           | Scope     | ProjectTemplate | Mode               |
 	| DAS_19910_Proj_Test_3 | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19910_3" name on "Applications" page with following items
+	When User create static list with 'DAS_19910_3' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19910_33" name on "Users" page with following items
+	When User create static list with 'DAS_19910_33' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
-	When User create static list with "DAS_19910_test_33" name on "Users" page with following items
+	When User create static list with 'DAS_19910_test_33' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API
@@ -227,7 +227,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWa
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_19910_Proj_5 | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19910_5" name on "Applications" page with following items
+	When User create static list with 'DAS_19910_5' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it

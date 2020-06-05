@@ -47,6 +47,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             _driver.NavigateToUrl(navigationUrl);
         }
 
+        #region Invalid URL navigation 
+
         [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier and inccorect GUID '(.*)'")]
         public void WhenUserNavigatesToFirsEndUserPageWithSelfServiceIdentifierAndInccorectGuid(string selfServiceIdentifier, string incorrectGuid)
         {
@@ -65,6 +67,43 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             _driver.WaitForDataLoading();
             _driver.NavigateToUrl(navigationUrl);
         }
+
+        //Always use valid Self Service Identifier for the firts placeholder, use 'VALID' keyword to get valid URL part for the next 3 placeholders
+        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier via URL")]
+        public void WhenUserNavigatesToEndUserLandingPageWithSelfServiceIdentifierViaURL(string baseSSIdentifier, Table table)
+        {
+            foreach (TableRow row in table.Rows)
+            {
+                var ss = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(baseSSIdentifier));
+                SelfServicePageDto page = _selfServicePages.Value.First();
+
+                var sSIdentifier = row["SSID"];
+                var gUID = row["GUID"];
+                var pageID = row["PageID"];
+
+                if (sSIdentifier.Equals("VALID"))
+                {
+                    sSIdentifier = baseSSIdentifier;
+                }
+
+                if (gUID.Equals("VALID"))
+                {
+                    gUID = DatabaseHelper.GetSelfServiceObjectGuid(baseSSIdentifier);
+                }
+
+                if (pageID.Equals("VALID"))
+                {
+                    pageID = DatabaseHelper.GetSelfServicePageId(page).ToString();
+                }
+
+                string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{sSIdentifier}/{gUID}/pageId/{pageID}";
+
+                _driver.WaitForDataLoading();
+                _driver.NavigateToUrl(navigationUrl);
+            }   
+        }
+
+        #endregion
 
         [Then(@"Self Service Tools Panel displayed for end client")]
         public void ThenSelfServiceToolsPanelDisplayedForEndClient()

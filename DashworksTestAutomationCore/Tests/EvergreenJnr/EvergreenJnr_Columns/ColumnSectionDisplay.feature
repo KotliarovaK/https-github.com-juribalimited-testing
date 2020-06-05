@@ -1087,3 +1087,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityColumnWorks
 	Then ColumnName is removed from the list
 	| ColumnName              |
 	| Windows7Mi: Criticality |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS21362
+Scenario: EvergreenJnr_DevicesList_CheckThatSortingAscIsDisplayedEmptyCellsAtTheTop
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "App Count (Entitled)" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 0      |
+	Then all cells in the 'App Count (Entitled)' column are empty

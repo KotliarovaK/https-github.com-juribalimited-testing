@@ -28,13 +28,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [When(@"User updates the ""(.*)"" checkbox state")]
-        public void WhenUserUpdatesTheCheckboxState(string checkbox)
-        {
-            var createBucketElement = _driver.NowAt<CreateBucketPage>();
-            createBucketElement.GetDefaultCheckboxByName(checkbox).Click();
-        }
-
         [Then(@"following Objects are displayed in Buckets table:")]
         public void ThenFollowingObjectsAreDisplayedInBuckets(Table table)
         {
