@@ -731,9 +731,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User clicks datepicker icon
 	When User selects '5' day in the Datepicker
 	And User clicks 'CREATE' button
-		#AnnI 6/3/20: this check does not work;
-	#Then 'Started, 2019-09-05, 2004 Team' content is displayed in the 'Value' column
-	#When User clicks 'Automations' header breadcrumb
+	Then 'Started, 2019-09-05, 2004 Team' content is displayed in the 'Value' column
+	When User clicks 'Automations' header breadcrumb
 	#Run Automations
 	When User enters "DAS17744" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for 'DAS17744' item from 'Automation' column
@@ -742,7 +741,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User refreshes agGrid
 	When User enters "DAS17744" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User checks following checkboxes in the filter dropdown menu for the 'Type' column:
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
 	| checkboxes        |
 	| Automation Finish |
 	And User clicks content from "Objects" column

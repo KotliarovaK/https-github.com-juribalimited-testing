@@ -88,8 +88,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17564_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then "SLOT NOT ASSOCIATED TO THE TASK" content is displayed for "Outcome" column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup
@@ -176,8 +177,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForU
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17565_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then "SLOT DOES NOT EXIST" content is displayed for "Outcome" column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17564 @Cleanup @Not_Ready
@@ -263,8 +265,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17566_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then "SLOT NOT ASSOCIATED TO THE TASK" content is displayed for "Outcome" column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18669 @DAS20038 @Cleanup
