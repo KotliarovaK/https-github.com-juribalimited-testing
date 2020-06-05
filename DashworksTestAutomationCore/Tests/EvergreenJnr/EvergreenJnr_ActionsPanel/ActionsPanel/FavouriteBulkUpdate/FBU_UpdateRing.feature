@@ -114,13 +114,13 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	When User clicks 'star' mat icon
 	When User enters 'abc_21002_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	Then following items have 'star' icon in the 'Bulk Update Type' dropdown:
+	Then following items have 'star' mat icon from 'Bulk Update Type' autocomplete
 	| Items              |
 	| 21002_RingFBU      |
 	| abc_21002_RingFBU  |
 	| Test21002_RingFBU  |
 	| test21002_RingFBU1 |
-	Then items with 'star' icon for 'Bulk Update Type' dropdown are displayed in ascending order
+	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
 
 @Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdateItemsRings

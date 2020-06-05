@@ -116,13 +116,13 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForUpdateCustomFieldFavouriteB
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	Then following items have 'star' icon in the 'Bulk Update Type' dropdown:
+	Then following items have 'star' mat icon from 'Bulk Update Type' autocomplete
 	| Items             |
 	| DAS20853_TestFBU  |
 	| 1DAS20853_TestFBU |
 	| testFBU_2085      |
 	| abc_22085         |
-	Then items with 'star' icon for 'Bulk Update Type' dropdown are displayed in ascending order
+	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateCustomFieldType
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupForUpdateCustomFie
 	When User selects '207742_TestFBU' option from 'Bulk Update Type' autocomplete
 	When User selects 'Manage favourites' option from 'Bulk Update Type' autocomplete
 	Then popup with 'Favourite Bulk Updates' title is displayed
-	Then 'star207742_TestFBU' content is displayed in 'Bulk Update Type' dropdown
+	Then 'star207742_TestFBU' content is displayed in 'Bulk Update Type' autocomplete
 	When User clicks Group By button and set checkboxes state
 	| Checkboxes  | State |
 	| Object Type | true  |

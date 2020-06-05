@@ -159,15 +159,13 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	When User clicks 'star' mat icon
 	When User enters 'abc_21007' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	Then following items have ' ' icon from ' ' autocomplete
-	| Items          |
-	Then following items have 'star' icon in the 'Bulk Update Type' dropdown:
+	Then following items have 'star' mat icon from 'Bulk Update Type' autocomplete
 	| Items          |
 	| 21007_TestFBU  |
 	| TestFBU_21007  |
 	| testFBU_210071 |
 	| abc_21007      |
-	Then items with 'star' icon for 'Bulk Update Type' dropdown are displayed in ascending order
+	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
 
 @Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21007 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAttributesForEvergreen
@@ -188,7 +186,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	When User clicks 'star' mat icon
 	When User enters 'DAS21007_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User selects 'DAS21007_TestFBU' in the 'Bulk Update Type' dropdown
+	When User selects 'DAS21007_TestFBU' option from 'Bulk Update Type' autocomplete
 	Then 'GREEN' content is displayed in 'Sticky Compliance' dropdown
 	Then 'No change' content is displayed in 'In Catalog' dropdown
 	Then 'Critical' content is displayed in 'Criticality' dropdown

@@ -337,7 +337,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
             else
             {
-                page.GetTextbox(field).Click();
+                page.GetTextbox(field).Click(); 
                 var list = page.GetAllAutocompleteOptions(field).ToList();
                 Verify.AreEqual(list.OrderBy(s => s), list,
                     $"Options in the '{field}' autocomplete are not in alphabetical order");
@@ -475,6 +475,32 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             textbox.Clear();
             textbox.SendKeys(optionName);
             Verify.IsTrue(page.IsIconDisplayedFromDropdownOptions(icon), $"'{icon}' is not displayed for '{optionName}'");
+        }
+
+        [Then(@"following items have '(.*)' mat icon from '(.*)' autocomplete")]
+        public void ThenFollowingItemsHaveMatIconFromAutocomplete(string matIcon, string placeholder, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textbox = page.GetTextbox(placeholder);
+            textbox.Click();
+            var expectedMatIconsValue = table.Rows.SelectMany(row => row.Values).ToList();
+
+            foreach (var row in table.Rows)
+            {
+                page.GetMatIconsOfDropdownOptionsByName(row["Items"], matIcon);
+            }
+            _driver.ClickByActions(page.BodyContainer);
+        }
+
+        [Then(@"items with '(.*)' mat icon for '(.*)' autocomplete are displayed in ascending order")]
+        public void ThenItemsWithMatIconForAutocompleteAreDisplayedInAscendingOrder(string matIcon, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textbox = page.GetTextbox(placeholder);
+            textbox.Click();
+            var fbuList = page.GetItemsWithIconInDropdownOptions(matIcon).Select(x => x.Text).ToList();
+            SortingHelper.IsListSorted(fbuList);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
         [Then(@"'(.*)' of all shown label is displayed in expanded autocomplete")]
@@ -954,15 +980,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropdown).Click();
             VerifyTooltipOfDropdownIcons(page, expectedTooltips);
             _driver.ClickByActions(page.BodyContainer);
-        }
-
-        [Then(@"items with '(.*)' icon for '(.*)' dropdown are displayed in ascending order")]
-        public void ThenItemsWithIconForDropdownAreDisplayedInAscendingOrder(string icon, string dropdownName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetDropdown(dropdownName).Click();
-            var fbuList = page.GetItemsWithIconInDropdownOptions(icon).Select(x => x.Text).ToList();
-            SortingHelper.IsListSorted(fbuList);
         }
 
         [Then(@"'(.*)' option is first in the '(.*)' dropdown")]

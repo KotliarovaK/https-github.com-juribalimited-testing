@@ -113,13 +113,13 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpd
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	Then following items have 'star' icon in the 'Bulk Update Type' dropdown:
+	Then following items have 'star' mat icon from 'Bulk Update Type' autocomplete
 	| Items          |
 	| 20950_TestFBU  |
 	| TestFBU_20950  |
 	| testFBU_209501 |
 	| abc_20950      |
-	Then items with 'star' icon for 'Bulk Update Type' dropdown are displayed in ascending order
+	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
 
 @Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @DAS21318 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateTaskValueType
@@ -374,7 +374,7 @@ Scenario: EvergreenJnr_AllUsers_CheckThatBulkUpdateTypeDropdownIsNotEmptyAfterRe
 	When User clicks 'star' mat icon
 	When User enters '21250_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	Then 'Update task value' content is displayed in 'Bulk Update Type' dropdown
+	Then 'Update task value' content is displayed in 'Bulk Update Type' autocomplete
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21248 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckThatCapacitySlotDropdownIsNotEmptyForNoneValue

@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update capacity unit' option from 'Bulk Update Type' autocomplete
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
-	When User selects 'Unassigned' option from 'Bucket' autocomplete
+	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
 	When User clicks 'star' mat icon
 	Then following data is displayed in the '0' column of the table
 	| Fields               |
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	Then User sees table with the following data
 	| Field                | Data                 |
 	| Bulk Update Type     | Update capacity unit |
-	| Project or Evergreen | Evergreen            |
+	| Project or Evergreen | Email Migration      |
 	| Capacity Unit        | Unassigned           |
 	| Also Move Users      | None                 |
 	When User enters '21002_CapacityUnitFBU' text to 'Favourite Bulk Update Name' textbox
@@ -114,10 +114,10 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	When User clicks 'star' mat icon
 	When User enters 'abc_21002_CapacityUnitFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	Then following items have 'star' icon in the 'Bulk Update Type' dropdown:
+	Then following items have 'star' mat icon from 'Bulk Update Type' autocomplete
 	| Items                      |
 	| 21002_CapacityUnitFBU      |
 	| abc_21002_CapacityUnitFBU  |
 	| Test21002_CapacityUnitFBU  |
 	| test21002_CapacityUnitFBU1 |
-	Then items with 'star' icon for 'Bulk Update Type' dropdown are displayed in ascending order
+	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
