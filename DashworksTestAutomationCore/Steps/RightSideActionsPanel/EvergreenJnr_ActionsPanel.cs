@@ -215,6 +215,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 
             var listElement = _driver.NowAt<ActionsElement>();
             listElement.ListNameTextBox.SendKeys(listName);
-        }        
+        }
     }
 }
