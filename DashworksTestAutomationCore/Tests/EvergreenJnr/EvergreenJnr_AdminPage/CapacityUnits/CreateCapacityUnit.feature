@@ -47,13 +47,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User navigates to the 'Capacity Units' left menu item
 	Then 'DefaultCapacityUnit13720' content is displayed in the 'Capacity Unit' column
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
-	Then 'TRUE' content is displayed in the 'Default' column
-	And '' content is displayed in the 'Devices' column
-	And '' content is displayed in the 'Users' column
-	And '' content is displayed in the 'Mailboxes' column
-	And '' content is displayed in the 'Applications' column
+	Then "TRUE" content is displayed for "Default" column
+	Then "" content is displayed for "Devices" column
+	Then "" content is displayed for "Users" column
+	Then "" content is displayed for "Mailboxes" column
+	Then "" content is displayed for "Applications" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then 'FALSE' content is displayed in the 'Default' column
+	Then "FALSE" content is displayed for "Default" column
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName         |
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User close message on the Admin page
 	Then 'DefaultCapacityUnit13720' content is displayed in the 'Capacity Unit' column
 	When User clicks content from "Capacity Unit" column
-	Then "Default Unit" checkbox is checked and cannot be unchecked
+	Then "Default unit" checkbox is checked and cannot be unchecked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13013 @DAS12926 @DAS18351 @DAS18920 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWithTheSameNameInDifferentCase
