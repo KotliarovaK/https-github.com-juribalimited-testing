@@ -41,7 +41,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	| BCLABS |
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	Then 'BCLABS' content is displayed in the 'Domain' column
-	Then 'FullAccess' content is displayed in the 'Permission' column
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Domain' column:
 	| Values |
 	| BCLABS |
@@ -53,3 +52,5 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	| DeleteItem       |
 	| ChangePermission |
 	| ChangeOwner      |
+	When User enters "002B5DC7D4D34D5C895" text in the Search field for "Name" column
+	Then 'FullAccess' content is displayed in the 'Permission' column
