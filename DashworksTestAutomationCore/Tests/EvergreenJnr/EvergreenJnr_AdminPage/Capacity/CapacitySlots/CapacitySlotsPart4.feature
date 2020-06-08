@@ -100,7 +100,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 	| ProjectForDAS13417 | capacity type = Capacity Units  | capacity type = Capacity Units  | Capacity Units  |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	When User clicks String Filter button for "Capacity Units" column on the Admin page
-	And User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Capacity Units' column:
+	| checkboxes         |
+	| All Capacity Units |
 	Then Rows counter shows "1" of "2" rows
 	And '' content is displayed in the 'Capacity Units' column

@@ -200,8 +200,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then Rows counter shows "4" of "6" rows
 	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Action' column:
+	| checkboxes            |
+	| Onboard Device Object |
 	Then Rows counter shows "4" of "6" rows
 	When User waits until Queue disappears
 	And User navigates to the 'History' left menu item
@@ -252,8 +253,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then Rows counter shows "4" of "6" rows
 	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Action' column:
+	| checkboxes            |
+	| Onboard Device Object |
 	Then Rows counter shows "4" of "6" rows
 	When User clicks String Filter button for "Status" column on the Admin page
 	When User selects "Succeeded" checkbox from String Filter on the Admin page

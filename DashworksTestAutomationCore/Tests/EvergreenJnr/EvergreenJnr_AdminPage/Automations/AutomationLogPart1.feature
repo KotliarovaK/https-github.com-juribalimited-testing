@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	| Automation Finish |
 	Then "SUCCESS" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS16974 @DAS16316 @DAS17263 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS16974 @DAS16316 @DAS17263
 Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 #Use correct, active Automation
 	When User clicks 'Admin' on the left-hand menu
@@ -147,17 +147,16 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "D16974_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Start" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Action Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Start  |
 	Then "Manual" content is displayed for "Run" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Action Start" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Action Finish" checkbox from String Filter with item list on the Admin page
+	When User checks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes       |
+	| Automation Start |
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then "Manual" content is displayed for "Run" column
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16316 @DAS16319 @Not_Ready

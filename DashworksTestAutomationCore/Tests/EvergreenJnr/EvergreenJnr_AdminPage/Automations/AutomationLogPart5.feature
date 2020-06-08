@@ -30,8 +30,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User clicks refresh button in the browser
 	When User enters "17974_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -69,8 +70,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "17829_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -189,8 +191,9 @@ Scenario: EvergreenJnr_AdminPage_CheckFoundObjectsForRenamedAutomation
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "20065_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	When User clicks content from "Objects" column
 	Then "TestBulkUpdate" content is displayed for "zDeviceAut: Path" column
 
