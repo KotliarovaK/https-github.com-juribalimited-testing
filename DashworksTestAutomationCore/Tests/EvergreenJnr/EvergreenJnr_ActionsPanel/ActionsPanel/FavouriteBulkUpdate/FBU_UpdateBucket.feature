@@ -122,3 +122,26 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| Test21002_BucketFBU  |
 	| test21002_BucketFBU1 |
 	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
+
+#Add specific User with broken  FBU to check Error message when Bucket was deleted
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Not_Ready
+Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdateWithBrokenBucket
+	When User is logged in to the Evergreen as
+ 	| Username  | Password  |
+ 	| ********* | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'specific FBU' option from 'Bulk Update Type' autocomplete
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
+	Then 'This Favourite Bulk Update is invalid' text is displayed on inline error banner
+	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
+	Then 'UPDATE' button is disabled
+	Then 'star' mat icon is not disabled

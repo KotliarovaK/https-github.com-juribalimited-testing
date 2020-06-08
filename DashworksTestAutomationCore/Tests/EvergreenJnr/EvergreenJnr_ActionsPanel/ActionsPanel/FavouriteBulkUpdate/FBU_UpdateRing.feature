@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdat
 	When User selects '21002_RingFBU1' option from 'Bulk Update Type' autocomplete
 	Then '19083_Project' content is displayed in 'Project or Evergreen' autocomplete
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @DAS21253 @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @DAS21253 @Cleanup
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRing
 	When Project created via API and opened
 	| ProjectName       | Scope       | ProjectTemplate | Mode               |
@@ -187,6 +187,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	When User clicks 'Admin' on the left-hand menu
 	When User enters "21002_RingProject" text in the Search field for "Project" column
 	When User clicks content from "Project" column
+	When User navigates to the 'Rings' left menu item
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |
 	| 21002_Ring       |
@@ -203,10 +204,11 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects '21002_FBU_Ring' option from 'Bulk Update Type' autocomplete
-	Then '21002_RingProject' content is displayed in 'Project or Evergreen' autocomplete
-	Then '' content is displayed in 'Ring' autocomplete
-	When User clicks 'star' mat icon
-	Then popup with 'Create Favourite Bulk Update' title is displayed
-	Then User sees table with the following data
-	| Field | Data             |
-	| Ring  | [Ring not found] |
+	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
+	Then '' content is displayed in 'Project or Evergreen' autocomplete
+	#Check following steps with Kate M. 8/6/2020
+	#When User clicks 'star' mat icon
+	#Then popup with 'Create Favourite Bulk Update' title is displayed
+	#Then User sees table with the following data
+	#| Field | Data             |
+	#| Ring  | [Ring not found] |

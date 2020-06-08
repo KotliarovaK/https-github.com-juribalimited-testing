@@ -254,7 +254,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	Then 'DAS20950_TestFBU' content is not displayed in 'Bulk Update Type' autocomplete after search
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @DAS21253 @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @DAS21253 @Cleanup
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDeletedTask
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_AllDevices_CheckThatCapacitySlotDropdownIsNotEmptyForNone
 	When User selects 'DAS21248_FBU' option from 'Bulk Update Type' autocomplete
 	Then 'None' content is displayed in 'Slot' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @FavouriteBulkUpdate @DAS21252 @Cleanup @Yellow_Dwarf
+@Evergreen @EvergreenJnr_AdminPage @Automations @FavouriteBulkUpdate @DAS21252 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChangingTask
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |

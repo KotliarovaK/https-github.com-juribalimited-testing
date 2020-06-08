@@ -121,3 +121,61 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| Test21002_CapacityUnitFBU  |
 	| test21002_CapacityUnitFBU1 |
 	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
+
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Cleanup
+Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedCapacityUnit
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| 210022_RingProject | All Devices | None            | Standalone Project |
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Devices' tab on Project Scope Changes page
+	When User expands multiselect and selects following Objects
+	| Objects        |
+	| 00KLL9S8NRF0X6 |
+	When User clicks 'UPDATE ALL CHANGES' button 
+	When User clicks 'UPDATE PROJECT' button 
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
+	When User navigates to the 'Rings' left menu item
+	When User clicks 'CREATE PROJECT RING' button 
+	When User enters '21002_Ring' text to 'Ring name' textbox
+	When User clicks 'CREATE' button
+	Then 'The ring has been created' text is displayed on inline success banner
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update ring' option from 'Bulk Update Type' autocomplete
+	When User selects '21002_RingProject' option from 'Project or Evergreen' autocomplete
+	When User selects '21002_Ring' option from 'Ring' autocomplete
+	When User clicks 'star' mat icon
+	When User enters '21002_FBU_Ring' text to 'Favourite Bulk Update Name' textbox
+	When User clicks 'CREATE' button
+	#Delete Ring
+	When User clicks 'Admin' on the left-hand menu
+	When User enters "21002_RingProject" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User navigates to the 'Rings' left menu item
+	When User select "Ring" rows in the grid
+	| SelectedRowsName |
+	| 21002_Ring       |
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
+	And User clicks 'DELETE' button on inline tip banner
+	Then 'The selected ring has been deleted' text is displayed on inline success banner
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects '21002_FBU_Ring' option from 'Bulk Update Type' autocomplete
+	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
+	Then '' content is displayed in 'Project or Evergreen' autocomplete

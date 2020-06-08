@@ -239,6 +239,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         private static string AutocompleteOptionsSelector = ".//mat-option[@tabindex!='-1']";
 
+        private static string AutocompleteOptionsWithIconsSelector = ".//mat-option[@tabindex!='-1']//mat-icon//parent::span/span";
+
         private static string AutocompleteSelectOptionsSelector = ".//ul//mat-checkbox";
 
         private static string AutocompleteValidationMessageSelector = ".//mat-option[@tabindex='-1']//span";
@@ -418,6 +420,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
             Driver.WaitForElementInElementToBeDisplayed(AutocompleteDropdown, By.XPath(AutocompleteOptionsSelector));
             var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector));
+            var foundOptionsWithIcon = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsWithIconsSelector));
             if (foundOptions.Any())
             {
                 if (containsOption)
@@ -445,8 +448,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                         }
                     }
                     else
-                        throw new Exception(
-                            $"There are no option that equals '{searchText}' text in the '{placeholder}' autocomplete");
+                    {
+                        if (foundOptionsWithIcon.Any(x => x.Text.Equals(searchText)))
+                        {
+                            foreach (string option in options)
+                            {
+                                foundOptionsWithIcon.First(x => x.Text.Equals(option)).Click();
+                                Driver.WaitForDataLoading();
+                            }
+                        }
+                        else
+                            throw new Exception(
+                                $"There are no option that equals '{searchText}' text in the '{placeholder}' autocomplete");
+                    }
                 }
             }
             else
