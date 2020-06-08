@@ -137,4 +137,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsInactiveWhileChangingAct
 	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
 	When User clicks 'UPDATE' button
 	When User clicks content from "Action" column
-	Then 'UPDATE' button is disabled 
+	Then 'UPDATE' button is disabled
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS21049 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckCopiedTextFromAction
+	When User creates new Automation via API and open it
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 21049_Automation | 21049       | true     | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	When User enters '21049 Action Text' text to 'Action Name' textbox
+	When User selects 'Update bucket' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Unassigned' option from 'Bucket' autocomplete
+	When User clicks 'CREATE' button
+	When User right clicks on '21049 Action Text' cell from 'Action' column
+	When User selects 'Copy cell' option in context menu
+	Then Next data '21049 Action Text' is copied

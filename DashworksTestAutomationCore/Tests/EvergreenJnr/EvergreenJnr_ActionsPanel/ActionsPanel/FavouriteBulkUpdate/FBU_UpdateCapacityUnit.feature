@@ -123,10 +123,10 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Cleanup
-Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedCapacityUnit
+Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateCapacityUnitFbuForDeletedCapacityUnit
 	When Project created via API and opened
-	| ProjectName        | Scope       | ProjectTemplate | Mode               |
-	| 210022_RingProject | All Devices | None            | Standalone Project |
+	| ProjectName      | Scope       | ProjectTemplate | Mode               |
+	| 210022_CUProject | All Devices | None            | Standalone Project |
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Devices' tab on Project Scope Changes page
@@ -137,11 +137,13 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedCa
 	When User clicks 'UPDATE PROJECT' button 
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
-	When User navigates to the 'Rings' left menu item
-	When User clicks 'CREATE PROJECT RING' button 
-	When User enters '21002_Ring' text to 'Ring name' textbox
-	When User clicks 'CREATE' button
-	Then 'The ring has been created' text is displayed on inline success banner
+	When User navigates to the 'Capacity' left menu item
+	When User navigates to the 'Units' left menu item
+	When User clicks 'CREATE PROJECT CAPACITY UNIT' button 
+	And User enters 'CapacityUnit210022' text to 'Capacity Unit Name' textbox
+	And User enters '210022' text to 'Description' textbox
+	And User clicks 'CREATE' button 
+	Then 'The capacity unit has been created' text is displayed on inline success banner
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
@@ -150,24 +152,25 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedCa
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update ring' option from 'Bulk Update Type' autocomplete
-	When User selects '21002_RingProject' option from 'Project or Evergreen' autocomplete
-	When User selects '21002_Ring' option from 'Ring' autocomplete
+	When User selects 'Update capacity unit' option from 'Bulk Update Type' autocomplete
+	When User selects '210022_CUProject' option from 'Project or Evergreen' autocomplete
+	When User selects 'CapacityUnit210022' option from 'Capacity Unit' autocomplete
 	When User clicks 'star' mat icon
-	When User enters '21002_FBU_Ring' text to 'Favourite Bulk Update Name' textbox
+	When User enters '21002_FBU_CapacityUnit' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	#Delete Ring
+	#Delete Capacity Unit
 	When User clicks 'Admin' on the left-hand menu
-	When User enters "21002_RingProject" text in the Search field for "Project" column
+	When User enters "210022_CUProject" text in the Search field for "Project" column
 	When User clicks content from "Project" column
-	When User navigates to the 'Rings' left menu item
-	When User select "Ring" rows in the grid
-	| SelectedRowsName |
-	| 21002_Ring       |
+	When User navigates to the 'Capacity' left menu item
+	When User navigates to the 'Units' left menu item
+	When User select "Capacity Unit" rows in the grid
+	| SelectedRowsName   |
+	| CapacityUnit210022 |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
 	And User clicks 'DELETE' button on inline tip banner
-	Then 'The selected ring has been deleted' text is displayed on inline success banner
+	Then 'The selected unit has been deleted' text is displayed on inline success banner
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
@@ -176,6 +179,6 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedCa
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '21002_FBU_Ring' option from 'Bulk Update Type' autocomplete
+	When User selects '21002_FBU_CapacityUnit' option from 'Bulk Update Type' autocomplete
 	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
 	Then '' content is displayed in 'Project or Evergreen' autocomplete

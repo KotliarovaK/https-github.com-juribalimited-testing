@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatApplicationAttributesCriticalityForAut
 	| Not Important |
 	| Uncategorised |
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18674 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18674 @DAS21240 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityForAutomations
 	When User creates new Automation via API and open it
 	| Name                  | Description | IsActive | StopOnFailedAction | Scope            | Run    |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityForA
 	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
 	Then 'No change' content is displayed in 'In Catalog' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DASDAS19601 @DAS19150 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DASDAS19601 @DAS19150 @DAS21240 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForEvergreen
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	Then 'Core' content is displayed in 'Criticality' dropdown
 	Then 'FALSE' content is displayed in 'Hide From End Users' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DAS19353 @DASDAS19601 @DAS19150 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DAS19353 @DASDAS19601 @DAS19150 @DAS21240 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForProject
 	When User creates new Automation via API and open it
 	| Name                  | Description | IsActive | StopOnFailedAction | Scope            | Run    |

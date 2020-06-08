@@ -126,3 +126,22 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageForScopeDropdown
 	Then 'This list has errors' error message is displayed for 'Scope' field
 	When User selects 'All Users' option from 'Scope' autocomplete
 	Then 'List validated' success message for 'Scope' field
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS21167 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckErrorMessageForDeletedAutomation
+	When User creates new Automation via API and open it
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 21167_Automation | 21167       | true     | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to 'evergreen/#/admin/automations/list' URL in a new tab
+	When User select "Automation" rows in the grid
+	| SelectedRowsName |
+	| 21167_Automation |
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
+	And User clicks 'DELETE' button on inline tip banner
+	Then '1 automation deleted' text is displayed on inline success banner
+	When User switches to previous tab
+	When User enters 'new_21167' text to 'Description' textbox
+	When User clicks 'UPDATE' button
+	Then 'This automation does not exist' text is displayed on inline error banner

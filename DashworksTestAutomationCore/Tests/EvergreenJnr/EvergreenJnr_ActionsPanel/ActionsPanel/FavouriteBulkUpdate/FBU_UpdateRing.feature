@@ -139,13 +139,6 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdat
 	When User enters '21002_RingFBU1' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	#Check Action panel values
-	When User clicks refresh button in the browser
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Email Address" rows in the grid
-	| SelectedRowsName                 |
-	| 003F5D8E1A844B1FAA5@bclabs.local |
-	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects '21002_RingFBU1' option from 'Bulk Update Type' autocomplete
 	Then '19083_Project' content is displayed in 'Project or Evergreen' autocomplete
 
@@ -212,3 +205,30 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	#Then User sees table with the following data
 	#| Field | Data             |
 	#| Ring  | [Ring not found] |
+
+@Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21241 @Cleanup
+Scenario: EvergreenJnr_AllMailboxes_CheckDefaultCheckboxForCreateFavouriteBulkUpdatePopUp
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 003F5D8E1A844B1FAA5@bclabs.local |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update ring' option from 'Bulk Update Type' autocomplete
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Unassigned' option from 'Ring' autocomplete
+	When User clicks 'star' mat icon
+	When User enters '21241_RingFBU' text to 'Favourite Bulk Update Name' textbox
+	When User checks 'Default Favourite Bulk Update' checkbox
+	When User clicks 'CREATE' button
+	#Check Action panel values
+	When User clicks refresh button in the browser
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 003F5D8E1A844B1FAA5@bclabs.local |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	Then '21241_RingFBU' content is displayed in 'Bulk Update Type' autocomplete
