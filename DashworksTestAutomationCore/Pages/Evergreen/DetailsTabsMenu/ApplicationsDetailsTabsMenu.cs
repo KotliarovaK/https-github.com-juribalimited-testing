@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-icon ag-icon-columns']")]
         public IWebElement ColumnButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-header-menu')]//div[@class='ag-column-select-panel']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'menu-column-select')]//div[@ref='primaryColsListPanel']")]
         public IWebElement ColumnPanelInColumnSettings { get; set; }
 
         //[FindsBy(How = How.XPath, Using = "//span[contains(@class, 'icon-checkbox')]/ancestor::div[@ref='eSelect']")]

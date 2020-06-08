@@ -57,6 +57,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then Details page for 'Accessible FormNet Fill 2.2' item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Devices' left submenu item
+	When User enters "28IM4D2EO1VJSA" text in the Search field for "Device" column
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'UNKNOWN' content is displayed in the 'Used' column
 	Then 'TRUE' content is displayed in the 'Entitled' column
@@ -70,7 +71,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	| Values |
 	| True   |
 	When User navigates to the 'AD' left submenu item
-	Then 'UK' content is displayed in the 'Domain' column
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Domain' column:
 	| Values |
 	| AU     |
@@ -78,3 +78,5 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	| UK     |
 	| US-E   |
 	| US-W   |
+	When User enters "Users.Edinburgh.UK.local" text in the Search field for "Organisational Unit" column
+	Then 'UK' content is displayed in the 'Domain' column

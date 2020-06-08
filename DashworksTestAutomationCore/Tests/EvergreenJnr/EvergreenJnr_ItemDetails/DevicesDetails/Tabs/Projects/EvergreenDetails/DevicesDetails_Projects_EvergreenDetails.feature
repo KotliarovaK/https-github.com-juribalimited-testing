@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting
 	| Title          | Value            |
 	| Evergreen Ring | Evergreen Ring 2 |
 	When User clicks on edit button for 'Evergreen Ring' field
-	Then 'New Ring' autocomplete contains following options:
+	Then 'Ring' autocomplete contains following options:
 	| Options          |
 	| Unassigned       |
 	| Evergreen Ring 1 |
@@ -359,14 +359,14 @@ Scenario: EvergreenJnr_AllLists_CheckPaginationDisplayingForCapacityAutocomplete
 	Then Details page for '$231000-3AC04R8AR431' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
-	When User expands 'New Capacity Unit' autocomplete
+	When User expands 'Capacity Unit' autocomplete
 	Then '50' of all shown label is displayed in expanded autocomplete
 	#MAILBOX
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
-	When User expands 'New Capacity Unit' autocomplete
+	When User expands 'Capacity Unit' autocomplete
 	Then '50' of all shown label is displayed in expanded autocomplete
 
 	#APPLICATION
@@ -374,7 +374,7 @@ Scenario: EvergreenJnr_AllLists_CheckPaginationDisplayingForCapacityAutocomplete
 	Then Details page for '0004 - Adobe Acrobat Reader 5.0.5 Francais' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
-	When User expands 'New Capacity Unit' autocomplete
+	When User expands 'Capacity Unit' autocomplete
 	Then '50' of all shown label is displayed in expanded autocomplete
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17091 @Cleanup
@@ -437,19 +437,19 @@ Scenario: EvergreenJnr_AllLists_CheckPaginationDisplayingForRingsAutocomplete
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Ring' field
-	When User expands 'New Ring' autocomplete
+	When User expands 'Ring' autocomplete
 	Then '50' of all shown label is displayed in expanded autocomplete
 	#USER
 	When User navigates to the 'User' details page for '$231000-3AC04R8AR431' item
 	Then Details page for '$231000-3AC04R8AR431' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Ring' field
-	When User expands 'New Ring' autocomplete
+	When User expands 'Ring' autocomplete
 	Then '50' of all shown label is displayed in expanded autocomplete
 	#MAILBOX
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Ring' field
-	When User expands 'New Ring' autocomplete
+	When User expands 'Ring' autocomplete
 	Then '50' of all shown label is displayed in expanded autocomplete
