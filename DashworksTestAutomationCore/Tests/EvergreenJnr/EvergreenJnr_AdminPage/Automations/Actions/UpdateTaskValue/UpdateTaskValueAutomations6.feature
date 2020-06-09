@@ -29,8 +29,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19656_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
@@ -53,8 +54,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19656_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
@@ -85,8 +87,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "192741_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	Then current date is displayed for 'zUserAutom: Stage 2 \ Weekdays Task' column
 	#Return to previous value
@@ -110,8 +113,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "192741_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	When User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
@@ -142,8 +146,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19854_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	Then '20 Feb 2020' content is displayed in the 'zUserAutom: Stage 1 \ Original Auto Task (Date)' column
 	Then '20 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Relative Task (Date)' column
@@ -170,8 +175,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19854_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	Then '' content is displayed in the 'zUserAutom: Stage 1 \ Original Auto Task (Date)' column
 	Then 'COMPLETE' content is displayed in the 'zUserAutom: Stage 1 \ Original Auto Task' column
@@ -337,7 +343,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDateColumnForRunningAutomationWithRadiobut
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "21043_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	Then '10 Sep 2019' content is displayed in the 'zDeviceAut: Stage C \ Radio Date Slot Device (Date)' column

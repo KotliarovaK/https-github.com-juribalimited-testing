@@ -30,8 +30,9 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	When User opens 'Action' column settings
 	When User clicks Column button on the Column Settings panel
 	When User select "Action Task or Field" checkbox on the Column Settings panel
@@ -60,8 +61,9 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	Then 'zero' content is displayed in the 'Phoenix Field' column
 
@@ -90,8 +92,9 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -117,8 +120,9 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -150,8 +154,9 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -177,8 +182,9 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_2" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -212,8 +218,9 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -239,8 +246,9 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_3" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user

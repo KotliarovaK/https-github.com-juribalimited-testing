@@ -693,10 +693,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User navigates to the 'Automations' left menu item
 	And User navigates to the 'Automation Log' left menu item
 	And User enters "15949_Automation" text in the Search field for "Automation" column
-	And User clicks String Filter button for "Action" column on the Admin page
-	And User selects "Select All" checkbox from String Filter with item list on the Admin page
-	And User clicks String Filter button for "Action" column on the Admin page
-	And User selects "15949_Action_1" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Action' column:
+	| checkboxes |
+	| Select All |
+	When User checks following checkboxes in the filter dropdown menu for the 'Action' column:
+	| checkboxes     |
+	| 15949_Action_1 |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation
