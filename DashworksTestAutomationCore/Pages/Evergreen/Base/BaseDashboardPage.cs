@@ -385,7 +385,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return message;
         }
 
-        public void AutocompleteSelect(string placeholder, string searchText, bool withSearch = false,
+        public void AutocompleteSelect(string placeholder, string searchText, string icon = "", bool withSearch = false,
             bool containsOption = false, params string[] optionsToSelect)
         {
             var textbox = GetTextbox(placeholder);
@@ -398,16 +398,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             List<string> options = new List<string>();
             if (optionsToSelect.Any())
             {
-                options.AddRange(optionsToSelect);
+                options.AddRange(optionsToSelect.Select(x => $"{icon}{x}"));
             }
             else
             {
-                options.Add(searchText);
+                options.Add($"{icon}{searchText}");
             }
 
             if (withSearch)
             {
-                textbox.ClearWithBackspaces();
                 textbox.SendKeys(searchText);
                 if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector),
                     WebDriverExtensions.WaitTime.Short))
@@ -422,11 +421,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             {
                 if (containsOption)
                 {
-                    if (foundOptions.Any(x => x.Text.Contains(searchText)))
+                    if (foundOptions.Any(x => x.Text.Contains(searchText) && x.Text.Contains(icon)))
                     {
                         foreach (string option in options)
                         {
-                            foundOptions.First(x => x.Text.Contains(option)).Click();
+                            foundOptions.First(x =>
+                                x.Text.Contains(option.Replace(icon, string.Empty)) && x.Text.Contains(icon)).Click();
                             Driver.WaitForDataLoading();
                         }
                     }
@@ -436,7 +436,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 }
                 else
                 {
-                    if (foundOptions.Any(x => x.Text.Equals(searchText)))
+                    if (foundOptions.Any(x => x.Text.Equals($"{icon}{searchText}")))
                     {
                         foreach (string option in options)
                         {

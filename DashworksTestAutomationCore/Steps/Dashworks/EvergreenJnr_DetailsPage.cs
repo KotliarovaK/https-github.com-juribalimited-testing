@@ -75,6 +75,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"All text is displayed for {columnName} column");
         }
 
+        //TODO should be removed and replaced by Check/Uncheck methods
         [When(@"User clicks following checkboxes from Column Settings panel for the '(.*)' column:")]
         public void WhenUserClicksFollowingCheckboxesFromColumnSettingsPanelForTheColumn(string columnName, Table table)
         {

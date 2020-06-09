@@ -929,6 +929,14 @@ namespace DashworksTestAutomation.Extensions
                 WaitForAtLeastOneElementDisplayCondition(driver, by, false, waitSeconds);
         }
 
+        public static void WaitForElementsToBeNotDisplayed(this RemoteWebDriver driver, List<By> bys, int waitSeconds = WaitTimeoutSeconds, bool allElements = true)
+        {
+            if (allElements)
+                WaitForElementsDisplayCondition(driver, bys, false, waitSeconds);
+            else
+                WaitForAtLeastOneElementDisplayCondition(driver, bys, false, waitSeconds);
+        }
+
         public static void WaitForElementsToBeNotDisplayed(this RemoteWebDriver driver, IList<IWebElement> elements, int waitSeconds = WaitTimeoutSeconds)
         {
             WaitForElementsDisplayCondition(driver, elements, false, waitSeconds);
@@ -940,6 +948,14 @@ namespace DashworksTestAutomation.Extensions
                 WaitForElementsDisplayCondition(driver, by, true, waitSeconds);
             else
                 WaitForAtLeastOneElementDisplayCondition(driver, by, true, waitSeconds);
+        }
+
+        public static void WaitForElementsToBeDisplayed(this RemoteWebDriver driver, List<By> bys, int waitSeconds = WaitTimeoutSeconds, bool allElements = true)
+        {
+            if (allElements)
+                WaitForElementsDisplayCondition(driver, bys, true, waitSeconds);
+            else
+                WaitForAtLeastOneElementDisplayCondition(driver, bys, true, waitSeconds);
         }
 
         public static void WaitForElementsToBeDisplayed(this RemoteWebDriver driver, IList<IWebElement> elements, int waitSeconds = WaitTimeoutSeconds, bool allElements = true)
@@ -963,6 +979,19 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        private static void WaitForElementsDisplayCondition(this RemoteWebDriver driver, List<By> bys, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(VisibleConditionOfAllElementsLocatedBy(bys, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Elements with '{bys}' selectors were not changed Display condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
         private static void WaitForElementsDisplayCondition(this RemoteWebDriver driver, IList<IWebElement> elements, bool condition, int waitSeconds)
         {
             try
@@ -973,6 +1002,19 @@ namespace DashworksTestAutomation.Extensions
             catch (WebDriverTimeoutException e)
             {
                 throw new Exception($"Not all from {elements.Count} elements were not changed Display condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static void WaitForAtLeastOneElementDisplayCondition(this RemoteWebDriver driver, List<By> bys, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(VisibleConditionOfAtLeastOneElementLocatedBy(bys, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Elements with '{bys}' selectors were not changed Display condition to '{condition}' after {waitSeconds} seconds", e);
             }
         }
 
@@ -1031,6 +1073,39 @@ namespace DashworksTestAutomation.Extensions
             };
         }
 
+        private static Func<IWebDriver, bool> VisibleConditionOfAllElementsLocatedBy(List<By> locators, bool expectedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    List<IWebElement> elements = new List<IWebElement>();
+                    foreach (By locator in locators)
+                    {
+                        elements.AddRange(driver.FindElements(locator));
+                    }
+                    return elements.All(element => element.Displayed().Equals(expectedCondition));
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+            };
+        }
+
         private static Func<IWebDriver, bool> VisibleConditionOfAllElementsLocatedBy(IList<IWebElement> elements, bool expectedCondition)
         {
             return (driver) =>
@@ -1066,6 +1141,39 @@ namespace DashworksTestAutomation.Extensions
                 try
                 {
                     var elements = driver.FindElements(locator);
+                    return elements.Any(element => element.Displayed().Equals(expectedCondition));
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+            };
+        }
+
+        private static Func<IWebDriver, bool> VisibleConditionOfAtLeastOneElementLocatedBy(List<By> locators, bool expectedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    List<IWebElement> elements = new List<IWebElement>();
+                    foreach (By locator in locators)
+                    {
+                        elements.AddRange(driver.FindElements(locator));
+                    }
                     return elements.Any(element => element.Displayed().Equals(expectedCondition));
                 }
                 catch (NoSuchElementException)

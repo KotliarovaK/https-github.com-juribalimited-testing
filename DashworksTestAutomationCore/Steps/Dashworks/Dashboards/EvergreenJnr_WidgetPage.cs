@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("List") && !string.IsNullOrEmpty(row["List"]))
             {
-                baseActionItem.AutocompleteSelect("List", row["List"], true);
+                baseActionItem.AutocompleteSelect("List", row["List"], string.Empty,true);
             }
 
             if (row.ContainsKey("Type") && !string.IsNullOrEmpty(row["Type"]))
