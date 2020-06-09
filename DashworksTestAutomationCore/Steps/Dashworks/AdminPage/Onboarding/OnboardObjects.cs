@@ -17,8 +17,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Onboarding
         }
 
         //| DeviceObjects | OR | UserObjects | OR | ApplicationObjects |
-        [When(@"User onboard objects to '(.*)' project")]
-        public void WhenUserOnboardObjectsToTheProject(string projectName, Table table)
+        [When(@"User onboards objects to '(.*)' project")]
+        public void WhenUserOnboardsObjectsToTheProject(string projectName, Table table)
         {
             _onboardObjectsToProjectApiMethods.OnboardObjectsToProjectAPI(projectName, table);
             _onboardObjectsToProjectApiMethods.WaitForObjectsToBeOnboarded(projectName, table);
