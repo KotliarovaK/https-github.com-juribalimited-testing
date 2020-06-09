@@ -407,7 +407,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
             if (withSearch)
             {
-                textbox.ClearWithBackspaces();
                 textbox.SendKeys(searchText);
                 if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector),
                     WebDriverExtensions.WaitTime.Short))
