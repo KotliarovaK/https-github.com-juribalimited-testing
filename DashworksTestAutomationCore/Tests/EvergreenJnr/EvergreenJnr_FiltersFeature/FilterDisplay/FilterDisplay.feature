@@ -1426,4 +1426,3 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterInfoDisplayedInWithErrorI
 	When User clicks the Filters button
 	Then "Any Device in list 2004 Rollout or [List not found] used on device" is displayed in added filter info
 	Then Filter info is displayed in error block
- 

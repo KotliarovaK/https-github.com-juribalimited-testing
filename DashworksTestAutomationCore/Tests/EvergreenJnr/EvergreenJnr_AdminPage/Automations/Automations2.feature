@@ -136,3 +136,47 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationWithUnknownNameCanBeCreated
 	When User navigates to the 'Automations' left menu item
 	When User enters "Unknown" text in the Search field for "Automation" column
 	Then 'Unknown' content is displayed in the 'Automation' column
+
+@Evergreen @Automations @DAS20954 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatAutomationActionLabelIsDisplayedForSelectedFilter
+	When Project created via API and opened
+	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| 20954_Project | All Devices | None            | Standalone Project |
+	Then Page with '20954_Project' header is displayed to user
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
+	When User expands multiselect to add objects
+	When User expands multiselect and selects following Objects
+	| Objects        |
+	| 00KWQ4J3WKQM0G |
+	When User clicks 'UPDATE ALL CHANGES' button 
+	When User clicks 'UPDATE PROJECT' button 
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
+	When User navigates to the 'Queue' left menu item
+	When User waits until Queue disappears
+	When User creates new Automation via API and open it
+	| Name     | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| DAS20954 | DAS20954    | true     | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	When User clicks 'CREATE ACTION' button 
+	Then Create Action page is displayed to the User
+	When User enters 'DAS20954_Action' text to 'Action Name' textbox
+	When User selects 'Update ring' in the 'Action Type' dropdown
+	When User selects '20954_Project' option from 'Project or Evergreen' autocomplete
+	When User selects 'Unassigned' option from 'Ring' autocomplete
+	When User clicks 'CREATE' button
+	When User clicks 'Automations' header breadcrumb
+	Then Page with 'Automations' header is displayed to user
+	When User enters "DAS20954" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for 'DAS20954' item from 'Automation' column
+	When 'DAS20954' automation 'DAS20954_Action' action run has finished
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	And user select "DAS20954 \ DAS20954_Action" filter
+	And User checks 'Empty' checkbox
+	And User clicks 'ADD' button
+	Then "Automation Action DAS20954 \ DAS20954_Action is Empty" is displayed in added filter info
