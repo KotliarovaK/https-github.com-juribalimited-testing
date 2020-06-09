@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	When User clicks 'CREATE' button
 	#Actions grid check
 	Then "Update application attributes" content is displayed for "Type" column
-	Then "" content is displayed for "Project" column
+	Then "" content is displayed for "Project or Evergreen" column
 	Then "Sticky Compliance, In Catalog, Criticality, Rationalisation, Hide From End Users" content is displayed for "Task or Field" column
 	Then "Red, False, Critical, Keep, True" content is displayed for "Value" column
 	#Actions content check
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	When User clicks 'UPDATE' button
 	#Actions grid check
 	Then "Update application attributes" content is displayed for "Type" column
-	Then "" content is displayed for "Project" column
+	Then "" content is displayed for "Project or Evergreen" column
 	Then "Sticky Compliance, In Catalog, Criticality, Rationalisation, Hide From End Users" content is displayed for "Task or Field" column
 	Then "Green, True, Core, Retire, False" content is displayed for "Value" column
 	#Actions content check
@@ -152,7 +152,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	When User clicks 'CREATE' button
 	#Actions grid check
 	Then "Update application attributes" content is displayed for "Type" column
-	Then "USE ME FOR AUTOMATION(DEVICE SCHDLD)" content is displayed for "Project" column
+	Then "USE ME FOR AUTOMATION(DEVICE SCHDLD)" content is displayed for "Project or Evergreen" column
 	Then "Criticality, Rationalisation, Hide From End Users" content is displayed for "Task or Field" column
 	Then "Important, Keep, True" content is displayed for "Value" column
 	When User opens 'Action' column settings
@@ -178,7 +178,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	When User clicks 'UPDATE' button
 	#Actions grid check
 	Then "Update application attributes" content is displayed for "Type" column
-	Then "USE ME FOR AUTOMATION(DEVICE SCHDLD)" content is displayed for "Project" column
+	Then "USE ME FOR AUTOMATION(DEVICE SCHDLD)" content is displayed for "Project or Evergreen" column
 	Then "Criticality, Rationalisation, Hide From End Users" content is displayed for "Task or Field" column
 	Then "Core, Uncategorised, False" content is displayed for "Value" column
 	#Actions content check
