@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateP
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '20774_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects '20774_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then '2004 Rollout' content is displayed in 'Project' autocomplete
 	Then 'Desktop Upgrade' content is displayed in 'Path' autocomplete
 	Then 'UPDATE' button is not disabled

@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
                 var page = _driver.NowAt<BaseDashboardPage>();
 
                 page.ClickButton("ADD CUSTOM FIELD");
-                page.AutocompleteSelect("Custom Field", customField.FieldName, true);
+                page.AutocompleteSelect("Custom Field", customField.FieldName, string.Empty, true);
                 page.PopulateTextbox("Value", customField.Value);
 
                 var dialogContainer = _driver.NowAt<BaseDialogDashboardPage>();
