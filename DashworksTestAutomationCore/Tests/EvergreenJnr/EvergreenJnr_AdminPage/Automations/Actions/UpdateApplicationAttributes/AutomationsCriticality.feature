@@ -227,8 +227,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunN
 	When User refreshes agGrid
 	When User enters "19312_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	Then 'Core' content is displayed in the 'UseMeForAu: Criticality' column
 	Then 'KEEP' content is displayed in the 'UseMeForAu: Rationalisation' column
@@ -272,8 +273,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunN
 	When User refreshes agGrid
 	When User enters "Test_19312_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	When User clicks content from "Objects" column
 	Then 'All Applications' list should be displayed to the user
 	Then 'Core' content is displayed in the 'Criticality' column

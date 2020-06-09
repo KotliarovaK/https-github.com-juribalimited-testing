@@ -119,20 +119,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And There are no errors in the browser console
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "TestProject22" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes |
+	| Evergreen  |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes    |
+	| TestProject22 |
 	And User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then 'Unassigned' content is displayed in the 'Maps to Evergreen' column
 	When User navigates to the 'Capacity Units' left menu item
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "TestProject22" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes |
+	| Evergreen  |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes    |
+	| TestProject22 |
 	And User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel

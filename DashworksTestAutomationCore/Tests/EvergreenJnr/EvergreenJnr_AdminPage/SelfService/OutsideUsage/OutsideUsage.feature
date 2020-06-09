@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceHasCompletedStatus
 	When Project created via API and opened
 	| ProjectName | Scope     | ProjectTemplate | Mode               |
 	| 21232_Proj  | All Users | None            | Standalone Project |
-	When User onboard objects to '21232_Proj' project
+	When User onboards objects to '21232_Proj' project
 	| ApplicationObjects |
 	| VSCmdShell         |
 	When User resync 'Application' objects for '21232_Proj' project
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelfServiceStatusesWithoutMakingChanges
 	When Project created via API and opened
 	| ProjectName | Scope     | ProjectTemplate | Mode               |
 	| 21222_Proj  | All Users | None            | Standalone Project |
-	When User onboard objects to '21222_Proj' project
+	When User onboards objects to '21222_Proj' project
 	| ApplicationObjects |
 	| VSCmdShell         |
 	When User resync 'Application' objects for '21222_Proj' project

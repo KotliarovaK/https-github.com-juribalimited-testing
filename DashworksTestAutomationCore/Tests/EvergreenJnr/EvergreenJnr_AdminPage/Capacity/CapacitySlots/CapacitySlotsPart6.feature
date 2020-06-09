@@ -32,14 +32,17 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	When User clicks on 'Paths' column header
 	Then data in table is sorted by 'Paths' column in descending order
 	And There are no errors in the browser console
-	When User clicks String Filter button for "Capacity Units" column on the Admin page
-	When User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Capacity Units' column:
+	| checkboxes         |
+	| All Capacity Units |
 	Then 'No units,Unassigned' text is displayed in the filter dropdown for the 'Capacity Units' column
 	And There are no errors in the browser console
-	When User clicks String Filter button for "Capacity Units" column on the Admin page
-	When User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Capacity Units" column on the Admin page
-	When User selects "Unassigned" checkbox from String Filter on the Admin page
+	When User checks following checkboxes in the filter dropdown menu for the 'Capacity Units' column:
+	| checkboxes         |
+	| All Capacity Units |
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Capacity Units' column:
+	| checkboxes |
+	| Unassigned |
 	Then 'All Capacity Units,No units' text is displayed in the filter dropdown for the 'Capacity Units' column
 	And There are no errors in the browser console
 

@@ -24,10 +24,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Select All" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "ProjectForDAS14780" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes |
+	| Select All |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes         |
+	| ProjectForDAS14780 |
 	Then Content in the 'Bucket' column is equal to
 	| Content    |
 	| Unassigned |

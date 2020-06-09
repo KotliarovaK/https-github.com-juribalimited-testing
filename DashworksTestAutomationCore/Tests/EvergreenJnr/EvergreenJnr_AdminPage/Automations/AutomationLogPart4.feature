@@ -44,8 +44,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User clicks refresh button in the browser
 	When User enters "17683_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -74,8 +75,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User clicks refresh button in the browser
 	When User enters "17683_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -116,8 +118,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 	When User clicks refresh button in the browser
 	And User enters "DAS17859_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	And User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -163,8 +166,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	When User clicks refresh button in the browser
 	And User enters "DAS17859_Aut_Test" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	And User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
