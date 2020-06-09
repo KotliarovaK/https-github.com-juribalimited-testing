@@ -49,23 +49,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterByName(filterName);
-             _driver.ClickByActions(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
         }
 
-        [Then(@"'(.*)' text is displayed in the filter dropdown for the '(.*)' column")]
-        public void ThenTextIsDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
-        }
-
-        [Then(@"'(.*)' text is not displayed in the filter dropdown for the '(.*)' column")]
-        public void ThenTextIsNotDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
-        }
-     
         [Then(@"User Scope checkboxes are disabled")]
         public void ThenUserScopeCheckboxesAreDisabled()
         {
@@ -944,11 +930,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.OpenColumnFilter(columnName);
         }
 
-        [Then(@"""(.*)"" is not displayed in the filter dropdown")]
+        [Then(@"'(.*)' is not displayed in the filter dropdown")]
         public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(filterElement.GetDisplayStateForStringFilterByName(filterName), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(filterElement.GetDisplayStateForStringFilterByName(filterName), $"{filterName} is displayed but should not");
         }
 
         [Then(@"options are sorted in alphabetical order in dropdown for '(.*)' column")]
@@ -961,7 +947,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             list.Remove("Select All"); //Remove 'Select All' checkbox that can be present on some filters (ALWAYS IN THE TOP)
             list.Remove("Evergreen"); //Remove 'Evergreen' checkbox that can be present on some filters (ALWAYS IN THE TOP)
 
-             _driver.ClickByActions(page.BodyContainer);
+            _driver.ClickByActions(page.BodyContainer);
             Verify.AreEqual(list.OrderBy(s => s, StringComparer.OrdinalIgnoreCase), list, $"Values in '{columnName}'column are not in alphabetical order");
         }
 
