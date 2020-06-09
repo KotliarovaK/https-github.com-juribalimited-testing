@@ -180,7 +180,9 @@ Scenario: EvergreenJnr_UserProfile_ChangingPassword
 	Then 'Enter a password between 6 and 128 characters long' text is displayed on inline error banner
 	And There are no errors in the browser console
 	When User enters 'm!gration' text to 'Current Password' textbox
+	When User clears 'New Password' textbox
 	When User enters 'test5846' text to 'New Password' textbox
+	When User clears 'Confirm Password' textbox
 	When User enters 'test5846' text to 'Confirm Password' textbox
 	And User clicks 'UPDATE' button
 	Then 'Password has been changed' text is displayed on inline success banner

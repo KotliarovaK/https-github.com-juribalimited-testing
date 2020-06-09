@@ -911,7 +911,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	| Project Rings: ComputerSc | 1      |
 	| Project Rings: DeviceSche | 1      |
 	| Project Rings: Havoc(BigD | 1      |
-	| Project Rings: prK        | 1      |
+	| Project Rings: 2prK       | 1      |
 	| Project Rings: Windows101 | 1      |
 	| Project Rings: Windows102 | 1      |
 	| Project Rings: Windows10T | 1      |

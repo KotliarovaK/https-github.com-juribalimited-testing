@@ -542,8 +542,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
 
-            var columnValues = page.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             var columnColors = page.GetColumnColors(columnName).Where(x => !x.Equals("")).ToList();
+            //Scrolling only 50 rows due to GetColumnColors() does not have scroll and get only firts visible values
+            var columnValues = page.GetColumnDataByScrolling(columnName, 50).Where(x => !x.Equals("")).ToList();
 
             //Page load less colors than content cells
             for (int i = 0; i < columnColors.Count; i++)
