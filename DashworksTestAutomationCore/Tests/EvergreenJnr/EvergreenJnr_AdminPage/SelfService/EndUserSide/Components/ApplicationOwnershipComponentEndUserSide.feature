@@ -45,25 +45,13 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_20421_Proj | All Users | None            | Standalone Project |
-	#User onboarding
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Changes' left menu item
-	When User navigates to the 'Users' tab on Project Scope Changes page
-	When User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
-	| Objects                              |
-	| 024213574157421A9CD (Reyes, Natasha) |
-	| 03C54BC1198843A4A03 (Jones, Tina)    |
-	When User clicks 'UPDATE ALL CHANGES' button
-	When User clicks 'UPDATE PROJECT' button
-	#Application onboarding
-    When User navigates to the 'Applications' tab on Project Scope Changes page
-    When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
-    | Objects    |
-    | VSCmdShell |
-    When User clicks 'UPDATE ALL CHANGES' button
-    When User clicks 'UPDATE PROJECT' button
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
+	When User onboards objects to 'DAS_20421_Proj' project
+	| UserObjects         |
+	| 024213574157421A9CD |
+	| 03C54BC1198843A4A03 |
+	When User onboards objects to 'DAS_20421_Proj' project
+	| ApplicationObjects |
+	| VSCmdShell         |
 	When User create static list with 'DAS_20421_forComponent' name and 'Everyone can see' access type on 'Users' page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
@@ -108,25 +96,13 @@ Scenario: EvergreenJnr_AdminPage_CheckChangeAndRemoveOwnerOnEndUserPage
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_20421_Proj_1 | All Users | None            | Standalone Project |
-	#User onboarding
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Changes' left menu item
-	When User navigates to the 'Users' tab on Project Scope Changes page
-	When User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
-	| Objects                              |
-	| 024213574157421A9CD (Reyes, Natasha) |
-	| 03C54BC1198843A4A03 (Jones, Tina)    |
-	When User clicks 'UPDATE ALL CHANGES' button
-	When User clicks 'UPDATE PROJECT' button
-	#Application onboarding
-    When User navigates to the 'Applications' tab on Project Scope Changes page
-    When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
-    | Objects    |
-    | VSCmdShell |
-    When User clicks 'UPDATE ALL CHANGES' button
-    When User clicks 'UPDATE PROJECT' button
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
+	When User onboards objects to 'DAS_20421_Proj_1' project
+	| UserObjects         |
+	| 024213574157421A9CD |
+	| 03C54BC1198843A4A03 |
+	When User onboards objects to 'DAS_20421_Proj_1' project
+	| ApplicationObjects |
+	| VSCmdShell         |
 	When User create static list with 'DAS_20421_AppList_1' name and 'Everyone can see' access type on 'Applications' page with following items
 	| ItemName   |
 	| VSCmdShell |
@@ -166,25 +142,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownShowOnlyUsersThatHaveBeen
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_20647_Proj | All Users | None            | Standalone Project |
-	Then Page with 'DAS_20647_Proj' header is displayed to user
-	When User navigates to the 'Scope' left menu item
-	And User navigates to the 'Scope Changes' left menu item
-	And User navigates to the 'Users' tab on Project Scope Changes page
-	And User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
-	| Objects                           |
-	| 03C54BC1198843A4A03 (Jones, Tina) |
-	And User clicks 'UPDATE ALL CHANGES' button
-	Then '1 user will be added' text is displayed on inline tip banner
-	When User clicks 'UPDATE PROJECT' button
-	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
-	When User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
-	| Objects    |
-	| VSCmdShell |
-	And User clicks 'UPDATE ALL CHANGES' button
-	Then '1 application will be added' text is displayed on inline tip banner
-	When User clicks 'UPDATE PROJECT' button
-	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
+	When User onboards objects to 'DAS_20647_Proj' project
+	| UserObjects         |
+	| 03C54BC1198843A4A03 |
+	When User onboards objects to 'DAS_20647_Proj' project
+	| ApplicationObjects |
+	| VSCmdShell         |
 	When User create static list with "DAS_20647_forComponent" name on "Users" page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
@@ -212,28 +175,13 @@ Scenario: EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_20425_Proj | All Users | None            | Standalone Project |
-	#Change onbording to API step when DAS-20820 will be done
-	When User navigates to the 'Scope' left menu item
-	And User navigates to the 'Scope Changes' left menu item
-	And User navigates to the 'Users' tab on Project Scope Changes page
-	And User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
-	| Objects                              |
-	| 024213574157421A9CD (Reyes, Natasha) |
-	| 03C54BC1198843A4A03 (Jones, Tina)    |
-	And User clicks 'UPDATE ALL CHANGES' button
-	And User clicks 'UPDATE PROJECT' button
-	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
-	#Change onbording to API step when DAS-20820 will be done
-	#Application onboarding
-    When User navigates to the 'Applications' tab on Project Scope Changes page
-    When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
-    | Objects    |
-    | VSCmdShell |
-    When User clicks 'UPDATE ALL CHANGES' button
-    When User clicks 'UPDATE PROJECT' button
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
-	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
+	When User onboards objects to 'DAS_20425_Proj' project
+	| UserObjects         |
+	| 024213574157421A9CD |
+	| 03C54BC1198843A4A03 |
+	When User onboards objects to 'DAS_20425_Proj' project
+	| ApplicationObjects |
+	| VSCmdShell         |
 	When User create static list with "DAS_20425_forComponent" name on "Users" page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
@@ -402,11 +350,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyOnboardedUsersThatInTheScopeListCa
 	When Project created via API and opened
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_21181_Proj_1 | All Users | None            | Standalone Project |
-	When User onboard objects to 'DAS_21181_Proj_1' project
+	When User onboards objects to 'DAS_21181_Proj_1' project
 	| UserObjects         |
 	| 024213574157421A9CD |
 	| 0BC5F2D82BC34785AB8 |
-	When User onboard objects to 'DAS_21181_Proj_1' project
+	When User onboards objects to 'DAS_21181_Proj_1' project
 	| ApplicationObjects |
 	| VSCmdShell         |
 	When User clicks 'Users' on the left-hand menu
