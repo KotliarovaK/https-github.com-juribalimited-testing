@@ -122,8 +122,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForEvergreenAllLi
 	When User clicks refresh button in the browser
 	When User enters "18397_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'BucketforAuto' content is displayed in the 'Evergreen Bucket' column
@@ -144,8 +145,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForEvergreenAllLi
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18397_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'Evergreen Bucket' column
@@ -186,8 +188,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForProjects
 	When User clicks refresh button in the browser
 	When User enters "18397_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'TestGroup' content is displayed in the 'zDeviceAut: Bucket' column
@@ -231,8 +234,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "18397_2_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then '18397_TestBucket' content is displayed in the 'Evergreen Bucket' column
@@ -256,8 +260,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedBucket
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "18397_2_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	Then "BUCKET DOES NOT EXIST" content is displayed for "Outcome" column
 	When User clicks content from "Automation" column
@@ -322,8 +327,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedProject
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "18397_3_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	#Delete Project
 	When User navigates to the 'Projects' left menu item
@@ -338,8 +344,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateBucketForDeletedProject
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "18397_3_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	Then "PROJECT DOES NOT EXIST" content is displayed for "Outcome" column
 	When User clicks content from "Automation" column

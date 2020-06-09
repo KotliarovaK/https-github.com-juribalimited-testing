@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergree
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 0072B088173449E3A93 |
-	And User selects 'Create static list' in the 'Action' dropdown
+	When User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "TestList20409" name
 	Then "TestList20409" list is displayed to user
 	When User creates new Automation via API and open it
@@ -124,8 +124,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergree
 	When User clicks refresh button in the browser
 	When User enters "20409_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'London - City' content is displayed in the 'Evergreen Capacity Unit' column
@@ -146,8 +147,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForEvergree
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "20409_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'Evergreen Capacity Unit' column
@@ -162,7 +164,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 011PLA470S0B9DJ  |
-	And User selects 'Create static list' in the 'Action' dropdown
+	When User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "AutoTestList20409" name
 	Then "AutoTestList20409" list is displayed to user
 	#Create Project
@@ -203,8 +205,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForProjects
 	When User clicks refresh button in the browser
 	When User enters "20409_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'All Devices' list should be displayed to the user
@@ -226,7 +229,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedC
 	When User select "Application" rows in the grid
 	| SelectedRowsName  |
 	| 7-Zip 16.02 (x64) |
-	And User selects 'Create static list' in the 'Action' dropdown
+	When User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "TestList204091" name
 	Then "TestList204091" list is displayed to user
 	#Create Automation
@@ -250,8 +253,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedC
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "20409_2_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	#Delete Capacity Unit
 	When User navigates to the 'Evergreen' left menu item
@@ -272,8 +276,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedC
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "20409_2_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	Then "CAPACITY UNIT DOES NOT EXIST" content is displayed for "Outcome" column
 	When User clicks content from "Automation" column
@@ -338,8 +343,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedP
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "20409_3_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	#Delete Project
 	When User navigates to the 'Projects' left menu item
@@ -354,8 +360,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateCapacityUnitForDeletedP
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "20409_3_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	Then "PROJECT DOES NOT EXIST" content is displayed for "Outcome" column
 	When User clicks content from "Automation" column

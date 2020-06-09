@@ -159,8 +159,9 @@ Scenario: EvergreenJnr_AdminPage_CheckActionFinishForAutomationsWereRunningAtThe
 	When User clicks refresh button in the browser
 	When User enters "20116_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then "Action Finish" content is displayed for "Type" column
 	When User enters "20116_Automation2" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -244,8 +245,9 @@ Scenario: EvergreenJnr_AdminPage_CheckRenamedListDisplayingInAutomationLog
 	Then Page with 'Automations' header is displayed to user
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "16318_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	When User opens 'Action' column settings
 	When User clicks Column button on the Column Settings panel
 	When User select "Scope" checkbox on the Column Settings panel

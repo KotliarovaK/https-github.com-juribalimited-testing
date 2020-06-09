@@ -6,6 +6,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
+using System.Linq;
 
 namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 {
@@ -19,12 +20,39 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
+        #region All table
+
         [Then(@"table is displayed")]
         public void ThenTableIsDisplayed()
         {
             var page = _driver.NowAt<BaseTable>();
             Verify.IsTrue(page.Table.Displayed(), "Table is not displayed");
         }
+
+        //column starts from zero where zero is the first column in the table
+        [Then(@"following data is displayed in the '(.*)' column of the table")]
+        public void ThenFollowingDataIsDisplayedInTheColumnOfTheTable(int column, Table table)
+        {
+            var fields = _driver.NowAt<BaseTable>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = fields.GetRowsContent(column);
+            Verify.AreEqual(expectedList, actualList, "Incorrect column data");
+        }
+
+        [Then(@"User sees table with the following data")]
+        public void ThenUserSeesTableWithTheFollowingData(Table table)
+        {
+            var page = _driver.NowAt<BaseTable>();
+            foreach (TableRow row in table.Rows)
+            {
+                var field = row["Field"];
+                var value = row["Data"];
+                Verify.AreEqual(page.GetRowContent(field), value,
+                    $"Incorrect data in the '{field}' field");
+            }
+        }
+
+        #endregion
 
         #region Keys
 

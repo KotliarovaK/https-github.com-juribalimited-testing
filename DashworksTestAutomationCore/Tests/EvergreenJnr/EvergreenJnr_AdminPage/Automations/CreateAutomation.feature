@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckScopeListsIconsForAutomations
 	Then 'visibility' icon displayed for 'Migration Type Capacity' option from 'Scope' autocomplete
 	Then 'visibility_off' icon displayed for '17241_List' option from 'Scope' autocomplete
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20331 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20331 @DAS20240 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckErrorMessageForScopeDropdown
 	When User creates broken list with '20331_BrokenList' name on 'Users' page
 	When User clicks 'Admin' on the left-hand menu

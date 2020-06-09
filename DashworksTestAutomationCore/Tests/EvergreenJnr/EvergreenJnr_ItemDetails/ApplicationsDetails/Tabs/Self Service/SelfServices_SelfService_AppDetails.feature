@@ -50,7 +50,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSelfServicesTabIsDisplayedCorre
 	| Status                  |
 	| Self Service Link       |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @SelfServicesTab @DAS21178 @Cleanup
+#AnnI 6/5/20: fixed only for Zenith
+@Evergreen @Applications @EvergreenJnr_ItemDetails @SelfServicesTab @DAS21178 @Cleanup @Zenith
 Scenario: EvergreenJnr_ApplicationsList_CheckThatStatusIsUpdatedToThePartiallyCompleteOnTheApplicationSelfServicePageAfterOpeningTheSelfService
 	#precondition
 	When User create static list with "DAS_21178_SS_List" name on "Applications" page with following items

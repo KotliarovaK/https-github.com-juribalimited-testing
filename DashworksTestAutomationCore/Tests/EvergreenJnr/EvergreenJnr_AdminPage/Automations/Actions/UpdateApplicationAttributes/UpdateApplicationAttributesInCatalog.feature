@@ -69,8 +69,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogRunNow
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19542_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	Then 'TRUE' content is displayed in the 'In Catalog' column
 	#Return to previous value
@@ -90,8 +91,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogRunNow
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19542_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	Then 'FALSE' content is displayed in the 'In Catalog' column
 
@@ -163,8 +165,9 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergr
 	When '19629_Automation' automation '19629_Action' action run has finished
 	When User enters "19629_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
@@ -185,8 +188,9 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergr
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19629_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19926 @Cleanup
@@ -218,6 +222,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunningAutomationsBasedOnApplicationsListW
 	When User navigates to the 'Automation Log' left menu item
 	When '19926_Automation' automation '19926_Action' action run has finished
 	When User enters "19926_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then "SUCCESS" content is displayed for "Outcome" column

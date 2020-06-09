@@ -70,10 +70,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Rings' left menu item
-	And User clicks String Filter button for "Project" column on the Admin page
-	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
-	And User clicks String Filter button for "Project" column on the Admin page
-	And User selects "DAS15260Project" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes |
+	| Evergreen  |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes      |
+	| DAS15260Project |
 	Then '1' content is displayed in the 'Devices' column
 	And '' content is displayed in the 'Users' column
 	And '' content is displayed in the 'Mailboxes' column

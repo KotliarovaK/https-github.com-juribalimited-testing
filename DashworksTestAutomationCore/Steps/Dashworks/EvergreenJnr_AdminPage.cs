@@ -52,6 +52,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.ClickByActions(page.BodyContainer);
         }
 
+        [Then(@"'(.*)' text is displayed in the filter dropdown for the '(.*)' column")]
+        public void ThenTextIsDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
+        }
+
+        [Then(@"'(.*)' text is not displayed in the filter dropdown for the '(.*)' column")]
+        public void ThenTextIsNotDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
+        }
+     
         //TODO: AnnI 3/25/20 Can we replace with WhenUserChecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step?
         [When(@"User selects ""(.*)"" checkbox from String Filter with item list on the Admin page")]
         public void WhenUserSelectsCheckboxFromStringFilterWithItemListOnTheAdminPage(string filterName)

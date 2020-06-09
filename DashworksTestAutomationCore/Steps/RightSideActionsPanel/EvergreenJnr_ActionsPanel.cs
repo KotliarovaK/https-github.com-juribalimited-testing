@@ -10,6 +10,7 @@ using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
+using DashworksTestAutomation.Helpers;
 
 namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 {

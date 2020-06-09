@@ -74,10 +74,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
-	When User clicks String Filter button for "Project" column
-	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column
-	When User selects "Project13156" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes |
+	| Evergreen  |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes   |
+	| Project13156 |
 	Then '2' content is displayed in the 'Applications' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967

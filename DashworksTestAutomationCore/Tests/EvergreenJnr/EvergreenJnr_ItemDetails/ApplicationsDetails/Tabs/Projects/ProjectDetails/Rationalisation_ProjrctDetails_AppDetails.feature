@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20949 @X_Ray
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20949
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationDropdownIsDisplayedCorrectlyInProjectMode
 	When User navigates to the 'Application' details page for the item with '983' ID
 	Then Details page for 'Mozilla Sunbird (0.2a.)' item is displayed to the user

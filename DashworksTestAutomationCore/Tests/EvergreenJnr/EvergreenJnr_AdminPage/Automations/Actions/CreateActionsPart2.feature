@@ -109,3 +109,32 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	Then '[Project not found]' content is displayed in 'Project' textbox
 	When User selects '2004 Rollout' option from 'Project' autocomplete
 	Then '' content is displayed in 'Task' textbox
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18484 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsInactiveWhileChangingActionType
+	When User creates new Automation via API and open it
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18484_Automation | 18484       | true     | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	When User enters '18484_Action' text to 'Action Name' textbox
+	When User selects 'Update bucket' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Unassigned' option from 'Bucket' autocomplete
+	When User clicks 'CREATE' button 
+	When User clicks content from "Action" column
+	Then 'UPDATE' button is disabled
+	When User selects 'Update ring' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Unassigned' option from 'Ring' autocomplete
+	When User clicks 'UPDATE' button 
+	When User clicks content from "Action" column
+	Then 'UPDATE' button is disabled
+	When User selects 'Update capacity unit' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
+	When User clicks 'UPDATE' button
+	When User clicks content from "Action" column
+	Then 'UPDATE' button is disabled 

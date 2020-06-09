@@ -25,6 +25,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
+using DashworksTestAutomationCore.DTO.RuntimeVariables;
+using DashworksTestAutomationCore.Steps.Dashworks.ActionsPanel.FavouriteBulkUpdate;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -42,11 +44,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly Teams _teams;
         private readonly Buckets _buckets;
         private readonly SelfServices _selfServices;
-
+        private readonly FavouriteBulkUpdateObjects _favouriteBulkUpdate;
+        private readonly RestWebClient _client;
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
             Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,
-            Teams teams, Buckets buckets, SelfServices selfServices)
+            Teams teams, Buckets buckets, SelfServices selfServices, FavouriteBulkUpdateObjects favouriteBulkUpdate, RestWebClient client)
         {
             _driver = driver;
             _automationActions = automationActions;
@@ -58,6 +61,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _teams = teams;
             _buckets = buckets;
             _selfServices = selfServices;
+            _favouriteBulkUpdate = favouriteBulkUpdate;
+            _client = client;
         }
 
         #region Page Header/SubHeader
@@ -332,7 +337,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
             else
             {
-                page.GetTextbox(field).Click();
+                page.GetTextbox(field).Click(); 
                 var list = page.GetAllAutocompleteOptions(field).ToList();
                 Verify.AreEqual(list.OrderBy(s => s), list,
                     $"Options in the '{field}' autocomplete are not in alphabetical order");
@@ -472,6 +477,32 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(page.IsIconDisplayedFromDropdownOptions(icon), $"'{icon}' is not displayed for '{optionName}'");
         }
 
+        [Then(@"following items have '(.*)' mat icon from '(.*)' autocomplete")]
+        public void ThenFollowingItemsHaveMatIconFromAutocomplete(string matIcon, string placeholder, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textbox = page.GetTextbox(placeholder);
+            textbox.Click();
+            var expectedMatIconsValue = table.Rows.SelectMany(row => row.Values).ToList();
+
+            foreach (var row in table.Rows)
+            {
+                page.GetMatIconsOfDropdownOptionsByName(row["Items"], matIcon);
+            }
+            _driver.ClickByActions(page.BodyContainer);
+        }
+
+        [Then(@"items with '(.*)' mat icon for '(.*)' autocomplete are displayed in ascending order")]
+        public void ThenItemsWithMatIconForAutocompleteAreDisplayedInAscendingOrder(string matIcon, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textbox = page.GetTextbox(placeholder);
+            textbox.Click();
+            var fbuList = page.GetItemsWithIconInDropdownOptions(matIcon).Select(x => x.Text).ToList();
+            SortingHelper.IsListSorted(fbuList);
+            _driver.ClickByActions(page.BodyContainer);
+        }
+
         [Then(@"'(.*)' of all shown label is displayed in expanded autocomplete")]
         public void ThenOfAllShownLabelDisplaysInTheFilterPanel(int showedResultsCount)
         {
@@ -522,6 +553,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     break;
                 case "Automation Name":
                     _automations.Value.Add(new AutomationsDto() { name = text });
+                    break;
+                case "Favourite Bulk Update Name":
+                    _favouriteBulkUpdate.Value.Add(new RemoveFbuMethods.Favourit() { Name = text });
                     break;
                 case "Ring name":
                     //Get project ID if Ring is inside project
@@ -922,6 +956,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.That(page.GetIconsOfDropdownOptions().Count, Is.EqualTo(page.GetDropdownValues().Count), "Incorrect options in lists dropdown");
             _driver.ClickByActions(page.BodyContainer);
         }
+
+        [Then(@"following items have '(.*)' icon in the '(.*)' dropdown:")]
+        public void ThenFollowingItemsHaveIconInTheDropdown(string dropdown, string iconName, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropdown).Click();
+            var expectedStarIconsValue = table.Rows.SelectMany(row => row.Values).ToList();
+
+            foreach (var row in table.Rows)
+            {
+                page.GetMatIconsOfDropdownOptionsByName(row["Items"], iconName);
+            }
+            page.BodyContainer.Click();
+        } 
 
         [Then(@"All icon items in the '(.*)' dropdown have any of tooltip")]
         public void ThenUserSeesAllListsIconDisplayedWithTooltipInDropdown(string dropdown, Table table)
@@ -1621,6 +1669,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var icon = _driver.NowAt<BaseDashboardPage>();
             icon.GetIcon(iconTextInDom).Click();
+        }
+
+        [When(@"User clicks '(.*)' mat icon")]
+        public void WhenUserClicksMatIcon(string matIconName)
+        {
+            var icon = _driver.NowAt<BaseDashboardPage>();
+            icon.GetMatIconByClassContent(matIconName).Click();
+        }
+
+        [Then(@"'(.*)' mat icon is disabled")]
+        public void ThenMatIconIsDisabled(string matIconName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(true, page.GetMatIconByClassContent(matIconName).Disabled(),
+                $"{matIconName} mat icon is enabled");
+        }
+
+        [Then(@"'(.*)' mat icon is not disabled")]
+        public void ThenMatIconIsNotDisabled(string matIconName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(false, page.GetMatIconByClassContent(matIconName).Disabled(),
+                $"{matIconName} mat icon is disabled");
+        }
+
+        [Then(@"'(.*)' mat icon has tooltip with '(.*)' text")]
+        public void ThenMatIconHasTooltipWithText(string matIconName, string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.MouseHover(page.GetMatIconByClassContent(matIconName));
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(text, toolTipText, $"'{matIconName}' mat icon tooltip is incorrect");
         }
 
         #endregion

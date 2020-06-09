@@ -58,21 +58,27 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User clicks 'Automations' header breadcrumb
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
-	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Select All" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "New_Action" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Action' column:
+	| checkboxes |
+	| Select All |
+	When User checks following checkboxes in the filter dropdown menu for the 'Action' column:
+	| checkboxes |
+	| New_Action |
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Outcome" column on the Admin page
 	When User clicks Reset Filters button on the Admin page
-	When User selects "Select All" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Outcome" column on the Admin page
-	When User selects "PROJECT DOES NOT EXIST" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Outcome' column:
+	| checkboxes |
+	| Select All |
+	When User checks following checkboxes in the filter dropdown menu for the 'Outcome' column:
+	| checkboxes             |
+	| PROJECT DOES NOT EXIST |
 	Then "16890_Action" content is displayed for "Action" column
-	When User clicks String Filter button for "Outcome" column on the Admin page
-	When User selects "PROJECT DOES NOT EXIST" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Outcome" column on the Admin page
-	When User selects "ONE OR MORE ACTIONS FAILED" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Outcome' column:
+	| checkboxes             |
+	| PROJECT DOES NOT EXIST |
+	When User checks following checkboxes in the filter dropdown menu for the 'Outcome' column:
+	| checkboxes                 |
+	| ONE OR MORE ACTIONS FAILED |
 	Then "16890_Automation" content is displayed for "Automation" column
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169 @DAS17774 @Cleanup
@@ -106,11 +112,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	#Investigate downloading file on Remote
 	#When User clicks Export button on the Admin page
 	#Then User checks that file "Dashworks export" was downloaded
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then "SUCCESS" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS16974 @DAS16316 @DAS17263 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS16974 @DAS16316 @DAS17263
 Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 #Use correct, active Automation
 	When User clicks 'Admin' on the left-hand menu
@@ -140,17 +147,16 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "D16974_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Start" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Action Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Start  |
 	Then "Manual" content is displayed for "Run" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Action Start" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Action Finish" checkbox from String Filter with item list on the Admin page
+	When User checks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes       |
+	| Automation Start |
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then "Manual" content is displayed for "Run" column
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16316 @DAS16319 @Not_Ready

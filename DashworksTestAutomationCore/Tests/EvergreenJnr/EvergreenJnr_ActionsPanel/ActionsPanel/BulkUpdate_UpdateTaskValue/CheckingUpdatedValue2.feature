@@ -27,8 +27,6 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToDifferentTaskValue
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage B \ Original Task' option from 'Task' autocomplete
 	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
-	#Waiting for renamed Relative Project dropdown
-	#When User selects 'zUser Sch for Automations Feature' option from 'Relative Project' autocomplete
 	When User selects 'Stage C \ Radio Date Slot Device' option from 'Relative Task' autocomplete
 	When User navigate to the bottom of the Action panel
 	When User enters '5' text to 'Value' textbox
@@ -122,3 +120,17 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatDateWithTimeDisplayedAfterUpdateTas
 	| ColumnName                                |
 	| ProjectFor: Stage18025 \ Task18025 (Date) |
 	Then date in 'ProjectFor: Stage18025 \ Task18025 (Date)' column displayed in datetime format
+
+@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS21251 @Yellow_Dwarf
+Scenario: EvergreenJnr_AllDevices_CheckBulkUpdateReadOnlyTaskIsNotAvailableToSelect
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00K4CEEQ737BA4L  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	Then 'Computer Read Only Task in Bulk Update' content is not displayed in 'Task' autocomplete after search

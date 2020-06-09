@@ -168,8 +168,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLink
 	When User clicks refresh button in the browser
 	When User enters "19083_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'SY_Ring 1' content is displayed in the 'Evergreen Ring' column
@@ -190,8 +191,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLink
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "19083_Automation1" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'Evergreen Ring' column
@@ -247,8 +249,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForProjects
 	When User clicks refresh button in the browser
 	When User enters "19083_Automation2" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'NewProject: Ring' column
@@ -310,8 +313,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19083_2_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	#Delete Ring
 	When User navigates to the 'Projects' left menu item
@@ -334,8 +338,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedRing
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19083_2_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	Then "RING DOES NOT EXIST" content is displayed for "Outcome" column
 	When User clicks content from "Automation" column
@@ -407,8 +412,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19083_3_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then '1' content is displayed in the 'Objects' column
 	#Delete Project
 	When User navigates to the 'Projects' left menu item
@@ -423,8 +429,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "19083_3_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	Then "PROJECT DOES NOT EXIST" content is displayed for "Outcome" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly

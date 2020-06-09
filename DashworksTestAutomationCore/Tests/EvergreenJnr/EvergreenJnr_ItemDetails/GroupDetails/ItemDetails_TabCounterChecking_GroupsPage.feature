@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatNewStyleForSelectAllCheckboxInTheSele
 	| Select All |
 	When User clicks String Filter button for "Operating System" column
 	Then 'Select All' checkbox has 'checked' condition in selectbox
-	When User checks following checkboxes in the filter dropdown menu for the 'Operating System' column:
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Operating System' column:
 	| checkboxes |
 	| Select All |
 	When User clicks String Filter button for "Operating System" column

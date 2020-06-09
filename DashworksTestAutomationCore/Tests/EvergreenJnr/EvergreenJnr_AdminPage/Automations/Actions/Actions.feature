@@ -724,14 +724,16 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User selects 'One \ Radio Rag Date Owner User Req A' option from 'Task' autocomplete
 	When User selects 'Started' in the 'Update Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown
-	When User enters '5 Sep 2019' text to 'Date' datepicker
+	When User enters '4 Sep 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
 	When User selects '2004 Team' option from 'Team' autocomplete
 	When User selects 'Unassigned' option from 'Owner' autocomplete
+	When User clicks datepicker icon
+	When User selects '5' day in the Datepicker
 	And User clicks 'CREATE' button
 	Then 'Started, 2019-09-05, 2004 Team' content is displayed in the 'Value' column
-	#Run Automations
 	When User clicks 'Automations' header breadcrumb
+	#Run Automations
 	When User enters "DAS17744" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for 'DAS17744' item from 'Automation' column
 	When 'DAS17744' automation 'DAS17744_Action' action run has finished
@@ -739,8 +741,9 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User refreshes agGrid
 	When User enters "DAS17744" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Type' column:
+	| checkboxes        |
+	| Automation Finish |
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	When User removes "Username" column by Column panel
@@ -815,8 +818,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	And User clicks content from "Action" column
 	Then 'Scheduled Slot' content is displayed in 'Capacity Slot' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18886 @Universe
-#Waiting for DAS-19582 fixed
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18886 @DAS20667 @Yellow_Dwarf
 Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -825,20 +827,16 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage
 	And User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
-	When User opens 'Action' column settings
-	And User clicks Column button on the Column Settings panel
-	Then Column Settings was opened
-	When User select "Update Type" checkbox on the Column Settings panel
 	Then "" content is displayed for "Update Type" column
 	Then grid headers are displayed in the following order
-	| ColumnName    |
-	| Action        |
-	|               |
-	| Type          |
-	| Project       |
-	| Task or Field |
-	| Update Type   |
-	| Value         |
+	| ColumnName           |
+	| Action               |
+	|                      |
+	| Type                 |
+	| Project or Evergreen |
+	| Task or Field        |
+	| Update Type          |
+	| Value                |
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'UPDATE' button is disabled
@@ -867,3 +865,25 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForActionName
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	Then 'An action name must be entered' error message is displayed for 'Action Name' field
 	Then 'CREATE' button is disabled
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS21094 @Cleanup @Yellow_Dwarf
+Scenario: EvergreenJnr_AdminPage_CheckActionNameValidationAfterClickingSaveAndCreateAnother
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User creates new Automation via API and open it
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_21094 | 21094       | true     | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Action 1
+	When User clicks 'CREATE ACTION' button 
+	Then Create Action page is displayed to the User
+	When User enters '21094_Action' text to 'Action Name' textbox
+	When User selects 'Update path' in the 'Action Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User selects 'Undetermined' option from 'Path' autocomplete
+	#Action 2
+	When User clicks 'SAVE & CREATE ANOTHER' button 
+	Then 'The automation action has been created' text is displayed on inline success banner
+	When User enters '21094_Action' text to 'Action Name' textbox
+	Then 'An action with this name already exists for this automation' error message is displayed for 'Action Name' field

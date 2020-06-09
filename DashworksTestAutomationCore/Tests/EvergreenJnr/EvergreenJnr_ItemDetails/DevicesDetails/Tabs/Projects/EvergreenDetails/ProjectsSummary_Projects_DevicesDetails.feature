@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 #AnnI 4/14/20: DAS20672 will be fixed only for 'X_Ray'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20745 @X_Ray
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20745
 Scenario: EvergreenJnr_DevicesList_ChecksThatToolTipIsDisplayedForExternalLinksOnProjectsSummarySubtab
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
