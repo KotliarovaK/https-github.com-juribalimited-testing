@@ -48,7 +48,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User clicks Cog-menu for '15427_Action1' item in the 'Action' column and sees following cog-menu options
 	| options          |
 	| Edit             |
-	| Move to top      |
 	| Move to bottom   |
 	| Move to position |
 	| Delete           |
@@ -65,7 +64,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| options          |
 	| Edit             |
 	| Move to top      |
-	| Move to bottom   |
 	| Move to position |
 	| Delete           |
 	When User clicks 'Edit' option in Cog-menu for '15427_Action1' item from 'Action' column

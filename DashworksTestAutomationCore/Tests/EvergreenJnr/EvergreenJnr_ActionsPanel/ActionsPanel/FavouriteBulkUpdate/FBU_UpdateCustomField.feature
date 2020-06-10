@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20848 @Yellow_Dwarf
+@Evergreen @AllLists @FavouriteBulkUpdate @DAS20848 @Yellow_Dwarf
 Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdateUpdateCustomFieldForAllListsType
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
@@ -32,7 +32,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdat
 	| Applications | Application   | 20040610sqlserverck              |
 	| Mailboxes    | Email Address | 002B5DC7D4D34D5C895@bclabs.local |
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20850 @Cleanup @Yellow_Dwarf
+@Evergreen @AllUsers @FavouriteBulkUpdate @DAS20850 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoadingAndRestoringValues
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdateUpdateCustomFieldLoading
 	When User enters '20853_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
+@Evergreen @AllUsers @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForUpdateCustomFieldFavouriteBulkUpdateItems
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForUpdateCustomFieldFavouriteB
 	| abc_22085         |
 	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateCustomFieldType
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdat
 	Then 'CANCEL' button is not disabled
 	Then 'star' mat icon is not disabled
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
+@Evergreen @AllApplications @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkUpdateWithoutCustomField
 	When User creates new Custom Field via API
 	| FieldName | FieldLabel | AllowExternalUpdate | Enabled | Application |
@@ -192,7 +192,7 @@ Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkU
 	Then 'UPDATE' button is disabled
 	Then 'star' mat icon is disabled
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
+@Evergreen @AllUsers @FavouriteBulkUpdate @DAS20853 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupForUpdateCustomFieldType
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

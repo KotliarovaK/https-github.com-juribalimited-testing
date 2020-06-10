@@ -219,20 +219,16 @@ Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalis
 	#Check Action grid
 	Then 'Unknown' content is displayed in the 'Value' column
 	Then 'Unknown' content is displayed in the 'Action' column
-	When User opens 'Action' column settings
-	When User clicks Column button on the Column Settings panel
-	Then Column Settings was opened
-	When User select "Update Type" checkbox on the Column Settings panel
 	Then "" content is displayed for "Update Type" column
 	Then grid headers are displayed in the following order
-	| ColumnName    |
-	| Action        |
-	|               |
-	| Type          |
-	| Project       |
-	| Task or Field |
-	| Update Type   |
-	| Value         |
+	| ColumnName           |
+	| Action               |
+	|                      |
+	| Type                 |
+	| Project or Evergreen |
+	| Task or Field        |
+	| Update Type          |
+	| Value                |
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid

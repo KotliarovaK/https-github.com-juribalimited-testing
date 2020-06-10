@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21005 @DAS21353 @Yellow_Dwarf
+@Evergreen @AllApplications @FavouriteBulkUpdate @DAS21005 @DAS21353 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplicationAttributesValidationsForEvergreen
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplication
 	Then 'UPDATE' button is not disabled
 	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21005 @DAS21353 @Cleanup @Yellow_Dwarf
+@Evergreen @AllApplications @FavouriteBulkUpdate @DAS21005 @DAS21353 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplicationAttributesValidationsForProject
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplication
 	Then 'UPDATE' button is not disabled
 	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21006 @Cleanup @Yellow_Dwarf
+@Evergreen @AllApplications @FavouriteBulkUpdate @DAS21006 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindowUpdateApplicationAttributes
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	When User enters '21006_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21006 @Cleanup @Yellow_Dwarf
+@Evergreen @AllApplications @FavouriteBulkUpdate @DAS21006 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindowUpdateApplicationAttributesForProject
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	When User enters '210061_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21007 @Cleanup @Yellow_Dwarf
+@Evergreen @AllApplications @FavouriteBulkUpdate @DAS21007 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAttributes
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	| abc_21007      |
 	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21007 @Cleanup @Yellow_Dwarf
+@Evergreen @AllApplications @FavouriteBulkUpdate @DAS21007 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAttributesForEvergreen
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	Then 'CANCEL' button is not disabled
 	Then 'star' mat icon is not disabled
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21007 @Cleanup @Yellow_Dwarf
+@Evergreen @AllApplications @FavouriteBulkUpdate @DAS21007 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAttributesForProject
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user

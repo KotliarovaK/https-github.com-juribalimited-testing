@@ -139,7 +139,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Run now          |
 	| Duplicate        |
 	| Move to top      |
-	| Move to bottom   |
 	| Move to position |
 	| Make inactive    |
 	| Delete           |

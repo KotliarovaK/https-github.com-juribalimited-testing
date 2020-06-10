@@ -14,7 +14,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	When User clicks Cog-menu for 'RED' item in the 'Readiness' column and sees following cog-menu options
 	| options                       |
 	| Edit                          |
-	| Move to top                   |
 	| Move to bottom                |
 	| Move to position              |
 	| Change to ready               |

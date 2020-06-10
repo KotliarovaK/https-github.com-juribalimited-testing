@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#DAS18491
-	Then "[Project not found]" content is displayed for "Project" column
+	Then "[Project not found]" content is displayed for "Project or Evergreen" column
 	#DAS18491
 	When User clicks content from "Action" column
 	#Actions content check
