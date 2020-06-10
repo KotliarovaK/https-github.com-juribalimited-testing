@@ -163,8 +163,9 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateW
 	Then 'CANCEL' button is not disabled
 	Then 'star' mat icon is not disabled
 
-#Add specific User with broken  FBU to check Error message when Path was deleted
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Yellow_Dwarf
+#Add specific User with broken FBU to check Error message when Path was deleted
+#Will be added in the beginning of July
+@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Zenith
 Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdate
 	When User is logged in to the Evergreen as
  	| Username  | Password  |

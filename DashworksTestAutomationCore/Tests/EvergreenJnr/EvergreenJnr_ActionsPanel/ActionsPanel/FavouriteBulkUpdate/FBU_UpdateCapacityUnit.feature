@@ -127,16 +127,9 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateCapacityUnitFbuForD
 	When Project created via API and opened
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
 	| 210022_CUProject | All Devices | None            | Standalone Project |
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Changes' left menu item
-	When User navigates to the 'Devices' tab on Project Scope Changes page
-	When User expands multiselect and selects following Objects
-	| Objects        |
-	| 00KLL9S8NRF0X6 |
-	When User clicks 'UPDATE ALL CHANGES' button 
-	When User clicks 'UPDATE PROJECT' button 
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
+	When User onboards objects to '210022_CUProject' project
+    | DeviceObjects  |
+    | 00KLL9S8NRF0X6 |
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Units' left menu item
 	When User clicks 'CREATE PROJECT CAPACITY UNIT' button 

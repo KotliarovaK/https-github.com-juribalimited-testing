@@ -147,16 +147,9 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	When Project created via API and opened
 	| ProjectName       | Scope       | ProjectTemplate | Mode               |
 	| 21002_RingProject | All Devices | None            | Standalone Project |
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Changes' left menu item
-	When User navigates to the 'Devices' tab on Project Scope Changes page
-	When User expands multiselect and selects following Objects
-	| Objects        |
-	| 00KLL9S8NRF0X6 |
-	When User clicks 'UPDATE ALL CHANGES' button 
-	When User clicks 'UPDATE PROJECT' button 
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
+	When User onboards objects to '21002_RingProject' project
+    | DeviceObjects  |
+    | 00KLL9S8NRF0X6 |
 	When User navigates to the 'Rings' left menu item
 	When User clicks 'CREATE PROJECT RING' button 
 	When User enters '21002_Ring' text to 'Ring name' textbox
@@ -199,12 +192,6 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	When User selects '21002_FBU_Ring' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
 	Then '' content is displayed in 'Project or Evergreen' autocomplete
-	#Check following steps with Kate M. 8/6/2020
-	#When User clicks 'star' mat icon
-	#Then popup with 'Create Favourite Bulk Update' title is displayed
-	#Then User sees table with the following data
-	#| Field | Data             |
-	#| Ring  | [Ring not found] |
 
 @Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21241 @Cleanup
 Scenario: EvergreenJnr_AllMailboxes_CheckDefaultCheckboxForCreateFavouriteBulkUpdatePopUp

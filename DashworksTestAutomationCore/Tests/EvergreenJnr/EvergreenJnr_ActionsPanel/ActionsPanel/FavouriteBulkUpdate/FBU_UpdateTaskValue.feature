@@ -192,6 +192,9 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| 2095t_Project | All Devices | None            | Standalone Project |
+	When User onboards objects to '210022_CUProject' project
+    | DeviceObjects  |
+    | 00KLL9S8NRF0X6 |
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "2095t_Project" Project
@@ -212,18 +215,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
-	When User navigates to "ProjectForDAS18025" project details
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Changes' left menu item
-	When User navigates to the 'Scope Changes' left menu item
-	When User navigates to the 'Devices' tab on Project Scope Changes page
-	When User expands multiselect and selects following Objects
-	| Objects        |
-	| 00KLL9S8NRF0X6 |
-	When User clicks 'UPDATE ALL CHANGES' button 
-	When User clicks 'UPDATE PROJECT' button 
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
+	When User clicks the Switch to Evergreen link
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
@@ -259,6 +251,9 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| 20950_Project | All Devices | None            | Standalone Project |
+	When User onboards objects to '20950_Project' project
+    | DeviceObjects  |
+    | 00KLL9S8NRF0X6 |
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "20950_Project" Project
@@ -287,17 +282,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
-	When User navigates to "20950_Project" project details
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Changes' left menu item
-	When User navigates to the 'Devices' tab on Project Scope Changes page
-	When User expands multiselect and selects following Objects
-	| Objects        |
-	| 00KLL9S8NRF0X6 |
-	When User clicks 'UPDATE ALL CHANGES' button 
-	When User clicks 'UPDATE PROJECT' button 
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
+	When User clicks the Switch to Evergreen link
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
@@ -404,6 +389,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChanging
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| 21252_Project | All Devices | None            | Standalone Project |
+	When User onboards objects to '21252_Project' project
+    | DeviceObjects  |
+    | 00KLL9S8NRF0X6 |
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "21252_Project" Project
@@ -429,17 +417,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChanging
 	Then selected task was published
 	When User navigate to Evergreen link
 	#Create FBU
-	When User navigates to "21252_Project" project details
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Changes' left menu item
-	When User navigates to the 'Devices' tab on Project Scope Changes page
-	When User expands multiselect and selects following Objects
-	| Objects        |
-	| 00KLL9S8NRF0X6 |
-	When User clicks 'UPDATE ALL CHANGES' button 
-	When User clicks 'UPDATE PROJECT' button 
-	When User navigates to the 'Queue' left menu item
-	When User waits until Queue disappears
+	When User clicks the Switch to Evergreen link
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
