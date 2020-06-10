@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables.SelfService;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -28,7 +29,14 @@ namespace DashworksTestAutomationCore.Steps.Dashworks.AdminPage.SelfService.Afte
         [AfterScenario("Cleanup", Order = 10)]
         public void RestoreSelfServiceBaseUrlToDefault()
         {
-            _SelfServiceApiMethods.SetDefaultBaseUrl();
+            try
+            {
+                _SelfServiceApiMethods.SetDefaultBaseUrl();
+            }
+            catch (Exception e)
+            {
+                Logger.Write(e);
+            }
         }
     }
 }

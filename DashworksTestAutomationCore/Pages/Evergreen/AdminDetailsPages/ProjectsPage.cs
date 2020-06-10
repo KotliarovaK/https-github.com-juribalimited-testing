@@ -174,22 +174,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
-        public void GetCheckboxStringFilterWithItemListByName(string filterName)
-        {
-            if (filterName.Equals("Select All"))
-            {
-                var selector = ".//span[text()='Select All']";
-                Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-                Driver.FindElement(By.XPath(selector)).Click();
-            }
-            else
-            {
-                var filterSelector = $".//mat-option//div//span[text()='{filterName}']";
-                Driver.WaitForElementToBeDisplayed(By.XPath(filterSelector));
-                Driver.FindElement(By.XPath(filterSelector)).Click();
-            }
-        }
-
         public void GetCheckboxStringFilterByName(string filterName)
         {
             var filterSelector = $".//mat-option//span[text()='{filterName}']";

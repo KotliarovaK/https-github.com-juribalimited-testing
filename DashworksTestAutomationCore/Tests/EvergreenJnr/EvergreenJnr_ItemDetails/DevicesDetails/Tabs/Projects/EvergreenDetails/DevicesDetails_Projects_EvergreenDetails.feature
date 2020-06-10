@@ -193,7 +193,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheShowOnlySelectedItemsButtonAreNot
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Bucket' field
 	Then 'Show only selected items' slide toggle is not displayed
-	Then "13510TestProject" is not displayed in the filter dropdown
+	Then '13510TestProject' is not displayed in the filter dropdown
 	Then 'Select the bucket to move this device to.' text is displayed on popup
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17091 @Cleanup

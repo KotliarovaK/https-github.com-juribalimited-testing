@@ -71,10 +71,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	And User navigates to the 'Buckets' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
-	And User clicks String Filter button for "Project" column on the Admin page
-	And User selects "Select All" checkbox from String Filter with item list on the Admin page
-	And User clicks String Filter button for "Project" column on the Admin page
-	And User selects "1DevicesProject" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes |
+	| Select All |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes      |
+	| 1DevicesProject |
 	Then 'Unassigned' content is displayed in the 'Bucket' column
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
@@ -85,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	And User navigates to the 'Buckets' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks String Filter button for "Project" column on the Admin page
-	Then "1DevicesProject" is not displayed in the filter dropdown
+	Then '1DevicesProject' is not displayed in the filter dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12496 @DAS12485 @DAS12108 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove
@@ -125,6 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User clicks 'UPDATE PROJECT' button 
 	Then '0 objects queued for onboarding, 2 objects offboarded' text is displayed on inline success banner
 	When User navigates to the 'History' left menu item
-	And User clicks String Filter button for "Action" column on the Admin page
-	And User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Action' column:
+	| checkboxes            |
+	| Onboard Device Object |
 	Then Rows counter shows "2" of "6" rows

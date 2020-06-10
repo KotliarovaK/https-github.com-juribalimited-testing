@@ -239,8 +239,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         private static string AutocompleteOptionsSelector = ".//mat-option[@tabindex!='-1']";
 
-        private static string AutocompleteOptionsWithIconsSelector = ".//mat-option[@tabindex!='-1']//mat-icon//parent::span/span";
-
         private static string AutocompleteSelectOptionsSelector = ".//ul//mat-checkbox";
 
         private static string AutocompleteValidationMessageSelector = ".//mat-option[@tabindex='-1']//span";
@@ -387,7 +385,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return message;
         }
 
-        public void AutocompleteSelect(string placeholder, string searchText, bool withSearch = false,
+        public void AutocompleteSelect(string placeholder, string searchText, string icon = "", bool withSearch = false,
             bool containsOption = false, params string[] optionsToSelect)
         {
             var textbox = GetTextbox(placeholder);
@@ -400,16 +398,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             List<string> options = new List<string>();
             if (optionsToSelect.Any())
             {
-                options.AddRange(optionsToSelect);
+                options.AddRange(optionsToSelect.Select(x => $"{icon}{x}"));
             }
             else
             {
-                options.Add(searchText);
+                options.Add($"{icon}{searchText}");
             }
 
             if (withSearch)
             {
-                textbox.ClearWithBackspaces();
                 textbox.SendKeys(searchText);
                 if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector),
                     WebDriverExtensions.WaitTime.Short))
@@ -420,16 +417,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
             Driver.WaitForElementInElementToBeDisplayed(AutocompleteDropdown, By.XPath(AutocompleteOptionsSelector));
             var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector));
-            var foundOptionsWithIcon = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsWithIconsSelector));
             if (foundOptions.Any())
             {
                 if (containsOption)
                 {
-                    if (foundOptions.Any(x => x.Text.Contains(searchText)))
+                    if (foundOptions.Any(x => x.Text.Contains(searchText) && x.Text.Contains(icon)))
                     {
                         foreach (string option in options)
                         {
-                            foundOptions.First(x => x.Text.Contains(option)).Click();
+                            foundOptions.First(x =>
+                                x.Text.Contains(option.Replace(icon, string.Empty)) && x.Text.Contains(icon)).Click();
                             Driver.WaitForDataLoading();
                         }
                     }
@@ -439,7 +436,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 }
                 else
                 {
-                    if (foundOptions.Any(x => x.Text.Equals(searchText)))
+                    if (foundOptions.Any(x => x.Text.Equals($"{icon}{searchText}")))
                     {
                         foreach (string option in options)
                         {
@@ -448,19 +445,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                         }
                     }
                     else
-                    {
-                        if (foundOptionsWithIcon.Any(x => x.Text.Equals(searchText)))
-                        {
-                            foreach (string option in options)
-                            {
-                                foundOptionsWithIcon.First(x => x.Text.Equals(option)).Click();
-                                Driver.WaitForDataLoading();
-                            }
-                        }
-                        else
-                            throw new Exception(
-                                $"There are no option that equals '{searchText}' text in the '{placeholder}' autocomplete");
-                    }
+                        throw new Exception(
+                            $"There are no option that equals '{searchText}' text in the '{placeholder}' autocomplete");
                 }
             }
             else

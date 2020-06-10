@@ -202,19 +202,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             UserSelectsOptionFromAutocomplete(option, placeholder, false);
         }
 
+        [When(@"User selects '(.*)' option from '(.*)' autocomplete with '(.*)' icon")]
+        public void WhenUserSelectsOptionFromAutocompleteWithIcon(string option, string placeholder, string icon)
+        {
+            UserSelectsOptionFromAutocomplete(option, placeholder, true, icon);
+        }
+
         [When(@"User enters '(.*)' in the '(.*)' autocomplete field and selects '(.*)' value")]
         public void WhenUserEntersInTheAutocompleteFieldAndSelectsValue(string text, string placeholder, string value)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.PopulateTextbox(placeholder, text);
-            page.AutocompleteSelect(placeholder, text, true, true, new[] { value });
+            page.AutocompleteSelect(placeholder, text, string.Empty, true, true, new[] { value });
         }
 
         [When(@"User selects '(.*)' option after search from '(.*)' autocomplete")]
         public void WhenUserSelectsOptionAfterSearchFromAutocomplete(string option, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.AutocompleteSelect(placeholder, option, true);
+            page.AutocompleteSelect(placeholder, option, string.Empty, true);
         }
 
         [When(@"User checks '(.*)' option after search from '(.*)' autocomplete")]
@@ -337,7 +343,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
             else
             {
-                page.GetTextbox(field).Click(); 
+                page.GetTextbox(field).Click();
                 var list = page.GetAllAutocompleteOptions(field).ToList();
                 Verify.AreEqual(list.OrderBy(s => s), list,
                     $"Options in the '{field}' autocomplete are not in alphabetical order");
@@ -431,10 +437,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect values are selected in the '{placeholder}' autocomplete");
         }
 
-        private void UserSelectsOptionFromAutocomplete(string option, string placeholder, bool withSearch)
+        private void UserSelectsOptionFromAutocomplete(string option, string placeholder, bool withSearch, string icon = "")
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.AutocompleteSelect(placeholder, option, withSearch);
+            page.AutocompleteSelect(placeholder, option, icon, withSearch);
             _driver.WaitForDataLoadingInActionsPanel();
         }
 
@@ -969,7 +975,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 page.GetMatIconsOfDropdownOptionsByName(row["Items"], iconName);
             }
             page.BodyContainer.Click();
-        } 
+        }
 
         [Then(@"All icon items in the '(.*)' dropdown have any of tooltip")]
         public void ThenUserSeesAllListsIconDisplayedWithTooltipInDropdown(string dropdown, Table table)

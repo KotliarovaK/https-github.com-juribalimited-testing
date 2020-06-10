@@ -542,8 +542,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
 
-            var columnValues = page.GetColumnDataByScrolling(columnName, 600).Where(x => !x.Equals("")).ToList();
             var columnColors = page.GetColumnColors(columnName).Where(x => !x.Equals("")).ToList();
+            //Scrolling only 50 rows due to GetColumnColors() does not have scroll and get only firts visible values
+            var columnValues = page.GetColumnDataByScrolling(columnName, 50).Where(x => !x.Equals("")).ToList();
 
             //Page load less colors than content cells
             for (int i = 0; i < columnColors.Count; i++)
@@ -1058,6 +1059,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 default:
                     throw new Exception($"Unknown checkbox condition: {condition}");
             }
+        }
+
+        [Then(@"'(.*)' text is displayed in the filter dropdown for the '(.*)' column")]
+        public void ThenTextIsDisplayedInTheFilterDropdownForTheColumn(string expectedText, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var actualText = page.GetDropdownFilterTextByColumnName(columnName);
+
+            Verify.AreEqual(expectedText, actualText, $"Expected '{expectedText}' text to be displayed in the dropdown filter for the'{columnName}' but was '{actualText}'");
+        }
+
+        [Then(@"'(.*)' text is not displayed in the filter dropdown for the '(.*)' column")]
+        public void ThenTextIsNotDisplayedInTheFilterDropdownForTheColumn(string expectedText, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var actualText = page.GetDropdownFilterTextByColumnName(columnName);
+
+            Verify.AreNotEqual(expectedText, actualText, $"Expected '{expectedText}' text to be not equal to actual '{actualText}' text in the dropdown filter for the'{columnName}'");
         }
 
         #endregion

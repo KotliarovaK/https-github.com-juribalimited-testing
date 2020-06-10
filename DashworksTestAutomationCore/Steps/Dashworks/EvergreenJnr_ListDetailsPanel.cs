@@ -231,7 +231,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 if (!string.IsNullOrEmpty(row["User"]))
                 {
-                    action.AutocompleteSelect("User", row["User"], true);
+                    action.AutocompleteSelect("User", row["User"], string.Empty, true);
                 }
 
                 if (!string.IsNullOrEmpty(row["Permission"]))

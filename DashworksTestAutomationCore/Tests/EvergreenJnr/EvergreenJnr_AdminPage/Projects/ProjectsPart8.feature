@@ -96,10 +96,12 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Select All" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes |
+	| Select All |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes        |
+	| 1MailboxesProject |
 	Then Rows counter contains "1" found row of all rows
 	Then 'Unassigned' content is displayed in the 'Bucket' column
 	When User navigates to the 'Projects' left menu item
@@ -117,10 +119,12 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Select All" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes |
+	| Select All |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes        |
+	| 1MailboxesProject |
 	Then Rows counter contains "1" found row of all rows
 	Then 'Unassigned' content is displayed in the 'Bucket' column
 
@@ -138,10 +142,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	Then 'The project has been created' text is displayed on inline success banner
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	And User clicks String Filter button for "Project" column on the Admin page
-	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
-	And User clicks String Filter button for "Project" column on the Admin page
-	And User selects "13530Project" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes |
+	| Evergreen  |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes   |
+	| 13530Project |
 	Then Rows counter contains "1" found row of all rows
 	And 'Unassigned' content is displayed in the 'Capacity Unit' column
 	When User navigates to the 'Projects' left menu item
@@ -155,9 +161,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User clicks 'Administration' header breadcrumb
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
-	And User clicks String Filter button for "Project" column on the Admin page
-	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
-	And User clicks String Filter button for "Project" column on the Admin page
-	And User selects "13530Project" checkbox from String Filter with item list on the Admin page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes |
+	| Evergreen  |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes   |
+	| 13530Project |
 	Then Rows counter contains "1" found row of all rows
 	Then 'Unassigned' content is displayed in the 'Capacity Unit' column

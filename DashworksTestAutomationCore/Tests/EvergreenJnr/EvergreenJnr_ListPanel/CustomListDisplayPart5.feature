@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringWhenAttempting
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestName QQRT" name on "Devices" page
 	Then "TestName QQRT" list is displayed to user
-	Then "10" rows are displayed in the agGrid
+	Then "8" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedColumnsWithoutErrors
