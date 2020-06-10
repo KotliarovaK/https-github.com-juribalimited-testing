@@ -160,7 +160,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'save')]//button")]
         public IWebElement SaveCustomListButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-selection-checkbox']")]
         public IWebElement SelectOneRowsCheckboxes { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]

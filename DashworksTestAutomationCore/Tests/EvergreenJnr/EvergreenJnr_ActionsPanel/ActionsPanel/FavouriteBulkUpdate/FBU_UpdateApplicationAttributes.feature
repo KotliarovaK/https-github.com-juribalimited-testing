@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplication
 	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	Then 'star' mat icon is disabled
 	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
-	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'UPDATE' button is disabled
 	Then 'star' mat icon is not disabled
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AllApplications_CheckFavouriteBulkUpdateUpdateApplication
 	When User selects 'Update application attributes' option from 'Bulk Update Type' autocomplete
 	Then 'star' mat icon is disabled
 	Then 'star' mat icon has tooltip with 'Some values are missing or not valid' text
-	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
 	Then 'UPDATE' button is disabled
 	Then 'star' mat icon is not disabled
@@ -79,7 +79,6 @@ Scenario: EvergreenJnr_AllApplications_CheckCreateFavouriteBulkUpdatePopupWindow
 	| Field                | Data                          |
 	| Bulk Update Type     | Update application attributes |
 	| Project or Evergreen | Evergreen                     |
-
 	Then 'CANCEL' button is not disabled
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text

@@ -99,11 +99,11 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| Bucket               |
 	| Also Move Users      |
 	Then User sees table with the following data
-	| Field                | Data          |
-	| Bulk Update Type     | Update bucket |
-	| Project or Evergreen | Evergreen     |
-	| Bucket               | Amsterdam     |
-	| Also Move Users      | None          |
+	| Field                | Data            |
+	| Bulk Update Type     | Update bucket   |
+	| Project or Evergreen | Email Migration |
+	| Bucket               | Amsterdam       |
+	| Also Move Users      | None            |
 	When User enters '21002_BucketFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	When User clicks 'star' mat icon

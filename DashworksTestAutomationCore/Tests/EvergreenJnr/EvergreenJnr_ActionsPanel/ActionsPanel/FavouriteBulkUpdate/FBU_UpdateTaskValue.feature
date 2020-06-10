@@ -25,7 +25,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateUpdateTaskValueT
 	Then 'star' mat icon is not disabled
 	Then 'star' mat icon has tooltip with 'Save as Favourite Bulk Update' text
 	Then 'UPDATE' button is disabled
-	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 
 Examples: 
 	| PageName     | ColumnHeader  | RowName                          | ProjectName     | Task                                  |

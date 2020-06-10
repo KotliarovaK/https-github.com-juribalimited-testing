@@ -192,8 +192,8 @@ Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdate
 	Then 'UPDATE' button is disabled
 	Then 'star' mat icon is not disabled
 
-@Evergreen @AllUsers @FavouriteBulkUpdate @DAS20774 @Cleanup @Yellow_Dwarf
-Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateForDeletedProject
+@Evergreen @AllMailboxes @FavouriteBulkUpdate @DAS20774 @Cleanup @Yellow_Dwarf
+Scenario: EvergreenJnr_AllMailboxes_CheckSelectedValueForCreatedFavouriteBulkUpdateForDeletedProject
 	When Project created via API and opened
 	| ProjectName   | Scope         | ProjectTemplate | Mode               |
 	| 20774_Project | All Mailboxes | None            | Standalone Project |
