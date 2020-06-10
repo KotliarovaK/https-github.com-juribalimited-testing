@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20937 @Yellow_Dwarf
+@Evergreen @AllLists @FavouriteBulkUpdate @DAS20937 @Yellow_Dwarf
 Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateUpdateTaskValueTypeValidations
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
@@ -34,7 +34,7 @@ Examples:
 	| Applications | Application   | 20040610sqlserverck              | 2004 Rollout    | Pre-Migration \ App Workflow          |
 	| Mailboxes    | Email Address | 002B5DC7D4D34D5C895@bclabs.local | Email Migration | Mobile Devices \ Mobile Device Status |
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @Cleanup @Yellow_Dwarf
+@Evergreen @AllUsers @FavouriteBulkUpdate @DAS20940 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidationsFotUsersList
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AllUsers_CheckCreateFavouriteBulkUpdatePopupWindowValidat
 	When User enters '20940_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @FavouriteBulkUpdate @DAS20950 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpdateTaskValueType
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AllUsers_CheckValueAndIconsForFavouriteBulkUpdateItemsUpd
 	| abc_20950      |
 	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20940 @DAS21318 @Cleanup @Yellow_Dwarf
+@Evergreen @AllApplications @FavouriteBulkUpdate @DAS20940 @DAS21318 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulkUpdateUpdateTaskValueType
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -187,7 +187,7 @@ Scenario: EvergreenJnr_AllApplications_CheckSelectedValueForCreatedFavouriteBulk
 	Then 'CANCEL' button is not disabled
 	Then 'star' mat icon is not disabled
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @Cleanup @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @FavouriteBulkUpdate @DAS20950 @Cleanup @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDeletedProject
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -254,7 +254,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	Then 'DAS20950_TestFBU' content is not displayed in 'Bulk Update Type' autocomplete after search
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20950 @DAS21253 @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @FavouriteBulkUpdate @DAS20950 @DAS21253 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDeletedTask
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -333,7 +333,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	Then '' content is displayed in 'Project' autocomplete
 	Then 'Task' autocomplete is not displayed
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21249 @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @FavouriteBulkUpdate @DAS21249 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckTaskDropdownAfterRestoringFbuAndCreatingNew
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -355,7 +355,7 @@ Scenario: EvergreenJnr_AllUsers_CheckTaskDropdownAfterRestoringFbuAndCreatingNew
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ Dropdown Task' option from 'Task' autocomplete
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21250 @Cleanup @Yellow_Dwarf
+@Evergreen @AllUsers @FavouriteBulkUpdate @DAS21250 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckThatBulkUpdateTypeDropdownIsNotEmptyAfterRestoring
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -376,7 +376,7 @@ Scenario: EvergreenJnr_AllUsers_CheckThatBulkUpdateTypeDropdownIsNotEmptyAfterRe
 	When User clicks 'CREATE' button
 	Then 'Update task value' content is displayed in 'Bulk Update Type' autocomplete
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21248 @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @FavouriteBulkUpdate @DAS21248 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckThatCapacitySlotDropdownIsNotEmptyForNoneValue
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_AllDevices_CheckThatCapacitySlotDropdownIsNotEmptyForNone
 	When User selects 'DAS21248_FBU' option from 'Bulk Update Type' autocomplete
 	Then 'None' content is displayed in 'Slot' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @FavouriteBulkUpdate @DAS21252 @Cleanup @Yellow_Dwarf
+@Evergreen @FavouriteBulkUpdate @DAS21252 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChangingTask
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -477,7 +477,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChanging
 	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
 	Then '' content is displayed in 'Project' autocomplete
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21319 @Cleanup @Yellow_Dwarf
+@Evergreen @AllUsers @FavouriteBulkUpdate @DAS21319 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckOwnerFieldCreateFavouriteBulkUpdatePopUp
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -510,7 +510,7 @@ Scenario: EvergreenJnr_AllUsers_CheckOwnerFieldCreateFavouriteBulkUpdatePopUp
 	| Update Owner     | Update                       |
 	| Team             | D-Team                       |
 
-@Evergreen @AllApplications @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21317 @Yellow_Dwarf
+@Evergreen @AllApplications @FavouriteBulkUpdate @DAS21317 @Yellow_Dwarf
 Scenario: EvergreenJnr_AllApplications_CheckValueFieldForUpdateRelativeToADifferentTask
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20992 @Yellow_Dwarf
+@Evergreen @AllLists @FavouriteBulkUpdate @DAS20992 @Yellow_Dwarf
 Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdateBucketForAllListsType
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
@@ -35,7 +35,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdat
 	| Users     | Username      | 002B5DC7D4D34D5C895              | Evergreen    | BucketforAuto |
 	| Mailboxes | Email Address | 002B5DC7D4D34D5C895@bclabs.local | Evergreen    | Unassigned    |
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21000 @Cleanup @Yellow_Dwarf
+@Evergreen @AllUsers @FavouriteBulkUpdate @DAS21000 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBucket
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateBuck
 	When User enters '21000_BulkFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
-@Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Cleanup @Yellow_Dwarf
+@Evergreen @AllMailboxes @FavouriteBulkUpdate @DAS21002 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItemsBuckets
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user

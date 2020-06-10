@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20992 @Yellow_Dwarf
+@Evergreen @AllLists @FavouriteBulkUpdate @DAS20992 @Yellow_Dwarf
 Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdateRingForAllListsType
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
@@ -36,7 +36,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckFavouriteBulkUpdateValidationsUpdat
 	| Users        | Username      | 002B5DC7D4D34D5C895              | Barry's User Project | Unassigned       |
 	| Mailboxes    | Email Address | 002B5DC7D4D34D5C895@bclabs.local | Evergreen            | Unassigned       |
 
-@Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21000 @Cleanup @Yellow_Dwarf
+@Evergreen @AllUsers @FavouriteBulkUpdate @DAS21000 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateRing
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatePopupWindowForUpdateRing
 	When User enters '21000_RingFBU' text to 'Favourite Bulk Update Name' textbox
 	Then 'A Favourite Bulk Update with this name already exists' error message is displayed for 'Favourite Bulk Update Name' field
 
-@Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Cleanup @Yellow_Dwarf
+@Evergreen @AllMailboxes @FavouriteBulkUpdate @DAS21002 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItemsRings
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| test21002_RingFBU1 |
 	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
 
-@Evergreen @AllMailboxes @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @Cleanup @Yellow_Dwarf
+@Evergreen @AllMailboxes @FavouriteBulkUpdate @DAS21002 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdateItemsRings
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdat
 	When User selects '21002_RingFBU1' option from 'Bulk Update Type' autocomplete
 	Then '19083_Project' content is displayed in 'Project or Evergreen' autocomplete
 
-@Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @DAS21253 @Cleanup @Yellow_Dwarf
+@Evergreen @AllDevices @FavouriteBulkUpdate @DAS21002 @DAS21253 @Cleanup @Yellow_Dwarf
 Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRing
 	When Project created via API and opened
 	| ProjectName       | Scope       | ProjectTemplate | Mode               |
