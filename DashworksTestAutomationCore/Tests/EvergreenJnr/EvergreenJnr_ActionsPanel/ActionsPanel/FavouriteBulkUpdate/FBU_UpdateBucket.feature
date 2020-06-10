@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueAndIconsForFavouriteBulkUpdateItem
 	| test21002_BucketFBU1 |
 	Then items with 'star' mat icon for 'Bulk Update Type' autocomplete are displayed in ascending order
 
-#Add specific User with broken  FBU to check Error message when Bucket was deleted
+#Add specific User with broken FBU to check Error message when Bucket was deleted
 @Evergreen @AllUsers @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS20774 @Not_Ready
 Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdateWithBrokenBucket
 	When User is logged in to the Evergreen as

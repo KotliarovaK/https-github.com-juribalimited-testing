@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AllMailboxes_CheckValueInActionPanelForFavouriteBulkUpdat
 	When User enters '21002_RingFBU1' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
 	#Check Action panel values
-	When User selects '21002_RingFBU1' option from 'Bulk Update Type' autocomplete
+	When User selects '21002_RingFBU1' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then '19083_Project' content is displayed in 'Project or Evergreen' autocomplete
 
 @Evergreen @AllDevices @EvergreenJnr_ActionsPanel @FavouriteBulkUpdate @DAS21002 @DAS21253 @Cleanup
@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateRingFbuForDeletedRi
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '21002_FBU_Ring' option from 'Bulk Update Type' autocomplete
+	When User selects '21002_FBU_Ring' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
 	Then '' content is displayed in 'Project or Evergreen' autocomplete
 	#Check following steps with Kate M. 8/6/2020

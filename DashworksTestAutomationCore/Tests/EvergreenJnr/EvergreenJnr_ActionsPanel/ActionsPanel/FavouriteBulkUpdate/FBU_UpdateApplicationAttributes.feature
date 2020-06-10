@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	When User clicks 'star' mat icon
 	When User enters 'DAS21007_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User selects 'DAS21007_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects 'DAS21007_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'GREEN' content is displayed in 'Sticky Compliance' dropdown
 	Then 'No change' content is displayed in 'In Catalog' dropdown
 	Then 'Critical' content is displayed in 'Criticality' dropdown
@@ -214,7 +214,7 @@ Scenario: EvergreenJnr_AllApplications_CheckActionPanelWindowUpdateApplicationAt
 	When User clicks 'star' mat icon
 	When User enters 'DAS210071_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User selects 'DAS210071_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects 'DAS210071_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'Important' content is displayed in 'Criticality' dropdown
 	Then 'UNCATEGORISED' content is displayed in 'Rationalisation' dropdown
 	Then 'FALSE' content is displayed in 'Hide From End Users' dropdown

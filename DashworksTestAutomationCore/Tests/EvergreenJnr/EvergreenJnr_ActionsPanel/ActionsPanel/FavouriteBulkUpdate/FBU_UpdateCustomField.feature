@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForCreatedFavouriteBulkUpdat
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '208535_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects '208535_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'Phoenix Field' content is displayed in 'Custom Field' autocomplete
 	Then 'Replace single value' content is displayed in 'Update Values' dropdown
 	Then '0' content is displayed in 'Find Value' textbox
@@ -187,7 +187,7 @@ Scenario: EvergreenJnr_AllApplications_CheckErrorMessageForCreatedFavouriteBulkU
 	| SelectedRowsName  |
 	| 7-Zip 16.02 (x64) |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '208535_TestFBU_CF' option from 'Bulk Update Type' autocomplete
+	When User selects '208535_TestFBU_CF' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'This Favourite Bulk Update is invalid' text is displayed on inline error banner
 	Then 'UPDATE' button is disabled
 	Then 'star' mat icon is disabled
@@ -227,7 +227,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopupForUpdateCustomFie
 	| SelectedRowsName                 |
 	| 000F977AC8824FE39B8@bclabs.local |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '207742_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects '207742_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	When User selects 'Manage favourites' option from 'Bulk Update Type' autocomplete
 	Then popup with 'Favourite Bulk Updates' title is displayed
 	Then 'star207742_TestFBU' content is displayed in 'Bulk Update Type' autocomplete

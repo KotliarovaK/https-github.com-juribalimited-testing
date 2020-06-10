@@ -328,7 +328,7 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateTaskValueFbuForDele
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'DAS20950_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects 'DAS20950_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
 	Then '' content is displayed in 'Project' autocomplete
 	Then 'Task' autocomplete is not displayed
@@ -349,7 +349,7 @@ Scenario: EvergreenJnr_AllUsers_CheckTaskDropdownAfterRestoringFbuAndCreatingNew
 	When User clicks 'star' mat icon
 	When User enters '21249_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User selects '21249_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects '21249_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'zUser Sch for Automations Feature' content is displayed in 'Project' autocomplete
 	When User selects 'Update task value' option from 'Bulk Update Type' autocomplete
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
@@ -396,7 +396,7 @@ Scenario: EvergreenJnr_AllDevices_CheckThatCapacitySlotDropdownIsNotEmptyForNone
 	When User clicks 'star' mat icon
 	When User enters 'DAS21248_FBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User selects 'DAS21248_FBU' option from 'Bulk Update Type' autocomplete
+	When User selects 'DAS21248_FBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'None' content is displayed in 'Slot' dropdown
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @FavouriteBulkUpdate @DAS21252 @Cleanup
@@ -473,7 +473,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOwnerDropdownsAreNotEmptyAfterChanging
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '21252_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects '21252_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
 	Then '' content is displayed in 'Project' autocomplete
 
@@ -530,5 +530,5 @@ Scenario: EvergreenJnr_AllApplications_CheckValueFieldForUpdateRelativeToADiffer
 	When User clicks 'star' mat icon
 	When User enters 'DAS21317_FBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User selects 'DAS21317_FBU' option from 'Bulk Update Type' autocomplete
+	When User selects 'DAS21317_FBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then '12' content is displayed in 'Value' textbox

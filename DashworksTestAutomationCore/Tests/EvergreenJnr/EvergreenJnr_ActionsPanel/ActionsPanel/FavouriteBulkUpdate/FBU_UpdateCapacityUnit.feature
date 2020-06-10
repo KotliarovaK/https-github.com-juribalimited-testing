@@ -179,6 +179,6 @@ Scenario: EvergreenJnr_AllDevices_CheckSelectedValueForUpdateCapacityUnitFbuForD
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '21002_FBU_CapacityUnit' option from 'Bulk Update Type' autocomplete
+	When User selects '21002_FBU_CapacityUnit' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then 'The configuration for this Favourite Bulk Update is no longer valid' text is displayed on inline error banner
 	Then '' content is displayed in 'Project or Evergreen' autocomplete

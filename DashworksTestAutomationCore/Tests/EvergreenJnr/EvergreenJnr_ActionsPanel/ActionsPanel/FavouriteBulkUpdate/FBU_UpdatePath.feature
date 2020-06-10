@@ -127,13 +127,6 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateP
 	When User clicks 'star' mat icon
 	When User enters '20774_TestFBU' text to 'Favourite Bulk Update Name' textbox
 	When User clicks 'CREATE' button
-	When User clicks refresh button in the browser
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Hostname" rows in the grid
-	| SelectedRowsName |
-	| 00K4CEEQ737BA4L  |
-	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects '20774_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then '2004 Rollout' content is displayed in 'Project' autocomplete
 	Then 'Desktop Upgrade' content is displayed in 'Path' autocomplete
@@ -163,7 +156,7 @@ Scenario: EvergreenJnr_AllUsers_CheckSelectedValueForCreatedFavouriteBulkUpdateW
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '20774_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects '20774_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then '2004 Rollout' content is displayed in 'Project' autocomplete
 	Then '' content is displayed in 'Path' autocomplete
 	Then 'UPDATE' button is disabled
@@ -186,7 +179,7 @@ Scenario: EvergreenJnr_AllUsers_CheckErrorMessageForCreatedFavouriteBulkUpdate
 	| SelectedRowsName |
 	| 00K4CEEQ737BA4L  |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'specific FBU' option from 'Bulk Update Type' autocomplete
+	When User selects 'specific FBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	Then 'This Favourite Bulk Update is invalid' text is displayed on inline error banner
 	Then 'UPDATE' button is disabled
@@ -273,7 +266,7 @@ Scenario: EvergreenJnr_AllUsers_CheckFavouriteBulkUpdatesPopup
 	| SelectedRowsName                 |
 	| 000F977AC8824FE39B8@bclabs.local |
 	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects '207742_TestFBU' option from 'Bulk Update Type' autocomplete
+	When User selects '207742_TestFBU' option from 'Bulk Update Type' autocomplete with 'star' icon
 	When User selects 'Manage favourites' option from 'Bulk Update Type' autocomplete
 	Then popup with 'Favourite Bulk Updates' title is displayed
 	Then 'star207742_TestFBU' content is displayed in 'Bulk Update Type' autocomplete
